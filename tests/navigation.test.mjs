@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {mainHubURL,restoredHubState} from '../src/core/navigation.js';
+test('MBA Hub action returns to the correct hosting scope and main view',()=>{const url=mainHubURL('https://example.test/MBA-hub-v2-test/');assert.equal(url.pathname,'/MBA-hub-v2-test/index.html');assert.equal(url.searchParams.get('home'),'1');assert.equal(url.hash,'');});
+test('explicit Hub return resets position and categories',()=>{const state={scroll:860,open:['volunteer-tools'],query:'kelp'};assert.deepEqual(restoredHubState(state,'https://example.test/index.html?home=1'),{scroll:0,open:[],query:'kelp'});assert.equal(state.scroll,860);});
+test('contextual Back preserves previous view position and open category',()=>{const state={scroll:860,open:['volunteer-tools'],query:'kelp'};assert.deepEqual(restoredHubState(state,'https://example.test/index.html'),state);});
