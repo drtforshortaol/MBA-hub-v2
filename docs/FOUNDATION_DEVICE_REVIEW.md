@@ -11,7 +11,7 @@ Owner-reported iPhone checks on the alpha.4 foundation, October 11–12, 2026:
 
 These reports apply to the two-app foundation, not the unmigrated full collection. Full-release flags remain false. Standalone installation, interrupted downloads, complete collection permissions and the three-reviewer pilot are not certified by these reports.
 
-## Recovery verification in progress
+## Foundation recovery verification passed
 
 Exact alpha.4 source recovery commit: `3acfe59264c9d6d9951fcd42fd4e2185dfc395c2` in the private source repository.
 
@@ -21,6 +21,6 @@ Both repositories retain `archive/foundation-alpha4-verified-2026-10-12`. These 
 
 Tester release resource hash: `372b656d714ce8a8`.
 
-Alpha.5 changed only version indicators/history for the controlled update/rollback test. The owner screenshot at 06:14 on October 12 confirms the iPhone loaded alpha.5. The entire alpha.4 tester tree was then restored through new commit `1032ecae67f7b7e2fb4c8c4330a37efe2997bc35`, preserving history. Its tree matches the archived alpha.4 commit exactly; all 27 resource hashes verified locally. Device confirmation of alpha.4 and its offline resources remains pending.
+Alpha.5 changed only version indicators/history for the controlled update/rollback test. The owner screenshot at 06:14 on October 12 confirms the iPhone loaded alpha.5. The entire alpha.4 tester tree was then restored through new commit `1032ecae67f7b7e2fb4c8c4330a37efe2997bc35`, preserving history. Its tree matches the archived alpha.4 commit exactly; all 27 resource hashes verified locally. At 06:19 on October 12, the owner confirmed the restored alpha.4 footer, app loading and Relate search worked with Airplane Mode enabled and Wi-Fi off. The screenshot shows alpha.4, the Airplane Mode icon and Ready offline for all 27 files. The two-app foundation update, rollback and offline recovery proof passed.
 
-Development source remains at alpha.5, with identical application behavior and the review record maintained. The tester deployment intentionally returns to alpha.4 for this recovery proof. V1 remains untouched.
+Development source remains at alpha.5, with identical application behavior and the review record maintained. The tester deployment remains at the verified alpha.4 recovery baseline. V1 remains untouched.
