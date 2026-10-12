@@ -1,0 +1,14 @@
+<!-- APP FILE: apps/five-senses-pwa/icon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Using the Five Senses Icon</title>
+  <desc id="desc">MBA-style app icon with ocean colors and five sensory symbols.</desc>
+  <rect width="512" height="512" rx="112" fill="#003B5C"/>
+  <circle cx="256" cy="256" r="170" fill="#F5F0E8"/>
+  <path d="M104 290 C150 236 200 236 256 290 C312 344 362 344 408 290" fill="none" stroke="#00788A" stroke-width="34" stroke-linecap="round"/>
+  <circle cx="256" cy="150" r="44" fill="#009CAA"/>
+  <circle cx="356" cy="222" r="44" fill="#C4962A"/>
+  <circle cx="318" cy="338" r="44" fill="#81B29A"/>
+  <circle cx="194" cy="338" r="44" fill="#E07A5F"/>
+  <circle cx="156" cy="222" r="44" fill="#4E7DA8"/>
+  <text x="256" y="271" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="800" fill="#003B5C">5</text>
+</svg>

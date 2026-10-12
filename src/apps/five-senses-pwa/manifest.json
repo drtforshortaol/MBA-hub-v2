@@ -4,10 +4,11 @@
   "title": "Using the Five Senses",
   "category": "volunteer-tools",
   "type": "reference",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha.6",
   "entry_point": "apps/five-senses-pwa/index.html",
   "status": "testing",
   "owner": "five-senses-pwa",
+  "listed": true,
   "dependencies": [
     {
       "id": "navigation",
@@ -15,21 +16,47 @@
     }
   ],
   "offline_assets": [
-    "apps/five-senses-pwa/index.html",
-    "apps/five-senses-pwa/styles.css",
     "apps/five-senses-pwa/app.js",
-    "apps/five-senses-pwa/data.js"
+    "apps/five-senses-pwa/apps.js",
+    "apps/five-senses-pwa/data.js",
+    "apps/five-senses-pwa/index.html",
+    "apps/five-senses-pwa/styles.css"
   ],
   "media": [
-    "five-senses-header"
+    "five-senses-header",
+    "asset-3b65e654f48dae5f"
   ],
   "knowledge": [],
   "cross_links": [],
   "sections": [
     {
+      "id": "senseSectionsHeading",
+      "title": "Interpretation Sense Sections",
+      "text": "Interpretation Sense Sections",
+      "aliases": []
+    },
+    {
+      "id": "guideSectionsHeading",
+      "title": "Guide Use Notes",
+      "text": "Guide Use Notes",
+      "aliases": []
+    },
+    {
+      "id": "referencesHeading",
+      "title": "References and Image Notes",
+      "text": "References and Image Notes \n\n         \n           Sources and Notes",
+      "aliases": []
+    },
+    {
+      "id": "Sources-and-Notes",
+      "title": "Sources and Notes",
+      "text": "Sources and Notes",
+      "aliases": []
+    },
+    {
       "id": "touch",
       "title": "Touch",
-      "text": "Tactile items \u00b7 texture language \u00b7 safety",
+      "text": "touch Touch Tactile items · texture language · safety touch Why it works paragraph Touch is often the most powerful way to understand marine life. Invite guests to explore safe tactile objects or touch pools whenever possible. Tactile Items list Live animals (bat rays, hermit crabs, decorator crabs, chitons, abalone) Live or dried algae Marine mammal skulls or replicas Bird skulls, bones, or replicas Sea otter pelts Shells and/or molts Whale baleen, teeth, or replicas Model boats or equipment Rock or substrate samples Brass animal models 3D maps Water Texture Language chips smooth like polished stone rough like sandpaper rubbery like a thick sponge bumpy like gravel Example phrase quote You can gently place two fingers in the water to touch the gumboot chiton. Its surface feels slightly rough and bumpy. Safety safety Always provide clear guidance on how to touch animals safely. touch tactile items texture language touch pools safe touch",
       "aliases": [
         "touch",
         "tactile items",
@@ -41,7 +68,7 @@
     {
       "id": "hearing",
       "title": "Hearing",
-      "text": "Water \u00b7 animals \u00b7 ocean soundscapes",
+      "text": "hearing Hearing Water · animals · ocean soundscapes hearing Why it works paragraph Sound can reveal a lot about ocean environments. Directing attention to ambient aquarium sounds builds immersion and curiosity. Listen For list Water movement Pumps and filtration systems Birds in the aviary or from the deck Wave sounds in open exhibits Recordings of animal sounds at MBOS Example phrase quote Listen closely and you may hear the water moving through the kelp tank. The swishing sound is created as the kelp sways back and forth with the current. Describe Wild Sounds paragraph You can also describe sounds animals make in the wild — snapping shrimp, whale songs, or dolphin clicks. hearing sound water movement animal sounds ocean soundscapes",
       "aliases": [
         "hearing",
         "sound",
@@ -53,7 +80,7 @@
     {
       "id": "smell",
       "title": "Smell",
-      "text": "Seawater \u00b7 kelp \u00b7 coastal habitats",
+      "text": "smell Smell Seawater · kelp · coastal habitats smell Why it works paragraph Smell can help guests connect to the ocean environment and link sensory memory to marine habitats. Scents to Notice list Fresh seaweed or kelp Saltwater Tidepool environments Example phrase quote You might notice the salty ocean smell here near the touch pool. That scent comes from seawater and marine plants like kelp. Guide note paragraph Use smell to talk about coastal habitats and ocean ecosystems. smell seawater kelp tidepool coastal habitats",
       "aliases": [
         "smell",
         "seawater",
@@ -65,14 +92,47 @@
     {
       "id": "taste",
       "title": "Taste",
-      "text": "Familiar comparisons \u00b7 animal adaptations",
+      "text": "taste Taste Familiar comparisons · animal adaptations taste Why it works paragraph Describing familiar tastes helps visitors better understand ocean environments and animal adaptations — even without sampling anything on site. Comparisons to Use list Texture of seafood to highlight habitat and adaptations Seaweed compared to wet, salty lettuce Example phrase quote Some fish that live in cold ocean water have a lot of fat stored in their bodies. That fat helps insulate them and keep them warm. Raw bluefin tuna, for example, almost melts in your mouth because its fat content creates a smooth, rich texture. Example phrase quote Sardines and other very small fish are so small that we often eat them whole, but their bones are so small that you barely notice the very light crunch as you eat them. taste familiar comparisons seafood texture animal adaptations",
       "aliases": [
         "taste",
         "familiar comparisons",
         "seafood texture",
         "animal adaptations"
       ]
+    },
+    {
+      "id": "original-introduction",
+      "title": "Original App Introduction",
+      "text": "original-introduction Original App Introduction While many exhibits rely on sight, interpreters can deepen engagement by using clear verbal descriptions and involving touch, sound, smell, and occasionally taste. Multisensory interpretation benefits all visitors — not only guests who are visually impaired. introduction accessibility multisensory interpretation",
+      "aliases": [
+        "introduction",
+        "accessibility",
+        "multisensory interpretation"
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "title": "How to Use This With Guests",
+      "text": "how-to-use How to Use This With Guests Use this as a quick interpretation prompt guide, not as a script. Open the sense that fits the exhibit, object, animal, habitat, or guest question. Choose one short sensory prompt and connect it to the animal, habitat, adaptation, or guest experience. Use touch, sound, smell, and taste comparisons only when appropriate, safe, and consistent with aquarium guidance. guest conversations interpretation volunteer tool",
+      "aliases": [
+        "guest conversations",
+        "interpretation",
+        "volunteer tool"
+      ]
+    },
+    {
+      "id": "safety-and-accuracy",
+      "title": "Safety and Accuracy",
+      "text": "safety-and-accuracy Safety and Accuracy Always follow Monterey Bay Aquarium guidance for guest touch experiences. Do not invite guests to touch, smell, taste, or handle anything unless it is approved and safe. Use taste as a comparison tool unless an approved sampling experience is specifically available. safety approved guidance accuracy",
+      "aliases": [
+        "safety",
+        "approved guidance",
+        "accuracy"
+      ]
     }
   ],
-  "source_version": "1.2"
+  "source_version": "1.2",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
 }

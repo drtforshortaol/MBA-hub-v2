@@ -4,10 +4,11 @@
   "title": "Six Interpretation Principles",
   "category": "volunteer-tools",
   "type": "reference",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha.6",
   "entry_point": "apps/interpretation-principles/index.html",
   "status": "testing",
   "owner": "interpretation-principles",
+  "listed": true,
   "dependencies": [
     {
       "id": "navigation",
@@ -15,19 +16,27 @@
     }
   ],
   "offline_assets": [
-    "apps/interpretation-principles/index.html",
-    "apps/interpretation-principles/styles.css",
     "apps/interpretation-principles/app.js",
-    "apps/interpretation-principles/data.js"
+    "apps/interpretation-principles/data.js",
+    "apps/interpretation-principles/index.html",
+    "apps/interpretation-principles/styles.css"
   ],
-  "media": [],
+  "media": [
+    "asset-fee04d46bc10c3d2"
+  ],
   "knowledge": [],
   "cross_links": [],
   "sections": [
     {
+      "id": "Floor-reminder",
+      "title": "Floor reminder",
+      "text": "Floor reminder \n       Relate → Reveal → Story → Engage → Whole → Adjust.  Start with what the visitor notices, then connect the meaning.",
+      "aliases": []
+    },
+    {
       "id": "relate",
       "title": "RELATE",
-      "text": "Start with visitors' reactions Begin with what guests see, feel, notice, and wonder \u2014 not with what the volunteer wants to teach first. Interpretation begins with the visitor's own reaction. This validates curiosity and helps visitors feel immediately connected to the exhibit. Notice first, teach second. What drew your eye first? That's a great observation \u2014 I noticed that too! What does this remind you of?",
+      "text": "relate RELATE Start with visitors' reactions Begin with what guests see, feel, notice, and wonder — not with what the volunteer wants to teach first. Interpretation begins with the visitor's own reaction. This validates curiosity and helps visitors feel immediately connected to the exhibit. Try saying What drew your eye first? That's a great observation — I noticed that too! What does this remind you of? Notice first, teach second. visitor engagement questions observations conversation starter",
       "aliases": [
         "visitor engagement",
         "questions",
@@ -38,7 +47,7 @@
     {
       "id": "reveal",
       "title": "REVEAL",
-      "text": "Connect info to the visitor's reaction \u2014 bring the wow Connect information to what the guest already noticed so the meaning lands. Instead of giving random facts, connect information to the guest's initial reaction. This is where the aha moment happens. Tie the fact to the visitor's observation.",
+      "text": "reveal REVEAL Connect info to the visitor's reaction — bring the wow Connect information to what the guest already noticed so the meaning lands. Instead of giving random facts, connect information to the guest's initial reaction. This is where the aha moment happens. Example exchange Visitor The kelp looks like it's dancing. Volunteer It really does! Those waves aren't just pretty — they help the kelp get the nutrients it needs. Tie the fact to the visitor's observation. aha moment kelp forest meaning facts",
       "aliases": [
         "aha moment",
         "kelp forest",
@@ -49,7 +58,7 @@
     {
       "id": "stories",
       "title": "STORIES",
-      "text": "Inform, entertain, and enlighten Use stories, comparisons, and memorable images so visitors care and remember. Stories are how humans make meaning. They create emotional connections and help guests remember what they learned. Interpretation is an art \u2014 use it. Make the idea memorable. Giant kelp can grow two feet a day. Imagine if your houseplants did that! Sea otters are like the forest keepers \u2014 they protect the kelp by eating urchins.",
+      "text": "stories STORIES Inform, entertain, and enlighten Use stories, comparisons, and memorable images so visitors care and remember. Stories are how humans make meaning. They create emotional connections and help guests remember what they learned. Interpretation is an art — use it. Examples Giant kelp can grow two feet a day. Imagine if your houseplants did that! Sea otters are like the forest keepers — they protect the kelp by eating urchins. Make the idea memorable. storytelling sea otters kelp forest memory metaphor",
       "aliases": [
         "storytelling",
         "sea otters",
@@ -61,7 +70,7 @@
     {
       "id": "engage",
       "title": "ENGAGE",
-      "text": "Ask questions as well as answer them Invite visitors into the conversation so they think, notice, and participate. Interpretation should provoke curiosity, not just deliver information. Guests think more deeply when invited into the conversation. Turn facts into conversation. Why do you think the fish school that way? What do you notice about how the kelp moves? Which animals draw your attention?",
+      "text": "engage ENGAGE Ask questions as well as answer them Invite visitors into the conversation so they think, notice, and participate. Interpretation should provoke curiosity, not just deliver information. Guests think more deeply when invited into the conversation. Examples Why do you think the fish school that way? What do you notice about how the kelp moves? Which animals draw your attention? Turn facts into conversation. questions visitor engagement fish conversation",
       "aliases": [
         "questions",
         "visitor engagement",
@@ -72,7 +81,7 @@
     {
       "id": "whole",
       "title": "WHOLE",
-      "text": "Present a whole rather than a part Help guests see systems, relationships, and the full picture rather than isolated facts. Help guests see the full picture \u2014 connections, systems, relationships \u2014 rather than isolated facts. This deepens understanding and sparks wonder about how everything fits together. Connect the parts into a system. What you're seeing here is a whole forest under water: animals, plants, water movement, light \u2014 they all depend on each other. Every species in the kelp forest helps keep the ecosystem in balance. If one suddenly went away, the entire forest would be affected.",
+      "text": "whole WHOLE Present a whole rather than a part Help guests see systems, relationships, and the full picture rather than isolated facts. Help guests see the full picture — connections, systems, relationships — rather than isolated facts. This deepens understanding and sparks wonder about how everything fits together. Examples What you're seeing here is a whole forest under water: animals, plants, water movement, light — they all depend on each other. Every species in the kelp forest helps keep the ecosystem in balance. If one suddenly went away, the entire forest would be affected. Connect the parts into a system. ecosystem kelp forest systems connections balance",
       "aliases": [
         "ecosystem",
         "kelp forest",
@@ -84,7 +93,7 @@
     {
       "id": "adjust",
       "title": "ADJUST",
-      "text": "Children need a different approach, not a simplified adult one Use imagination, motion, metaphor, and feelings when speaking with children. Kids are not adults with fewer facts. They interpret the world through touch, metaphor, emotion, and imagination. Different approaches help them connect authentically. Change the approach, not just the vocabulary. What does this fish remind you of? Can you move your hand like the kelp sways? How do you feel looking at the animals in the kelp forest?",
+      "text": "adjust ADJUST Children need a different approach, not a simplified adult one Use imagination, motion, metaphor, and feelings when speaking with children. Kids are not adults with fewer facts. They interpret the world through touch, metaphor, emotion, and imagination. Different approaches help them connect authentically. For children What does this fish remind you of? Can you move your hand like the kelp sways? How do you feel looking at the animals in the kelp forest? Change the approach, not just the vocabulary. kids families movement emotion imagination",
       "aliases": [
         "kids",
         "families",
@@ -94,5 +103,8 @@
       ]
     }
   ],
-  "source_version": "1.0"
+  "source_version": "1.0",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
 }

@@ -1,0 +1,829 @@
+{
+  "schema_version": 1,
+  "app_id": "aquarium-library-explorer",
+  "title": "Aquarium Library Explorer",
+  "category": "volunteer-tools",
+  "type": "library",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/aquarium-library-explorer/index.html",
+  "status": "testing",
+  "owner": "aquarium-library-explorer",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/aquarium-library-explorer/index.html",
+    "apps/aquarium-library-explorer/library-data.js"
+  ],
+  "media": [
+    "asset-0bc6222372f0efdc"
+  ],
+  "knowledge": [],
+  "cross_links": [],
+  "sections": [
+    {
+      "id": "Marine-Mammals-of-the-Pacific-Coast",
+      "title": "Marine Mammals of the Pacific Coast",
+      "text": "Marine Mammals of the Pacific Coast S. G. Allen, J. Mortenson, & S. Webb MJ An extensive field guide about the marine mammals found another the North American Pacific coast  Marine Mammals",
+      "aliases": [
+        "Marine Mammals"
+      ]
+    },
+    {
+      "id": "Book-of-North-American-Birds",
+      "title": "Book of North American Birds",
+      "text": "Book of North American Birds Audubon Society MJ Extensive field guide of North America’s bird species  Birds",
+      "aliases": [
+        "Birds"
+      ]
+    },
+    {
+      "id": "Beautiful-Whale",
+      "title": "Beautiful Whale",
+      "text": "Beautiful Whale B. Austin Marilyn A photographic exploration of whales from around the world  Marine Mammals",
+      "aliases": [
+        "Marine Mammals"
+      ]
+    },
+    {
+      "id": "What-a-Fish-Knows",
+      "title": "What a Fish Knows",
+      "text": "What a Fish Knows J. Balcombe MJ Fish biology, human relationships with fish, human impacts  Fish & Sharks Conservation & Human Impact",
+      "aliases": [
+        "Fish & Sharks",
+        "Conservation & Human Impact"
+      ]
+    },
+    {
+      "id": "Half-Mile-Down",
+      "title": "Half Mile Down",
+      "text": "Half Mile Down W. Beebe Marilyn Stories from the 1930’s by William Beebe of his exploration of the sea with some pictures & illustrations  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "Nudibranch-Behavior",
+      "title": "Nudibranch Behavior",
+      "text": "Nudibranch Behavior D. W. Behrens MJ A resource on the natural history & adaptations of nudibranchs & their other sea slug relatives  Mollusks & Invertebrates Evolution & Adaptations",
+      "aliases": [
+        "Mollusks & Invertebrates",
+        "Evolution & Adaptations"
+      ]
+    },
+    {
+      "id": "Nudibranchs-Sea-Slugs-of-the-Eastern-Pacific",
+      "title": "Nudibranchs & Sea Slugs of the Eastern Pacific",
+      "text": "Nudibranchs & Sea Slugs of the Eastern Pacific D. W. Behrens, A. Hermosillo, K. Fletcher, G. C. Jensen MJ An identification guide for nudibranchs & other related groups of sea slugs from Alaska to Chile  Mollusks & Invertebrates",
+      "aliases": [
+        "Mollusks & Invertebrates"
+      ]
+    },
+    {
+      "id": "Pacific-Flyway-Waterbird-Migration-from-the-Arctic-to-Tierra-del-Fuego",
+      "title": "Pacific Flyway: Waterbird Migration from the Arctic to Tierra del Fuego",
+      "text": "Pacific Flyway: Waterbird Migration from the Arctic to Tierra del Fuego A. D. Benedict, G. A. Hammerson, & R. W. Butler MJ A look at the 10,000-mile corridor along the Eastern Pacific that connects millions of waterbirds between their breeding & overwintering grounds  Birds",
+      "aliases": [
+        "Birds"
+      ]
+    },
+    {
+      "id": "Deep-Water",
+      "title": "Deep Water",
+      "text": "Deep Water J. Bradley MJ An exploration into the natural history of the ocean, our connection to it, our impact on it, & what might lie ahead  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "Nature-Obscura",
+      "title": "Nature Obscura",
+      "text": "Nature Obscura K. Brenner MJ A personal journey exploring the nature of urban spaces  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "The-Naturalist-at-Home",
+      "title": "The Naturalist at Home",
+      "text": "The Naturalist at Home K. Brenner MJ A book of 20 projects to encourage exploration of nature  Naturalist & Interpretation",
+      "aliases": [
+        "Naturalist & Interpretation"
+      ]
+    },
+    {
+      "id": "Exploring-Pacific-Coast-Tidepools",
+      "title": "Exploring Pacific Coast Tidepools",
+      "text": "Exploring Pacific Coast Tidepools V. Brown & A. Rovetta MJ A field guide to over 300 common species in the intertidal of the Pacific Coast from Baja California to Alaska  Tidepools & Rocky Shore",
+      "aliases": [
+        "Tidepools & Rocky Shore"
+      ]
+    },
+    {
+      "id": "The-Shape-of-Life",
+      "title": "The Shape of Life",
+      "text": "The Shape of Life N. Burnett & B. Matsen MJ Based on the 8-part National Geographic series aired on PBS about adaptations the major animal groups  Evolution & Adaptations",
+      "aliases": [
+        "Evolution & Adaptations"
+      ]
+    },
+    {
+      "id": "Swampwalker-s-Journal",
+      "title": "Swampwalker’s Journal",
+      "text": "Swampwalker’s Journal D. M. Carroll MJ Exploring wetland habitats & the species that live in them  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "Does-It-Fart",
+      "title": "Does It Fart?",
+      "text": "Does It Fart? N. Caruso & D. Rabaiotti MJ All about animal flatulence written by actual wildlife biologists  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "Habitats-of-North-America",
+      "title": "Habitats of North America",
+      "text": "Habitats of North America P. Chaon, I. Campbell, & B. Knoot MJ An exploration of the diverse habitats in North America & examples of the species that live in them  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "Sustaining-Life",
+      "title": "Sustaining Life",
+      "text": "Sustaining Life E. Chivian & A. Bernstein MJ Discussion of the role biodiversity plays in human health, dense read, textbook-like  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "Reef-Life",
+      "title": "Reef Life",
+      "text": "Reef Life B. Cole Sallie Descriptions of reef habitats & species from around the world  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "Octopus",
+      "title": "Octopus!",
+      "text": "Octopus! K. H. Courage MJ An exploration of octopus evolution & adaptations  Cephalopods Evolution & Adaptations",
+      "aliases": [
+        "Cephalopods",
+        "Evolution & Adaptations"
+      ]
+    },
+    {
+      "id": "A-Year-with-Nature",
+      "title": "A Year with Nature",
+      "text": "A Year with Nature M. Crump MJ An almanac-like journal describing the changes of seasons, biodiversity, & human relationships with nature  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "Encyclopedia-of-Tidepools-Rocky-Shores",
+      "title": "Encyclopedia of Tidepools & Rocky Shores",
+      "text": "Encyclopedia of Tidepools & Rocky Shores Denny & Gaines MJ A dense textbook style book all about the ecology of tidepools & the rocky shore as well as the many species that live there  Tidepools & Rocky Shore",
+      "aliases": [
+        "Tidepools & Rocky Shore"
+      ]
+    },
+    {
+      "id": "Gulls-Simplified",
+      "title": "Gulls Simplified",
+      "text": "Gulls Simplified P. Dunne & K. T. Karlson MJ A book on how to distinguish & identify different species of gulls  Birds",
+      "aliases": [
+        "Birds"
+      ]
+    },
+    {
+      "id": "Sharks-Rays-Chimaeras-of-California",
+      "title": "Sharks, Rays, & Chimaeras of California",
+      "text": "Sharks, Rays, & Chimaeras of California D. A. Ebert MJ A field guide of the cartilaginous fish of California  Fish & Sharks",
+      "aliases": [
+        "Fish & Sharks"
+      ]
+    },
+    {
+      "id": "The-Monterey-Bay-Shoreline-Guide",
+      "title": "The Monterey Bay Shoreline Guide",
+      "text": "The Monterey Bay Shoreline Guide J. Emory MJ A review of the habitats & biodiversity of the bay, textbook-like  Tidepools & Rocky Shore Monterey Bay",
+      "aliases": [
+        "Tidepools & Rocky Shore",
+        "Monterey Bay"
+      ]
+    },
+    {
+      "id": "Introduction-to-California-Birdlife",
+      "title": "Introduction to California Birdlife",
+      "text": "Introduction to California Birdlife J. Evens MJ Explores the 7 bioregions of California, weather & climate, seasons, & plant communities that play a role in the distribution & behaviors of birds  Birds",
+      "aliases": [
+        "Birds"
+      ]
+    },
+    {
+      "id": "Jellyfish",
+      "title": "Jellyfish",
+      "text": "Jellyfish L. Gershwin Marilyn A book about gelatinous sea animals (not just true jellyfish) & their adaptations & diversity  Fish & Sharks Jellies & Plankton Evolution & Adaptations",
+      "aliases": [
+        "Fish & Sharks",
+        "Jellies & Plankton",
+        "Evolution & Adaptations"
+      ]
+    },
+    {
+      "id": "Stung",
+      "title": "Stung!",
+      "text": "Stung! L. Gershwin MJ Covers jellyfish biology as well as how increasing jellyfish blooms are indication of changes in our ocean  Fish & Sharks Jellies & Plankton",
+      "aliases": [
+        "Fish & Sharks",
+        "Jellies & Plankton"
+      ]
+    },
+    {
+      "id": "Octopus-Squid-Cuttlefish",
+      "title": "Octopus, Squid, & Cuttlefish",
+      "text": "Octopus, Squid, & Cuttlefish R. Hanlon, M. Vecchione, L. Allcock Marilyn Great resource on the evolution & natural history of cephalopods  Fish & Sharks Cephalopods Evolution & Adaptations",
+      "aliases": [
+        "Fish & Sharks",
+        "Cephalopods",
+        "Evolution & Adaptations"
+      ]
+    },
+    {
+      "id": "Whelks-to-Whales-Coastal-Marine-Life-of-the-Pacific-Northwest",
+      "title": "Whelks to Whales: Coastal Marine Life of the Pacific Northwest",
+      "text": "Whelks to Whales: Coastal Marine Life of the Pacific Northwest R. M. Harbo MJ A field guide of 400 common species found between Southern British Columbia & Northern California  Marine Mammals",
+      "aliases": [
+        "Marine Mammals"
+      ]
+    },
+    {
+      "id": "Whales-Dolphins-of-the-North-American-Pacific",
+      "title": "Whales & Dolphins of the North American Pacific",
+      "text": "Whales & Dolphins of the North American Pacific Harbour MJ A field guide to the cetaceans found from Alaska to Mexico  Marine Mammals",
+      "aliases": [
+        "Marine Mammals"
+      ]
+    },
+    {
+      "id": "Ocean-Outbreak",
+      "title": "Ocean Outbreak",
+      "text": "Ocean Outbreak D. Harvell MJ A look at the increasing infectious disease outbreaks in the ocean including sea star wasting disease & what it means for the future of the ocean  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "Monterey-Bay",
+      "title": "Monterey Bay",
+      "text": "Monterey Bay L. Hatton Sallie A fictional story following characters during Steinbeck’s Cannery Row  Monterey Bay",
+      "aliases": [
+        "Monterey Bay"
+      ]
+    },
+    {
+      "id": "Natural-History-of-Big-Sur",
+      "title": "Natural History of Big Sur",
+      "text": "Natural History of Big Sur P. Henson & D. J. Usner MJ Exactly what the title suggests  Monterey Bay",
+      "aliases": [
+        "Monterey Bay"
+      ]
+    },
+    {
+      "id": "Cannery-Row-The-History-of-John-Steinbeck-s-Old-Ocean-View-Avenue",
+      "title": "Cannery Row: The History of John Steinbeck's Old Ocean View Avenue",
+      "text": "Cannery Row: The History of John Steinbeck's Old Ocean View Avenue M. K. Hemp MJ An extensive collection of photos with some text explaining their history from the Cannery Row Era  Monterey Bay",
+      "aliases": [
+        "Monterey Bay"
+      ]
+    },
+    {
+      "id": "Turning-the-Tide",
+      "title": "Turning the Tide",
+      "text": "Turning the Tide T. Horton MJ Discusses the Chesapeake Bay ecosystem & efforts to restore it  Conservation & Human Impact",
+      "aliases": [
+        "Conservation & Human Impact"
+      ]
+    },
+    {
+      "id": "The-Curious-World-of-Seaweed",
+      "title": "The Curious World of Seaweed",
+      "text": "The Curious World of Seaweed J. Iselin Marilyn A guide about various kinds of seaweeds, their adaptations & ecology, & relationship with humans  Kelp & Seaweed Evolution & Adaptations",
+      "aliases": [
+        "Kelp & Seaweed",
+        "Evolution & Adaptations"
+      ]
+    },
+    {
+      "id": "Lab-Girl",
+      "title": "Lab Girl",
+      "text": "Lab Girl H. Jahren Marilyn A memoir of a botanist  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "Into-the-Great-Wide-Ocean",
+      "title": "Into the Great Wide Ocean",
+      "text": "Into the Great Wide Ocean S. Johnsen MJ An exploration of the top 1,000ft of the ocean layer & the lives of those that research it  Deep Sea & Open Ocean",
+      "aliases": [
+        "Deep Sea & Open Ocean"
+      ]
+    },
+    {
+      "id": "The-Serviceberry-Abundance-and-Reciprocity-in-the-Natural-World",
+      "title": "The Serviceberry: Abundance and Reciprocity in the Natural World",
+      "text": "The Serviceberry: Abundance and Reciprocity in the Natural World R. J. Kimmerer MJ An Indigenous perspective on how reciprocity, interconnectedness, & gratitude towards nature can improve our relationship with it  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "A-Living-Bay",
+      "title": "A Living Bay",
+      "text": "A Living Bay L. Langstroth & L. Langstroth MJ Explores the interaction of species in the different ecosystems of Monterey Bay  Monterey Bay",
+      "aliases": [
+        "Monterey Bay"
+      ]
+    },
+    {
+      "id": "The-Curious-Nature-Guide",
+      "title": "The Curious Nature Guide",
+      "text": "The Curious Nature Guide C. W. Leslie MJ A guide for how to explore nature, asking questions & encouraging observations  Naturalist & Interpretation",
+      "aliases": [
+        "Naturalist & Interpretation"
+      ]
+    },
+    {
+      "id": "Hands-On-Nature",
+      "title": "Hands-On Nature",
+      "text": "Hands-On Nature J. Lingelbach & L. Purcell MJ A resource book to help parents & educators connect children to the natural world  Naturalist & Interpretation",
+      "aliases": [
+        "Naturalist & Interpretation"
+      ]
+    },
+    {
+      "id": "The-Nature-Principle",
+      "title": "The Nature Principle",
+      "text": "The Nature Principle R. Louv MJ A call to adults about helping reconnect with nature for our mental & creative well-being  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "Vitamin-N",
+      "title": "Vitamin N",
+      "text": "Vitamin N R. Louv MJ A book of ideas on ways to use nature to enrich our lives  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "Beyond-Cannery-Row",
+      "title": "Beyond Cannery Row",
+      "text": "Beyond Cannery Row C. L. McKibben MJ An analysis of Cannery Row from the perspective of the Sicilian women who immigrated to Monterey  Monterey Bay",
+      "aliases": [
+        "Monterey Bay"
+      ]
+    },
+    {
+      "id": "Monterey-Bay-National-Marine-Sanctuary",
+      "title": "Monterey Bay National Marine Sanctuary",
+      "text": "Monterey Bay National Marine Sanctuary Monterey Bay Aquarium MJ A guide to the natural history of Monterey Bay & its many habitats, a great companion for interpreting our exhibits  Monterey Bay Naturalist & Interpretation",
+      "aliases": [
+        "Monterey Bay",
+        "Naturalist & Interpretation"
+      ]
+    },
+    {
+      "id": "Monterey-Bay-National-Marine-Sanctuary-2-copies",
+      "title": "Monterey Bay National Marine Sanctuary (2 copies)",
+      "text": "Monterey Bay National Marine Sanctuary (2 copies) Monterey Bay Aquarium MJ A guide to the natural history of Monterey Bay & its many habitats, a great companion for interpreting our exhibits Dave B. & Sallie Monterey Bay Naturalist & Interpretation",
+      "aliases": [
+        "Monterey Bay",
+        "Naturalist & Interpretation"
+      ]
+    },
+    {
+      "id": "The-California-Naturalist-Handbook",
+      "title": "The California Naturalist Handbook",
+      "text": "The California Naturalist Handbook G. de Nevers, D. S. Edelman, A. Merenlender MJ A natural history guide to the state of California, its habitats, biotic & abiotic features, climate change, & interpretation  Conservation & Human Impact Naturalist & Interpretation",
+      "aliases": [
+        "Conservation & Human Impact",
+        "Naturalist & Interpretation"
+      ]
+    },
+    {
+      "id": "Wetlands",
+      "title": "Wetlands",
+      "text": "Wetlands W. A. Niering MJ A nature guide to the ecosystems of wetlands including the many plants & animals that live there  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "Concise-Encyclopedia-of-the-Ocean",
+      "title": "Concise Encyclopedia of the Ocean",
+      "text": "Concise Encyclopedia of the Ocean W. Owen MJ Exactly what the title suggests  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "Concise-Encyclopedia-of-Wildlife",
+      "title": "Concise Encyclopedia of Wildlife",
+      "text": "Concise Encyclopedia of Wildlife W. Owen MJ Exactly what the title suggests  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "The-Practical-Naturalist",
+      "title": "The Practical Naturalist",
+      "text": "The Practical Naturalist C. Packman MJ Explores habitats from around the world & the types of species that inhabit them  Naturalist & Interpretation",
+      "aliases": [
+        "Naturalist & Interpretation"
+      ]
+    },
+    {
+      "id": "The-Extreme-Life-of-the-Sea",
+      "title": "The Extreme Life of the Sea",
+      "text": "The Extreme Life of the Sea A. R. Palumbi & S. R. Palumbi MJ Natural history of different species of deep-sea species  Deep Sea & Open Ocean",
+      "aliases": [
+        "Deep Sea & Open Ocean"
+      ]
+    },
+    {
+      "id": "The-Death-Life-of-Monterey-Bay",
+      "title": "The Death & Life of Monterey Bay",
+      "text": "The Death & Life of Monterey Bay S. R. Palumbi & C. Sotka MJ A story about the natural & human history of Monterey & the actions taken to protect & recover it  Monterey Bay Conservation & Human Impact",
+      "aliases": [
+        "Monterey Bay",
+        "Conservation & Human Impact"
+      ]
+    },
+    {
+      "id": "The-Lives-of-Seaweeds",
+      "title": "The Lives of Seaweeds",
+      "text": "The Lives of Seaweeds J. A. Phillips MJ A book about the evolution, ecology, life history, & adaptations of macroalgae  Kelp & Seaweed Evolution & Adaptations",
+      "aliases": [
+        "Kelp & Seaweed",
+        "Evolution & Adaptations"
+      ]
+    },
+    {
+      "id": "A-Fascination-for-Fish",
+      "title": "A Fascination for Fish",
+      "text": "A Fascination for Fish D. C. Powell MJ A memoir from a former curator of the Monterey Bay Aquarium who drove innovation in the aquarium industry  Fish & Sharks Monterey Bay",
+      "aliases": [
+        "Fish & Sharks",
+        "Monterey Bay"
+      ]
+    },
+    {
+      "id": "Super-Nature",
+      "title": "Super Nature",
+      "text": "Super Nature A. Riley MJ A book about animals with extreme adaptations or adapted to extreme environments  Evolution & Adaptations",
+      "aliases": [
+        "Evolution & Adaptations"
+      ]
+    },
+    {
+      "id": "The-Ocean-of-Life",
+      "title": "The Ocean of Life",
+      "text": "The Ocean of Life C. Roberts MJ A broad exploration of human impacts on the ocean  Conservation & Human Impact",
+      "aliases": [
+        "Conservation & Human Impact"
+      ]
+    },
+    {
+      "id": "Nature-Anatomy",
+      "title": "Nature Anatomy",
+      "text": "Nature Anatomy J. Rothman MJ An exploration of nature & projects that can be done to creatively express interactions with nature  Naturalist & Interpretation",
+      "aliases": [
+        "Naturalist & Interpretation"
+      ]
+    },
+    {
+      "id": "Plankton",
+      "title": "Plankton",
+      "text": "Plankton C. Sardet Marilyn Beautiful visual guide about many different micro & macro plankton  Jellies & Plankton",
+      "aliases": [
+        "Jellies & Plankton"
+      ]
+    },
+    {
+      "id": "Brilliant-Abyss",
+      "title": "Brilliant Abyss",
+      "text": "Brilliant Abyss H. Scales MJ Stories of the author’s time as a deep-sea researcher as well as her opinions on the impacts of deep-sea mining & sustainable fisheries  Fish & Sharks Deep Sea & Open Ocean Conservation & Human Impact",
+      "aliases": [
+        "Fish & Sharks",
+        "Deep Sea & Open Ocean",
+        "Conservation & Human Impact"
+      ]
+    },
+    {
+      "id": "Eye-of-the-Shoal",
+      "title": "Eye of the Shoal",
+      "text": "Eye of the Shoal H. Scales MJ Broad overview of unique fish adaptation  Fish & Sharks Evolution & Adaptations",
+      "aliases": [
+        "Fish & Sharks",
+        "Evolution & Adaptations"
+      ]
+    },
+    {
+      "id": "Spirals-in-Time",
+      "title": "Spirals in Time",
+      "text": "Spirals in Time H. Scales MJ Exploration of mollusk shell adaptations  Mollusks & Invertebrates Evolution & Adaptations",
+      "aliases": [
+        "Mollusks & Invertebrates",
+        "Evolution & Adaptations"
+      ]
+    },
+    {
+      "id": "Field-Guide-to-Birds-of-Western-North-America",
+      "title": "Field Guide to Birds of Western North America",
+      "text": "Field Guide to Birds of Western North America D. Sibley MJ Extensive field guide to the many bird species & their variations found in Western North America  Birds",
+      "aliases": [
+        "Birds"
+      ]
+    },
+    {
+      "id": "Deep-Sea-Exploration",
+      "title": "Deep Sea Exploration",
+      "text": "Deep Sea Exploration L. S. Smith MJ A breakdown of the science & ecology of the deep-sea & how it is studied  Deep Sea & Open Ocean",
+      "aliases": [
+        "Deep Sea & Open Ocean"
+      ]
+    },
+    {
+      "id": "Natural-History",
+      "title": "Natural History",
+      "text": "Natural History Smithsonian MJ An encyclopedia of living species from around the world, textbook-like  General Natural History",
+      "aliases": [
+        "General Natural History"
+      ]
+    },
+    {
+      "id": "Monarchs-of-the-Sea",
+      "title": "Monarchs of the Sea",
+      "text": "Monarchs of the Sea D. Staaf Marilyn An exploration of the 500 million years of cephalopod evolution  Cephalopods Evolution & Adaptations",
+      "aliases": [
+        "Cephalopods",
+        "Evolution & Adaptations"
+      ]
+    },
+    {
+      "id": "In-the-Shadow-of-the-Cypress",
+      "title": "In the Shadow of the Cypress",
+      "text": "In the Shadow of the Cypress T. Steinbeck Sallie A fictional story about the Chinese community of 1940’s Monterey  Monterey Bay",
+      "aliases": [
+        "Monterey Bay"
+      ]
+    },
+    {
+      "id": "The-Book-of-Eels",
+      "title": "The Book of Eels",
+      "text": "The Book of Eels P. Svensson Marilyn A series of stories that explore eel natural history & the relationships they’ve had with humans throughout history  Fish & Sharks",
+      "aliases": [
+        "Fish & Sharks"
+      ]
+    },
+    {
+      "id": "The-Nature-Book",
+      "title": "The Nature Book",
+      "text": "The Nature Book M. Taylor MJ Discusses adaptations of different groups of plants, vertebrates, & some invertebrates  Mollusks & Invertebrates Evolution & Adaptations",
+      "aliases": [
+        "Mollusks & Invertebrates",
+        "Evolution & Adaptations"
+      ]
+    },
+    {
+      "id": "Saving-the-Places-We-Love",
+      "title": "Saving the Places We Love",
+      "text": "Saving the Places We Love N. Tillman MJ Explores conservation success stories & how we can protect & recover natural spaces from human impacts  Conservation & Human Impact",
+      "aliases": [
+        "Conservation & Human Impact"
+      ]
+    },
+    {
+      "id": "The-Walking-Whales-From-Land-to-Water-in-Eight-Million-Years",
+      "title": "The Walking Whales: From Land to Water in Eight Million Years",
+      "text": "The Walking Whales: From Land to Water in Eight Million Years H. Thewissen MJ A paleontologist’s journey to studying whale fossils & modern whales to see how they evolved from the land into the ocean  Marine Mammals Evolution & Adaptations",
+      "aliases": [
+        "Marine Mammals",
+        "Evolution & Adaptations"
+      ]
+    },
+    {
+      "id": "The-Abalone-King-of-Monterey",
+      "title": "The Abalone King of Monterey",
+      "text": "The Abalone King of Monterey T. Thomas MJ The story of how \"Pop\" Ernest Doelter made abalone a mainstream food  Mollusks & Invertebrates Monterey Bay",
+      "aliases": [
+        "Mollusks & Invertebrates",
+        "Monterey Bay"
+      ]
+    },
+    {
+      "id": "Monterey-s-Waterfront",
+      "title": "Monterey's Waterfront",
+      "text": "Monterey's Waterfront T. Thomas & D. Copeland MJ A pictorial history of Monterey up until the 1950’s  Monterey Bay",
+      "aliases": [
+        "Monterey Bay"
+      ]
+    },
+    {
+      "id": "The-Deep-Ocean",
+      "title": "The Deep Ocean",
+      "text": "The Deep Ocean M. Vecchione, L. Allcock, I. Priede, H. van Haren MJ A book that discusses a brief history of deep-sea exploration, habitats, species, & human impacts  Deep Sea & Open Ocean Conservation & Human Impact",
+      "aliases": [
+        "Deep Sea & Open Ocean",
+        "Conservation & Human Impact"
+      ]
+    },
+    {
+      "id": "Tides",
+      "title": "Tides",
+      "text": "Tides J. White Marilyn The science behind the tides, their impact on ocean life, human relationships with the tides, & how climate change is affecting the ocean  Conservation & Human Impact",
+      "aliases": [
+        "Conservation & Human Impact"
+      ]
+    },
+    {
+      "id": "Restless-Creatures",
+      "title": "Restless Creatures",
+      "text": "Restless Creatures M. Wilkinson Marilyn An exploration of the 4 billion year history of “movement”, namely the evolution of life  Evolution & Adaptations",
+      "aliases": [
+        "Evolution & Adaptations"
+      ]
+    },
+    {
+      "id": "The-Invention-of-Nature",
+      "title": "The Invention of Nature",
+      "text": "The Invention of Nature A. Wulf Marilyn A biography of Alexander von Humboldt, a naturalist who changed the field of environmentalism & ecology  Naturalist & Interpretation",
+      "aliases": [
+        "Naturalist & Interpretation"
+      ]
+    },
+    {
+      "id": "The-Biology-and-Ecology-of-Giant-Kelp-Forests",
+      "title": "The Biology and Ecology of Giant Kelp Forests",
+      "text": "The Biology and Ecology of Giant Kelp Forests David R. Schiel & Michael S. Foster  Wishlist item  Kelp & Seaweed",
+      "aliases": [
+        "Kelp & Seaweed"
+      ]
+    },
+    {
+      "id": "Shark-Biology-and-Conservation-Essentials-for-Educators-Students-and-Enthusiasts",
+      "title": "Shark Biology and Conservation: Essentials for Educators, Students, and Enthusiasts",
+      "text": "Shark Biology and Conservation: Essentials for Educators, Students, and Enthusiasts Daniel C. Abel, R. Dean Grubbs, Tristan Guttridge, & Joshua K. Moyer  Wishlist item  Fish & Sharks Conservation & Human Impact",
+      "aliases": [
+        "Fish & Sharks",
+        "Conservation & Human Impact"
+      ]
+    },
+    {
+      "id": "Abalone-The-Remarkable-History-and-Uncertain-Future-of-California-s-Iconic-Shellfish",
+      "title": "Abalone: The Remarkable History and Uncertain Future of California's Iconic Shellfish",
+      "text": "Abalone: The Remarkable History and Uncertain Future of California's Iconic Shellfish Ann Vileisis  Wishlist item  Fish & Sharks Mollusks & Invertebrates",
+      "aliases": [
+        "Fish & Sharks",
+        "Mollusks & Invertebrates"
+      ]
+    },
+    {
+      "id": "Sea-Change-A-Message-of-the-Oceans",
+      "title": "Sea Change: A Message of the Oceans",
+      "text": "Sea Change: A Message of the Oceans Sylvia Earle  Wishlist item  Wishlist",
+      "aliases": [
+        "Wishlist"
+      ]
+    },
+    {
+      "id": "The-World-Is-Blue-How-Our-Fate-and-the-Ocean-s-Are-One",
+      "title": "The World Is Blue: How Our Fate and the Ocean's Are One",
+      "text": "The World Is Blue: How Our Fate and the Ocean's Are One Sylvia A. Earle  Wishlist item  Wishlist",
+      "aliases": [
+        "Wishlist"
+      ]
+    },
+    {
+      "id": "Blue-Hope-Exploring-and-Caring-for-Earth-s-Magnificent-Ocean",
+      "title": "Blue Hope: Exploring and Caring for Earth's Magnificent Ocean",
+      "text": "Blue Hope: Exploring and Caring for Earth's Magnificent Ocean Sylvia A. Earle  Wishlist item  Wishlist",
+      "aliases": [
+        "Wishlist"
+      ]
+    },
+    {
+      "id": "Forest-of-the-Sea-The-Remarkable-Life-and-Imperiled-Future-of-Kelp",
+      "title": "Forest of the Sea: The Remarkable Life and Imperiled Future of Kelp",
+      "text": "Forest of the Sea: The Remarkable Life and Imperiled Future of Kelp David Helvarg  Wishlist item  Kelp & Seaweed Conservation & Human Impact",
+      "aliases": [
+        "Kelp & Seaweed",
+        "Conservation & Human Impact"
+      ]
+    },
+    {
+      "id": "The-Shorebirds-of-North-America-A-Natural-History-and-Photographic-Celebration",
+      "title": "The Shorebirds of North America: A Natural History and Photographic Celebration",
+      "text": "The Shorebirds of North America: A Natural History and Photographic Celebration Pete Dunne & Kevin T. Karlson  Wishlist item  Birds",
+      "aliases": [
+        "Birds"
+      ]
+    },
+    {
+      "id": "Shell-Day-A-Story-of-24-Hours-and-24-Molluscan-Lives",
+      "title": "Shell Day: A Story of 24 Hours and 24 Molluscan Lives",
+      "text": "Shell Day: A Story of 24 Hours and 24 Molluscan Lives Helen Scales  Wishlist item  Mollusks & Invertebrates",
+      "aliases": [
+        "Mollusks & Invertebrates"
+      ]
+    },
+    {
+      "id": "Humpback-Highway-Diving-into-the-mysterious-world-of-whales",
+      "title": "Humpback Highway: Diving into the mysterious world of whales",
+      "text": "Humpback Highway: Diving into the mysterious world of whales Vanessa Pirotta  Wishlist item  Marine Mammals",
+      "aliases": [
+        "Marine Mammals"
+      ]
+    },
+    {
+      "id": "Other-Minds-The-Octopus-the-Sea-and-the-Deep-Origins-of-Consciousness",
+      "title": "Other Minds: The Octopus, the Sea, and the Deep Origins of Consciousness",
+      "text": "Other Minds: The Octopus, the Sea, and the Deep Origins of Consciousness Peter Godfrey-Smith  Wishlist item  Cephalopods",
+      "aliases": [
+        "Cephalopods"
+      ]
+    },
+    {
+      "id": "Metazoa-Animal-Minds-and-the-Birth-of-Consciousness",
+      "title": "Metazoa: Animal Minds and the Birth of Consciousness",
+      "text": "Metazoa: Animal Minds and the Birth of Consciousness Peter Godfrey-Smith  Wishlist item  Wishlist",
+      "aliases": [
+        "Wishlist"
+      ]
+    },
+    {
+      "id": "Octopus-The-Ocean-s-Intelligent-Invertebrate",
+      "title": "Octopus: The Ocean's Intelligent Invertebrate",
+      "text": "Octopus: The Ocean's Intelligent Invertebrate Jennifer A. Mather, Roland C. Anderson, & James B. Wood  Wishlist item  Cephalopods",
+      "aliases": [
+        "Cephalopods"
+      ]
+    },
+    {
+      "id": "The-Blue-Machine-How-the-Ocean-Works",
+      "title": "The Blue Machine: How the Ocean Works",
+      "text": "The Blue Machine: How the Ocean Works Helen Czerski  Wishlist item  Wishlist",
+      "aliases": [
+        "Wishlist"
+      ]
+    },
+    {
+      "id": "Life-Between-the-Tides",
+      "title": "Life Between the Tides",
+      "text": "Life Between the Tides Adam Nicolson  Wishlist item  Tidepools & Rocky Shore",
+      "aliases": [
+        "Tidepools & Rocky Shore"
+      ]
+    },
+    {
+      "id": "The-Reef-A-Passionate-History-The-Great-Barrier-Reef-from-Captain-Cook-to-Climate-Change",
+      "title": "The Reef: A Passionate History: The Great Barrier Reef from Captain Cook to Climate Change",
+      "text": "The Reef: A Passionate History: The Great Barrier Reef from Captain Cook to Climate Change Iain McCalman  Wishlist item  Tidepools & Rocky Shore Conservation & Human Impact",
+      "aliases": [
+        "Tidepools & Rocky Shore",
+        "Conservation & Human Impact"
+      ]
+    },
+    {
+      "id": "Poking-the-Squid-What-We-Can-Learn-from-Animal-Sex",
+      "title": "Poking the Squid: What We Can Learn from Animal Sex",
+      "text": "Poking the Squid: What We Can Learn from Animal Sex Perrin Roosevelt Ireland  Wishlist item  Cephalopods",
+      "aliases": [
+        "Cephalopods"
+      ]
+    }
+  ],
+  "source_version": "1.0",
+  "source_repository": "drtforshortaol/aquarium-shift-library-",
+  "source_commit": "9438060bd836c46245e4af45c280e4bb37b0ab94",
+  "publication_review": "pending",
+  "integration": {
+    "mode": "read-only-offline-distribution",
+    "interface_version": "1.0.0",
+    "upstream_owner": "drtforshortaol/aquarium-shift-library-",
+    "snapshot_commit": "9438060bd836c46245e4af45c280e4bb37b0ab94",
+    "development_remains_independent": true
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "app_id": "evolution-timeline",
+  "title": "Evolution Timeline — From Universe to Us",
+  "category": "concepts",
+  "type": "interactive",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/evolution-timeline/index.html",
+  "status": "testing",
+  "owner": "evolution-timeline",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    },
+    {
+      "id": "evo-knowledge",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/evolution-timeline/app.js",
+    "apps/evolution-timeline/index.html",
+    "apps/evolution-timeline/styles.css"
+  ],
+  "media": [
+    "asset-7020f164e3928edc"
+  ],
+  "knowledge": [
+    "evo-evolution-knowledge"
+  ],
+  "cross_links": [],
+  "sections": [
+    {
+      "id": "How-to-read-the-app",
+      "title": "How to read the app",
+      "text": "How to read the app \n       Story by Groups  keeps related evolutionary threads together so the audience can follow the organelles and lineages.  Strict Time Map  ignores grouping and sorts key milestones by date.  Learning Tools  offers four big-picture summaries. Nothing is removed: detailed explanations remain in  Learn More .",
+      "aliases": []
+    },
+    {
+      "id": "evo-universe-begins",
+      "title": "Universe begins",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-first-stars-and-galaxies",
+      "title": "First stars and galaxies",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-sun-and-solar-system-form",
+      "title": "Sun and Solar System form",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-earth-forms",
+      "title": "Earth forms",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-moon-forms-giant-impact",
+      "title": "Moon forms — giant impact",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-early-crust-and-liquid-water",
+      "title": "Early crust and liquid water",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-origin-of-life",
+      "title": "Origin of life",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-fuca-type-stage",
+      "title": "FUCA-type stage (?)",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-luca-last-universal-common-ancestor",
+      "title": "LUCA — Last Universal Common Ancestor",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-the-great-split-bacteria-and-archaea",
+      "title": "The Great Split — Bacteria and Archaea",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-cyanobacteria-harness-sunlight",
+      "title": "Cyanobacteria harness sunlight",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-great-oxidation-event-oxygen-changes-the-planet",
+      "title": "Great Oxidation Event — oxygen changes the planet",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-aerobic-alphaproteobacteria-extract-stored-energy",
+      "title": "Aerobic Alphaproteobacteria — extract stored energy",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-alphaproteobacteria-continue-to-the-present",
+      "title": "Alphaproteobacteria continue to the present",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-mitochondrial-endosymbiosis-the-energy-partnership",
+      "title": "Mitochondrial endosymbiosis — the energy partnership",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-leca-last-eukaryotic-common-ancestor",
+      "title": "LECA — Last Eukaryotic Common Ancestor",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-animals-and-fungi-are-established-lineages",
+      "title": "Animals and fungi are established lineages",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-marine-animals-become-conspicuous",
+      "title": "Marine animals become conspicuous",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-cambrian-marine-diversification",
+      "title": "Cambrian marine diversification",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-some-arthropods-colonize-land",
+      "title": "Some arthropods colonize land",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-vertebrates-begin-the-transition-onto-land",
+      "title": "Vertebrates begin the transition onto land",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-early-primates",
+      "title": "Early primates",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-hominin-lineage-diverges-from-the-chimpanzee-bonobo-lineage",
+      "title": "Hominin lineage diverges from the chimpanzee/bonobo lineage",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-earliest-homo",
+      "title": "Earliest Homo",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-homo-sapiens",
+      "title": "Homo sapiens",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-primary-endosymbiosis",
+      "title": "Primary endosymbiosis",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-red-and-green-algal-lineages",
+      "title": "Red and green algal lineages",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-land-plants",
+      "title": "Land plants",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-vascular-plants",
+      "title": "Vascular plants",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-seed-plants",
+      "title": "Seed plants",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-gymnosperm-lineages-expand",
+      "title": "Gymnosperm lineages expand",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-flowering-plants",
+      "title": "Flowering plants",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-secondary-endosymbiosis-involving-a-red-alga",
+      "title": "Secondary endosymbiosis involving a red alga",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-brown-algal-lineage-develops-and-diversifies",
+      "title": "Brown-algal lineage develops and diversifies",
+      "text": "",
+      "aliases": []
+    },
+    {
+      "id": "evo-kelp-emerges",
+      "title": "Kelp emerges",
+      "text": "",
+      "aliases": []
+    }
+  ],
+  "source_version": "11",
+  "source_repository": "drtforshortaol/evolution-timeline",
+  "source_commit": "c6d782d3a8a03e407861a0fbc3aab76e5fbf8d0c",
+  "publication_review": "pending",
+  "integration": {
+    "mode": "read-only-offline-distribution",
+    "interface_version": "1.0.0",
+    "upstream_owner": "drtforshortaol/evolution-timeline",
+    "snapshot_commit": "c6d782d3a8a03e407861a0fbc3aab76e5fbf8d0c",
+    "development_remains_independent": true
+  }
+}

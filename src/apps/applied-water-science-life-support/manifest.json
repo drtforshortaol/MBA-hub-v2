@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "app_id": "applied-water-science-life-support",
+  "title": "Applied Water Science",
+  "category": "concepts",
+  "type": "reference",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/applied-water-science-life-support/index.html",
+  "status": "testing",
+  "owner": "applied-water-science-life-support",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/applied-water-science-life-support/app.js",
+    "apps/applied-water-science-life-support/index.html",
+    "apps/applied-water-science-life-support/styles.css"
+  ],
+  "media": [
+    "asset-4df490b298fa93f0",
+    "asset-ed3359c28ab8bf19"
+  ],
+  "knowledge": [],
+  "cross_links": [],
+  "sections": [
+    {
+      "id": "Why-don-t-the-pipes-clog-completely",
+      "title": "Why don’t the pipes clog completely?",
+      "text": "Why don’t the pipes clog completely? \n           They are maintained regularly. Pigging scrubs away marine growth before it can seriously restrict flow. \n           Why use natural seawater? \n           Natural Monterey Bay seawater helps recreate local marine conditions and supports exhibits connected to the bay ecosystem. \n           What are the orange cylinders? \n           They are pipeline pigs — large foam scrubbers pushed through pipes by water pressure. \n           Does upwelling affect the Aquarium? \n           Yes. Upwelling increases nutrients and productivity in the bay, which can also increase growth in seawater pipes. \n           Is all water the same for every exhibit? \n           No. Different animals and exhibits may need different temperatures, flow, filtration, lighting, and water quality conditions.",
+      "aliases": []
+    },
+    {
+      "id": "Why-use-natural-seawater",
+      "title": "Why use natural seawater?",
+      "text": "Why don’t the pipes clog completely? \n           They are maintained regularly. Pigging scrubs away marine growth before it can seriously restrict flow. \n           Why use natural seawater? \n           Natural Monterey Bay seawater helps recreate local marine conditions and supports exhibits connected to the bay ecosystem. \n           What are the orange cylinders? \n           They are pipeline pigs — large foam scrubbers pushed through pipes by water pressure. \n           Does upwelling affect the Aquarium? \n           Yes. Upwelling increases nutrients and productivity in the bay, which can also increase growth in seawater pipes. \n           Is all water the same for every exhibit? \n           No. Different animals and exhibits may need different temperatures, flow, filtration, lighting, and water quality conditions.",
+      "aliases": []
+    },
+    {
+      "id": "What-are-the-orange-cylinders",
+      "title": "What are the orange cylinders?",
+      "text": "Why don’t the pipes clog completely? \n           They are maintained regularly. Pigging scrubs away marine growth before it can seriously restrict flow. \n           Why use natural seawater? \n           Natural Monterey Bay seawater helps recreate local marine conditions and supports exhibits connected to the bay ecosystem. \n           What are the orange cylinders? \n           They are pipeline pigs — large foam scrubbers pushed through pipes by water pressure. \n           Does upwelling affect the Aquarium? \n           Yes. Upwelling increases nutrients and productivity in the bay, which can also increase growth in seawater pipes. \n           Is all water the same for every exhibit? \n           No. Different animals and exhibits may need different temperatures, flow, filtration, lighting, and water quality conditions.",
+      "aliases": []
+    },
+    {
+      "id": "Does-upwelling-affect-the-Aquarium",
+      "title": "Does upwelling affect the Aquarium?",
+      "text": "Why don’t the pipes clog completely? \n           They are maintained regularly. Pigging scrubs away marine growth before it can seriously restrict flow. \n           Why use natural seawater? \n           Natural Monterey Bay seawater helps recreate local marine conditions and supports exhibits connected to the bay ecosystem. \n           What are the orange cylinders? \n           They are pipeline pigs — large foam scrubbers pushed through pipes by water pressure. \n           Does upwelling affect the Aquarium? \n           Yes. Upwelling increases nutrients and productivity in the bay, which can also increase growth in seawater pipes. \n           Is all water the same for every exhibit? \n           No. Different animals and exhibits may need different temperatures, flow, filtration, lighting, and water quality conditions.",
+      "aliases": []
+    },
+    {
+      "id": "Is-all-water-the-same-for-every-exhibit",
+      "title": "Is all water the same for every exhibit?",
+      "text": "Why don’t the pipes clog completely? \n           They are maintained regularly. Pigging scrubs away marine growth before it can seriously restrict flow. \n           Why use natural seawater? \n           Natural Monterey Bay seawater helps recreate local marine conditions and supports exhibits connected to the bay ecosystem. \n           What are the orange cylinders? \n           They are pipeline pigs — large foam scrubbers pushed through pipes by water pressure. \n           Does upwelling affect the Aquarium? \n           Yes. Upwelling increases nutrients and productivity in the bay, which can also increase growth in seawater pipes. \n           Is all water the same for every exhibit? \n           No. Different animals and exhibits may need different temperatures, flow, filtration, lighting, and water quality conditions.",
+      "aliases": []
+    }
+  ],
+  "source_version": "1.0",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
+}

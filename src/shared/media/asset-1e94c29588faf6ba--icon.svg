@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Information Center Handbook icon">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#003d5c"/>
+      <stop offset="0.62" stop-color="#005f8a"/>
+      <stop offset="1" stop-color="#00829e"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#g)"/>
+  <path d="M92 347c49-45 91-45 140 0s91 45 140 0 76-40 98-21v68c-44-19-82-11-126 29-49 45-91 45-140 0s-91-45-140 0v-76z" fill="#85e6f4" opacity=".9"/>
+  <rect x="128" y="106" width="256" height="250" rx="22" fill="#ffffff" opacity=".96"/>
+  <path d="M168 163h176M168 214h176M168 265h118" stroke="#005f8a" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="351" cy="305" r="32" fill="#d94c2f"/>
+  <path d="M351 284v27" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="351" cy="326" r="6" fill="#fff"/>
+</svg>

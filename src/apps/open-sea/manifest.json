@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "app_id": "open-sea",
+  "title": "Open Sea Exhibit",
+  "category": "exhibits",
+  "type": "reference",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/open-sea/index.html",
+  "status": "testing",
+  "owner": "open-sea",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/open-sea/app.js",
+    "apps/open-sea/apps.js",
+    "apps/open-sea/data.js",
+    "apps/open-sea/index.html",
+    "apps/open-sea/styles.css"
+  ],
+  "media": [
+    "asset-214710e10f5121d5"
+  ],
+  "knowledge": [],
+  "cross_links": [],
+  "sections": [
+    {
+      "id": "Open-Sea-Overview-Key-Influences",
+      "title": "🌊 Open Sea Overview & Key Influences",
+      "text": "🌊 Open Sea Overview & Key Influences Welcome to the Open Sea \n    \n\n \n  The open sea is the largest ecosystem on Earth. It is vast and variable\n  and includes ocean waters away from coastal limits and above the\n  seafloor. The word  pelagic  refers to the open seas or oceans.\n \n\n \n  Coastal and seabed habitats are associated with tangible geological\n  surfaces. The open sea is different because it is primarily defined by\n  intangible conditions that cannot be touched but strongly shape the\n  organisms living there.\n \n\n \n   Rocky Shores \n   Sandy Shores \n   Piers & Jetties \n   Shale Rock \n   Elkhorn Slough \n   Into the Deep \n   Kelp Forest \n   Monterey Bay Habitat \n \n Primary Open-Sea Influences \n    \n\n \n  The training notes identify temperature, light and color, pressure,\n  oxygen, salinity, nutrients, currents, sound, marine debris, and animal\n  deception or camouflage as important open-sea topics.\n \n\n \n  The source document provides detailed material for the dropdowns below.\n  Marine debris was listed as a future topic but did not include supporting\n  details, so no unverified debris section has been added.",
+      "aliases": []
+    },
+    {
+      "id": "Welcome-to-the-Open-Sea",
+      "title": "Welcome to the Open Sea",
+      "text": "Welcome to the Open Sea \n    \n\n \n  The open sea is the largest ecosystem on Earth. It is vast and variable\n  and includes ocean waters away from coastal limits and above the\n  seafloor. The word  pelagic  refers to the open seas or oceans.\n \n\n \n  Coastal and seabed habitats are associated with tangible geological\n  surfaces. The open sea is different because it is primarily defined by\n  intangible conditions that cannot be touched but strongly shape the\n  organisms living there.\n \n\n \n   Rocky Shores \n   Sandy Shores \n   Piers & Jetties \n   Shale Rock \n   Elkhorn Slough \n   Into the Deep \n   Kelp Forest \n   Monterey Bay Habitat \n \n Primary Open-Sea Influences \n    \n\n \n  The training notes identify temperature, light and color, pressure,\n  oxygen, salinity, nutrients, currents, sound, marine debris, and animal\n  deception or camouflage as important open-sea topics.\n \n\n \n  The source document provides detailed material for the dropdowns below.\n  Marine debris was listed as a future topic but did not include supporting\n  details, so no unverified debris section has been added.",
+      "aliases": []
+    },
+    {
+      "id": "Primary-Open-Sea-Influences",
+      "title": "Primary Open-Sea Influences",
+      "text": "Welcome to the Open Sea \n    \n\n \n  The open sea is the largest ecosystem on Earth. It is vast and variable\n  and includes ocean waters away from coastal limits and above the\n  seafloor. The word  pelagic  refers to the open seas or oceans.\n \n\n \n  Coastal and seabed habitats are associated with tangible geological\n  surfaces. The open sea is different because it is primarily defined by\n  intangible conditions that cannot be touched but strongly shape the\n  organisms living there.\n \n\n \n   Rocky Shores \n   Sandy Shores \n   Piers & Jetties \n   Shale Rock \n   Elkhorn Slough \n   Into the Deep \n   Kelp Forest \n   Monterey Bay Habitat \n \n Primary Open-Sea Influences \n    \n\n \n  The training notes identify temperature, light and color, pressure,\n  oxygen, salinity, nutrients, currents, sound, marine debris, and animal\n  deception or camouflage as important open-sea topics.\n \n\n \n  The source document provides detailed material for the dropdowns below.\n  Marine debris was listed as a future topic but did not include supporting\n  details, so no unverified debris section has been added.",
+      "aliases": []
+    },
+    {
+      "id": "References-and-source-notes",
+      "title": "References and source notes",
+      "text": "References and source notes \n\n \n   \n     Primary content source:  User-provided document,\n    “zoom - open seas.docx.”\n   \n\n   \n     Original app source:  User-provided Open Sea HTML\n    exhibit reference.\n   \n\n   \n    Numerical values and physiology statements are presented as volunteer\n    training notes. They should be checked against current\n    Aquarium-approved materials before formal publication or public use.\n   \n\n   \n    No external photographs or third-party image assets are used in this\n    version. Emoji are used as interface markers.",
+      "aliases": []
+    }
+  ],
+  "source_version": "1.0",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
+}

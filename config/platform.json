@@ -1,9 +1,9 @@
 {
-  "version": "2.0.0-alpha.5",
-  "releaseStage": "foundation",
+  "version": "2.0.0-alpha.6",
+  "releaseStage": "migration-review",
   "v1Baseline": "0903457bcccdb84b99c156ad48979df2bddf5dc9",
   "v1Url": "https://drtforshortaol.github.io/MBA-hub/",
-  "migrationComplete": false,
+  "migrationComplete": true,
   "ownerApproved": false,
   "pilotPassed": false,
   "deviceOfflinePassed": false,

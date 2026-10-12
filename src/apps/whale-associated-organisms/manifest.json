@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "app_id": "whale-associated-organisms",
+  "title": "Whale-Associated Organisms",
+  "category": "animals",
+  "type": "species",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/whale-associated-organisms/index.html",
+  "status": "testing",
+  "owner": "whale-associated-organisms",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/whale-associated-organisms/index.html"
+  ],
+  "media": [
+    "asset-edd9d5ec2d0bbd07",
+    "asset-c9581b267211cbcb",
+    "asset-54b172586520e9bd",
+    "asset-8940026ea5ec69fa",
+    "asset-eae8123213eff35a",
+    "asset-f78cedfed1d74f6b",
+    "asset-80f9762446c0fc02",
+    "asset-18794e74477d7c0e"
+  ],
+  "knowledge": [],
+  "cross_links": [
+    {
+      "app_id": "naturalist-field-notes"
+    }
+  ],
+  "sections": [
+    {
+      "id": "Photo-field-guide",
+      "title": "Photo field guide",
+      "text": "Select a topic to expand. Entries begin collapsed to keep the guide compact. The original photographs, captions, and detailed reference information are retained. \n Photo field guide Whales as mobile ecosystems Overview Whales carry organisms that feed, shelter, travel and reproduce on or around them. Not all associations are true parasitism: some are commensal or mutualistic. This guide preserves the June 18–24 Naturalist Field Note's interpretations and photographs. \n Cookiecutter sharks Photo and field notes Smalltooth cookiecutter sharks (Isistius brasiliensis) leave circular bites and scars on whales and many other marine animals. Fin whale with round scars and skin damage. \n Whalesuckers Photo and field notes Whalesuckers (Remora australis) attach to whales with a suction disk derived from a dorsal fin. They can remove dead skin and other organisms; prolonged attachment may also leave scars. Blue whales with whalesuckers. \n Whalesucker scars on dolphins Photo and field notes Remora attachment marks may be visible even when the fish has departed. Risso’s dolphin and long-beaked common dolphin showing attachment scars. \n Whale barnacles Photo and field notes Coronula diadema is strongly associated with humpbacks; Coronula reginae occurs on multiple baleen whales. Rabbit-ear gooseneck barnacles (Conchoderma auritum) may grow on whale barnacles. Breaching humpback calf covered in barnacles. \n Humpback chin barnacles Photo and field notes Barnacles can accumulate along the grooves and chin of humpbacks. Humpback chin with Coronula diadema. \n Gray whale barnacles Photo and field notes Cryptolepas rhachianecti occurs on gray whales, particularly around the rostrum and blowhole. Gray whale original and annotated views. \n Whale lice — find the boops Photo and field notes Cyamus boopis is a crustacean, not an insect. Whale lice live on their hosts and can graze on algae and dead skin. Challenge 1 and annotated answer. \n Whale lice — challenge level 2 Photo and field notes Look for small whale lice around scars and crevices; the second view reveals their positions. Challenge 2 and annotated answer. \n Source Source details Naturalist Field Note, June 18–24, 2026. All eight image composites are preserved as supplied, including captions and annotated answer pairs. \n Detailed species reference Loading reference entries…",
+      "aliases": []
+    },
+    {
+      "id": "Whales-as-mobile-ecosystems-Overview",
+      "title": "Whales as mobile ecosystems Overview",
+      "text": "Whales as mobile ecosystems Overview Whales carry organisms that feed, shelter, travel and reproduce on or around them. Not all associations are true parasitism: some are commensal or mutualistic. This guide preserves the June 18–24 Naturalist Field Note's interpretations and photographs.",
+      "aliases": []
+    },
+    {
+      "id": "Cookiecutter-sharks-Photo-and-field-notes",
+      "title": "Cookiecutter sharks Photo and field notes",
+      "text": "Cookiecutter sharks Photo and field notes Smalltooth cookiecutter sharks (Isistius brasiliensis) leave circular bites and scars on whales and many other marine animals. Fin whale with round scars and skin damage.",
+      "aliases": []
+    },
+    {
+      "id": "Whalesuckers-Photo-and-field-notes",
+      "title": "Whalesuckers Photo and field notes",
+      "text": "Whalesuckers Photo and field notes Whalesuckers (Remora australis) attach to whales with a suction disk derived from a dorsal fin. They can remove dead skin and other organisms; prolonged attachment may also leave scars. Blue whales with whalesuckers.",
+      "aliases": []
+    },
+    {
+      "id": "Whalesucker-scars-on-dolphins-Photo-and-field-notes",
+      "title": "Whalesucker scars on dolphins Photo and field notes",
+      "text": "Whalesucker scars on dolphins Photo and field notes Remora attachment marks may be visible even when the fish has departed. Risso’s dolphin and long-beaked common dolphin showing attachment scars.",
+      "aliases": []
+    },
+    {
+      "id": "Whale-barnacles-Photo-and-field-notes",
+      "title": "Whale barnacles Photo and field notes",
+      "text": "Whale barnacles Photo and field notes Coronula diadema is strongly associated with humpbacks; Coronula reginae occurs on multiple baleen whales. Rabbit-ear gooseneck barnacles (Conchoderma auritum) may grow on whale barnacles. Breaching humpback calf covered in barnacles.",
+      "aliases": []
+    },
+    {
+      "id": "Humpback-chin-barnacles-Photo-and-field-notes",
+      "title": "Humpback chin barnacles Photo and field notes",
+      "text": "Humpback chin barnacles Photo and field notes Barnacles can accumulate along the grooves and chin of humpbacks. Humpback chin with Coronula diadema.",
+      "aliases": []
+    },
+    {
+      "id": "Gray-whale-barnacles-Photo-and-field-notes",
+      "title": "Gray whale barnacles Photo and field notes",
+      "text": "Gray whale barnacles Photo and field notes Cryptolepas rhachianecti occurs on gray whales, particularly around the rostrum and blowhole. Gray whale original and annotated views.",
+      "aliases": []
+    },
+    {
+      "id": "Whale-lice-find-the-boops-Photo-and-field-notes",
+      "title": "Whale lice — find the boops Photo and field notes",
+      "text": "Whale lice — find the boops Photo and field notes Cyamus boopis is a crustacean, not an insect. Whale lice live on their hosts and can graze on algae and dead skin. Challenge 1 and annotated answer.",
+      "aliases": []
+    },
+    {
+      "id": "Whale-lice-challenge-level-2-Photo-and-field-notes",
+      "title": "Whale lice — challenge level 2 Photo and field notes",
+      "text": "Whale lice — challenge level 2 Photo and field notes Look for small whale lice around scars and crevices; the second view reveals their positions. Challenge 2 and annotated answer.",
+      "aliases": []
+    },
+    {
+      "id": "Source-Source-details",
+      "title": "Source Source details",
+      "text": "Source Source details Naturalist Field Note, June 18–24, 2026. All eight image composites are preserved as supplied, including captions and annotated answer pairs.",
+      "aliases": []
+    },
+    {
+      "id": "Detailed-species-reference",
+      "title": "Detailed species reference",
+      "text": "Select a topic to expand. Entries begin collapsed to keep the guide compact. The original photographs, captions, and detailed reference information are retained. \n Photo field guide Whales as mobile ecosystems Overview Whales carry organisms that feed, shelter, travel and reproduce on or around them. Not all associations are true parasitism: some are commensal or mutualistic. This guide preserves the June 18–24 Naturalist Field Note's interpretations and photographs. \n Cookiecutter sharks Photo and field notes Smalltooth cookiecutter sharks (Isistius brasiliensis) leave circular bites and scars on whales and many other marine animals. Fin whale with round scars and skin damage. \n Whalesuckers Photo and field notes Whalesuckers (Remora australis) attach to whales with a suction disk derived from a dorsal fin. They can remove dead skin and other organisms; prolonged attachment may also leave scars. Blue whales with whalesuckers. \n Whalesucker scars on dolphins Photo and field notes Remora attachment marks may be visible even when the fish has departed. Risso’s dolphin and long-beaked common dolphin showing attachment scars. \n Whale barnacles Photo and field notes Coronula diadema is strongly associated with humpbacks; Coronula reginae occurs on multiple baleen whales. Rabbit-ear gooseneck barnacles (Conchoderma auritum) may grow on whale barnacles. Breaching humpback calf covered in barnacles. \n Humpback chin barnacles Photo and field notes Barnacles can accumulate along the grooves and chin of humpbacks. Humpback chin with Coronula diadema. \n Gray whale barnacles Photo and field notes Cryptolepas rhachianecti occurs on gray whales, particularly around the rostrum and blowhole. Gray whale original and annotated views. \n Whale lice — find the boops Photo and field notes Cyamus boopis is a crustacean, not an insect. Whale lice live on their hosts and can graze on algae and dead skin. Challenge 1 and annotated answer. \n Whale lice — challenge level 2 Photo and field notes Look for small whale lice around scars and crevices; the second view reveals their positions. Challenge 2 and annotated answer. \n Source Source details Naturalist Field Note, June 18–24, 2026. All eight image composites are preserved as supplied, including captions and annotated answer pairs. \n Detailed species reference Loading reference entries…",
+      "aliases": []
+    }
+  ],
+  "source_version": "1.0",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
+}

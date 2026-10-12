@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#005f73">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IC Handbook">
+  <title>Information Center Handbook</title>
+  <link rel="icon" href="../../shared/media/asset-1e94c29588faf6ba--icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=20261011-ic-clean2">
+<style>[data-v2-maintenance-hidden="true"]{display:none!important}</style></head>
+<body>
+  <nav class="top-bar" aria-label="App controls">
+    <a class="top-bar-btn hub-btn" href="../../index.html">← MBA Hub</a>
+  </nav>
+
+  <div class="status-message" id="statusMessage" role="status" aria-live="polite" hidden></div>
+
+  <header class="header">
+    <div class="header-badge">Monterey Bay Aquarium</div>
+    <h1>Information Center<br>Handbook</h1>
+    <p>Version 2.1 · Updated June 2026 · 18 Sections</p>
+  </header>
+  <div class="wave"></div>
+
+  <main>
+
+    <section class="tools-panel" aria-label="Handbook tools">
+      <label class="search-label" for="searchInput">Search handbook</label>
+      <div class="search-row">
+        <input id="searchInput" type="search" placeholder="Search wheelchair, radio, lost child…" autocomplete="off">
+        <button id="clearSearchBtn" type="button">Clear Search</button>
+      </div>
+      <div class="quick-actions" aria-label="Quick navigation">
+        <button type="button" data-jump="0">🚨 Emergency</button>
+        <button type="button" data-jump="0">📞 Phone Numbers</button>
+        <button type="button" data-jump="7">📻 Radio</button>
+        <button type="button" data-jump="11">👧 Lost Child</button>
+        <button type="button" data-jump="14">♿ Wheelchairs</button>
+        <button type="button" data-jump="12">🗺 Directions</button>
+        <button type="button" data-jump="15">🎉 Celebrations</button>
+      </div>
+      <div class="controls">
+        <button class="toggle-all-btn" id="toggleAllBtn" type="button">Expand All</button>
+      </div>
+    </section>
+
+    <section class="sections" id="sectionsContainer" aria-label="Information Center sections"></section>
+  </main>
+
+  <footer class="footer">
+    <strong>Information Center Handbook</strong><br>
+    Version 2.1 · Updated June 2026<br>
+    Interpretive Programs · geinterpretiveprograms@mbayaq.org<br>
+    Volunteer Hotline · (831) 648-4867
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js?v=20261011-ic-clean2"></script>
+<script type="module" src="../../core/app-contract.js"></script></body>
+</html>

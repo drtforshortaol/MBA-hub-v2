@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "app_id": "pseudo-nitzschia",
+  "title": "Pseudo-nitzschia",
+  "category": "concepts",
+  "type": "reference",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/pseudo-nitzschia/index.html",
+  "status": "testing",
+  "owner": "pseudo-nitzschia",
+  "listed": false,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/pseudo-nitzschia/index.html"
+  ],
+  "media": [
+    "asset-312b492bbd93cf7f",
+    "asset-ada016e625c82729",
+    "asset-ba81c2492733aa1b",
+    "asset-3406e524b14b7757"
+  ],
+  "knowledge": [],
+  "cross_links": [
+    {
+      "app_id": "naturalist-field-notes"
+    }
+  ],
+  "sections": [
+    {
+      "id": "Quick-guide",
+      "title": "Quick guide",
+      "text": "Quick guide Pseudo-nitzschia  is a genus of marine diatoms. Some species can produce domoic acid, a neurotoxin that can travel through marine food webs. The presence of the genus alone does not mean a harmful bloom is occurring.",
+      "aliases": []
+    },
+    {
+      "id": "Identification-and-life-cycle",
+      "title": "Identification and life cycle",
+      "text": "Identification and life cycle These microscopic photosynthetic diatoms have silica cell walls. They reproduce by cell division and can undergo sexual reproduction. Reproductive phases, from the July Field Note.",
+      "aliases": []
+    },
+    {
+      "id": "Harmful-algal-blooms-and-the-2015-event",
+      "title": "Harmful algal blooms and the 2015 event",
+      "text": "Harmful algal blooms and the 2015 event Some species, including  P. australis  and  P. multiseries , can produce domoic acid. Bloom risk depends on species, abundance, environmental conditions and toxin production. 2015 harmful algal bloom and fisheries effects.",
+      "aliases": []
+    },
+    {
+      "id": "Domoic-acid-in-food-webs",
+      "title": "Domoic acid in food webs",
+      "text": "Domoic acid in food webs Domoic acid can move from diatoms into shellfish and small fish, then to seabirds and marine mammals. Exposure may cause neurological problems. It is heat-stable and is associated with amnesic shellfish poisoning in humans. Neurotoxicity illustration from the Field Note.",
+      "aliases": []
+    }
+  ],
+  "source_version": "preserved-v1",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
+}

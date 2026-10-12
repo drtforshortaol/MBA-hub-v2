@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "app_id": "california-sheephead",
+  "title": "California Sheephead",
+  "category": "animals",
+  "type": "species",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/california-sheephead/index.html",
+  "status": "testing",
+  "owner": "california-sheephead",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/california-sheephead/index.html"
+  ],
+  "media": [
+    "asset-05fc671c0b53bef7",
+    "asset-0ddc6e6b4b55ea55"
+  ],
+  "knowledge": [],
+  "cross_links": [
+    {
+      "app_id": "naturalist-field-notes"
+    }
+  ],
+  "sections": [
+    {
+      "id": "In-30-Seconds",
+      "title": "In 30 Seconds ⌄",
+      "text": "In 30 Seconds ⌄ California sheephead are large wrasses of rocky reefs and kelp forests. Their strong teeth and throat plates break hard-shelled prey. Adults may change from female to male, and by feeding on sea urchins, they can help maintain kelp-forest balance.",
+      "aliases": []
+    },
+    {
+      "id": "Quick-Facts",
+      "title": "Quick Facts ⌄",
+      "text": "Quick Facts ⌄ Family Labridae — wrasses Exhibit Kelp Forest Range Monterey Bay to the Sea of Cortez; uncommon north of Point Conception Size Up to about 3 ft (91 cm), 36 lb (16.3 kg) Diet Sea urchins, crabs, lobsters, mollusks and other hard-shelled animals",
+      "aliases": []
+    },
+    {
+      "id": "Identification",
+      "title": "Identification ⌄",
+      "text": "Identification ⌄ Mature males have a dark head and tail, reddish-orange middle, white chin, red eyes, and often a pronounced forehead bump. Females are generally more uniformly pink. Large canine teeth help identify the species; juveniles look different from both adult forms.",
+      "aliases": []
+    },
+    {
+      "id": "Feeding-and-Teeth",
+      "title": "Feeding and Teeth ⌄",
+      "text": "Feeding and Teeth ⌄ A sheephead uses protruding canine teeth to pry hard-shelled invertebrates from rocks. Its jaws break apart prey, and modified throat bones further grind shell fragments. This combination makes it an effective predator on sea urchins and shellfish.",
+      "aliases": []
+    },
+    {
+      "id": "Sex-Change-and-Reproduction",
+      "title": "Sex Change and Reproduction ⌄",
+      "text": "Sex Change and Reproduction ⌄ California sheephead are protogynous: individuals first mature as females, and some later become males. The timing of transition varies with local conditions and population structure. Removing large males can influence social structure, so sex-changing life history is important in fisheries management. Female California sheephead transitioning toward male coloration. Photograph preserved from an earlier Naturalist Field Note.",
+      "aliases": []
+    },
+    {
+      "id": "Day-and-Night-Behavior",
+      "title": "Day and Night Behavior ⌄",
+      "text": "Day and Night Behavior ⌄ Active during daylight, sheephead search rocky reefs and kelp forests for prey. At night they shelter in crevices or caves and may envelop themselves in a mucus cocoon. The Aquarium describes this coating as helping obscure the fish’s scent from nighttime predators.",
+      "aliases": []
+    },
+    {
+      "id": "Kelp-Forest-Connections",
+      "title": "Kelp Forest Connections ⌄",
+      "text": "Kelp Forest Connections ⌄ Sheephead consume sea urchins, which graze kelp. By reducing urchin pressure, predators such as sheephead can help support healthy kelp forests. This effect depends on the broader food web and local ecological conditions.",
+      "aliases": []
+    },
+    {
+      "id": "Conservation",
+      "title": "Conservation ⌄",
+      "text": "Conservation ⌄ The Aquarium documents changes in sheephead fishing pressure and California fishing regulations enacted in 2002 to help limit overfishing. The Aquarium species page describes the species as Vulnerable under IUCN; conservation assessments and regulations can change, so check current sources when advising visitors.",
+      "aliases": []
+    },
+    {
+      "id": "Scientific-Name-and-Taxonomy",
+      "title": "Scientific Name and Taxonomy ⌄",
+      "text": "Scientific Name and Taxonomy ⌄ The Monterey Bay Aquarium species page currently uses  Semicossyphus pulcher . A February 2026 Naturalist Field Note reports the alternative combination  Bodianus pulcher . Taxonomic sources are not fully consistent in their naming; both names refer to California sheephead. This guide retains the Aquarium’s displayed name while documenting the alternative.",
+      "aliases": []
+    },
+    {
+      "id": "Visitor-Questions",
+      "title": "Visitor Questions ⌄",
+      "text": "Visitor Questions ⌄ Do they really change sex?  Yes. Some adult females transition into males. Why the large teeth?  They help dislodge and crush shellfish and sea urchins. Where can I see one?  Look in the Monterey Bay Aquarium Kelp Forest exhibit. Do they sleep?  They shelter at night, sometimes in mucus cocoons.",
+      "aliases": []
+    },
+    {
+      "id": "Naturalist-Species-Highlight-February-4-2026",
+      "title": "Naturalist Species Highlight — February 4, 2026 ⌄",
+      "text": "Naturalist Species Highlight — February 4, 2026 ⌄ Original Field Note context:  The Naturalist update reported that California sheephead had been reassigned from  Semicossyphus  to  Bodianus . It identified the reported new combination as  Bodianus pulcher . Scientific caution:  The author described the suggested explanation—that  Semicossyphus  was not sufficiently distinct from hogfishes—as a guess, rather than a conclusion drawn from a reviewed taxonomic paper. The report should not be presented as independently established evidence for why the name changed. Highlight facts:  Reported name:  Bodianus pulcher ; former genus:  Semicossyphus ; topics: wrasses, classification and taxonomy. Open Naturalist Field Notes → Species Highlights → California Sheephead",
+      "aliases": []
+    }
+  ],
+  "source_version": "1.0",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
+}

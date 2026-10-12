@@ -1,0 +1,11 @@
+<!-- APP FILE: apps/mmc-narrations/icon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">MMC Narrations Icon</title>
+  <desc id="desc">Ocean blue icon with narration cards and MMC letters.</desc>
+  <rect width="512" height="512" rx="112" fill="#0b5f73"/>
+  <path d="M60 330c64-44 126-44 190 0s126 44 202 0v88c-76 44-138 44-202 0s-126-44-190 0z" fill="#65c5d6" opacity="0.92"/>
+  <path d="M86 112h340a34 34 0 0 1 34 34v142a34 34 0 0 1-34 34H86a34 34 0 0 1-34-34V146a34 34 0 0 1 34-34z" fill="#ffffff" opacity="0.94"/>
+  <path d="M106 168h212" stroke="#0b5f73" stroke-width="24" stroke-linecap="round"/>
+  <path d="M106 226h292" stroke="#0b5f73" stroke-width="24" stroke-linecap="round" opacity="0.72"/>
+  <text x="256" y="420" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="900" fill="#ffffff">MMC</text>
+</svg>

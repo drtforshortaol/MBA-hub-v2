@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "app_id": "mba-leadership",
+  "title": "MBA Leadership",
+  "category": "aquarium-updates",
+  "type": "reference",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/mba-leadership/index.html",
+  "status": "testing",
+  "owner": "mba-leadership",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/mba-leadership/app.js",
+    "apps/mba-leadership/apps.js",
+    "apps/mba-leadership/data.js",
+    "apps/mba-leadership/index.html",
+    "apps/mba-leadership/styles.css"
+  ],
+  "media": [
+    "asset-439853e26e3085c7",
+    "asset-c153bd064cb66624"
+  ],
+  "knowledge": [],
+  "cross_links": [],
+  "sections": [
+    {
+      "id": "jenny-gray",
+      "title": "Dr. Jenny Gray",
+      "text": "jenny-gray Dr. Jenny Gray Chief Executive Officer Dr. Jenny Gray Executive Team     CEO of Zoos Victoria in Australia    Leadership Executive Team CEO Conservation Animal Care New Arrivals Staff Volunteer Reference Former CEO of Zoos Victoria in Australia (2007–2026) Former President of World Association of Zoos and Aquariums (2017–2019) Leader in animal ethics, welfare, and conservation ",
+      "aliases": [
+        "Leadership",
+        "Executive Team",
+        "CEO",
+        "Conservation",
+        "Animal Care",
+        "New Arrivals",
+        "Staff",
+        "Volunteer Reference"
+      ]
+    },
+    {
+      "id": "lauren-cole",
+      "title": "Dr. Lauren Cole",
+      "text": "lauren-cole Dr. Lauren Cole Incoming Guide Program Manager Dr. Lauren Cole Guide Program     Lecturer and University Course Coordinator at Taronga Conservation Society    Leadership Guide Program Volunteers Education Guest Experience New Arrivals Staff Volunteer Reference Currently: Lecturer and University Course Coordinator at Taronga Conservation Society in Sydney, Australia Originally from California 15 years overseas focused on ecology and conservation education ",
+      "aliases": [
+        "Leadership",
+        "Guide Program",
+        "Volunteers",
+        "Education",
+        "Guest Experience",
+        "New Arrivals",
+        "Staff",
+        "Volunteer Reference"
+      ]
+    }
+  ],
+  "source_version": "1.0",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
+}

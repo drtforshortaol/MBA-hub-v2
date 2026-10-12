@@ -1,5 +1,367 @@
 {
   "schema_version": 1,
-  "version": "1.0.0",
-  "records": []
+  "version": "1.1.0",
+  "records": [
+    {
+      "id": "evo-evolution-knowledge",
+      "owner": "evolution-timeline",
+      "version": "11@c6d782d3a8a0",
+      "interface_version": "1.0.0",
+      "source_repository": "drtforshortaol/evolution-timeline",
+      "source_commit": "c6d782d3a8a03e407861a0fbc3aab76e5fbf8d0c",
+      "status": "testing",
+      "sections": [
+        {
+          "id": "evo-universe-begins",
+          "title": "Universe begins",
+          "date": "~13.8 Ga",
+          "text": "The Universe begins expanding from an extremely hot, dense early state. This creates the physical setting from which stars, planets, chemistry and eventually life become possible. Hydrogen and helium dominate the earliest matter. Later generations of stars manufacture many heavier elements needed for rocky planets and life.",
+          "aliases": [
+            "~13.8 Ga"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-first-stars-and-galaxies",
+          "title": "First stars and galaxies",
+          "date": "~13.6–13.0 Ga",
+          "text": "Stars ignite; stellar fusion and stellar explosions create and disperse heavier elements. Carbon, oxygen, nitrogen, silicon, iron and other ingredients of planets and life are forged through stellar evolution. This is the chemical bridge between the early Universe and the material that eventually becomes Earth and living organisms.",
+          "aliases": [
+            "~13.6–13.0 Ga"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-sun-and-solar-system-form",
+          "title": "Sun and Solar System form",
+          "date": "~4.6 Ga",
+          "text": "A cloud of gas and dust collapses. The Sun forms at the center while the surrounding disk produces planets. Material inherited from earlier stars becomes organized into our Solar System. Dust grains collide and grow into planetesimals and eventually planets. Earth forms in the inner rocky region of this disk.",
+          "aliases": [
+            "~4.6 Ga"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-earth-forms",
+          "title": "Earth forms",
+          "date": "~4.54 Ga",
+          "text": "Rocky material in the inner Solar System accretes into the young Earth. Earth becomes the planetary setting for the biological story. Early Earth was geologically violent and chemically very different from the modern planet.",
+          "aliases": [
+            "~4.54 Ga"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-moon-forms-giant-impact",
+          "title": "Moon forms — giant impact",
+          "date": "~4.5 Ga",
+          "text": "The leading model involves a giant impact early in Earth history followed by accretion of orbiting debris. The Moon becomes a major part of Earth’s long-term planetary history. In the giant-impact hypothesis, a roughly Mars-sized protoplanet conventionally called Theia collided with the young Earth. The collision ejected large amounts of hot rocky material into orbit. Orbiting debris then accreted into the Moon. Modern versions of the hypothesis differ in collision geometry, mixing and the relative contributions of Earth and impactor material; the exact details remain an active area of research.",
+          "aliases": [
+            "~4.5 Ga"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-early-crust-and-liquid-water",
+          "title": "Early crust and liquid water",
+          "date": "By ~4.4 Ga",
+          "text": "Ancient minerals indicate that crust and liquid water existed surprisingly early. Liquid water provides an important setting for prebiotic chemistry and early life. Zircon minerals preserve chemical clues that liquid water and differentiated crust existed by this time.",
+          "aliases": [
+            "By ~4.4 Ga"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-origin-of-life",
+          "title": "Origin of life",
+          "date": "Perhaps ~4.3–4.2 Ga (?)",
+          "text": "Prebiotic chemistry crossed the threshold into evolving biological systems. Exactly how, where and when remains unknown. This is the beginning of biology, before the last common ancestor of modern cellular life. Highly uncertain. The date is shown only to preserve chronological perspective. What Is Life? Before we can explore the Tree of Life, we first need to answer a simple question: What is life? A simple scientific definition is: “Life is a self-maintaining system that uses energy, responds to its environment, reproduces, and has the capacity to evolve.” Scientists do not have one universally accepted definition of life, but they generally agree that all living organisms share a common set of characteristics. A simple way to remember these characteristics is with the mnemonic HORGASM. H – Homeostasis: Maintains a stable internal environment. O – Organization: Is composed of one or more cells, the basic units of life. R – Reproduction: Produces new organisms and passes genetic information to the next generation. G – Growth: Increases in size and develops throughout its life cycle. A – Adaptation: Populations evolve over generations, improving their ability to survive and reproduce. S – Response to Stimuli: Detects and responds to changes in the environment. M – Metabolism: Obtains, transforms, and uses energy and matter to build, maintain, and power the organism.",
+          "aliases": [
+            "Perhaps ~4.3–4.2 Ga (?)"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-fuca-type-stage",
+          "title": "FUCA-type stage (?)",
+          "date": "Perhaps ~4.25–4.2 Ga (?)",
+          "text": "FUCA is a proposed label for a very early ancestral stage near the emergence of the genetic code and cellular life. It separates a hypothetical earliest shared biological ancestry from LUCA—the last shared ancestor of living cellular lineages. FUCA is hypothetical, not a securely dated organism or fossil. FUCA means “First Universal Common Ancestor” in this teaching framework. There may have been a long population-level transition rather than one single first cell.",
+          "aliases": [
+            "Perhaps ~4.25–4.2 Ga (?)"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-luca-last-universal-common-ancestor",
+          "title": "LUCA — Last Universal Common Ancestor",
+          "date": "~4.2 Ga (estimate)",
+          "text": "The ancestral population from which all cellular life alive today ultimately descends. LUCA was not the first life. LUCA is the first major anchor for reconstructing the Tree of Life. Likely had DNA and RNA. Used the universal genetic code, ribosomes and protein synthesis. Used ATP-based energy metabolism and ion gradients. Had basic metabolic pathways and reproduction. Did NOT have a nucleus, mitochondria or chloroplasts.",
+          "aliases": [
+            "~4.2 Ga (estimate)"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-the-great-split-bacteria-and-archaea",
+          "title": "The Great Split — Bacteria and Archaea",
+          "date": "Perhaps ~4.1–3.5 Ga",
+          "text": "Descendants of the universal ancestral population diverge into the two fundamental domains Bacteria and Archaea. Both lineages survive to the present, and both later contribute crucial pieces to the eukaryotic story. The deepest split is extremely difficult to date; this broad range is for perspective. Bacteria commonly have ester-linked membrane lipids and cell walls containing peptidoglycan. Archaea have ether-linked membrane lipids, lack peptidoglycan, and have information-processing machinery with important similarities to eukaryotes. Modern bacterial examples include cyanobacteria, E. coli, Bacillus and Streptococcus. Modern archaeal examples include methanogens, halophiles, thermophiles, ammonia-oxidizers and Asgard archaea. Two basic cell types: Bacteria and Archaea have prokaryotic cells; members of Eukarya have eukaryotic cells. Three domains: Bacteria, Archaea and Eukarya.",
+          "aliases": [
+            "Perhaps ~4.1–3.5 Ga"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-cyanobacteria-harness-sunlight",
+          "title": "Cyanobacteria harness sunlight",
+          "date": "By ~2.7 Ga; possibly earlier",
+          "text": "Cyanobacteria use oxygenic photosynthesis: sunlight powers the production of energy-rich organic molecules, with oxygen released as a by-product. Life begins transforming the entire planet. Cyanobacteria also remain a living bacterial lineage today. Oxygenic photosynthesis predates the Great Oxidation Event; its exact origin is uncertain. ⚡ CYANOBACTERIA — FOLLOW THE ENERGY Cyanobacteria capture energy from sunlight and use it to build and power themselves. Inputs: sunlight = energy source; CO₂ = carbon source; H₂O = electron/hydrogen source. PHOTOSYNTHESIS → organic molecules (sugars/biomass) store chemical energy; O₂ is released as a by-product. CELLULAR RESPIRATION → stored chemical energy is extracted → ADP + Pi + energy → ATP → ATP powers metabolism, growth, maintenance/repair and reproduction. Core idea: capture external energy → store it as chemical energy → extract stored energy to make ATP → use ATP to run the cell. Cyanobacteria perform both photosynthesis and cellular respiration themselves. They do not require mitochondria. At first, much of their O₂ reacted with reduced iron, volcanic gases and other oxygen sinks instead of accumulating in the atmosphere. Cyanobacteria did NOT become mitochondria. Their connection to the mitochondrial story is indirect: their oxygenic photosynthesis helped create an oxygen-rich world in which aerobic respiration could flourish. Cyanobacteria continue as a living bacterial lineage today. Much later, a cyanobacterial lineage became the ancestor of chloroplasts through primary endosymbiosis.",
+          "aliases": [
+            "By ~2.7 Ga; possibly earlier"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-great-oxidation-event-oxygen-changes-the-planet",
+          "title": "Great Oxidation Event — oxygen changes the planet",
+          "date": "~2.45–2.3 Ga",
+          "text": "Oxygen produced biologically begins to persist in the atmosphere and surface environments. Oxygen is toxic to many anaerobic organisms, but it also creates a powerful new opportunity for aerobic respiration. Before the GOE, atmospheric O₂ was extremely low compared with today. Today O₂ is about 21% of the atmosphere. There is no single secure “peak oxygen percentage” for the GOE; estimates remain debated.",
+          "aliases": [
+            "~2.45–2.3 Ga"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-aerobic-alphaproteobacteria-extract-stored-energy",
+          "title": "Aerobic Alphaproteobacteria — extract stored energy",
+          "date": "Before ~2.0 Ga",
+          "text": "Aerobic alphaproteobacterial lineages use oxygen as the final electron acceptor in respiration to extract energy from organic molecules. An ancient alphaproteobacterial relative later becomes the bacterial partner in mitochondrial endosymbiosis, while other alphaproteobacterial lineages continue to the present. ⚡ ALPHAPROTEOBACTERIA — FOLLOW THE ENERGY Inputs: energy-rich organic molecules contain stored chemical energy; O₂ serves as the final electron acceptor. AEROBIC CELLULAR RESPIRATION oxidizes organic molecules and extracts some of their stored chemical energy. That captured energy drives ADP + inorganic phosphate (Pi) → ATP. ATP powers the bacterium’s own metabolism, including growth, maintenance, transport, repair and reproduction. Major end products include CO₂ and H₂O; some energy is dissipated as heat. Oxygen itself is not energy. It enables a highly effective electron-transport process that helps the cell make ATP. The alphaproteobacterial ancestor relevant to mitochondria already possessed respiratory machinery before becoming an organelle. Modern Alphaproteobacteria still exist today. The source lineage did not disappear when one ancient branch participated in endosymbiosis.",
+          "aliases": [
+            "Before ~2.0 Ga"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-alphaproteobacteria-continue-to-the-present",
+          "title": "Alphaproteobacteria continue to the present",
+          "date": "Ancient lineage → TODAY",
+          "text": "Alphaproteobacteria remain a diverse living bacterial group today. Endosymbiosis involved one ancient branch; related alphaproteobacterial lineages continued evolving independently. Modern examples include Rhizobium, Rickettsia and Caulobacter. This mirrors the cyanobacterial story: a source lineage can continue to the present even though one ancient branch contributed to a major endosymbiotic innovation.",
+          "aliases": [
+            "Ancient lineage → TODAY"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-mitochondrial-endosymbiosis-the-energy-partnership",
+          "title": "Mitochondrial endosymbiosis — the energy partnership",
+          "date": "~2.37–1.80 Ga (broad estimate)",
+          "text": "An archaeal host related to the Asgard lineage forms a permanent partnership with an alphaproteobacterial relative capable of aerobic respiration. The bacterial partner becomes the MITOCHONDRION—the cell’s major energy-producing organelle, using oxygen to help extract energy from organic molecules and convert ADP + Pi into ATP that powers metabolism. The exact date and sequence of eukaryogenesis remain debated. Cyanobacteria did not become mitochondria. The mitochondrial ancestor came from a different bacterial lineage related to Alphaproteobacteria. The connection to cyanobacteria is environmental and energetic: oxygenic photosynthesis helped oxygenate Earth, while aerobic alphaproteobacteria exploited O₂ for respiration. Evidence for bacterial ancestry includes mitochondrial DNA, bacterial-type ribosomes, division by fission and a double membrane. Many mitochondrial genes were later lost or transferred to the host nuclear genome. Follow the energy: respiration releases stored chemical energy; that energy drives ADP + inorganic phosphate (Pi) → ATP. ATP then powers cellular work and returns to ADP + Pi for recycling. Follow the machinery: respiratory machinery that once powered a free-living bacterium became integrated into the eukaryotic cell as the mitochondrion.",
+          "aliases": [
+            "~2.37–1.80 Ga (broad estimate)"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-leca-last-eukaryotic-common-ancestor",
+          "title": "LECA — Last Eukaryotic Common Ancestor",
+          "date": "~1.8–1.6 Ga",
+          "text": "The last common ancestral population of all living eukaryotic lineages. By LECA, the complex eukaryotic cell was already established and contained mitochondria. LECA was not the first eukaryote. It likely had a nucleus, mitochondria, chromosomes, cytoskeleton, internal membrane systems, vesicle trafficking and mitosis. Meiosis and sexual reproduction were probably already present.",
+          "aliases": [
+            "~1.8–1.6 Ga"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-animals-and-fungi-are-established-lineages",
+          "title": "Animals and fungi are established lineages",
+          "date": "Perhaps ~800–600 Ma",
+          "text": "Animal and fungal lineages are separate branches within Opisthokonta. Fungi continue independently to today; the animal branch later provides our human perspective. Deep divergence dates vary among molecular-clock studies. Animals and fungi are closer relatives to each other than either is to plants. Fungi are not plants and do not photosynthesize; they obtain nutrients by absorption.",
+          "aliases": [
+            "Perhaps ~800–600 Ma"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-marine-animals-become-conspicuous",
+          "title": "Marine animals become conspicuous",
+          "date": "~635–539 Ma",
+          "text": "Ediacaran ecosystems contain increasingly complex multicellular animals in the oceans. Animals are established in marine environments long before vertebrates live on land. The fossil record becomes much more visible in this interval, although animal origins likely predate many familiar fossils.",
+          "aliases": [
+            "~635–539 Ma"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-cambrian-marine-diversification",
+          "title": "Cambrian marine diversification",
+          "date": "~539 Ma onward",
+          "text": "Many major animal body plans become conspicuous in the marine fossil record. The early animal story is overwhelmingly an ocean story. The “Cambrian explosion” does not mean animals appeared instantaneously; it marks a geologically rapid diversification and improved fossil visibility.",
+          "aliases": [
+            "~539 Ma onward"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-some-arthropods-colonize-land",
+          "title": "Some arthropods colonize land",
+          "date": "~450–430 Ma",
+          "text": "Arthropod lineages begin using terrestrial environments after early land vegetation is established. Land animals do not precede the formation of terrestrial plant-based ecosystems. The timing differs among arthropod groups and the record is incomplete.",
+          "aliases": [
+            "~450–430 Ma"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-vertebrates-begin-the-transition-onto-land",
+          "title": "Vertebrates begin the transition onto land",
+          "date": "~390–360 Ma",
+          "text": "Tetrapod ancestors evolve from fish-like vertebrates in shallow-water environments and increasingly exploit land. This occurs long after marine animals and after plants have already transformed terrestrial habitats. The water-to-land transition was gradual and involved many intermediate forms, not one abrupt move.",
+          "aliases": [
+            "~390–360 Ma"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-early-primates",
+          "title": "Early primates",
+          "date": "~55 Ma",
+          "text": "Early primate lineages diversify after the end-Cretaceous extinction. This provides a compact human perspective without allowing recent history to dominate the app. Primates are only one very late branch within the much older animal lineage.",
+          "aliases": [
+            "~55 Ma"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-hominin-lineage-diverges-from-the-chimpanzee-bonobo-lineage",
+          "title": "Hominin lineage diverges from the chimpanzee/bonobo lineage",
+          "date": "~8–6 Ma",
+          "text": "Humans and living chimpanzees/bonobos share an ancestral population; humans did not descend from living chimpanzees. The human-scale story begins extremely late. The split was a population process, not one instant when one species suddenly became another.",
+          "aliases": [
+            "~8–6 Ma"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-earliest-homo",
+          "title": "Earliest Homo",
+          "date": "~2.8 Ma",
+          "text": "The genus Homo appears in the African fossil record. Human evolutionary history occupies only a tiny fraction of the timeline. Homo is one branch within a much larger hominin tree containing many extinct relatives.",
+          "aliases": [
+            "~2.8 Ma"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-homo-sapiens",
+          "title": "Homo sapiens",
+          "date": "~300 ka",
+          "text": "Our species appears in Africa and later spreads worldwide. Modern humans arrive almost at the end of the biological timeline. Homo sapiens coexisted and interbred with other human lineages, including Neanderthals and Denisovans.",
+          "aliases": [
+            "~300 ka"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-primary-endosymbiosis",
+          "title": "Primary endosymbiosis",
+          "date": "Perhaps ~1.6–1.0 Ga (?)",
+          "text": "A mitochondria-containing eukaryote engulfs a cyanobacterium and retains it as a permanent photosynthetic partner. This event produces the PRIMARY PLASTID / CHLOROPLAST ancestor. The timing of primary plastid origin remains debated. This is called primary endosymbiosis because the engulfed partner is a bacterium. Evidence for cyanobacterial ancestry includes plastid DNA, bacterial-type ribosomes, division by fission and a double-membrane heritage. The host already contained mitochondria; chloroplast acquisition came later. ⚡ FOLLOW THE ENERGY: the chloroplast captures external solar energy and stores it in organic molecules; the mitochondrion can extract energy from organic molecules and transfer it into ATP for cellular work. 🧬 FOLLOW THE MACHINERY: cyanobacterial photosynthetic machinery moved inside a eukaryotic lineage and became the chloroplast. We can then follow that machinery into red and green algal descendants.",
+          "aliases": [
+            "Perhaps ~1.6–1.0 Ga (?)"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-red-and-green-algal-lineages",
+          "title": "Red and green algal lineages",
+          "date": "By ~1.0 Ga (broad estimate)",
+          "text": "The primary-plastid lineage diversifies into major branches including red algae and the green lineage. Red algae and green algae continue independently to the present; neither “turns into” the other. Exact divergence dates depend on fossils and molecular-clock assumptions. Red algae remain a living lineage today. Green algae remain a living lineage today. One green lineage later gives rise to land plants. A red-algal lineage later contributes to the brown-algal story through secondary endosymbiosis, while red algae themselves continue independently.",
+          "aliases": [
+            "By ~1.0 Ga (broad estimate)"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-land-plants",
+          "title": "Land plants",
+          "date": "~470 Ma",
+          "text": "Descendants of the green algal lineage establish themselves on land. Plants begin building terrestrial ecosystems before vertebrate animals colonize land. Early land plants were small and lacked the elaborate vascular systems of later plants. Their presence changes soils, weathering, nutrient cycles and habitats on land.",
+          "aliases": [
+            "~470 Ma"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-vascular-plants",
+          "title": "Vascular plants",
+          "date": "~430–400 Ma",
+          "text": "Plants evolve internal conducting tissues that transport water and nutrients. Vascular tissue supports taller and more complex terrestrial plants. Xylem and phloem allow plants to move materials internally and support larger body forms.",
+          "aliases": [
+            "~430–400 Ma"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-seed-plants",
+          "title": "Seed plants",
+          "date": "~360–320 Ma",
+          "text": "Seed-bearing plants evolve, freeing reproduction from some dependence on free-standing water. Seeds protect embryos and help plants colonize drier terrestrial environments. Seeds package an embryo with stored resources and protective tissues.",
+          "aliases": [
+            "~360–320 Ma"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-gymnosperm-lineages-expand",
+          "title": "Gymnosperm lineages expand",
+          "date": "~320–300 Ma",
+          "text": "Seed plants without flowers diversify extensively. Gymnosperms dominate many terrestrial environments long before flowering plants become widespread. Living gymnosperms include conifers, cycads, Ginkgo and gnetophytes.",
+          "aliases": [
+            "~320–300 Ma"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-flowering-plants",
+          "title": "Flowering plants",
+          "date": "~140–125 Ma",
+          "text": "Angiosperms appear and diversify, eventually becoming dominant in many terrestrial ecosystems. Flowers and fruits transform plant reproduction and ecological interactions. Flowers organize reproductive structures and often facilitate interactions with animal pollinators. After fertilization, angiosperm ovules become seeds and the ovary typically develops into fruit.",
+          "aliases": [
+            "~140–125 Ma"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-secondary-endosymbiosis-involving-a-red-alga",
+          "title": "Secondary endosymbiosis involving a red alga",
+          "date": "Perhaps ~1.2–0.8 Ga (?)",
+          "text": "Another eukaryotic host engulfs a photosynthetic red alga that already contains a cyanobacterium-derived plastid. The red-algal photosynthetic machinery becomes integrated into a different eukaryotic lineage; the red-algal lineage itself continues independently. The exact evolutionary route and timing of red-derived plastids among these ancient lineages remain debated. Why “secondary”? The first endosymbiosis was a eukaryote engulfing a cyanobacterium. The second involves a eukaryote engulfing an already-photosynthetic eukaryote. Most of the engulfed red alga’s independent cellular identity was eventually lost. Its photosynthetic plastid was retained, while many genes were lost or transferred to the host genome. In the lineage relevant to brown algae, the red-algal nucleus itself was not retained as an independent nucleus. The exact route by which red-algal-derived plastids reached brown-algal ancestors may have involved additional transfers or losses; the main timeline shows the big-picture relationship. ⚡ FOLLOW THE ENERGY: the new host gains photosynthetic machinery capable of capturing sunlight and storing solar energy in organic molecules. 🧬 FOLLOW THE MACHINERY: Cyanobacterium → primary chloroplast → red alga → secondary endosymbiosis → red-algal-derived plastid → brown-algal lineage → kelp. The energy capability is inherited through a different evolutionary route than in plants.",
+          "aliases": [
+            "Perhaps ~1.2–0.8 Ga (?)"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-brown-algal-lineage-develops-and-diversifies",
+          "title": "Brown-algal lineage develops and diversifies",
+          "date": "Perhaps ~500–200 Ma (?)",
+          "text": "Within the photosynthetic stramenopile radiation, the lineage leading to brown algae becomes distinct and later diversifies. Brown algae are a separate eukaryotic lineage from green plants despite also performing photosynthesis. Deep brown-algal divergence dates vary among studies and the fossil record is incomplete. Brown algae belong to stramenopiles, not to the green plant lineage. Their photosynthetic plastids ultimately trace back through a red-algal intermediary to cyanobacteria.",
+          "aliases": [
+            "Perhaps ~500–200 Ma (?)"
+          ],
+          "owner": "evolution-timeline"
+        },
+        {
+          "id": "evo-kelp-emerges",
+          "title": "Kelp emerges",
+          "date": "~34 Ma",
+          "text": "Large brown algae in the kelp lineage appear comparatively late in Earth history. Kelp is the late outcome of a very old chain: cyanobacterium → chloroplast → red alga → secondary endosymbiosis → brown-algal lineage → kelp. The kelp fossil record is sparse; dates remain approximate. Kelp are brown algae, not plants. They independently evolved large, complex multicellular bodies with holdfasts, stipes and blades that can superficially resemble plant structures. Their plastids ultimately trace back to cyanobacteria through primary and then secondary endosymbiosis.",
+          "aliases": [
+            "~34 Ma"
+          ],
+          "owner": "evolution-timeline"
+        }
+      ]
+    }
+  ]
 }

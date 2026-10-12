@@ -112,7 +112,7 @@
         return `
           <details
             class="accordion-item sense-card searchable-item"
-            id="${escapeHtml(sense.id)}" data-sense="${escapeHtml(sense.accent)}"
+            data-sense="${escapeHtml(sense.accent)}"
             data-search="${escapeHtml(buildSearchText(sense))}"
           >
             <summary>
@@ -258,7 +258,7 @@
     }
   }
 
-  function clearAppCache() {}
+  async function clearAppCache() {}
 
   function registerServiceWorker() {}
 

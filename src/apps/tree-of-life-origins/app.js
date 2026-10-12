@@ -1,0 +1,13 @@
+const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const searchInput=document.getElementById("searchInput"),searchStatus=document.getElementById("searchStatus");
+function text(el){return `${el.textContent} ${el.dataset.tags||""}`.toLowerCase()}
+function runSearch(){const q=searchInput.value.trim().toLowerCase();let n=0;$$(".searchable").forEach(el=>{el.classList.remove("hidden-by-search","search-match");if(!q)return;const hit=text(el).includes(q);el.classList.toggle("hidden-by-search",!hit);el.classList.toggle("search-match",hit);if(hit){n++;if(el.tagName==="DETAILS")el.open=true}});searchStatus.textContent=q?`${n} matching chapter${n===1?"":"s"}.`:""}
+searchInput.addEventListener("input",runSearch);document.getElementById("clearSearch").addEventListener("click",()=>{searchInput.value="";runSearch();searchInput.focus()});
+function openTarget(target){if(!target)return;let parent=target;while(parent){if(parent.tagName==="DETAILS")parent.open=true;parent=parent.parentElement}target.scrollIntoView({behavior:"smooth",block:"start"})}
+$$(".fast-tools button[data-target]").forEach(b=>b.addEventListener("click",()=>openTarget(document.getElementById(b.dataset.target))));
+$$('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{const id=a.getAttribute("href").slice(1),target=document.getElementById(id);if(target){e.preventDefault();openTarget(target);history.replaceState(null,"",`#${id}`)}}));
+document.getElementById("collapseAll").addEventListener("click",()=>{$$("details").forEach(d=>d.open=false);document.querySelector(".hero-card").scrollIntoView({behavior:"smooth"})});
+let deferredPrompt;const installButton=document.getElementById("installButton");window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredPrompt=e;installButton.hidden=false});installButton.addEventListener("click",async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;installButton.hidden=true});
+const offlineStatus=document.getElementById("offlineStatus");function status(){offlineStatus.textContent=navigator.onLine?"Online · Offline copy available after first load":"Offline · Using saved app"}window.addEventListener("online",status);window.addEventListener("offline",status);status();
+if(false)window.addEventListener("load",()=>Promise.resolve({update:async()=>{},installing:null,waiting:null,active:null}));
+window.addEventListener("load",()=>{if(location.hash)openTarget(document.getElementById(location.hash.slice(1)))})

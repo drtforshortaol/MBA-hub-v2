@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "app_id": "green-falsejingle",
+  "title": "Green Falsejingle",
+  "category": "animals",
+  "type": "species",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/green-falsejingle/index.html",
+  "status": "testing",
+  "owner": "green-falsejingle",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/green-falsejingle/index.html"
+  ],
+  "media": [
+    "asset-3f24669c2980c4f8",
+    "asset-a8b81b143d1657a3",
+    "asset-ddd34d36cd9e0c88",
+    "asset-d8ac0e89299a0aa6",
+    "asset-cf9a0bdb53d3f4fe",
+    "asset-1412182fcc3f4d9a"
+  ],
+  "knowledge": [],
+  "cross_links": [],
+  "sections": [
+    {
+      "id": "Quick-Guide",
+      "title": "Quick Guide",
+      "text": "Quick Guide Length Usually 2–4 in; up to ~5 in Diet Plankton Habitat Rocky/shale reefs; docks and other structures Depth Commonly 0–100 ft; reported to ~300 ft Range Southern California (arguably Baja) to Alaska; Alaska to Japan Lifespan Estimated 3–10 years Status Not Evaluated",
+      "aliases": []
+    },
+    {
+      "id": "1-What-is-a-falsejingle",
+      "title": "1. What is a falsejingle?",
+      "text": "1. What is a falsejingle? A slender bivalve that is sometimes called a rock oyster, although it is not an oyster. Falsejingles are cementing bivalves: rather than remaining mobile as adults, they permanently attach to a surface.",
+      "aliases": []
+    },
+    {
+      "id": "2-Life-Cycle-Settlement",
+      "title": "2. Life Cycle & Settlement",
+      "text": "2. Life Cycle & Settlement Like other bivalves, falsejingles pass through free-swimming larval stages. In the pediveliger stage the larva has a small muscular foot. The source Field Note describes final settlement using a byssus plug made from a composite of proteins and calcium carbonate. The plug passes through the opening in the lower shell and hardens into a permanent anchor.",
+      "aliases": []
+    },
+    {
+      "id": "3-Filter-Feeding-Water-Quality",
+      "title": "3. Filter Feeding & Water Quality",
+      "text": "3. Filter Feeding & Water Quality Falsejingles filter water for plankton and suspended nutrients. As with other bivalves, this can remove particulates and excess nutrients and improve water clarity. Bivalves can also accumulate some metals and contaminants, which is why they can be useful indicators of environmental conditions.",
+      "aliases": []
+    },
+    {
+      "id": "4-Ecosystem-Services",
+      "title": "4. Ecosystem Services",
+      "text": "4. Ecosystem Services Although falsejingles do not build dense reefs like mussels or oysters, their shells add hard surfaces used by barnacles, bryozoans, feather-duster worms, coralline algae and other encrusting organisms. Their filtering also links them to nutrient cycling and water clarity.",
+      "aliases": []
+    },
+    {
+      "id": "5-Predators-Food-Web",
+      "title": "5. Predators & Food Web",
+      "text": "5. Predators & Food Web Predators listed in the source include sunflower, ochre, mottled and rainbow stars, giant Pacific octopus and black oystercatchers. A cited Alaska octopus study found falsejingles among commonly consumed bivalves in some giant Pacific octopus middens, illustrating that individuals can specialize even within a generally broad diet.",
+      "aliases": []
+    },
+    {
+      "id": "6-Where-to-Look-at-the-Aquarium",
+      "title": "6. Where to Look at the Aquarium",
+      "text": "6. Where to Look at the Aquarium The source note says there is no dedicated falsejingle exhibit. They can be found by looking carefully in Monterey Bay Habitats, including along the ledge of the large Monterey Bay Habitats exhibit and on hard surfaces in several exhibits.",
+      "aliases": []
+    },
+    {
+      "id": "7-Guide-Talking-Points",
+      "title": "7. Guide Talking Points",
+      "text": "7. Guide Talking Points “Mermaid’s toenails” is a memorable common name for an easily overlooked bivalve. Unlike a burrowing clam, the adult permanently cements itself to hard substrate. Its shell becomes habitat for other organisms. Filter feeding connects a small animal to water clarity, nutrient cycling and the larger food web.",
+      "aliases": []
+    },
+    {
+      "id": "References-Further-Reading",
+      "title": "References / Further Reading",
+      "text": "References / Further Reading Source Field Note references: MolluscaBase; SeaLifeBase; Walla Walla University invertebrate guide; Journal of Conchology; and the Alaska giant Pacific octopus diet study.",
+      "aliases": []
+    }
+  ],
+  "source_version": "1.0",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
+}

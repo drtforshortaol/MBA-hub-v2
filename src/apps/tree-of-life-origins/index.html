@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#073f4a">
+<meta name="description" content="An interactive journey from prebiotic chemistry through LUCA, endosymbiosis, plants, animals, and the branching Tree of Life.">
+<link rel="icon" href="../../shared/media/asset-aa9c4cbb67f1dbc2--icon-192.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../shared/media/asset-aa9c4cbb67f1dbc2--icon-192.svg">
+<link rel="stylesheet" href="styles.css">
+<title>Tree of Life Origins</title>
+<style>[data-v2-maintenance-hidden="true"]{display:none!important}</style></head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="app-header">
+  <div class="header-inner">
+    <a class="hub-button" href="../../index.html">← Hub</a>
+    <div>
+      <p class="eyebrow">Tree of Life Explorer · Foundation App</p>
+      <h1>Tree of Life Origins</h1>
+      <p class="subtitle">From the earliest Earth to the branching diversity of life</p>
+    </div>
+    <button id="installButton" class="install-button" hidden="hidden" data-v2-maintenance-hidden="true" aria-hidden="true" disabled>Install</button>
+  </div>
+</header>
+
+<nav class="fast-tools" aria-label="Fast tools">
+  <button data-target="overview">Flowchart</button>
+  <button data-target="chapter-0">What Is Life?</button>
+  <button data-target="chapter-1">Earliest Earth</button>
+  <button data-target="chapter-2">Origin</button>
+  <button data-target="chapter-3">LUCA</button>
+  <button data-target="chapter-4">Oxygen</button>
+  <button data-target="chapter-5">Eukaryotes</button>
+  <button data-target="chapter-6">Green Lineage</button>
+  <button data-target="chapter-7">Branches</button>
+  <button id="collapseAll">Re-collapse</button>
+</nav>
+
+<main id="main" class="page-shell">
+<section class="hero-card">
+  <p class="section-kicker">Opening question</p>
+  <h2 id="How-did-chemistry-become-life-and-how-did-life-become-everything-we-see-today">How did chemistry become life—and how did life become everything we see today?</h2>
+  <p>This app follows the full story from the young Earth through microbial evolution, oxygenation, endosymbiosis, plants, animals, and the modern Tree of Life.</p>
+  <div class="guide-prompt"><strong>Guest transition:</strong> “Before comparing two organisms, let’s trace the ancient pathway that made all organisms possible.”</div>
+</section>
+
+<section class="search-panel">
+  <label for="searchInput">Search this app</label>
+  <div class="search-row">
+    <input id="searchInput" type="search" placeholder="Try: RNA, FUCA, oxygen, mitochondria, algae…" autocomplete="off">
+    <button id="clearSearch">Clear</button>
+  </div>
+  <p id="searchStatus" aria-live="polite"></p>
+</section>
+
+<details class="major-dropdown searchable" id="overview" open data-tags="flowchart origin life guide deep dive">
+<summary><span><small>GUIDE DEEP DIVE</small>The Origin of Life Flowchart</span><em>Interactive roadmap</em></summary>
+<div class="major-body">
+<p class="lead">Tap any stage to open its chapter. Solid statements represent strong evidence; question marks and hypothesis labels identify unresolved science.</p>
+
+<div class="origin-flow" aria-label="Origin of life flowchart">
+<a class="flow-box" href="#prebiotic"><b>Prebiotic Chemistry</b><span>oceans · organic molecules · energy sources</span></a>
+<div class="arrow">▼</div>
+<a class="flow-box hypothesis" href="#rna"><b>RNA World?</b><span>information storage and catalysis hypothesis</span></a>
+<div class="arrow">▼</div>
+<a class="flow-box hypothesis" href="#protocells"><b>Protocells</b><span>membrane-bound chemical systems</span></a>
+<div class="arrow">▼</div>
+<a class="flow-box hypothesis" href="#fuca"><b>FUCA?</b><span>hypothetical first universal ancestor</span></a>
+<div class="arrow">▼</div>
+<a class="flow-box" href="#early-lineages"><b>Many Early Lineages</b><span>most left no living descendants</span></a>
+<div class="arrow">▼</div>
+<a class="flow-box core" href="#luca"><b>LUCA</b><span>last universal common ancestral population</span></a>
+
+<div class="split-label">The surviving cellular lineages divide</div>
+<div class="split two">
+  <a class="branch bacteria" href="#bacteria"><b>Bacteria</b><span>includes cyanobacteria and alphaproteobacterial ancestors</span></a>
+  <a class="branch archaea" href="#archaea"><b>Archaea</b><span>includes the host lineage closely related to eukaryotic origins</span></a>
+</div>
+
+<div class="merge-stage">
+  <div class="partner bacteria"><b>Alphaproteobacterial ancestor</b><span>future mitochondrion</span></div>
+  <div class="merge-arrow">＋</div>
+  <div class="partner archaea"><b>Archaea-related host</b><span>host contribution to eukaryotic cell</span></div>
+</div>
+<div class="arrow">▼ Endosymbiosis I</div>
+<a class="flow-box euk" href="#mitochondria"><b>Early Eukaryotic Lineage</b><span>mitochondria · nucleus · internal membranes</span></a>
+
+<div class="split-label">Eukaryotes branch</div>
+<div class="split three">
+  <a class="branch animal" href="#animals"><b>Animals</b></a>
+  <a class="branch fungi" href="#fungi"><b>Fungi</b></a>
+  <a class="branch photosyn" href="#chloroplasts"><b>Photosynthetic Eukaryotes</b><span>after chloroplast endosymbiosis</span></a>
+</div>
+
+<div class="merge-stage">
+  <div class="partner bacteria"><b>Cyanobacterium</b><span>oxygen-producing photosynthesis</span></div>
+  <div class="merge-arrow">＋</div>
+  <div class="partner euk"><b>Mitochondria-bearing eukaryote</b></div>
+</div>
+<div class="arrow">▼ Endosymbiosis II</div>
+<a class="flow-box photosyn" href="#chloroplasts"><b>Primary Photosynthetic Eukaryotes</b><span>chloroplasts</span></a>
+
+<div class="split three">
+  <a class="branch red" href="#algae"><b>Red Algae</b></a>
+  <a class="branch green" href="#green-algae"><b>Green Algae</b></a>
+  <a class="branch note-branch" href="#brown-algae"><b>Other Algae</b><span>brown algae acquired plastids secondarily</span></a>
+</div>
+<div class="arrow">▼</div>
+<a class="flow-box green" href="#land-plants"><b>Green Algae → First Land Plants</b><span>cuticle · stomata · vascular tissue · roots · leaves · seeds · flowers</span></a>
+</div>
+
+<div class="caution"><strong>Scientific caution:</strong> This is a teaching map, not a literal single-file sequence. Early evolution involved populations, branching, extinction, gene transfer, and symbiosis. The exact order of several steps in eukaryotic cell formation remains under study.</div>
+</div>
+</details>
+
+<details class="major-dropdown searchable" id="chapter-0" data-tags="what is life HORGASM viruses">
+<summary><span><small>CHAPTER 0</small>What Is Life?</span><em>Definition and boundary</em></summary>
+<div class="major-body">
+<blockquote>Life is a self-maintaining system that uses energy, responds to its environment, reproduces, and has the capacity to evolve.</blockquote>
+<p>There is no universally accepted single definition. Scientists instead look for a combination of characteristics.</p>
+
+<details class="sub-dropdown" open id="HORGASM-seven-characteristics">
+<summary>HORGASM: seven characteristics</summary>
+<div class="letter-grid">
+<article><b>H</b><span><strong>Homeostasis</strong> regulates internal conditions.</span></article>
+<article><b>O</b><span><strong>Organization</strong> uses one or more cells.</span></article>
+<article><b>R</b><span><strong>Reproduction</strong> continues a living lineage.</span></article>
+<article><b>G</b><span><strong>Growth</strong> builds structure through controlled processes.</span></article>
+<article><b>A</b><span><strong>Adaptation</strong> occurs in populations over generations.</span></article>
+<article><b>S</b><span><strong>Response to stimuli</strong> detects and reacts to change.</span></article>
+<article><b>M</b><span><strong>Metabolism</strong> transforms energy and matter.</span></article>
+</div>
+</details>
+
+<details class="sub-dropdown" id="Are-viruses-alive">
+<summary>Are viruses alive?</summary>
+<div><p>Viruses carry genetic information and evolve, but they are not cells and cannot independently maintain homeostasis, metabolize, grow, or reproduce. They use the machinery of living host cells.</p><div class="guide-prompt"><strong>Guide line:</strong> “A virus brings instructions, but the living cell supplies the factory.”</div></div>
+</details>
+</div>
+</details>
+
+<details class="major-dropdown searchable" id="chapter-1" data-tags="earliest earth oceans atmosphere fossils stromatolites microbial">
+<summary><span><small>CHAPTER 1</small>The Earliest Earth</span><em>4.54–3.4 billion years ago</em></summary>
+<div class="major-body">
+
+<details class="sub-dropdown" open id="Formation-of-the-Early-Earth">
+<summary>Formation of the Early Earth</summary>
+<div>
+<ul>
+<li>Earth formed about 4.54 billion years ago.</li>
+<li>The young Earth was extremely hot, with a largely molten surface.</li>
+<li>As the planet cooled, crust and oceans formed.</li>
+<li>The atmosphere was rich in carbon dioxide, nitrogen, water vapor, and other volcanic gases.</li>
+<li>There was virtually no free atmospheric oxygen.</li>
+</ul>
+<div class="guide-prompt"><strong>Guide discussion:</strong> Without oxygen, early life used metabolisms very different from the oxygen-dependent metabolism familiar to us today.</div>
+</div>
+</details>
+
+<details class="sub-dropdown" id="The-Earliest-Evidence-of-Life">
+<summary>The Earliest Evidence of Life</summary>
+<div class="timeline">
+<article><span>About 3.8–3.7 billion years ago</span><h3 id="Possible-Greenland-evidence">Possible Greenland evidence</h3><p>Chemical and structural evidence has been interpreted as biological, but some claims remain debated.</p></article>
+<article><span>About 3.5–3.4 billion years ago</span><h3 id="Stronger-microbial-evidence">Stronger microbial evidence</h3><p>Ancient rocks from South Africa and Western Australia preserve evidence consistent with microbial communities, including stromatolite-like structures.</p></article>
+</div>
+</details>
+
+<details class="sub-dropdown" id="stromatolites">
+<summary>Stromatolites: visible evidence of a microbial world</summary>
+<div><p>Stromatolites are layered structures built as microbial communities trap sediment and precipitate minerals. Some ancient examples are among Earth’s oldest visible evidence of life. Living stromatolites still form in a few modern environments.</p></div>
+</details>
+
+<details class="sub-dropdown" id="Life-Was-Microbial">
+<summary>Life Was Microbial</summary>
+<div>
+<p>For nearly two billion years, Earth was inhabited almost entirely by single-celled organisms—bacteria and archaea.</p>
+<div class="not-yet"><b>Not yet:</b><span>plants</span><span>animals</span><span>fish</span><span>trees</span><span>dinosaurs</span></div>
+<p>Complex visible life occupies only the most recent portion of Earth’s history.</p>
+</div>
+</details>
+
+<details class="sub-dropdown" id="Why-Earth-could-support-long-term-evolution">
+<summary>Why Earth could support long-term evolution</summary>
+<div><p>Earth supplied persistent liquid water, carbon-rich chemistry, minerals, environmental gradients, and continuous energy sources. These conditions did not guarantee life, but they allowed complex chemistry and long-term evolution to continue.</p></div>
+</details>
+</div>
+</details>
+
+<details class="major-dropdown searchable" id="chapter-2" data-tags="origin prebiotic chemistry RNA world protocells hydrothermal vents FUCA">
+<summary><span><small>CHAPTER 2</small>From Chemistry Toward Life</span><em>Hypotheses and evidence</em></summary>
+<div class="major-body">
+
+<details class="sub-dropdown" id="prebiotic" open>
+<summary>Prebiotic Chemistry</summary>
+<div>
+<p>Before biology, Earth contained chemical ingredients capable of forming more complex organic molecules.</p>
+<ul><li>Liquid water and early oceans</li><li>Carbon-, nitrogen-, sulfur-, and phosphorus-containing compounds</li><li>Mineral surfaces that could concentrate or organize reactions</li><li>Energy from ultraviolet light, lightning, volcanism, and hydrothermal systems</li></ul>
+</div>
+</details>
+
+<details class="sub-dropdown" id="hydrothermal">
+<summary>Hydrothermal Vent Hypothesis</summary>
+<div><p>One leading family of hypotheses places early chemical evolution near seafloor hydrothermal systems. Mineral pores could have provided compartments, catalytic surfaces, chemical gradients, hydrogen, and carbon dioxide. This remains a hypothesis rather than a confirmed birthplace of life.</p></div>
+</details>
+
+<details class="sub-dropdown" id="rna">
+<summary>RNA World? — Hypothesis</summary>
+<div><p>RNA can both store information and catalyze certain chemical reactions. The RNA World hypothesis proposes that RNA-like systems played a major role before the modern DNA–RNA–protein system evolved.</p><div class="caution"><strong>Not established:</strong> Scientists have not reconstructed a complete self-sustaining RNA-based organism from early-Earth conditions.</div></div>
+</details>
+
+<details class="sub-dropdown" id="protocells">
+<summary>Protocells</summary>
+<div><p>Fatty molecules can spontaneously form membrane-like compartments. Protocells are proposed chemical systems in which a boundary, heredity, and metabolism began operating together. They were not necessarily true modern cells.</p></div>
+</details>
+
+<details class="sub-dropdown" id="fuca">
+<summary>FUCA? — First Universal Common Ancestor</summary>
+<div>
+<p>FUCA is a hypothetical concept for a very early ancestor—or population of primitive systems—near the transition from chemistry to biology.</p>
+<ul><li>It may not have been a single organism.</li><li>Its biology is unknown.</li><li>It may predate the fully developed genetic and cellular machinery inferred for LUCA.</li><li>It remains an active and highly theoretical area of research.</li></ul>
+</div>
+</details>
+
+<details class="sub-dropdown" id="early-lineages">
+<summary>Many Early Lineages</summary>
+<div><p>The earliest living world probably contained many experimental lineages. Most became extinct and left no living descendants. LUCA was therefore not necessarily the only organism alive; it is the ancestral population through which all surviving cellular life is connected.</p></div>
+</details>
+</div>
+</details>
+
+<details class="major-dropdown searchable" id="chapter-3" data-tags="LUCA bacteria archaea domains ribosomes ATP">
+<summary><span><small>CHAPTER 3</small>LUCA and the First Great Branches</span><em>Universal inheritance</em></summary>
+<div class="major-body">
+
+<details class="sub-dropdown" id="luca" open>
+<summary>LUCA — Last Universal Common Ancestor</summary>
+<div>
+<p>LUCA was not necessarily the first life, one individual, or a modern-looking cell. It represents the last ancestral population shared by all cellular organisms alive today.</p>
+<div class="two-column">
+<div><h3 id="Likely-present">Likely present</h3><ul><li>DNA and RNA</li><li>Ribosomes and protein synthesis</li><li>A genetic code</li><li>Cell membranes</li><li>ATP-based energy chemistry</li><li>Core metabolic pathways</li></ul></div>
+<div><h3 id="Not-yet-present-as-eukaryotic-organelles">Not yet present as eukaryotic organelles</h3><ul><li>Nucleus</li><li>Mitochondria</li><li>Chloroplasts</li></ul></div>
+</div>
+<div class="caution">LUCA’s exact age, habitat, membrane structure, and metabolism remain debated.</div>
+</div>
+</details>
+
+<details class="sub-dropdown" id="bacteria">
+<summary>Bacteria</summary>
+<div><p>Bacteria became one of the major cellular lineages. Their later diversity included cyanobacteria, which evolved oxygen-producing photosynthesis, and the alphaproteobacterial lineage related to the ancestor of mitochondria.</p></div>
+</details>
+
+<details class="sub-dropdown" id="archaea">
+<summary>Archaea</summary>
+<div>
+<p>Archaea form another major cellular lineage. Many were first recognized in extreme environments:</p>
+<div class="chips"><span>hot springs</span><span>hydrothermal vents</span><span>acidic waters</span><span>hypersaline waters</span></div>
+<p>Archaea also live throughout ordinary soils, oceans, sediments, and animal microbiomes. Many use chemical energy rather than sunlight. Modern evidence links an Asgard-archaea-related lineage closely to the host side of eukaryotic origins.</p>
+</div>
+</details>
+</div>
+</details>
+
+<details class="major-dropdown searchable" id="chapter-4" data-tags="cyanobacteria oxygen photosynthesis Great Oxidation Event anaerobic">
+<summary><span><small>CHAPTER 4</small>Oxygen: Earth’s First Great Pollution</span><em>Planetary transformation</em></summary>
+<div class="major-body">
+
+<details class="sub-dropdown" open id="Cyanobacteria-Changed-the-Planet">
+<summary>Cyanobacteria Changed the Planet</summary>
+<div><p>Cyanobacteria evolved oxygen-producing photosynthesis. They used sunlight, water, and carbon dioxide to build sugars and released oxygen.</p><div class="equation">Sunlight + CO₂ + H₂O → Sugars + O₂</div></div>
+</details>
+
+<details class="sub-dropdown" id="Why-oxygen-was-initially-a-pollutant">
+<summary>Why oxygen was initially a pollutant</summary>
+<div><p>Early organisms evolved in an oxygen-free world. Oxygen is highly reactive and could damage their molecules. For many anaerobic microbes, it was toxic.</p></div>
+</details>
+
+<details class="sub-dropdown" id="Why-oxygen-did-not-accumulate-immediately">
+<summary>Why oxygen did not accumulate immediately</summary>
+<div><p>Oxygen first reacted with dissolved iron, volcanic gases, rocks, and other reduced materials. These oxygen sinks absorbed it before sustained atmospheric accumulation became possible.</p></div>
+</details>
+
+<details class="sub-dropdown" id="The-Great-Oxidation-Event">
+<summary>The Great Oxidation Event</summary>
+<div><p>Beginning around 2.4 billion years ago, oxygen accumulated persistently in the atmosphere. Many anaerobic lineages declined or became restricted to oxygen-free habitats, while other organisms evolved detoxification and oxygen-using metabolism.</p></div>
+</details>
+
+<details class="sub-dropdown" id="Oxygen-levels-rose-in-stages">
+<summary>Oxygen levels rose in stages</summary>
+<div><p>The Great Oxidation Event did not immediately create modern oxygen levels. Oxygen continued changing over immense spans of time, with later oceanic and atmospheric increases helping support larger, more active multicellular organisms.</p></div>
+</details>
+
+<details class="sub-dropdown" id="Why-oxygen-became-an-opportunity">
+<summary>Why oxygen became an opportunity</summary>
+<div><p>Aerobic respiration can release large amounts of usable energy from food. Organisms able to exploit oxygen gained access to a powerful energy source.</p></div>
+</details>
+</div>
+</details>
+
+<details class="major-dropdown searchable" id="chapter-5" data-tags="eukaryotes endosymbiosis mitochondria nucleus chloroplasts">
+<summary><span><small>CHAPTER 5</small>The Rise of Eukaryotes</span><em>Ancient partnerships</em></summary>
+<div class="major-body">
+
+<details class="sub-dropdown" id="mitochondria" open>
+<summary>Endosymbiosis I: the origin of mitochondria</summary>
+<div>
+<p>An archaea-related host lineage formed a lasting partnership with an alphaproteobacterial cell. Instead of one partner destroying the other, the relationship became permanent. The bacterial partner evolved into the mitochondrion.</p>
+<div class="story-line"><span>Archaea-related host</span><b>＋</b><span>alphaproteobacterial partner</span><b>→</b><span>mitochondria-bearing eukaryotic lineage</span></div>
+<p>The exact sequence by which the nucleus, cytoskeleton, internal membranes, and mitochondrial partnership assembled remains an active area of research.</p>
+</div>
+</details>
+
+<details class="sub-dropdown" id="Why-mitochondria-matter">
+<summary>Why mitochondria matter</summary>
+<div><p>Mitochondria use oxygen-dependent chemistry to generate ATP, the immediately usable energy currency of cells. This energy system helped support larger genomes, active transport, movement, and cellular complexity.</p></div>
+</details>
+
+<details class="sub-dropdown" id="All-plants-have-mitochondria">
+<summary>All plants have mitochondria</summary>
+<div><p>Plant cells perform photosynthesis in chloroplasts and cellular respiration in mitochondria. Animals have mitochondria but no chloroplasts. Plants have both.</p></div>
+</details>
+
+<details class="sub-dropdown" id="chloroplasts">
+<summary>Endosymbiosis II: the origin of chloroplasts</summary>
+<div>
+<p>A mitochondria-bearing eukaryote formed a second permanent partnership, this time with a cyanobacterium. That cyanobacterium evolved into the primary chloroplast.</p>
+<div class="story-line"><span>eukaryotic host with mitochondria</span><b>＋</b><span>cyanobacterium</span><b>→</b><span>photosynthetic eukaryote with chloroplasts</span></div>
+<p>This primary event gave rise to the plastid lineage inherited by red algae, green algae, and land plants.</p>
+</div>
+</details>
+</div>
+</details>
+
+<details class="major-dropdown searchable" id="chapter-6" data-tags="algae red green brown secondary endosymbiosis land plants">
+<summary><span><small>CHAPTER 6</small>Algae and the Green Lineage</span><em>Not one single group</em></summary>
+<div class="major-body">
+
+<details class="sub-dropdown" id="algae" open>
+<summary>“Algae” are not one evolutionary branch</summary>
+<div><p>Algae are multiple photosynthetic eukaryotic lineages with different evolutionary histories. The word describes a lifestyle and appearance more than a single natural group.</p></div>
+</details>
+
+<details class="sub-dropdown" id="Red-algae">
+<summary>Red algae</summary>
+<div><p>Red algae descend from the primary chloroplast-bearing lineage and form their own ancient branch of photosynthetic eukaryotes.</p></div>
+</details>
+
+<details class="sub-dropdown" id="green-algae">
+<summary>Green algae and land plants</summary>
+<div><p>Land plants evolved from within the green lineage. Green algae are therefore the closest algal relatives of land plants, although “green algae” themselves include several branches.</p></div>
+</details>
+
+<details class="sub-dropdown" id="brown-algae">
+<summary>Brown algae and secondary endosymbiosis</summary>
+<div><p>Brown algae did not inherit chloroplasts directly from the original cyanobacterial partnership. Their ancestors engulfed a red-algal cell and retained its chloroplast—a later process called secondary endosymbiosis. This is one reason algae do not form a single branch.</p></div>
+</details>
+
+<details class="sub-dropdown" id="land-plants">
+<summary>From green algae to land plants</summary>
+<div>
+<p>Moving onto land required a series of evolutionary innovations. They did not all appear at once or in one straight line.</p>
+<div class="innovation-path">
+<span>green-algal ancestors</span><b>→</b><span>embryo protection</span><b>→</b><span>cuticle</span><b>→</b><span>stomata</span><b>→</b><span>vascular tissue</span><b>→</b><span>true roots, stems, and leaves</span><b>→</b><span>seeds</span><b>→</b><span>flowers</span>
+</div>
+</div>
+</details>
+</div>
+</details>
+
+<details class="major-dropdown searchable" id="chapter-7" data-tags="animals fungi plants common ancestor branching tree ladder">
+<summary><span><small>CHAPTER 7</small>The Branching Tree of Life</span><em>Common ancestry</em></summary>
+<div class="major-body">
+
+<details class="sub-dropdown" open id="Evolution-is-a-tree-not-a-ladder">
+<summary>Evolution is a tree, not a ladder</summary>
+<div><p>No living species is the goal or top of evolution. Every organism is a surviving twig on a branching tree. Humans, jellyfish, kelp, bacteria, and birds all have equally long evolutionary histories extending back to shared ancestors.</p></div>
+</details>
+
+<details class="sub-dropdown" id="animals">
+<summary>Animals</summary>
+<div><p>Animals form one branch of eukaryotes. Early animals evolved in the ocean before plants colonized land. Animals did not evolve from plants.</p></div>
+</details>
+
+<details class="sub-dropdown" id="fungi">
+<summary>Fungi</summary>
+<div><p>Fungi form a separate eukaryotic branch and are more closely related to animals than to plants.</p></div>
+</details>
+
+<details class="sub-dropdown" id="Plants-and-animals-are-separate-branches">
+<summary>Plants and animals are separate branches</summary>
+<div><p>Plants and animals diverged from much older eukaryotic ancestors. Photosynthetic algae existed before animals, but land plants appeared after early animals were already present.</p></div>
+</details>
+
+<details class="sub-dropdown" id="What-the-common-ancestor-tells-us">
+<summary>What the common ancestor tells us</summary>
+<div><p>When two organisms are compared, the key question is not which is “higher.” It is where their lineages last shared an ancestral population and what traits were already present at that point.</p></div>
+</details>
+
+<details class="sub-dropdown" id="Taxonomic-rank-versus-evolutionary-divergence">
+<summary>Taxonomic rank versus evolutionary divergence</summary>
+<div><p>Kingdom, phylum, class, and other ranks help organize organisms, but ranks are human categories. The branching point—the last common ancestor—is the scientific event the Tree of Life Explorer should emphasize.</p></div>
+</details>
+
+<div class="guide-prompt"><strong>Transition to organism comparison:</strong> “Choose any two organisms. We will trace their branches backward until they meet, then identify what their common ancestor likely possessed.”</div>
+</div>
+</details>
+
+<details class="major-dropdown searchable" id="guide-talk" data-tags="guide guest talk script">
+<summary><span><small>GUIDE SUPPORT</small>Suggested Talk Sequence</span><em>1–5 minutes</em></summary>
+<div class="major-body">
+<ol class="talk-list">
+<li><strong>Begin:</strong> “What makes something alive?”</li>
+<li><strong>Test the boundary:</strong> Use viruses as the discussion case.</li>
+<li><strong>Set the scene:</strong> Young Earth had oceans but virtually no atmospheric oxygen.</li>
+<li><strong>Establish scale:</strong> Life remained microbial for nearly two billion years.</li>
+<li><strong>Create the turning point:</strong> Cyanobacteria released a toxic pollutant—oxygen.</li>
+<li><strong>Introduce partnership:</strong> A bacterium became the mitochondrion inside an archaea-related host lineage.</li>
+<li><strong>Add photosynthesis:</strong> A later cyanobacterium became the chloroplast.</li>
+<li><strong>Finish with branching:</strong> Animals, fungi, plants, and algae occupy different branches.</li>
+<li><strong>Open the Explorer:</strong> Compare two organisms and find where their histories meet.</li>
+</ol>
+</div>
+</details>
+
+<details class="major-dropdown" id="REFERENCE-Scientific-Cautions-Guide-level">
+<summary><span><small>REFERENCE</small>Scientific Cautions</span><em>Guide level</em></summary>
+<div class="major-body">
+<ul>
+<li>RNA World, protocells, hydrothermal origins, and FUCA are hypotheses or theoretical frameworks.</li>
+<li>LUCA was likely a population and was not necessarily the first life.</li>
+<li>The exact order of mitochondrial acquisition, nucleus formation, and internal membrane evolution remains debated.</li>
+<li>Brown algae acquired their plastids through secondary endosymbiosis involving a red-algal ancestor.</li>
+<li>Adaptation occurs across populations and generations; individuals do not evolve because they “need” to.</li>
+<li>Taxonomic ranks do not always correspond neatly to equal evolutionary depths.</li>
+</ul>
+</div>
+</details>
+</main>
+
+<footer>
+<p>Tree of Life Origins · MBA Hub · Version 2.0.0</p>
+<p id="offlineStatus" data-v2-maintenance-hidden="true" hidden="hidden" aria-hidden="true">Checking offline status…</p>
+</footer>
+<script src="app.js"></script>
+<script type="module" src="../../core/app-contract.js"></script></body>
+</html>

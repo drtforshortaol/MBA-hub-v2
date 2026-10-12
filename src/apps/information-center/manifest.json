@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "app_id": "information-center",
+  "title": "Information Center Handbook",
+  "category": "volunteer-tools",
+  "type": "reference",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/information-center/index.html",
+  "status": "testing",
+  "owner": "information-center",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/information-center/app.js",
+    "apps/information-center/data.js",
+    "apps/information-center/index.html",
+    "apps/information-center/styles.css"
+  ],
+  "media": [
+    "asset-1e94c29588faf6ba"
+  ],
+  "knowledge": [],
+  "cross_links": [],
+  "sections": [],
+  "source_version": "2.1",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
+}

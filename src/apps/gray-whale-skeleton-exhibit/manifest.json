@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "app_id": "gray-whale-skeleton-exhibit",
+  "title": "Gray Whale Skeleton",
+  "category": "exhibits",
+  "type": "reference",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/gray-whale-skeleton-exhibit/index.html",
+  "status": "testing",
+  "owner": "gray-whale-skeleton-exhibit",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/gray-whale-skeleton-exhibit/index.html"
+  ],
+  "media": [
+    "asset-29f85ad9d9ef593f"
+  ],
+  "knowledge": [],
+  "cross_links": [
+    {
+      "app_id": "gray-whale"
+    }
+  ],
+  "sections": [
+    {
+      "id": "Gray-Whale-Skeleton",
+      "title": "Gray Whale Skeleton",
+      "text": "Gray Whale Skeleton Steve Webster's Skeleton Story Monterey Bay Aquarium · Exhibit history",
+      "aliases": []
+    },
+    {
+      "id": "Steve-Webster-s-Story",
+      "title": "📖 Steve Webster's Story",
+      "text": "📖 Steve Webster's Story A 26-foot-long, young-of-the-year male gray whale washed ashore near the Seaside sewage treatment plant. Steve Webster and colleagues decided to recover its skeleton. Three tow trucks were brought in to move the whale, but the team had to wait for a marine mammal permit before flensing could begin. In the September warmth, decomposition gases built up inside the carcass. The team warned everyone to avoid cutting the body cavity, but someone miscalculated. The carcass ruptured, sending a geyser of hot, putrid blood about 20 feet into the air. People holding long flensing knives scattered. Steve compared the scene to a cheap samurai movie. Julie Packard was present wearing a white sweatshirt; astonishingly, not a drop of blood touched it. The bones were buried on the beach at the Naval Postgraduate School, recovered about a year later, cleaned at a car wash, and soaked in Biz enzyme detergent for approximately six months to remove oil. The bones were then stabilized with vinylite resin and reassembled with advice from Vic Morejohn of Moss Landing Marine Laboratories. Years later, a veterinary pathologist noticed osteochondrosis dissecans in the shoulder joints. Steve suggested the condition may have interfered with the whale's migration and contributed to starvation. No obvious net damage or other trauma had been found.",
+      "aliases": []
+    },
+    {
+      "id": "Visitor-Questions",
+      "title": "❓ Visitor Questions",
+      "text": "❓ Visitor Questions What whale is this?  A young-of-the-year male gray whale, about 26 feet long. Where was it found?  On the beach near the Seaside sewage treatment plant. How did the Aquarium prepare the skeleton?  The team recovered and flensed the carcass, buried the bones for about a year, cleaned and degreased them, stabilized them with resin, and reassembled the skeleton. Why did the whale die?  The cause was not definitively established. Steve reported shoulder-joint disease and suggested that impaired migration and starvation were possible. Did the whale explode?  Decomposition gases built up in the body, and the carcass ruptured during flensing.",
+      "aliases": []
+    },
+    {
+      "id": "Science-Behind-the-Story",
+      "title": "🔬 Science Behind the Story",
+      "text": "🔬 Science Behind the Story Flensing:  Removing skin, blubber, and soft tissues from a whale carcass. Decomposition gases:  Microbial breakdown can generate pressure inside a carcass, especially in warm conditions. Bone degreasing:  Whale bones retain substantial oil; prolonged cleaning reduces seepage and deterioration. Osteochondrosis dissecans:  A disorder affecting joint cartilage and underlying bone, potentially limiting joint function. Its role in this whale's death remains a historical interpretation rather than a confirmed cause of death.",
+      "aliases": []
+    },
+    {
+      "id": "Understanding-Osteochondrosis-Dissecans-OCD",
+      "title": "🦴 Understanding Osteochondrosis Dissecans (OCD)",
+      "text": "🦴 Understanding Osteochondrosis Dissecans (OCD) What is it?  Osteochondrosis is a disorder in which cartilage does not develop into bone normally. Affected joint cartilage can become thickened and weakened. In more advanced lesions, cracks (fissures) can form and a portion of cartilage may partly separate, sometimes involving the bone beneath it. The term  osteochondritis dissecans  is often used for this separating or fragmenting joint lesion. Healthy joint surface OCD: cartilage separation Fissure / flap Smooth articular cartilage Cartilage and underlying bone affected Simplified original teaching diagram, not an image of the Aquarium whale or a veterinary diagnosis. Cartilage is shown in blue; the damaged region is highlighted in red. Why might this matter to a whale?  Damage in a shoulder joint could plausibly reduce comfortable or effective flipper movement. However, how much the condition affected this particular whale is uncertain. What did Steve report?  Steve Webster recalled that a veterinary pathologist identified abnormalities described as osteochondrosis dissecans in the skeleton's shoulder joints. Steve proposed that reduced swimming performance might have interfered with migration and contributed to starvation. That remains his historical interpretation,  not a confirmed cause of death . Terminology note:  Some veterinary pathology references favor the broader term  osteochondrosis , because inflammation is not necessarily present and separation occurs only in some lesions. Further reading:  NIH/NTP Nonneoplastic Lesion Atlas: Osteochondrosis ↗  ·  NIH GARD: Osteochondritis dissecans ↗ . General pathology sources, not case-specific examination reports.",
+      "aliases": []
+    },
+    {
+      "id": "Full-Transcript-edited-for-readability",
+      "title": "📝 Full Transcript (edited for readability)",
+      "text": "📝 Full Transcript (edited for readability) \n Our whale skeleton came from a 26-foot-long, young-of-the-year male gray whale that washed up dead on the beach, right by the Seaside sewage treatment plant at that time, in September. Warm, sunny day. \n And Julie and our project manager and I went over and sat on the beach and watched this whale washing back and forth in the surf, and asking ourselves, “Do we really want that whale?” \n And I said, “Well, I know all the students at Moss Landing Marine Lab in the marine mammal class who do dissect whales and get the skeletons out of them. Let's do it.” \n So we got three tow trucks to pull the whale up out of the beach. Had to wait the next day till two in the afternoon before we could start flensing the whale, because we didn't have a marine mammal permit. In fact, it was illegal just to tow it up the beach. \n We had to wait for a marine mammal person from the Cal Academy of Sciences to arrive with the permit. So that whale skeleton is on loan, really, from the Cal Academy. \n Anyway, hot summer September day. As we were waiting for the permit to come, the whale got tighter and tighter and tighter as the gases built up. And so everybody agreed, “Don't anybody cut the body cavity, because this thing's going to explode.” \n And so we were all working on the rostrum and the flippers and the flukes and the tail, and staying away from the body cavity. Somebody miscalculated. \n And all of a sudden, boom! This geyser of hot, putrid blood goes about 20 feet in the air. Everybody with these long flensing knives goes dashing off in all directions. Looked like the worst cheap samurai movie you have ever seen. \n And Julie Packard was there in a white sweatshirt. Why anyone would go to a whale flensing in a white sweatshirt, I don't know. But not one drop of blood touched that sweatshirt. I think Julie has a protective aura around her. \n So, get the bones out of the whale, bury them in the beach at the Naval Postgraduate School, go back a year later and dig them up, take them to the car wash, convince the man you really want him to let us wash our whale in his car wash. \n Then you soak the bones in Biz enzyme detergent for about six months. Whale bones are 30 percent oil. You have to get all that oil out, or it starts to rot and drip on your guests. And so, six months. \n Then firm them up with a very toxic vinylite resin, and then get the guys in the shop to put it all back together in exactly the right arrangement with the advice of Vic Morejohn at Moss Landing Marine Lab. So that's the skeleton that you see out there. \n And I have one quick story about the skeleton, and then I will let you go. \n One day, about ten years ago, I got an email from a veterinary pathologist who said, “Do you know that your whale skeleton has osteochondrosis dissecans?” And I thought, I have no idea what that is, and I didn't know our whale had it. \n It is a degenerative bone disease, and the skeleton has it in the shoulder joints, right below the shoulder blades there. \n So I grabbed our veterinarian, Mike Murray, and walked him out there, and I said, “Mike, look at the shoulder joints. What do you see?” “Ah, osteochondrosis dissecans.” \n So that explains why that whale didn't make the migration, probably starved to death and washed up dead on the beach. There had been no apparent net damage or any other trauma.",
+      "aliases": []
+    }
+  ],
+  "source_version": "1.0",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
+}

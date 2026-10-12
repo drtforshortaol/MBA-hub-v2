@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whale Parasites &amp; Associates · MBA Reference</title>
+
+  <meta name="theme-color" content="#0B2A4A">
+  <meta name="description" content="MBA volunteer reference for whale parasites, barnacles, whale lice, remoras, and cookiecutter shark scars.">
+
+  <link rel="stylesheet" href="styles.css">
+<style>[data-v2-maintenance-hidden="true"]{display:none!important}</style></head>
+
+<body>
+  <header class="app-header">
+    <div class="top-actions" aria-label="Common app controls">
+      <a class="top-button" href="../../index.html">← MBA Hub</a>
+      <button class="top-button" id="clearCacheBtn" type="button" data-v2-maintenance-hidden="true" hidden="hidden" aria-hidden="true" disabled>Clear Cache</button>
+      <button class="top-button" id="troubleshootingBtn" type="button" aria-expanded="false" aria-controls="troubleshootingPanel" data-v2-maintenance-hidden="true" hidden="hidden" aria-hidden="true" disabled>Troubleshooting</button>
+    </div>
+
+    <div id="updateMessage" class="update-message" role="status" aria-live="polite" data-v2-maintenance-hidden="true" hidden="hidden" aria-hidden="true">
+      App loaded. Cache has not been cleared yet.
+    </div>
+
+    <section id="troubleshootingPanel" class="troubleshooting-panel" hidden="hidden" data-v2-maintenance-hidden="true" aria-hidden="true">
+      <div class="troubleshooting-header">
+        <h2>Troubleshooting</h2>
+        <button class="close-panel" id="closeTroubleshootingBtn" type="button" aria-label="Close troubleshooting panel" data-v2-maintenance-hidden="true" hidden="hidden" aria-hidden="true" disabled>× Close</button>
+      </div>
+
+      <div class="troubleshooting-grid">
+        <div>
+          <h3>If the app shows an old version</h3>
+          <p>Tap <strong>Clear Cache</strong>, then let the page reload. On PC, you can also press <strong>Ctrl + Shift + R</strong>.</p>
+        </div>
+        <div>
+          <h3>If the app looks broken</h3>
+          <p>Reload the page. If it still looks wrong, clear cache and reopen the app from the Hub.</p>
+        </div>
+        <div>
+          <h3>If the app will not close this panel</h3>
+          <p>Tap <strong>× Close</strong>. On PC, press <strong>Escape</strong>. If needed, reload the page.</p>
+        </div>
+        <div>
+          <h3>iPhone Safari cache</h3>
+          <p>Open Settings → Apps → Safari → Advanced → Website Data. Search for the hosting site, delete its data, then reopen the app.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="header-eyebrow">MBA Volunteer Reference</div>
+    <h1 class="header-title">Whale <span>Parasites</span> &amp; Associates</h1>
+    <p class="header-subtitle">
+      Barnacles, whale lice, remoras, cookiecutter scars, and field ID clues.
+    </p>
+
+    <div class="header-tools">
+      <div class="select-wrapper">
+        <select id="jumpSelect" aria-label="Jump to a parasite or associate">
+          <option value="">— Jump to a parasite or associate —</option>
+        </select>
+      </div>
+
+      <label class="search-wrapper" for="searchInput">
+        <span class="sr-only">Search whale parasite reference</span>
+        <input id="searchInput" type="search" placeholder="Search scars, hosts, barnacles, lice…" autocomplete="off">
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section class="naturalist-note">
+      <div class="note-eye">Field note · June 2025</div>
+      <p>
+        Super friendly humpbacks gave us great looks at barnacles, lice, and remora scars.
+        Blue and fin whales running offshore brought cookiecutter shark bites and clusters of whalesuckers.
+        Coastal species often show heavier parasite loads because drifting larvae are nearby.
+      </p>
+    </section>
+
+    <section class="quick-guide">
+      <h2 id="Fast-field-cues">Fast field cues</h2>
+      <div class="quick-grid">
+        <div><strong>Round scars</strong><span>Cookiecutter shark</span></div>
+        <div><strong>White clusters</strong><span>Whale barnacles</span></div>
+        <div><strong>Tiny crustaceans</strong><span>Whale lice</span></div>
+        <div><strong>Dark clinging fish</strong><span>Whalesucker remora</span></div>
+      </div>
+    </section>
+
+    <nav class="filter-tabs" id="filterTabs" aria-label="Filter parasite cards"></nav>
+
+    <p id="resultCount" class="result-count" aria-live="polite"></p>
+
+    <section id="cardList" class="card-list" aria-label="Whale parasite and associate cards"></section>
+
+    <section id="relatedHubTopics" class="related-hub-topics" aria-label="Related Hub topics"></section>
+
+    <section class="references-section">
+      <h2 id="References">References</h2>
+      <p>Content based on naturalist field notes and MBA volunteer reference notes, June 2025.</p>
+      <p>Images: no external photos are bundled with this version. App icon is a simple included SVG.</p>
+    </section>
+  </main>
+
+  <footer>
+    MBA Volunteer Reference · Whale Parasites &amp; Associates<br>
+    Version 1.5 · Updated 2026-06-26
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+<script type="module" src="../../core/app-contract.js"></script></body>
+</html>

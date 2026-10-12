@@ -1,0 +1,1425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Open Sea Exhibit — MBA Volunteer Reference</title>
+
+<meta name="description" content="Monterey Bay Aquarium volunteer reference for the Open Sea exhibit, pelagic physical factors, and animal adaptations.">
+
+<meta name="theme-color" content="#0b3d5c">
+
+<style>
+:root {
+  --deep: #0b3d5c;
+  --deep-dark: #082f49;
+  --ocean: #0e6ba8;
+  --ocean-light: #4a9fd8;
+  --surface: #e8f4fa;
+  --sand: #f4ecd8;
+  --sand-dark: #e0d3ae;
+  --kelp: #2e7d5b;
+  --kelp-light: #dff3e9;
+  --ink: #1c2b33;
+  --muted: #5c7078;
+  --card-bg: #ffffff;
+  --border: #d8e6ec;
+  --danger: #9f2d2d;
+  --shadow: 0 2px 8px rgba(11, 61, 92, 0.10);
+  --shadow-lg: 0 8px 24px rgba(11, 61, 92, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding-bottom: 60px;
+  background: linear-gradient(180deg, var(--surface), var(--sand));
+  color: var(--ink);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+button,
+input,
+a {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 2000;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--deep);
+  font-weight: 800;
+  text-decoration: none;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.hub-topbar {
+  position: relative;
+  z-index: 70;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--deep-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.hub-control {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  border-radius: 9px;
+  background: #ffffff;
+  color: var(--deep);
+  font-size: 0.88rem;
+  font-weight: 750;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hub-control:hover {
+  background: var(--surface);
+}
+
+.hub-control:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.hub-control:focus-visible,
+.tag-btn:focus-visible,
+.card-header:focus-visible,
+.utility-button:focus-visible,
+.troubleshooting-close:focus-visible,
+.search-bar input:focus-visible {
+  outline: 3px solid #8dd4ff;
+  outline-offset: 2px;
+}
+
+.app-notification {
+  padding: 8px 14px;
+  background: var(--kelp-light);
+  color: #174d38;
+  border-bottom: 1px solid #b9dfcc;
+  font-size: 0.8rem;
+  font-weight: 750;
+  text-align: center;
+}
+
+.app-notification.error {
+  background: #fde8e8;
+  color: var(--danger);
+  border-color: #efb8b8;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 18px 20px 14px;
+  background: linear-gradient(120deg, var(--deep), var(--ocean));
+  color: #ffffff;
+  box-shadow: var(--shadow-lg);
+}
+
+header h1 {
+  margin: 0 0 4px;
+  font-size: 1.4rem;
+}
+
+header p {
+  margin: 0;
+  color: #cfe6f4;
+  font-size: 0.85rem;
+}
+
+.search-bar {
+  display: flex;
+  margin-top: 12px;
+}
+
+.search-bar input {
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.tag-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.tag-btn {
+  min-height: 36px;
+  padding: 5px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.10);
+  color: #eaf5fb;
+  font-size: 0.76rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tag-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.tag-btn.active {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: var(--deep);
+  font-weight: 750;
+}
+
+main {
+  max-width: 780px;
+  margin: 20px auto 0;
+  padding: 0 16px;
+}
+
+.intro-card,
+.notice-card {
+  margin-bottom: 18px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+.intro-card {
+  border-left: 5px solid var(--kelp);
+}
+
+.notice-card {
+  border-left: 5px solid var(--ocean);
+}
+
+.intro-card h2,
+.notice-card h2 {
+  margin: 0 0 8px;
+  color: var(--deep);
+  font-size: 1.05rem;
+}
+
+.intro-card p,
+.notice-card p {
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.intro-card p:last-child,
+.notice-card p:last-child {
+  margin-bottom: 0;
+}
+
+.habitat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.habitat-chip {
+  padding: 5px 10px;
+  border: 1px solid var(--sand-dark);
+  border-radius: 8px;
+  background: var(--sand);
+  color: var(--deep);
+  font-size: 0.76rem;
+}
+
+.utility-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.utility-button {
+  min-height: 42px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--deep);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.utility-button:hover {
+  background: var(--surface);
+}
+
+.section-label {
+  margin: 22px 4px 8px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.result-count {
+  margin: -2px 4px 10px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.card {
+  overflow: hidden;
+  margin-bottom: 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+.card-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.card-header:hover {
+  background: var(--surface);
+}
+
+.card-icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: var(--surface);
+  font-size: 1.35rem;
+}
+
+.card-title-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-title {
+  display: block;
+  margin: 0;
+  color: var(--deep);
+  font-size: 1rem;
+  font-weight: 750;
+}
+
+.card-subtitle {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.mini-tag {
+  padding: 2px 7px;
+  border: 1px solid var(--sand-dark);
+  border-radius: 999px;
+  background: var(--sand);
+  color: var(--deep);
+  font-size: 0.66rem;
+}
+
+.chevron {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--ocean);
+  transition: transform 0.2s ease;
+}
+
+.card.open .chevron {
+  transform: rotate(180deg);
+}
+
+.card-body {
+  max-height: 0;
+  overflow: hidden;
+  background: #fbfdfe;
+  transition: max-height 0.25s ease;
+}
+
+.card.open .card-body {
+  max-height: 7000px;
+}
+
+.card-body-inner {
+  padding: 4px 18px 18px 62px;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.card-body-inner h4 {
+  margin: 14px 0 6px;
+  color: var(--ocean);
+  font-size: 0.84rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.card-body-inner h4:first-child {
+  margin-top: 0;
+}
+
+.card-body-inner ul,
+.card-body-inner ol {
+  margin: 0 0 8px;
+  padding-left: 22px;
+}
+
+.card-body-inner li {
+  margin-bottom: 5px;
+}
+
+.card-body-inner p {
+  margin: 0 0 8px;
+}
+
+.adapt-box,
+.training-note {
+  margin-top: 10px;
+  padding: 9px 12px;
+  border-radius: 6px;
+}
+
+.adapt-box {
+  border-left: 3px solid var(--kelp);
+  background: var(--surface);
+}
+
+.training-note {
+  border-left: 3px solid var(--ocean);
+  background: #eef7fc;
+}
+
+.adapt-box h4 {
+  margin-top: 0;
+  color: var(--kelp);
+}
+
+.training-note h4 {
+  margin-top: 0;
+}
+
+.fact-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.fact-pill {
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: var(--deep);
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.empty-state {
+  display: none;
+  padding: 40px 20px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.empty-state.show {
+  display: block;
+}
+
+.references {
+  margin-top: 26px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.references summary {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  color: var(--deep);
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.references-content {
+  padding: 0 16px 16px;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+footer {
+  padding: 26px 16px 10px;
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.troubleshooting-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 18px;
+  background: rgba(4, 28, 44, 0.78);
+}
+
+.troubleshooting-panel[hidden] {
+  display: none;
+}
+
+.troubleshooting-card {
+  width: min(100%, 680px);
+  margin: 24px auto;
+  padding: 20px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.30);
+}
+
+.troubleshooting-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.troubleshooting-heading h2 {
+  margin: 0;
+  color: var(--deep);
+  font-size: 1.25rem;
+}
+
+.troubleshooting-close {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--deep);
+  color: #ffffff;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.troubleshooting-card h3 {
+  margin: 18px 0 6px;
+  color: var(--ocean);
+  font-size: 0.98rem;
+}
+
+.troubleshooting-card p,
+.troubleshooting-card li {
+  line-height: 1.6;
+}
+
+.troubleshooting-version {
+  margin-top: 22px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 560px) {
+  .hub-control {
+    flex: 1 1 auto;
+    padding-inline: 9px;
+    font-size: 0.8rem;
+  }
+
+  header {
+    padding-inline: 14px;
+  }
+
+  header h1 {
+    font-size: 1.22rem;
+  }
+
+  main {
+    padding-inline: 12px;
+  }
+
+  .card-body-inner {
+    padding-left: 16px;
+  }
+
+  .troubleshooting-panel {
+    padding: 8px;
+  }
+
+  .troubleshooting-card {
+    margin: 8px auto;
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+:root{--deep:#073b4c;--deep-dark:#073b4c;--ocean:#075975}.hub-topbar{background:#073b4c}.hub-control{background:#075975;color:white;border:1px solid #6b9eae;border-radius:999px}header{position:relative;top:auto;background:#073b4c;box-shadow:none}.open-sea-hero{max-width:1000px;margin:auto;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center;gap:20px}.open-sea-title h1{font-family:Georgia,serif;font-size:clamp(2rem,5vw,3.4rem);line-height:1.08}.open-sea-title p{font-size:1rem;line-height:1.45}.open-sea-photo-slot{border:0;border-radius:12px;min-height:0;padding:0;display:flex;align-items:center;justify-content:center;text-align:center;color:#d6eaf2;background:transparent}.open-sea-photo-slot img{display:block;width:100%;height:auto;object-fit:contain;border-radius:10px}.open-sea-overview{background:white;border:1px solid var(--border);border-radius:14px;margin-bottom:18px;overflow:hidden;box-shadow:var(--shadow)}.open-sea-overview summary{padding:16px 20px;font-weight:750;cursor:pointer;color:#073b4c;font-size:1.1rem}.open-sea-overview .overview-content{padding:0 20px 18px;line-height:1.6}.open-sea-overview h3{color:#073b4c;margin:14px 0 8px}@media(max-width:620px){.open-sea-hero{grid-template-columns:1fr}.open-sea-photo-slot{min-height:100px}}
+</style>
+
+<style>[data-v2-maintenance-hidden="true"]{display:none!important}</style></head>
+
+<body>
+
+<a class="skip-link" href="#mainContent">Skip to main content</a>
+
+<nav class="hub-topbar" aria-label="App controls">
+  <a class="hub-control" href="../../index.html">← MBA Hub</a>
+
+  
+
+
+</nav>
+
+<header><div class="open-sea-hero"><div class="open-sea-title"><h1>🌊 Open Sea Exhibit</h1>
+
+  <p>
+    Volunteer training reference — physical factors and adaptations of the
+    pelagic zone</p></div><div id="openSeaPhotoSlot" class="open-sea-photo-slot"><img src="../../shared/media/asset-214710e10f5121d5--ScreenHunter-10670.jpg" alt="Monterey Bay Aquarium Open Sea exhibit photograph" loading="eager"></div></div>
+</header>
+
+<main id="mainContent" tabindex="-1">
+
+<details class="open-sea-overview" id="Open-Sea-Overview-Key-Influences"><summary>🌊 Open Sea Overview &amp; Key Influences</summary><div class="overview-content"><h3 id="Welcome-to-the-Open-Sea">Welcome to the Open Sea</h3>
+    
+
+<p>
+  The open sea is the largest ecosystem on Earth. It is vast and variable
+  and includes ocean waters away from coastal limits and above the
+  seafloor. The word <em>pelagic</em> refers to the open seas or oceans.
+</p>
+
+<p>
+  Coastal and seabed habitats are associated with tangible geological
+  surfaces. The open sea is different because it is primarily defined by
+  intangible conditions that cannot be touched but strongly shape the
+  organisms living there.
+</p>
+
+<div class="habitat-chips" aria-label="Contrasting habitats">
+  <span class="habitat-chip">Rocky Shores</span>
+  <span class="habitat-chip">Sandy Shores</span>
+  <span class="habitat-chip">Piers &amp; Jetties</span>
+  <span class="habitat-chip">Shale Rock</span>
+  <span class="habitat-chip">Elkhorn Slough</span>
+  <span class="habitat-chip">Into the Deep</span>
+  <span class="habitat-chip">Kelp Forest</span>
+  <span class="habitat-chip">Monterey Bay Habitat</span>
+</div>
+<h3 id="Primary-Open-Sea-Influences">Primary Open-Sea Influences</h3>
+    
+
+<p>
+  The training notes identify temperature, light and color, pressure,
+  oxygen, salinity, nutrients, currents, sound, marine debris, and animal
+  deception or camouflage as important open-sea topics.
+</p>
+
+<p>
+  The source document provides detailed material for the dropdowns below.
+  Marine debris was listed as a future topic but did not include supporting
+  details, so no unverified debris section has been added.
+</p>
+</div></details>
+
+  
+
+  <div class="section-label">The Intangible Variables</div>
+
+  
+
+  <div id="cardList"></div>
+
+  
+
+  <details class="references" id="References-and-source-notes">
+    <summary>References and source notes</summary>
+
+<div class="references-content">
+  <p>
+    <strong>Primary content source:</strong> User-provided document,
+    “zoom - open seas.docx.”
+  </p>
+
+  <p>
+    <strong>Original app source:</strong> User-provided Open Sea HTML
+    exhibit reference.
+  </p>
+
+  <p>
+    Numerical values and physiology statements are presented as volunteer
+    training notes. They should be checked against current
+    Aquarium-approved materials before formal publication or public use.
+  </p>
+
+  <p>
+    No external photographs or third-party image assets are used in this
+    version. Emoji are used as interface markers.
+  </p>
+</div>
+
+  </details>
+
+</main>
+
+<footer>
+  MBA Volunteer Hub · Open Sea Exhibit<br>
+  Version 1.1 · Updated July 2026
+</footer>
+
+<script>
+"use strict";
+
+const DATA = [
+  {
+    id: "temperature",
+    icon: "🌡️",
+    title: "Temperature",
+    subtitle: "Mixed surface water, thermocline, and deep cold",
+    tags: ["Physical Factor", "Adaptation"],
+    body: `
+      <div class="fact-strip">
+        <span class="fact-pill">0–100 m: mixed layer</span>
+        <span class="fact-pill">100–600 m: thermocline</span>
+        <span class="fact-pill">Below 600 m: 2–3°C</span>
+      </div>
+
+      <h4>Surface to About 100 Meters</h4>
+
+      <p>
+        Wind keeps the upper water column well mixed, so temperature is fairly
+        consistent within this layer. Atmospheric heat exchange makes it
+        warmer in summer and colder in winter.
+      </p>
+
+      <p>
+        Seasonal temperature changes can alter the community of organisms.
+        This upper column is where most open-sea animals reside.
+      </p>
+
+      <h4>About 100 to 600 Meters — Thermocline</h4>
+
+      <p>
+        The thermocline is isolated from direct atmospheric influence.
+        Temperature becomes progressively colder with depth.
+      </p>
+
+      <p>
+        It forms a transitional layer separating warmer, more buoyant surface
+        water from colder deep water.
+      </p>
+
+      <h4>Below 600 Meters</h4>
+
+      <p>
+        Temperature remains consistently near 2–3°C, just above freezing.
+      </p>
+
+      <div class="adapt-box">
+        <h4>Countercurrent Heat Exchange</h4>
+
+        <p>
+          Tuna, billfish, and some sharks use countercurrent heat exchange to
+          remain warmer than surrounding water. This can support increased
+          metabolism and more efficient physiological processing.
+        </p>
+      </div>
+    `
+  },
+
+  {
+    id: "light",
+    icon: "🔆",
+    title: "Light &amp; Color",
+    subtitle: "Filtering, absorption, scattering, and photosynthesis",
+    tags: ["Physical Factor", "Adaptation"],
+    body: `
+      <h4>Visible-Light Wavelengths</h4>
+
+      <ul>
+        <li>Red and orange are longer wavelengths.</li>
+        <li>Yellow and green are middle wavelengths.</li>
+        <li>Blue and violet are shorter wavelengths.</li>
+        <li>
+          Shorter visible wavelengths carry more energy than longer visible
+          wavelengths.
+        </li>
+      </ul>
+
+      <h4>Filtering With Depth</h4>
+
+      <p>
+        As a general rule in clear water, longer wavelengths are filtered out
+        first through absorption by water molecules.
+      </p>
+
+      <ul>
+        <li>Red light is largely filtered out by about 50 meters.</li>
+        <li>
+          Blue light can potentially reach about 200 meters, near the lower
+          limit of the euphotic zone where photosynthesis can occur.
+        </li>
+        <li>
+          Clearer water permits blue and green wavelengths to penetrate more
+          deeply.
+        </li>
+      </ul>
+
+      <h4>Phytoplankton and Ocean Color</h4>
+
+      <p>
+        Phytoplankton contain chlorophyll that absorbs blue and red light and
+        scatters green light. Their abundance, together with dissolved and
+        suspended material, helps influence apparent ocean color.
+      </p>
+
+      <p>
+        Particulate and organic debris can affect both long and short
+        wavelengths. In less-clear water, useful light may become limited
+        within the first 50 meters or less.
+      </p>
+
+      <p>
+        Phytoplankton generally inhabit the upper sunlit layer, where available
+        light energy may become a major limiting factor.
+      </p>
+
+      <div class="adapt-box">
+        <h4>Countershading</h4>
+
+        <p>
+          Dark coloring above and light coloring below helps an animal blend
+          with dark water when viewed from above and surface light when viewed
+          from below.
+        </p>
+      </div>
+    `
+  },
+
+  {
+    id: "pressure",
+    icon: "🫧",
+    title: "Pressure",
+    subtitle: "One additional atmosphere about every 10 meters",
+    tags: ["Physical Factor", "Adaptation"],
+    body: `
+      <div class="fact-strip">
+        <span class="fact-pill">+1 atm per 10.06 m</span>
+        <span class="fact-pill">Free dive: 200 m+</span>
+        <span class="fact-pill">Sperm whale: ~2,100 m</span>
+      </div>
+
+      <h4>Depth and Human Diving</h4>
+
+      <ul>
+        <li>
+          Pressure increases by approximately one atmosphere every 10.06
+          meters.
+        </li>
+        <li>Human free-diving records extend beyond 200 meters.</li>
+        <li>
+          The source notes list human scuba dives beyond 300 meters and cite
+          190 feet or 58 meters as a recreational safety reference.
+        </li>
+        <li>
+          The notes state that decompression illness can occur after dives as
+          shallow as about 10 meters under some conditions.
+        </li>
+        <li>Sperm whales can dive to roughly 7,000 feet or 2,100 meters.</li>
+      </ul>
+
+      <div class="training-note">
+        <h4>Training Caution</h4>
+
+        <p>
+          Diving limits depend on training, equipment, gas mixtures, time,
+          ascent rate, and individual conditions. This app is not a diving
+          safety guide.
+        </p>
+      </div>
+
+      <div class="adapt-box">
+        <h4>Adaptations to Pressure and Diving</h4>
+
+        <ul>
+          <li>
+            <strong>Long breath-holding:</strong> some whales exceed two hours;
+            the source notes also list harbor seals at approximately two hours.
+          </li>
+          <li>
+            <strong>Compressible lungs:</strong> found in whales, harbor seals,
+            and elephant seals.
+          </li>
+          <li>
+            <strong>Lowered heart rate:</strong> the notes describe rates as low
+            as four beats per minute in some diving whales and seals.
+          </li>
+          <li>
+            <strong>Reduced movement:</strong> gliding downward saves energy
+            compared with continuous swimming.
+          </li>
+          <li>
+            <strong>Reduced metabolic activity:</strong> blood flow and organ
+            activity can be prioritized during dives.
+          </li>
+          <li>
+            <strong>Pressure-tolerant buoyancy structures:</strong> some fishes
+            have specialized swim bladders or lack large gas-filled spaces.
+          </li>
+          <li>
+            <strong>TMAO:</strong> trimethylamine N-oxide helps protect proteins
+            from pressure-related distortion. TMAO can break down into TMA,
+            associated with the odor of decaying fish.
+          </li>
+          <li>
+            <strong>Reduced nitrogen uptake:</strong> lung compression and
+            altered gas exchange help diving mammals limit nitrogen absorption
+            at depth.
+          </li>
+        </ul>
+      </div>
+
+      <h4>Pressure Tolerance in Ocean Animals</h4>
+
+      <p>
+        Different fishes have different pressure tolerances. The source notes
+        estimate that only about two percent of fishes live below the photic
+        zone.
+      </p>
+
+      <p>
+        Squid, krill, jellies, and specialized fishes inhabit depths between
+        approximately 200 and 1,000 meters.
+      </p>
+    `
+  },
+
+  {
+    id: "oxygen",
+    icon: "💨",
+    title: "Oxygen",
+    subtitle: "Ocean deserts and the oxygen minimum zone",
+    tags: ["Physical Factor", "Adaptation"],
+    body: `
+      <h4>Global Oxygen Production</h4>
+
+      <p>
+        The source notes state that photosynthetic ocean algae contribute more
+        than half of the world's oxygen production.
+      </p>
+
+      <h4>Why the Open Ocean Can Resemble a Desert</h4>
+
+      <ul>
+        <li>Warmer water generally holds less dissolved oxygen.</li>
+        <li>Low-oxygen ocean regions may expand as climate conditions change.</li>
+        <li>
+          Coastal upwelling does not occur uniformly throughout the open sea,
+          so many open-ocean regions have limited nutrient supplies.
+        </li>
+        <li>
+          Phytoplankton may compete for scarce nitrate, phosphate, and iron.
+        </li>
+      </ul>
+
+      <h4>Oxygen Minimum Zone — About 200 to 1,500 Meters</h4>
+
+      <p>
+        The training notes identify an oxygen minimum zone between
+        approximately 200 and 1,500 meters.
+      </p>
+
+      <ul>
+        <li>
+          This depth range overlaps the thermocline, where direct atmospheric
+          mixing is greatly reduced.
+        </li>
+        <li>
+          Aerobic bacteria consuming sinking dead organic matter use dissolved
+          oxygen.
+        </li>
+        <li>
+          Photosynthesis produces oxygen in upper waters but is not available
+          below the sunlit zone.
+        </li>
+      </ul>
+
+      <div class="adapt-box">
+        <h4>Low-Oxygen Adaptations</h4>
+
+        <ul>
+          <li>Gills with large surface areas</li>
+          <li>Blood systems capable of extracting a high percentage of oxygen</li>
+          <li>Blood pigments that bind oxygen efficiently</li>
+          <li>Reduced metabolism or activity</li>
+        </ul>
+      </div>
+
+      <h4>Deep-Water Oxygen Renewal</h4>
+
+      <p>
+        Thermohaline circulation introduces oxygen to deeper water when cold,
+        dense surface water sinks. That water carries dissolved gases,
+        particles, and heat into deeper ocean layers.
+      </p>
+    `
+  },
+
+  {
+    id: "salinity",
+    icon: "🧂",
+    title: "Salinity &amp; Density",
+    subtitle: "33–37 grams of salt per kilogram",
+    tags: ["Physical Factor", "Circulation"],
+    body: `
+      <div class="fact-strip">
+        <span class="fact-pill">Typical range: 33–37 g/kg</span>
+      </div>
+
+      <ul>
+        <li>
+          Seawater commonly contains about 33 to 37 grams of dissolved salts
+          per kilogram of seawater.
+        </li>
+        <li>
+          Warm water is generally less dense because its molecules are more
+          spread out.
+        </li>
+        <li>Cold water is generally denser than warm water.</li>
+        <li>
+          Rainfall dilutes seawater, making it fresher and usually less dense.
+        </li>
+        <li>
+          Evaporation concentrates salts, making seawater saltier and usually
+          denser.
+        </li>
+        <li>
+          Marine animals must regulate their internal balance of water and
+          dissolved salts.
+        </li>
+        <li>
+          Salinity and density are especially important in controlling
+          deep-water currents.
+        </li>
+      </ul>
+    `
+  },
+
+  {
+    id: "nutrients",
+    icon: "🧪",
+    title: "Nutrients",
+    subtitle: "Limited nitrate, phosphate, and iron",
+    tags: ["Physical Factor"],
+    body: `
+      <p>
+        A major open-sea limitation is the availability of nutrients needed to
+        support phytoplankton production.
+      </p>
+
+      <ul>
+        <li>Phosphates</li>
+        <li>Nitrates</li>
+        <li>Iron in some ocean regions</li>
+      </ul>
+
+      <p>
+        Currents can transport nutrients from productive coastal regions into
+        the open ocean, although much open-ocean water remains nutrient-poor.
+      </p>
+    `
+  },
+
+  {
+    id: "thermohaline",
+    icon: "🔁",
+    title: "Thermohaline Circulation",
+    subtitle: "Temperature, salinity, density, and deep oxygen",
+    tags: ["Physical Factor", "Circulation"],
+    body: `
+      <p>
+        Thermohaline circulation is large-scale ocean circulation influenced by
+        temperature and salinity. “Thermo” refers to temperature, and “haline”
+        refers to salt.
+      </p>
+
+      <h4>Cold and Salty Water Is Dense</h4>
+
+      <p>
+        Cold water is denser than warm water, while salty water is denser than
+        fresher water. Cold, salty surface water is therefore especially likely
+        to sink.
+      </p>
+
+      <p>
+        Near polar regions, sea-ice formation excludes much of the salt from
+        the ice. The remaining water becomes saltier and denser. This process
+        is called <strong>brine rejection</strong>.
+      </p>
+
+      <h4>Deep-Ocean Ventilation</h4>
+
+      <p>
+        Surface water receives oxygen through contact with the atmosphere,
+        photosynthesis, wind, and wave mixing.
+      </p>
+
+      <p>
+        When cold, oxygen-rich surface water sinks, it carries dissolved oxygen
+        into the deep ocean. Deep currents then distribute that oxygen through
+        ocean basins.
+      </p>
+
+      <h4>Why Deep Oxygen Matters</h4>
+
+      <ul>
+        <li>Supports deep-sea animals and microorganisms</li>
+        <li>Supports decomposition of organic material</li>
+        <li>Supports nutrient cycling</li>
+        <li>Supports seafloor ecosystems</li>
+        <li>Influences chemical processes in bottom sediments</li>
+      </ul>
+
+      <p>
+        If organisms consume oxygen faster than circulation replaces it,
+        bottom water may become hypoxic or anoxic.
+      </p>
+
+      <h4>Fresh Surface Water Can Act as a Lid</h4>
+
+      <p>
+        Rainfall, river water, or melting ice can freshen surface water. Even
+        when it is cold, fresher water may remain too buoyant to sink, reducing
+        mixing and deep-water oxygen renewal.
+      </p>
+
+      <div class="adapt-box">
+        <h4>The Basic Chain</h4>
+
+        <p>
+          Cooling + increasing salinity → increasing density → sinking → deep
+          circulation → oxygen delivered downward.
+        </p>
+
+        <p>
+          Surface freshening → stronger layering → less sinking and mixing →
+          reduced deep-ocean oxygen renewal.
+        </p>
+      </div>
+    `
+  },
+
+  {
+    id: "currents",
+    icon: "🌀",
+    title: "Currents",
+    subtitle: "Drifters compared with active swimmers",
+    tags: ["Physical Factor", "Adaptation"],
+    body: `
+      <p>
+        Currents help distinguish two broad groups of open-sea animals:
+        drifters and swimmers.
+      </p>
+
+      <h4>Drifters</h4>
+
+      <ul>
+        <li>Cannot consistently swim against the current</li>
+        <li>Usually have relatively low energy demands</li>
+        <li>
+          Many capture food by trapping it instead of actively pursuing it
+        </li>
+        <li>Jellies are a familiar example</li>
+      </ul>
+
+      <h4>Swimmers</h4>
+
+      <ul>
+        <li>Swim actively or continuously</li>
+        <li>Actively search for or pursue food</li>
+        <li>
+          Some must continue moving to push water across their gills, a method
+          often called ram ventilation
+        </li>
+      </ul>
+    `
+  },
+
+  {
+    id: "sound",
+    icon: "🔊",
+    title: "Sound",
+    subtitle: "Approximately five times faster in water",
+    tags: ["Physical Factor", "Adaptation"],
+    body: `
+      <div class="fact-strip">
+        <span class="fact-pill">About 5× faster than in air</span>
+      </div>
+
+      <p>
+        Sound travels approximately five times faster in water than in air.
+        This makes sound especially useful in dark or low-visibility marine
+        environments.
+      </p>
+
+      <h4>Whale Uses of Sound</h4>
+
+      <ul>
+        <li>Communicate over long distances</li>
+        <li>Sense surroundings</li>
+        <li>Locate food through echolocation or sonar-like sensing</li>
+        <li>Navigate and avoid obstacles</li>
+      </ul>
+    `
+  },
+
+  {
+    id: "schooling",
+    icon: "🐟",
+    title: "Protection in Numbers",
+    subtitle: "Schooling, confusion, and cooperative hunting",
+    tags: ["Adaptation", "Behavior"],
+    body: `
+      <ul>
+        <li>A tightly grouped school may appear like one larger animal.</li>
+        <li>
+          Movement within the group makes it harder for a predator to focus on
+          one fish.
+        </li>
+        <li>
+          Groups may work together to locate, surround, or capture larger prey.
+        </li>
+      </ul>
+    `
+  },
+
+  {
+    id: "vertical-migration",
+    icon: "↕️",
+    title: "Vertical Migration",
+    subtitle: "Daily movements of up to 1,000 meters",
+    tags: ["Adaptation", "Behavior"],
+    body: `
+      <div class="fact-strip">
+        <span class="fact-pill">Up to ~1,000 m daily</span>
+        <span class="fact-pill">Up to ~100 atm change</span>
+      </div>
+
+      <p>
+        Some ocean species migrate vertically through as much as 1,000 meters
+        of the water column each day.
+      </p>
+
+      <p>
+        This movement can expose them to a pressure change of approximately
+        100 atmospheres without obvious ill effects.
+      </p>
+
+      <p>
+        Many remain deeper during daylight to reduce predation risk, then move
+        toward the surface at night to feed.
+      </p>
+    `
+  },
+
+  {
+    id: "bioluminescence",
+    icon: "✨",
+    title: "Bioluminescence",
+    subtitle: "Defense, camouflage, hunting, and deception",
+    tags: ["Adaptation", "Deception"],
+    body: `
+      <h4>Defensive Uses</h4>
+
+      <ul>
+        <li>Confuse predators</li>
+        <li>Startle or delay attackers</li>
+        <li>
+          Match light from above so predators looking upward cannot easily see
+          the animal, a strategy called counter-illumination
+        </li>
+      </ul>
+
+      <h4>Offensive Uses</h4>
+
+      <ul>
+        <li>Lure prey</li>
+        <li>Search for prey</li>
+        <li>Illuminate nearby objects</li>
+      </ul>
+
+      <div class="adapt-box">
+        <h4>Dragonfish Red Light</h4>
+
+        <p>
+          Some dragonfishes produce red light. Many deep-sea animals cannot see
+          red wavelengths, allowing the dragonfish to illuminate prey without
+          being easily detected.
+        </p>
+      </div>
+    `
+  }
+];
+
+const cardListElement = document.getElementById('cardList');
+
+function setCardOpen(card, open) {
+  const header = card.querySelector(".card-header");
+  const body = card.querySelector(".card-body");
+
+  card.classList.toggle("open", open);
+  header.setAttribute("aria-expanded", String(open));
+  body.setAttribute("aria-hidden", String(!open));
+}
+
+function buildCard(item) {
+  const card = document.createElement("article");
+  card.className = "card";
+  card.id = `card-${item.id}`;
+
+  const bodyId = `body-${item.id}`;
+
+  const header = document.createElement("button");
+  header.className = "card-header";
+  header.type = "button";
+  header.setAttribute("aria-expanded", "false");
+  header.setAttribute("aria-controls", bodyId);
+
+  header.innerHTML = `
+    <span class="card-icon" aria-hidden="true">${item.icon}</span>
+
+    <span class="card-title-wrap">
+      <span class="card-title">${item.title}</span>
+      <span class="card-subtitle">${item.subtitle}</span>
+
+      <span class="card-tags">
+        ${item.tags
+          .map((tag) => `<span class="mini-tag">${tag}</span>`)
+          .join("")}
+      </span>
+    </span>
+
+    <svg
+      class="chevron"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.5"
+      aria-hidden="true"
+    >
+      <path
+        d="M6 9l6 6 6-6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      ></path>
+    </svg>
+  `;
+
+  const body = document.createElement("div");
+  body.className = "card-body";
+  body.id = bodyId;
+  body.setAttribute("aria-hidden", "true");
+
+  body.innerHTML = `
+    <div class="card-body-inner">
+      ${item.body}
+    </div>
+  `;
+
+  header.addEventListener("click", () => {
+    setCardOpen(card, !card.classList.contains("open"));
+  });
+
+  card.appendChild(header);
+  card.appendChild(body);
+
+  return card;
+}
+
+function renderCards(){cardListElement.innerHTML="";DATA.forEach(item=>cardListElement.appendChild(buildCard(item)));}
+renderCards();
+</script>
+
+<script type="module" src="../../core/app-contract.js"></script></body>
+</html>

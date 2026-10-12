@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "app_id": "california-flying-fish",
+  "title": "California Flying Fish",
+  "category": "animals",
+  "type": "species",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/california-flying-fish/index.html",
+  "status": "testing",
+  "owner": "california-flying-fish",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/california-flying-fish/index.html"
+  ],
+  "media": [
+    "asset-768c33463b4de0e3",
+    "asset-afa736f83a460b13",
+    "asset-e679c304e357c5d1",
+    "asset-c11690bd147b5db5",
+    "asset-cd7b7398f2c9bfdf"
+  ],
+  "knowledge": [],
+  "cross_links": [],
+  "sections": [
+    {
+      "id": "Quick-Facts",
+      "title": "Quick Facts",
+      "text": "Quick Facts Length Mixed claims: 16–19 in maximum Diet Zooplankton Predators Pinnipeds, dolphins, seabirds, larger fish, large squid Depth Typically 0–35 ft; source says never below the photic zone Habitat Nearshore open waters; eggs along rocky shores near kelp forests Status Least Concern (IUCN), per source The source describes this as the California subspecies of Bennett’s flying fish,  Cheilopogon pinnatibarbatus , and the largest of the flying fishes. It connects increasing California sightings with warmer water, marine heatwaves and El Niño events. A generic body plan for the Cheilopogon fishes.",
+      "aliases": []
+    },
+    {
+      "id": "Life-Cycle-Reproduction",
+      "title": "Life Cycle & Reproduction",
+      "text": "Life Cycle & Reproduction The source describes a simple oviparous life cycle: eggs, larval development, fry and mature adults. Females use sticky filaments to attach eggs to substrate and macroalgae, often around kelp beds. The source does not specify clutch size for this fish, but notes related species commonly lay roughly 20,000–50,000 eggs. Juveniles may take a year or two to reach maturity.",
+      "aliases": []
+    },
+    {
+      "id": "Gliding-Not-True-Flight",
+      "title": "Gliding — Not True Flight",
+      "text": "Gliding — Not True Flight Modified pectoral fins function as airfoils. The source presents predator evasion as a leading explanation for the adaptation and describes a fight-or-glide response. It reports that sufficiently warm water—around 68°F—helps the fish build launch speed, with movement around 22 mph and sometimes faster under favorable wind conditions. Flying fish use speed, enlarged fins and tail-assisted taxiing to extend a glide.",
+      "aliases": []
+    },
+    {
+      "id": "Launch-Taxi-Glide-Re-entry",
+      "title": "Launch, Taxi, Glide & Re-entry",
+      "text": "Launch, Taxi, Glide & Re-entry In the water the pectoral fins remain tucked against the body to reduce drag. For launch, the fish accelerates, often uses a swell and its associated lift, then taxis with the tail while the body is airborne. It eventually loses momentum or ends the glide and returns to the ocean. The source compares its relatively high wing/fin loading with birds such as cormorants. Swimming → leaping and fin deployment → taxiing → gliding → water re-entry.",
+      "aliases": []
+    },
+    {
+      "id": "Fin-Development-Genetics",
+      "title": "Fin Development & Genetics",
+      "text": "Fin Development & Genetics The source includes an infographic describing research into a conserved transporter-protein gene and amino-acid changes that may contribute to unusual fin proportions in flying fishes and relatives. Infographic supplied with the Naturalist update on possible gene changes associated with flying-fish fin proportions.",
+      "aliases": []
+    },
+    {
+      "id": "Eyes-for-Water-and-Air",
+      "title": "Eyes for Water and Air",
+      "text": "Eyes for Water and Air The source describes pyramid-shaped corneas with three windows and notes that researchers are still investigating their function. The proposed advantage is useful vision across both underwater and aerial environments while tracking predators, judging swells and transitioning between water and air.",
+      "aliases": []
+    },
+    {
+      "id": "Skeleton-Control",
+      "title": "Skeleton & Control",
+      "text": "Skeleton & Control The source describes fused vertebrae in the tail for rigidity, reinforcement between the spine and cranium, and a thick jawbone that may help withstand water re-entry. The fish cannot steer like a bird but can make small course adjustments during a glide.",
+      "aliases": []
+    },
+    {
+      "id": "Fisheries-Conservation",
+      "title": "Fisheries & Conservation",
+      "text": "Fisheries & Conservation The source reports no large-scale commercial fishery for California flying fish, though they may be caught as bait for large pelagic fishes in California. Bennett’s flying fish and other flying fishes are harvested elsewhere. The update states that no flying-fish species is currently known to be endangered because of fishery pressure.",
+      "aliases": []
+    },
+    {
+      "id": "References-Further-Reading-from-Source",
+      "title": "References / Further Reading from Source",
+      "text": "References / Further Reading from Source \n FishBase — Cheilopogon pinnatibarbatus IUCN Red List — source links supplied for flying fishes FishBase — Cheilopogon californicus California Marine Species Portal — smallhead flyingfish Smithsonian Tropical Research Institute fish database Current Biology (2021) — flying-fish fin development research Springer article supplied in source Journal of Experimental Biology — aerodynamic characteristics of flying fish Integrative and Comparative Biology article supplied in source PMC article supplied in source",
+      "aliases": []
+    }
+  ],
+  "source_version": "1.0",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
+}

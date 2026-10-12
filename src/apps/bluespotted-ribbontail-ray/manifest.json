@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "app_id": "bluespotted-ribbontail-ray",
+  "title": "Blue-spotted Ribbontail Ray",
+  "category": "animals",
+  "type": "species",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/bluespotted-ribbontail-ray/index.html",
+  "status": "testing",
+  "owner": "bluespotted-ribbontail-ray",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/bluespotted-ribbontail-ray/index.html"
+  ],
+  "media": [
+    "asset-58caefb914af891a",
+    "asset-1daf222da5380986",
+    "asset-af9d1b481c381dc7",
+    "asset-4e686c83c7a2de1e",
+    "asset-04c2c8b8e6e36a70"
+  ],
+  "knowledge": [],
+  "cross_links": [
+    {
+      "app_id": "naturalist-field-notes"
+    }
+  ],
+  "sections": [
+    {
+      "id": "Identification-and-range",
+      "title": "Identification and range",
+      "text": "Identification and range Also known as bluespotted lagoon ray. Bright blue spots mark a yellow-green disc, and a whip-like tail bears venomous serrated spines. Reported disc width 12–14 in, total length up to 28 in. Indo-Pacific and coastal Indian Ocean, typically shallow water to 66 ft.",
+      "aliases": []
+    },
+    {
+      "id": "Habitat-and-behavior",
+      "title": "Habitat and behavior",
+      "text": "Habitat and behavior Adults are associated with coral reefs, resting beneath ledges or in caves by day and foraging at night in reef and sand habitats. Juveniles use sheltered shallow habitats such as seagrass beds and mangroves. Cleaner wrasses may remove parasites.",
+      "aliases": []
+    },
+    {
+      "id": "Diet-and-sensory-adaptations",
+      "title": "Diet and sensory adaptations",
+      "text": "Diet and sensory adaptations Crustaceans, mollusks and polychaete worms are located with sensitive ampullae of Lorenzini. Crushing dental plates process hard-shelled prey; spiracles assist breathing while resting.",
+      "aliases": []
+    },
+    {
+      "id": "Reproduction",
+      "title": "Reproduction",
+      "text": "Reproduction Males have paired claspers. Females give birth to live young, typically reported as 2–7 pups; the source describes variable gestation of 4–12 months. Spot patterns can help distinguish individuals.",
+      "aliases": []
+    },
+    {
+      "id": "Why-the-spots-look-blue",
+      "title": "Why the spots look blue",
+      "text": "Why the spots look blue The striking blue is structural rather than a conventional blue pigment: nanoscale structures beneath the skin reflect blue light, while deeper pigmented layers absorb other wavelengths. The source references microscopic studies of the skin.",
+      "aliases": []
+    },
+    {
+      "id": "Conservation-and-visitor-interpretation",
+      "title": "Conservation and visitor interpretation",
+      "text": "Conservation and visitor interpretation The shift update lists the species as Least Concern and lifespan as unknown. Do not touch the ray or its venomous tail spines. Some proposed functions of its blue spots, such as warning coloration, remain hypotheses.",
+      "aliases": []
+    },
+    {
+      "id": "Further-reading",
+      "title": "Further reading",
+      "text": "Further reading www.calacademy.org/explore-science/bluespotted-ribbontail-ray ↗ www.floridamuseum.ufl.edu/discover-fish/species-profiles/bluespotted-ribbontail-ray/ ↗ animaldiversity.org/accounts/Taeniura_lymma/ ↗ advanced.onlinelibrary.wiley.com/doi/10.1002/adom.202301909 ↗ www.iucnredlist.org/es/species/116850766/290355127 ↗",
+      "aliases": []
+    },
+    {
+      "id": "Source-illustrations",
+      "title": "Source illustrations",
+      "text": "Source illustrations Range map Anatomy illustration by Jacqueline Rajerison Species infographic Microscopy of blue coloration",
+      "aliases": []
+    }
+  ],
+  "source_version": "1.0",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
+}

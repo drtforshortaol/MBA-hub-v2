@@ -1,0 +1,80 @@
+window.APP_DATA = {
+  title: "Northern Elephant Seal",
+  scientificName: "Mirounga angustirostris",
+  category: "Animals",
+  contentType: "ANIMAL",
+  locationType: "VOLUNTEER_GUIDE_REFERENCE",
+  version: "1.2",
+  lastUpdated: "2026-06-28",
+  summary: "Guide-friendly animal page for northern elephant seal size, migration, breeding, deep diving, underwater sleep, conservation comeback, and beach-safe visitor messaging.",
+  images: [
+    { key: "size_compare", src: "../../shared/media/asset-bc4d2d7822e21690--size_compare.jpg", alt: "Graphic comparing the southern elephant seal, northern elephant seal, and walrus by size.", caption: "Pinniped size comparison: northern elephant seals are among the largest pinnipeds." },
+    { key: "size_sketch", src: "../../shared/media/asset-43951da610ad3fd3--size_sketch.jpg", alt: "Watercolor sketch of a male northern elephant seal, female, and pup with notes on size, diving, and nursing.", caption: "Male, female, and pup comparison with field-guide style notes." },
+    { key: "migration_map", src: "../../shared/media/asset-1a0051b4ea4be7ea--migration_map.jpg", alt: "Hand-drawn map showing northern elephant seal migration range in the eastern North Pacific.", caption: "Migration range map showing male and female foraging areas and breeding sites." },
+    { key: "cons_basics", src: "../../shared/media/asset-d8d7415dc63ff8f8--cons_basics.jpg", alt: "Conservation comeback graphic showing northern elephant seal range, migration routes, and historical hunting threat.", caption: "Conservation basics: long migration, former hunting pressure, and range." },
+    { key: "rookery_scene", src: "../../shared/media/asset-125a4bbb92b0953b--rookery_scene.jpg", alt: "Illustrated northern elephant seal rookery with alpha male, females, pups, super weaners, and peripheral males.", caption: "Rookery social structure: alpha male, females, pups, super weaners, and peripheral males." },
+    { key: "calendar", src: "../../shared/media/asset-c6185696aabf48e5--calendar.jpg", alt: "Circular annual calendar showing adult male breeding, adult female breeding, pups, molting, and juvenile haul-out periods.", caption: "Annual cycle: breeding, pups, molting, and juvenile haul-out." },
+    { key: "diet_diagram", src: "../../shared/media/asset-9fa770d5f87c286a--diet_diagram.jpg", alt: "Diet diagram showing lanternfish, hake, ratfish, and squid around a young elephant seal.", caption: "Diet diagram: fish dominate the diet in this example, with squid also represented." },
+    { key: "sleep_diagram", src: "../../shared/media/asset-dded438de5077361--sleep_diagram.jpg", alt: "Diagram comparing unihemispheric sleep in cetaceans and some otariids with bilateral sleep in phocid seals and humans.", caption: "Sleep comparison: true seals can use bilateral sleep, unlike dolphins that often sleep one hemisphere at a time." },
+    { key: "buoyancy_chart", src: "../../shared/media/asset-3895d93118cf6834--buoyancy_chart.jpg", alt: "Scientific chart showing elephant seal drift dive timing, body fat percentage, negative buoyancy, and positive buoyancy.", caption: "Buoyancy and drift-diving pattern as body condition changes during foraging." },
+    { key: "cons_comeback", src: "../../shared/media/asset-a632a1f72984e42f--cons_comeback.jpg", alt: "Conservation comeback timeline for northern elephant seals showing protection, recovery, and Marine Mammal Protection Act context.", caption: "Comeback timeline: protection and population recovery after heavy hunting pressure." },
+    { key: "cons_success", src: "../../shared/media/asset-e13b365854bf974b--cons_success.jpg", alt: "Conservation success graphic showing northern elephant seal population growth, Least Concern status, and modern threats.", caption: "Recovery success, current Least Concern status, and ongoing threats." }
+  ],
+  snapshot: {
+    lengthSize: "Adult females commonly reach about 10 feet; adult males commonly reach about 13 feet.",
+    weight: "Adult females commonly weigh around 1,300 pounds; adult males commonly weigh around 4,000–4,400 pounds, with some larger individuals reported.",
+    diet: "Fish, squid, and deep-sea prey; adults may also eat small sharks, rays, and chimaeras.",
+    predators: "Great white sharks and orcas are important natural predators.",
+    habitat: "Eastern North Pacific; mostly open ocean, with breeding, pupping, molting, and resting on beaches and islands.",
+    depth: "Often deep-diving; many dives reach hundreds to thousands of feet, and some exceed 5,000 feet.",
+    range: "Eastern North Pacific, broadly from Alaska to Mexico, with major breeding colonies in California and Baja California.",
+    lifespan: "Can live up to about 19 years; lifespan varies by sex and survival pressure.",
+    conservationStatus: "IUCN: Least Concern. Protected in the U.S. under the Marine Mammal Protection Act."
+  },
+  kidsFact: "A northern elephant seal can take underwater naps while sinking slowly through the deep ocean. That is a very big animal taking a very quiet power nap!",
+  story: "Picture a California beach in winter: giant males rumble, females call to their pups, and young seals wiggle through the sand. Northern elephant seals may look sleepy on shore, but they are ocean athletes built for long migrations and deep dives.\n\nMost of the year they are far offshore, hunting in dark water where lanternfish, squid, and other deep-sea animals live. Then they return to land for the big energy events: breeding, nursing pups, molting, and resting.\n\nTheir comeback is one of the great marine mammal recovery stories. After being hunted nearly to extinction for oil, northern elephant seals rebounded under protection. But their recovery came from a very small remnant population, so genetic diversity remains a long-term concern.",
+  whereToSee: "Northern elephant seals are not usually an exhibit animal at Monterey Bay Aquarium. Visitors may see them seasonally at protected coastal haul-outs and rookeries in California, including sites such as Año Nuevo and Piedras Blancas.\n\nAt MBA, this app is best used as a marine mammal cart, coastal wildlife, conservation, or beach-safety conversation companion.",
+  naturalHistory: {
+    habitat: "Mostly open ocean in the eastern North Pacific. On land, they use beaches, islands, and rookeries for pupping, breeding, molting, and resting.",
+    range: "Broadly Alaska to Mexico. Many major breeding sites are in California and Baja California.",
+    depth: "Often deep-diving; many foraging dives are in the mesopelagic, or twilight zone. Some dives exceed 5,000 feet.",
+    diet: "Fish, squid, and deep-sea prey. Commonly reported prey include lanternfish, hake, squid, small sharks, rays, and chimaeras.",
+    predators: "Great white sharks and orcas.",
+    behavior: "They spend much of the year at sea and return to land for breeding, pupping, molting, and resting. Males compete for breeding access to females. Females nurse pups for a short, intense period before returning to sea.",
+    adaptations: ["Huge oxygen stores in blood and muscle help support long dives.", "Thick blubber stores energy and helps with insulation and buoyancy.", "Large eyes and sensitive whiskers help them hunt in dim deep water.", "Males have an inflatable nose, or proboscis, used to make loud breeding-season calls.", "True seals can enter bilateral sleep during deep drift dives, meaning both brain hemispheres sleep at once."],
+    lifespan: "Can live up to about 19 years, though many young animals do not survive their first years.",
+    conservationStatus: "IUCN: Least Concern. U.S. protection: Marine Mammal Protection Act."
+  },
+  sleepScience: "Northern elephant seals can sleep during deep drift dives at sea. Their sleep is different from dolphins and many whales. Dolphins often use unihemispheric sleep, where one side of the brain sleeps while the other remains more alert. True seals, including elephant seals, can use bilateral sleep, where both brain hemispheres sleep at once.\n\nThis matters because elephant seals spend months at sea. They cannot simply climb onto land every night. Instead, they combine diving, drifting, resting, and foraging in a way that lets them survive in the open ocean.",
+  buoyancy: "As elephant seals forage, their body condition changes. A leaner seal may be negatively buoyant and sink more easily. A fatter seal with more stored energy may become more positively buoyant. Scientists can use drift dives and body angle to understand whether a seal is gaining condition during a foraging trip.\n\nThis is a useful guide story because it connects deep diving, blubber, energy storage, migration, and survival.",
+  breedingCycle: "Northern elephant seals follow a strong annual rhythm. Adults return to land for breeding and pupping, then go back to sea to feed. They later return for molting, when old skin and hair are shed. Juveniles also haul out seasonally.\n\nOn the rookery, dominant males may control access to groups of females. Peripheral males remain near the edge and may try to breed when opportunities occur. Pups nurse for only a few weeks, gaining fat quickly before their mothers return to sea.",
+  conservation: "Northern elephant seals were heavily hunted in the 1800s for oil. By the late 1800s, the species was reduced to a very small remnant population and was thought by many to be extinct. Protection in Mexico and the United States allowed the population to recover.\n\nToday, the species is listed as Least Concern, but that does not mean humans can ignore them. Modern concerns include fishing gear entanglement, boat strikes, disturbance at haul-outs, limited genetic diversity from the historical bottleneck, and the effects of severe weather and climate change on breeding sites.",
+  beachSafety: "Resting seals on beaches need space. A seal that lifts its head, looks toward people, vocalizes, or moves away may already be disturbed. Disturbance costs energy that seals need for molting, nursing, migration, and survival.\n\nBest visitor message: stay back, obey signs and barriers, keep dogs away, never touch or feed a marine mammal, and contact trained responders if an animal appears injured or in distress.",
+  whyItMatters: "Northern elephant seals connect visitors to deep-sea food webs, migration, climate, sleep science, predator-prey relationships, and conservation recovery. They are also a memorable way to teach respectful wildlife viewing: resting is survival behavior.",
+  visitorQuestions: [
+    { question: "Where can I see northern elephant seals?", answer: "They are usually seen at coastal haul-outs and rookeries, not inside the Aquarium. In California, well-known viewing areas include Año Nuevo and Piedras Blancas. Always stay behind signs and barriers." },
+    { question: "Why are the males so much bigger than the females?", answer: "Breeding is competitive. Large males fight and display for access to breeding areas, so size can help a male win space on the beach. Females are much smaller but invest huge energy into nursing pups." },
+    { question: "What do they eat?", answer: "They eat fish, squid, and other deep-sea animals. Adults may also eat small sharks, rays, and chimaeras. Much of their hunting happens far offshore and deep below the surface." },
+    { question: "How deep can they dive?", answer: "Many dives are hundreds to thousands of feet deep, and some have been recorded deeper than 5,000 feet." },
+    { question: "Do they really sleep underwater?", answer: "Yes. Research shows elephant seals can take short sleep dives at sea. True seals can sleep with both brain hemispheres at once, unlike dolphins, which often sleep one side of the brain at a time." },
+    { question: "Are they dangerous?", answer: "They are wild, very large animals and can move faster than people expect on sand. The safest and most respectful choice is to keep your distance, follow signs, and never approach or touch a seal." },
+    { question: "Are they endangered?", answer: "The IUCN lists northern elephant seals as Least Concern, and their recovery from near-extinction is a conservation success story. They are still protected, and low genetic diversity, disturbance, entanglement, and changing ocean conditions remain concerns." },
+    { question: "What is a super weaner?", answer: "A super weaner is a pup that gets extra milk, sometimes by nursing from more than one female. It can become extremely heavy, which sounds helpful, but too much buoyancy may make early diving harder." },
+    { question: "Why do they look so awkward on land?", answer: "Northern elephant seals are true seals. Their rear flippers are built for swimming and do not rotate under the body for walking. They move on land by wriggling and pushing, but in water they are powerful and efficient." },
+    { question: "How can visitors help?", answer: "Give resting seals plenty of space, obey beach signs, keep dogs away, reduce plastic and fishing-line waste, and call a trained rescue group if you see a marine mammal that appears injured or in distress." }
+  ],
+  guideNotes: ["Great opening line: “They look like beach potatoes, but they are deep-ocean athletes.”", "Point out the contrast: awkward on land, graceful and efficient at sea.", "Use the annual cycle: breed, forage, molt, forage again. They are on a tight energy budget.", "Connect to the deep sea: lanternfish and squid are part of the twilight-zone food web.", "Use the sleep diagram to compare true seals, sea lions, dolphins, and humans.", "Use the buoyancy chart to explain how scientists can infer body condition from drift dives.", "Avoid saying only “rescued from extinction.” Better: “protected after being hunted to a tiny remnant population.”", "Beach-safety message: resting is survival behavior. A seal that lifts its head or moves away has already been disturbed.", "For Monterey County marine mammal distress reports, use the current local rescue hotline only after verifying it with MBA-approved volunteer materials."],
+  references: [
+    { title: "Image sources", text: "Images in this app are user-provided app assets and should remain in the images/ folder using the exact filenames listed in README.txt." },
+    { title: "Content sources", text: "Guide-friendly summary compiled from user-provided app notes and standard northern elephant seal natural history topics. Verify rescue hotline details with current MBA-approved volunteer materials before sharing." },
+    { title: "Legal protection note", text: "Northern elephant seals are protected marine mammals in U.S. waters. Visitor messaging should emphasize distance, barriers, no touching, no feeding, and trained rescue response." }
+  ],
+  tags: ["elephant seal", "northern elephant seal", "marine mammal", "pinniped", "phocid", "true seal", "deep diving", "migration", "rookery", "sleep", "buoyancy", "conservation", "beach safety", "visitor question"],
+  relatedItems: [
+    { title: "Marine Mammal Rescue", type: "Volunteer Resource", url: "#", tags: ["marine mammal", "visitor service", "beach safety"] },
+    { title: "Great White Shark", type: "Animal", url: "#", tags: ["predator", "open sea"] },
+    { title: "Deep Sea", type: "Concept", url: "#", tags: ["deep sea", "food web", "twilight zone"] },
+    { title: "Upwelling", type: "Concept", url: "#", tags: ["upwelling", "climate", "food web"] },
+    { title: "Responsible Wildlife Viewing", type: "Visitor Question", url: "#", tags: ["visitor question", "conservation", "wildlife safety"] }
+  ]
+};

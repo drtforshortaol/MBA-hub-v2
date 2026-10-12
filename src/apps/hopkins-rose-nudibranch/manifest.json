@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "app_id": "hopkins-rose-nudibranch",
+  "title": "Hopkins’ Rose Nudibranch",
+  "category": "animals",
+  "type": "species",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/hopkins-rose-nudibranch/index.html",
+  "status": "testing",
+  "owner": "hopkins-rose-nudibranch",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/hopkins-rose-nudibranch/index.html"
+  ],
+  "media": [
+    "asset-8cb346af7e0cfb48",
+    "asset-538d5993b59b2206",
+    "asset-717b2911c7edcb80",
+    "asset-2a1a981e1a8e0bc5",
+    "asset-cd38f502a51bf6bd",
+    "asset-2716d888f851c96f",
+    "asset-3fd33c52e769a694",
+    "asset-7ddf650d12a6e651"
+  ],
+  "knowledge": [],
+  "cross_links": [
+    {
+      "app_id": "naturalist-field-notes"
+    }
+  ],
+  "sections": [
+    {
+      "id": "Quick-guide",
+      "title": "Quick guide",
+      "text": "Quick guide Hopkins’ rose is a vividly pink dorid nudibranch, often seen on rocky shores of the California coast. Its northward appearances during unusually warm ocean periods make it a useful species for discussing changing marine conditions. Size:  2–3 cm •  Food:  red bryozoans •  Habitat:  rocky intertidal •  Scientific name:   Ceratodoris rosacea .",
+      "aliases": []
+    },
+    {
+      "id": "Life-cycle-and-pink-eggs",
+      "title": "Life cycle and pink eggs",
+      "text": "Life cycle and pink eggs Pink egg ribbons hatch into swimming veliger larvae, which settle and metamorphose into shell-less juveniles. Adults are hermaphrodites. Egg masses — iNaturalist. Life cycle — Zoe Lawrence.",
+      "aliases": []
+    },
+    {
+      "id": "Dorid-versus-aeolid",
+      "title": "Dorid versus aeolid",
+      "text": "Dorid versus aeolid Although its papillae resemble aeolid cerata, Hopkins’ rose is a dorid with branchial gills near its anus. The gills can be hidden among papillae. Comparison — Kitty Turner. Important correction: this image incorrectly labels Hopkins’ rose as an aeolid. Branchial gills — Robin Agarwal.",
+      "aliases": []
+    },
+    {
+      "id": "Rhinophores-and-camouflage",
+      "title": "Rhinophores and camouflage",
+      "text": "Rhinophores and camouflage Rhinophores are sensory structures that detect chemical cues. They can be difficult to spot among the long papillae. Rhinophores — Jerry Kirkhart. Pale animal showing gills and rhinophores — iNaturalist.",
+      "aliases": []
+    },
+    {
+      "id": "Pink-coloration-and-diet",
+      "title": "Pink coloration and diet",
+      "text": "Pink coloration and diet Prey-derived pigments, including hopkinsiaxanthin, contribute to the vivid pink color. Bright coloration can serve as a warning to predators. Color intensity alone does not establish health.",
+      "aliases": []
+    },
+    {
+      "id": "Warm-water-range-shifts",
+      "title": "Warm-water range shifts",
+      "text": "Warm-water range shifts Warm-water episodes, including the 2015–16 El Niño and marine heatwave, coincided with unusual sightings far north of the species’ usual Southern California range.",
+      "aliases": []
+    }
+  ],
+  "source_version": "1.0",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
+}

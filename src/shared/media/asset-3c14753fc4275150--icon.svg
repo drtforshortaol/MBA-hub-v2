@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Whale parasites app icon">
+  <rect width="512" height="512" rx="112" fill="#0B2A4A"/>
+  <circle cx="390" cy="116" r="86" fill="#1A8C8C" opacity="0.42"/>
+  <path d="M98 288c28-82 112-134 214-112 60 13 110 50 134 100-40-14-71-9-104 14-50 35-106 43-164 18-28-12-54-19-80-20Z" fill="#EFF6F7"/>
+  <path d="M98 288c-22 4-42 17-59 39 37 9 70 4 99-15l-40-24Z" fill="#7EA3B0"/>
+  <path d="M353 194c22-27 57-42 103-45-21 37-50 62-88 75l-15-30Z" fill="#C8A97A"/>
+  <circle cx="343" cy="244" r="11" fill="#0B2A4A"/>
+  <circle cx="206" cy="244" r="18" fill="#C8A97A"/>
+  <circle cx="250" cy="265" r="13" fill="#C8A97A"/>
+  <circle cx="171" cy="281" r="11" fill="#C8A97A"/>
+  <path d="M196 362c67 30 137 23 207-20" fill="none" stroke="#2AADAD" stroke-width="20" stroke-linecap="round" opacity="0.8"/>
+</svg>

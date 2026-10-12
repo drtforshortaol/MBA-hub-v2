@@ -1,0 +1,1 @@
+{"schema_version":1,"interfaces":[{"id":"navigation","version":"1.0.0","owner":"platform"},{"id":"shared-media","version":"1.0.0","owner":"media-library"},{"id":"shared-knowledge","version":"1.0.0","owner":"knowledge-library"},{"id":"evo-knowledge","version":"1.0.0","owner":"evolution-timeline"}]}

@@ -1,4 +1,4 @@
-const CACHE_MESSAGE_KEY = "mba-v2-interpretation-principles-status";
+const CACHE_MESSAGE_KEY = "interpretation-principles-cache-message";
 
 const state = { query: "", tag: "" };
 
@@ -131,11 +131,15 @@ function setupEvents() {
   // Principle dropdowns are bound in renderPrinciples().
 }
 
-function showStatus() {}
+function showStatus(message) {
+  statusMessage.textContent = message;
+  statusMessage.hidden = false;
+  localStorage.setItem(('mba-v2:'+location.pathname.split('/apps/')[0]+':'+(CACHE_MESSAGE_KEY)), message);
+}
 
 function restoreUpdateMessage() {}
 
-function clearAppCache() {}
+async function clearAppCache() {}
 
 function registerServiceWorker() {}
 

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7f7f4">
+<link rel="apple-touch-icon" href="../../shared/media/asset-0bc6222372f0efdc--Organize-Aquarium-Books.png">
+<title>Aquarium Library Explorer</title>
+<style>
+:root{--bg:#f4f7f7;--card:#fff;--ink:#17313a;--muted:#60737b;--line:#d3e2e4;--accent:#087f84;--navy:#073b4c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:var(--navy);color:#fff;padding:15px 18px 24px}
+header>div{max-width:850px;margin:auto}.hub{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;background:#fff;color:var(--navy);text-decoration:none;font-weight:800;border-radius:999px}
+h1{font-size:clamp(1.6rem,5vw,2.25rem);line-height:1.2;margin:20px 0 4px}.sub{color:#d2e5e9;font-size:14px}
+main{max-width:850px;margin:auto;padding:16px 16px 70px}
+input{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:white}
+.az{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 12px}.letter{border:1px solid #b5d4d9;background:white;color:var(--navy);border-radius:9px;padding:8px 10px;font-weight:700;min-height:38px;min-width:37px}
+.letter.selected{background:var(--navy);color:white;border-color:var(--navy)}
+.count{font-size:13px;color:var(--muted);margin:8px 2px 14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:9px 0;overflow:hidden}
+.card>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;font-size:17px;font-weight:800}.card>summary::-webkit-details-marker{display:none}
+.card>summary::after{content:"⌄";color:var(--accent);font-size:20px;flex-shrink:0}.card[open]>summary{background:#e9f4f4}.card[open]>summary::after{content:"⌃"}
+.body{padding:13px 16px 17px;border-top:1px solid var(--line)}.desc{margin:0 0 12px;color:#394f55}.tags{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0}.tag{font-size:12px;background:#edf3f3;padding:4px 8px;border-radius:9px}.meta{font-size:14px;color:#445d64;line-height:1.6}.empty{text-align:center;color:var(--muted);padding:35px 10px}.wish{font-size:11px;font-weight:700;color:#765d14;margin-left:6px}
+button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid #f1a22b;outline-offset:2px}
+.category-row{display:flex;align-items:center;gap:10px;margin-top:10px}.category-row label{font-size:14px;font-weight:750;white-space:nowrap}.category-row select{flex:1;min-width:0;max-width:100%;padding:10px 34px 10px 12px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:11px;font:inherit;font-size:15px;min-height:43px}.category-row select:focus-visible{outline:3px solid #f1a22b}
+</style><style>[data-v2-maintenance-hidden="true"]{display:none!important}</style></head>
+<body>
+<header><div><a class="hub" href="../../index.html">← MBA Hub</a><h1>Aquarium Library Explorer</h1><div class="sub">Thursday 2nd Library · searchable book directory</div></div></header>
+<main><input id="q" type="search" aria-label="Search library books" placeholder="Search books, subjects, authors, owners…" autocomplete="off">
+<div class="category-row"><label for="category">Category</label><select id="category" aria-label="Filter books by category"><option value="">All categories</option></select></div>
+<div class="az" id="az" role="group" aria-label="Filter books by first letter"></div>
+<div class="count" id="count"></div><div id="list"></div></main>
+<script src="library-data.js?v=20261011-library-az"></script>
+<script>
+let active=null;const category=document.getElementById("category"),q=document.getElementById("q"),az=document.getElementById("az"),list=document.getElementById("list"),count=document.getElementById("count");
+const books=LIBRARY_DATA;const categories=[...new Set(books.filter(b=>!b.wishlist).flatMap(b=>b.tags||[]))].sort((a,b)=>a.localeCompare(b));categories.forEach(name=>{const option=document.createElement("option");option.value=name;option.textContent=name;category.appendChild(option)});const letters=[...new Set(books.filter(b=>!b.wishlist).map(b=>(b.title||"").trim().charAt(0).toUpperCase()))].filter(x=>/^[A-Z]$/.test(x)).sort();
+function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function drawLetters(){az.innerHTML=letters.map(letter=>'<button type="button" class="letter'+(active===letter?' selected':'')+'" aria-pressed="'+String(active===letter)+'" data-letter="'+esc(letter)+'">'+esc(letter)+'</button>').join("")+'<button type="button" class="letter'+(active==="Wishlist"?' selected':'')+'" aria-pressed="'+String(active==="Wishlist")+'" data-letter="Wishlist">Wishlist</button>'}
+az.addEventListener("click",e=>{const btn=e.target.closest("[data-letter]");if(!btn)return;const letter=btn.dataset.letter;active=active===letter?null:letter;drawLetters();render()});
+function render(){const term=q.value.trim().toLowerCase();const rows=books.filter(b=>{const eligible=active==="Wishlist"?Boolean(b.wishlist):!b.wishlist&&(!active||(b.title||"").trim().toUpperCase().startsWith(active));const hay=[b.title,b.author,b.owner,b.description,...(b.tags||[])].join(" ").toLowerCase();return eligible&&(!category.value||(b.tags||[]).includes(category.value))&&(!term||hay.includes(term))}).sort((a,b)=>a.title.localeCompare(b.title,undefined,{sensitivity:"base"}));
+count.textContent=rows.length+" "+(rows.length===1?"book":"books")+" shown"+(active?" · "+active:"")+(category.value?" · "+category.value:"");
+list.innerHTML=rows.map(b=>'<details class="card"><summary><span>'+esc(b.title)+(b.wishlist?'<span class="wish">WISHLIST</span>':'')+'</span></summary><div class="body"><p class="desc">'+esc(b.description)+'</p><div class="tags">'+(b.tags||[]).map(t=>'<span class="tag">'+esc(t)+'</span>').join("")+'</div><div class="meta"><b>Author/Publisher:</b> '+(esc(b.author)||"—")+'<br><b>Owner:</b> '+(esc(b.owner)||"—")+'<br><b>Borrowed:</b> '+(esc(b.borrowed)||"Not marked")+'</div></div></details>').join("")||'<div class="empty">No matching books.</div>'}
+q.addEventListener("input",render);category.addEventListener("change",render);drawLetters();render();
+if(false)Promise.resolve({update:async()=>{},installing:null,waiting:null,active:null});
+</script><script type="module" src="../../core/app-contract.js"></script></body></html>

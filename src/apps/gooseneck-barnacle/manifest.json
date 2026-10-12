@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "app_id": "gooseneck-barnacle",
+  "title": "Gooseneck Barnacle",
+  "category": "animals",
+  "type": "species",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/gooseneck-barnacle/index.html",
+  "status": "testing",
+  "owner": "gooseneck-barnacle",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/gooseneck-barnacle/app.js",
+    "apps/gooseneck-barnacle/index.html",
+    "apps/gooseneck-barnacle/styles.css"
+  ],
+  "media": [
+    "asset-240372707379e853",
+    "asset-6940746379bdd044",
+    "asset-328e69410ff6d027",
+    "asset-9e3c4419134f3e95",
+    "asset-2abba7e42847f4a7",
+    "asset-4ba4d87b5678a0c8"
+  ],
+  "knowledge": [],
+  "cross_links": [],
+  "sections": [
+    {
+      "id": "Quick-Facts",
+      "title": "Quick Facts",
+      "text": "Quick Facts Length:  Up to 8 in Diet:  Plankton Predators:  Glaucous-winged gull, ochre star, six-rayed stars ( Leptasterias  sp.), black oystercatchers and humans Habitat:  Intertidal rocky shore Depth:  0–100 ft Range:  Alaska to Baja California, Mexico Lifespan:  Up to 20 years Conservation:  Not Evaluated",
+      "aliases": []
+    },
+    {
+      "id": "What-Makes-It-Different",
+      "title": "What Makes It Different?",
+      "text": "What Makes It Different? Gooseneck or leaf barnacles do not resemble the familiar volcano-shaped acorn barnacles. Adults retain a flexible stalk, or peduncle, rather than being enclosed in a rigid cone-shaped shell. They commonly occur in dense clusters, or rosettes, and may live among California mussels on wave-swept rocky shores.",
+      "aliases": []
+    },
+    {
+      "id": "Life-Cycle-Settlement",
+      "title": "Life Cycle & Settlement",
+      "text": "Life Cycle & Settlement Like other barnacles, gooseneck barnacles pass through two pelagic larval forms before settling: the feeding  nauplius  stage and the non-feeding  cyprid  stage. When ready to settle, cement glands connect through a cement duct at the base of the peduncle and effectively glue the animal to hard substrate. Settling near other members of the species is important for cross-fertilization. Maturity is described in the source Field Note as occurring around five years. A mature individual may release roughly 20,000 eggs per brood and may produce several broods in a year.",
+      "aliases": []
+    },
+    {
+      "id": "Anatomy",
+      "title": "Anatomy",
+      "text": "Anatomy The adult consists of a flexible  peduncle (stalk)  attached to the substrate and a capitulum containing the feeding and major body structures. The source material highlights the mouth, cirri, digestive system, cement glands and duct, nervous system, and both male and female reproductive structures.",
+      "aliases": []
+    },
+    {
+      "id": "Feeding-Life-in-the-Surf",
+      "title": "Feeding & Life in the Surf",
+      "text": "Feeding & Life in the Surf Rather than resisting every wave with a rigid shell, the flexible stalk allows a gooseneck barnacle to move with heavy surge. The animal can orient toward water flow and extend its  cirri  to capture plankton and suspended organic material. Barnacle cirri are modified appendages. Fine structures trap material from the water; captured material is moved toward the mouth, where the animal can distinguish useful organic material from non-food particles.",
+      "aliases": []
+    },
+    {
+      "id": "Reproduction-Rosettes",
+      "title": "Reproduction & Rosettes",
+      "text": "Reproduction & Rosettes Gooseneck barnacles are commonly packed closely together. The Field Note connects this tight clustering with the need for neighboring animals to cross-fertilize. Their reproductive anatomy does not provide the extreme reach associated with some other barnacles, so close neighbors are especially useful.",
+      "aliases": []
+    },
+    {
+      "id": "Fluorescence",
+      "title": "Fluorescence",
+      "text": "Fluorescence Gooseneck barnacles fluorescing under ultraviolet light. Image credited in the source Field Note to Peter Tannas.",
+      "aliases": []
+    },
+    {
+      "id": "People-Harvest-Food",
+      "title": "People, Harvest & Food",
+      "text": "People, Harvest & Food Gooseneck barnacles have long been harvested and eaten by Indigenous peoples along the North Pacific coast from Central California north to British Columbia. A European relative,  Pollicipes pollicipes , is a highly valued food around the Iberian Peninsula. The Field Note emphasizes that harvesting can be difficult and the product degrades quickly, contributing to high prices. It also notes that commercial harvest in parts of the Pacific Northwest and Vancouver region is regulated to reduce overharvesting.",
+      "aliases": []
+    },
+    {
+      "id": "Guide-Talking-Points",
+      "title": "Guide Talking Points",
+      "text": "Guide Talking Points Is it really a crustacean? Yes. Despite its unusual adult form, it is a crustacean and has free-swimming larval stages. What are the feathery structures? They are cirri—modified appendages used to filter food from moving water. Why are they packed together? Dense groups help them occupy favorable wave-swept habitat and keep potential reproductive partners close. How do they stay attached? Cement glands and a cement duct at the base of the stalk produce the attachment system used during settlement. Can people eat them? Yes. Gooseneck barnacles have a long history as food and remain commercially harvested in some regions.",
+      "aliases": []
+    },
+    {
+      "id": "References-Further-Reading",
+      "title": "References / Further Reading",
+      "text": "References / Further Reading World Register of Marine Species UC Santa Cruz Walla Walla University Invertebrates Animal Diversity Web PMC research article Dayton Lab / UC San Diego Fisheries and Oceans Canada",
+      "aliases": []
+    },
+    {
+      "id": "Install-Offline-Help",
+      "title": "Install / Offline Help",
+      "text": "Install / Offline Help iPhone/iPad:  Safari → Share → Add to Home Screen. Android:  Chrome → menu → Add to Home screen / Install app. Clear offline cache",
+      "aliases": []
+    }
+  ],
+  "source_version": "1.0",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
+}

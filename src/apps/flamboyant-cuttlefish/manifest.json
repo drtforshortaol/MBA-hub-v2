@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "app_id": "flamboyant-cuttlefish",
+  "title": "Flamboyant Cuttlefish",
+  "category": "animals",
+  "type": "species",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/flamboyant-cuttlefish/index.html",
+  "status": "testing",
+  "owner": "flamboyant-cuttlefish",
+  "listed": false,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/flamboyant-cuttlefish/app.js",
+    "apps/flamboyant-cuttlefish/index.html",
+    "apps/flamboyant-cuttlefish/styles.css"
+  ],
+  "media": [
+    "asset-4ad1b63ad37d50de",
+    "asset-ad1fe862fb75620f",
+    "asset-77f28e714fde41ed"
+  ],
+  "knowledge": [],
+  "cross_links": [],
+  "sections": [
+    {
+      "id": "Quick-Facts",
+      "title": "Quick Facts",
+      "text": "Quick Facts Length:  2.5–3 in Diet:  Crustaceans and small bony fish Predators:  Large fish, pinnipeds and dolphins Habitat:  Coral reefs; sand or mud flats Depth:  10–280 ft; commonly around 10–30 ft Range:  Indonesia, Malaysia, Papua New Guinea and northern Australia Lifespan:  About 18–24 months; reproduction can shorten individual lifespan Conservation:  Data Deficient (IUCN)",
+      "aliases": []
+    },
+    {
+      "id": "Life-Cycle-Reproduction",
+      "title": "Life Cycle & Reproduction",
+      "text": "Life Cycle & Reproduction Breeding depends on suitable environmental conditions, including food availability and water quality. Males compete for territories with protected sites suitable for egg laying and display to females with dynamic bands of color. Cuttlefish mate face-to-face. The male transfers spermatophores (sperm packets) to the female. A female may attach roughly 5–25 fertilized eggs to hard substrate in a protected den. She tends the eggs, including circulating water around them, and the eggs may hatch in about 30 days. Newly hatched juveniles resemble miniature adults and are ready to hunt soon after hatching.",
+      "aliases": []
+    },
+    {
+      "id": "Hunting-Feeding",
+      "title": "Hunting & Feeding",
+      "text": "Hunting & Feeding Like squid, cuttlefish have eight arms plus two specialized feeding tentacles. The tentacles can shoot outward beyond the body to seize prey and then retract toward the beak. Flamboyant cuttlefish can produce moving bands of color while approaching prey. Their remarkably rapid appearance changes are produced by specialized skin structures controlled by the nervous system.",
+      "aliases": []
+    },
+    {
+      "id": "Why-Do-They-Walk",
+      "title": "Why Do They “Walk”?",
+      "text": "Why Do They “Walk”? Although capable of swimming, flamboyant cuttlefish are frequently observed moving along the seafloor using their arms in a distinctive walking or strutting motion. Cuttlefish possess an internal shell called a  cuttlebone . In this species the cuttlebone is relatively small and narrow compared with many other cuttlefish, providing less buoyancy assistance. Moving along the bottom may therefore be less energetically costly than sustained swimming.",
+      "aliases": []
+    },
+    {
+      "id": "Color-Change-Camouflage",
+      "title": "Color Change & Camouflage",
+      "text": "Color Change & Camouflage Cephalopod skin combines several specialized structures: Chromatophores  — pigment-containing organs that expand and contract. Iridophores  — reflective structures containing crystalline material that produce iridescent effects. Leucophores  — structures that reflect ambient light. Papillae  — muscular skin structures that can alter the texture of the body surface. Together these systems allow rapid camouflage, communication and conspicuous displays.",
+      "aliases": []
+    },
+    {
+      "id": "Anatomy",
+      "title": "Anatomy",
+      "text": "Anatomy 8 arms + 2 specialized feeding tentacles Beak and radula Internal cuttlebone Ink sac Three hearts: one systemic heart and two branchial hearts associated with the gills Large central brain plus extensive neural processing within the arms Distinctive W-shaped pupils Much of a cephalopod's nervous system extends outside the central brain. Large concentrations of neurons in the arms allow substantial local sensory processing and motor control. This is the origin of the popular—but simplified—description of cephalopods as having “nine brains.”",
+      "aliases": []
+    },
+    {
+      "id": "Intelligence-Senses",
+      "title": "Intelligence & Senses",
+      "text": "Intelligence & Senses Cuttlefish have large and sophisticated nervous systems for invertebrates. Experiments have demonstrated abilities including learning, discrimination of small quantities and delayed gratification under laboratory conditions. Their distinctive W-shaped pupils are part of a highly developed visual system. Cuttlefish do not perceive color the way humans do, but they can detect polarized light and contrast extremely well.",
+      "aliases": []
+    },
+    {
+      "id": "Poison-Warning-Colors",
+      "title": "Poison & Warning Colors",
+      "text": "Poison & Warning Colors Flamboyant cuttlefish are notable because their tissues contain  tetrodotoxin (TTX) , making them poisonous if eaten. Their vivid appearance may function as  aposematic coloration —a visual warning to potential predators. Useful visitor distinction:  poisonous organisms cause harm when eaten or contacted; venomous organisms actively deliver toxins through structures such as bites or stings. The flamboyant cuttlefish is described as poisonous, whereas blue-ringed octopuses use venom during a bite.",
+      "aliases": []
+    },
+    {
+      "id": "Biomimicry-the-Cuttlebone",
+      "title": "Biomimicry & the Cuttlebone",
+      "text": "Biomimicry & the Cuttlebone Cuttlebone combines low weight with an intricate chambered architecture. It is largely composed of aragonite and must tolerate substantial pressure while maintaining the animal's buoyancy. Researchers have studied cuttlebone architecture as inspiration for lightweight structures capable of handling compression and thermal stresses. Such biological designs are of interest for advanced engineering, including aerospace applications.",
+      "aliases": []
+    },
+    {
+      "id": "Monterey-Bay-Aquarium-Connection",
+      "title": "Monterey Bay Aquarium Connection",
+      "text": "Monterey Bay Aquarium Connection Flamboyant cuttlefish were previously displayed at Monterey Bay Aquarium in  Tentacles . They are returning with  Ocean in Motion . The Aquarium has previous experience culturing this species, and new generations have been raised behind the scenes as aquarists prepare for the exhibit.",
+      "aliases": []
+    },
+    {
+      "id": "Guide-Talking-Points",
+      "title": "Guide Talking Points",
+      "text": "Guide Talking Points Why does it walk? Its small cuttlebone provides relatively little buoyancy, so moving along the bottom may cost less energy than swimming. Can it really change color? Yes. Chromatophores and reflective skin structures allow extremely rapid changes used for camouflage, communication and hunting displays. Is it venomous? It is better described as poisonous: its tissues contain tetrodotoxin. Blue-ringed octopuses, by comparison, deliver venom with a bite. Does it really have nine brains? Not literally. It has one central brain, but a large amount of neural processing occurs in the arms, which can perform sophisticated local sensory and motor processing. Why is the pupil shaped like a W? The unusual pupil is part of a highly specialized visual system adapted to detecting contrast and polarized light. What is a cuttlebone? It is the cuttlefish's internal shell. In many cuttlefish it helps regulate buoyancy.",
+      "aliases": []
+    },
+    {
+      "id": "Sources-Further-Reading",
+      "title": "Sources & Further Reading",
+      "text": "Sources & Further Reading IUCN Red List NCBI / PMC research article Animal Diversity Web Marine Biological Laboratory Aquarium of the Pacific California Academy of Sciences Monterey Bay Aquarium Mote Marine Laboratory & Aquarium Massive Science — cephalopod nervous systems",
+      "aliases": []
+    },
+    {
+      "id": "Install-Offline-Help",
+      "title": "Install / Offline Help",
+      "text": "Install / Offline Help iPhone/iPad:  Open this page in Safari → Share → Add to Home Screen. Android:  Open in Chrome → menu → Add to Home screen / Install app. The app caches its core files after loading so the guide remains available offline. Clear offline cache",
+      "aliases": []
+    }
+  ],
+  "source_version": "preserved-v1",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
+}

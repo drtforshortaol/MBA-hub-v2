@@ -1,5 +1,15 @@
 # MBA Hub Version 2
 
+## Current status — alpha.6 private migration review
+
+All 25 registered V1 applications and seven linked supporting applications are imported, with 203 canonical media assets and a versioned EVO knowledge export. All 21 automated checks pass. See [Migration review](docs/MIGRATION_REVIEW.md) and [Application catalog](docs/GENERATED_CATALOG.md).
+
+The public tester remains the verified two-app alpha.4 foundation. Full collection device checks, privacy review, image permissions, owner approval and the pilot remain pending. Library borrower information, internal contacts and operational notes require review before public distribution. Publication gates remain closed. V1 and independent upstream repositories are unchanged.
+
+Run `npm run build`, `npm test` and `npm run serve` with Node 20+ and Python 3. The optional migration tooling has its own pinned dependency. Existing source builds without installing it.
+
+The remainder of this README records the earlier foundation stage; its statements about migration not having begun and empty knowledge are historical, superseded by the alpha.6 review above.
+
 **Summary**
 
 This is the runnable V2 foundation specified by the two owner-provided planning documents. Version 1 remains operational and unchanged. This build is not the completed migrated volunteer release.

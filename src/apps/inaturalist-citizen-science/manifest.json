@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "app_id": "inaturalist-citizen-science",
+  "title": "iNaturalist & Citizen Science",
+  "category": "volunteer-tools",
+  "type": "reference",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/inaturalist-citizen-science/index.html",
+  "status": "testing",
+  "owner": "inaturalist-citizen-science",
+  "listed": false,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/inaturalist-citizen-science/index.html"
+  ],
+  "media": [],
+  "knowledge": [],
+  "cross_links": [
+    {
+      "app_id": "naturalist-field-notes"
+    }
+  ],
+  "sections": [
+    {
+      "id": "In-30-seconds",
+      "title": "In 30 seconds",
+      "text": "Concepts · Guide reference In 30 seconds iNaturalist  is an international biodiversity observation platform. People share photos or sounds of wild organisms, and community members help identify them. Some observations support scientific research. For Aquarium guides:  a sighting can spark a great conversation, but a reported identification is not always confirmed. We share the interesting takeaway first and link to the original observation for anyone who wants to explore further.",
+      "aliases": []
+    },
+    {
+      "id": "What-is-iNaturalist-and-is-it-credible",
+      "title": "What is iNaturalist, and is it credible?",
+      "text": "What is iNaturalist, and is it credible? iNaturalist began as a UC Berkeley student project, later became a joint initiative of the California Academy of Sciences and National Geographic Society, and became an independent nonprofit in 2023. It is a serious international citizen-science platform—not just a local enthusiasts' club. Contributors include interested members of the public, experienced naturalists, taxonomists and professional scientists. The platform is not itself a government regulator or the final authority on accepted taxonomy. iNaturalist: About ↗",
+      "aliases": []
+    },
+    {
+      "id": "How-reliable-is-a-sighting",
+      "title": "How reliable is a sighting?",
+      "text": "How reliable is a sighting? Observations can be labeled  Casual ,  Needs ID , or  Research Grade . Research Grade means applicable evidence, data-quality and community-identification criteria were met. It does  not  mean a professional expert necessarily verified the organism, or that an identification cannot change. A single unusual sighting does not establish a species' population size, rarity or a change in its geographic range. When identification is uncertain, we say so. iNaturalist Help Center ↗",
+      "aliases": []
+    },
+    {
+      "id": "Do-scientists-use-these-observations",
+      "title": "Do scientists use these observations?",
+      "text": "Do scientists use these observations? Yes. Eligible iNaturalist observations are shared with biodiversity data systems such as the  Global Biodiversity Information Facility (GBIF)  and can help researchers study where organisms occur. Scientific conclusions still require appropriate checks and context.",
+      "aliases": []
+    },
+    {
+      "id": "How-do-we-use-iNaturalist-in-MBA-Hub",
+      "title": "How do we use iNaturalist in MBA Hub?",
+      "text": "How do we use iNaturalist in MBA Hub? Our priority is the Aquarium guest experience.  We select observations that are interesting or useful to guides, write a short visitor-friendly takeaway, and—when available—link to the exact original observation. Keep it compact:  a brief note or Species Highlight, not a large photo gallery or database. Distinguish sources:  MJ's firsthand sightings, other people's reports, and published scientific findings are different kinds of evidence. Respect uncertainty:  use “reported,” “possibly,” or “identification uncertain” where appropriate. Respect creators:  link to the original observation rather than copying photographs without checking permission or license. Avoid duplication:  dated sightings stay in Naturalist Field Notes; enduring animal information belongs in Species Guides. This Concepts app explains the source and our standards. Unusual sightings do not automatically require new standalone Species Guides. We add one only when it has lasting Aquarium interpretive value.",
+      "aliases": []
+    },
+    {
+      "id": "For-curious-guides-evidence-and-scientific-authority",
+      "title": "For curious guides: evidence and scientific authority",
+      "text": "For curious guides: evidence and scientific authority Use scientific studies and appropriate taxonomic references for broader conclusions and current accepted species names. Use established monitoring programs for population trends. iNaturalist is especially useful for documented individual sightings; its observation counts are not a population census. Three layers of depth:  (1) guide essentials, visible immediately; (2) optional biology and context; (3) original records and scientific sources, available when needed.",
+      "aliases": []
+    },
+    {
+      "id": "Explore-the-source",
+      "title": "Explore the source",
+      "text": "Explore the source Explore iNaturalist observations ↗ Open Naturalist Field Notes → For MJ's January 15–21 sightings, see the dated Field Note. Individual iNaturalist observation URLs were not included in the supplied email; we do not invent them.",
+      "aliases": []
+    }
+  ],
+  "source_version": "preserved-v1",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
+}

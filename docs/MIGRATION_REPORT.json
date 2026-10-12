@@ -1,0 +1,563 @@
+{
+  "source_commits": {
+    "MBA-hub": "5c219508d23255080f6b050cefa8092905447d81",
+    "aquarium-shift-library-": "9438060bd836c46245e4af45c280e4bb37b0ab94",
+    "evolution-timeline": "c6d782d3a8a03e407861a0fbc3aab76e5fbf8d0c"
+  },
+  "changes": [
+    {
+      "empty_legacy_icon_replaced": "/workspace/scratch/a7979030fd01/v1-inspection/apps/mmc-narrations/images/icon.svg"
+    },
+    {
+      "empty_legacy_icon_replaced": "/workspace/scratch/a7979030fd01/v1-inspection/apps/mba-leadership/icon.svg"
+    },
+    {
+      "empty_legacy_icon_replaced": "/workspace/scratch/a7979030fd01/v1-inspection/apps/open-sea/icon.svg"
+    },
+    {
+      "empty_legacy_icon_replaced": "/workspace/scratch/a7979030fd01/v1-inspection/apps/open-sea/images/icon.svg"
+    },
+    {
+      "app": "kelp-forest",
+      "registration_snippet_replaced_by_manifest": "apps/kelp-forest/hub-card-snippet.js"
+    },
+    {
+      "app": "tree-of-life-origins",
+      "registration_snippet_replaced_by_manifest": "apps/tree-of-life-origins/hub-registry-entry.js"
+    },
+    {
+      "app": "tree-of-life-origins",
+      "unused_older_entry_preserved_upstream": "apps/tree-of-life-origins/tree-of-life-origins-index.html"
+    },
+    {
+      "app": "whale-parasites-associates",
+      "removed_missing_script": "../../apps.js"
+    },
+    {
+      "app": "whale-parasites-associates",
+      "removed_missing_script": "../../hub-links.js"
+    },
+    {
+      "app": "whale-parasites-associates",
+      "file": "apps/whale-parasites-associates/app.js",
+      "transforms": [
+        "legacy-maintenance-function",
+        "legacy-maintenance-function",
+        "legacy-maintenance-function",
+        "legacy-maintenance-function"
+      ]
+    },
+    {
+      "app": "whale-parasites-associates",
+      "file": "apps/whale-parasites-associates/data.js",
+      "transforms": []
+    },
+    {
+      "app": "information-center",
+      "file": "apps/information-center/app.js",
+      "transforms": [
+        "legacy-maintenance-function",
+        "isolated-local-state",
+        "isolated-local-state",
+        "legacy-maintenance-function"
+      ]
+    },
+    {
+      "app": "information-center",
+      "file": "apps/information-center/data.js",
+      "transforms": []
+    },
+    {
+      "app": "interpretation-principles",
+      "file": "apps/interpretation-principles/app.js",
+      "transforms": [
+        "isolated-local-state",
+        "legacy-maintenance-function",
+        "legacy-maintenance-function",
+        "legacy-maintenance-function"
+      ]
+    },
+    {
+      "app": "interpretation-principles",
+      "file": "apps/interpretation-principles/data.js",
+      "transforms": []
+    },
+    {
+      "app": "five-senses-pwa",
+      "file": "apps/five-senses-pwa/app.js",
+      "transforms": [
+        "legacy-maintenance-function",
+        "legacy-maintenance-function"
+      ]
+    },
+    {
+      "app": "five-senses-pwa",
+      "file": "apps/five-senses-pwa/apps.js",
+      "transforms": []
+    },
+    {
+      "app": "five-senses-pwa",
+      "file": "apps/five-senses-pwa/data.js",
+      "transforms": []
+    },
+    {
+      "app": "mmc-narrations",
+      "file": "apps/mmc-narrations/app.js",
+      "transforms": [
+        "legacy-maintenance-function"
+      ]
+    },
+    {
+      "app": "mmc-narrations",
+      "file": "apps/mmc-narrations/apps.js",
+      "transforms": []
+    },
+    {
+      "app": "mmc-narrations",
+      "file": "apps/mmc-narrations/data.js",
+      "transforms": []
+    },
+    {
+      "app": "northern-elephant-seal",
+      "file": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/app.js",
+      "transforms": [
+        "legacy-maintenance-function",
+        "isolated-local-state",
+        "isolated-local-state",
+        "isolated-local-state",
+        "isolated-local-state",
+        "legacy-maintenance-function"
+      ]
+    },
+    {
+      "app": "northern-elephant-seal",
+      "file": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/data.js",
+      "transforms": []
+    },
+    {
+      "app": "mba-leadership",
+      "file": "apps/mba-leadership/app.js",
+      "transforms": [
+        "legacy-maintenance-function",
+        "legacy-maintenance-function",
+        "legacy-maintenance-function"
+      ]
+    },
+    {
+      "app": "mba-leadership",
+      "file": "apps/mba-leadership/apps.js",
+      "transforms": []
+    },
+    {
+      "app": "mba-leadership",
+      "file": "apps/mba-leadership/data.js",
+      "transforms": []
+    },
+    {
+      "app": "open-sea",
+      "file": "apps/open-sea/app.js",
+      "transforms": []
+    },
+    {
+      "app": "open-sea",
+      "file": "apps/open-sea/apps.js",
+      "transforms": []
+    },
+    {
+      "app": "open-sea",
+      "file": "apps/open-sea/data.js",
+      "transforms": []
+    },
+    {
+      "app": "applied-water-science-life-support",
+      "file": "apps/applied-water-science-life-support/app.js",
+      "transforms": [
+        "legacy-offline-check",
+        "legacy-worker"
+      ]
+    },
+    {
+      "app": "evolution-timeline",
+      "file": "app.js",
+      "transforms": [
+        "legacy-offline-check",
+        "legacy-worker"
+      ]
+    },
+    {
+      "app": "aquarium-library-explorer",
+      "file": "library-data.js",
+      "transforms": []
+    },
+    {
+      "app": "gooseneck-barnacle",
+      "file": "apps/gooseneck-barnacle/app.js",
+      "transforms": [
+        "legacy-offline-check",
+        "legacy-cache-enumeration",
+        "legacy-cache-removal",
+        "legacy-offline-check",
+        "legacy-worker"
+      ]
+    },
+    {
+      "app": "naturalist-field-notes",
+      "file": "apps/naturalist-field-notes/app.js",
+      "transforms": [
+        "legacy-offline-check",
+        "legacy-cache-enumeration",
+        "legacy-cache-removal",
+        "legacy-offline-check",
+        "legacy-cache-enumeration",
+        "legacy-cache-removal",
+        "legacy-offline-check",
+        "legacy-worker"
+      ]
+    },
+    {
+      "app": "naturalist-field-notes",
+      "file": "apps/naturalist-field-notes/data.js",
+      "transforms": []
+    },
+    {
+      "app": "flamboyant-cuttlefish",
+      "file": "apps/flamboyant-cuttlefish/app.js",
+      "transforms": [
+        "legacy-offline-check",
+        "legacy-cache-enumeration",
+        "legacy-cache-removal",
+        "legacy-offline-check",
+        "legacy-worker"
+      ]
+    },
+    {
+      "app": "kelp-forest",
+      "file": "apps/kelp-forest/app.js",
+      "transforms": [
+        "legacy-maintenance-function",
+        "legacy-maintenance-function",
+        "legacy-maintenance-function",
+        "legacy-maintenance-function"
+      ]
+    },
+    {
+      "app": "kelp-forest",
+      "file": "apps/kelp-forest/data.js",
+      "transforms": []
+    },
+    {
+      "app": "tree-of-life-origins",
+      "file": "apps/tree-of-life-origins/app.js",
+      "transforms": [
+        "legacy-offline-check",
+        "legacy-worker"
+      ]
+    },
+    {
+      "app": "gray-whale",
+      "inline_transforms": [
+        "legacy-cache-name",
+        "legacy-offline-check",
+        "legacy-cache-open"
+      ]
+    },
+    {
+      "app": "whale-associated-organisms",
+      "inline_transforms": [
+        "legacy-offline-check",
+        "legacy-worker"
+      ]
+    },
+    {
+      "app": "wildlife-rescue",
+      "inline_transforms": [
+        "legacy-offline-check",
+        "legacy-worker"
+      ]
+    },
+    {
+      "app": "aquarium-library-explorer",
+      "inline_transforms": [
+        "legacy-offline-check",
+        "legacy-worker"
+      ]
+    }
+  ],
+  "missing_links": [],
+  "publication_reviews": [
+    {
+      "app_id": "whale-parasites-associates",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "sea-slugs-nudibranchs",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "hopkins-rose-nudibranch",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "gray-whale-skeleton-exhibit",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "gray-whale",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "bluespotted-ribbontail-ray",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "california-sheephead",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "stargazer-species-guide",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "whale-associated-organisms",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "wildlife-rescue",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "information-center",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "interpretation-principles",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "five-senses-pwa",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "mmc-narrations",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "mba-leadership",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "open-sea",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "applied-water-science-life-support",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "evolution-timeline",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "aquarium-library-explorer",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review",
+        "book ownership/borrower records"
+      ]
+    },
+    {
+      "app_id": "california-flying-fish",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "gooseneck-barnacle",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "green-falsejingle",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "wildfires-ocean-health",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "flamboyant-cuttlefish",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "inaturalist-citizen-science",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "kelp-forest",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "pacific-white-sided-dolphin",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "pseudo-nitzschia",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "sperm-whale",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    },
+    {
+      "app_id": "tree-of-life-origins",
+      "private_review_required": true,
+      "reasons": [
+        "source content and attribution review",
+        "media reuse permission review"
+      ]
+    }
+  ],
+  "registered_v1_apps": 25,
+  "total_imported_apps": 32,
+  "linked_support_apps": [
+    "flamboyant-cuttlefish",
+    "inaturalist-citizen-science",
+    "kelp-forest",
+    "pacific-white-sided-dolphin",
+    "pseudo-nitzschia",
+    "sperm-whale",
+    "tree-of-life-origins"
+  ],
+  "canonical_media_assets": 203,
+  "media_bytes": 62674885,
+  "independent_integrations": [
+    "evolution-timeline",
+    "aquarium-library-explorer"
+  ]
+}

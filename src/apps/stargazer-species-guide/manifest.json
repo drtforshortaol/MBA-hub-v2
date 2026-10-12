@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "app_id": "stargazer-species-guide",
+  "title": "Stargazer Fish",
+  "category": "animals",
+  "type": "species",
+  "version": "2.0.0-alpha.6",
+  "entry_point": "apps/stargazer-species-guide/index.html",
+  "status": "testing",
+  "owner": "stargazer-species-guide",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/stargazer-species-guide/index.html"
+  ],
+  "media": [
+    "asset-4b41d3a89ec67f65",
+    "asset-a6a0f1e28ae2bd1a",
+    "asset-e27e2ab941b776a9",
+    "asset-b5206667bf07f05b",
+    "asset-b2920aa1dbefcb97"
+  ],
+  "knowledge": [],
+  "cross_links": [
+    {
+      "app_id": "naturalist-field-notes"
+    }
+  ],
+  "sections": [
+    {
+      "id": "Identification",
+      "title": "Identification",
+      "text": "Identification Stargazers are marine fishes whose eyes and upward-facing mouths sit on top of broad heads. The family Uranoscopidae includes species from shallow and deep seas worldwide. The source introduces an Astroscopus stargazer in the aquarium's tube-anemone tank.",
+      "aliases": []
+    },
+    {
+      "id": "Sand-burial-and-breathing",
+      "title": "Sand-burial and breathing",
+      "text": "Sand-burial and breathing Stargazers use strong pectoral fins to bury themselves rapidly in sediment. Their upper-head breathing openings and fringes help exclude sand while they wait for prey.",
+      "aliases": []
+    },
+    {
+      "id": "Ambush-hunting",
+      "title": "Ambush hunting",
+      "text": "Ambush hunting They lie hidden until a fish, small crustacean or other bottom-dwelling invertebrate comes close, then strike rapidly. Some stargazers use a worm-like oral lure.",
+      "aliases": []
+    },
+    {
+      "id": "Venom-and-electricity",
+      "title": "Venom and electricity",
+      "text": "Venom and electricity Venomous spines occur near the gill covers. Some Astroscopus stargazers also generate electric discharges using modified eye muscles. The source describes these as defensive or predatory adaptations.",
+      "aliases": []
+    },
+    {
+      "id": "Development",
+      "title": "Development",
+      "text": "Development Eggs laid near the seabed rise into the water column. Planktonic larvae later settle as their bodies and upward-facing eyes develop. The source compares this developmental change with flatfish.",
+      "aliases": []
+    },
+    {
+      "id": "Visitor-interpretation",
+      "title": "Visitor interpretation",
+      "text": "Visitor interpretation Look for the animal's eyes protruding above the sand and discuss ambush camouflage. Avoid handling; the spines can cause injury. Source text contributed by Michael Gilmartin and shared by Sallie.",
+      "aliases": []
+    },
+    {
+      "id": "Further-reading",
+      "title": "Further reading",
+      "text": "Further reading youtu.be/lRF4dKmByRU ↗",
+      "aliases": []
+    },
+    {
+      "id": "Source-illustrations",
+      "title": "Source illustrations",
+      "text": "Source illustrations Stargazer on sand Sand-camouflaged stargazer Partially buried stargazer Juvenile stargazers",
+      "aliases": []
+    }
+  ],
+  "source_version": "1.0",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "publication_review": "pending"
+}
