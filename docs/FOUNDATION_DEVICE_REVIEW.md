@@ -21,4 +21,6 @@ Both repositories retain `archive/foundation-alpha4-verified-2026-10-12`. These 
 
 Tester release resource hash: `372b656d714ce8a8`.
 
-Alpha.5 changes only version indicators/history for the controlled update/rollback test. Await device confirmation that alpha.5 loads, then restore the entire alpha.4 tester tree in a normal new commit. Verify the deployed version, ask the owner to load it through the V2 refresh route, and confirm alpha.4 and its resources work offline afterward. Keep the source history and record the outcome. Never reset or modify V1.
+Alpha.5 changed only version indicators/history for the controlled update/rollback test. The owner screenshot at 06:14 on October 12 confirms the iPhone loaded alpha.5. The entire alpha.4 tester tree was then restored through new commit `1032ecae67f7b7e2fb4c8c4330a37efe2997bc35`, preserving history. Its tree matches the archived alpha.4 commit exactly; all 27 resource hashes verified locally. Device confirmation of alpha.4 and its offline resources remains pending.
+
+Development source remains at alpha.5, with identical application behavior and the review record maintained. The tester deployment intentionally returns to alpha.4 for this recovery proof. V1 remains untouched.
