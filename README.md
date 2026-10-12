@@ -29,7 +29,7 @@ Open http://localhost:8080. For the tester bundle, serve `dist/tester` instead. 
 
 ## Host separately
 
-The owner created the separate private source repository at https://github.com/drtforshortaol/MBA-hub-v2. Foundation source is maintained there; V1 remains untouched. Pages is not configured and no hosted testing URL is claimed.
+The owner created the separate private source repository at https://github.com/drtforshortaol/MBA-hub-v2. Foundation source is maintained there; V1 remains untouched. The reviewed read-only tester bundle is hosted separately at https://drtforshortaol.github.io/MBA-hub-v2-test/ from the public tester repository. Developer code and source documentation remain private.
 
 Use separate deployment roots for `dist/developer` and `dist/tester`; maintain the trailing slash and serve all bundle files. Developer controls are conveniences, not authentication. A public deployment is publicly retrievable. Publish only the tester build to reviewers, and exclude private volunteer content. Review shared media permission before any public deployment.
 
@@ -44,11 +44,11 @@ python3 scripts/snapshot.py save tester
 python3 scripts/snapshot.py restore tester --archive releases/tester-RELEASE.zip
 ```
 
-Restore verifies every resource digest before replacing the local bundle. Redeploy the matching whole artifact and its worker together. Rollback on installed iPhones remains untested. The worker activates new versions when old controlled sessions close; it avoids forced activation that could mix old pages with a new bundle. Keep V1 as the fallback.
+Restore verifies every resource digest before replacing the local bundle. Redeploy the matching whole artifact and its worker together. Normal activation waits for old controlled sessions to close. The V2-only refresh route can activate a complete hash-verified bundle explicitly, without deleting V1 data. A controlled alpha.5-to-alpha.4 device rollback is in progress; see `docs/FOUNDATION_DEVICE_REVIEW.md`. Keep V1 as the fallback.
 
 ## Important limits
 
-The foundation includes two proof apps, not all 25 V1 apps. Media permission is pending and the knowledge library is intentionally empty rather than filled with invented facts. External EVO and Library integrations are inventoried, not certified offline. Browser visual QA, installed-iPhone testing, hosting, actual update/restart and deployed rollback testing have not occurred. Safari can evict offline storage.
+The foundation includes two proof apps, not all 25 V1 apps. Broader media permission review is pending and the knowledge library is intentionally empty rather than filled with invented facts. External EVO and Library integrations are inventoried, not certified offline. Owner-reported iPhone checks cover the two proof apps, image, navigation and search online/offline, plus the verified refresh and alpha.5 update. Automated browser visual QA, interrupted downloads, standalone installation certification and the full collection pilot remain pending. Safari can evict offline storage.
 
 The original archive branches were verified to resolve to the documented V1 baseline. Read-only source inspection HEAD was `5c219508d23255080f6b050cefa8092905447d81`; inventory uses the archived baseline `0903457bcccdb84b99c156ad48979df2bddf5dc9`. The owner-provided final architecture governs full release; the handoff's small-proof-first rule governs internal construction. No mass migration has begun.
 
