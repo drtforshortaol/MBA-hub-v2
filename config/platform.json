@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0-alpha.1",
+  "releaseStage": "foundation",
+  "v1Baseline": "0903457bcccdb84b99c156ad48979df2bddf5dc9",
+  "v1Url": "https://drtforshortaol.github.io/MBA-hub/",
+  "migrationComplete": false,
+  "ownerApproved": false,
+  "pilotPassed": false,
+  "deviceOfflinePassed": false,
+  "rollbackDevicePassed": false,
+  "privacyReviewed": false
+}

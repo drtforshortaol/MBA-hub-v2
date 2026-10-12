@@ -1,0 +1,68 @@
+[
+  {
+    "id": "animals",
+    "title": "Animals",
+    "icon": "\ud83d\udc1f",
+    "description": "Species apps, animal facts, conservation notes, and guide-ready explanations."
+  },
+  {
+    "id": "aquarium-updates",
+    "title": "Aquarium Updates",
+    "icon": "\ud83d\udcf0",
+    "description": "Recent animal news, program changes, facility notes, and volunteer announcements."
+  },
+  {
+    "id": "cannery-row",
+    "title": "Cannery Row",
+    "icon": "\ud83c\udfdb\ufe0f",
+    "description": "Cannery Row history, concierge tools, restaurants, hotels, and walking guides."
+  },
+  {
+    "id": "concepts",
+    "title": "Concepts",
+    "icon": "\ud83d\udca1",
+    "description": "Science, ocean literacy, ecology, and conservation concepts."
+  },
+  {
+    "id": "exhibits",
+    "title": "Exhibits",
+    "icon": "\ud83c\udf0a",
+    "description": "Exhibit reference apps and habitat information."
+  },
+  {
+    "id": "guide-talks",
+    "title": "Guide Talks",
+    "icon": "\ud83c\udfa4",
+    "description": "Talk outlines, themes, stories, and interpretive prompts."
+  },
+  {
+    "id": "making-the-aquarium-come-alive",
+    "title": "Making the Aquarium Come Alive",
+    "icon": "\u2728",
+    "description": "Stories, kid facts, visitor engagement, and interpretation tools."
+  },
+  {
+    "id": "seafood-watch",
+    "title": "Seafood Watch",
+    "icon": "\ud83c\udf7d\ufe0f",
+    "description": "Seafood Watch tools, talking points, and visitor resources."
+  },
+  {
+    "id": "visitor-questions",
+    "title": "Visitor Questions",
+    "icon": "\u2753",
+    "description": "Common visitor questions and short answers."
+  },
+  {
+    "id": "visitor-services",
+    "title": "Visitor Services",
+    "icon": "\ud83d\uddfa\ufe0f",
+    "description": "Visitor support, directions, accessibility, and service information."
+  },
+  {
+    "id": "volunteer-tools",
+    "title": "Volunteer Tools",
+    "icon": "\ud83e\uddf0",
+    "description": "Volunteer reference tools, procedures, quick references, troubleshooting, and support apps."
+  }
+]

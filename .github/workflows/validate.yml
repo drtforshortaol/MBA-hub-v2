@@ -1,0 +1,26 @@
+name: Validate V2 foundation
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build isolated developer and tester bundles
+        run: npm run build
+      - name: Verify contracts and offline isolation
+        run: npm test
+      - name: Retain tester bundle for review
+        uses: actions/upload-artifact@v4
+        with:
+          name: mba-v2-tester-foundation
+          path: dist/tester
+          retention-days: 30

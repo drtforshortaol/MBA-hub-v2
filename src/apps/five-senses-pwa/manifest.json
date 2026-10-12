@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "app_id": "five-senses-pwa",
+  "title": "Using the Five Senses",
+  "category": "volunteer-tools",
+  "type": "reference",
+  "version": "2.0.0-alpha.1",
+  "entry_point": "apps/five-senses-pwa/index.html",
+  "status": "testing",
+  "owner": "five-senses-pwa",
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/five-senses-pwa/index.html",
+    "apps/five-senses-pwa/styles.css",
+    "apps/five-senses-pwa/app.js",
+    "apps/five-senses-pwa/data.js"
+  ],
+  "media": [
+    "five-senses-header"
+  ],
+  "knowledge": [],
+  "cross_links": [],
+  "sections": [
+    {
+      "id": "touch",
+      "title": "Touch",
+      "text": "Tactile items \u00b7 texture language \u00b7 safety",
+      "aliases": [
+        "touch",
+        "tactile items",
+        "texture language",
+        "touch pools",
+        "safe touch"
+      ]
+    },
+    {
+      "id": "hearing",
+      "title": "Hearing",
+      "text": "Water \u00b7 animals \u00b7 ocean soundscapes",
+      "aliases": [
+        "hearing",
+        "sound",
+        "water movement",
+        "animal sounds",
+        "ocean soundscapes"
+      ]
+    },
+    {
+      "id": "smell",
+      "title": "Smell",
+      "text": "Seawater \u00b7 kelp \u00b7 coastal habitats",
+      "aliases": [
+        "smell",
+        "seawater",
+        "kelp",
+        "tidepool",
+        "coastal habitats"
+      ]
+    },
+    {
+      "id": "taste",
+      "title": "Taste",
+      "text": "Familiar comparisons \u00b7 animal adaptations",
+      "aliases": [
+        "taste",
+        "familiar comparisons",
+        "seafood texture",
+        "animal adaptations"
+      ]
+    }
+  ],
+  "source_version": "1.2"
+}

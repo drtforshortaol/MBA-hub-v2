@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "app_id": "interpretation-principles",
+  "title": "Six Interpretation Principles",
+  "category": "volunteer-tools",
+  "type": "reference",
+  "version": "2.0.0-alpha.1",
+  "entry_point": "apps/interpretation-principles/index.html",
+  "status": "testing",
+  "owner": "interpretation-principles",
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/interpretation-principles/index.html",
+    "apps/interpretation-principles/styles.css",
+    "apps/interpretation-principles/app.js",
+    "apps/interpretation-principles/data.js"
+  ],
+  "media": [],
+  "knowledge": [],
+  "cross_links": [],
+  "sections": [
+    {
+      "id": "relate",
+      "title": "RELATE",
+      "text": "Start with visitors' reactions Begin with what guests see, feel, notice, and wonder \u2014 not with what the volunteer wants to teach first. Interpretation begins with the visitor's own reaction. This validates curiosity and helps visitors feel immediately connected to the exhibit. Notice first, teach second. What drew your eye first? That's a great observation \u2014 I noticed that too! What does this remind you of?",
+      "aliases": [
+        "visitor engagement",
+        "questions",
+        "observations",
+        "conversation starter"
+      ]
+    },
+    {
+      "id": "reveal",
+      "title": "REVEAL",
+      "text": "Connect info to the visitor's reaction \u2014 bring the wow Connect information to what the guest already noticed so the meaning lands. Instead of giving random facts, connect information to the guest's initial reaction. This is where the aha moment happens. Tie the fact to the visitor's observation.",
+      "aliases": [
+        "aha moment",
+        "kelp forest",
+        "meaning",
+        "facts"
+      ]
+    },
+    {
+      "id": "stories",
+      "title": "STORIES",
+      "text": "Inform, entertain, and enlighten Use stories, comparisons, and memorable images so visitors care and remember. Stories are how humans make meaning. They create emotional connections and help guests remember what they learned. Interpretation is an art \u2014 use it. Make the idea memorable. Giant kelp can grow two feet a day. Imagine if your houseplants did that! Sea otters are like the forest keepers \u2014 they protect the kelp by eating urchins.",
+      "aliases": [
+        "storytelling",
+        "sea otters",
+        "kelp forest",
+        "memory",
+        "metaphor"
+      ]
+    },
+    {
+      "id": "engage",
+      "title": "ENGAGE",
+      "text": "Ask questions as well as answer them Invite visitors into the conversation so they think, notice, and participate. Interpretation should provoke curiosity, not just deliver information. Guests think more deeply when invited into the conversation. Turn facts into conversation. Why do you think the fish school that way? What do you notice about how the kelp moves? Which animals draw your attention?",
+      "aliases": [
+        "questions",
+        "visitor engagement",
+        "fish",
+        "conversation"
+      ]
+    },
+    {
+      "id": "whole",
+      "title": "WHOLE",
+      "text": "Present a whole rather than a part Help guests see systems, relationships, and the full picture rather than isolated facts. Help guests see the full picture \u2014 connections, systems, relationships \u2014 rather than isolated facts. This deepens understanding and sparks wonder about how everything fits together. Connect the parts into a system. What you're seeing here is a whole forest under water: animals, plants, water movement, light \u2014 they all depend on each other. Every species in the kelp forest helps keep the ecosystem in balance. If one suddenly went away, the entire forest would be affected.",
+      "aliases": [
+        "ecosystem",
+        "kelp forest",
+        "systems",
+        "connections",
+        "balance"
+      ]
+    },
+    {
+      "id": "adjust",
+      "title": "ADJUST",
+      "text": "Children need a different approach, not a simplified adult one Use imagination, motion, metaphor, and feelings when speaking with children. Kids are not adults with fewer facts. They interpret the world through touch, metaphor, emotion, and imagination. Different approaches help them connect authentically. Change the approach, not just the vocabulary. What does this fish remind you of? Can you move your hand like the kelp sways? How do you feel looking at the animals in the kelp forest?",
+      "aliases": [
+        "kids",
+        "families",
+        "movement",
+        "emotion",
+        "imagination"
+      ]
+    }
+  ],
+  "source_version": "1.0"
+}

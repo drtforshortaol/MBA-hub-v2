@@ -1,0 +1,886 @@
+{
+  "version": "2.2.20",
+  "lastUpdated": "2026-10-11",
+  "title": "MBA Hub 2.2.20",
+  "description": "Monterey Bay Aquarium volunteer companion hub for reference apps, guide tools, troubleshooting, tags, and cross-links.",
+  "categories": [
+    {
+      "id": "aquarium-updates",
+      "title": "Aquarium Updates",
+      "icon": "📰",
+      "description": "Recent animal news, program changes, facility notes, and volunteer announcements."
+    },
+    {
+      "id": "exhibits",
+      "title": "Exhibits",
+      "icon": "🌊",
+      "description": "Exhibit reference apps and habitat information."
+    },
+    {
+      "id": "animals",
+      "title": "Animals",
+      "icon": "🐟",
+      "description": "Species apps, animal facts, conservation notes, and guide-ready explanations."
+    },
+    {
+      "id": "visitor-questions",
+      "title": "Visitor Questions",
+      "icon": "❓",
+      "description": "Common visitor questions and short answers."
+    },
+    {
+      "id": "guide-talks",
+      "title": "Guide Talks",
+      "icon": "🎤",
+      "description": "Talk outlines, themes, stories, and interpretive prompts."
+    },
+    {
+      "id": "concepts",
+      "title": "Concepts",
+      "icon": "💡",
+      "description": "Science, ocean literacy, ecology, and conservation concepts."
+    },
+    {
+      "id": "making-the-aquarium-come-alive",
+      "title": "Making the Aquarium Come Alive",
+      "icon": "✨",
+      "description": "Stories, kid facts, visitor engagement, and interpretation tools."
+    },
+    {
+      "id": "seafood-watch",
+      "title": "Seafood Watch",
+      "icon": "🍽️",
+      "description": "Seafood Watch tools, talking points, and visitor resources."
+    },
+    {
+      "id": "volunteer-tools",
+      "title": "Volunteer Tools",
+      "icon": "🧰",
+      "description": "Volunteer reference tools, procedures, quick references, troubleshooting, and support apps."
+    },
+    {
+      "id": "visitor-services",
+      "title": "Visitor Services",
+      "icon": "🗺️",
+      "description": "Visitor support, directions, accessibility, and service information."
+    },
+    {
+      "id": "cannery-row",
+      "title": "Cannery Row",
+      "icon": "🏛️",
+      "description": "Cannery Row history, concierge tools, restaurants, hotels, and walking guides."
+    }
+  ],
+  "apps": [
+    {
+      "id": "whale-parasites-associates",
+      "name": "Whale Parasites & Associates",
+      "folder": "whale-parasites-associates",
+      "url": "apps/whale-parasites-associates/index.html",
+      "category": "animals",
+      "appType": "PWA animal reference",
+      "version": "1.5",
+      "releaseDate": "2026-06-26",
+      "lastUpdated": "2026-10-09",
+      "purpose": "Explain whale parasites and associated organisms for aquarium interpretation.",
+      "description": "Barnacles, whale lice, remoras, cookiecutter shark scars and field identification clues.",
+      "tags": [
+        "whales",
+        "parasites",
+        "barnacles",
+        "whale lice",
+        "remoras",
+        "marine mammals"
+      ],
+      "relatedApps": [
+        "naturalist-field-notes"
+      ],
+      "status": "Active"
+    },
+    {
+      "id": "sea-slugs-nudibranchs",
+      "name": "Sea Slugs & Nudibranchs",
+      "folder": "sea-slugs-nudibranchs",
+      "url": "apps/sea-slugs-nudibranchs/index.html",
+      "category": "animals",
+      "appType": "Animal Collection",
+      "version": "1.0",
+      "releaseDate": "2026-10-08",
+      "lastUpdated": "2026-10-08",
+      "purpose": "Expandable directory for sea slugs and nudibranch species and Naturalist Highlights.",
+      "description": "Parent collection linking individual species guides, original field notes and Sea Slug Search materials.",
+      "tags": [
+        "sea slug",
+        "sea slugs",
+        "nudibranch",
+        "nudibranchs",
+        "mollusks",
+        "MJ"
+      ],
+      "relatedApps": [
+        "hopkins-rose-nudibranch",
+        "naturalist-field-notes"
+      ],
+      "status": "Active",
+      "testingStatus": "Verify mobile directory and links."
+    },
+    {
+      "id": "hopkins-rose-nudibranch",
+      "name": "Hopkins’ Rose Nudibranch",
+      "folder": "hopkins-rose-nudibranch",
+      "url": "apps/hopkins-rose-nudibranch/index.html",
+      "category": "animals",
+      "appType": "Species Guide",
+      "version": "1.0",
+      "releaseDate": "2026-10-08",
+      "lastUpdated": "2026-10-08",
+      "purpose": "Permanent species guide for Hopkins’ rose nudibranch.",
+      "description": "Illustrated nudibranch biology with a Naturalist Species Highlight in the May 20, 2026 Field Note.",
+      "tags": [
+        "Hopkins rose",
+        "nudibranch",
+        "sea slug",
+        "Ceratodoris rosacea",
+        "MJ"
+      ],
+      "relatedApps": [
+        "sea-slugs-nudibranchs",
+        "naturalist-field-notes"
+      ],
+      "status": "Active",
+      "testingStatus": "Verify Animals directory and existing species guide."
+    },
+    {
+      "id": "gray-whale-skeleton-exhibit",
+      "name": "Gray Whale Skeleton",
+      "folder": "gray-whale-skeleton",
+      "url": "apps/gray-whale-skeleton/index.html",
+      "category": "exhibits",
+      "appType": "Exhibit Reference",
+      "version": "1.0",
+      "releaseDate": "2026-10-08",
+      "lastUpdated": "2026-10-08",
+      "purpose": "Guide visitors through the gray whale skeleton display and Steve Webster’s account.",
+      "description": "Standalone exhibit guide with Steve Webster’s account, pathology illustration, questions, science and transcript.",
+      "tags": [
+        "gray whale",
+        "skeleton",
+        "Steve Webster",
+        "exhibit",
+        "marine mammals"
+      ],
+      "relatedApps": [
+        "gray-whale",
+        "naturalist-field-notes"
+      ],
+      "status": "Active",
+      "testingStatus": "Verify new Exhibit app navigation and offline images."
+    },
+    {
+      "id": "gray-whale",
+      "name": "Gray Whale",
+      "folder": "gray-whale",
+      "url": "apps/gray-whale/index.html",
+      "category": "animals",
+      "appType": "Species Guide",
+      "version": "1.0",
+      "releaseDate": "2026-10-08",
+      "lastUpdated": "2026-10-08",
+      "purpose": "Gray whale species reference and Steve Webster skeleton history.",
+      "description": "Identification, migration, feeding, historical skeleton story, photograph, original Vimeo video, visitor Q&A, science and transcript.",
+      "tags": [
+        "gray whale",
+        "Eschrichtius robustus",
+        "Steve Webster",
+        "skeleton",
+        "marine mammals",
+        "migration",
+        "osteochondrosis dissecans"
+      ],
+      "relatedApps": [
+        "naturalist-field-notes",
+        "whale-associated-organisms"
+      ],
+      "status": "Active",
+      "testingStatus": "New guide; verify iPhone layout, video and photo."
+    },
+    {
+      "id": "bluespotted-ribbontail-ray",
+      "name": "Blue-spotted Ribbontail Ray",
+      "folder": "bluespotted-ribbontail-ray",
+      "url": "apps/bluespotted-ribbontail-ray/index.html",
+      "category": "animals",
+      "appType": "Species Guide",
+      "version": "1.0",
+      "releaseDate": "2026-10-08",
+      "lastUpdated": "2026-10-08",
+      "purpose": "Ribbontail ray anatomy, biology and structural coloration.",
+      "description": "Permanent guide from October Naturalist Field Notes; source illustrations pending upload.",
+      "tags": [
+        "stingray",
+        "Taeniura lymma",
+        "structural color",
+        "coral reef"
+      ],
+      "relatedApps": [
+        "naturalist-field-notes"
+      ],
+      "status": "Active",
+      "testingStatus": "Text available; illustrations pending."
+    },
+    {
+      "id": "california-sheephead",
+      "name": "California Sheephead",
+      "folder": "california-sheephead",
+      "url": "apps/california-sheephead/index.html",
+      "category": "animals",
+      "appType": "Species Guide",
+      "version": "1.0",
+      "releaseDate": "2026-10-11",
+      "lastUpdated": "2026-10-11",
+      "purpose": "California sheephead biology, life history, feeding, sex change and kelp-forest conservation.",
+      "description": "Species guide based on Monterey Bay Aquarium information with source-linked photo credit.",
+      "tags": [
+        "California sheephead",
+        "Semicossyphus pulcher",
+        "Bodianus pulcher",
+        "wrasse",
+        "kelp forest",
+        "protogynous"
+      ],
+      "relatedApps": [
+        "naturalist-field-notes"
+      ],
+      "status": "Active"
+    },
+    {
+      "id": "stargazer-species-guide",
+      "name": "Stargazer Fish",
+      "folder": "stargazer-species-guide",
+      "url": "apps/stargazer-species-guide/index.html",
+      "category": "animals",
+      "appType": "Species Guide",
+      "version": "1.0",
+      "releaseDate": "2026-10-08",
+      "lastUpdated": "2026-10-08",
+      "purpose": "Stargazer biology, camouflage and electric organs.",
+      "description": "Michael Gilmartin's stargazer overview; source illustrations pending upload.",
+      "tags": [
+        "stargazer",
+        "Astroscopus",
+        "Uranoscopidae",
+        "ambush predator"
+      ],
+      "relatedApps": [
+        "naturalist-field-notes"
+      ],
+      "status": "Active",
+      "testingStatus": "Text available; illustrations pending."
+    },
+    {
+      "id": "whale-associated-organisms",
+      "name": "Whale-Associated Organisms",
+      "folder": "whale-associated-organisms",
+      "url": "apps/whale-associated-organisms/index.html",
+      "category": "animals",
+      "appType": "Animal guide",
+      "version": "1.0",
+      "releaseDate": "2026-10-07",
+      "lastUpdated": "2026-10-07",
+      "purpose": "Explain whale-associated organisms through field photographs and relationships.",
+      "description": "Cookiecutter sharks, whalesuckers, whale barnacles and whale lice, including two find-the-boops challenges.",
+      "tags": [
+        "whales",
+        "parasites",
+        "cookiecutter shark",
+        "remora",
+        "whalesucker",
+        "barnacles",
+        "whale lice",
+        "Cyamus boopis"
+      ],
+      "relatedApps": [
+        "naturalist-field-notes",
+        "gooseneck-barnacle"
+      ],
+      "status": "Active",
+      "testingStatus": "Awaiting eight source image uploads."
+    },
+    {
+      "id": "wildlife-rescue",
+      "name": "Wildlife Rescue — Important Contacts",
+      "folder": "wildlife-rescue",
+      "url": "apps/wildlife-rescue/index.html",
+      "category": "volunteer-tools",
+      "appType": "PWA quick-reference directory",
+      "version": "1.0",
+      "releaseDate": "2026-10-06",
+      "lastUpdated": "2026-10-06",
+      "purpose": "Provide one permanent, fast place for wildlife rescue contacts used by aquarium volunteers.",
+      "description": "Tap-to-call Monterey Bay contacts for seabirds and wildlife, stranded sea lions and marine mammals, and sea otters, with basic safety reminders.",
+      "tags": [
+        "wildlife rescue",
+        "important contacts",
+        "phone numbers",
+        "seabirds",
+        "SPCA Wildlife",
+        "marine mammals",
+        "sea lions",
+        "Marine Mammal Center",
+        "sea otters",
+        "Monterey Bay Aquarium",
+        "emergency",
+        "volunteer tools",
+        "visitor questions"
+      ],
+      "relatedApps": [
+        "naturalist-field-notes",
+        "information-center"
+      ],
+      "status": "Active",
+      "testingStatus": "New permanent quick-reference directory. Verify iPhone tap-to-call, Return to Hub and offline behavior.",
+      "notes": "Master wildlife rescue contact directory. Field Notes may preserve historical contacts but should link here for permanent operational access."
+    },
+    {
+      "id": "information-center",
+      "name": "Information Center Handbook",
+      "folder": "information-center",
+      "url": "apps/information-center/index.html",
+      "category": "volunteer-tools",
+      "appType": "PWA dropdown reference app",
+      "version": "2.1",
+      "releaseDate": "2026-06-27",
+      "lastUpdated": "2026-06-27",
+      "purpose": "Provide quick Information Center reference support for Monterey Bay Aquarium volunteers.",
+      "description": "Volunteer Information Center handbook with emergency items, quick navigation, search, dropdown sections, cache refresh, and troubleshooting.",
+      "tags": [
+        "information center",
+        "volunteer tools",
+        "handbook",
+        "quick reference",
+        "emergency",
+        "radio",
+        "lost child",
+        "wheelchair",
+        "directions",
+        "visitor services",
+        "accessibility",
+        "first aid",
+        "guest support"
+      ],
+      "relatedApps": [],
+      "status": "Active",
+      "testingStatus": "Installed in Hub 2.2; needs PC Chrome, iPhone Safari, Clear Cache, troubleshooting, tag search, related app display, and offline confirmation after upload.",
+      "notes": "First installed app in Hub 2. App folder path is apps/information-center/. Return to Hub path remains ../../index.html."
+    },
+    {
+      "id": "interpretation-principles",
+      "name": "Six Interpretation Principles",
+      "folder": "interpretation-principles",
+      "url": "apps/interpretation-principles/index.html",
+      "category": "volunteer-tools",
+      "appType": "PWA interpretation reference app",
+      "version": "1.0",
+      "releaseDate": "2026-06-28",
+      "lastUpdated": "2026-06-28",
+      "purpose": "Provide Monterey Bay Aquarium volunteers with Freeman Tilden's six interpretation principles adapted for effective guest engagement and guide conversations.",
+      "description": "Volunteer guide to the six interpretation principles with dropdown lessons, examples, visitor conversations, child engagement techniques, tags, cross-links, search, and offline support.",
+      "tags": [
+        "interpretation",
+        "Freeman Tilden",
+        "guide talks",
+        "visitor engagement",
+        "storytelling",
+        "questioning",
+        "children",
+        "guest interaction",
+        "communication",
+        "volunteer tools",
+        "education",
+        "training",
+        "kelp forest",
+        "visitor questions"
+      ],
+      "relatedApps": [
+        "five-senses-pwa",
+        "information-center",
+        "mba-leadership",
+        "applied-water-science-life-support"
+      ],
+      "status": "Active",
+      "testingStatus": "Needs PC Chrome, iPhone Safari, Clear Cache, Volunteer Tools category display, Guide Talks and Concepts cross-links, dropdown testing, search, tag display, troubleshooting, and offline confirmation.",
+      "notes": "App folder path is apps/interpretation-principles/. Return to Hub path remains ../../index.html."
+    },
+    {
+      "id": "five-senses-pwa",
+      "name": "Using the Five Senses",
+      "folder": "five-senses-pwa",
+      "url": "apps/five-senses-pwa/index.html",
+      "category": "volunteer-tools",
+      "appType": "PWA interpretation skills app",
+      "version": "1.2",
+      "releaseDate": "2026-06-28",
+      "lastUpdated": "2026-06-28",
+      "purpose": "Help Monterey Bay Aquarium volunteers use multisensory interpretation to make exhibits accessible, engaging, and memorable.",
+      "description": "MBA interpretation skills guide for using touch, hearing, smell, and taste comparisons with guests.",
+      "tags": [
+        "five senses",
+        "interpretation skills",
+        "volunteer tools",
+        "accessibility",
+        "guest engagement",
+        "touch",
+        "hearing",
+        "smell",
+        "taste",
+        "multisensory interpretation"
+      ],
+      "relatedApps": [
+        "information-center"
+      ],
+      "status": "Active",
+      "testingStatus": "Independent app opens correctly. Needs Hub display confirmation, PC Chrome, iPhone Safari, Clear Cache, troubleshooting, search, and offline testing.",
+      "notes": "Preservation rebuild from original five-senses.html. App folder path is apps/five-senses-pwa/. Return to Hub path remains ../../index.html."
+    },
+    {
+      "id": "mmc-narrations",
+      "name": "Marine Mammal Cart",
+      "folder": "mmc-narrations",
+      "url": "apps/mmc-narrations/index.html",
+      "category": "exhibits",
+      "appType": "PWA dropdown exhibit narration app",
+      "version": "1.1",
+      "releaseDate": "2026-06-29",
+      "lastUpdated": "2026-06-29",
+      "purpose": "Provide quick mobile access to MMC exhibit narration prompts, scripts, and interpretive notes.",
+      "description": "Searchable dropdown exhibit narration guide for MMC-related talking points, guide preparation, and visitor engagement.",
+      "tags": [
+        "exhibits",
+        "mmc",
+        "narrations",
+        "interpretation",
+        "visitor engagement",
+        "guide talks",
+        "quick reference",
+        "monterey bay aquarium"
+      ],
+      "relatedApps": [
+        "interpretation-principles",
+        "five-senses-pwa",
+        "information-center"
+      ],
+      "status": "Draft",
+      "testingStatus": "Needs PC Chrome, iPhone Safari, Clear Cache, Exhibits category display, direct app link, dropdowns, search, troubleshooting, and offline confirmation.",
+      "notes": "MMC is categorized as an Exhibit app. App folder path must be exactly apps/mmc-narrations/. Return to Hub path remains ../../index.html. If the Hub opens a 404, confirm index.html exists at apps/mmc-narrations/index.html."
+    },
+    {
+      "id": "northern-elephant-seal",
+      "name": "Northern Elephant Seal",
+      "folder": "northern-elephant-seal-pwa-v1.2-final-hub (2)",
+      "url": "apps/northern-elephant-seal-pwa-v1.2-final-hub%20(2)/index.html",
+      "category": "animals",
+      "appType": "Animal guide PWA dropdown app",
+      "version": "1.2",
+      "releaseDate": "2026-06-28",
+      "lastUpdated": "2026-06-28",
+      "purpose": "Provide guide-friendly northern elephant seal reference support for Monterey Bay Aquarium volunteer conversations.",
+      "description": "Animal guide page for northern elephant seal size, migration, breeding, deep diving, underwater sleep, buoyancy, conservation comeback, beach-safe visitor messaging, visitor Q&A, and guide notes.",
+      "tags": [
+        "elephant seal",
+        "northern elephant seal",
+        "marine mammal",
+        "pinniped",
+        "true seal",
+        "phocid",
+        "deep diving",
+        "migration",
+        "rookery",
+        "sleep",
+        "buoyancy",
+        "conservation",
+        "beach safety",
+        "visitor question",
+        "animals"
+      ],
+      "relatedApps": [
+        "marine-mammal-rescue",
+        "great-white-shark",
+        "deep-sea",
+        "upwelling",
+        "responsible-wildlife-viewing"
+      ],
+      "status": "Active",
+      "testingStatus": "Temporary registry path corrected to match uploaded folder; needs PC Chrome, iPhone Safari, Clear Cache, Animals category display, direct app link, images, dropdowns, search, troubleshooting, and offline confirmation after upload.",
+      "notes": "Temporary path uses the uploaded folder name apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/. Recommended cleanup later: rename/move files to apps/northern-elephant-seal/ and restore the clean registry URL apps/northern-elephant-seal/index.html. Return to Hub path remains ../../index.html."
+    },
+    {
+      "id": "mba-leadership",
+      "name": "MBA Leadership",
+      "folder": "mba-leadership",
+      "url": "apps/mba-leadership/index.html",
+      "category": "aquarium-updates",
+      "appType": "PWA dropdown reference app",
+      "version": "1.0",
+      "releaseDate": "2026-06-28",
+      "lastUpdated": "2026-06-28",
+      "purpose": "Provide Monterey Bay Aquarium volunteers with leadership arrivals and photos for floor identification.",
+      "description": "New leadership arrivals with photos, dropdown cards, tags, search, quick links, and offline support.",
+      "tags": [
+        "leadership",
+        "new arrivals",
+        "staff",
+        "volunteer reference",
+        "guide program",
+        "executive team",
+        "aquarium updates"
+      ],
+      "relatedApps": [
+        "information-center"
+      ],
+      "status": "Active",
+      "testingStatus": "Needs PC Chrome, iPhone Safari, Clear Cache, Aquarium Updates category display, direct app link, images, dropdowns, search, quick links, and offline confirmation.",
+      "notes": "App folder path is apps/mba-leadership/. Return to Hub path remains ../../index.html."
+    },
+    {
+      "id": "open-sea",
+      "name": "Open Sea Exhibit",
+      "folder": "open-sea",
+      "url": "apps/open-sea/index.html",
+      "category": "exhibits",
+      "appType": "PWA dropdown exhibit reference app",
+      "version": "1.0",
+      "releaseDate": "2026-07-15",
+      "lastUpdated": "2026-07-15",
+      "purpose": "Help Monterey Bay Aquarium volunteers explain the physical conditions and biological adaptations of the open-ocean pelagic environment.",
+      "description": "Searchable dropdown reference covering temperature, light, pressure, oxygen, salinity, nutrients, thermohaline circulation, currents, sound, and open-sea adaptations.",
+      "tags": [
+        "open sea",
+        "pelagic zone",
+        "exhibits",
+        "physical environment",
+        "intangible environment",
+        "temperature",
+        "thermocline",
+        "light",
+        "pressure",
+        "oxygen",
+        "salinity",
+        "nutrients",
+        "ocean currents",
+        "thermohaline circulation",
+        "adaptations",
+        "bioluminescence",
+        "volunteer training"
+      ],
+      "relatedApps": [
+        "into-the-deep",
+        "monterey-bay-habitat",
+        "ocean-currents",
+        "kelp-forest",
+        "animal-adaptations"
+      ],
+      "status": "Testing",
+      "testingStatus": "Needs PC Chrome, iPhone Safari, Clear Cache, Exhibits category display, direct app link, dropdowns, search, troubleshooting, and offline confirmation.",
+      "notes": "App folder path must be exactly apps/open-sea/. Return to Hub path remains ../../index.html."
+    },
+    {
+      "id": "applied-water-science-life-support",
+      "name": "Applied Water Science",
+      "folder": "applied-water-science-life-support",
+      "url": "apps/applied-water-science-life-support/index.html",
+      "category": "concepts",
+      "appType": "PWA dropdown reference app",
+      "version": "1.0",
+      "releaseDate": "2026-06-28",
+      "lastUpdated": "2026-06-28",
+      "purpose": "Provide volunteer reference support for aquarium seawater intake, water quality, exhibit flow, biofouling, pigging, and life support systems.",
+      "description": "Guide to the Aquarium's seawater intake, life support systems, exhibit water flow, filtration, biofouling, pigging operations, water chemistry, and volunteer talking points.",
+      "tags": [
+        "water science",
+        "applied water science",
+        "life support",
+        "life support systems",
+        "lss",
+        "water quality",
+        "engineering",
+        "infrastructure",
+        "filtration",
+        "mechanical filtration",
+        "biological filtration",
+        "protein skimmer",
+        "ozone",
+        "uv sterilization",
+        "water intake",
+        "pump house",
+        "water flow",
+        "flow rate",
+        "biofouling",
+        "pigging",
+        "pipeline pig",
+        "barnacles",
+        "mussels",
+        "hydroids",
+        "sea stars",
+        "tube worms",
+        "algae",
+        "biofilm",
+        "upwelling",
+        "open sea",
+        "kelp forest",
+        "monterey bay habitats",
+        "sea otters",
+        "behind the scenes",
+        "volunteer guide",
+        "visitor questions",
+        "animal care"
+      ],
+      "relatedApps": [
+        "information-center",
+        "kelp-forest",
+        "open-sea",
+        "monterey-bay-habitats",
+        "sea-otters",
+        "upwelling",
+        "visitor-questions"
+      ],
+      "status": "Active",
+      "testingStatus": "Needs PC Chrome, iPhone Safari, Clear Cache, Concepts category display, direct app link, dropdowns, search, troubleshooting, and offline confirmation after upload.",
+      "notes": "App folder path is apps/applied-water-science-life-support/. Return to Hub path remains ../../index.html."
+    },
+    {
+      "id": "evolution-timeline",
+      "name": "Evolution Timeline — From Universe to Us",
+      "folder": "evolution-timeline",
+      "url": "https://drtforshortaol.github.io/evolution-timeline/",
+      "category": "concepts",
+      "appType": "Standalone PWA integrated by Hub link",
+      "version": "11",
+      "releaseDate": "2026-08-24",
+      "lastUpdated": "2026-08-25",
+      "purpose": "Help aquarium volunteers follow the evolutionary story from cosmic and planetary context through LUCA, mitochondria, chloroplasts, algae, plants, kelp, animals, and humans.",
+      "description": "Interactive evolution timeline with Story by Groups and Strict Time Map views, Learn More explanations, endosymbiosis, Follow the Energy and Follow the Machinery teaching threads, and a final explanation of why kelp is an alga rather than a plant.",
+      "tags": [
+        "evolution",
+        "tree of life",
+        "LUCA",
+        "LECA",
+        "cyanobacteria",
+        "alphaproteobacteria",
+        "mitochondria",
+        "chloroplasts",
+        "endosymbiosis",
+        "photosynthesis",
+        "ATP",
+        "algae",
+        "red algae",
+        "green algae",
+        "brown algae",
+        "kelp",
+        "plants",
+        "animals",
+        "deep time",
+        "concepts"
+      ],
+      "relatedApps": [
+        "applied-water-science-life-support"
+      ],
+      "status": "Active",
+      "testingStatus": "Standalone v11 is tested on PC and iPhone. Hub integration should be verified for Concepts display, external app launch, Return to MBA Hub, search/tags, and installed-Hub behavior.",
+      "notes": "Hub launches the maintained standalone GitHub Pages PWA so the Evolution Timeline can continue independent development. The app includes a direct Return to MBA Hub control."
+    },
+    {
+      "id": "aquarium-library-explorer",
+      "name": "Aquarium Library Explorer",
+      "folder": "external",
+      "url": "https://drtforshortaol.github.io/aquarium-shift-library-/",
+      "category": "volunteer-tools",
+      "appType": "Standalone PWA integrated by Hub link",
+      "version": "1.0",
+      "releaseDate": "2026-09-19",
+      "lastUpdated": "2026-09-19",
+      "purpose": "Provide Monterey Bay Aquarium volunteers with fast searchable access to the Thursday 2nd Shift aquarium book library.",
+      "description": "Searchable 78-book aquarium library explorer with subject tags, ownership details, descriptions, and borrowing status.",
+      "tags": [
+        "library",
+        "books",
+        "aquarium library",
+        "reference",
+        "volunteer tools",
+        "Thursday 2nd Shift",
+        "borrowing status",
+        "marine mammals",
+        "fish",
+        "sharks",
+        "birds",
+        "invertebrates",
+        "ocean science"
+      ],
+      "relatedApps": [
+        "information-center"
+      ],
+      "status": "Active",
+      "testingStatus": "Standalone library is live. Hub integration should be verified for Volunteer Tools display, external app launch, search/tags, and installed-Hub behavior.",
+      "notes": "Hub launches the maintained standalone GitHub Pages PWA so the library can be updated independently while the Hub always opens the current version."
+    },
+    {
+      "id": "california-flying-fish",
+      "name": "California Flying Fish",
+      "folder": "california-flying-fish",
+      "url": "apps/california-flying-fish/index.html",
+      "category": "animals",
+      "appType": "Species guide",
+      "version": "1.0",
+      "releaseDate": "2026-10-07",
+      "lastUpdated": "2026-10-07",
+      "purpose": "Provide an iPhone-friendly guide to the California flying fish, Cheilopogon pinnatibarbatus californicus.",
+      "description": "Animal guide developed from the July 2–8 Naturalist Species Highlight, covering quick facts, life cycle, gliding mechanics, fin adaptations, eyes, skeletal adaptations, fisheries and conservation.",
+      "tags": [
+        "California flying fish",
+        "Bennett's flying fish",
+        "Cheilopogon pinnatibarbatus",
+        "Cheilopogon pinnatibarbatus californicus",
+        "flying fish",
+        "gliding fish",
+        "pectoral fins",
+        "El Niño",
+        "marine heatwave",
+        "animals",
+        "species guide"
+      ],
+      "relatedApps": [
+        "naturalist-field-notes",
+        "open-sea"
+      ],
+      "status": "Active"
+    },
+    {
+      "id": "gooseneck-barnacle",
+      "name": "Gooseneck Barnacle",
+      "folder": "gooseneck-barnacle",
+      "url": "apps/gooseneck-barnacle/index.html",
+      "category": "animals",
+      "appType": "PWA species guide",
+      "version": "1.0",
+      "releaseDate": "2026-10-03",
+      "lastUpdated": "2026-10-03",
+      "purpose": "Provide an iPhone-friendly guide to the gooseneck barnacle, Pollicipes polymerus, for aquarium interpretation.",
+      "description": "Species guide covering quick facts, larval life cycle, settlement, anatomy, feeding with cirri, reproduction, rocky-shore adaptations, fluorescence, human harvest, visitor talking points, references and offline use.",
+      "tags": [
+        "gooseneck barnacle",
+        "Pollicipes polymerus",
+        "barnacles",
+        "crustaceans",
+        "intertidal",
+        "rocky shore",
+        "cirri",
+        "filter feeding",
+        "nauplius",
+        "cyprid",
+        "larvae",
+        "settlement",
+        "cement glands",
+        "peduncle",
+        "species guide",
+        "animals"
+      ],
+      "relatedApps": [
+        "naturalist-field-notes",
+        "applied-water-science-life-support"
+      ],
+      "status": "Active",
+      "testingStatus": "New species guide. Verify Animals category display, iPhone Safari, search, dropdowns, Return to Hub and offline behavior after media upload.",
+      "notes": "Created from the Aug 27-Sept 2 Naturalist Species Highlight. Supplied Field Note images will be connected after their files are uploaded to GitHub."
+    },
+    {
+      "id": "green-falsejingle",
+      "name": "Green Falsejingle",
+      "folder": "green-falsejingle",
+      "url": "apps/green-falsejingle/index.html",
+      "category": "animals",
+      "appType": "Species guide",
+      "version": "1.0",
+      "releaseDate": "2026-10-04",
+      "lastUpdated": "2026-10-04",
+      "purpose": "Provide an iPhone-friendly guide to the green falsejingle, Pododesmus macrochisma.",
+      "description": "Species guide covering quick facts, cementing settlement, bivalve life cycle, filter feeding, ecosystem services, predators, habitat and aquarium talking points.",
+      "tags": [
+        "green falsejingle",
+        "Pododesmus macrochisma",
+        "jingle shell",
+        "mermaid's toenails",
+        "bivalve",
+        "clam",
+        "filter feeding",
+        "cementing bivalve",
+        "Monterey Bay Habitats",
+        "animals"
+      ],
+      "relatedApps": [
+        "naturalist-field-notes"
+      ],
+      "status": "Active"
+    },
+    {
+      "id": "naturalist-field-notes",
+      "name": "Naturalist Field Notes",
+      "folder": "naturalist-field-notes",
+      "url": "apps/naturalist-field-notes/index.html",
+      "category": "aquarium-updates",
+      "appType": "PWA field-note archive",
+      "version": "1.0",
+      "releaseDate": "2026-09-10",
+      "lastUpdated": "2026-10-04",
+      "purpose": "Preserve recurring Naturalist updates as searchable, dated, illustrated field notes for aquarium guides.",
+      "description": "Searchable Naturalist archive with dated observations, Bay Watch records, visitor Q&A, Species Highlights, resources and links to permanent Species Guides.",
+      "tags": [
+        "naturalist",
+        "field notes",
+        "naturalist field notes",
+        "aquarium updates",
+        "bay watch",
+        "species highlights",
+        "visitor questions",
+        "monterey bay",
+        "wildlife observations",
+        "archive"
+      ],
+      "relatedApps": [
+        "gooseneck-barnacle",
+        "green-falsejingle",
+        "wildlife-rescue"
+      ],
+      "status": "Active",
+      "testingStatus": "Six Field Notes currently archived. Verify Aquarium Updates display, archive, search, iPhone Safari and offline behavior.",
+      "notes": "One Naturalist email equals one dated Field Note. Permanent species material remains in separate Species Guide apps."
+    },
+    {
+      "id": "wildfires-ocean-health",
+      "name": "Wildfires & Ocean Health",
+      "folder": "wildfires-ocean-health",
+      "url": "apps/wildfires-ocean-health/index.html",
+      "category": "concepts",
+      "appType": "Topic guide",
+      "version": "1.0",
+      "releaseDate": "2026-10-03",
+      "lastUpdated": "2026-10-03",
+      "purpose": "Explain connections between coastal wildfire events and marine ecosystems.",
+      "description": "Guide developed from the Aug 20–26 Naturalist Topic Highlight.",
+      "tags": [
+        "wildfire",
+        "ocean health",
+        "Timber Fire",
+        "smoke ecology",
+        "ash",
+        "runoff",
+        "plankton",
+        "kelp",
+        "marine mammals",
+        "concepts"
+      ],
+      "relatedApps": [
+        "naturalist-field-notes"
+      ],
+      "status": "Active"
+    }
+  ]
+}

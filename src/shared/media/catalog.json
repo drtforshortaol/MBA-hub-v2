@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "version": "1.0.0",
+  "assets": [
+    {
+      "asset_id": "five-senses-header",
+      "path": "shared/media/five-senses-header.svg",
+      "owner": "five-senses-pwa",
+      "alt": "Illustration of the senses around an ocean wave",
+      "credit": "Existing MBA Hub Five Senses illustration",
+      "permission": "review-required",
+      "offline": true
+    }
+  ]
+}

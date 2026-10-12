@@ -1,0 +1,99 @@
+<!-- APP FILE: apps/five-senses-pwa/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Using the Five Senses · MBA Hub</title>
+
+  <meta
+    name="description"
+    content="MBA volunteer interpretation skills app for using touch, hearing, smell, sight, and taste to support accessible, memorable exhibit conversations."
+  />
+
+  <meta name="theme-color" content="#003B5C" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="5 Senses" />
+
+  
+  
+  <link rel="stylesheet" href="styles.css?v=20261011-five-clean" />
+</head>
+
+<body>
+  <a class="skip-link" href="#mainContent">Skip to content</a>
+
+  <div class="app-shell">
+    <nav class="top-bar" aria-label="App controls">
+      <a class="top-button hub-button" href="../../index.html" aria-label="Return to MBA Hub">
+        ← MBA Hub
+      </a>
+    </nav>
+
+    <header class="app-header">
+      <div class="header-text">
+        <p class="header-eyebrow">MBA Hub · Interpretation Skills</p>
+        <h1>Using the Five Senses</h1>
+        <p>
+          Engage all senses to make exhibits accessible and memorable for every guest.
+        </p>
+        <p class="version-pill">
+          v1.1 · Rebuilt from original MBA source · 2026-06-28
+        </p>
+      </div>
+
+      <div class="header-image-wrap">
+        <img
+          src="../../shared/media/five-senses-header.svg"
+          alt="Stylized Monterey Bay Aquarium interpretation graphic showing touch, hearing, smell, sight, and taste around an ocean wave"
+          class="header-image"
+        />
+      </div>
+    </header>
+
+    <section class="intro-card" aria-label="Introduction">
+      <p>
+        While many exhibits rely on sight, interpreters can deepen engagement by using
+        clear verbal descriptions and involving <strong>touch, sound, smell,</strong>
+        and occasionally <strong>taste</strong>. Multisensory interpretation benefits
+        <em>all</em> visitors — not only guests who are visually impaired.
+      </p>
+    </section>
+
+    <main id="mainContent" class="main-content">
+
+      <section class="dropdown-section" aria-labelledby="senseSectionsHeading">
+        <h2 id="senseSectionsHeading">Interpretation Sense Sections</h2>
+        <div id="senseList" class="accordion-list"></div>
+      </section>
+
+      <section class="dropdown-section" aria-labelledby="guideSectionsHeading">
+        <h2 id="guideSectionsHeading">Guide Use Notes</h2>
+        <div id="guideList" class="accordion-list"></div>
+      </section>
+
+      <section class="dropdown-section" aria-labelledby="referencesHeading">
+        <h2 id="referencesHeading">References and Image Notes</h2>
+
+        <details class="accordion-item">
+          <summary>Sources and Notes</summary>
+          <div class="accordion-content">
+            <ul id="referenceList"></ul>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p><strong>MBA Hub</strong> · Volunteer Reference · Information Center</p>
+      <p>Using the Five Senses · v1.1 · Last updated 2026-06-28</p>
+    </footer>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js?v=20261011-five-clean"></script>
+<script type="module" src="../../core/app-contract.js"></script>
+</body>
+</html>
