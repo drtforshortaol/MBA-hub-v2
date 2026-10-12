@@ -23,9 +23,10 @@ self.addEventListener('message',event=>{
  const clientURL=event.source?.url?new URL(event.source.url):null;if(!clientURL||clientURL.origin!==ROOT.origin||!clientURL.pathname.startsWith(ROOT.pathname))return;
  event.waitUntil((async()=>{try{
  const type=event.data?.type;if(type==='REPAIR'){if(!NAMESPACE.endsWith('-developer'))throw Error('Read-only environment');await prepare();}
- else if(type!=='STATUS')throw Error('Unsupported command');
+ else if(type!=='STATUS'&&type!=='ACTIVATE_UPDATE')throw Error('Unsupported command');
  const cache=await caches.open(CACHE),response=await cache.match(absolute('release.json'));if(!response){event.ports[0]?.postMessage({complete:false,count:0,total:0,release:RELEASE});return;}
  const manifest=await response.json();let count=0;for(const item of manifest.resources){if(await verified(await cache.match(absolute(item.url)),item))count++;}
+ if(type==='ACTIVATE_UPDATE'){if(count!==manifest.resources.length)throw Error('Update is not completely verified');event.ports[0]?.postMessage({activating:true,release:RELEASE});await self.skipWaiting();return;}
  event.ports[0]?.postMessage({complete:count===manifest.resources.length,count,total:manifest.resources.length,release:RELEASE});
  }catch(e){event.ports[0]?.postMessage({error:e.message});}})());
 });
