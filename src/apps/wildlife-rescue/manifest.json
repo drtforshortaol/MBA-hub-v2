@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "app_id": "wildlife-rescue",
-  "title": "Wildlife Rescue — Important Contacts",
+  "title": "Wildlife Rescue \u2014 Important Contacts",
   "category": "volunteer-tools",
   "type": "reference",
   "version": "2.0.0-alpha.6",
@@ -30,97 +30,97 @@
     {
       "id": "Who-should-I-call",
       "title": "Who should I call?",
-      "text": "Who should I call? \n 🐦 Birds & land wildlife 831-264-5427 SPCA Monterey County \n 🦭 Seals & sea lions 415-289-7325 Marine Mammal Center \n 🦦 Sea otters · Monterey County 831-648-4840 Monterey Bay Aquarium \n 🐋 Entangled whales 877-767-9425 NOAA SOS-WHAL \n Tap a number to call. Do not attempt disentanglement. If the species is uncertain, describe the animal to the responder.",
+      "text": "Who should I call? \n \ud83d\udc26 Birds & land wildlife 831-264-5427 SPCA Monterey County \n \ud83e\uddad Seals & sea lions 415-289-7325 Marine Mammal Center \n \ud83e\udda6 Sea otters \u00b7 Monterey County 831-648-4840 Monterey Bay Aquarium \n \ud83d\udc0b Entangled whales 877-767-9425 NOAA SOS-WHAL \n Tap a number to call. Do not attempt disentanglement. If the species is uncertain, describe the animal to the responder.",
       "aliases": []
     },
     {
       "id": "What-to-say-when-you-call",
-      "title": "🧭 What to say when you call",
-      "text": "🧭 What to say when you call “I'm reporting a possibly injured or distressed animal.” Where:  exact location, nearby landmark or GPS. What:  animal type, approximate size and how many. Condition:  alive/dead, injury, abnormal behavior, entanglement, oil or fishing gear. When:  time last observed and direction of travel if moving. How to reach you:  name and callback number. Photos/video can help  only if taken without approaching or disturbing  the animal. Follow responder directions.",
+      "title": "\ud83e\udded What to say when you call",
+      "text": "\ud83e\udded What to say when you call \u201cI'm reporting a possibly injured or distressed animal.\u201d Where:  exact location, nearby landmark or GPS. What:  animal type, approximate size and how many. Condition:  alive/dead, injury, abnormal behavior, entanglement, oil or fishing gear. When:  time last observed and direction of travel if moving. How to reach you:  name and callback number. Photos/video can help  only if taken without approaching or disturbing  the animal. Follow responder directions.",
       "aliases": []
     },
     {
       "id": "Seabirds-wildlife-SPCA",
-      "title": "🐦 Seabirds & wildlife — SPCA",
-      "text": "🐦 Seabirds & wildlife — SPCA SPCA Wildlife Rescue & Rehabilitation 📞 831-264-5427 Injured, sick or orphaned birds and land animals in Monterey County. Call before touching or moving wildlife. Location:  1002 Monterey-Salinas Highway, Salinas, CA 93908. Hours:  seasonal; September–March generally 8 AM–5 PM; April–August generally 7 AM–7 PM. Confirm when calling. SPCA species-specific instructions ↗",
+      "title": "\ud83d\udc26 Seabirds & wildlife \u2014 SPCA",
+      "text": "\ud83d\udc26 Seabirds & wildlife \u2014 SPCA SPCA Wildlife Rescue & Rehabilitation \ud83d\udcde 831-264-5427 Injured, sick or orphaned birds and land animals in Monterey County. Call before touching or moving wildlife. Location:  1002 Monterey-Salinas Highway, Salinas, CA 93908. Hours:  seasonal; September\u2013March generally 8 AM\u20135 PM; April\u2013August generally 7 AM\u20137 PM. Confirm when calling. SPCA species-specific instructions \u2197",
       "aliases": []
     },
     {
       "id": "SPCA-Wildlife-Rescue-Rehabilitation",
       "title": "SPCA Wildlife Rescue & Rehabilitation",
-      "text": "SPCA Wildlife Rescue & Rehabilitation 📞 831-264-5427 Injured, sick or orphaned birds and land animals in Monterey County. Call before touching or moving wildlife. Location:  1002 Monterey-Salinas Highway, Salinas, CA 93908. Hours:  seasonal; September–March generally 8 AM–5 PM; April–August generally 7 AM–7 PM. Confirm when calling. SPCA species-specific instructions ↗",
+      "text": "SPCA Wildlife Rescue & Rehabilitation \ud83d\udcde 831-264-5427 Injured, sick or orphaned birds and land animals in Monterey County. Call before touching or moving wildlife. Location:  1002 Monterey-Salinas Highway, Salinas, CA 93908. Hours:  seasonal; September\u2013March generally 8 AM\u20135 PM; April\u2013August generally 7 AM\u20137 PM. Confirm when calling. SPCA species-specific instructions \u2197",
       "aliases": []
     },
     {
       "id": "Seals-sea-lions-symptoms-response",
-      "title": "🦭 Seals & sea lions — symptoms & response",
-      "text": "🦭 Seals & sea lions — symptoms & response The Marine Mammal Center 📞 415-289-7325 Report obviously injured, stranded or ill pinnipeds.  Do not approach or handle.  A resting seal on a beach is not necessarily stranded. Warning signs in the July Naturalist Field Note Excessive drooling or foaming, seizures, side-to-side head motion, disorientation, and unusual upward/backward head posture (“stargazing”). These warrant a call; do not diagnose from appearance alone. Keep observers and dogs well back. NOAA's stranding safety guidance says to maintain at least 100 yards when possible.",
+      "title": "\ud83e\uddad Seals & sea lions \u2014 symptoms & response",
+      "text": "\ud83e\uddad Seals & sea lions \u2014 symptoms & response The Marine Mammal Center \ud83d\udcde 415-289-7325 Report obviously injured, stranded or ill pinnipeds.  Do not approach or handle.  A resting seal on a beach is not necessarily stranded. Warning signs in the July Naturalist Field Note Excessive drooling or foaming, seizures, side-to-side head motion, disorientation, and unusual upward/backward head posture (\u201cstargazing\u201d). These warrant a call; do not diagnose from appearance alone. Keep observers and dogs well back. NOAA's stranding safety guidance says to maintain at least 100 yards when possible.",
       "aliases": []
     },
     {
       "id": "The-Marine-Mammal-Center",
       "title": "The Marine Mammal Center",
-      "text": "The Marine Mammal Center 📞 415-289-7325 Report obviously injured, stranded or ill pinnipeds.  Do not approach or handle.  A resting seal on a beach is not necessarily stranded. Warning signs in the July Naturalist Field Note Excessive drooling or foaming, seizures, side-to-side head motion, disorientation, and unusual upward/backward head posture (“stargazing”). These warrant a call; do not diagnose from appearance alone. Keep observers and dogs well back. NOAA's stranding safety guidance says to maintain at least 100 yards when possible.",
+      "text": "The Marine Mammal Center \ud83d\udcde 415-289-7325 Report obviously injured, stranded or ill pinnipeds.  Do not approach or handle.  A resting seal on a beach is not necessarily stranded. Warning signs in the July Naturalist Field Note Excessive drooling or foaming, seizures, side-to-side head motion, disorientation, and unusual upward/backward head posture (\u201cstargazing\u201d). These warrant a call; do not diagnose from appearance alone. Keep observers and dogs well back. NOAA's stranding safety guidance says to maintain at least 100 yards when possible.",
       "aliases": []
     },
     {
       "id": "Warning-signs-in-the-July-Naturalist-Field-Note",
       "title": "Warning signs in the July Naturalist Field Note",
-      "text": "The Marine Mammal Center 📞 415-289-7325 Report obviously injured, stranded or ill pinnipeds.  Do not approach or handle.  A resting seal on a beach is not necessarily stranded. Warning signs in the July Naturalist Field Note Excessive drooling or foaming, seizures, side-to-side head motion, disorientation, and unusual upward/backward head posture (“stargazing”). These warrant a call; do not diagnose from appearance alone. Keep observers and dogs well back. NOAA's stranding safety guidance says to maintain at least 100 yards when possible.",
+      "text": "The Marine Mammal Center \ud83d\udcde 415-289-7325 Report obviously injured, stranded or ill pinnipeds.  Do not approach or handle.  A resting seal on a beach is not necessarily stranded. Warning signs in the July Naturalist Field Note Excessive drooling or foaming, seizures, side-to-side head motion, disorientation, and unusual upward/backward head posture (\u201cstargazing\u201d). These warrant a call; do not diagnose from appearance alone. Keep observers and dogs well back. NOAA's stranding safety guidance says to maintain at least 100 yards when possible.",
       "aliases": []
     },
     {
       "id": "Sea-otters-Monterey-County",
-      "title": "🦦 Sea otters — Monterey County",
-      "text": "🦦 Sea otters — Monterey County Monterey Bay Aquarium Sea Otter Hotline 📞 831-648-4840 Report apparently abandoned pups, injured, ill or deceased sea otters in  Monterey County . Stay at least 50 feet away; do not touch, feed or attempt capture. Note exact location and behavior. Elsewhere:  Santa Cruz County and north, or San Luis Obispo County and south — Marine Mammal Center  415-289-7325  for live distressed otters. Dead otters outside Monterey County may be routed to CDFW. MBA stranded sea otter guidance ↗",
+      "title": "\ud83e\udda6 Sea otters \u2014 Monterey County",
+      "text": "\ud83e\udda6 Sea otters \u2014 Monterey County Monterey Bay Aquarium Sea Otter Hotline \ud83d\udcde 831-648-4840 Report apparently abandoned pups, injured, ill or deceased sea otters in  Monterey County . Stay at least 50 feet away; do not touch, feed or attempt capture. Note exact location and behavior. Elsewhere:  Santa Cruz County and north, or San Luis Obispo County and south \u2014 Marine Mammal Center  415-289-7325  for live distressed otters. Dead otters outside Monterey County may be routed to CDFW. MBA stranded sea otter guidance \u2197",
       "aliases": []
     },
     {
       "id": "Monterey-Bay-Aquarium-Sea-Otter-Hotline",
       "title": "Monterey Bay Aquarium Sea Otter Hotline",
-      "text": "Monterey Bay Aquarium Sea Otter Hotline 📞 831-648-4840 Report apparently abandoned pups, injured, ill or deceased sea otters in  Monterey County . Stay at least 50 feet away; do not touch, feed or attempt capture. Note exact location and behavior. Elsewhere:  Santa Cruz County and north, or San Luis Obispo County and south — Marine Mammal Center  415-289-7325  for live distressed otters. Dead otters outside Monterey County may be routed to CDFW. MBA stranded sea otter guidance ↗",
+      "text": "Monterey Bay Aquarium Sea Otter Hotline \ud83d\udcde 831-648-4840 Report apparently abandoned pups, injured, ill or deceased sea otters in  Monterey County . Stay at least 50 feet away; do not touch, feed or attempt capture. Note exact location and behavior. Elsewhere:  Santa Cruz County and north, or San Luis Obispo County and south \u2014 Marine Mammal Center  415-289-7325  for live distressed otters. Dead otters outside Monterey County may be routed to CDFW. MBA stranded sea otter guidance \u2197",
       "aliases": []
     },
     {
       "id": "Whales-dolphins-entanglement",
-      "title": "🐋 Whales, dolphins & entanglement",
-      "text": "🐋 Whales, dolphins & entanglement NOAA Fisheries Entangled whale: 📞 877-767-9425 (SOS-WHAL) Stranded, injured or deceased marine mammal: 📞 866-767-6114 Keep at least 100 yards from whales. Never cut lines or attempt disentanglement. If on a vessel, U.S. Coast Guard VHF Channel 16 is another way to report an entangled whale. NOAA response guidance ↗",
+      "title": "\ud83d\udc0b Whales, dolphins & entanglement",
+      "text": "\ud83d\udc0b Whales, dolphins & entanglement NOAA Fisheries Entangled whale: \ud83d\udcde 877-767-9425 (SOS-WHAL) Stranded, injured or deceased marine mammal: \ud83d\udcde 866-767-6114 Keep at least 100 yards from whales. Never cut lines or attempt disentanglement. If on a vessel, U.S. Coast Guard VHF Channel 16 is another way to report an entangled whale. NOAA response guidance \u2197",
       "aliases": []
     },
     {
       "id": "NOAA-Fisheries",
       "title": "NOAA Fisheries",
-      "text": "NOAA Fisheries Entangled whale: 📞 877-767-9425 (SOS-WHAL) Stranded, injured or deceased marine mammal: 📞 866-767-6114 Keep at least 100 yards from whales. Never cut lines or attempt disentanglement. If on a vessel, U.S. Coast Guard VHF Channel 16 is another way to report an entangled whale. NOAA response guidance ↗",
+      "text": "NOAA Fisheries Entangled whale: \ud83d\udcde 877-767-9425 (SOS-WHAL) Stranded, injured or deceased marine mammal: \ud83d\udcde 866-767-6114 Keep at least 100 yards from whales. Never cut lines or attempt disentanglement. If on a vessel, U.S. Coast Guard VHF Channel 16 is another way to report an entangled whale. NOAA response guidance \u2197",
       "aliases": []
     },
     {
       "id": "Oiled-wildlife-or-suspected-rabies",
-      "title": "⚠️ Oiled wildlife or suspected rabies",
-      "text": "⚠️ Oiled wildlife or suspected rabies Oiled wildlife 📞 877-823-6926 · Oiled Wildlife Care Network Do not attempt to clean an oiled animal yourself. Wild animal suspected of rabies Do not handle. For a living animal, call  SPCA Wildlife Center 831-264-5427 . If the animal contacted a pet or is deceased, Monterey County Animal Services:  831-769-8850 .",
+      "title": "\u26a0\ufe0f Oiled wildlife or suspected rabies",
+      "text": "\u26a0\ufe0f Oiled wildlife or suspected rabies Oiled wildlife \ud83d\udcde 877-823-6926 \u00b7 Oiled Wildlife Care Network Do not attempt to clean an oiled animal yourself. Wild animal suspected of rabies Do not handle. For a living animal, call  SPCA Wildlife Center 831-264-5427 . If the animal contacted a pet or is deceased, Monterey County Animal Services:  831-769-8850 .",
       "aliases": []
     },
     {
       "id": "Oiled-wildlife",
       "title": "Oiled wildlife",
-      "text": "Oiled wildlife 📞 877-823-6926 · Oiled Wildlife Care Network Do not attempt to clean an oiled animal yourself. Wild animal suspected of rabies Do not handle. For a living animal, call  SPCA Wildlife Center 831-264-5427 . If the animal contacted a pet or is deceased, Monterey County Animal Services:  831-769-8850 .",
+      "text": "Oiled wildlife \ud83d\udcde 877-823-6926 \u00b7 Oiled Wildlife Care Network Do not attempt to clean an oiled animal yourself. Wild animal suspected of rabies Do not handle. For a living animal, call  SPCA Wildlife Center 831-264-5427 . If the animal contacted a pet or is deceased, Monterey County Animal Services:  831-769-8850 .",
       "aliases": []
     },
     {
       "id": "Wild-animal-suspected-of-rabies",
       "title": "Wild animal suspected of rabies",
-      "text": "Oiled wildlife 📞 877-823-6926 · Oiled Wildlife Care Network Do not attempt to clean an oiled animal yourself. Wild animal suspected of rabies Do not handle. For a living animal, call  SPCA Wildlife Center 831-264-5427 . If the animal contacted a pet or is deceased, Monterey County Animal Services:  831-769-8850 .",
+      "text": "Oiled wildlife \ud83d\udcde 877-823-6926 \u00b7 Oiled Wildlife Care Network Do not attempt to clean an oiled animal yourself. Wild animal suspected of rabies Do not handle. For a living animal, call  SPCA Wildlife Center 831-264-5427 . If the animal contacted a pet or is deceased, Monterey County Animal Services:  831-769-8850 .",
       "aliases": []
     },
     {
       "id": "Additional-local-contacts-situations",
-      "title": "📍 Additional local contacts & situations",
-      "text": "📍 Additional local contacts & situations Deceased whale, dolphin, seal, sea lion or turtle — Monterey County south of Pajaro River:  Moss Landing Marine Laboratories  831-771-4422 . Confirm routing with a wildlife responder if unsure. Dead seabirds:  NOAA advises leaving them in place on sanctuary beaches unless instructed otherwise; report unusual mortality events or suspected oil contamination. Roadside deceased animals:  Monterey County Public Works  831-755-4800 .",
+      "title": "\ud83d\udccd Additional local contacts & situations",
+      "text": "\ud83d\udccd Additional local contacts & situations Deceased whale, dolphin, seal, sea lion or turtle \u2014 Monterey County south of Pajaro River:  Moss Landing Marine Laboratories  831-771-4422 . Confirm routing with a wildlife responder if unsure. Dead seabirds:  NOAA advises leaving them in place on sanctuary beaches unless instructed otherwise; report unusual mortality events or suspected oil contamination. Roadside deceased animals:  Monterey County Public Works  831-755-4800 .",
       "aliases": []
     },
     {
       "id": "Source-Field-Note",
       "title": "Source Field Note",
-      "text": "Source Field Note July 9–15, 2026:  Dolphin feeding frenzy, baby birds &  Pseudo-nitzschia . This is the specific Naturalist note containing the original wildlife-rescue contacts and domoic-acid warning signs. Open July 9–15 Field Note → Online references:  SPCA contacts  ·  Marine Mammal Center  ·  MBA sea otters  ·  NOAA stranding network .",
+      "text": "Source Field Note July 9\u201315, 2026:  Dolphin feeding frenzy, baby birds &  Pseudo-nitzschia . This is the specific Naturalist note containing the original wildlife-rescue contacts and domoic-acid warning signs. Open July 9\u201315 Field Note \u2192 Online references:  SPCA contacts  \u00b7  Marine Mammal Center  \u00b7  MBA sea otters  \u00b7  NOAA stranding network .",
       "aliases": []
     }
   ],

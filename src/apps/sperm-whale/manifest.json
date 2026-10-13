@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "app_id": "sperm-whale",
-  "title": "🐋 Sperm Whale",
+  "title": "\ud83d\udc0b Sperm Whale",
   "category": "animals",
   "type": "species",
   "version": "2.0.0-alpha.6",
@@ -34,13 +34,13 @@
     {
       "id": "At-a-glance",
       "title": "At a glance",
-      "text": "At a glance Deep-diving toothed whales whose powerful echolocation clicks can be detected across long distances. Sperm whale groups have culturally transmitted patterns of social clicks called codas. Open Naturalist Field Notes →",
+      "text": "At a glance Deep-diving toothed whales whose powerful echolocation clicks can be detected across long distances. Sperm whale groups have culturally transmitted patterns of social clicks called codas. Open Naturalist Field Notes \u2192",
       "aliases": []
     },
     {
       "id": "MBARI-hydrophone-and-Monterey-Bay",
       "title": "MBARI hydrophone and Monterey Bay",
-      "text": "MBARI hydrophone and Monterey Bay The February 11, 2026 Field Note describes seven years of passive acoustic monitoring along Central California. Different ages and sexes were detected throughout the year, with more detections in fall and winter. A detection does not mean the whale was in Monterey Bay itself: clicks can be heard up to approximately 160 km (100 miles) under favorable conditions. William Oestreich © 2024 MBARI; bathymetry NOAA NCEI.",
+      "text": "MBARI hydrophone and Monterey Bay The February 11, 2026 Field Note describes seven years of passive acoustic monitoring along Central California. Different ages and sexes were detected throughout the year, with more detections in fall and winter. A detection does not mean the whale was in Monterey Bay itself: clicks can be heard up to approximately 160 km (100 miles) under favorable conditions. William Oestreich \u00a9 2024 MBARI; bathymetry NOAA NCEI.",
       "aliases": []
     },
     {
@@ -64,7 +64,7 @@
     {
       "id": "Visitor-friendly-takeaway",
       "title": "Visitor-friendly takeaway",
-      "text": "Visitor-friendly takeaway “We can sometimes hear sperm whales long before we could ever see them.”  Their clicks reveal both their presence and clues to how their social groups communicate. Source: Naturalist Shift Update, February 11, 2026. Observations and hypotheses are distinguished throughout.",
+      "text": "Visitor-friendly takeaway \u201cWe can sometimes hear sperm whales long before we could ever see them.\u201d  Their clicks reveal both their presence and clues to how their social groups communicate. Source: Naturalist Shift Update, February 11, 2026. Observations and hypotheses are distinguished throughout.",
       "aliases": []
     }
   ],

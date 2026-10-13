@@ -8,14 +8,15 @@
       "owner": "five-senses-pwa",
       "alt": "Illustration of the senses around an ocean wave",
       "credit": "Existing MBA Hub Five Senses illustration",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "uses": [
         {
           "app_id": "five-senses-pwa",
           "source_path": "apps/five-senses-pwa/images/header-five-senses-mba.svg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-3c14753fc4275150",
@@ -23,7 +24,7 @@
       "owner": "media-library",
       "alt": "icon",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "3c14753fc4275150bdc60f80e857128d11c945f7079da90c46c1e4f16d68db06",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -34,7 +35,8 @@
           "app_id": "whale-parasites-associates",
           "source_path": "apps/whale-parasites-associates/images/icon.svg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-8cb346af7e0cfb48",
@@ -42,7 +44,7 @@
       "owner": "media-library",
       "alt": "ScreenHunter 10648",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "8cb346af7e0cfb488f3a0edc5c82e6afbb8d50ed0929abd8bd600a338d92d0f0",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -53,7 +55,8 @@
           "app_id": "hopkins-rose-nudibranch",
           "source_path": "apps/hopkins-rose-nudibranch/ScreenHunter 10648.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-0723eb2fca2615b0",
@@ -61,7 +64,7 @@
       "owner": "media-library",
       "alt": "IMG 3527",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "0723eb2fca2615b0b3673658eb9d3a9c48f7063dd10cbfcdb0642d6119baa9ca",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -72,7 +75,8 @@
           "app_id": "gray-whale",
           "source_path": "apps/gray-whale/IMG_3527.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-39bdbafd26672e9d",
@@ -80,7 +84,7 @@
       "owner": "media-library",
       "alt": "IMG 3529",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "39bdbafd26672e9d865aa9afb3b098756f0e4b7ddcfd652e8a33aaa1460c73dc",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -91,7 +95,8 @@
           "app_id": "gray-whale",
           "source_path": "apps/gray-whale/IMG_3529.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-ea111dd21c705418",
@@ -99,7 +104,7 @@
       "owner": "media-library",
       "alt": "IMG 3530",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "ea111dd21c705418cfb025114e614b1dd89a36563467d2cbe73cba6b29d13493",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -110,7 +115,8 @@
           "app_id": "gray-whale",
           "source_path": "apps/gray-whale/IMG_3530.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-c19e56bb82b1ed88",
@@ -118,7 +124,7 @@
       "owner": "media-library",
       "alt": "IMG 3531",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "c19e56bb82b1ed884b7038793d977e5b751f1e3d005787a8d75f49fce88457e3",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -129,7 +135,8 @@
           "app_id": "gray-whale",
           "source_path": "apps/gray-whale/IMG_3531.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-d9f462d362090d02",
@@ -137,7 +144,7 @@
       "owner": "media-library",
       "alt": "IMG 3532",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "d9f462d362090d02783df5dd400c7c7cc70cb807f48d9ed7c740e13c344ff5e0",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -148,7 +155,8 @@
           "app_id": "gray-whale",
           "source_path": "apps/gray-whale/IMG_3532.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-2daaa1e0d8612506",
@@ -156,7 +164,7 @@
       "owner": "media-library",
       "alt": "IMG 3533",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "2daaa1e0d8612506d6776e21139e47e74f0da14215399965dcd37949f3e4304f",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -167,7 +175,8 @@
           "app_id": "gray-whale",
           "source_path": "apps/gray-whale/IMG_3533.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-c49e1ad2ede6d927",
@@ -175,7 +184,7 @@
       "owner": "media-library",
       "alt": "IMG 3534",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "c49e1ad2ede6d9271c1dc202fbb9eb4a677003f1905268bd743ad97c200f62b3",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -186,7 +195,8 @@
           "app_id": "gray-whale",
           "source_path": "apps/gray-whale/IMG_3534.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-6d2f0c12e888b454",
@@ -194,7 +204,7 @@
       "owner": "media-library",
       "alt": "IMG 3535",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "6d2f0c12e888b454c0b3b982bd4491a7a3665267e9f705afe0cdc0fd7c620286",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -205,7 +215,8 @@
           "app_id": "gray-whale",
           "source_path": "apps/gray-whale/IMG_3535.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-8d35b32acc8ef4e4",
@@ -213,7 +224,7 @@
       "owner": "media-library",
       "alt": "IMG 3536",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "8d35b32acc8ef4e4d4f5977b9ae55e3c2c4dad75e3b1cdfdde085b2578e2e6fd",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -224,7 +235,8 @@
           "app_id": "gray-whale",
           "source_path": "apps/gray-whale/IMG_3536.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-fdf70c3654d8b77c",
@@ -232,7 +244,7 @@
       "owner": "media-library",
       "alt": "IMG 3537",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "fdf70c3654d8b77c7362e5e98d8e3166049eafae4eb200111691e585a4217035",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -243,7 +255,8 @@
           "app_id": "gray-whale",
           "source_path": "apps/gray-whale/IMG_3537.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-b11c558cc1916c03",
@@ -251,7 +264,7 @@
       "owner": "media-library",
       "alt": "IMG 3538",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "b11c558cc1916c0392c25227b3c991a199a0dc02b7c5d6ce896c3cf325eea8e6",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -262,7 +275,8 @@
           "app_id": "gray-whale",
           "source_path": "apps/gray-whale/IMG_3538.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-9af5aa3882b2f4fe",
@@ -270,7 +284,7 @@
       "owner": "media-library",
       "alt": "IMG 3539",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "9af5aa3882b2f4fec14fccb5f89078ae07dbc4e363731d0a097d92ec6c504c18",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -281,7 +295,8 @@
           "app_id": "gray-whale",
           "source_path": "apps/gray-whale/IMG_3539.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-007bf887266bfa71",
@@ -289,7 +304,7 @@
       "owner": "media-library",
       "alt": "IMG 3540",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "007bf887266bfa71e0e456e533d368e0b8c2cfd2f14bbac2639180a308a9ebc8",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -300,7 +315,8 @@
           "app_id": "gray-whale",
           "source_path": "apps/gray-whale/IMG_3540.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-df96941d5b5383cd",
@@ -308,7 +324,7 @@
       "owner": "media-library",
       "alt": "IMG 3449",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "df96941d5b5383cd9d63ba6dbeff4d2854ae42a3079fd0a655cd9d7b91d570dc",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -319,7 +335,8 @@
           "app_id": "bluespotted-ribbontail-ray",
           "source_path": "apps/bluespotted-ribbontail-ray/IMG_3449.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-282cc55010cabeb1",
@@ -327,7 +344,7 @@
       "owner": "media-library",
       "alt": "IMG 3451",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "282cc55010cabeb1252e4f4adef8a6b019281357557090b4914a5fa02d897f56",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -338,7 +355,8 @@
           "app_id": "bluespotted-ribbontail-ray",
           "source_path": "apps/bluespotted-ribbontail-ray/IMG_3451.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-58caefb914af891a",
@@ -346,7 +364,7 @@
       "owner": "media-library",
       "alt": "ScreenHunter 10658",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "58caefb914af891af2d596201babcf72dce15d74a73b251cfd18e7941fa89559",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -357,7 +375,8 @@
           "app_id": "bluespotted-ribbontail-ray",
           "source_path": "apps/bluespotted-ribbontail-ray/ScreenHunter 10658.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-05fc671c0b53bef7",
@@ -365,7 +384,7 @@
       "owner": "media-library",
       "alt": "IMG 3594",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "05fc671c0b53bef760eda58928df67dac830f4b8d84bae9865d308df5566907e",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -376,7 +395,8 @@
           "app_id": "california-sheephead",
           "source_path": "apps/california-sheephead/IMG_3594.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-6f45d468c8ed14b5",
@@ -384,7 +404,7 @@
       "owner": "media-library",
       "alt": "IMG 3448",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "6f45d468c8ed14b593c479af7739efa4df94790dcd8cc778e965de7f93c796cd",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -395,7 +415,8 @@
           "app_id": "stargazer-species-guide",
           "source_path": "apps/stargazer-species-guide/IMG_3448.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-4b41d3a89ec67f65",
@@ -403,7 +424,7 @@
       "owner": "media-library",
       "alt": "IMG 3450",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "4b41d3a89ec67f65815128e4be2a4319371babc09bcc25a8cde5b9d6c4ec1e41",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -414,7 +435,8 @@
           "app_id": "stargazer-species-guide",
           "source_path": "apps/stargazer-species-guide/IMG_3450.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-edd9d5ec2d0bbd07",
@@ -422,7 +444,7 @@
       "owner": "media-library",
       "alt": "IMG 3392",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "edd9d5ec2d0bbd07852ad0d906341a589bee5a974352f245b945dc660ef24118",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -433,7 +455,8 @@
           "app_id": "whale-associated-organisms",
           "source_path": "apps/whale-associated-organisms/IMG_3392.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-c9581b267211cbcb",
@@ -441,7 +464,7 @@
       "owner": "media-library",
       "alt": "IMG 3393",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "c9581b267211cbcb33e4079571f2cb136ad2f6753087d951dcaa1a608abdf60a",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -452,7 +475,8 @@
           "app_id": "whale-associated-organisms",
           "source_path": "apps/whale-associated-organisms/IMG_3393.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-54b172586520e9bd",
@@ -460,7 +484,7 @@
       "owner": "media-library",
       "alt": "IMG 3394",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "54b172586520e9bdae0f022cff9fedb5b8abb99af7653c0613e5dd78ea5ea861",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -471,7 +495,8 @@
           "app_id": "whale-associated-organisms",
           "source_path": "apps/whale-associated-organisms/IMG_3394.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-8940026ea5ec69fa",
@@ -479,7 +504,7 @@
       "owner": "media-library",
       "alt": "IMG 3395",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "8940026ea5ec69fa762b679f1299c30699291ec34a4747da3be061fd48989c18",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -490,7 +515,8 @@
           "app_id": "whale-associated-organisms",
           "source_path": "apps/whale-associated-organisms/IMG_3395.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-eae8123213eff35a",
@@ -498,7 +524,7 @@
       "owner": "media-library",
       "alt": "IMG 3396",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "eae8123213eff35a91417664e3c820700953670a7beb8b92213e75ea5643169d",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -509,7 +535,8 @@
           "app_id": "whale-associated-organisms",
           "source_path": "apps/whale-associated-organisms/IMG_3396.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-f78cedfed1d74f6b",
@@ -517,7 +544,7 @@
       "owner": "media-library",
       "alt": "IMG 3397",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "f78cedfed1d74f6b211987c11b53263f9fdd634d8abf34ce3a7e9d62c2984409",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -528,7 +555,8 @@
           "app_id": "whale-associated-organisms",
           "source_path": "apps/whale-associated-organisms/IMG_3397.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-80f9762446c0fc02",
@@ -536,7 +564,7 @@
       "owner": "media-library",
       "alt": "IMG 3398",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "80f9762446c0fc02dce976faa1a627d7cbb3de49cf9e78132ff90801bbd3c26f",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -547,7 +575,8 @@
           "app_id": "whale-associated-organisms",
           "source_path": "apps/whale-associated-organisms/IMG_3398.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-18794e74477d7c0e",
@@ -555,7 +584,7 @@
       "owner": "media-library",
       "alt": "IMG 3399",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "18794e74477d7c0e693afcdd23c5d35c6ac9cbf0d44098568653fe32eb22ea6b",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -566,7 +595,8 @@
           "app_id": "whale-associated-organisms",
           "source_path": "apps/whale-associated-organisms/IMG_3399.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-1e94c29588faf6ba",
@@ -574,7 +604,7 @@
       "owner": "media-library",
       "alt": "icon",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "1e94c29588faf6ba03af223e8b7526511f865b76b70f738558fdb6840d0b754d",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -585,7 +615,8 @@
           "app_id": "information-center",
           "source_path": "apps/information-center/icon.svg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-fee04d46bc10c3d2",
@@ -593,7 +624,7 @@
       "owner": "media-library",
       "alt": "icon",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "fee04d46bc10c3d26787983dbb8b0279d1ebd6a0b54dc2a0205bf710d190e9af",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -604,7 +635,8 @@
           "app_id": "interpretation-principles",
           "source_path": "apps/interpretation-principles/icon.svg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-4228a25dcfc0461d",
@@ -612,7 +644,7 @@
       "owner": "media-library",
       "alt": "icon",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "4228a25dcfc0461d01ebd83c1d13a4e3d8ebc755610d44d08dbca968ec9540db",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -623,7 +655,8 @@
           "app_id": "five-senses-pwa",
           "source_path": "apps/five-senses-pwa/images/icon.svg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-f40aca52c0606336",
@@ -631,7 +664,7 @@
       "owner": "media-library",
       "alt": "icon",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "f40aca52c0606336b3d674e72510dcfbab10dde551cc34a80df525cde871bb81",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -642,7 +675,8 @@
           "app_id": "mmc-narrations",
           "source_path": "apps/mmc-narrations/icon.svg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-0522db2debef2d1e",
@@ -650,7 +684,7 @@
       "owner": "media-library",
       "alt": "icon",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "0522db2debef2d1e8b15b2f355fdc44db2d8d850415b5fc7e45a2fc9fb94e3dc",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -661,7 +695,8 @@
           "app_id": "northern-elephant-seal",
           "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/icon.svg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-3895d93118cf6834",
@@ -669,7 +704,7 @@
       "owner": "media-library",
       "alt": "buoyancy chart",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "3895d93118cf68349b7bdbea5fd5cec0b43faaf9b57948b3494d49d9489a585f",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -680,7 +715,8 @@
           "app_id": "northern-elephant-seal",
           "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/buoyancy_chart.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-c6185696aabf48e5",
@@ -688,7 +724,7 @@
       "owner": "media-library",
       "alt": "calendar",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "c6185696aabf48e563f46f41ba06d40e6a2bc1c81b3545ddaafdb51e3d2cf1a2",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -699,7 +735,8 @@
           "app_id": "northern-elephant-seal",
           "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/calendar.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-d8d7415dc63ff8f8",
@@ -707,7 +744,7 @@
       "owner": "media-library",
       "alt": "cons basics",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "d8d7415dc63ff8f8178baf0937480417bb33d8a0aadf26244e7caf668ac52b07",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -718,7 +755,8 @@
           "app_id": "northern-elephant-seal",
           "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/cons_basics.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-a632a1f72984e42f",
@@ -726,7 +764,7 @@
       "owner": "media-library",
       "alt": "cons comeback",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "a632a1f72984e42f627987cf2df15793cd2e5aa4c20e4a0164d36e522df8ace4",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -737,7 +775,8 @@
           "app_id": "northern-elephant-seal",
           "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/cons_comeback.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-e13b365854bf974b",
@@ -745,7 +784,7 @@
       "owner": "media-library",
       "alt": "cons success",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "e13b365854bf974bd4aaa498f14ce7a18cde72f3713b8859006d088ef6dee6b9",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -756,7 +795,8 @@
           "app_id": "northern-elephant-seal",
           "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/cons_success.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-9fa770d5f87c286a",
@@ -764,7 +804,7 @@
       "owner": "media-library",
       "alt": "diet diagram",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "9fa770d5f87c286aecbee5fb7a809a486c934ddad35b8cdfe23496579c375ba3",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -775,7 +815,8 @@
           "app_id": "northern-elephant-seal",
           "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/diet_diagram.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-1a0051b4ea4be7ea",
@@ -783,7 +824,7 @@
       "owner": "media-library",
       "alt": "migration map",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "1a0051b4ea4be7eaa1b8c253ca75c0f347dd0a3aaf10e0a549fc05de541bfc74",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -794,7 +835,8 @@
           "app_id": "northern-elephant-seal",
           "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/migration_map.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-125a4bbb92b0953b",
@@ -802,7 +844,7 @@
       "owner": "media-library",
       "alt": "rookery scene",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "125a4bbb92b0953befd39bc0fe78620af299393026ff02df968481c62c9d00a6",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -813,7 +855,8 @@
           "app_id": "northern-elephant-seal",
           "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/rookery_scene.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-bc4d2d7822e21690",
@@ -821,7 +864,7 @@
       "owner": "media-library",
       "alt": "size compare",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "bc4d2d7822e216901811e3fcfb30f082acf54e7d39f761f0289e3cb102b3a304",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -832,7 +875,8 @@
           "app_id": "northern-elephant-seal",
           "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/size_compare.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-43951da610ad3fd3",
@@ -840,7 +884,7 @@
       "owner": "media-library",
       "alt": "size sketch",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "43951da610ad3fd364dc6613b3f78c242c4e3517d679eaae7ab0efadaae6ac70",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -851,7 +895,8 @@
           "app_id": "northern-elephant-seal",
           "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/size_sketch.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-dded438de5077361",
@@ -859,7 +904,7 @@
       "owner": "media-library",
       "alt": "sleep diagram",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "dded438de507736147d29b7b7efaf04b4c7229c4db1d56f1167e1e40410c579b",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -870,7 +915,8 @@
           "app_id": "northern-elephant-seal",
           "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/sleep_diagram.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-439853e26e3085c7",
@@ -878,7 +924,7 @@
       "owner": "media-library",
       "alt": "jenny-gray",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "439853e26e3085c78a222468095de38a15a93cafa616890a13be049e175f5206",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -889,7 +935,8 @@
           "app_id": "mba-leadership",
           "source_path": "apps/mba-leadership/images/jenny-gray.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-c153bd064cb66624",
@@ -897,7 +944,7 @@
       "owner": "media-library",
       "alt": "lauren-cole",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "c153bd064cb666241dd4fef60915a3926a703754d90558c719cac873e63922f8",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -908,7 +955,8 @@
           "app_id": "mba-leadership",
           "source_path": "apps/mba-leadership/images/lauren-cole.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-214710e10f5121d5",
@@ -916,7 +964,7 @@
       "owner": "media-library",
       "alt": "ScreenHunter 10670",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "214710e10f5121d5a3d5e8a627f5f7637915b24f928daefcabf758665820dee0",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -927,7 +975,8 @@
           "app_id": "open-sea",
           "source_path": "apps/open-sea/images/ScreenHunter 10670.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-4df490b298fa93f0",
@@ -935,7 +984,7 @@
       "owner": "media-library",
       "alt": "icon",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "4df490b298fa93f09a096150e3af0d92e7ba4c69091bdd4cc7e56d9924ef3f91",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -946,7 +995,8 @@
           "app_id": "applied-water-science-life-support",
           "source_path": "apps/applied-water-science-life-support/icon.svg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-ed3359c28ab8bf19",
@@ -954,7 +1004,7 @@
       "owner": "media-library",
       "alt": "pigging-biofouling",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "ed3359c28ab8bf19b19981c209589bc0e5645be643496dd32576fe49179c33a5",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -965,7 +1015,8 @@
           "app_id": "applied-water-science-life-support",
           "source_path": "apps/applied-water-science-life-support/images/pigging-biofouling.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-7020f164e3928edc",
@@ -973,7 +1024,7 @@
       "owner": "media-library",
       "alt": "icon-192",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "7020f164e3928edcef17c2f9cf30c4cb8ce9ed2cd36bebd167bfcc8cdf8ca8cd",
       "source_repository": "drtforshortaol/evolution-timeline",
@@ -984,7 +1035,8 @@
           "app_id": "evolution-timeline",
           "source_path": "icons/icon-192.png"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-e7c12590c1ebbd8c",
@@ -992,7 +1044,7 @@
       "owner": "media-library",
       "alt": "icon-512",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "e7c12590c1ebbd8cb884e8dfe2a5c55bf83bdaf2eb22274f0f5d1d08bdefa618",
       "source_repository": "drtforshortaol/evolution-timeline",
@@ -1003,7 +1055,8 @@
           "app_id": "evolution-timeline",
           "source_path": "icons/icon-512.png"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-0bc6222372f0efdc",
@@ -1011,7 +1064,7 @@
       "owner": "media-library",
       "alt": "Organize Aquarium Books",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "0bc6222372f0efdcf006e1b3b9091f2a7d65b7ae491b35326589fea62b49359d",
       "source_repository": "drtforshortaol/aquarium-shift-library-",
@@ -1022,7 +1075,8 @@
           "app_id": "aquarium-library-explorer",
           "source_path": "Organize Aquarium Books.png"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-00cca4d1893f2370",
@@ -1030,7 +1084,7 @@
       "owner": "media-library",
       "alt": "IMG 3379",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "00cca4d1893f23706e3497d1e893d1be8de353903af98a9ecb8416704372059c",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1045,7 +1099,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3379.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-768c33463b4de0e3",
@@ -1053,7 +1108,7 @@
       "owner": "media-library",
       "alt": "IMG 3380",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "768c33463b4de0e3a035d5014efe022815ccb8069b63fb9ee3784ebb64ce4d8c",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1064,7 +1119,8 @@
           "app_id": "california-flying-fish",
           "source_path": "apps/california-flying-fish/IMG_3380.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-afa736f83a460b13",
@@ -1072,7 +1128,7 @@
       "owner": "media-library",
       "alt": "IMG 3381",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "afa736f83a460b13bfe2590dbcb3021308401e7ad78c4cb646a1931257bc841d",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1083,7 +1139,8 @@
           "app_id": "california-flying-fish",
           "source_path": "apps/california-flying-fish/IMG_3381.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-e679c304e357c5d1",
@@ -1091,7 +1148,7 @@
       "owner": "media-library",
       "alt": "IMG 3382",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "e679c304e357c5d18dc532e479aa3861b2cda8479da8394ce73e88c4c15a79e7",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1102,7 +1159,8 @@
           "app_id": "california-flying-fish",
           "source_path": "apps/california-flying-fish/IMG_3382.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-c11690bd147b5db5",
@@ -1110,7 +1168,7 @@
       "owner": "media-library",
       "alt": "IMG 3383",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "c11690bd147b5db561ccd1dd437ee53bea05cb11240347154d472aeffd6b108a",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1121,7 +1179,8 @@
           "app_id": "california-flying-fish",
           "source_path": "apps/california-flying-fish/IMG_3383.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-cd7b7398f2c9bfdf",
@@ -1129,7 +1188,7 @@
       "owner": "media-library",
       "alt": "california-flying-fish-hero",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "cd7b7398f2c9bfdf411ebcc28bee75605ac9f9be6a953c80082c02f1035d36db",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1140,7 +1199,8 @@
           "app_id": "california-flying-fish",
           "source_path": "apps/california-flying-fish/california-flying-fish-hero.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-35c37f6b15060425",
@@ -1148,7 +1208,7 @@
       "owner": "media-library",
       "alt": "IMG 2488",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "35c37f6b1506042593c7a4d7bd498ab8bb7a9631c89e8dbd784e42fdf37e5966",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1159,7 +1219,8 @@
           "app_id": "gooseneck-barnacle",
           "source_path": "apps/gooseneck-barnacle/IMG_2488.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-240372707379e853",
@@ -1167,7 +1228,7 @@
       "owner": "media-library",
       "alt": "IMG 2489",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "240372707379e853987caac99f2571ce56deeeafa824dcfc7abb811c462abc9c",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1178,7 +1239,8 @@
           "app_id": "gooseneck-barnacle",
           "source_path": "apps/gooseneck-barnacle/IMG_2489.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-6940746379bdd044",
@@ -1186,7 +1248,7 @@
       "owner": "media-library",
       "alt": "IMG 2490",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "6940746379bdd044acff05a7d4e8798df34ace5fbda5a8db87bd55d945a3d9e6",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1197,7 +1259,8 @@
           "app_id": "gooseneck-barnacle",
           "source_path": "apps/gooseneck-barnacle/IMG_2490.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-328e69410ff6d027",
@@ -1205,7 +1268,7 @@
       "owner": "media-library",
       "alt": "IMG 2491",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "328e69410ff6d027283ab35cd9fac8b6e3afdc2e2b496fb8e32707df76c5c0cb",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1216,7 +1279,8 @@
           "app_id": "gooseneck-barnacle",
           "source_path": "apps/gooseneck-barnacle/IMG_2491.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-9e3c4419134f3e95",
@@ -1224,7 +1288,7 @@
       "owner": "media-library",
       "alt": "IMG 2492",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "9e3c4419134f3e955bbd3fb8a70f0a951c199b53aa11f7d6616978ecdbd8d5b1",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1235,7 +1299,8 @@
           "app_id": "gooseneck-barnacle",
           "source_path": "apps/gooseneck-barnacle/IMG_2492.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-2abba7e42847f4a7",
@@ -1243,7 +1308,7 @@
       "owner": "media-library",
       "alt": "IMG 2493",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "2abba7e42847f4a72978718f1526ac57ccf0f03efbc95f8d600c0c4e2ecca182",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1254,7 +1319,8 @@
           "app_id": "gooseneck-barnacle",
           "source_path": "apps/gooseneck-barnacle/IMG_2493.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-4ba4d87b5678a0c8",
@@ -1262,7 +1328,7 @@
       "owner": "media-library",
       "alt": "IMG 2496",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "4ba4d87b5678a0c802dc74bcc3a6d90324a2bbccb916e2d8496ef0e5e262d7ac",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1273,7 +1339,8 @@
           "app_id": "gooseneck-barnacle",
           "source_path": "apps/gooseneck-barnacle/IMG_2496.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-3f24669c2980c4f8",
@@ -1281,7 +1348,7 @@
       "owner": "media-library",
       "alt": "IMG 2777",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "3f24669c2980c4f81c20cf2fd6bf33c26d283c18a8047478b3ddef6208460db6",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1292,7 +1359,8 @@
           "app_id": "green-falsejingle",
           "source_path": "apps/green-falsejingle/IMG_2777.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-a8b81b143d1657a3",
@@ -1300,7 +1368,7 @@
       "owner": "media-library",
       "alt": "IMG 2778",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "a8b81b143d1657a37d9d58370aff65320c6183fa65bf6b270e45b419d34aa839",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1311,7 +1379,8 @@
           "app_id": "green-falsejingle",
           "source_path": "apps/green-falsejingle/IMG_2778.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-ddd34d36cd9e0c88",
@@ -1319,7 +1388,7 @@
       "owner": "media-library",
       "alt": "IMG 2779",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "ddd34d36cd9e0c8886abc46127f6c5adcb8329bbfc588dcdd4564d013109504a",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1330,7 +1399,8 @@
           "app_id": "green-falsejingle",
           "source_path": "apps/green-falsejingle/IMG_2779.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-d8ac0e89299a0aa6",
@@ -1338,7 +1408,7 @@
       "owner": "media-library",
       "alt": "IMG 2780",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "d8ac0e89299a0aa6398feef7911fe3007bfb8ab2c8f8818a2115a03c5e114e8d",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1349,7 +1419,8 @@
           "app_id": "green-falsejingle",
           "source_path": "apps/green-falsejingle/IMG_2780.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-cf9a0bdb53d3f4fe",
@@ -1357,7 +1428,7 @@
       "owner": "media-library",
       "alt": "IMG 2781",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "cf9a0bdb53d3f4feb598fd7e1ec61661ba82def9ebd9d4d7932b2c45ab327907",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1368,7 +1439,8 @@
           "app_id": "green-falsejingle",
           "source_path": "apps/green-falsejingle/IMG_2781.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-cac6198434d264bd",
@@ -1376,7 +1448,7 @@
       "owner": "media-library",
       "alt": "IMG 2783",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "cac6198434d264bd4ce52c05a168546f8ef26595e66127091a67063063d510e7",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1387,7 +1459,8 @@
           "app_id": "green-falsejingle",
           "source_path": "apps/green-falsejingle/IMG_2783.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-1412182fcc3f4d9a",
@@ -1395,7 +1468,7 @@
       "owner": "media-library",
       "alt": "IMG 2785",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "1412182fcc3f4d9ac0ae3477c71bf28e413bda80bf5a410cc245e557ca1ab654",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1406,7 +1479,8 @@
           "app_id": "green-falsejingle",
           "source_path": "apps/green-falsejingle/IMG_2785.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-eae131e12565427c",
@@ -1414,7 +1488,7 @@
       "owner": "media-library",
       "alt": "IMG 2345",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "eae131e12565427ccb4854f63d9d879831871b82dca99398c3edc5c98f199e82",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1425,7 +1499,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2345.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-f754918d4841d773",
@@ -1433,7 +1508,7 @@
       "owner": "media-library",
       "alt": "IMG 2346",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "f754918d4841d773869d3c5b1b131c266b93662b430a8506e16bb87dd0205503",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1444,7 +1519,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2346.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-a4d85e828d55cded",
@@ -1452,7 +1528,7 @@
       "owner": "media-library",
       "alt": "IMG 2347",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "a4d85e828d55cdeddd62955f066b777e80087de2ba1abee321d011d55176c962",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1463,7 +1539,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2347.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-e8dcc0bd89672b84",
@@ -1471,7 +1548,7 @@
       "owner": "media-library",
       "alt": "IMG 2348",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "e8dcc0bd89672b8435aa15bd162f3b8d27d8ecec7714c46b556f4f878ea7c87d",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1482,7 +1559,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2348.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-b74a2689500db075",
@@ -1490,7 +1568,7 @@
       "owner": "media-library",
       "alt": "IMG 2349",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "b74a2689500db075777c24db27c21b2dbf60c71a32aa47bcd27dfa8fa2d8dd92",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1501,7 +1579,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2349.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-0cc3efb40d46bc0d",
@@ -1509,7 +1588,7 @@
       "owner": "media-library",
       "alt": "IMG 2352",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "0cc3efb40d46bc0d3141af1e446fb9d80cb404789330f1687d973822f969a1cb",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1520,7 +1599,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2352.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-c6c418300e5375d9",
@@ -1528,7 +1608,7 @@
       "owner": "media-library",
       "alt": "IMG 2353",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "c6c418300e5375d9ae582e9ad870eaf0312552aacec14b2108efa0421cb453d8",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1539,7 +1619,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2353.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-caa579c4403475c0",
@@ -1547,7 +1628,7 @@
       "owner": "media-library",
       "alt": "IMG 2354",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "caa579c4403475c08e09bf3364809f9033e02fa23316665e8056702948691b01",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1558,7 +1639,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2354.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-9b0525aa1c37954a",
@@ -1566,7 +1648,7 @@
       "owner": "media-library",
       "alt": "IMG 2355",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "9b0525aa1c37954a2e64ce0ece965e3b354e4dbde50da5d8ea2a6ea7c29540ca",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1577,7 +1659,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2355.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-a7a46c98b37498ca",
@@ -1585,7 +1668,7 @@
       "owner": "media-library",
       "alt": "IMG 2359",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "a7a46c98b37498cac685408dd4ba9ab48938fae2abf96bc9fc6f9d459126b525",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1596,7 +1679,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2359.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-57ba856b9eed6807",
@@ -1604,7 +1688,7 @@
       "owner": "media-library",
       "alt": "IMG 2360",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "57ba856b9eed6807915fdacab7556f044fe54e7735875b4703af4859df35b052",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1615,7 +1699,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2360.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-f2a56e882db01ab5",
@@ -1623,7 +1708,7 @@
       "owner": "media-library",
       "alt": "IMG 2480",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "f2a56e882db01ab53038afee12a38a5796abdd6b41bca2707a42b0c58ab36e24",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1634,7 +1719,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2480.png"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-af1d9d9c7cb35f1e",
@@ -1642,7 +1728,7 @@
       "owner": "media-library",
       "alt": "IMG 2481",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "af1d9d9c7cb35f1e03376dbd2f6559a73494e62fe8d1288a8522a45ec91f0a70",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1653,7 +1739,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2481.png"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-1812df8f5e1c831e",
@@ -1661,7 +1748,7 @@
       "owner": "media-library",
       "alt": "IMG 2482",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "1812df8f5e1c831e88b5824070f3bee6a9aee957521e10a982f3b5b33cd6c02e",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1672,7 +1759,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2482.png"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-806f6f745e28ef82",
@@ -1680,7 +1768,7 @@
       "owner": "media-library",
       "alt": "IMG 2483",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "806f6f745e28ef82a3ed0aefc93fb1789d6b8846dccbd51e86041f3b6d46aa12",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1691,7 +1779,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2483.png"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-76ee408cbc29268b",
@@ -1699,7 +1788,7 @@
       "owner": "media-library",
       "alt": "IMG 2484",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "76ee408cbc29268b308272575e972eaea4479dca87513d032d3c631458d95181",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1710,7 +1799,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2484.png"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-dca08407d96e0027",
@@ -1718,7 +1808,7 @@
       "owner": "media-library",
       "alt": "IMG 2485",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "dca08407d96e0027d397122e670b5f0c7c3808b718ce2dfc478989f92d8a263e",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1729,7 +1819,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2485.png"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-18d0afc62391b24e",
@@ -1737,7 +1828,7 @@
       "owner": "media-library",
       "alt": "IMG 2486",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "18d0afc62391b24ea33b01d74c04e4b5fe37bbaa3167d76d90234e31a35935d7",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1748,7 +1839,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2486.png"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-b27788d55542f1cc",
@@ -1756,7 +1848,7 @@
       "owner": "media-library",
       "alt": "IMG 2773",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "b27788d55542f1cc1aa79481563231b29da24ec6bb84317b1e9578fe71653b3e",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1767,7 +1859,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2773.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-7d047bea07617472",
@@ -1775,7 +1868,7 @@
       "owner": "media-library",
       "alt": "IMG 2774",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "7d047bea07617472ce343b1226633f83bcf2fbb2ba4a87c54a2c234f822a6bf7",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1786,7 +1879,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2774.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-f962da252f20ff0b",
@@ -1794,7 +1888,7 @@
       "owner": "media-library",
       "alt": "IMG 2775",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "f962da252f20ff0b3a148c3096cdd041566d37b183f5138472b3e34517003985",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1805,7 +1899,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2775.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-91d6ffad34058a9a",
@@ -1813,7 +1908,7 @@
       "owner": "media-library",
       "alt": "IMG 2776",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "91d6ffad34058a9af7606984a98acba19e4e5fdff3739a8176e7139a64ab1174",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1824,7 +1919,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2776.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-7be108d4e4678453",
@@ -1832,7 +1928,7 @@
       "owner": "media-library",
       "alt": "IMG 2867",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "7be108d4e4678453b1624af4396414b619018fef49a31417bca832ad533485b4",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1843,7 +1939,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2867.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-f63a876a5501a7df",
@@ -1851,7 +1948,7 @@
       "owner": "media-library",
       "alt": "IMG 2868",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "f63a876a5501a7df42b6e674a5eadadf0f59ba6490583984152f421f8d61b670",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1862,7 +1959,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2868.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-2c5a4f34f857290c",
@@ -1870,7 +1968,7 @@
       "owner": "media-library",
       "alt": "IMG 2869",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "2c5a4f34f857290c1b742d8e101c66c50cc68270f3f1e708d0c065df5017408c",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1881,7 +1979,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2869.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-9b844bb19245cc28",
@@ -1889,7 +1988,7 @@
       "owner": "media-library",
       "alt": "IMG 2870",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "9b844bb19245cc284fba91e94085466bc3f1a3d9da93ed255fdc1973cba09008",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1900,7 +1999,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2870.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-717aac5f1a01e9a4",
@@ -1908,7 +2008,7 @@
       "owner": "media-library",
       "alt": "IMG 2871",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "717aac5f1a01e9a49504763fd5da8a8396cef5d110e6ef70fa78bfbfbb863a98",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1919,7 +2019,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2871.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-05332b7e8a82d46d",
@@ -1927,7 +2028,7 @@
       "owner": "media-library",
       "alt": "IMG 2873",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "05332b7e8a82d46dafad51286c9ef3e38dc92f188fcce206c8d4894447502714",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1938,7 +2039,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2873.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-4d7635af67d3f236",
@@ -1946,7 +2048,7 @@
       "owner": "media-library",
       "alt": "IMG 2874",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "4d7635af67d3f236f42a0835a9516e99b441fe507b8e37d1c197bd5287296db2",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1957,7 +2059,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2874.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-b741e9d8704a02e7",
@@ -1965,7 +2068,7 @@
       "owner": "media-library",
       "alt": "IMG 2876",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "b741e9d8704a02e75cdd8fe952ac65a3a6bf7724ed4049435a2a401e6e407701",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1976,7 +2079,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2876.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-80b0c96b94623a37",
@@ -1984,7 +2088,7 @@
       "owner": "media-library",
       "alt": "IMG 2877",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "80b0c96b94623a3715b7f037f878c8cb539df05a313c67bd5b48726dff29964d",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -1995,7 +2099,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2877.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-b1db1b549a2c88c2",
@@ -2003,7 +2108,7 @@
       "owner": "media-library",
       "alt": "IMG 2878",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "b1db1b549a2c88c223440ca3dc05bbbf4f6dbb7dacb01adfec696304ca5ee3f4",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2014,7 +2119,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2878.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-e9e0af345fc4b30e",
@@ -2022,7 +2128,7 @@
       "owner": "media-library",
       "alt": "IMG 2882",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "e9e0af345fc4b30e74846e34e10147f5082be3d330bae7ad91bbd272ea02eed4",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2033,7 +2139,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2882.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-0ddc6e6b4b55ea55",
@@ -2041,7 +2148,7 @@
       "owner": "media-library",
       "alt": "IMG 2883",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "0ddc6e6b4b55ea55f45bd4c1f5349c07f60b76fe59fada3475fef87a0fc6ba30",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2052,7 +2159,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2883.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-bbd4d6a226d73e44",
@@ -2060,7 +2168,7 @@
       "owner": "media-library",
       "alt": "IMG 2884",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "bbd4d6a226d73e44ce79f41ae95d4867ae727c61e6377821a8fce0a0542d997d",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2071,7 +2179,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2884.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-5afe045acf5fb1f9",
@@ -2079,7 +2188,7 @@
       "owner": "media-library",
       "alt": "IMG 2885",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "5afe045acf5fb1f9d0d32761136b8c01046e2c066bfe1c36a11d3a0f36dd01ce",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2090,7 +2199,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2885.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-dfd821c14f7227eb",
@@ -2098,7 +2208,7 @@
       "owner": "media-library",
       "alt": "IMG 2886",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "dfd821c14f7227eb7729f542e67c9865ed2eb363521222a6a848d6822f01a266",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2109,7 +2219,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_2886.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-a4398df911d06d3f",
@@ -2117,7 +2228,7 @@
       "owner": "media-library",
       "alt": "IMG 3321",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "a4398df911d06d3fe332d7859f9812734311fe434f45edff5ca25bb3397928fb",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2128,7 +2239,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3321.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-9229c64cb1782826",
@@ -2136,7 +2248,7 @@
       "owner": "media-library",
       "alt": "IMG 3323",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "9229c64cb178282684da3df07c68945b769dd59390c822095921edcc2f6ffa79",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2147,7 +2259,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3323.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-9f572f692467181d",
@@ -2155,7 +2268,7 @@
       "owner": "media-library",
       "alt": "IMG 3325",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "9f572f692467181de1f47e676f67b545907c2fdac2ba67a0f6b286e8138da5f2",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2166,7 +2279,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3325.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-818de3a0d026f0a9",
@@ -2174,7 +2288,7 @@
       "owner": "media-library",
       "alt": "IMG 3326",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "818de3a0d026f0a9b9930feebe26e6a39732c70e01d0835d969d8750cd5f03a3",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2185,7 +2299,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3326.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-b91a9436ec4665fa",
@@ -2193,7 +2308,7 @@
       "owner": "media-library",
       "alt": "IMG 3327",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "b91a9436ec4665fa3363442d74c0bbefac6fef14802b07e0437963e3bedc2eaa",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2204,7 +2319,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3327.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-b44f5c60088e266e",
@@ -2212,7 +2328,7 @@
       "owner": "media-library",
       "alt": "IMG 3328",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "b44f5c60088e266e10e3bfd526e1b41496cc753da4e5f82c82270afd0668d996",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2223,7 +2339,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3328.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-bb0bd8d9c4cf87c9",
@@ -2231,7 +2348,7 @@
       "owner": "media-library",
       "alt": "IMG 3329",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "bb0bd8d9c4cf87c97ea075ff5619422c20a206195fd27f06d75f8aace0a0976a",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2242,7 +2359,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3329.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-cce4063a62b3e108",
@@ -2250,7 +2368,7 @@
       "owner": "media-library",
       "alt": "IMG 3330",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "cce4063a62b3e1086075401dfcac3e9cc08fdf70d1056351126e329a63f0b814",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2261,7 +2379,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3330.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-276522d542fa9f2f",
@@ -2269,7 +2388,7 @@
       "owner": "media-library",
       "alt": "IMG 3331",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "276522d542fa9f2ff551fa520dab80f64e8ea368771db5c776b9fca2488eb97b",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2280,7 +2399,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3331.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-c7ed2418445f414d",
@@ -2288,7 +2408,7 @@
       "owner": "media-library",
       "alt": "IMG 3332",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "c7ed2418445f414d245f16c8907121343a722bcf4270ba836cc73df3f5d7a1ff",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2299,7 +2419,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3332.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-ae77a87f437ebb70",
@@ -2307,7 +2428,7 @@
       "owner": "media-library",
       "alt": "IMG 3333",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "ae77a87f437ebb70aea0a837c2d2b3144739b257be95deec771dadd7ef31d64b",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2318,7 +2439,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3333.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-2244802faeca1c2e",
@@ -2326,7 +2448,7 @@
       "owner": "media-library",
       "alt": "IMG 3334",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "2244802faeca1c2e59c58c6d17f81a6af41ac63b243b42dbdc5c82201ef04c4a",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2337,7 +2459,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3334.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-d9b0176a49c0bd0e",
@@ -2345,7 +2468,7 @@
       "owner": "media-library",
       "alt": "IMG 3335",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "d9b0176a49c0bd0ebff084108817655d13540f571be0af338474de4602465756",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2356,7 +2479,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3335.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-9aa5f388b2c0a9ca",
@@ -2364,7 +2488,7 @@
       "owner": "media-library",
       "alt": "IMG 3336",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "9aa5f388b2c0a9ca282d04155d21a790cbb9f049d5bd81a790b0a7b2155833e1",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2375,7 +2499,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3336.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-1154cf3cd4637129",
@@ -2383,7 +2508,7 @@
       "owner": "media-library",
       "alt": "IMG 3355",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "1154cf3cd463712984530fa3694c7212286ff0808487d9cad52b2c9c13c3b28f",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2394,7 +2519,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3355.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-732320e8868e04e9",
@@ -2402,7 +2528,7 @@
       "owner": "media-library",
       "alt": "IMG 3356",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "732320e8868e04e9865db21283a5a78c9e98bac2485972534670bf5595aca854",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2413,7 +2539,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3356.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-312b492bbd93cf7f",
@@ -2421,7 +2548,7 @@
       "owner": "media-library",
       "alt": "IMG 3357",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "312b492bbd93cf7f45068ca11840663ed3121361e8ba46000f76f04353f13ae7",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2432,7 +2559,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3357.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-ada016e625c82729",
@@ -2440,7 +2568,7 @@
       "owner": "media-library",
       "alt": "IMG 3358",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "ada016e625c82729f2bb2c27a96986a143079a3668ca6cb5c9b118084160f63f",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2451,7 +2579,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3358.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-ba81c2492733aa1b",
@@ -2459,7 +2588,7 @@
       "owner": "media-library",
       "alt": "IMG 3359",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "ba81c2492733aa1b0e7158ba1e6750ccf96758da8c3448a3621c80e6b5e23d99",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2470,7 +2599,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3359.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-11daee627f87910c",
@@ -2478,7 +2608,7 @@
       "owner": "media-library",
       "alt": "IMG 3360",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "11daee627f87910c0cb83d620eeb8450dac1f0584220811bd5e341fa442788e8",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2489,7 +2619,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3360.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-9d32c2f766326d0e",
@@ -2497,7 +2628,7 @@
       "owner": "media-library",
       "alt": "IMG 3361",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "9d32c2f766326d0eaaa334286aca25dabeb62af4d4a2abebdda580aac29c674c",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2508,7 +2639,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3361.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-bc73e2ecfad3750f",
@@ -2516,7 +2648,7 @@
       "owner": "media-library",
       "alt": "IMG 3362",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "bc73e2ecfad3750f03f056974455f6a3678bf464d0f858cb7241ebe3cf67b299",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2527,7 +2659,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3362.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-a5b81ee6dc73e406",
@@ -2535,7 +2668,7 @@
       "owner": "media-library",
       "alt": "IMG 3363",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "a5b81ee6dc73e406dd5d189a3a847a5083e2342c5faa644b6f134c846e3a0c48",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2546,7 +2679,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3363.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-c57d8cb4bb8dc7bd",
@@ -2554,7 +2688,7 @@
       "owner": "media-library",
       "alt": "IMG 3400",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "c57d8cb4bb8dc7bda4e58e1b7f64688b9a53e03db1d973af695dab4bc08a305e",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2565,7 +2699,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3400.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-98329025e63f551d",
@@ -2573,7 +2708,7 @@
       "owner": "media-library",
       "alt": "IMG 3401",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "98329025e63f551d4ef1e58093db47c6a3426a968e0a5db6405ad5adfb25abf6",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2584,7 +2719,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3401.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-e69c83a579df2ebb",
@@ -2592,7 +2728,7 @@
       "owner": "media-library",
       "alt": "IMG 3402",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "e69c83a579df2ebb5c7cfa4175bb3d284f6a5cca0350ed9ba2f88f6f7e79b66b",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2603,7 +2739,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3402.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-5eaf512024d56474",
@@ -2611,7 +2748,7 @@
       "owner": "media-library",
       "alt": "IMG 3420",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "5eaf512024d564740034a0df104ba099e2231cdcb1f61d1f83425862c0392183",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2622,7 +2759,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3420.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-cb644ad5c4c5513c",
@@ -2630,7 +2768,7 @@
       "owner": "media-library",
       "alt": "IMG 3421",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "cb644ad5c4c5513c55789d91ef5603111c575119c8583654df8e7d07629be7c8",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2641,7 +2779,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3421.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-80675927f9b2dc8b",
@@ -2649,7 +2788,7 @@
       "owner": "media-library",
       "alt": "IMG 3422",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "80675927f9b2dc8b33159df22e32374d82886eaa7295d4620b12e1870c067561",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2660,7 +2799,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3422.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-69dbe9f5ad9ea5ba",
@@ -2668,7 +2808,7 @@
       "owner": "media-library",
       "alt": "IMG 3423",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "69dbe9f5ad9ea5bae4ddd9e01d5f43ca5655e0124d9f7e1b453f2fb083fefc58",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2679,7 +2819,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3423.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-e4bf881d963e15be",
@@ -2687,7 +2828,7 @@
       "owner": "media-library",
       "alt": "IMG 3424",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "e4bf881d963e15be8a6d1c5d7af442b0cba3c0ffa3186505078f2ffc3c5690f7",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2698,7 +2839,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3424.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-857452931f52f1e6",
@@ -2706,7 +2848,7 @@
       "owner": "media-library",
       "alt": "IMG 3425",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "857452931f52f1e695bd8ae00a395d8c56eb16d73b4666f32037f42f02b5a086",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2717,7 +2859,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3425.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-611ed7527db7a01f",
@@ -2725,7 +2868,7 @@
       "owner": "media-library",
       "alt": "IMG 3426",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "611ed7527db7a01fc9517f23e0365313486cb53e3e92a145b352c02c85ce072c",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2736,7 +2879,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3426.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-104e5f6a9fc3fdaf",
@@ -2744,7 +2888,7 @@
       "owner": "media-library",
       "alt": "IMG 3427",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "104e5f6a9fc3fdaf08597782d0d59ada60b6f67265a390c6c655a435f27bbc57",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2755,7 +2899,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3427.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-b41483f20b77840a",
@@ -2763,7 +2908,7 @@
       "owner": "media-library",
       "alt": "IMG 3428",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "b41483f20b77840a844260e2f6132438a16f4ca2b613c45a0674c567e012d8c4",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2774,7 +2919,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3428.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-c6d6efc78736669c",
@@ -2782,7 +2928,7 @@
       "owner": "media-library",
       "alt": "IMG 3429",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "c6d6efc78736669cced58eefec0fe4500dd2facfa9b0ec7fe9bc57c35b613bc3",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2793,7 +2939,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3429.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-d39b1a3df39901b6",
@@ -2801,7 +2948,7 @@
       "owner": "media-library",
       "alt": "IMG 3430",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "d39b1a3df39901b6c75f36e6ade14f5d587df7e4ee338e0ce778be27a04e3469",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2812,7 +2959,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3430.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-d34f2070f7948422",
@@ -2820,7 +2968,7 @@
       "owner": "media-library",
       "alt": "IMG 3431",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "d34f2070f7948422e4ac81c4fa3361550a3339c5064e9d8cf13c8a9b1966e321",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2831,7 +2979,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3431.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-b205c0a01d209fae",
@@ -2839,7 +2988,7 @@
       "owner": "media-library",
       "alt": "IMG 3432",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "b205c0a01d209faeacde3776148366c0e9a9921ed34575b37346132855fdd232",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2850,7 +2999,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3432.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-51cf45f51cb910c0",
@@ -2858,7 +3008,7 @@
       "owner": "media-library",
       "alt": "IMG 3433",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "51cf45f51cb910c010098a2e652516f05f73913331e59eb79b68dbd7b147c2fe",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2869,7 +3019,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3433.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-73ee72c7a88882ba",
@@ -2877,7 +3028,7 @@
       "owner": "media-library",
       "alt": "IMG 3434",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "73ee72c7a88882ba517bc94d2c2755f0887165520a40495eb828607641fc5043",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2888,7 +3039,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3434.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-8b71e68d81b525dc",
@@ -2896,7 +3048,7 @@
       "owner": "media-library",
       "alt": "IMG 3435",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "8b71e68d81b525dc90236c91af674019dbca57df64a86b3e4746bccce99d90bd",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2907,7 +3059,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3435.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-0cba57ea7e48e08d",
@@ -2915,7 +3068,7 @@
       "owner": "media-library",
       "alt": "IMG 3436",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "0cba57ea7e48e08dd17adda6fc08a8670f83b4e6c682d51a3f547ed20d764ad4",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2926,7 +3079,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3436.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-f913f6c6c932177d",
@@ -2934,7 +3088,7 @@
       "owner": "media-library",
       "alt": "IMG 3437",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "f913f6c6c932177dbe21302675d0ee634097cb8ea4945169ada564555a5b1d3e",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2945,7 +3099,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3437.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-e424da94f452ee09",
@@ -2953,7 +3108,7 @@
       "owner": "media-library",
       "alt": "IMG 3438",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "e424da94f452ee094802a0bb78a737370fb3a6ef8ca734f0953b908b7cee83f5",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2964,7 +3119,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3438.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-a6a0f1e28ae2bd1a",
@@ -2972,7 +3128,7 @@
       "owner": "media-library",
       "alt": "IMG 3439",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "a6a0f1e28ae2bd1a563731a61edc0fdcd050773f8c2da66fbbae4145c5e807e0",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -2983,7 +3139,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3439.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-e27e2ab941b776a9",
@@ -2991,7 +3148,7 @@
       "owner": "media-library",
       "alt": "IMG 3440",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "e27e2ab941b776a9b37a83b7b3742c3f59e0ebe594aae935b06c52009c040131",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3002,7 +3159,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3440.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-b5206667bf07f05b",
@@ -3010,7 +3168,7 @@
       "owner": "media-library",
       "alt": "IMG 3441",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "b5206667bf07f05b107f241d2c88f3fc999fd166a25174811905e1c2f3fd95af",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3021,7 +3179,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3441.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-b2920aa1dbefcb97",
@@ -3029,7 +3188,7 @@
       "owner": "media-library",
       "alt": "IMG 3442",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "b2920aa1dbefcb97eed25af4c168a4719f5cc2d216aae44ab9a5589a0f902d22",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3040,7 +3199,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3442.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-1daf222da5380986",
@@ -3048,7 +3208,7 @@
       "owner": "media-library",
       "alt": "IMG 3443",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "1daf222da53809869b2aeb6b0441555483372fa613f744d336e04e3812882d36",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3059,7 +3219,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3443.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-af9d1b481c381dc7",
@@ -3067,7 +3228,7 @@
       "owner": "media-library",
       "alt": "IMG 3444",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "af9d1b481c381dc7cb2682037ea223fedd2929cf23978d48f1d199ea587a992b",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3078,7 +3239,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3444.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-4e686c83c7a2de1e",
@@ -3086,7 +3248,7 @@
       "owner": "media-library",
       "alt": "IMG 3445",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "4e686c83c7a2de1e4b9c473144bb1f35594a69c13a19617b3965d9ebf31fe40f",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3097,7 +3259,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3445.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-04c2c8b8e6e36a70",
@@ -3105,7 +3268,7 @@
       "owner": "media-library",
       "alt": "IMG 3446",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "04c2c8b8e6e36a70187fb746c959087efed49075b7401d4389cb4b77d2ac1600",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3116,7 +3279,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3446.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-538d5993b59b2206",
@@ -3124,7 +3288,7 @@
       "owner": "media-library",
       "alt": "IMG 3465",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "538d5993b59b22063bff336dbff95f1f9d4006d729cd710aa9ec82beb3caae01",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3135,7 +3299,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3465.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-717b2911c7edcb80",
@@ -3143,7 +3308,7 @@
       "owner": "media-library",
       "alt": "IMG 3466",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "717b2911c7edcb8084d5e419cc406c85c8ef32d315a367c543557be2981dc00d",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3154,7 +3319,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3466.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-2a1a981e1a8e0bc5",
@@ -3162,7 +3328,7 @@
       "owner": "media-library",
       "alt": "IMG 3467",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "2a1a981e1a8e0bc516baee5b13858177ccb26d6a2524458a380e4ea5df3fb1ca",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3173,7 +3339,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3467.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-cd38f502a51bf6bd",
@@ -3181,7 +3348,7 @@
       "owner": "media-library",
       "alt": "IMG 3468",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "cd38f502a51bf6bdad09467c4a4e1e2ca5be1363c1cf7595334fdbab4abfa5fa",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3192,7 +3359,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3468.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-2716d888f851c96f",
@@ -3200,7 +3368,7 @@
       "owner": "media-library",
       "alt": "IMG 3469",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "2716d888f851c96fecb01fbf174a2bffb7ba210b178ae9227ec6d9e8132c3ae6",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3211,7 +3379,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3469.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-3fd33c52e769a694",
@@ -3219,7 +3388,7 @@
       "owner": "media-library",
       "alt": "IMG 3470",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "3fd33c52e769a69443c98659d1acd4b506a6278142251bacac823caf4dae730f",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3230,7 +3399,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3470.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-7ddf650d12a6e651",
@@ -3238,7 +3408,7 @@
       "owner": "media-library",
       "alt": "IMG 3471",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "7ddf650d12a6e65194e76a465e2e1cc88d92be9fdf8cfb5b9263ae58b713a058",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3249,7 +3419,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3471.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-922d38f86c89f73d",
@@ -3257,7 +3428,7 @@
       "owner": "media-library",
       "alt": "IMG 3505",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "922d38f86c89f73d911e043b800eb5123ab837346e09b400695f411ddf12ef3f",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3268,7 +3439,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3505.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-a547e5af9334e5b1",
@@ -3276,7 +3448,7 @@
       "owner": "media-library",
       "alt": "IMG 3506",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "a547e5af9334e5b1370d2ed18377cf46e74731787a983ada6c4b2f32f26e38c6",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3287,7 +3459,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3506.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-07e9859dce7506c6",
@@ -3295,7 +3468,7 @@
       "owner": "media-library",
       "alt": "IMG 3507",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "07e9859dce7506c68ec7cd0232b7e8953841d41cd7529dbae45706043b4d0856",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3306,7 +3479,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3507.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-81892438cc2e6a55",
@@ -3314,7 +3488,7 @@
       "owner": "media-library",
       "alt": "IMG 3508",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "81892438cc2e6a553fffdd7f8f32e23d3bf07be309b1b23330d8a7881b717a9c",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3325,7 +3499,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3508.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-dbfeba5da571feb6",
@@ -3333,7 +3508,7 @@
       "owner": "media-library",
       "alt": "IMG 3509",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "dbfeba5da571feb669e91464c4453452f163a7296edc0f0dd1b6bad660b70fe4",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3344,7 +3519,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3509.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-f194f7d134beec45",
@@ -3352,7 +3528,7 @@
       "owner": "media-library",
       "alt": "IMG 3510",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "f194f7d134beec45f48a7451308c4583265e5db18db9b12b36745b59917a5d2d",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3363,7 +3539,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3510.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-9667261b6fee5730",
@@ -3371,7 +3548,7 @@
       "owner": "media-library",
       "alt": "IMG 3511",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "9667261b6fee573052a464a8dda2bf8f51d68761d136f635e32c47ea111cb6d0",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3382,7 +3559,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3511.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-fbed2a5036b96a43",
@@ -3390,7 +3568,7 @@
       "owner": "media-library",
       "alt": "IMG 3512",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "fbed2a5036b96a43f1e3c211509e0a1b74f42205365b88c9c4f209ae78477e2a",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3401,7 +3579,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3512.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-bffd82626effa542",
@@ -3409,7 +3588,7 @@
       "owner": "media-library",
       "alt": "IMG 3513",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "bffd82626effa542ece021e58e951bbf65412cfe6d8ea6dea7521ab2a36ac938",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3420,7 +3599,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3513.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-0c3ad11dc596bfa3",
@@ -3428,7 +3608,7 @@
       "owner": "media-library",
       "alt": "IMG 3515",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "0c3ad11dc596bfa35e2c8da2f7a6551fa1d77cc7a7fe3d96a4c71dbc43894f40",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3439,7 +3619,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3515.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-48b0779c4998c64f",
@@ -3447,7 +3628,7 @@
       "owner": "media-library",
       "alt": "IMG 3516",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "48b0779c4998c64fc77cfea5dc7ca7224f98c6997f66a9fbeadc75fcae4c43c2",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3458,7 +3639,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3516.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-345be463837369de",
@@ -3466,7 +3648,7 @@
       "owner": "media-library",
       "alt": "IMG 3517",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "345be463837369de208528d47de18d76642e317c45749e3f2799a291e2b3a927",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3477,7 +3659,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3517.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-a682abf588d51b0d",
@@ -3485,7 +3668,7 @@
       "owner": "media-library",
       "alt": "IMG 3518",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "a682abf588d51b0dc8092115c807b13505b7257af80fbd1a7bfa970853a7663e",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3496,7 +3679,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3518.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-9110c28e0898a79e",
@@ -3504,7 +3688,7 @@
       "owner": "media-library",
       "alt": "IMG 3519",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "9110c28e0898a79eb8866c1404b7055429d79728c0c05720741035a4dd1ff4df",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3515,7 +3699,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3519.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-47d33e98d003d66e",
@@ -3523,7 +3708,7 @@
       "owner": "media-library",
       "alt": "IMG 3520",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "47d33e98d003d66e3385364cbbc07c895021368a87dd045351ebb6fbe6473201",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3534,7 +3719,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/IMG_3520.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-6319ca41b09fa7b3",
@@ -3542,7 +3728,7 @@
       "owner": "media-library",
       "alt": "icon",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "6319ca41b09fa7b302b3f1a1ad9489c4b6854d7d9ba8d90c6bdb18c80259e421",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3553,7 +3739,8 @@
           "app_id": "naturalist-field-notes",
           "source_path": "apps/naturalist-field-notes/icon.svg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-dcc8e5b1c4c2756d",
@@ -3561,7 +3748,7 @@
       "owner": "media-library",
       "alt": "IMG 2497",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "dcc8e5b1c4c2756dfab3984ae3bb794edeb19db8749c36b01746a9d4e850c43b",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3572,7 +3759,8 @@
           "app_id": "wildfires-ocean-health",
           "source_path": "apps/wildfires-ocean-health/IMG_2497.png"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-4f3fe8f4ef04644a",
@@ -3580,7 +3768,7 @@
       "owner": "media-library",
       "alt": "IMG 2498",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "4f3fe8f4ef04644a17ef5615c554306cade12d5eb382f20d2d5fb8db33411644",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3591,7 +3779,8 @@
           "app_id": "wildfires-ocean-health",
           "source_path": "apps/wildfires-ocean-health/IMG_2498.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-2d0fb775dfa440e2",
@@ -3599,7 +3788,7 @@
       "owner": "media-library",
       "alt": "IMG 2499",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "2d0fb775dfa440e2201b09ab99fbdda20b8be09c9811abfa0561a5b79ba51dfd",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3610,7 +3799,8 @@
           "app_id": "wildfires-ocean-health",
           "source_path": "apps/wildfires-ocean-health/IMG_2499.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-8fe8407a90f03874",
@@ -3618,7 +3808,7 @@
       "owner": "media-library",
       "alt": "IMG 2500",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "8fe8407a90f03874919951ce2920f650321ccd0efb5339c7c3576def60e7f4ed",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3629,7 +3819,8 @@
           "app_id": "wildfires-ocean-health",
           "source_path": "apps/wildfires-ocean-health/IMG_2500.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-73243e04da0b39f1",
@@ -3637,7 +3828,7 @@
       "owner": "media-library",
       "alt": "IMG 2501",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "73243e04da0b39f1fab324a556f66aabf428428cd798a80b64680363042a05f4",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3648,7 +3839,8 @@
           "app_id": "wildfires-ocean-health",
           "source_path": "apps/wildfires-ocean-health/IMG_2501.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-2f53072d7bea2b19",
@@ -3656,7 +3848,7 @@
       "owner": "media-library",
       "alt": "IMG 2729",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "2f53072d7bea2b195b2f03b835b7338804aed08b6a2865958ba8487488efe348",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3667,7 +3859,8 @@
           "app_id": "wildfires-ocean-health",
           "source_path": "apps/wildfires-ocean-health/IMG_2729.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-4ad1b63ad37d50de",
@@ -3675,7 +3868,7 @@
       "owner": "media-library",
       "alt": "IMG 2197",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "4ad1b63ad37d50ded165150872e0ca5a14721a56eddb4ae4e6648b64d70050a3",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3686,7 +3879,8 @@
           "app_id": "flamboyant-cuttlefish",
           "source_path": "apps/flamboyant-cuttlefish/IMG_2197.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-ad1fe862fb75620f",
@@ -3694,7 +3888,7 @@
       "owner": "media-library",
       "alt": "IMG 2198",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "ad1fe862fb75620f1f154cc8786c9ee8585f296072983e8b98137b78b338f864",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3705,7 +3899,8 @@
           "app_id": "flamboyant-cuttlefish",
           "source_path": "apps/flamboyant-cuttlefish/IMG_2198.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-77f28e714fde41ed",
@@ -3713,7 +3908,7 @@
       "owner": "media-library",
       "alt": "IMG 2291",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "77f28e714fde41edba31644ee9aafe7fc8d7f0d6c9849b34bdb6266dc904dd5b",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3724,7 +3919,8 @@
           "app_id": "flamboyant-cuttlefish",
           "source_path": "apps/flamboyant-cuttlefish/IMG_2291.jpeg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-5a78a8d75c9a6174",
@@ -3732,7 +3928,7 @@
       "owner": "media-library",
       "alt": "icon",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "5a78a8d75c9a61743456a2a01340aed1099b0a357a0a38cd976116b20e8793d4",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3743,7 +3939,8 @@
           "app_id": "kelp-forest",
           "source_path": "apps/kelp-forest/icon.svg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-aa675dccab11d92a",
@@ -3751,7 +3948,7 @@
       "owner": "media-library",
       "alt": "kelp-forest-exhibit-01",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "aa675dccab11d92ab4f0a34404da6e921970d3f967de7aa0bea63163322c403b",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3762,7 +3959,8 @@
           "app_id": "kelp-forest",
           "source_path": "apps/kelp-forest/images/kelp-forest-exhibit-01.png"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-3805cae5eba70cef",
@@ -3770,7 +3968,7 @@
       "owner": "media-library",
       "alt": "kelp-forest-hero",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "3805cae5eba70cef0fb30a048f013b96849608d48c95cf7968b1bb31c80a3d90",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3781,7 +3979,8 @@
           "app_id": "kelp-forest",
           "source_path": "apps/kelp-forest/images/kelp-forest-hero.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-3406e524b14b7757",
@@ -3789,7 +3988,7 @@
       "owner": "media-library",
       "alt": "ScreenHunter 10643",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "3406e524b14b775756e04d18a4f2edaa16c7403f293a8c9399c12de066a893e2",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3800,7 +3999,8 @@
           "app_id": "pseudo-nitzschia",
           "source_path": "apps/pseudo-nitzschia/ScreenHunter 10643.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-aa9c4cbb67f1dbc2",
@@ -3808,7 +4008,7 @@
       "owner": "media-library",
       "alt": "icon-192",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "aa9c4cbb67f1dbc2c2dd80d38fd20085dda4a47177ca8664353617d2ec52896e",
       "source_repository": "drtforshortaol/MBA-hub",
@@ -3823,7 +4023,8 @@
           "app_id": "tree-of-life-origins",
           "source_path": "apps/tree-of-life-origins/icons/icon-512.svg"
         }
-      ]
+      ],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-3b65e654f48dae5f",
@@ -3831,13 +4032,14 @@
       "owner": "media-library",
       "alt": "icon",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "3b65e654f48dae5f4ba94d1f9e426ffe1449a6657d27ad57a50402bea8cd5bc4",
       "source_repository": "drtforshortaol/MBA-hub",
       "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
       "source_path": "icon.svg",
-      "uses": []
+      "uses": [],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     },
     {
       "asset_id": "asset-29f85ad9d9ef593f",
@@ -3845,13 +4047,14 @@
       "owner": "media-library",
       "alt": "IMG 3475",
       "credit": "Preserved source attribution is retained in the owning application; catalog review pending.",
-      "permission": "review-required",
+      "permission": "owner-approved-v1",
       "offline": true,
       "sha256": "29f85ad9d9ef593ff78d85220dfe1048bda595de4478bae7b3fdbddcc52b7730",
       "source_repository": "drtforshortaol/MBA-hub",
       "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
       "source_path": "IMG_3475.jpeg",
-      "uses": []
+      "uses": [],
+      "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
     }
   ]
 }

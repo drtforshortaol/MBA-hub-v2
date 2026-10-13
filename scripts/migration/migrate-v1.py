@@ -96,7 +96,9 @@ def rewrite_strings(source_text,source,target):
   if re.search(r'\.(?:jpeg|jpg|png|svg|webp|gif|html|css|js|json|woff2?)(?:[?#].*)?$',value,re.I) or 'drtforshortaol.github.io/' in value:
    return match.group(1)+mapped_url(value,source,target)+match.group(1)
   return match.group(0)
- return re.sub(pattern,quoted,source_text)
+ rewritten=re.sub(pattern,quoted,source_text)
+ # A strict second pass catches literal URLs adjacent to prose apostrophes.
+ return re.sub(r'''(["'])([^"'\s<>]+\.(?:jpeg|jpg|png|svg|webp|gif|html|css|js|json)(?:[?#][^"'\s<>]*)?)\1''',quoted,rewritten)
 def initial_html(source_text,source,target,descriptor):
  doc=html.fromstring(source_text)
  for node in doc.xpath('//link'):

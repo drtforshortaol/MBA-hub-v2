@@ -1,4 +1,4 @@
-import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';import {preparePublicReview} from './public-review.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');process.chdir(root);
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 export function validate({apps,categories,media,knowledge,exists,interfaces={interfaces:[{id:'navigation',version:'1.0.0',owner:'platform'}]}}){
@@ -35,10 +35,11 @@ export function build(){
  for(const environment of environments){
   const out=`dist/${environment}`;fs.rmSync(out,{recursive:true,force:true});fs.cpSync('src',out,{recursive:true});
   if(environment!=='developer')fs.rmSync(`${out}/core/developer.js`,{force:true});
-  const registry={schema_version:1,version:platform.version,environment,categories,apps};
+  const bundleApps=environment==='developer'?apps:preparePublicReview(out,apps);
+  const registry={schema_version:1,version:platform.version,environment,categories,apps:bundleApps};
   const put=(p,data)=>fs.writeFileSync(`${out}/${p}`,JSON.stringify(data,null,2));put('registry.json',registry);
   put('environment.json',{environment,version:platform.version,stage:platform.releaseStage,namespace:`mba-v2-${environment}`,developer:environment==='developer'});
-  const facts=new Map(knowledge.records.map(r=>[r.id,r]));put('search-index.json',apps.flatMap(a=>{const owned=new Map(a.sections.map(s=>[s.id,s]));for(const id of a.knowledge)for(const section of facts.get(id)?.sections||[])owned.set(section.id,section);return [{app_id:a.app_id,title:a.title,text:a.title,url:a.entry_point},...[...owned.values()].map(s=>({app_id:a.app_id,title:`${a.title} · ${s.title}`,text:[s.title,s.text,...s.aliases||[]].join(' '),url:a.entry_point+(s.query?'?'+new URLSearchParams(s.query).toString():`#${s.id}`)}))];}));
+  const facts=new Map(knowledge.records.map(r=>[r.id,r]));put('search-index.json',bundleApps.flatMap(a=>{const owned=new Map(a.sections.map(s=>[s.id,s]));for(const id of a.knowledge)for(const section of facts.get(id)?.sections||[])owned.set(section.id,section);return [{app_id:a.app_id,title:a.title,text:a.title,url:a.entry_point},...[...owned.values()].map(s=>({app_id:a.app_id,title:`${a.title} · ${s.title}`,text:[s.title,s.text,...s.aliases||[]].join(' '),url:a.entry_point+(s.query?'?'+new URLSearchParams(s.query).toString():`#${s.id}`)}))];}));
   put('manifest.webmanifest',{id:'./',name:`MBA Hub V2 ${environment}`,short_name:'MBA V2',start_url:'./index.html',scope:'./',display:'standalone',theme_color:'#123e50',background_color:'#f4f7f7',icons:[{src:'icon.svg',sizes:'any',type:'image/svg+xml',purpose:'any'}]});
   // Diagnostics code and maintenance handlers are physically absent from tester artifacts.
   if(environment==='developer')fs.appendFileSync(`${out}/core/hub.js`,"\nimport('./developer.js');\n");

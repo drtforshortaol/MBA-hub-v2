@@ -30,13 +30,13 @@
     {
       "id": "Floor-reminder",
       "title": "Floor reminder",
-      "text": "Floor reminder \n       Relate → Reveal → Story → Engage → Whole → Adjust.  Start with what the visitor notices, then connect the meaning.",
+      "text": "Floor reminder \n       Relate \u2192 Reveal \u2192 Story \u2192 Engage \u2192 Whole \u2192 Adjust.  Start with what the visitor notices, then connect the meaning.",
       "aliases": []
     },
     {
       "id": "relate",
       "title": "RELATE",
-      "text": "relate RELATE Start with visitors' reactions Begin with what guests see, feel, notice, and wonder — not with what the volunteer wants to teach first. Interpretation begins with the visitor's own reaction. This validates curiosity and helps visitors feel immediately connected to the exhibit. Try saying What drew your eye first? That's a great observation — I noticed that too! What does this remind you of? Notice first, teach second. visitor engagement questions observations conversation starter",
+      "text": "relate RELATE Start with visitors' reactions Begin with what guests see, feel, notice, and wonder \u2014 not with what the volunteer wants to teach first. Interpretation begins with the visitor's own reaction. This validates curiosity and helps visitors feel immediately connected to the exhibit. Try saying What drew your eye first? That's a great observation \u2014 I noticed that too! What does this remind you of? Notice first, teach second. visitor engagement questions observations conversation starter",
       "aliases": [
         "visitor engagement",
         "questions",
@@ -47,7 +47,7 @@
     {
       "id": "reveal",
       "title": "REVEAL",
-      "text": "reveal REVEAL Connect info to the visitor's reaction — bring the wow Connect information to what the guest already noticed so the meaning lands. Instead of giving random facts, connect information to the guest's initial reaction. This is where the aha moment happens. Example exchange Visitor The kelp looks like it's dancing. Volunteer It really does! Those waves aren't just pretty — they help the kelp get the nutrients it needs. Tie the fact to the visitor's observation. aha moment kelp forest meaning facts",
+      "text": "reveal REVEAL Connect info to the visitor's reaction \u2014 bring the wow Connect information to what the guest already noticed so the meaning lands. Instead of giving random facts, connect information to the guest's initial reaction. This is where the aha moment happens. Example exchange Visitor The kelp looks like it's dancing. Volunteer It really does! Those waves aren't just pretty \u2014 they help the kelp get the nutrients it needs. Tie the fact to the visitor's observation. aha moment kelp forest meaning facts",
       "aliases": [
         "aha moment",
         "kelp forest",
@@ -58,7 +58,7 @@
     {
       "id": "stories",
       "title": "STORIES",
-      "text": "stories STORIES Inform, entertain, and enlighten Use stories, comparisons, and memorable images so visitors care and remember. Stories are how humans make meaning. They create emotional connections and help guests remember what they learned. Interpretation is an art — use it. Examples Giant kelp can grow two feet a day. Imagine if your houseplants did that! Sea otters are like the forest keepers — they protect the kelp by eating urchins. Make the idea memorable. storytelling sea otters kelp forest memory metaphor",
+      "text": "stories STORIES Inform, entertain, and enlighten Use stories, comparisons, and memorable images so visitors care and remember. Stories are how humans make meaning. They create emotional connections and help guests remember what they learned. Interpretation is an art \u2014 use it. Examples Giant kelp can grow two feet a day. Imagine if your houseplants did that! Sea otters are like the forest keepers \u2014 they protect the kelp by eating urchins. Make the idea memorable. storytelling sea otters kelp forest memory metaphor",
       "aliases": [
         "storytelling",
         "sea otters",
@@ -81,7 +81,7 @@
     {
       "id": "whole",
       "title": "WHOLE",
-      "text": "whole WHOLE Present a whole rather than a part Help guests see systems, relationships, and the full picture rather than isolated facts. Help guests see the full picture — connections, systems, relationships — rather than isolated facts. This deepens understanding and sparks wonder about how everything fits together. Examples What you're seeing here is a whole forest under water: animals, plants, water movement, light — they all depend on each other. Every species in the kelp forest helps keep the ecosystem in balance. If one suddenly went away, the entire forest would be affected. Connect the parts into a system. ecosystem kelp forest systems connections balance",
+      "text": "whole WHOLE Present a whole rather than a part Help guests see systems, relationships, and the full picture rather than isolated facts. Help guests see the full picture \u2014 connections, systems, relationships \u2014 rather than isolated facts. This deepens understanding and sparks wonder about how everything fits together. Examples What you're seeing here is a whole forest under water: animals, plants, water movement, light \u2014 they all depend on each other. Every species in the kelp forest helps keep the ecosystem in balance. If one suddenly went away, the entire forest would be affected. Connect the parts into a system. ecosystem kelp forest systems connections balance",
       "aliases": [
         "ecosystem",
         "kelp forest",

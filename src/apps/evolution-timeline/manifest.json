@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "app_id": "evolution-timeline",
-  "title": "Evolution Timeline — From Universe to Us",
+  "title": "Evolution Timeline \u2014 From Universe to Us",
   "category": "concepts",
   "type": "interactive",
   "version": "2.0.0-alpha.6",
@@ -64,7 +64,7 @@
     },
     {
       "id": "evo-moon-forms-giant-impact",
-      "title": "Moon forms — giant impact",
+      "title": "Moon forms \u2014 giant impact",
       "text": "",
       "aliases": []
     },
@@ -88,13 +88,13 @@
     },
     {
       "id": "evo-luca-last-universal-common-ancestor",
-      "title": "LUCA — Last Universal Common Ancestor",
+      "title": "LUCA \u2014 Last Universal Common Ancestor",
       "text": "",
       "aliases": []
     },
     {
       "id": "evo-the-great-split-bacteria-and-archaea",
-      "title": "The Great Split — Bacteria and Archaea",
+      "title": "The Great Split \u2014 Bacteria and Archaea",
       "text": "",
       "aliases": []
     },
@@ -106,13 +106,13 @@
     },
     {
       "id": "evo-great-oxidation-event-oxygen-changes-the-planet",
-      "title": "Great Oxidation Event — oxygen changes the planet",
+      "title": "Great Oxidation Event \u2014 oxygen changes the planet",
       "text": "",
       "aliases": []
     },
     {
       "id": "evo-aerobic-alphaproteobacteria-extract-stored-energy",
-      "title": "Aerobic Alphaproteobacteria — extract stored energy",
+      "title": "Aerobic Alphaproteobacteria \u2014 extract stored energy",
       "text": "",
       "aliases": []
     },
@@ -124,13 +124,13 @@
     },
     {
       "id": "evo-mitochondrial-endosymbiosis-the-energy-partnership",
-      "title": "Mitochondrial endosymbiosis — the energy partnership",
+      "title": "Mitochondrial endosymbiosis \u2014 the energy partnership",
       "text": "",
       "aliases": []
     },
     {
       "id": "evo-leca-last-eukaryotic-common-ancestor",
-      "title": "LECA — Last Eukaryotic Common Ancestor",
+      "title": "LECA \u2014 Last Eukaryotic Common Ancestor",
       "text": "",
       "aliases": []
     },

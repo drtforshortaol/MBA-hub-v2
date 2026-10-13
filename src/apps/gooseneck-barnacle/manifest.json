@@ -34,7 +34,7 @@
     {
       "id": "Quick-Facts",
       "title": "Quick Facts",
-      "text": "Quick Facts Length:  Up to 8 in Diet:  Plankton Predators:  Glaucous-winged gull, ochre star, six-rayed stars ( Leptasterias  sp.), black oystercatchers and humans Habitat:  Intertidal rocky shore Depth:  0–100 ft Range:  Alaska to Baja California, Mexico Lifespan:  Up to 20 years Conservation:  Not Evaluated",
+      "text": "Quick Facts Length:  Up to 8 in Diet:  Plankton Predators:  Glaucous-winged gull, ochre star, six-rayed stars ( Leptasterias  sp.), black oystercatchers and humans Habitat:  Intertidal rocky shore Depth:  0\u2013100 ft Range:  Alaska to Baja California, Mexico Lifespan:  Up to 20 years Conservation:  Not Evaluated",
       "aliases": []
     },
     {
@@ -82,7 +82,7 @@
     {
       "id": "Guide-Talking-Points",
       "title": "Guide Talking Points",
-      "text": "Guide Talking Points Is it really a crustacean? Yes. Despite its unusual adult form, it is a crustacean and has free-swimming larval stages. What are the feathery structures? They are cirri—modified appendages used to filter food from moving water. Why are they packed together? Dense groups help them occupy favorable wave-swept habitat and keep potential reproductive partners close. How do they stay attached? Cement glands and a cement duct at the base of the stalk produce the attachment system used during settlement. Can people eat them? Yes. Gooseneck barnacles have a long history as food and remain commercially harvested in some regions.",
+      "text": "Guide Talking Points Is it really a crustacean? Yes. Despite its unusual adult form, it is a crustacean and has free-swimming larval stages. What are the feathery structures? They are cirri\u2014modified appendages used to filter food from moving water. Why are they packed together? Dense groups help them occupy favorable wave-swept habitat and keep potential reproductive partners close. How do they stay attached? Cement glands and a cement duct at the base of the stalk produce the attachment system used during settlement. Can people eat them? Yes. Gooseneck barnacles have a long history as food and remain commercially harvested in some regions.",
       "aliases": []
     },
     {
@@ -94,7 +94,7 @@
     {
       "id": "Install-Offline-Help",
       "title": "Install / Offline Help",
-      "text": "Install / Offline Help iPhone/iPad:  Safari → Share → Add to Home Screen. Android:  Chrome → menu → Add to Home screen / Install app. Clear offline cache",
+      "text": "Install / Offline Help iPhone/iPad:  Safari \u2192 Share \u2192 Add to Home Screen. Android:  Chrome \u2192 menu \u2192 Add to Home screen / Install app. Clear offline cache",
       "aliases": []
     }
   ],

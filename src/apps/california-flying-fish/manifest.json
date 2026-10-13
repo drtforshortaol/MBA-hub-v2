@@ -31,25 +31,25 @@
     {
       "id": "Quick-Facts",
       "title": "Quick Facts",
-      "text": "Quick Facts Length Mixed claims: 16–19 in maximum Diet Zooplankton Predators Pinnipeds, dolphins, seabirds, larger fish, large squid Depth Typically 0–35 ft; source says never below the photic zone Habitat Nearshore open waters; eggs along rocky shores near kelp forests Status Least Concern (IUCN), per source The source describes this as the California subspecies of Bennett’s flying fish,  Cheilopogon pinnatibarbatus , and the largest of the flying fishes. It connects increasing California sightings with warmer water, marine heatwaves and El Niño events. A generic body plan for the Cheilopogon fishes.",
+      "text": "Quick Facts Length Mixed claims: 16\u201319 in maximum Diet Zooplankton Predators Pinnipeds, dolphins, seabirds, larger fish, large squid Depth Typically 0\u201335 ft; source says never below the photic zone Habitat Nearshore open waters; eggs along rocky shores near kelp forests Status Least Concern (IUCN), per source The source describes this as the California subspecies of Bennett\u2019s flying fish,  Cheilopogon pinnatibarbatus , and the largest of the flying fishes. It connects increasing California sightings with warmer water, marine heatwaves and El Ni\u00f1o events. A generic body plan for the Cheilopogon fishes.",
       "aliases": []
     },
     {
       "id": "Life-Cycle-Reproduction",
       "title": "Life Cycle & Reproduction",
-      "text": "Life Cycle & Reproduction The source describes a simple oviparous life cycle: eggs, larval development, fry and mature adults. Females use sticky filaments to attach eggs to substrate and macroalgae, often around kelp beds. The source does not specify clutch size for this fish, but notes related species commonly lay roughly 20,000–50,000 eggs. Juveniles may take a year or two to reach maturity.",
+      "text": "Life Cycle & Reproduction The source describes a simple oviparous life cycle: eggs, larval development, fry and mature adults. Females use sticky filaments to attach eggs to substrate and macroalgae, often around kelp beds. The source does not specify clutch size for this fish, but notes related species commonly lay roughly 20,000\u201350,000 eggs. Juveniles may take a year or two to reach maturity.",
       "aliases": []
     },
     {
       "id": "Gliding-Not-True-Flight",
-      "title": "Gliding — Not True Flight",
-      "text": "Gliding — Not True Flight Modified pectoral fins function as airfoils. The source presents predator evasion as a leading explanation for the adaptation and describes a fight-or-glide response. It reports that sufficiently warm water—around 68°F—helps the fish build launch speed, with movement around 22 mph and sometimes faster under favorable wind conditions. Flying fish use speed, enlarged fins and tail-assisted taxiing to extend a glide.",
+      "title": "Gliding \u2014 Not True Flight",
+      "text": "Gliding \u2014 Not True Flight Modified pectoral fins function as airfoils. The source presents predator evasion as a leading explanation for the adaptation and describes a fight-or-glide response. It reports that sufficiently warm water\u2014around 68\u00b0F\u2014helps the fish build launch speed, with movement around 22 mph and sometimes faster under favorable wind conditions. Flying fish use speed, enlarged fins and tail-assisted taxiing to extend a glide.",
       "aliases": []
     },
     {
       "id": "Launch-Taxi-Glide-Re-entry",
       "title": "Launch, Taxi, Glide & Re-entry",
-      "text": "Launch, Taxi, Glide & Re-entry In the water the pectoral fins remain tucked against the body to reduce drag. For launch, the fish accelerates, often uses a swell and its associated lift, then taxis with the tail while the body is airborne. It eventually loses momentum or ends the glide and returns to the ocean. The source compares its relatively high wing/fin loading with birds such as cormorants. Swimming → leaping and fin deployment → taxiing → gliding → water re-entry.",
+      "text": "Launch, Taxi, Glide & Re-entry In the water the pectoral fins remain tucked against the body to reduce drag. For launch, the fish accelerates, often uses a swell and its associated lift, then taxis with the tail while the body is airborne. It eventually loses momentum or ends the glide and returns to the ocean. The source compares its relatively high wing/fin loading with birds such as cormorants. Swimming \u2192 leaping and fin deployment \u2192 taxiing \u2192 gliding \u2192 water re-entry.",
       "aliases": []
     },
     {
@@ -73,13 +73,13 @@
     {
       "id": "Fisheries-Conservation",
       "title": "Fisheries & Conservation",
-      "text": "Fisheries & Conservation The source reports no large-scale commercial fishery for California flying fish, though they may be caught as bait for large pelagic fishes in California. Bennett’s flying fish and other flying fishes are harvested elsewhere. The update states that no flying-fish species is currently known to be endangered because of fishery pressure.",
+      "text": "Fisheries & Conservation The source reports no large-scale commercial fishery for California flying fish, though they may be caught as bait for large pelagic fishes in California. Bennett\u2019s flying fish and other flying fishes are harvested elsewhere. The update states that no flying-fish species is currently known to be endangered because of fishery pressure.",
       "aliases": []
     },
     {
       "id": "References-Further-Reading-from-Source",
       "title": "References / Further Reading from Source",
-      "text": "References / Further Reading from Source \n FishBase — Cheilopogon pinnatibarbatus IUCN Red List — source links supplied for flying fishes FishBase — Cheilopogon californicus California Marine Species Portal — smallhead flyingfish Smithsonian Tropical Research Institute fish database Current Biology (2021) — flying-fish fin development research Springer article supplied in source Journal of Experimental Biology — aerodynamic characteristics of flying fish Integrative and Comparative Biology article supplied in source PMC article supplied in source",
+      "text": "References / Further Reading from Source \n FishBase \u2014 Cheilopogon pinnatibarbatus IUCN Red List \u2014 source links supplied for flying fishes FishBase \u2014 Cheilopogon californicus California Marine Species Portal \u2014 smallhead flyingfish Smithsonian Tropical Research Institute fish database Current Biology (2021) \u2014 flying-fish fin development research Springer article supplied in source Journal of Experimental Biology \u2014 aerodynamic characteristics of flying fish Integrative and Comparative Biology article supplied in source PMC article supplied in source",
       "aliases": []
     }
   ],

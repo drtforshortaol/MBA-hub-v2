@@ -36,7 +36,7 @@
     {
       "id": "Book-of-North-American-Birds",
       "title": "Book of North American Birds",
-      "text": "Book of North American Birds Audubon Society MJ Extensive field guide of North America’s bird species  Birds",
+      "text": "Book of North American Birds Audubon Society MJ Extensive field guide of North America\u2019s bird species  Birds",
       "aliases": [
         "Birds"
       ]
@@ -61,7 +61,7 @@
     {
       "id": "Half-Mile-Down",
       "title": "Half Mile Down",
-      "text": "Half Mile Down W. Beebe Marilyn Stories from the 1930’s by William Beebe of his exploration of the sea with some pictures & illustrations  General Natural History",
+      "text": "Half Mile Down W. Beebe Marilyn Stories from the 1930\u2019s by William Beebe of his exploration of the sea with some pictures & illustrations  General Natural History",
       "aliases": [
         "General Natural History"
       ]
@@ -133,8 +133,8 @@
     },
     {
       "id": "Swampwalker-s-Journal",
-      "title": "Swampwalker’s Journal",
-      "text": "Swampwalker’s Journal D. M. Carroll MJ Exploring wetland habitats & the species that live in them  General Natural History",
+      "title": "Swampwalker\u2019s Journal",
+      "text": "Swampwalker\u2019s Journal D. M. Carroll MJ Exploring wetland habitats & the species that live in them  General Natural History",
       "aliases": [
         "General Natural History"
       ]
@@ -285,7 +285,7 @@
     {
       "id": "Monterey-Bay",
       "title": "Monterey Bay",
-      "text": "Monterey Bay L. Hatton Sallie A fictional story following characters during Steinbeck’s Cannery Row  Monterey Bay",
+      "text": "Monterey Bay L. Hatton Sallie A fictional story following characters during Steinbeck\u2019s Cannery Row  Monterey Bay",
       "aliases": [
         "Monterey Bay"
       ]
@@ -524,7 +524,7 @@
     {
       "id": "Brilliant-Abyss",
       "title": "Brilliant Abyss",
-      "text": "Brilliant Abyss H. Scales MJ Stories of the author’s time as a deep-sea researcher as well as her opinions on the impacts of deep-sea mining & sustainable fisheries  Fish & Sharks Deep Sea & Open Ocean Conservation & Human Impact",
+      "text": "Brilliant Abyss H. Scales MJ Stories of the author\u2019s time as a deep-sea researcher as well as her opinions on the impacts of deep-sea mining & sustainable fisheries  Fish & Sharks Deep Sea & Open Ocean Conservation & Human Impact",
       "aliases": [
         "Fish & Sharks",
         "Deep Sea & Open Ocean",
@@ -585,7 +585,7 @@
     {
       "id": "In-the-Shadow-of-the-Cypress",
       "title": "In the Shadow of the Cypress",
-      "text": "In the Shadow of the Cypress T. Steinbeck Sallie A fictional story about the Chinese community of 1940’s Monterey  Monterey Bay",
+      "text": "In the Shadow of the Cypress T. Steinbeck Sallie A fictional story about the Chinese community of 1940\u2019s Monterey  Monterey Bay",
       "aliases": [
         "Monterey Bay"
       ]
@@ -593,7 +593,7 @@
     {
       "id": "The-Book-of-Eels",
       "title": "The Book of Eels",
-      "text": "The Book of Eels P. Svensson Marilyn A series of stories that explore eel natural history & the relationships they’ve had with humans throughout history  Fish & Sharks",
+      "text": "The Book of Eels P. Svensson Marilyn A series of stories that explore eel natural history & the relationships they\u2019ve had with humans throughout history  Fish & Sharks",
       "aliases": [
         "Fish & Sharks"
       ]
@@ -618,7 +618,7 @@
     {
       "id": "The-Walking-Whales-From-Land-to-Water-in-Eight-Million-Years",
       "title": "The Walking Whales: From Land to Water in Eight Million Years",
-      "text": "The Walking Whales: From Land to Water in Eight Million Years H. Thewissen MJ A paleontologist’s journey to studying whale fossils & modern whales to see how they evolved from the land into the ocean  Marine Mammals Evolution & Adaptations",
+      "text": "The Walking Whales: From Land to Water in Eight Million Years H. Thewissen MJ A paleontologist\u2019s journey to studying whale fossils & modern whales to see how they evolved from the land into the ocean  Marine Mammals Evolution & Adaptations",
       "aliases": [
         "Marine Mammals",
         "Evolution & Adaptations"
@@ -636,7 +636,7 @@
     {
       "id": "Monterey-s-Waterfront",
       "title": "Monterey's Waterfront",
-      "text": "Monterey's Waterfront T. Thomas & D. Copeland MJ A pictorial history of Monterey up until the 1950’s  Monterey Bay",
+      "text": "Monterey's Waterfront T. Thomas & D. Copeland MJ A pictorial history of Monterey up until the 1950\u2019s  Monterey Bay",
       "aliases": [
         "Monterey Bay"
       ]
@@ -661,7 +661,7 @@
     {
       "id": "Restless-Creatures",
       "title": "Restless Creatures",
-      "text": "Restless Creatures M. Wilkinson Marilyn An exploration of the 4 billion year history of “movement”, namely the evolution of life  Evolution & Adaptations",
+      "text": "Restless Creatures M. Wilkinson Marilyn An exploration of the 4 billion year history of \u201cmovement\u201d, namely the evolution of life  Evolution & Adaptations",
       "aliases": [
         "Evolution & Adaptations"
       ]

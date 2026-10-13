@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "app_id": "hopkins-rose-nudibranch",
-  "title": "Hopkins’ Rose Nudibranch",
+  "title": "Hopkins\u2019 Rose Nudibranch",
   "category": "animals",
   "type": "species",
   "version": "2.0.0-alpha.6",
@@ -38,25 +38,25 @@
     {
       "id": "Quick-guide",
       "title": "Quick guide",
-      "text": "Quick guide Hopkins’ rose is a vividly pink dorid nudibranch, often seen on rocky shores of the California coast. Its northward appearances during unusually warm ocean periods make it a useful species for discussing changing marine conditions. Size:  2–3 cm •  Food:  red bryozoans •  Habitat:  rocky intertidal •  Scientific name:   Ceratodoris rosacea .",
+      "text": "Quick guide Hopkins\u2019 rose is a vividly pink dorid nudibranch, often seen on rocky shores of the California coast. Its northward appearances during unusually warm ocean periods make it a useful species for discussing changing marine conditions. Size:  2\u20133 cm \u2022  Food:  red bryozoans \u2022  Habitat:  rocky intertidal \u2022  Scientific name:   Ceratodoris rosacea .",
       "aliases": []
     },
     {
       "id": "Life-cycle-and-pink-eggs",
       "title": "Life cycle and pink eggs",
-      "text": "Life cycle and pink eggs Pink egg ribbons hatch into swimming veliger larvae, which settle and metamorphose into shell-less juveniles. Adults are hermaphrodites. Egg masses — iNaturalist. Life cycle — Zoe Lawrence.",
+      "text": "Life cycle and pink eggs Pink egg ribbons hatch into swimming veliger larvae, which settle and metamorphose into shell-less juveniles. Adults are hermaphrodites. Egg masses \u2014 iNaturalist. Life cycle \u2014 Zoe Lawrence.",
       "aliases": []
     },
     {
       "id": "Dorid-versus-aeolid",
       "title": "Dorid versus aeolid",
-      "text": "Dorid versus aeolid Although its papillae resemble aeolid cerata, Hopkins’ rose is a dorid with branchial gills near its anus. The gills can be hidden among papillae. Comparison — Kitty Turner. Important correction: this image incorrectly labels Hopkins’ rose as an aeolid. Branchial gills — Robin Agarwal.",
+      "text": "Dorid versus aeolid Although its papillae resemble aeolid cerata, Hopkins\u2019 rose is a dorid with branchial gills near its anus. The gills can be hidden among papillae. Comparison \u2014 Kitty Turner. Important correction: this image incorrectly labels Hopkins\u2019 rose as an aeolid. Branchial gills \u2014 Robin Agarwal.",
       "aliases": []
     },
     {
       "id": "Rhinophores-and-camouflage",
       "title": "Rhinophores and camouflage",
-      "text": "Rhinophores and camouflage Rhinophores are sensory structures that detect chemical cues. They can be difficult to spot among the long papillae. Rhinophores — Jerry Kirkhart. Pale animal showing gills and rhinophores — iNaturalist.",
+      "text": "Rhinophores and camouflage Rhinophores are sensory structures that detect chemical cues. They can be difficult to spot among the long papillae. Rhinophores \u2014 Jerry Kirkhart. Pale animal showing gills and rhinophores \u2014 iNaturalist.",
       "aliases": []
     },
     {
@@ -68,7 +68,7 @@
     {
       "id": "Warm-water-range-shifts",
       "title": "Warm-water range shifts",
-      "text": "Warm-water range shifts Warm-water episodes, including the 2015–16 El Niño and marine heatwave, coincided with unusual sightings far north of the species’ usual Southern California range.",
+      "text": "Warm-water range shifts Warm-water episodes, including the 2015\u201316 El Ni\u00f1o and marine heatwave, coincided with unusual sightings far north of the species\u2019 usual Southern California range.",
       "aliases": []
     }
   ],
