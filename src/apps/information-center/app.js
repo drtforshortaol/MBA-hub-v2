@@ -35,26 +35,35 @@ function highlight(text) {
   return safe.replace(new RegExp(`(${escapedTerm})`, 'gi'), '<mark>$1</mark>');
 }
 
+// Link complete North American telephone numbers; keep short internal extensions as text.
+function phoneLinks(text) {
+  return String(text ?? '').split(/(\(?\d{3}\)?[ .-]?\d{3}[ .-]?\d{4})/g).map(part => {
+    const digits=part.replace(/\D/g,'');
+    return /^\d{10}$/.test(digits)
+      ? '<a class="tap-phone" href="tel:+1'+digits+'" aria-label="Call '+esc(part)+'">'+highlight(part)+'</a>'
+      : highlight(part);
+  }).join('');
+}
 function renderBlock(block) {
   if (block.type === 'intro') return '<p class="intro-text">' + highlight(block.text) + '</p>';
   if (block.type === 'subheading') return '<p class="sub-heading">' + highlight(block.text) + '</p>';
   if (block.type === 'list') {
     let html = '';
     if (block.heading) html += '<p class="list-label">' + highlight(block.heading) + '</p>';
-    html += '<ul class="bullet-list">' + (block.items || []).map(i => '<li>' + highlight(i) + '</li>').join('') + '</ul>';
+    html += '<ul class="bullet-list">' + (block.items || []).map(i => '<li>' + phoneLinks(i) + '</li>').join('') + '</ul>';
     return html;
   }
   if (block.type === 'numbered') {
     let html = '';
     if (block.heading) html += '<p class="list-label">' + highlight(block.heading) + '</p>';
-    html += '<ol class="numbered-list">' + (block.items || []).map(i => '<li>' + highlight(i) + '</li>').join('') + '</ol>';
+    html += '<ol class="numbered-list">' + (block.items || []).map(i => '<li>' + phoneLinks(i) + '</li>').join('') + '</ol>';
     return html;
   }
   if (block.type === 'quickref') {
     return '<div class="quickref-grid">' + (block.cards || []).map(c =>
       '<div class="qr-card">' +
         '<div class="qr-label">' + highlight(c.label) + '</div>' +
-        '<div class="qr-value">' + highlight(c.value) + '</div>' +
+        '<div class="qr-value">' + phoneLinks(c.value) + '</div>' +
         '<div class="qr-note">' + highlight(c.note) + '</div>' +
       '</div>'
     ).join('') + '</div>';
