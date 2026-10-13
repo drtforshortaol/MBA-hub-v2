@@ -10,6 +10,6 @@ export function preparePublicReview(out,input){
  const apps=structuredClone(input);
  // Existing V1 publication approval carries forward for unchanged migrated content.
  // This is separate from app functional testing and release readiness.
- for(const app of apps){if(app.source_version==='1.0' && app.publication_review==='pending')app.publication_review='inherited-v1-approved';}
+ for(const app of apps){if(app.source_repository && app.publication_review==='pending')app.publication_review='inherited-v1-approved';}
  return apps;
 }
