@@ -101,17 +101,96 @@ function filteredSections() {
   return sections.filter(section => sectionText(section).includes(term));
 }
 
+function appendHighlighted(parent, value) {
+  const text = String(value ?? '');
+  const term = searchTerm.trim();
+  if (!term) { parent.append(document.createTextNode(text)); return; }
+  const lower = text.toLowerCase();
+  const needle = term.toLowerCase();
+  let cursor = 0, index;
+  while ((index = lower.indexOf(needle, cursor)) !== -1) {
+    parent.append(document.createTextNode(text.slice(cursor, index)));
+    const mark = document.createElement('mark');
+    mark.textContent = text.slice(index, index + term.length);
+    parent.append(mark);
+    cursor = index + term.length;
+  }
+  parent.append(document.createTextNode(text.slice(cursor)));
+}
+
+function element(tag, className, parent, value) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (value !== undefined) appendHighlighted(node, value);
+  if (parent) parent.append(node);
+  return node;
+}
+
+function appendPhones(parent, value) {
+  String(value ?? '').split(/(\\(?\\d{3}\\)?[ .-]?\\d{3}[ .-]?\\d{4})/g).forEach(part => {
+    const digits = part.replace(/\\D/g, '');
+    if (/^\\d{10}$/.test(digits)) {
+      const link = element('a', 'tap-phone', parent, part);
+      link.href = 'tel:+1' + digits;
+      link.setAttribute('aria-label', 'Call ' + part);
+    } else appendHighlighted(parent, part);
+  });
+}
+
+function appendBlock(parent, block) {
+  if (block.type === 'intro' || block.type === 'subheading') {
+    element('p', block.type === 'intro' ? 'intro-text' : 'sub-heading', parent, block.text);
+  } else if (block.type === 'list' || block.type === 'numbered') {
+    if (block.heading) element('p', 'list-label', parent, block.heading);
+    const list = element(block.type === 'list' ? 'ul' : 'ol', block.type === 'list' ? 'bullet-list' : 'numbered-list', parent);
+    (block.items || []).forEach(item => appendPhones(element('li', '', list), item));
+  } else if (block.type === 'quickref') {
+    const grid = element('div', 'quickref-grid', parent);
+    (block.cards || []).forEach(card => {
+      const tile = element('div', 'qr-card', grid);
+      element('div', 'qr-label', tile, card.label);
+      appendPhones(element('div', 'qr-value', tile), card.value);
+      element('div', 'qr-note', tile, card.note);
+    });
+  } else if (block.type === 'alertlist') {
+    const list = element('ul', 'alert-list', parent);
+    (block.items || []).forEach(item => element('li', '', list, item));
+  }
+}
+
+function appendSection(parent, section) {
+  const isOpen = !!openState[section.id];
+  const article = element('article', 'section-card' + (section.emergency ? ' emergency' : ''), parent);
+  article.id = 'card-' + section.id;
+  const header = element('div', 'section-header' + (isOpen ? ' open' : ''), article);
+  header.id = 'header-' + section.id;
+  header.setAttribute('role', 'button');
+  header.tabIndex = 0;
+  header.setAttribute('aria-expanded', String(isOpen));
+  header.dataset.sectionId = String(section.id);
+  const left = element('div', 'section-left', header);
+  element('span', 'section-num', left, String(section.id).padStart(2, '0'));
+  element('span', 'section-icon', left, section.icon);
+  element('span', 'section-title', left, section.title);
+  const chevron = element('span', 'chevron' + (isOpen ? ' open' : ''), header);
+  chevron.id = 'chevron-' + section.id;
+  chevron.textContent = '▼';
+  const body = element('div', 'section-body', article);
+  body.id = 'body-' + section.id;
+  body.style.display = isOpen ? 'block' : 'none';
+  (section.content || []).forEach(block => appendBlock(body, block));
+}
+
 function renderAll() {
   const visibleSections = filteredSections();
   const container = document.getElementById('sectionsContainer');
   if (!container) return;
-
+  container.replaceChildren();
   if (!visibleSections.length) {
-    container.innerHTML = '<div class="no-results">No matching handbook sections found.</div>';
+    element('div', 'no-results', container, 'No matching handbook sections found.');
   } else {
-    container.innerHTML = visibleSections.map(renderSection).join('');
+    visibleSections.forEach(section => appendSection(container, section));
   }
-
   wireSectionHeaders();
   updateToggleBtn();
 }
