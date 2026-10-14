@@ -51,3 +51,7 @@ test('timeline references resolve, while scientific approval remains pending', (
   assert.equal(triage.events.filter(x => !x.candidateId).length, 20);
   assert.equal(registry.scientificReview.status, 'pending');
 });
+
+test('source timeline title for event 23 is preserved verbatim', () => {
+  assert.equal(triage.events.find(x => x.event === 23)?.title, 'Hominin lineage diverges from the chimpanzee/bonobo lineage');
+});
