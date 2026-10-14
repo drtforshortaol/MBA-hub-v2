@@ -1,0 +1,1450 @@
+{
+  "schemaVersion": "0.1-draft",
+  "status": "legacy-reconciliation-not-canonical",
+  "sourceCommit": "5ce8b43c53f7136d3efea0c654a0864e43828852",
+  "notes": [
+    "IDs are legacy source-order-derived; freeze mapping before restructuring.",
+    "Key equality establishes structural linkage, not scientific equivalence.",
+    "Do not regenerate identifiers from object or DOM order."
+  ],
+  "concepts": [
+    {
+      "id": "EV-0100",
+      "key": "EV-0100"
+    },
+    {
+      "id": "EV-0101",
+      "key": "EV-0101"
+    },
+    {
+      "id": "EV-0102",
+      "key": "EV-0102"
+    },
+    {
+      "id": "EV-0103",
+      "key": "EV-0103"
+    },
+    {
+      "id": "EV-0104",
+      "key": "EV-0104"
+    },
+    {
+      "id": "EV-0105",
+      "key": "EV-0105"
+    },
+    {
+      "id": "EV-0106",
+      "key": "EV-0106"
+    },
+    {
+      "id": "EV-0107",
+      "key": "EV-0107"
+    },
+    {
+      "id": "EV-0108",
+      "key": "EV-0108"
+    },
+    {
+      "id": "EV-0109",
+      "key": "EV-0109"
+    },
+    {
+      "id": "EV-0110",
+      "key": "EV-0110"
+    },
+    {
+      "id": "EV-0111",
+      "key": "EV-0111"
+    },
+    {
+      "id": "EV-0112",
+      "key": "EV-0112"
+    },
+    {
+      "id": "EV-0113",
+      "key": "EV-0113"
+    },
+    {
+      "id": "EV-0114",
+      "key": "EV-0114"
+    },
+    {
+      "id": "EV-0115",
+      "key": "EV-0115"
+    },
+    {
+      "id": "EV-0116",
+      "key": "EV-0116"
+    },
+    {
+      "id": "EV-0117",
+      "key": "EV-0117"
+    },
+    {
+      "id": "EV-0118",
+      "key": "EV-0118"
+    },
+    {
+      "id": "EV-0119",
+      "key": "EV-0119"
+    },
+    {
+      "id": "EV-0120",
+      "key": "EV-0120"
+    },
+    {
+      "id": "EV-0121",
+      "key": "EV-0121"
+    },
+    {
+      "id": "EV-0122",
+      "key": "EV-0122"
+    },
+    {
+      "id": "EV-0123",
+      "key": "EV-0123"
+    },
+    {
+      "id": "EV-0124",
+      "key": "EV-0124"
+    },
+    {
+      "id": "EV-0125",
+      "key": "EV-0125"
+    },
+    {
+      "id": "EV-0126",
+      "key": "EV-0126"
+    },
+    {
+      "id": "EV-0127",
+      "key": "EV-0127"
+    },
+    {
+      "id": "EV-0128",
+      "key": "EV-0128"
+    },
+    {
+      "id": "EV-0129",
+      "key": "EV-0129"
+    },
+    {
+      "id": "EV-0130",
+      "key": "EV-0130"
+    },
+    {
+      "id": "EV-0131",
+      "key": "EV-0131"
+    },
+    {
+      "id": "EV-0132",
+      "key": "EV-0132"
+    },
+    {
+      "id": "EV-0133",
+      "key": "EV-0133"
+    },
+    {
+      "id": "EV-0134",
+      "key": "EV-0134"
+    },
+    {
+      "id": "EV-0135",
+      "key": "EV-0135"
+    },
+    {
+      "id": "EV-0136",
+      "key": "EV-0136"
+    },
+    {
+      "id": "EV-0137",
+      "key": "EV-0137"
+    },
+    {
+      "id": "EV-0138",
+      "key": "EV-0138"
+    },
+    {
+      "id": "EV-0139",
+      "key": "EV-0139"
+    },
+    {
+      "id": "EV-0140",
+      "key": "EV-0140"
+    },
+    {
+      "id": "EV-0141",
+      "key": "EV-0141"
+    },
+    {
+      "id": "EV-0142",
+      "key": "EV-0142"
+    },
+    {
+      "id": "EV-0143",
+      "key": "EV-0143"
+    },
+    {
+      "id": "EV-0144",
+      "key": "EV-0144"
+    },
+    {
+      "id": "EV-0145",
+      "key": "EV-0145"
+    },
+    {
+      "id": "EV-0146",
+      "key": "EV-0146"
+    },
+    {
+      "id": "EV-0147",
+      "key": "EV-0147"
+    },
+    {
+      "id": "EV-0148",
+      "key": "EV-0148"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "TR-0100",
+      "key": "TR-0100"
+    },
+    {
+      "id": "TR-0101",
+      "key": "TR-0101"
+    },
+    {
+      "id": "TR-0102",
+      "key": "TR-0102"
+    },
+    {
+      "id": "TR-0103",
+      "key": "TR-0103"
+    },
+    {
+      "id": "TR-0104",
+      "key": "TR-0104"
+    },
+    {
+      "id": "TR-0105",
+      "key": "TR-0105"
+    },
+    {
+      "id": "TR-0106",
+      "key": "TR-0106"
+    },
+    {
+      "id": "TR-0107",
+      "key": "TR-0107"
+    },
+    {
+      "id": "TR-0108",
+      "key": "TR-0108"
+    },
+    {
+      "id": "TR-0109",
+      "key": "TR-0109"
+    },
+    {
+      "id": "TR-0110",
+      "key": "TR-0110"
+    },
+    {
+      "id": "TR-0111",
+      "key": "TR-0111"
+    },
+    {
+      "id": "TR-0112",
+      "key": "TR-0112"
+    },
+    {
+      "id": "TR-0113",
+      "key": "TR-0113"
+    },
+    {
+      "id": "TR-0114",
+      "key": "TR-0114"
+    },
+    {
+      "id": "TR-0115",
+      "key": "TR-0115"
+    },
+    {
+      "id": "TR-0116",
+      "key": "TR-0116"
+    },
+    {
+      "id": "TR-0117",
+      "key": "TR-0117"
+    },
+    {
+      "id": "TR-0118",
+      "key": "TR-0118"
+    },
+    {
+      "id": "TR-0119",
+      "key": "TR-0119"
+    },
+    {
+      "id": "TR-0120",
+      "key": "TR-0120"
+    },
+    {
+      "id": "TR-0121",
+      "key": "TR-0121"
+    },
+    {
+      "id": "TR-0122",
+      "key": "TR-0122"
+    },
+    {
+      "id": "TR-0123",
+      "key": "TR-0123"
+    },
+    {
+      "id": "TR-0124",
+      "key": "TR-0124"
+    },
+    {
+      "id": "TR-0125",
+      "key": "TR-0125"
+    },
+    {
+      "id": "TR-0126",
+      "key": "TR-0126"
+    },
+    {
+      "id": "TR-0127",
+      "key": "TR-0127"
+    },
+    {
+      "id": "TR-0128",
+      "key": "TR-0128"
+    },
+    {
+      "id": "TR-0129",
+      "key": "TR-0129"
+    },
+    {
+      "id": "TR-0130",
+      "key": "TR-0130"
+    },
+    {
+      "id": "TR-0131",
+      "key": "TR-0131"
+    },
+    {
+      "id": "TR-0132",
+      "key": "TR-0132"
+    },
+    {
+      "id": "TR-0133",
+      "key": "TR-0133"
+    },
+    {
+      "id": "TR-0134",
+      "key": "TR-0134"
+    },
+    {
+      "id": "TR-0135",
+      "key": "TR-0135"
+    },
+    {
+      "id": "TR-0136",
+      "key": "TR-0136"
+    }
+  ],
+  "visuals": [
+    {
+      "id": null,
+      "key": "VM-001",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-002",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-003",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-004",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-005",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-006",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-007",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-008",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-009",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-010",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-011",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-012",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-013",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-014",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-015",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-016",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-017",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-018",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-019",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-020",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-021",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-022",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-023",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-024",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-025",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-026",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-027",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-028",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-029",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-030",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-031",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-032",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-033",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-034",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-035",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-036",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-037",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-038",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-039",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-040",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-041",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-042",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-043",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-044",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-045",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-046",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-047",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-048",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-049",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-050",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-051",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-052",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-053",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-054",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-055",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-056",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-057",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-058",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-059",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-060",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-061",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-062",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-063",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-064",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-065",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-066",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-067",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-068",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-069",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-070",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-071",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-072",
+      "type": "unresolved"
+    },
+    {
+      "id": null,
+      "key": "VM-073",
+      "type": "unresolved"
+    }
+  ],
+  "validation": {
+    "conceptCount": 49,
+    "transitionCount": 37,
+    "visualCount": 73,
+    "linkedVisualCount": 0,
+    "unresolvedVisuals": [
+      {
+        "id": null,
+        "key": "VM-001",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-002",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-003",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-004",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-005",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-006",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-007",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-008",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-009",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-010",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-011",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-012",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-013",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-014",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-015",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-016",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-017",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-018",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-019",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-020",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-021",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-022",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-023",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-024",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-025",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-026",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-027",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-028",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-029",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-030",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-031",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-032",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-033",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-034",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-035",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-036",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-037",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-038",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-039",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-040",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-041",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-042",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-043",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-044",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-045",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-046",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-047",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-048",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-049",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-050",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-051",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-052",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-053",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-054",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-055",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-056",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-057",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-058",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-059",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-060",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-061",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-062",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-063",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-064",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-065",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-066",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-067",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-068",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-069",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-070",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-071",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-072",
+        "type": "unresolved"
+      },
+      {
+        "id": null,
+        "key": "VM-073",
+        "type": "unresolved"
+      }
+    ],
+    "recordsWithoutVisual": [
+      {
+        "id": "EV-0100",
+        "key": "EV-0100"
+      },
+      {
+        "id": "EV-0101",
+        "key": "EV-0101"
+      },
+      {
+        "id": "EV-0102",
+        "key": "EV-0102"
+      },
+      {
+        "id": "EV-0103",
+        "key": "EV-0103"
+      },
+      {
+        "id": "EV-0104",
+        "key": "EV-0104"
+      },
+      {
+        "id": "EV-0105",
+        "key": "EV-0105"
+      },
+      {
+        "id": "EV-0106",
+        "key": "EV-0106"
+      },
+      {
+        "id": "EV-0107",
+        "key": "EV-0107"
+      },
+      {
+        "id": "EV-0108",
+        "key": "EV-0108"
+      },
+      {
+        "id": "EV-0109",
+        "key": "EV-0109"
+      },
+      {
+        "id": "EV-0110",
+        "key": "EV-0110"
+      },
+      {
+        "id": "EV-0111",
+        "key": "EV-0111"
+      },
+      {
+        "id": "EV-0112",
+        "key": "EV-0112"
+      },
+      {
+        "id": "EV-0113",
+        "key": "EV-0113"
+      },
+      {
+        "id": "EV-0114",
+        "key": "EV-0114"
+      },
+      {
+        "id": "EV-0115",
+        "key": "EV-0115"
+      },
+      {
+        "id": "EV-0116",
+        "key": "EV-0116"
+      },
+      {
+        "id": "EV-0117",
+        "key": "EV-0117"
+      },
+      {
+        "id": "EV-0118",
+        "key": "EV-0118"
+      },
+      {
+        "id": "EV-0119",
+        "key": "EV-0119"
+      },
+      {
+        "id": "EV-0120",
+        "key": "EV-0120"
+      },
+      {
+        "id": "EV-0121",
+        "key": "EV-0121"
+      },
+      {
+        "id": "EV-0122",
+        "key": "EV-0122"
+      },
+      {
+        "id": "EV-0123",
+        "key": "EV-0123"
+      },
+      {
+        "id": "EV-0124",
+        "key": "EV-0124"
+      },
+      {
+        "id": "EV-0125",
+        "key": "EV-0125"
+      },
+      {
+        "id": "EV-0126",
+        "key": "EV-0126"
+      },
+      {
+        "id": "EV-0127",
+        "key": "EV-0127"
+      },
+      {
+        "id": "EV-0128",
+        "key": "EV-0128"
+      },
+      {
+        "id": "EV-0129",
+        "key": "EV-0129"
+      },
+      {
+        "id": "EV-0130",
+        "key": "EV-0130"
+      },
+      {
+        "id": "EV-0131",
+        "key": "EV-0131"
+      },
+      {
+        "id": "EV-0132",
+        "key": "EV-0132"
+      },
+      {
+        "id": "EV-0133",
+        "key": "EV-0133"
+      },
+      {
+        "id": "EV-0134",
+        "key": "EV-0134"
+      },
+      {
+        "id": "EV-0135",
+        "key": "EV-0135"
+      },
+      {
+        "id": "EV-0136",
+        "key": "EV-0136"
+      },
+      {
+        "id": "EV-0137",
+        "key": "EV-0137"
+      },
+      {
+        "id": "EV-0138",
+        "key": "EV-0138"
+      },
+      {
+        "id": "EV-0139",
+        "key": "EV-0139"
+      },
+      {
+        "id": "EV-0140",
+        "key": "EV-0140"
+      },
+      {
+        "id": "EV-0141",
+        "key": "EV-0141"
+      },
+      {
+        "id": "EV-0142",
+        "key": "EV-0142"
+      },
+      {
+        "id": "EV-0143",
+        "key": "EV-0143"
+      },
+      {
+        "id": "EV-0144",
+        "key": "EV-0144"
+      },
+      {
+        "id": "EV-0145",
+        "key": "EV-0145"
+      },
+      {
+        "id": "EV-0146",
+        "key": "EV-0146"
+      },
+      {
+        "id": "EV-0147",
+        "key": "EV-0147"
+      },
+      {
+        "id": "EV-0148",
+        "key": "EV-0148"
+      },
+      {
+        "id": "TR-0100",
+        "key": "TR-0100"
+      },
+      {
+        "id": "TR-0101",
+        "key": "TR-0101"
+      },
+      {
+        "id": "TR-0102",
+        "key": "TR-0102"
+      },
+      {
+        "id": "TR-0103",
+        "key": "TR-0103"
+      },
+      {
+        "id": "TR-0104",
+        "key": "TR-0104"
+      },
+      {
+        "id": "TR-0105",
+        "key": "TR-0105"
+      },
+      {
+        "id": "TR-0106",
+        "key": "TR-0106"
+      },
+      {
+        "id": "TR-0107",
+        "key": "TR-0107"
+      },
+      {
+        "id": "TR-0108",
+        "key": "TR-0108"
+      },
+      {
+        "id": "TR-0109",
+        "key": "TR-0109"
+      },
+      {
+        "id": "TR-0110",
+        "key": "TR-0110"
+      },
+      {
+        "id": "TR-0111",
+        "key": "TR-0111"
+      },
+      {
+        "id": "TR-0112",
+        "key": "TR-0112"
+      },
+      {
+        "id": "TR-0113",
+        "key": "TR-0113"
+      },
+      {
+        "id": "TR-0114",
+        "key": "TR-0114"
+      },
+      {
+        "id": "TR-0115",
+        "key": "TR-0115"
+      },
+      {
+        "id": "TR-0116",
+        "key": "TR-0116"
+      },
+      {
+        "id": "TR-0117",
+        "key": "TR-0117"
+      },
+      {
+        "id": "TR-0118",
+        "key": "TR-0118"
+      },
+      {
+        "id": "TR-0119",
+        "key": "TR-0119"
+      },
+      {
+        "id": "TR-0120",
+        "key": "TR-0120"
+      },
+      {
+        "id": "TR-0121",
+        "key": "TR-0121"
+      },
+      {
+        "id": "TR-0122",
+        "key": "TR-0122"
+      },
+      {
+        "id": "TR-0123",
+        "key": "TR-0123"
+      },
+      {
+        "id": "TR-0124",
+        "key": "TR-0124"
+      },
+      {
+        "id": "TR-0125",
+        "key": "TR-0125"
+      },
+      {
+        "id": "TR-0126",
+        "key": "TR-0126"
+      },
+      {
+        "id": "TR-0127",
+        "key": "TR-0127"
+      },
+      {
+        "id": "TR-0128",
+        "key": "TR-0128"
+      },
+      {
+        "id": "TR-0129",
+        "key": "TR-0129"
+      },
+      {
+        "id": "TR-0130",
+        "key": "TR-0130"
+      },
+      {
+        "id": "TR-0131",
+        "key": "TR-0131"
+      },
+      {
+        "id": "TR-0132",
+        "key": "TR-0132"
+      },
+      {
+        "id": "TR-0133",
+        "key": "TR-0133"
+      },
+      {
+        "id": "TR-0134",
+        "key": "TR-0134"
+      },
+      {
+        "id": "TR-0135",
+        "key": "TR-0135"
+      },
+      {
+        "id": "TR-0136",
+        "key": "TR-0136"
+      }
+    ],
+    "uniqueConceptIds": true,
+    "uniqueTransitionIds": true,
+    "uniqueVisualIds": true,
+    "scientificReview": "pending",
+    "ci": "not run",
+    "offline": "not run"
+  }
+}
