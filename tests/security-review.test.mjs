@@ -24,7 +24,7 @@ test('published HTML has no embedded credential-shaped assignments',()=>{
   assert.doesNotMatch(data,/-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/);
  }
 });
-test('release manifest hashes and sizes match built tester bytes',()=>{
+test('release manifest hashes and sizes match built tester bytes',async()=>{
  const release=JSON.parse(fs.readFileSync('dist/tester/release.json','utf8'));
  const crypto=await import('node:crypto');
  for(const item of release.resources){
