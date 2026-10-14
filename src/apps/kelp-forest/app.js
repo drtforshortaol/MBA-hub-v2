@@ -63,40 +63,139 @@ function init() {
   registerServiceWorker();
 }
 
+function node(tag, cls, parent, value) {
+  const el = document.createElement(tag);
+  if (cls) el.className = cls;
+  if (value !== undefined) el.textContent = String(value ?? '');
+  if (parent) parent.appendChild(el);
+  return el;
+}
+
+function safeUrl(value) {
+  if (!value || value === '#') return '#';
+  try {
+    const url = new URL(String(value), location.href);
+    return ['http:', 'https:'].includes(url.protocol) ? url.href : '#';
+  } catch { return '#'; }
+}
+
+function addParagraphs(parent, value) {
+  String(value ?? '').split(/\\n\\s*\\n/).filter(Boolean)
+    .forEach(part => node('p', '', parent, part));
+}
+
+function addCard(parent, title, body, cls = 'card') {
+  const article = node('article', cls, parent);
+  node('h3', '', article, title);
+  addParagraphs(article, body);
+}
+
+function addTags(parent, tags) {
+  const wrap = node('div', 'tags', parent);
+  (tags || []).forEach(tag => node('span', 'tag', wrap, tag));
+}
+
 function renderHero() {
-  const hero = document.getElementById("heroImage");
+  const hero = document.getElementById('heroImage');
   const image = data.images && data.images[0];
-  if (!image) {
-    hero.classList.add("hidden");
-    return;
-  }
-  hero.innerHTML = `<img src="${escapeAttr(image.src)}" alt="${escapeAttr(image.alt)}" loading="eager" />
-    <figcaption>${escapeHtml(image.caption)}</figcaption>`;
+  hero.replaceChildren();
+  if (!image) { hero.classList.add('hidden'); return; }
+  hero.classList.remove('hidden');
+  const img = node('img', '', hero);
+  img.src = safeUrl(image.src);
+  img.alt = String(image.alt ?? '');
+  img.loading = 'eager';
+  node('figcaption', '', hero, image.caption);
 }
 
 function renderNotification() {
-  const notice = document.getElementById("notificationArea");
+  const notice = document.getElementById('notificationArea');
+  notice.replaceChildren();
   if (!data.notification || !data.notification.message) {
-    notice.classList.add("hidden");
+    notice.classList.add('hidden');
     return;
   }
-  notice.innerHTML = `<p><strong>${escapeHtml(data.notification.title)}:</strong> ${escapeHtml(data.notification.message)}</p>`;
+  notice.classList.remove('hidden');
+  const p = node('p', '', notice);
+  node('strong', '', p, String(data.notification.title ?? '') + ':');
+  p.appendChild(document.createTextNode(' ' + data.notification.message));
 }
 
 function renderFaq() {
-  const faqList = document.getElementById("faqList");
-  faqList.innerHTML = data.troubleshootingFaq.map(item => qa(item.question, item.answer)).join("");
+  const faqList = document.getElementById('faqList');
+  faqList.replaceChildren();
+  (data.troubleshootingFaq || []).forEach(item => addCard(faqList, item.question, item.answer, 'qa'));
+}
+
+function renderSectionBody(parent, index) {
+  const grid = (cls = 'grid') => node('div', cls, parent);
+  switch (index) {
+    case 0:
+      (data.quickFacts || []).forEach(item => node('div', 'fact', gridHolder(), item));
+      break;
+    case 1: node('p', '', parent, data.kidsFact); break;
+    case 2: addParagraphs(parent, data.story); break;
+    case 3: {
+      const holder = grid();
+      (data.mainContent || []).forEach(item => addCard(holder, item.heading, item.body));
+      break;
+    }
+    case 4: {
+      const holder = grid();
+      (data.visitorQuestions || []).forEach(item => addCard(holder, item.question, item.answer, 'qa'));
+      break;
+    }
+    case 5: {
+      const ul = node('ul', '', parent);
+      (data.guideNotes || []).forEach(item => node('li', '', ul, item));
+      break;
+    }
+    case 6: addTags(parent, data.tags); break;
+    case 7: {
+      const holder = grid('grid two');
+      (data.relatedItems || []).forEach(item => {
+        const card = node('article', 'related-card', holder);
+        const heading = node('h3', '', card);
+        const link = node('a', '', heading, item.title);
+        link.href = safeUrl(item.url);
+        node('p', '', card, item.type);
+        addTags(card, item.tags);
+      });
+      break;
+    }
+    case 8: {
+      const holder = grid();
+      (data.references || []).forEach(item => addCard(holder, item.title, item.detail, 'reference-card'));
+      break;
+    }
+    case 9: {
+      const p1 = node('p', '', parent);
+      node('strong', '', p1, 'Version:');
+      p1.appendChild(document.createTextNode(' ' + String(data.version ?? '')));
+      const p2 = node('p', '', parent);
+      node('strong', '', p2, 'Last updated:');
+      p2.appendChild(document.createTextNode(' ' + String(data.lastUpdated ?? '')));
+      break;
+    }
+  }
+  function gridHolder() {
+    let holder = parent.firstElementChild;
+    if (!holder) holder = grid('grid two');
+    return holder;
+  }
 }
 
 function renderSections() {
-  const container = document.getElementById("sections");
-  container.innerHTML = sectionDefinitions.map((section, index) => {
-    const id = slug(section.title);
-    return `<details id="${id}" ${index < 3 ? "open" : ""} data-section>
-      <summary>${escapeHtml(section.title)}</summary>
-      <div class="section-body">${section.render()}</div>
-    </details>`;
-  }).join("");
+  const container = document.getElementById('sections');
+  container.replaceChildren();
+  sectionDefinitions.forEach((section, index) => {
+    const details = node('details', '', container);
+    details.id = slug(section.title);
+    details.dataset.section = '';
+    details.open = index < 3;
+    node('summary', '', details, section.title);
+    renderSectionBody(node('div', 'section-body', details), index);
+  });
 }
 
 function setupJump() {
@@ -139,7 +238,8 @@ async function clearAppCache() {}
 
 function showStatus(message) {
   const status = document.getElementById("cacheStatus");
-  status.innerHTML = `<p>${escapeHtml(message)}</p>`;
+  status.replaceChildren();
+  node('p', '', status, message);
   status.classList.add("active");
 }
 
