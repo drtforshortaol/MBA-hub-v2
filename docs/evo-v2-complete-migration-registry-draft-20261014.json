@@ -1,1450 +1,870 @@
 {
-  "schemaVersion": "0.1-draft",
-  "status": "legacy-reconciliation-not-canonical",
-  "sourceCommit": "5ce8b43c53f7136d3efea0c654a0864e43828852",
-  "notes": [
-    "IDs are legacy source-order-derived; freeze mapping before restructuring.",
-    "Key equality establishes structural linkage, not scientific equivalence.",
-    "Do not regenerate identifiers from object or DOM order."
-  ],
+  "schemaVersion": "0.2-draft",
+  "status": "source-key-cross-referenced-scientific-review-pending",
+  "source": {
+    "concepts": "docs/evo-v2-legacy-id-reconciliation-20261014.md",
+    "visuals": "docs/evo-v2-visual-id-reconciliation-20261014.md"
+  },
   "concepts": [
     {
       "id": "EV-0100",
-      "key": "EV-0100"
+      "key": "luca"
     },
     {
       "id": "EV-0101",
-      "key": "EV-0101"
+      "key": "bacteria"
     },
     {
       "id": "EV-0102",
-      "key": "EV-0102"
+      "key": "other-bacteria"
     },
     {
       "id": "EV-0103",
-      "key": "EV-0103"
+      "key": "alphaproteobacteria"
     },
     {
       "id": "EV-0104",
-      "key": "EV-0104"
+      "key": "archaea"
     },
     {
       "id": "EV-0105",
-      "key": "EV-0105"
+      "key": "other-archaea"
     },
     {
       "id": "EV-0106",
-      "key": "EV-0106"
+      "key": "asgard"
     },
     {
       "id": "EV-0107",
-      "key": "EV-0107"
+      "key": "host"
     },
     {
       "id": "EV-0108",
-      "key": "EV-0108"
+      "key": "mitochondrion"
     },
     {
       "id": "EV-0109",
-      "key": "EV-0109"
+      "key": "early-eukaryote"
     },
     {
       "id": "EV-0110",
-      "key": "EV-0110"
+      "key": "leca"
     },
     {
       "id": "EV-0111",
-      "key": "EV-0111"
+      "key": "other-major-euks"
     },
     {
       "id": "EV-0112",
-      "key": "EV-0112"
+      "key": "opisthokonta"
     },
     {
       "id": "EV-0113",
-      "key": "EV-0113"
+      "key": "fungi"
     },
     {
       "id": "EV-0114",
-      "key": "EV-0114"
+      "key": "animals"
     },
     {
       "id": "EV-0115",
-      "key": "EV-0115"
+      "key": "archaeplastida-summary"
     },
     {
       "id": "EV-0116",
-      "key": "EV-0116"
+      "key": "red-summary"
     },
     {
       "id": "EV-0117",
-      "key": "EV-0117"
+      "key": "green-summary"
     },
     {
       "id": "EV-0118",
-      "key": "EV-0118"
+      "key": "land-summary"
     },
     {
       "id": "EV-0119",
-      "key": "EV-0119"
+      "key": "sar"
     },
     {
       "id": "EV-0120",
-      "key": "EV-0120"
+      "key": "stramenopiles-summary"
     },
     {
       "id": "EV-0121",
-      "key": "EV-0121"
+      "key": "brown-summary"
     },
     {
       "id": "EV-0122",
-      "key": "EV-0122"
+      "key": "cyanobacteria"
     },
     {
       "id": "EV-0123",
-      "key": "EV-0123"
+      "key": "oxygen-producing-cyano"
     },
     {
       "id": "EV-0124",
-      "key": "EV-0124"
+      "key": "modern-cyano"
     },
     {
       "id": "EV-0125",
-      "key": "EV-0125"
+      "key": "goe"
     },
     {
       "id": "EV-0126",
-      "key": "EV-0126"
+      "key": "plastid-cyano"
     },
     {
       "id": "EV-0127",
-      "key": "EV-0127"
+      "key": "euk-host"
     },
     {
       "id": "EV-0128",
-      "key": "EV-0128"
+      "key": "primary-plastid"
     },
     {
       "id": "EV-0129",
-      "key": "EV-0129"
+      "key": "archaeplastida"
     },
     {
       "id": "EV-0130",
-      "key": "EV-0130"
+      "key": "red-algae"
     },
     {
       "id": "EV-0131",
-      "key": "EV-0131"
+      "key": "red-kelp"
     },
     {
       "id": "EV-0132",
-      "key": "EV-0132"
+      "key": "green-lineage"
     },
     {
       "id": "EV-0133",
-      "key": "EV-0133"
+      "key": "other-green-algae"
     },
     {
       "id": "EV-0134",
-      "key": "EV-0134"
+      "key": "streptophyte-lineage"
     },
     {
       "id": "EV-0135",
-      "key": "EV-0135"
+      "key": "land-plants"
     },
     {
       "id": "EV-0136",
-      "key": "EV-0136"
+      "key": "vascular-plants"
     },
     {
       "id": "EV-0137",
-      "key": "EV-0137"
+      "key": "seed-plants"
     },
     {
       "id": "EV-0138",
-      "key": "EV-0138"
+      "key": "flowering-plants"
     },
     {
       "id": "EV-0139",
-      "key": "EV-0139"
+      "key": "seagrasses"
     },
     {
       "id": "EV-0140",
-      "key": "EV-0140"
+      "key": "eelgrass"
     },
     {
       "id": "EV-0141",
-      "key": "EV-0141"
+      "key": "other-eukaryotes"
     },
     {
       "id": "EV-0142",
-      "key": "EV-0142"
+      "key": "other-eukaryotic-lineages"
     },
     {
       "id": "EV-0143",
-      "key": "EV-0143"
+      "key": "stramenopiles"
     },
     {
       "id": "EV-0144",
-      "key": "EV-0144"
+      "key": "photosynthetic-stramenopiles"
     },
     {
       "id": "EV-0145",
-      "key": "EV-0145"
+      "key": "diatoms"
     },
     {
       "id": "EV-0146",
-      "key": "EV-0146"
+      "key": "brown-algae"
     },
     {
       "id": "EV-0147",
-      "key": "EV-0147"
+      "key": "kelps"
     },
     {
       "id": "EV-0148",
-      "key": "EV-0148"
+      "key": "giant-kelp"
     }
   ],
   "transitions": [
     {
       "id": "TR-0100",
-      "key": "TR-0100"
+      "key": "great-split"
     },
     {
       "id": "TR-0101",
-      "key": "TR-0101"
+      "key": "bacterial-diversification"
     },
     {
       "id": "TR-0102",
-      "key": "TR-0102"
+      "key": "archaeal-diversification"
     },
     {
       "id": "TR-0103",
-      "key": "TR-0103"
+      "key": "toward-host"
     },
     {
       "id": "TR-0104",
-      "key": "TR-0104"
+      "key": "endosymbiosis"
     },
     {
       "id": "TR-0105",
-      "key": "TR-0105"
+      "key": "eukaryogenesis"
     },
     {
       "id": "TR-0106",
-      "key": "TR-0106"
+      "key": "toward-leca"
     },
     {
       "id": "TR-0107",
-      "key": "TR-0107"
+      "key": "major-euk-div"
     },
     {
       "id": "TR-0108",
-      "key": "TR-0108"
+      "key": "opisthokont-select-transition"
     },
     {
       "id": "TR-0109",
-      "key": "TR-0109"
+      "key": "opisthokont-branch"
     },
     {
       "id": "TR-0110",
-      "key": "TR-0110"
+      "key": "archaeplastida-select-transition"
     },
     {
       "id": "TR-0111",
-      "key": "TR-0111"
+      "key": "archaeplastida-summary-branch"
     },
     {
       "id": "TR-0112",
-      "key": "TR-0112"
+      "key": "green-to-land-summary"
     },
     {
       "id": "TR-0113",
-      "key": "TR-0113"
+      "key": "sar-select-transition"
     },
     {
       "id": "TR-0114",
-      "key": "TR-0114"
+      "key": "sar-branch"
     },
     {
       "id": "TR-0115",
-      "key": "TR-0115"
+      "key": "brown-summary-transition"
     },
     {
       "id": "TR-0116",
-      "key": "TR-0116"
+      "key": "cyano-branch"
     },
     {
       "id": "TR-0117",
-      "key": "TR-0117"
+      "key": "oxygenic-photosynthesis"
     },
     {
       "id": "TR-0118",
-      "key": "TR-0118"
+      "key": "cyano-continuation"
     },
     {
       "id": "TR-0119",
-      "key": "TR-0119"
+      "key": "planetary-effect"
     },
     {
       "id": "TR-0120",
-      "key": "TR-0120"
+      "key": "primary-plastid-endo"
     },
     {
       "id": "TR-0121",
-      "key": "TR-0121"
+      "key": "plastid-integration"
     },
     {
       "id": "TR-0122",
-      "key": "TR-0122"
+      "key": "archaeplastida-diversification"
     },
     {
       "id": "TR-0123",
-      "key": "TR-0123"
+      "key": "red-lineage-transition"
     },
     {
       "id": "TR-0124",
-      "key": "TR-0124"
+      "key": "red-seaweed-diversification"
     },
     {
       "id": "TR-0125",
-      "key": "TR-0125"
+      "key": "green-diversification"
     },
     {
       "id": "TR-0126",
-      "key": "TR-0126"
+      "key": "land-transition"
     },
     {
       "id": "TR-0127",
-      "key": "TR-0127"
+      "key": "vascular-transition"
     },
     {
       "id": "TR-0128",
-      "key": "TR-0128"
+      "key": "seed-transition"
     },
     {
       "id": "TR-0129",
-      "key": "TR-0129"
+      "key": "flower-transition"
     },
     {
       "id": "TR-0130",
-      "key": "TR-0130"
+      "key": "seagrass-transition"
     },
     {
       "id": "TR-0131",
-      "key": "TR-0131"
+      "key": "eelgrass-transition"
     },
     {
       "id": "TR-0132",
-      "key": "TR-0132"
+      "key": "stramenopile-branch"
     },
     {
       "id": "TR-0133",
-      "key": "TR-0133"
+      "key": "red-derived-plastid"
     },
     {
       "id": "TR-0134",
-      "key": "TR-0134"
+      "key": "brown-branch"
     },
     {
       "id": "TR-0135",
-      "key": "TR-0135"
+      "key": "kelp-transition"
     },
     {
       "id": "TR-0136",
-      "key": "TR-0136"
+      "key": "giant-kelp-transition"
     }
   ],
   "visuals": [
     {
-      "id": null,
-      "key": "VM-001",
-      "type": "unresolved"
+      "id": "VM-001",
+      "key": "luca",
+      "kind": "concept",
+      "targetId": "EV-0100"
     },
     {
-      "id": null,
-      "key": "VM-002",
-      "type": "unresolved"
+      "id": "VM-002",
+      "key": "great-split",
+      "kind": "transition",
+      "targetId": "TR-0100"
     },
     {
-      "id": null,
-      "key": "VM-003",
-      "type": "unresolved"
+      "id": "VM-003",
+      "key": "bacteria",
+      "kind": "concept",
+      "targetId": "EV-0101"
     },
     {
-      "id": null,
-      "key": "VM-004",
-      "type": "unresolved"
+      "id": "VM-004",
+      "key": "archaea",
+      "kind": "concept",
+      "targetId": "EV-0104"
     },
     {
-      "id": null,
-      "key": "VM-005",
-      "type": "unresolved"
+      "id": "VM-005",
+      "key": "bacterial-diversification",
+      "kind": "transition",
+      "targetId": "TR-0101"
     },
     {
-      "id": null,
-      "key": "VM-006",
-      "type": "unresolved"
+      "id": "VM-006",
+      "key": "alphaproteobacteria",
+      "kind": "concept",
+      "targetId": "EV-0103"
     },
     {
-      "id": null,
-      "key": "VM-007",
-      "type": "unresolved"
+      "id": "VM-007",
+      "key": "archaeal-diversification",
+      "kind": "transition",
+      "targetId": "TR-0102"
     },
     {
-      "id": null,
-      "key": "VM-008",
-      "type": "unresolved"
+      "id": "VM-008",
+      "key": "asgard",
+      "kind": "concept",
+      "targetId": "EV-0106"
     },
     {
-      "id": null,
-      "key": "VM-009",
-      "type": "unresolved"
+      "id": "VM-009",
+      "key": "toward-host",
+      "kind": "transition",
+      "targetId": "TR-0103"
     },
     {
-      "id": null,
-      "key": "VM-010",
-      "type": "unresolved"
+      "id": "VM-010",
+      "key": "host",
+      "kind": "concept",
+      "targetId": "EV-0107"
     },
     {
-      "id": null,
-      "key": "VM-011",
-      "type": "unresolved"
+      "id": "VM-011",
+      "key": "endosymbiosis",
+      "kind": "transition",
+      "targetId": "TR-0104"
     },
     {
-      "id": null,
-      "key": "VM-012",
-      "type": "unresolved"
+      "id": "VM-012",
+      "key": "mitochondrion",
+      "kind": "concept",
+      "targetId": "EV-0108"
     },
     {
-      "id": null,
-      "key": "VM-013",
-      "type": "unresolved"
+      "id": "VM-013",
+      "key": "eukaryogenesis",
+      "kind": "transition",
+      "targetId": "TR-0105"
     },
     {
-      "id": null,
-      "key": "VM-014",
-      "type": "unresolved"
+      "id": "VM-014",
+      "key": "early-eukaryote",
+      "kind": "concept",
+      "targetId": "EV-0109"
     },
     {
-      "id": null,
-      "key": "VM-015",
-      "type": "unresolved"
+      "id": "VM-015",
+      "key": "toward-leca",
+      "kind": "transition",
+      "targetId": "TR-0106"
     },
     {
-      "id": null,
-      "key": "VM-016",
-      "type": "unresolved"
+      "id": "VM-016",
+      "key": "leca",
+      "kind": "concept",
+      "targetId": "EV-0110"
     },
     {
-      "id": null,
-      "key": "VM-017",
-      "type": "unresolved"
+      "id": "VM-017",
+      "key": "cyano-branch",
+      "kind": "transition",
+      "targetId": "TR-0116"
     },
     {
-      "id": null,
-      "key": "VM-018",
-      "type": "unresolved"
+      "id": "VM-018",
+      "key": "cyanobacteria",
+      "kind": "concept",
+      "targetId": "EV-0122"
     },
     {
-      "id": null,
-      "key": "VM-019",
-      "type": "unresolved"
+      "id": "VM-019",
+      "key": "oxygenic-photosynthesis",
+      "kind": "transition",
+      "targetId": "TR-0117"
     },
     {
-      "id": null,
-      "key": "VM-020",
-      "type": "unresolved"
+      "id": "VM-020",
+      "key": "oxygen-producing-cyano",
+      "kind": "concept",
+      "targetId": "EV-0123"
     },
     {
-      "id": null,
-      "key": "VM-021",
-      "type": "unresolved"
+      "id": "VM-021",
+      "key": "cyano-continuation",
+      "kind": "transition",
+      "targetId": "TR-0118"
     },
     {
-      "id": null,
-      "key": "VM-022",
-      "type": "unresolved"
+      "id": "VM-022",
+      "key": "modern-cyano",
+      "kind": "concept",
+      "targetId": "EV-0124"
     },
     {
-      "id": null,
-      "key": "VM-023",
-      "type": "unresolved"
+      "id": "VM-023",
+      "key": "planetary-effect",
+      "kind": "transition",
+      "targetId": "TR-0119"
     },
     {
-      "id": null,
-      "key": "VM-024",
-      "type": "unresolved"
+      "id": "VM-024",
+      "key": "goe",
+      "kind": "concept",
+      "targetId": "EV-0125"
     },
     {
-      "id": null,
-      "key": "VM-025",
-      "type": "unresolved"
+      "id": "VM-025",
+      "key": "plastid-cyano",
+      "kind": "concept",
+      "targetId": "EV-0126"
     },
     {
-      "id": null,
-      "key": "VM-026",
-      "type": "unresolved"
+      "id": "VM-026",
+      "key": "euk-host",
+      "kind": "concept",
+      "targetId": "EV-0127"
     },
     {
-      "id": null,
-      "key": "VM-027",
-      "type": "unresolved"
+      "id": "VM-027",
+      "key": "primary-plastid-endo",
+      "kind": "transition",
+      "targetId": "TR-0120"
     },
     {
-      "id": null,
-      "key": "VM-028",
-      "type": "unresolved"
+      "id": "VM-028",
+      "key": "primary-plastid",
+      "kind": "concept",
+      "targetId": "EV-0128"
     },
     {
-      "id": null,
-      "key": "VM-029",
-      "type": "unresolved"
+      "id": "VM-029",
+      "key": "plastid-integration",
+      "kind": "transition",
+      "targetId": "TR-0121"
     },
     {
-      "id": null,
-      "key": "VM-030",
-      "type": "unresolved"
+      "id": "VM-030",
+      "key": "archaeplastida",
+      "kind": "concept",
+      "targetId": "EV-0129"
     },
     {
-      "id": null,
-      "key": "VM-031",
-      "type": "unresolved"
+      "id": "VM-031",
+      "key": "archaeplastida-diversification",
+      "kind": "transition",
+      "targetId": "TR-0122"
     },
     {
-      "id": null,
-      "key": "VM-032",
-      "type": "unresolved"
+      "id": "VM-032",
+      "key": "green-lineage",
+      "kind": "concept",
+      "targetId": "EV-0132"
     },
     {
-      "id": null,
-      "key": "VM-033",
-      "type": "unresolved"
+      "id": "VM-033",
+      "key": "other-green-algae",
+      "kind": "concept",
+      "targetId": "EV-0133"
     },
     {
-      "id": null,
-      "key": "VM-034",
-      "type": "unresolved"
+      "id": "VM-034",
+      "key": "streptophyte-lineage",
+      "kind": "concept",
+      "targetId": "EV-0134"
     },
     {
-      "id": null,
-      "key": "VM-035",
-      "type": "unresolved"
+      "id": "VM-035",
+      "key": "land-transition",
+      "kind": "transition",
+      "targetId": "TR-0126"
     },
     {
-      "id": null,
-      "key": "VM-036",
-      "type": "unresolved"
+      "id": "VM-036",
+      "key": "land-plants",
+      "kind": "concept",
+      "targetId": "EV-0135"
     },
     {
-      "id": null,
-      "key": "VM-037",
-      "type": "unresolved"
+      "id": "VM-037",
+      "key": "red-lineage-transition",
+      "kind": "transition",
+      "targetId": "TR-0123"
     },
     {
-      "id": null,
-      "key": "VM-038",
-      "type": "unresolved"
+      "id": "VM-038",
+      "key": "red-seaweed-diversification",
+      "kind": "transition",
+      "targetId": "TR-0124"
     },
     {
-      "id": null,
-      "key": "VM-039",
-      "type": "unresolved"
+      "id": "VM-039",
+      "key": "red-kelp",
+      "kind": "concept",
+      "targetId": "EV-0131"
     },
     {
-      "id": null,
-      "key": "VM-040",
-      "type": "unresolved"
+      "id": "VM-040",
+      "key": "stramenopile-branch",
+      "kind": "transition",
+      "targetId": "TR-0132"
     },
     {
-      "id": null,
-      "key": "VM-041",
-      "type": "unresolved"
+      "id": "VM-041",
+      "key": "stramenopiles",
+      "kind": "concept",
+      "targetId": "EV-0143"
     },
     {
-      "id": null,
-      "key": "VM-042",
-      "type": "unresolved"
+      "id": "VM-042",
+      "key": "red-derived-plastid",
+      "kind": "transition",
+      "targetId": "TR-0133"
     },
     {
-      "id": null,
-      "key": "VM-043",
-      "type": "unresolved"
+      "id": "VM-043",
+      "key": "photosynthetic-stramenopiles",
+      "kind": "concept",
+      "targetId": "EV-0144"
     },
     {
-      "id": null,
-      "key": "VM-044",
-      "type": "unresolved"
+      "id": "VM-044",
+      "key": "brown-branch",
+      "kind": "transition",
+      "targetId": "TR-0134"
     },
     {
-      "id": null,
-      "key": "VM-045",
-      "type": "unresolved"
+      "id": "VM-045",
+      "key": "diatoms",
+      "kind": "concept",
+      "targetId": "EV-0145"
     },
     {
-      "id": null,
-      "key": "VM-046",
-      "type": "unresolved"
+      "id": "VM-046",
+      "key": "brown-algae",
+      "kind": "concept",
+      "targetId": "EV-0146"
     },
     {
-      "id": null,
-      "key": "VM-047",
-      "type": "unresolved"
+      "id": "VM-047",
+      "key": "kelp-transition",
+      "kind": "transition",
+      "targetId": "TR-0135"
     },
     {
-      "id": null,
-      "key": "VM-048",
-      "type": "unresolved"
+      "id": "VM-048",
+      "key": "kelps",
+      "kind": "concept",
+      "targetId": "EV-0147"
     },
     {
-      "id": null,
-      "key": "VM-049",
-      "type": "unresolved"
+      "id": "VM-049",
+      "key": "giant-kelp-transition",
+      "kind": "transition",
+      "targetId": "TR-0136"
     },
     {
-      "id": null,
-      "key": "VM-050",
-      "type": "unresolved"
+      "id": "VM-050",
+      "key": "giant-kelp",
+      "kind": "concept",
+      "targetId": "EV-0148"
     },
     {
-      "id": null,
-      "key": "VM-051",
-      "type": "unresolved"
+      "id": "VM-051",
+      "key": "major-euk-div",
+      "kind": "transition",
+      "targetId": "TR-0107"
     },
     {
-      "id": null,
-      "key": "VM-052",
-      "type": "unresolved"
+      "id": "VM-052",
+      "key": "opisthokonta",
+      "kind": "concept",
+      "targetId": "EV-0112"
     },
     {
-      "id": null,
-      "key": "VM-053",
-      "type": "unresolved"
+      "id": "VM-053",
+      "key": "opisthokont-branch",
+      "kind": "transition",
+      "targetId": "TR-0109"
     },
     {
-      "id": null,
-      "key": "VM-054",
-      "type": "unresolved"
+      "id": "VM-054",
+      "key": "fungi",
+      "kind": "concept",
+      "targetId": "EV-0113"
     },
     {
-      "id": null,
-      "key": "VM-055",
-      "type": "unresolved"
+      "id": "VM-055",
+      "key": "animals",
+      "kind": "concept",
+      "targetId": "EV-0114"
     },
     {
-      "id": null,
-      "key": "VM-056",
-      "type": "unresolved"
+      "id": "VM-056",
+      "key": "archaeplastida-summary",
+      "kind": "concept",
+      "targetId": "EV-0115"
     },
     {
-      "id": null,
-      "key": "VM-057",
-      "type": "unresolved"
+      "id": "VM-057",
+      "key": "archaeplastida-summary-branch",
+      "kind": "transition",
+      "targetId": "TR-0111"
     },
     {
-      "id": null,
-      "key": "VM-058",
-      "type": "unresolved"
+      "id": "VM-058",
+      "key": "red-summary",
+      "kind": "concept",
+      "targetId": "EV-0116"
     },
     {
-      "id": null,
-      "key": "VM-059",
-      "type": "unresolved"
+      "id": "VM-059",
+      "key": "green-summary",
+      "kind": "concept",
+      "targetId": "EV-0117"
     },
     {
-      "id": null,
-      "key": "VM-060",
-      "type": "unresolved"
+      "id": "VM-060",
+      "key": "sar",
+      "kind": "concept",
+      "targetId": "EV-0119"
     },
     {
-      "id": null,
-      "key": "VM-061",
-      "type": "unresolved"
+      "id": "VM-061",
+      "key": "stramenopiles-summary",
+      "kind": "concept",
+      "targetId": "EV-0120"
     },
     {
-      "id": null,
-      "key": "VM-062",
-      "type": "unresolved"
+      "id": "VM-062",
+      "key": "brown-summary",
+      "kind": "concept",
+      "targetId": "EV-0121"
     },
     {
-      "id": null,
-      "key": "VM-063",
-      "type": "unresolved"
+      "id": "VM-063",
+      "key": "vascular-transition",
+      "kind": "transition",
+      "targetId": "TR-0127"
     },
     {
-      "id": null,
-      "key": "VM-064",
-      "type": "unresolved"
+      "id": "VM-064",
+      "key": "vascular-plants",
+      "kind": "concept",
+      "targetId": "EV-0136"
     },
     {
-      "id": null,
-      "key": "VM-065",
-      "type": "unresolved"
+      "id": "VM-065",
+      "key": "seed-transition",
+      "kind": "transition",
+      "targetId": "TR-0128"
     },
     {
-      "id": null,
-      "key": "VM-066",
-      "type": "unresolved"
+      "id": "VM-066",
+      "key": "seed-plants",
+      "kind": "concept",
+      "targetId": "EV-0137"
     },
     {
-      "id": null,
-      "key": "VM-067",
-      "type": "unresolved"
+      "id": "VM-067",
+      "key": "flower-transition",
+      "kind": "transition",
+      "targetId": "TR-0129"
     },
     {
-      "id": null,
-      "key": "VM-068",
-      "type": "unresolved"
+      "id": "VM-068",
+      "key": "flowering-plants",
+      "kind": "concept",
+      "targetId": "EV-0138"
     },
     {
-      "id": null,
-      "key": "VM-069",
-      "type": "unresolved"
+      "id": "VM-069",
+      "key": "seagrass-transition",
+      "kind": "transition",
+      "targetId": "TR-0130"
     },
     {
-      "id": null,
-      "key": "VM-070",
-      "type": "unresolved"
+      "id": "VM-070",
+      "key": "seagrasses",
+      "kind": "concept",
+      "targetId": "EV-0139"
     },
     {
-      "id": null,
-      "key": "VM-071",
-      "type": "unresolved"
+      "id": "VM-071",
+      "key": "eelgrass-transition",
+      "kind": "transition",
+      "targetId": "TR-0131"
     },
     {
-      "id": null,
-      "key": "VM-072",
-      "type": "unresolved"
+      "id": "VM-072",
+      "key": "eelgrass",
+      "kind": "concept",
+      "targetId": "EV-0140"
     },
     {
-      "id": null,
-      "key": "VM-073",
-      "type": "unresolved"
+      "id": "VM-073",
+      "key": "land-summary",
+      "kind": "concept",
+      "targetId": "EV-0118"
     }
   ],
   "validation": {
-    "conceptCount": 49,
-    "transitionCount": 37,
-    "visualCount": 73,
-    "linkedVisualCount": 0,
-    "unresolvedVisuals": [
-      {
-        "id": null,
-        "key": "VM-001",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-002",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-003",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-004",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-005",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-006",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-007",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-008",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-009",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-010",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-011",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-012",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-013",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-014",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-015",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-016",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-017",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-018",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-019",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-020",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-021",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-022",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-023",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-024",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-025",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-026",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-027",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-028",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-029",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-030",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-031",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-032",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-033",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-034",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-035",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-036",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-037",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-038",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-039",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-040",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-041",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-042",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-043",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-044",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-045",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-046",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-047",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-048",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-049",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-050",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-051",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-052",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-053",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-054",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-055",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-056",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-057",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-058",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-059",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-060",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-061",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-062",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-063",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-064",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-065",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-066",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-067",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-068",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-069",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-070",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-071",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-072",
-        "type": "unresolved"
-      },
-      {
-        "id": null,
-        "key": "VM-073",
-        "type": "unresolved"
-      }
-    ],
-    "recordsWithoutVisual": [
-      {
-        "id": "EV-0100",
-        "key": "EV-0100"
-      },
-      {
-        "id": "EV-0101",
-        "key": "EV-0101"
-      },
+    "counts": {
+      "concepts": 49,
+      "transitions": 37,
+      "visuals": 73,
+      "linkedVisuals": 73,
+      "unresolvedVisuals": 0,
+      "withoutVisual": 13
+    },
+    "unresolved": [],
+    "withoutVisual": [
       {
         "id": "EV-0102",
-        "key": "EV-0102"
-      },
-      {
-        "id": "EV-0103",
-        "key": "EV-0103"
-      },
-      {
-        "id": "EV-0104",
-        "key": "EV-0104"
+        "key": "other-bacteria"
       },
       {
         "id": "EV-0105",
-        "key": "EV-0105"
-      },
-      {
-        "id": "EV-0106",
-        "key": "EV-0106"
-      },
-      {
-        "id": "EV-0107",
-        "key": "EV-0107"
-      },
-      {
-        "id": "EV-0108",
-        "key": "EV-0108"
-      },
-      {
-        "id": "EV-0109",
-        "key": "EV-0109"
-      },
-      {
-        "id": "EV-0110",
-        "key": "EV-0110"
+        "key": "other-archaea"
       },
       {
         "id": "EV-0111",
-        "key": "EV-0111"
-      },
-      {
-        "id": "EV-0112",
-        "key": "EV-0112"
-      },
-      {
-        "id": "EV-0113",
-        "key": "EV-0113"
-      },
-      {
-        "id": "EV-0114",
-        "key": "EV-0114"
-      },
-      {
-        "id": "EV-0115",
-        "key": "EV-0115"
-      },
-      {
-        "id": "EV-0116",
-        "key": "EV-0116"
-      },
-      {
-        "id": "EV-0117",
-        "key": "EV-0117"
-      },
-      {
-        "id": "EV-0118",
-        "key": "EV-0118"
-      },
-      {
-        "id": "EV-0119",
-        "key": "EV-0119"
-      },
-      {
-        "id": "EV-0120",
-        "key": "EV-0120"
-      },
-      {
-        "id": "EV-0121",
-        "key": "EV-0121"
-      },
-      {
-        "id": "EV-0122",
-        "key": "EV-0122"
-      },
-      {
-        "id": "EV-0123",
-        "key": "EV-0123"
-      },
-      {
-        "id": "EV-0124",
-        "key": "EV-0124"
-      },
-      {
-        "id": "EV-0125",
-        "key": "EV-0125"
-      },
-      {
-        "id": "EV-0126",
-        "key": "EV-0126"
-      },
-      {
-        "id": "EV-0127",
-        "key": "EV-0127"
-      },
-      {
-        "id": "EV-0128",
-        "key": "EV-0128"
-      },
-      {
-        "id": "EV-0129",
-        "key": "EV-0129"
+        "key": "other-major-euks"
       },
       {
         "id": "EV-0130",
-        "key": "EV-0130"
-      },
-      {
-        "id": "EV-0131",
-        "key": "EV-0131"
-      },
-      {
-        "id": "EV-0132",
-        "key": "EV-0132"
-      },
-      {
-        "id": "EV-0133",
-        "key": "EV-0133"
-      },
-      {
-        "id": "EV-0134",
-        "key": "EV-0134"
-      },
-      {
-        "id": "EV-0135",
-        "key": "EV-0135"
-      },
-      {
-        "id": "EV-0136",
-        "key": "EV-0136"
-      },
-      {
-        "id": "EV-0137",
-        "key": "EV-0137"
-      },
-      {
-        "id": "EV-0138",
-        "key": "EV-0138"
-      },
-      {
-        "id": "EV-0139",
-        "key": "EV-0139"
-      },
-      {
-        "id": "EV-0140",
-        "key": "EV-0140"
+        "key": "red-algae"
       },
       {
         "id": "EV-0141",
-        "key": "EV-0141"
+        "key": "other-eukaryotes"
       },
       {
         "id": "EV-0142",
-        "key": "EV-0142"
-      },
-      {
-        "id": "EV-0143",
-        "key": "EV-0143"
-      },
-      {
-        "id": "EV-0144",
-        "key": "EV-0144"
-      },
-      {
-        "id": "EV-0145",
-        "key": "EV-0145"
-      },
-      {
-        "id": "EV-0146",
-        "key": "EV-0146"
-      },
-      {
-        "id": "EV-0147",
-        "key": "EV-0147"
-      },
-      {
-        "id": "EV-0148",
-        "key": "EV-0148"
-      },
-      {
-        "id": "TR-0100",
-        "key": "TR-0100"
-      },
-      {
-        "id": "TR-0101",
-        "key": "TR-0101"
-      },
-      {
-        "id": "TR-0102",
-        "key": "TR-0102"
-      },
-      {
-        "id": "TR-0103",
-        "key": "TR-0103"
-      },
-      {
-        "id": "TR-0104",
-        "key": "TR-0104"
-      },
-      {
-        "id": "TR-0105",
-        "key": "TR-0105"
-      },
-      {
-        "id": "TR-0106",
-        "key": "TR-0106"
-      },
-      {
-        "id": "TR-0107",
-        "key": "TR-0107"
+        "key": "other-eukaryotic-lineages"
       },
       {
         "id": "TR-0108",
-        "key": "TR-0108"
-      },
-      {
-        "id": "TR-0109",
-        "key": "TR-0109"
+        "key": "opisthokont-select-transition"
       },
       {
         "id": "TR-0110",
-        "key": "TR-0110"
-      },
-      {
-        "id": "TR-0111",
-        "key": "TR-0111"
+        "key": "archaeplastida-select-transition"
       },
       {
         "id": "TR-0112",
-        "key": "TR-0112"
+        "key": "green-to-land-summary"
       },
       {
         "id": "TR-0113",
-        "key": "TR-0113"
+        "key": "sar-select-transition"
       },
       {
         "id": "TR-0114",
-        "key": "TR-0114"
+        "key": "sar-branch"
       },
       {
         "id": "TR-0115",
-        "key": "TR-0115"
-      },
-      {
-        "id": "TR-0116",
-        "key": "TR-0116"
-      },
-      {
-        "id": "TR-0117",
-        "key": "TR-0117"
-      },
-      {
-        "id": "TR-0118",
-        "key": "TR-0118"
-      },
-      {
-        "id": "TR-0119",
-        "key": "TR-0119"
-      },
-      {
-        "id": "TR-0120",
-        "key": "TR-0120"
-      },
-      {
-        "id": "TR-0121",
-        "key": "TR-0121"
-      },
-      {
-        "id": "TR-0122",
-        "key": "TR-0122"
-      },
-      {
-        "id": "TR-0123",
-        "key": "TR-0123"
-      },
-      {
-        "id": "TR-0124",
-        "key": "TR-0124"
+        "key": "brown-summary-transition"
       },
       {
         "id": "TR-0125",
-        "key": "TR-0125"
-      },
-      {
-        "id": "TR-0126",
-        "key": "TR-0126"
-      },
-      {
-        "id": "TR-0127",
-        "key": "TR-0127"
-      },
-      {
-        "id": "TR-0128",
-        "key": "TR-0128"
-      },
-      {
-        "id": "TR-0129",
-        "key": "TR-0129"
-      },
-      {
-        "id": "TR-0130",
-        "key": "TR-0130"
-      },
-      {
-        "id": "TR-0131",
-        "key": "TR-0131"
-      },
-      {
-        "id": "TR-0132",
-        "key": "TR-0132"
-      },
-      {
-        "id": "TR-0133",
-        "key": "TR-0133"
-      },
-      {
-        "id": "TR-0134",
-        "key": "TR-0134"
-      },
-      {
-        "id": "TR-0135",
-        "key": "TR-0135"
-      },
-      {
-        "id": "TR-0136",
-        "key": "TR-0136"
+        "key": "green-diversification"
       }
     ],
-    "uniqueConceptIds": true,
-    "uniqueTransitionIds": true,
-    "uniqueVisualIds": true,
-    "scientificReview": "pending",
+    "uniqueness": {
+      "concept": true,
+      "transition": true,
+      "visual": true
+    },
+    "scientific": "pending",
     "ci": "not run",
     "offline": "not run"
-  }
+  },
+  "caveat": "Source-key matching only; legacy IDs are order-dependent and not approved permanent IDs."
 }
