@@ -1,6 +1,10 @@
 import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';import {preparePublicReview} from './public-review.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');process.chdir(root);
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+export function safeLocalPath(value){
+ if(typeof value!=='string'||!value||value.startsWith('/')||value.startsWith('\\\\')||/[?#%\\\\]/.test(value))return false;
+ const parts=value.split('/');return parts.every(part=>part&&part!=='.'&&part!=='..'&&/^[a-zA-Z0-9_.-]+$/.test(part));
+}
 export function validate({apps,categories,media,knowledge,exists,interfaces={interfaces:[{id:'navigation',version:'1.0.0',owner:'platform'}]}}){
  const errors=[], ids=new Set(),cats=new Set(categories.map(c=>c.id)), assets=new Map(media.assets.map(a=>[a.asset_id,a])), facts=new Map(knowledge.records.map(k=>[k.id,k]));
  if(cats.size!==categories.length)errors.push('duplicate category');
@@ -8,12 +12,13 @@ export function validate({apps,categories,media,knowledge,exists,interfaces={int
  for(const a of apps){
   if(ids.has(a.app_id))errors.push(`duplicate app ${a.app_id}`);ids.add(a.app_id);
   for(const key of ['app_id','title','owner','version','entry_point','type'])if(!a[key])errors.push(`missing ${key}`);
+  if(typeof a.entry_point!=='string'||!safeLocalPath(a.entry_point))errors.push(`unsafe entry point ${a.app_id}`);
   if(a.schema_version!==1)errors.push(`invalid schema ${a.app_id}`);
   if(!cats.has(a.category))errors.push(`unknown category ${a.category}`);
   if(!['development','testing','approved','published'].includes(a.status))errors.push(`invalid status ${a.app_id}`);
   if(!['species','field-notes','reference','library','interactive'].includes(a.type))errors.push(`unknown template ${a.type}`);
   if(!a.offline_assets.includes(a.entry_point))errors.push(`entry absent from offline bundle ${a.app_id}`);
-  for(const p of a.offline_assets)if(!/^[a-zA-Z0-9_/.-]+$/.test(p)||p.includes('..')||!exists(p))errors.push(`missing/unsafe asset ${p}`);
+  for(const p of a.offline_assets)if(!safeLocalPath(p)||!exists(p))errors.push(`missing/unsafe asset ${p}`);
   const sections=new Set();for(const s of a.sections){if(sections.has(s.id))errors.push(`duplicate section ${s.id}`);sections.add(s.id);}
   for(const id of a.media)if(!assets.has(id))errors.push(`missing media ${id}`);
   for(const id of a.knowledge)if(!facts.has(id))errors.push(`missing knowledge ${id}`);
