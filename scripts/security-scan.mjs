@@ -3,6 +3,7 @@ import path from 'node:path';
 const roots=['src','dist/developer','dist/tester'];
 const extensions=new Set(['.html','.js','.mjs','.json','.svg','.css','.webmanifest']);
 const findings=[];
+const seen=new Set();
 const rules=[
  ['private-key',/-----BEGIN (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----/g],
  ['github-token',/gh[pousr]_[A-Za-z0-9_]{30,}/g],
@@ -27,7 +28,11 @@ function walk(dir){
    pattern.lastIndex=0;
    for(const match of body.matchAll(pattern)){
     const line=body.slice(0,match.index).split('\n').length;
-    findings.push({file,line,rule});
+    const canonical=file.replace(/^dist\/(?:developer|tester)\//,'src/');
+    const key=`${canonical}:${line}:${rule}`;
+    if(seen.has(key))continue;
+    seen.add(key);
+    findings.push({file:canonical,line,rule});
    }
   }
  }
