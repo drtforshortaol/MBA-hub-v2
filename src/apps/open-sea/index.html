@@ -1408,11 +1408,30 @@ function buildCard(item) {
   body.id = bodyId;
   body.setAttribute("aria-hidden", "true");
 
-  body.innerHTML = `
-    <div class="card-body-inner">
-      ${item.body}
-    </div>
-  `;
+  // Parse authored markup inertly, then copy only approved structural nodes.
+  const allowedTags = new Set(["P", "H4", "UL", "LI", "DIV", "SPAN", "STRONG", "EM", "BR"]);
+  const allowedClasses = new Set(["adapt-box", "fact-strip", "fact-pill"]);
+  function safeNode(source) {
+    if (source.nodeType === Node.TEXT_NODE) return document.createTextNode(source.textContent);
+    if (source.nodeType !== Node.ELEMENT_NODE) return document.createDocumentFragment();
+    if (!allowedTags.has(source.tagName)) {
+      const fragment = document.createDocumentFragment();
+      for (const child of source.childNodes) fragment.appendChild(safeNode(child));
+      return fragment;
+    }
+    const element = document.createElement(source.tagName.toLowerCase());
+    if (source.classList.length && (source.tagName === "DIV" || source.tagName === "SPAN")) {
+      const classes = [...source.classList].filter(name => allowedClasses.has(name));
+      if (classes.length) element.className = classes.join(" ");
+    }
+    for (const child of source.childNodes) element.appendChild(safeNode(child));
+    return element;
+  }
+  const parsed = new DOMParser().parseFromString(item.body, "text/html");
+  const inner = document.createElement("div");
+  inner.className = "card-body-inner";
+  for (const child of parsed.body.childNodes) inner.appendChild(safeNode(child));
+  body.appendChild(inner);
 
   header.addEventListener("click", () => {
     setCardOpen(card, !card.classList.contains("open"));
