@@ -1366,35 +1366,42 @@ function buildCard(item) {
   header.setAttribute("aria-expanded", "false");
   header.setAttribute("aria-controls", bodyId);
 
-  header.innerHTML = `
-    <span class="card-icon" aria-hidden="true">${item.icon}</span>
+  // Construct variable card metadata as text, never parsed HTML.
+  const icon = document.createElement("span");
+  icon.className = "card-icon";
+  icon.setAttribute("aria-hidden", "true");
+  icon.textContent = item.icon;
 
-    <span class="card-title-wrap">
-      <span class="card-title">${item.title}</span>
-      <span class="card-subtitle">${item.subtitle}</span>
-
-      <span class="card-tags">
-        ${item.tags
-          .map((tag) => `<span class="mini-tag">${tag}</span>`)
-          .join("")}
-      </span>
-    </span>
-
-    <svg
-      class="chevron"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2.5"
-      aria-hidden="true"
-    >
-      <path
-        d="M6 9l6 6 6-6"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-    </svg>
-  `;
+  const titleWrap = document.createElement("span");
+  titleWrap.className = "card-title-wrap";
+  for (const [className, value] of [["card-title", item.title], ["card-subtitle", item.subtitle]]) {
+    const span = document.createElement("span");
+    span.className = className;
+    span.textContent = value;
+    titleWrap.appendChild(span);
+  }
+  const tags = document.createElement("span");
+  tags.className = "card-tags";
+  for (const tag of item.tags) {
+    const span = document.createElement("span");
+    span.className = "mini-tag";
+    span.textContent = tag;
+    tags.appendChild(span);
+  }
+  titleWrap.appendChild(tags);
+  const chevron = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  chevron.setAttribute("class", "chevron");
+  chevron.setAttribute("viewBox", "0 0 24 24");
+  chevron.setAttribute("fill", "none");
+  chevron.setAttribute("stroke", "currentColor");
+  chevron.setAttribute("stroke-width", "2.5");
+  chevron.setAttribute("aria-hidden", "true");
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", "M6 9l6 6 6-6");
+  path.setAttribute("stroke-linecap", "round");
+  path.setAttribute("stroke-linejoin", "round");
+  chevron.appendChild(path);
+  header.append(icon, titleWrap, chevron);
 
   const body = document.createElement("div");
   body.className = "card-body";
@@ -1417,7 +1424,7 @@ function buildCard(item) {
   return card;
 }
 
-function renderCards(){cardListElement.innerHTML="";DATA.forEach(item=>cardListElement.appendChild(buildCard(item)));}
+function renderCards(){cardListElement.replaceChildren(...DATA.map(buildCard));}
 renderCards();
 </script>
 
