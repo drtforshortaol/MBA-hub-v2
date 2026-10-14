@@ -20,7 +20,7 @@ The owner completed iPhone device checks: Hub navigation, species guides (ray/st
 - All 336 declared release resources exist in the public tester repository.
 - Private `src/` matches the public tester for **330 of 332** common files by Git blob SHA. Differences: `install.html` (environment-specific install/help text) and `sw.js` (environment/cache/release identity). Verify these intentional divergences whenever promoting a release.
 - Public-review report: **0 withheld applications**, V1-approved content inherited.
-- Selected HTML smoke check: 6 entry pages, 73 local attributes scanned; no confirmed missing targets. Four `install.html` root-directory links returned as blank resolved paths in the checker and should be handled explicitly as root links, not counted as 404s.
+- **Complete static HTML link audit:** all **37 HTML pages** scanned; **276 local src/href references** resolved; **0 missing local targets**. Root-directory links were correctly treated as legitimate hub links. This audit does not cover links constructed dynamically at runtime.
 - GitHub Pages deploy for phone-links update: GitHub Actions run 38471402857 completed **success**. Owner reported tap-to-call works on iPhone.
 
 ## Category distribution (important)
@@ -39,7 +39,7 @@ The owner completed iPhone device checks: Hub navigation, species guides (ray/st
 **Six categories are presently empty in the application registry**. They may be intentional taxonomy placeholders, but do not describe all 11 categories as containing apps without verifying whether applications should be cross-listed there. Do not silently relocate or remove owner-approved content.
 
 ## Items still requiring verification
-1. Exhaustive local-link/reference audit across all 37 HTML pages plus runtime-generated links, JS data references, and media URLs.
+1. Static HTML local-link audit is complete and passed. Still audit runtime-generated links, JS data references, and external/media URLs.
 2. Recalculate SHA-256 over all 336 deployed resource bytes, not just the existence checks; validate SW install/update integrity on a fresh device/browser.
 3. Review small-screen layout issues in species-highlight action buttons and handbook horizontal shortcut accessibility.
 4. Consider an iPhone browser-first external video experience for Steve Webster's Vimeo link (the video was reachable but iOS redirected via the Vimeo app/App Store).
