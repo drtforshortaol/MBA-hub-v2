@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-13",
+  "source": "Owner-supervised iPhone testing and GitHub Actions",
+  "evidence": {
+    "v1_content_approval": {
+      "status": "verified",
+      "detail": "Owner authorized inherited V1 content and media for V2 tester on 2026-10-12; public-review.json records zero withheld applications.",
+      "scope": "existing V1-migrated content only"
+    },
+    "ios_device_qa": {
+      "status": "verified",
+      "detail": "Owner tested selected apps, navigation, offline mode, update, rollback, and QR code display.",
+      "scope": "iPhone, representative application flows"
+    },
+    "tap_to_call": {
+      "status": "verified",
+      "detail": "Owner confirmed Information Center tap-to-call functions on iPhone."
+    },
+    "tester_deploy": {
+      "status": "verified",
+      "detail": "GitHub Pages tester workflow 38471402857 succeeded."
+    },
+    "pilot_other_guides": {
+      "status": "not_verified",
+      "detail": "No separate small-group pilot result recorded."
+    },
+    "android_install": {
+      "status": "not_verified",
+      "detail": "Not yet physically tested."
+    },
+    "windows_install": {
+      "status": "not_verified",
+      "detail": "Not yet physically tested."
+    },
+    "production_release": {
+      "status": "not_verified",
+      "detail": "Remaining release gates and broader verification incomplete."
+    }
+  }
+}
