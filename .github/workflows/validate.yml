@@ -18,6 +18,11 @@ jobs:
         run: npm run build
       - name: Verify contracts and offline isolation
         run: npm test
+      - name: Verify EVO classification evidence guards
+        run: |
+          python3 -m scripts.validation.validate_evo_relationship_classes
+          python3 -m scripts.validation.validate_evo_classification_ambiguity
+          python3 -m unittest scripts.validation.test_evo_relationship_classes
       - name: Retain tester bundle for review
         uses: actions/upload-artifact@v4
         with:
