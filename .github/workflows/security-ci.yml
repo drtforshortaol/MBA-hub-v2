@@ -19,6 +19,8 @@ jobs:
           python-version: '3.12'
       - name: Validate provisional EVO classifications
         run: python scripts/validation/validate_evo_relationship_classes.py
+      - name: Verify EVO candidate registry identity and approval boundary
+        run: python scripts/validation/validate_evo_candidate_integrity.py
       - name: Run EVO negative mutation regressions
         run: python -m unittest discover -s scripts/validation -p 'test_evo_relationship_classes.py' -v
       - run: npm run validate
