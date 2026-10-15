@@ -61,6 +61,18 @@ class ClassificationValidationTests(unittest.TestCase):
         self.check_case(lambda d: d[FILES[2]]["transitions"][0].update(
             originOfRuntimeType="runtime-default"), 1)
 
+    def test_reject_selected_view_as_biological_branch(self):
+        def mutate(d):
+            next(row for row in d[FILES[2]]["transitions"]
+                 if row["transitionId"] == "TR-0108")["provisionalClass"] = "evolutionary-branching"
+        self.check_case(mutate, 1)
+
+    def test_reject_disputed_transition_silent_reclassification(self):
+        def mutate(d):
+            next(row for row in d[FILES[2]]["transitions"]
+                 if row["transitionId"] == "TR-0114")["provisionalClass"] = "summary-aggregation"
+        self.check_case(mutate, 1)
+
     def test_reject_modified_endpoints(self):
         self.check_case(lambda d: d[FILES[1]]["transitions"][0].update(
             sourceConceptIds=["EV-0100"]), 1)
