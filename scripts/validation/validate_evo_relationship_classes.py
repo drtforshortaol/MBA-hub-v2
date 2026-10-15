@@ -20,8 +20,8 @@ def main():
         errors.append("Expected exactly 37 transitions in all files")
     if len(registry["transitions"]) != len(expected) or len(manifest["transitions"]) != len(base):
         errors.append("Duplicate transition IDs in registry or endpoint manifest")
-    if len(classified["allowedClasses"]) != 11 or len(classes) != 11:
-        errors.append("Expected 11 unique provisional relationship classes")
+    if len(classified["allowedClasses"]) != 12 or len(classes) != 12:
+        errors.append("Expected 12 unique provisional relationship classes")
     if {r["provisionalClass"] for r in rows} != classes:
         errors.append("Declared classes and actually used classes differ")
     if classified.get("status") != "provisional-unapproved":
@@ -77,7 +77,7 @@ def main():
     if errors:
         for err in errors: print("FAIL:", err)
         return 1
-    print("PASS: 37/37 references, 11 declared classes, 13 default cases, guarded ambiguities and endpoint invariants")
+    print("PASS: 37/37 references, 12 declared classes, 13 default cases, guarded ambiguities and endpoint invariants")
     print("Scientific accuracy and CI execution are NOT certified by this structural check")
     return 0
 
