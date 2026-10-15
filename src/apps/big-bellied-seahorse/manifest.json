@@ -16,7 +16,12 @@
     }
   ],
   "offline_assets": [
-    "apps/big-bellied-seahorse/index.html"
+    "apps/big-bellied-seahorse/index.html",
+    "apps/IMG_4212.jpeg",
+    "apps/IMG_4213.jpeg",
+    "apps/IMG_4214.jpeg",
+    "apps/IMG_4215.jpeg",
+    "apps/IMG_4216.jpeg"
   ],
   "media": [],
   "knowledge": [],
