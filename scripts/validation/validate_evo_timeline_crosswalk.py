@@ -22,7 +22,7 @@ def validate(crosswalk, triage, registry):
     for row in events:
         n = row.get("legacyOrdinal")
         expected = by_number.get(n)
-        if row.get("eventId") != f"TL-{n:04d}" if isinstance(n, int) else True:
+        if not isinstance(n, int) or row.get("eventId") != f"TL-{n:04d}":
             errors.append(f"event {n}: wrong provisional ID")
         if not expected or row.get("legacyTitle") != expected.get("title"):
             errors.append(f"event {n}: source title mismatch")
