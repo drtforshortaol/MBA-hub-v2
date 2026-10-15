@@ -6,3 +6,6 @@ test('October issue data evaluates and links to seahorse',()=>{const context=vm.
 
 test('all October images exist and are registered for offline use',()=>{for(const [app,ids] of [['big-bellied-seahorse',[4212,4213,4214,4215,4216]],['naturalist-field-notes',[4207,4208,4209,4210]]]){const m=JSON.parse(read('src/apps/'+app+'/manifest.json'));for(const id of ids){const p='apps/IMG_'+id+'.jpeg';assert.ok(fs.existsSync('src/'+p),p);assert.ok(m.offline_assets.includes(p),app+' offline: '+p);}}});
 test('seahorse hero and Field Notes image paths resolve',()=>{const h=read('src/apps/big-bellied-seahorse/index.html');assert.ok(h.includes('src="../IMG_4216.jpeg"'));const note=read('src/apps/naturalist-field-notes/october-2026-note.js');for(const id of [4207,4208,4209,4210])assert.ok(note.includes('../IMG_'+id+'.jpeg'));});
+
+test('app discovery ignores loose image files in src/apps',()=>{const fs=requireFileSystem();const entries=fs.readdirSync('src/apps',{withFileTypes:true});const folders=entries.filter(e=>e.isDirectory());assert.ok(folders.some(e=>e.name==='big-bellied-seahorse'));assert.ok(entries.some(e=>e.isFile()&&e.name==='IMG_4216.jpeg'));const source=read('scripts/build.mjs');assert.match(source,/readdirSync\('src\/apps',\{withFileTypes:true\}\)/);});
+function requireFileSystem(){return fs;}
