@@ -1,0 +1,34 @@
+name: MBA V2 Development Validation
+on:
+  push:
+    branches:
+      - security-review-evo-foundation-20261014
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'scripts/**'
+      - 'config/**'
+      - 'package.json'
+      - '.github/workflows/october-v2-validation.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate manifests and reference integrity
+        run: npm run validate
+      - name: Run automated regression tests
+        run: npm test
+      - name: Run security scanner
+        run: npm run security:scan
+      - name: Build isolated development distribution
+        run: npm run build
+      - name: Check image and note assets
+        run: node --test tests/october-seahorse.test.mjs
