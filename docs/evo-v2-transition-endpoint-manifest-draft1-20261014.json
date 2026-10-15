@@ -1,0 +1,386 @@
+{
+  "schemaVersion": "0.1-draft",
+  "status": "endpoint-unverified",
+  "source": {
+    "masterMap": "drtforshortaol/master-evolution-map-test/index.html",
+    "registry": "docs/evo-v2-complete-migration-registry-draft-20261014.json",
+    "audit": "docs/evo-v2-master-map-transition-endpoint-audit-draft1-20261014.md"
+  },
+  "notes": [
+    "Null endpoint arrays mean not established, not that the transition has zero parents or descendants.",
+    "Relationship types transcribed from runtime source; fallback 'continuation' is explicitly unverified.",
+    "No canonical scientific relationship is approved by this document."
+  ],
+  "transitions": [
+    {
+      "transitionId": "TR-0100",
+      "sourceKey": "great-split",
+      "relationshipType": "branching",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0101",
+      "sourceKey": "bacterial-diversification",
+      "relationshipType": "branching",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0102",
+      "sourceKey": "archaeal-diversification",
+      "relationshipType": "branching",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0103",
+      "sourceKey": "toward-host",
+      "relationshipType": "continuation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0104",
+      "sourceKey": "endosymbiosis",
+      "relationshipType": "merger",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0105",
+      "sourceKey": "eukaryogenesis",
+      "relationshipType": "continuation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0106",
+      "sourceKey": "toward-leca",
+      "relationshipType": "continuation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0107",
+      "sourceKey": "major-euk-div",
+      "relationshipType": "branching",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0108",
+      "sourceKey": "opisthokont-select-transition",
+      "relationshipType": "branching",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0109",
+      "sourceKey": "opisthokont-branch",
+      "relationshipType": "branching",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0110",
+      "sourceKey": "archaeplastida-select-transition",
+      "relationshipType": "branching",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0111",
+      "sourceKey": "archaeplastida-summary-branch",
+      "relationshipType": "branching",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0112",
+      "sourceKey": "green-to-land-summary",
+      "relationshipType": "continuation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Runtime falls back to continuation; this is NOT a verified biological relationship type."
+    },
+    {
+      "transitionId": "TR-0113",
+      "sourceKey": "sar-select-transition",
+      "relationshipType": "branching",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0114",
+      "sourceKey": "sar-branch",
+      "relationshipType": "continuation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Runtime falls back to continuation; this is NOT a verified biological relationship type."
+    },
+    {
+      "transitionId": "TR-0115",
+      "sourceKey": "brown-summary-transition",
+      "relationshipType": "continuation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Runtime falls back to continuation; this is NOT a verified biological relationship type."
+    },
+    {
+      "transitionId": "TR-0116",
+      "sourceKey": "cyano-branch",
+      "relationshipType": "branching",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0117",
+      "sourceKey": "oxygenic-photosynthesis",
+      "relationshipType": "innovation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0118",
+      "sourceKey": "cyano-continuation",
+      "relationshipType": "continuation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0119",
+      "sourceKey": "planetary-effect",
+      "relationshipType": "planetary-effect",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0120",
+      "sourceKey": "primary-plastid-endo",
+      "relationshipType": "merger",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0121",
+      "sourceKey": "plastid-integration",
+      "relationshipType": "integration",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0122",
+      "sourceKey": "archaeplastida-diversification",
+      "relationshipType": "branching",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0123",
+      "sourceKey": "red-lineage-transition",
+      "relationshipType": "continuation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Runtime falls back to continuation; this is NOT a verified biological relationship type."
+    },
+    {
+      "transitionId": "TR-0124",
+      "sourceKey": "red-seaweed-diversification",
+      "relationshipType": "continuation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Runtime falls back to continuation; this is NOT a verified biological relationship type."
+    },
+    {
+      "transitionId": "TR-0125",
+      "sourceKey": "green-diversification",
+      "relationshipType": "branching",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0126",
+      "sourceKey": "land-transition",
+      "relationshipType": "continuation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Runtime falls back to continuation; this is NOT a verified biological relationship type."
+    },
+    {
+      "transitionId": "TR-0127",
+      "sourceKey": "vascular-transition",
+      "relationshipType": "continuation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Runtime falls back to continuation; this is NOT a verified biological relationship type."
+    },
+    {
+      "transitionId": "TR-0128",
+      "sourceKey": "seed-transition",
+      "relationshipType": "continuation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Runtime falls back to continuation; this is NOT a verified biological relationship type."
+    },
+    {
+      "transitionId": "TR-0129",
+      "sourceKey": "flower-transition",
+      "relationshipType": "continuation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Runtime falls back to continuation; this is NOT a verified biological relationship type."
+    },
+    {
+      "transitionId": "TR-0130",
+      "sourceKey": "seagrass-transition",
+      "relationshipType": "continuation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Runtime falls back to continuation; this is NOT a verified biological relationship type."
+    },
+    {
+      "transitionId": "TR-0131",
+      "sourceKey": "eelgrass-transition",
+      "relationshipType": "continuation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Runtime falls back to continuation; this is NOT a verified biological relationship type."
+    },
+    {
+      "transitionId": "TR-0132",
+      "sourceKey": "stramenopile-branch",
+      "relationshipType": "branching",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0133",
+      "sourceKey": "red-derived-plastid",
+      "relationshipType": "secondary-endosymbiosis",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0134",
+      "sourceKey": "brown-branch",
+      "relationshipType": "branching",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Relationship type transcribed from source runtime annotation; endpoints not canonically serialized."
+    },
+    {
+      "transitionId": "TR-0135",
+      "sourceKey": "kelp-transition",
+      "relationshipType": "continuation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Runtime falls back to continuation; this is NOT a verified biological relationship type."
+    },
+    {
+      "transitionId": "TR-0136",
+      "sourceKey": "giant-kelp-transition",
+      "relationshipType": "continuation",
+      "sourceConceptIds": null,
+      "targetConceptIds": null,
+      "evidenceStatus": "endpoint-unverified",
+      "confidence": "unassessed",
+      "reviewNotes": "Runtime falls back to continuation; this is NOT a verified biological relationship type."
+    }
+  ]
+}
