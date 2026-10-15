@@ -20,8 +20,10 @@ def main():
         errors.append("Expected exactly 37 transitions in all files")
     if len(registry["transitions"]) != len(expected) or len(manifest["transitions"]) != len(base):
         errors.append("Duplicate transition IDs in registry or endpoint manifest")
-    if len(classified["allowedClasses"]) != 12 or len(classes) != 12:
-        errors.append("Expected 12 unique provisional relationship classes")
+    if len(classified["allowedClasses"]) != 11 or len(classes) != 11:
+        errors.append("Expected 11 unique provisional relationship classes")
+    if {r["provisionalClass"] for r in rows} != classes:
+        errors.append("Declared classes and actually used classes differ")
     if classified.get("status") != "provisional-unapproved":
         errors.append("Classification status must remain provisional-unapproved")
     if len({r["transitionId"] for r in rows}) != len(rows):
@@ -55,10 +57,27 @@ def main():
         errors.append("Registry and endpoint manifest transition IDs differ")
     if any(r.get("evidenceStatus") != "endpoint-unverified" for r in base.values()):
         errors.append("Endpoint evidence status was prematurely changed")
+    protected = {"TR-0108", "TR-0110", "TR-0112", "TR-0113"}
+    nonancestry = {"summary-aggregation", "ui-view-selection", "environmental-causation", "cellular-endosymbiosis", "cellular-integration", "complex-evolutionary-process"}
+    by_id = {r["transitionId"]: r for r in rows}
+    for tid in protected:
+        if by_id.get(tid, {}).get("provisionalClass") != "ui-view-selection":
+            errors.append(f"{tid}: selected view reclassified as biology")
+    for tid in ("TR-0114", "TR-0115"):
+        if by_id.get(tid, {}).get("provisionalClass") != "ancestry-context":
+            errors.append(f"{tid}: disputed provisional classification changed without evidence review")
+    for tid in ("TR-0104", "TR-0120", "TR-0133"):
+        if by_id.get(tid, {}).get("provisionalClass") != "cellular-endosymbiosis":
+            errors.append(f"{tid}: complex cellular event improperly reclassified")
+    for tid in ("TR-0101", "TR-0102", "TR-0107", "TR-0111", "TR-0116", "TR-0132"):
+        if by_id.get(tid, {}).get("provisionalClass") != "summary-aggregation":
+            errors.append(f"{tid}: compressed overview improperly reclassified")
+    if any(by_id.get(tid, {}).get("provisionalClass") not in nonancestry for tid in ("TR-0105", "TR-0119")):
+        errors.append("Non-ancestry process incorrectly promoted to ancestry semantics")
     if errors:
         for err in errors: print("FAIL:", err)
         return 1
-    print("PASS: 37/37 references, 13 default cases, approval safety, and base-endpoint invariants")
+    print("PASS: 37/37 references, 11 declared classes, 13 default cases, guarded ambiguities and endpoint invariants")
     print("Scientific accuracy and CI execution are NOT certified by this structural check")
     return 0
 
