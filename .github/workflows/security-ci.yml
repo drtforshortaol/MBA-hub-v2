@@ -27,6 +27,8 @@ jobs:
         run: python -m unittest discover -s scripts/validation -p 'test_evo_*.py' -v
       - name: Validate cross-app interface contract
         run: python scripts/validation/validate_evo_integration_contract.py
+      - name: Verify independent EVO integration boundary
+        run: python scripts/validation/validate_evo_boundary_contract.py
       - run: npm run validate
       - run: npm run build
       - run: npm run security:scan
