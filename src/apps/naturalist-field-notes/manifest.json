@@ -22,7 +22,8 @@
     "apps/naturalist-field-notes/index.html",
     "apps/naturalist-field-notes/steve-webster-gray-whale.html",
     "apps/naturalist-field-notes/styles.css",
-    "apps/naturalist-field-notes/october-2026-08-14.html"
+    "apps/naturalist-field-notes/october-2026-08-14.html",
+    "apps/naturalist-field-notes/october-2026-note.js"
   ],
   "media": [
     "asset-edd9d5ec2d0bbd07",
@@ -473,7 +474,7 @@
     {
       "id": "note-2026-10-15-seahorse",
       "title": "October 15, 2026 (Bay Watch October 8–14) — Seahorse, Ocean in Motion and Bay Watch",
-      "text": "October 8–14, 2026 weekly Naturalist update. Humpbacks, dolphins, orcas, whale hydrophone, seabirds, jelly gastrovascular system, Splash Zone and Ocean in Motion, big-bellied seahorse.",
+      "text": "October 8–14, 2026 weekly Naturalist update. Humpbacks, dolphins, orcas, whale hydrophone, seabirds, jelly gastrovascular system, Splash Zone and Ocean in Motion, big-bellied seahorse. Dedicated guide: big-bellied-seahorse. October 2026 update rendered through modular issue data.",
       "aliases": [
         "seahorse",
         "Ocean in Motion",
