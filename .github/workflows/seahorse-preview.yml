@@ -1,4 +1,5 @@
 name: Seahorse Development Preview
+# Developer-only preview; does not alter production or public tester.
 on:
   push:
     branches: [security-review-evo-foundation-20261014]
