@@ -26,6 +26,11 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
   const sectionCaption=field('Section '+section.id+' caption (draft only)',saved?.caption??section.caption??'',2000,3);
   sectionInputs.push({id:section.id,title:sectionTitle,text:sectionText,caption:sectionCaption});
  }
+ const photoHeading=document.createElement('h5');photoHeading.textContent='Photograph inventory';form.append(photoHeading);
+ const imageExtensions=['.png','.jpg','.jpeg','.webp','.gif','.avif'];
+ const photoAssets=(app.offline_assets||[]).filter(asset=>typeof asset==='string'&&imageExtensions.some(ext=>asset.toLowerCase().endsWith(ext)));
+ const photoSummary=document.createElement('p');photoSummary.textContent=photoAssets.length+' registered photographs. Inventory is read-only; uploads and deletion are unavailable.';form.append(photoSummary);
+ for(const asset of photoAssets){const item=document.createElement('p');item.textContent=asset;form.append(item);}
  const preview=document.createElement('pre');preview.setAttribute('aria-live','polite');
  const status=document.createElement('p');status.setAttribute('role','status');
  function proposed(){return {...draft,title:titleInput.value,description:descriptionInput.value,section_edits:sectionInputs.filter(s=>{const original=(app.sections||[]).find(x=>x.id===s.id);return s.title.value!==(original?.title??s.id)||s.text.value!==(original?.text??'')||s.caption.value!==(original?.caption??'');}).map(s=>({id:s.id,title:s.title.value,text:s.text.value,caption:s.caption.value})),updated_at:new Date().toISOString()};}
