@@ -6,18 +6,20 @@ export function safeLocalPath(value){
  const parts=value.split('/');return parts.every(part=>part&&part!=='.'&&part!=='..'&&/^[a-zA-Z0-9_.-]+$/.test(part));
 }
 export function validate({apps,categories,media,knowledge,exists,interfaces={interfaces:[{id:'navigation',version:'1.0.0',owner:'platform'}]}}){
- const errors=[], ids=new Set(),cats=new Set(categories.map(c=>c.id)), assets=new Map(media.assets.map(a=>[a.asset_id,a])), facts=new Map(knowledge.records.map(k=>[k.id,k]));
+ const errors=[], ids=new Set(),entryPoints=new Set(),cats=new Set(categories.map(c=>c.id)), assets=new Map(media.assets.map(a=>[a.asset_id,a])), facts=new Map(knowledge.records.map(k=>[k.id,k]));
  if(cats.size!==categories.length)errors.push('duplicate category');
  if(assets.size!==media.assets.length)errors.push('duplicate media ID');if(facts.size!==knowledge.records.length)errors.push('duplicate knowledge ID');
  for(const a of apps){
   if(ids.has(a.app_id))errors.push(`duplicate app ${a.app_id}`);ids.add(a.app_id);
+  if(entryPoints.has(a.entry_point))errors.push(`duplicate entry point ${a.entry_point}`);entryPoints.add(a.entry_point);
+  for(const field of ['offline_assets','sections','media','knowledge','dependencies','cross_links'])if(!Array.isArray(a[field]))errors.push(`invalid ${field} in ${a.app_id}`);
   for(const key of ['app_id','title','owner','version','entry_point','type'])if(!a[key])errors.push(`missing ${key}`);
   if(typeof a.entry_point!=='string'||!safeLocalPath(a.entry_point))errors.push(`unsafe entry point ${a.app_id}`);
   if(a.schema_version!==1)errors.push(`invalid schema ${a.app_id}`);
   if(!cats.has(a.category))errors.push(`unknown category ${a.category}`);
   if(!['development','testing','approved','published'].includes(a.status))errors.push(`invalid status ${a.app_id}`);
   if(!['species','field-notes','reference','library','interactive'].includes(a.type))errors.push(`unknown template ${a.type}`);
-  if(!a.offline_assets.includes(a.entry_point))errors.push(`entry absent from offline bundle ${a.app_id}`);
+  if(!Array.isArray(a.offline_assets)||!a.offline_assets.includes(a.entry_point))errors.push(`entry absent from offline bundle ${a.app_id}`);
   for(const p of a.offline_assets)if(!safeLocalPath(p)||!exists(p))errors.push(`missing/unsafe asset ${p}`);
   const sections=new Set();for(const s of a.sections){if(sections.has(s.id))errors.push(`duplicate section ${s.id}`);sections.add(s.id);}
   for(const id of a.media)if(!assets.has(id))errors.push(`missing media ${id}`);
