@@ -92,3 +92,19 @@ test('restored category IDs must exist in the current registry and cannot duplic
  assert.deepEqual(Array.from(restore({open:['animals','animals','unknown',null,'exhibits']})),['animals','exhibits']);
  assert.deepEqual(Array.from(restore({open:'animals'})),[]);
 });
+
+test('visit capture rejects encoded and backslash application paths',()=>{
+ const store=storage();
+ for(const destination of [
+  root+'apps/%2e%2e/escape.html',
+  root+'apps/ray/%2fsecret.html',
+  root+'apps/ray/%5csecret.html',
+  root+'apps/ray/%25secret.html'
+ ]){
+  const app=captureVisit(destination,root,root+'index.html',{},store,'tester','blocked-path');
+  assert.equal(app.searchParams.has('visit'),false,'unsafe app path '+destination);
+ }
+ assert.equal(visitContext(root,'blocked-path',store,'tester'),null);
+ const good=captureVisit(root+'apps/ray/index.html',root,root+'index.html',{},store,'tester','safe-path');
+ assert.equal(good.searchParams.get('visit'),'safe-path');
+});
