@@ -32,6 +32,18 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
  const previewButton=document.createElement('button');previewButton.type='button';previewButton.className='button';previewButton.textContent='Preview and validate';previewButton.onclick=check;
  const saveButton=document.createElement('button');saveButton.type='submit';saveButton.className='button';saveButton.textContent='Save on this device';
  form.append(previewButton,saveButton,preview);
+ const exportButton=document.createElement('button');exportButton.type='button';exportButton.className='button';exportButton.textContent='Download draft change request';
+ exportButton.addEventListener('click',()=>{
+  const {next,result}=check();if(!result.valid)return;
+  const payload={schema_version:1,kind:'mba-v2-content-change-request',app_id:app.app_id,app_version:app.version,description:next.description.trim()||'Review proposed content edits',proposed_title:next.title,section_edits:next.section_edits};
+  const blob=new Blob([JSON.stringify(payload,null,2)+'\\n'],{type:'application/json'});
+  const url=URL.createObjectURL(blob),link=document.createElement('a');
+  link.href=url;link.download='mba-draft-'+String(app.app_id).replace(/[^a-zA-Z0-9_-]/g,'-')+'.json';link.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+  status.textContent='Change request downloaded for review. No GitHub changes submitted.';
+ });
+ form.append(exportButton);
+
  form.addEventListener('submit',event=>{event.preventDefault();const {next,result}=check();if(!result.valid)return;const saved=saveDraft(localStorage,env.namespace,app,next);status.textContent=saved.valid?'Saved locally. No GitHub or published content changed.':saved.errors.join('; ');});
  form.append(status);details.append(form);check();
 }
