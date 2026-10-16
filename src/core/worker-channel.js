@@ -6,7 +6,10 @@ export async function request(type){
  return new Promise((resolve,reject)=>{
   const channel=new MessageChannel();
   let timer;
+  let settled=false;
   const finish=(error,data)=>{
+   if(settled)return;
+   settled=true;
    clearTimeout(timer);
    channel.port1.onmessage=null;
    channel.port1.onmessageerror=null;
