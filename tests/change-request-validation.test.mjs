@@ -8,3 +8,14 @@ test('rejects unknown application and stale version',()=>{const r=validateChange
 test('rejects empty or excessive description',()=>{for(const description of ['', ' '.repeat(4),'x'.repeat(4001)])assert.equal(validateChangeRequest({...valid(),description},apps).valid,false);});
 test('rejects incorrect schema or request type',()=>assert.equal(validateChangeRequest({...valid(),schema_version:2,kind:'release'},apps).valid,false));
 test('rejects non-object requests',()=>assert.equal(validateChangeRequest(null,apps).valid,false));
+
+test('validates controlled section edit requests and permanent IDs',()=>{
+ const registry=[{app_id:'ray',version:'1.0.0',sections:[{id:'habitat',title:'Habitat'}]}];
+ const request={...valid(),proposed_title:'Rays',section_edits:[{id:'habitat',title:'Habitat',caption:'Coastal waters'}]};
+ assert.equal(validateChangeRequest(request,registry).valid,true);
+ assert.equal(validateChangeRequest({...request,section_edits:[{id:'unknown',title:'New',caption:''}]},registry).valid,false);
+ assert.equal(validateChangeRequest({...request,section_edits:[request.section_edits[0],request.section_edits[0]]},registry).valid,false);
+ assert.equal(validateChangeRequest({...request,section_edits:[{...request.section_edits[0],published:true}]},registry).valid,false);
+ assert.equal(validateChangeRequest({...request,proposed_title:' '},registry).valid,false);
+ assert.equal(validateChangeRequest({...request,release:true},registry).valid,false);
+});
