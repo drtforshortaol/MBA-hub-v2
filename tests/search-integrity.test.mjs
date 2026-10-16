@@ -16,7 +16,7 @@ for(const environment of environments){
  });
  test(environment+' search index targets bundled app pages',()=>{
   const index=JSON.parse(fs.readFileSync('dist/'+environment+'/search-index.json','utf8'));
-  for(const item of index){const pathname=item.url.split(/[?#]/,1)[0];assert(fs.existsSync(path.join('dist',environment,pathname)),'missing search destination: '+item.url);}
+  for(const item of index){const pathname=item.url.split(/[?#]/,1)[0];assert(fs.existsSync(path.join('dist',environment,pathname)),'missing search destination: '+item.url);const registry=JSON.parse(fs.readFileSync('dist/'+environment+'/registry.json','utf8'));const app=registry.apps.find(a=>a.app_id===item.app_id);assert(app,'search destination has unknown owner: '+item.app_id);assert.equal(pathname,app.entry_point,'search destination escapes registered application: '+item.app_id);}
  });
 }
 test('all app manifests are represented in both environment registries',()=>{
