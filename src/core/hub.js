@@ -11,8 +11,8 @@ const root=new URL('../',import.meta.url),arrival=new URL(location.href);let ret
 history.scrollRestoration='auto';
 try{returned=visitContext(root,arrival.searchParams.get('restore'),sessionStorage,environment.namespace);}catch{}
 state=restoredHubState(returned?.state||state,location.href);
-state.open=Array.isArray(state.open)?state.open.filter(id=>typeof id==='string'):[];
-state.scroll=Number.isFinite(state.scroll)&&state.scroll>=0?state.scroll:0;
+state.open=Array.isArray(state.open)?[...new Set(state.open.filter(id=>typeof id==='string'&&registry.categories.some(category=>category.id===id)))]:[];
+state.scroll=typeof state.scroll==='number'&&Number.isFinite(state.scroll)&&state.scroll>=0?state.scroll:0;
 state.query=typeof state.query==='string'?state.query:'';
 if(arrival.searchParams.get('home')==='1'||returned){remember();arrival.searchParams.delete('home');arrival.searchParams.delete('restore');history.replaceState(null,'',arrival.pathname+arrival.search+arrival.hash);}
 document.addEventListener('click',event=>{const link=event.target.closest?.('a');if(!link||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey||link.target==='_blank')return;let url;try{url=new URL(link.href);}catch{return;}if(url.origin!==root.origin||!url.pathname.startsWith(root.pathname+'apps/'))return;state.scroll=scrollY;remember();try{link.href=captureVisit(url,root,location.href,state,sessionStorage,environment.namespace,crypto.randomUUID()).href;}catch{}});
