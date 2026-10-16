@@ -10,7 +10,7 @@ export function captureVisit(destination,root,origin,state,storage,namespace,id)
 }
 export function visitContext(root,id,storage,namespace){
  if(!id||!/^[a-zA-Z0-9-]{1,100}$/.test(id))return null;
- try{const context=JSON.parse(storage.getItem(key(namespace,id))),url=new URL(context.url),scope=new URL(root);return url.origin===scope.origin&&(url.pathname===new URL('index.html',scope).pathname||url.pathname===scope.pathname)?context:null;}catch{return null;}
+ try{const context=JSON.parse(storage.getItem(key(namespace,id))),url=new URL(context.url),scope=new URL(root);return url.origin===scope.origin&&(url.pathname===new URL('index.html',scope).pathname||url.pathname===scope.pathname)&&context.state!==null&&typeof context.state==='object'&&!Array.isArray(context.state)?context:null;}catch{return null;}
 }
 export function returnToVisit(root,current,storage,namespace){
  const id=new URL(current).searchParams.get('visit'),context=visitContext(root,id,storage,namespace);
