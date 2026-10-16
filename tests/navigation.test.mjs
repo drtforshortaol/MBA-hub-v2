@@ -36,3 +36,31 @@ test('Hub link validation enforces application scope and rejects malformed paths
  assert.equal(safe('apps/one/index.html'),root+'apps/one/index.html');
  for(const url of ['https://other.test/v2/apps/one/index.html','https://example.test/v2-other/apps/one/index.html','../apps/one/index.html','/v2/apps/one/index.html','apps/%2e%2e/escape.html','apps/one\\\\index.html','search-index.json','not-a-valid-app.html','javascript:alert(1)',''])assert.equal(safe(url),'#','unsafe link: '+url);
 });
+
+test('contextual Back retains app query parameters and deep-link fragments',()=>{
+ const store=storage(),origin=root+'index.html#search';
+ const app=captureVisit('apps/ray/index.html?mode=guide#habitat',root,origin,{query:'ray',scroll:350},store,'tester','deep-link');
+ assert.equal(app.searchParams.get('mode'),'guide');
+ assert.equal(app.searchParams.get('visit'),'deep-link');
+ assert.equal(app.hash,'#habitat');
+ const back=returnToVisit(root,app,store,'tester');
+ assert.equal(back.hash,'#search');
+ assert.equal(back.searchParams.get('restore'),'deep-link');
+ assert.deepEqual(visitContext(root,'deep-link',store,'tester').state,{query:'ray',scroll:350});
+});
+test('contextual Back supports nested app pages without losing Hub scope',()=>{
+ const store=storage();
+ const app=captureVisit('apps/ray/topics/behavior.html',root,root+'index.html',{scroll:88,open:['animals']},store,'developer','nested-app');
+ assert.equal(app.pathname,'/v2/apps/ray/topics/behavior.html');
+ assert.equal(app.searchParams.get('visit'),'nested-app');
+ assert.equal(returnToVisit(root,app,store,'developer').pathname,'/v2/index.html');
+ assert.equal(returnToVisit(root,app,store,'tester').searchParams.get('home'),'1');
+});
+test('restoration removes stale home flag without changing the captured search route',()=>{
+ const store=storage();
+ const app=captureVisit('apps/ray/index.html',root,root+'index.html#search',{query:'seahorse'},store,'tester','restore-route');
+ const back=returnToVisit(root,app,store,'tester');
+ assert.equal(back.searchParams.has('home'),false);
+ assert.equal(back.hash,'#search');
+ assert.equal(back.searchParams.get('restore'),'restore-route');
+});
