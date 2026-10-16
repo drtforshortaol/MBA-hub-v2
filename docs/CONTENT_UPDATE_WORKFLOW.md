@@ -21,6 +21,9 @@ This procedure applies only to the authorized V2 development branch. Never chang
 4. Create the application entry page and local resources under `src/`; use safe relative paths. Preserve navigation and return-to-Hub behavior.
 5. Run `npm run content:check -- <app_id>` followed by the full validation suite. The build generates the application registry, search index, offline resource manifest, and catalog automatically—do not hand-edit generated outputs.
 
+## Check the entire application registry
+Run `npm run content:check:all` after shared media, knowledge, or navigation changes. The read-only command reports every registered application and returns a nonzero exit status if validation fails. Use `npm run content:check -- <permanent-app-id>` to inspect one app. Run the full test, validation, and security suites before considering a change complete. The preflight checks are developer diagnostics, not release approvals or device acceptance evidence.
+
 ## Before proposing release
 - Verify category navigation, search, deep links, Back/Return to Hub, offline entry, and media rendering for each changed app.
 - Confirm all release gates, device tests, and media permissions are satisfied. Do not set approval flags without evidence.
