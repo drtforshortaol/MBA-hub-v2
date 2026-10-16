@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 
 const read=file=>JSON.parse(fs.readFileSync(file,'utf8'));
 const root='dist/developer';
@@ -43,6 +44,8 @@ test('offline release manifest has unique resources with SHA-256 digests',()=>{
  assert.equal(resourceSet.size,release.resources.length);
  for(const resource of release.resources){
   assert.match(resource.sha256,/^[a-f0-9]{64}$/);
-  assert.equal(fs.statSync(path.join(root,resource.url)).size,resource.bytes,resource.url);
+  const bytes=fs.readFileSync(path.join(root,resource.url));
+  assert.equal(bytes.length,resource.bytes,resource.url);
+  assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),resource.sha256,resource.url);
  }
 });
