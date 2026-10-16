@@ -30,3 +30,12 @@ test('body text validation for exported changes',()=>{
  request.section_edits[0].id='other';
  assert.equal(validateChangeRequest(request,registry).valid,false);
 });
+
+test('photo notes must reference registered image assets',()=>{
+ const registry=[{app_id:'ray',version:'1.0.0',offline_assets:['apps/ray/photo.jpg']}];
+ const request={...valid(),photo_notes:[{asset:'apps/ray/photo.jpg',caption:'Ray',alt_text:'Swimming ray'}]};
+ assert.equal(validateChangeRequest(request,registry).valid,true);
+ assert.equal(validateChangeRequest({...request,photo_notes:[{...request.photo_notes[0],asset:'other.jpg'}]},registry).valid,false);
+ assert.equal(validateChangeRequest({...request,photo_notes:[{...request.photo_notes[0],delete:true}]},registry).valid,false);
+ assert.equal(validateChangeRequest({...request,photo_notes:[request.photo_notes[0],request.photo_notes[0]]},registry).valid,false);
+});
