@@ -341,3 +341,34 @@ test('interrupted update retains previous rollback cache without exposing partia
  assert(![...w.stores.keys()].some(k=>k.endsWith(w.manifest.release)));
  assert(w.stores.has('mba-shared-assets-v1'));
 });
+
+
+test('offline navigation resolves directory URLs to verified registered index pages',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');
+ const entry=w.manifest.resources.find(item=>item.url.startsWith('apps/')&&item.url.endsWith('/index.html'));
+ assert(entry,'at least one app entry is required');
+ const directory=new URL(entry.url.slice(0,-'index.html'.length),w.root);
+ const response=await w.invoke('fetch',{request:{method:'GET',url:directory.href}});
+ assert.equal(response.status,200);
+ assert.equal((await response.arrayBuffer()).byteLength,entry.bytes);
+});
+
+test('offline navigation does not serve a corrupted registered app entry',async()=>{
+ const w=await worker({offline:true,prior:false});await w.invoke('install');
+ const entry=w.manifest.resources.find(item=>item.url.startsWith('apps/')&&item.url.endsWith('/index.html'));
+ assert(entry,'at least one app entry is required');
+ const cache=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+ await cache.put(new URL(entry.url,w.root),new Response('corrupt'));
+ const response=await w.invoke('fetch',{request:{method:'GET',url:new URL(entry.url,w.root).href}});
+ assert.equal(response.status,503);
+});
+
+test('offline navigation ignores query parameters for registered resources',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');
+ const entry=w.manifest.resources.find(item=>item.url.startsWith('apps/')&&item.url.endsWith('/index.html'));
+ assert(entry,'at least one app entry is required');
+ const url=new URL(entry.url,w.root);url.searchParams.set('view','details');
+ const response=await w.invoke('fetch',{request:{method:'GET',url:url.href}});
+ assert.equal(response.status,200);
+ assert.equal((await response.arrayBuffer()).byteLength,entry.bytes);
+});
