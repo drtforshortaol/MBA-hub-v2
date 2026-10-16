@@ -24,7 +24,7 @@ self.addEventListener('fetch',event=>{
  try{return await fetch(event.request);}catch{return new Response('This resource is not prepared offline.',{status:503,headers:{'Content-Type':'text/plain'}});}})());
 });
 self.addEventListener('message',event=>{
- const clientURL=event.source?.url?new URL(event.source.url):null;if(!clientURL||clientURL.origin!==ROOT.origin||!clientURL.pathname.startsWith(ROOT.pathname))return;
+ let clientURL=null;try{if(event.source?.url)clientURL=new URL(event.source.url);}catch{return;}if(!clientURL||clientURL.origin!==ROOT.origin||!clientURL.pathname.startsWith(ROOT.pathname))return;
  event.waitUntil((async()=>{try{
  const type=event.data?.type;if(type==='REPAIR'){if(!NAMESPACE.endsWith('-developer'))throw Error('Read-only environment');await prepare();}
  else if(type!=='STATUS'&&type!=='ACTIVATE_UPDATE')throw Error('Unsupported command');
