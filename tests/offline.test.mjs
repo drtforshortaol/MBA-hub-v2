@@ -354,7 +354,7 @@ test('offline navigation resolves directory URLs to verified registered index pa
 });
 
 test('offline navigation does not serve a corrupted registered app entry',async()=>{
- const w=await worker({offline:true,prior:false});await w.invoke('install');
+ const w=await worker({offline:true});await w.invoke('install');
  const entry=w.manifest.resources.find(item=>item.url.startsWith('apps/')&&item.url.endsWith('/index.html'));
  assert(entry,'at least one app entry is required');
  const cache=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
