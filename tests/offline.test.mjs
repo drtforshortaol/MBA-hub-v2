@@ -32,3 +32,5 @@ test('failed update preserves previous complete V2 bundle and V1 assets',async()
 
 test('offline installer rejects parent traversal paths before fetching assets',async()=>{const w=await worker({prior:false,mutateManifest:m=>m.resources.unshift({...m.resources[0],url:'../outside.html'})});await assert.rejects(w.invoke('install'),/Unsafe or duplicate release resource/);assert.equal(w.fetched.length,1);assert(w.stores.has('mba-shared-assets-v1'));});
 test('offline installer rejects duplicate release resources',async()=>{const w=await worker({prior:false,mutateManifest:m=>m.resources.push({...m.resources[0]})});await assert.rejects(w.invoke('install'),/Unsafe or duplicate release resource/);assert.equal(w.fetched.length,1);});
+
+test('malformed message source URLs are ignored without crashing worker',async()=>{const w=await worker();await w.invoke('install');await w.invoke('message',{source:{url:'not a valid URL'},data:{type:'STATUS'},ports:[{postMessage(){throw Error('unexpected response');}}]});});
