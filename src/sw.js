@@ -19,7 +19,7 @@ self.addEventListener('activate',event=>event.waitUntil((async()=>{
 })()));
 self.addEventListener('fetch',event=>{
  const url=new URL(event.request.url);if(event.request.method!=='GET'||url.origin!==ROOT.origin||!url.pathname.startsWith(ROOT.pathname))return;
- event.respondWith((async()=>{const cache=await caches.open(CACHE);url.search='';url.hash='';if(url.pathname.endsWith('/'))url.pathname+='index.html';const hit=await cache.match(url.href);if(hit)return hit;
+ event.respondWith((async()=>{const cache=await caches.open(CACHE);url.search='';url.hash='';if(url.pathname.endsWith('/'))url.pathname+='index.html';const hit=await cache.match(url.href);if(hit){const manifestResponse=await cache.match(absolute('release.json'));if(manifestResponse){try{const manifest=await manifestResponse.json();const relative=url.pathname.slice(ROOT.pathname.length);const item=manifest.resources?.find(entry=>entry.url===relative);if(item&&await verified(hit,item))return hit;}catch{/* Invalid cache metadata must not authorize serving unverified assets. */}}}
  // Unknown destinations are never silently replaced with the Hub.
  try{return await fetch(event.request);}catch{return new Response('This resource is not prepared offline.',{status:503,headers:{'Content-Type':'text/plain'}});}})());
 });
