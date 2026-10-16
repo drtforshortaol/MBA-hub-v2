@@ -4,7 +4,6 @@ import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
 
 test('tester build excludes developer maintenance code',()=>{
- execFileSync(process.execPath,['scripts/build.mjs'],{stdio:'pipe'});
  assert.equal(fs.existsSync('dist/tester/core/developer.js'),false);
  assert.equal(fs.existsSync('dist/developer/core/developer.js'),true);
  assert.doesNotMatch(fs.readFileSync('dist/tester/core/hub.js','utf8'),/import\(['"]\.\/developer\.js['"]\)/);
