@@ -18,3 +18,12 @@ test('explicit refresh activates only a completely verified bundle',async()=>{co
 test('refresh refuses activation when a prepared resource is missing',async()=>{const w=await worker();await w.invoke('install');const current=[...w.stores].find(([k])=>k.endsWith(w.manifest.release))[1];current.files.delete(new URL(w.manifest.resources[0].url,w.root).href);let reply;await w.invoke('message',{source:{url:w.root+'refresh.html'},data:{type:'ACTIVATE_UPDATE'},ports:[{postMessage(v){reply=v;}}]});assert.match(reply.error,/not completely verified/);assert.equal(w.skipped,false);});
 
 test('failed install removes incomplete V2 bundle without touching older caches',async()=>{const w=await worker({fail:true,prior:false});await assert.rejects(w.invoke('install'),/verification failed/);assert(![...w.stores.keys()].some(k=>k.endsWith(w.manifest.release)));assert(w.stores.has('mba-shared-assets-v1'));assert(w.deletions.some(k=>k.endsWith(w.manifest.release)));});
+
+test('failed update preserves previous complete V2 bundle and V1 assets',async()=>{
+ const w=await worker({fail:true,prior:true});
+ await assert.rejects(w.invoke('install'),/verification failed/);
+ assert(![...w.stores.keys()].some(k=>k.endsWith(w.manifest.release)),'incomplete current release should be deleted');
+ assert([...w.stores.keys()].some(k=>k.endsWith(':prior')),'previous complete V2 release should remain');
+ assert(w.stores.has('mba-shared-assets-v1'),'V1 assets should remain');
+ assert(!w.deletions.includes('mba-shared-assets-v1'));
+});
