@@ -211,3 +211,17 @@ test('offline manifest covers every registered tester app entry point',async()=>
   for(const asset of app.offline_assets)assert(prepared.has(asset),'missing offline asset for '+app.app_id+': '+asset);
  }
 });
+
+test('offline install rejects a manifest from another environment without altering V1 caches',async()=>{
+ const w=await worker({prior:false,mutateManifest:m=>{m.environment='developer';}});
+ await assert.rejects(w.invoke('install'),/environment mismatch/);
+ assert.equal(w.fetched.length,1,'foreign environment must be rejected before asset downloads');
+ assert(w.stores.has('mba-shared-assets-v1'));
+ assert(![...w.stores.keys()].some(key=>key.endsWith(w.manifest.release)));
+});
+test('offline install accepts a correctly scoped tester manifest',async()=>{
+ const w=await worker({prior:false});
+ assert.equal(w.manifest.environment,'tester');
+ await w.invoke('install');
+ assert([...w.stores.keys()].some(key=>key.endsWith(w.manifest.release)));
+});
