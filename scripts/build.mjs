@@ -31,7 +31,7 @@ export function validate({apps,categories,media,knowledge,exists,interfaces={int
   for(const id of a.media)if(!assets.has(id))errors.push(`missing media ${id}`);
   for(const id of a.knowledge)if(!facts.has(id))errors.push(`missing knowledge ${id}`);
  }
- for(const m of media.assets)if(!m.owner||!m.alt||!m.credit||!m.permission||!exists(m.path))errors.push(`invalid media ${m.asset_id}`);
+ for(const m of media.assets)if(!m.owner||!m.alt||!m.credit||!m.permission||!safeLocalPath(m.path)||!exists(m.path))errors.push(`invalid media ${m.asset_id}`);
  for(const k of knowledge.records)if(!k.owner||!k.version||!k.sections)errors.push(`invalid knowledge ${k.id}`);
  const byId=new Map(apps.map(a=>[a.app_id,a])),graph=new Map();
  const contracts=new Map(interfaces.interfaces.map(i=>[i.id,i]));if(contracts.size!==interfaces.interfaces.length)errors.push('duplicate interface');for(const contract of contracts.values())if(!contract.owner||!contract.version)errors.push('invalid interface '+contract.id);
