@@ -43,6 +43,8 @@ test('categories are alphabetized and application category references are valid'
 
 test('offline release manifest has unique resources with SHA-256 digests',()=>{
  assert.equal(resourceSet.size,release.resources.length);
+ const urls=release.resources.map(resource=>resource.url);
+ assert.deepEqual(urls,[...urls].sort(),'offline release resources must have deterministic ordering');
  for(const resource of release.resources){
   assert.match(resource.sha256,/^[a-f0-9]{64}$/);
   const bytes=fs.readFileSync(path.join(root,resource.url));
