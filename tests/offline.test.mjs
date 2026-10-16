@@ -180,7 +180,7 @@ test('activation rejects rollback manifest with unsafe resource URL',async()=>{
 
 test('offline fetch serves nested registered app entry points from verified cache',async()=>{
  const w=await worker({offline:true});await w.invoke('install');
- const entries=w.manifest.resources.filter(item=>item.url.startsWith('apps/')&&item.url.endsWith('/index.html')).slice(0,5);
+ const entries=w.manifest.resources.filter(item=>item.url.startsWith('apps/')&&item.url.endsWith('/index.html'));
  assert(entries.length>0,'built distribution must contain registered app entry points');
  for(const item of entries){
   const response=await w.invoke('fetch',{request:{method:'GET',url:new URL(item.url,w.root).href}});
@@ -199,4 +199,15 @@ test('offline fetch ignores cross-origin and out-of-scope requests',async()=>{
  assert.equal(await w.invoke('fetch',{request:{method:'GET',url:'https://other.test/v2/tester/index.html'}}),undefined);
  assert.equal(await w.invoke('fetch',{request:{method:'GET',url:'https://example.test/v2/other/index.html'}}),undefined);
  assert.equal(await w.invoke('fetch',{request:{method:'POST',url:w.root+'index.html'}}),undefined);
+});
+
+test('offline manifest covers every registered tester app entry point',async()=>{
+ const registry=JSON.parse(fs.readFileSync('dist/tester/registry.json','utf8'));
+ const w=await worker();
+ const prepared=new Set(w.manifest.resources.map(item=>item.url));
+ assert(registry.apps.length>0);
+ for(const app of registry.apps){
+  assert(prepared.has(app.entry_point),'missing offline app entry point: '+app.app_id);
+  for(const asset of app.offline_assets)assert(prepared.has(asset),'missing offline asset for '+app.app_id+': '+asset);
+ }
 });
