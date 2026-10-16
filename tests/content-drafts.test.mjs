@@ -22,3 +22,14 @@ test('section edits preserve permanent IDs and validate captions',()=>{
  d.section_edits=[{id:'habitat',title:'Valid',caption:'',published:true}];
  assert.equal(validateDraft(d,withSections).valid,false);
 });
+
+test('body text remains bounded and scoped to registered sections',()=>{
+ const withSections={...app,sections:[{id:'habitat',title:'Habitat',text:'Existing'}]};
+ const draft=createDraft(withSections);
+ draft.section_edits=[{id:'habitat',title:'Habitat',text:'Updated description',caption:''}];
+ assert.equal(validateDraft(draft,withSections).valid,true);
+ draft.section_edits[0].text='x'.repeat(12001);
+ assert.equal(validateDraft(draft,withSections).valid,false);
+ draft.section_edits[0].text={unsafe:true};
+ assert.equal(validateDraft(draft,withSections).valid,false);
+});
