@@ -4,6 +4,9 @@ on:
     branches: ["main"]
     paths: [".github/workflows/static.yml"]
   workflow_dispatch:
+  # Development changes live on a separate branch; scheduled runs deploy its latest validated build.
+  schedule:
+    - cron: '17 * * * *'
 permissions:
   contents: read
   pages: write
