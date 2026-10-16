@@ -25,12 +25,16 @@ export function inspectRegistration({apps,categories,media,knowledge,exists,appI
  return {app_id:appId,ready:errors.length===0,errors};
 }
 
+export function inspectAllRegistrations(context){
+ const results=context.apps.map(app=>inspectRegistration({...context,appId:app.app_id}));
+ return {scope:'all',ready:results.every(result=>result.ready),checked:results.length,results};
+}
+
 export function inspectRepository(appId){
  const apps=fs.readdirSync(appsDir,{withFileTypes:true}).filter(d=>d.isDirectory()).map(d=>read('src/apps/'+d.name+'/manifest.json'));
  const context={apps,categories:read('config/categories.json'),media:read('src/shared/media/catalog.json'),knowledge:read('src/shared/knowledge.json'),exists:p=>safeLocalPath(p)&&fs.existsSync(path.join(root,'src',p))};
  if(appId==='--all'){
-  const results=apps.map(app=>inspectRegistration({...context,appId:app.app_id}));
-  return {scope:'all',ready:results.every(result=>result.ready),checked:results.length,results};
+  return inspectAllRegistrations(context);
  }
  return inspectRegistration({...context,appId});
 }
