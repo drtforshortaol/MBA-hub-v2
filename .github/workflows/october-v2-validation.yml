@@ -28,6 +28,8 @@ jobs:
         run: npm run build
       - name: Run automated regression tests
         run: npm test
+      - name: Verify built tester artifacts remain intact after regressions
+        run: node --test tests/security-review.test.mjs
       - name: Run security scanner
         run: npm run security:scan
       - name: Check image and note assets
