@@ -400,3 +400,22 @@ test('offline app navigation refuses rollback entries from another environment',
  const response=await w.invoke('fetch',{request:{method:'GET',url:url.href}});
  assert.equal(response.status,503);
 });
+
+
+test('service worker never intercepts non-GET application requests',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');
+ const entry=w.manifest.resources.find(item=>item.url.startsWith('apps/')&&item.url.endsWith('/index.html'));
+ assert(entry);
+ for(const method of ['POST','PUT','DELETE']){
+  const response=await w.invoke('fetch',{request:{method,url:new URL(entry.url,w.root).href}});
+  assert.equal(response,undefined,method+' must bypass offline interception');
+ }
+});
+
+test('service worker never intercepts resources outside its origin or URL scope',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');
+ for(const url of ['https://external.test/v2/tester/index.html','https://example.test/v2/other/index.html','https://example.test/v2/tester-other/index.html']){
+  const response=await w.invoke('fetch',{request:{method:'GET',url}});
+  assert.equal(response,undefined,url+' must bypass offline interception');
+ }
+});
