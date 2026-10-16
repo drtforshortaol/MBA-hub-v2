@@ -12,7 +12,9 @@ export function validate({apps,categories,media,knowledge,exists,interfaces={int
  for(const a of apps){
   if(ids.has(a.app_id))errors.push(`duplicate app ${a.app_id}`);ids.add(a.app_id);
   if(entryPoints.has(a.entry_point))errors.push(`duplicate entry point ${a.entry_point}`);entryPoints.add(a.entry_point);
-  for(const field of ['offline_assets','sections','media','knowledge','dependencies','cross_links'])if(!Array.isArray(a[field]))errors.push(`invalid ${field} in ${a.app_id}`);
+  const missingArrays=['offline_assets','sections','media','knowledge','dependencies','cross_links'].filter(field=>!Array.isArray(a[field]));
+  for(const field of missingArrays)errors.push(`invalid ${field} in ${a.app_id}`);
+  if(missingArrays.length)continue;
   for(const key of ['app_id','title','owner','version','entry_point','type'])if(!a[key])errors.push(`missing ${key}`);
   if(typeof a.entry_point!=='string'||!safeLocalPath(a.entry_point))errors.push(`unsafe entry point ${a.app_id}`);
   if(a.schema_version!==1)errors.push(`invalid schema ${a.app_id}`);
