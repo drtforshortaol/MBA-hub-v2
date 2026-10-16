@@ -42,6 +42,20 @@ jobs:
           test -s preview/index.html
           test -s preview/registry.json
           test -s preview/apps/big-bellied-seahorse/index.html
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          root=Path('preview')
+          registry=json.loads((root/'registry.json').read_text())
+          assert registry['apps'], 'empty app registry'
+          for app in registry['apps']:
+              entry=root/app['entry_point']
+              assert entry.is_file(), f"Missing application: {app['app_id']}"
+              for asset in app['offline_assets']:
+                  assert (root/asset).is_file(), f"Missing offline asset: {asset}"
+          assert any(a['app_id']=='big-bellied-seahorse' for a in registry['apps'])
+          print(f"Verified {len(registry['apps'])} app entry points and offline asset paths")
+          PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
