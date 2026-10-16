@@ -30,10 +30,11 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
  const imageExtensions=['.png','.jpg','.jpeg','.webp','.gif','.avif'];
  const photoAssets=(app.offline_assets||[]).filter(asset=>typeof asset==='string'&&imageExtensions.some(ext=>asset.toLowerCase().endsWith(ext)));
  const photoSummary=document.createElement('p');photoSummary.textContent=photoAssets.length+' registered photographs. Inventory is read-only; uploads and deletion are unavailable.';form.append(photoSummary);
- for(const asset of photoAssets){const item=document.createElement('p');item.textContent=asset;form.append(item);}
+ const photoInputs=[];
+ for(const asset of photoAssets){const item=document.createElement('p');item.textContent=asset;form.append(item);const saved=(draft.photo_notes||[]).find(note=>note.asset===asset);const caption=field('Photo caption',saved?.caption??'',2000,3);const alt=field('Photo alternative text',saved?.alt_text??'',500,2);photoInputs.push({asset,caption,alt});}
  const preview=document.createElement('pre');preview.setAttribute('aria-live','polite');
  const status=document.createElement('p');status.setAttribute('role','status');
- function proposed(){return {...draft,title:titleInput.value,description:descriptionInput.value,section_edits:sectionInputs.filter(s=>{const original=(app.sections||[]).find(x=>x.id===s.id);return s.title.value!==(original?.title??s.id)||s.text.value!==(original?.text??'')||s.caption.value!==(original?.caption??'');}).map(s=>({id:s.id,title:s.title.value,text:s.text.value,caption:s.caption.value})),updated_at:new Date().toISOString()};}
+ function proposed(){return {...draft,title:titleInput.value,description:descriptionInput.value,photo_notes:photoInputs.filter(p=>p.caption.value.trim()||p.alt.value.trim()).map(p=>({asset:p.asset,caption:p.caption.value,alt_text:p.alt.value})),section_edits:sectionInputs.filter(s=>{const original=(app.sections||[]).find(x=>x.id===s.id);return s.title.value!==(original?.title??s.id)||s.text.value!==(original?.text??'')||s.caption.value!==(original?.caption??'');}).map(s=>({id:s.id,title:s.title.value,text:s.text.value,caption:s.caption.value})),updated_at:new Date().toISOString()};}
  function check(){const next=proposed(),result=validateDraft(next,app);preview.textContent='Current: '+app.title+'\\nProposed: '+next.title+'\\nNotes: '+next.description+'\\nSection edits: '+next.section_edits.map(s=>s.id+': '+s.title+' ('+s.text.length+' body characters)').join('; ');status.textContent=result.valid?'Draft valid — not published':result.errors.join('; ');return {next,result};}
  const previewButton=document.createElement('button');previewButton.type='button';previewButton.className='button';previewButton.textContent='Preview and validate';previewButton.onclick=check;
  const saveButton=document.createElement('button');saveButton.type='submit';saveButton.className='button';saveButton.textContent='Save on this device';
@@ -41,7 +42,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
  const exportButton=document.createElement('button');exportButton.type='button';exportButton.className='button';exportButton.textContent='Download draft change request';
  exportButton.addEventListener('click',()=>{
   const {next,result}=check();if(!result.valid)return;
-  const payload={schema_version:1,kind:'mba-v2-content-change-request',app_id:app.app_id,app_version:app.version,description:next.description.trim()||'Review proposed content edits',proposed_title:next.title,section_edits:next.section_edits};
+  const payload={schema_version:1,kind:'mba-v2-content-change-request',app_id:app.app_id,app_version:app.version,description:next.description.trim()||'Review proposed content edits',proposed_title:next.title,section_edits:next.section_edits,photo_notes:next.photo_notes};
   const blob=new Blob([JSON.stringify(payload,null,2)+'\\n'],{type:'application/json'});
   const url=URL.createObjectURL(blob),link=document.createElement('a');
   link.href=url;link.download='mba-draft-'+String(app.app_id).replace(/[^a-zA-Z0-9_-]/g,'-')+'.json';link.click();
