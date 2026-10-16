@@ -14,6 +14,7 @@ async function prepare(){
 self.addEventListener('install',event=>event.waitUntil((async()=>{try{await prepare();}catch(error){await caches.delete(CACHE);throw error;}})()));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{
  // Keep this and one prior compatible bundle. Touch only this environment and URL scope.
+ const current=await caches.open(CACHE),manifestResponse=await current.match(absolute('release.json'));if(!manifestResponse)throw Error('Prepared release missing');const manifest=await manifestResponse.json();if(manifest.release!==RELEASE||!Array.isArray(manifest.resources)||!manifest.resources.length)throw Error('Prepared release invalid');for(const item of manifest.resources){if(!await verified(await current.match(absolute(item.url)),item))throw Error('Prepared release incomplete');}
  const keys=(await caches.keys()).filter(k=>k.startsWith(PREFIX)&&k!==CACHE);for(const k of keys.slice(0,-1))await caches.delete(k);await self.clients.claim();
 })()));
 self.addEventListener('fetch',event=>{
