@@ -28,7 +28,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
  }
  const preview=document.createElement('pre');preview.setAttribute('aria-live','polite');
  const status=document.createElement('p');status.setAttribute('role','status');
- function proposed(){return {...draft,title:titleInput.value,description:descriptionInput.value,section_edits:sectionInputs.map(s=>({id:s.id,title:s.title.value,text:s.text.value,caption:s.caption.value})),updated_at:new Date().toISOString()};}
+ function proposed(){return {...draft,title:titleInput.value,description:descriptionInput.value,section_edits:sectionInputs.filter(s=>{const original=(app.sections||[]).find(x=>x.id===s.id);return s.title.value!==(original?.title??s.id)||s.text.value!==(original?.text??'')||s.caption.value!==(original?.caption??'');}).map(s=>({id:s.id,title:s.title.value,text:s.text.value,caption:s.caption.value})),updated_at:new Date().toISOString()};}
  function check(){const next=proposed(),result=validateDraft(next,app);preview.textContent='Current: '+app.title+'\\nProposed: '+next.title+'\\nNotes: '+next.description+'\\nSection edits: '+next.section_edits.map(s=>s.id+': '+s.title+' ('+s.text.length+' body characters)').join('; ');status.textContent=result.valid?'Draft valid — not published':result.errors.join('; ');return {next,result};}
  const previewButton=document.createElement('button');previewButton.type='button';previewButton.className='button';previewButton.textContent='Preview and validate';previewButton.onclick=check;
  const saveButton=document.createElement('button');saveButton.type='submit';saveButton.className='button';saveButton.textContent='Save on this device';
