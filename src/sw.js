@@ -1,11 +1,10 @@
 const NAMESPACE='__NAMESPACE__',RELEASE='__RELEASE__',ROOT=new URL('./',self.location.href),PREFIX=NAMESPACE+':'+ROOT.pathname+':',CACHE=PREFIX+RELEASE;
 const absolute=p=>new URL(p,ROOT).href;
-async function digest(response){const bytes=await response.clone().arrayBuffer();return [...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(x=>x.toString(16).padStart(2,'0')).join('');}
-async function verified(response,item){return response&&response.ok&&(await digest(response))===item.sha256;}
+async function verified(response,item){if(!response||!response.ok)return false;const bytes=await response.clone().arrayBuffer();if(bytes.byteLength!==item.bytes)return false;return [...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(x=>x.toString(16).padStart(2,'0')).join('')===item.sha256;}
 async function prepare(){
  const response=await fetch(absolute('release.json'),{cache:'no-store'});if(!response.ok)throw Error('Release manifest unavailable');const manifest=await response.clone().json();if(manifest.release!==RELEASE)throw Error('Deployment changed during offline preparation');
  if(!Array.isArray(manifest.resources)||!manifest.resources.length)throw Error('Invalid release resources');
- const paths=new Set();for(const item of manifest.resources){if(typeof item.url!=='string'||!item.url||item.url.startsWith('/')||item.url.split('/').some(p=>!p||p==='.'||p==='..')||/[?#%\\\\]/.test(item.url)||!item.sha256||paths.has(item.url))throw Error('Unsafe or duplicate release resource');paths.add(item.url);}
+ const paths=new Set();for(const item of manifest.resources){if(typeof item.url!=='string'||!item.url||item.url.startsWith('/')||item.url.split('/').some(p=>!p||p==='.'||p==='..')||/[?#%\\\\]/.test(item.url)||!(/^[a-f0-9]{64}$/.test(item.sha256))||!Number.isSafeInteger(item.bytes)||item.bytes<0||paths.has(item.url))throw Error('Unsafe or duplicate release resource');paths.add(item.url);}
 
  const cache=await caches.open(CACHE),previous=(await caches.keys()).filter(k=>k.startsWith(PREFIX)&&k!==CACHE);
  // A failed preparation must never leave a partial bundle marked as ready.
