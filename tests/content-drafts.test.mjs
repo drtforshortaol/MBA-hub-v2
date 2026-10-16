@@ -33,3 +33,16 @@ test('body text remains bounded and scoped to registered sections',()=>{
  draft.section_edits[0].text={unsafe:true};
  assert.equal(validateDraft(draft,withSections).valid,false);
 });
+
+test('photo notes are limited to registered images',()=>{
+ const a={...app,offline_assets:['apps/ray/photo.jpg','apps/ray/index.html']};
+ const d=createDraft(a);
+ d.photo_notes=[{asset:'apps/ray/photo.jpg',caption:'Ray',alt_text:'A ray swimming'}];
+ assert.equal(validateDraft(d,a).valid,true);
+ d.photo_notes.push({...d.photo_notes[0]});
+ assert.equal(validateDraft(d,a).valid,false);
+ d.photo_notes=[{asset:'apps/ray/unknown.jpg',caption:'',alt_text:''}];
+ assert.equal(validateDraft(d,a).valid,false);
+ d.photo_notes=[{asset:'apps/ray/photo.jpg',caption:'',alt_text:'x'.repeat(501)}];
+ assert.equal(validateDraft(d,a).valid,false);
+});
