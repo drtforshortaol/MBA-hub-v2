@@ -333,7 +333,7 @@ test('interrupted multi-resource download removes partial release and preserves 
 });
 
 test('interrupted update retains previous rollback cache without exposing partial current release',async()=>{
- const w=await worker({prior:true,failAfter:2});
+ const w=await worker({prior:true,failAfter:1});
  const prior=w.stores.get('mba-v2-tester:/v2/tester/:prior');
  prior.files.delete(new URL(w.manifest.resources[0].url,w.root).href);
  await assert.rejects(w.invoke('install'),/Interrupted download/);
