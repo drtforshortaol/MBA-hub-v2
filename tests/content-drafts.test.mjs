@@ -7,3 +7,18 @@ test('local draft creation, save and reload',()=>{const s=storage(),d=createDraf
 test('protected fields and identity changes rejected',()=>{const d=createDraft(app);d.app_id='other';assert.equal(validateDraft(d,app).valid,false);d.app_id='ray';d.sections=[];assert.equal(validateDraft(d,app).valid,false);});
 test('invalid and stale drafts never load',()=>{const s=storage(),d=createDraft(app);s.setItem(draftKey('dev','ray'),'{');assert.equal(loadDraft(s,'dev',app),null);s.setItem(draftKey('dev','ray'),JSON.stringify(d));assert.equal(loadDraft(s,'dev',{...app,version:'2'}),null);});
 test('draft title and description bounds',()=>{const d=createDraft(app);d.title=' ';assert.equal(validateDraft(d,app).valid,false);d.title='ok';d.description='x'.repeat(4001);assert.equal(validateDraft(d,app).valid,false);});
+
+test('section edits preserve permanent IDs and validate captions',()=>{
+ const withSections={...app,sections:[{id:'habitat',title:'Habitat'},{id:'feeding',title:'Feeding'}]};
+ const d=createDraft(withSections);
+ d.section_edits=[{id:'habitat',title:'Where rays live',caption:'Coastal waters'}];
+ assert.equal(validateDraft(d,withSections).valid,true);
+ d.section_edits.push({id:'habitat',title:'Duplicate',caption:''});
+ assert.equal(validateDraft(d,withSections).valid,false);
+ d.section_edits=[{id:'invented',title:'Unknown',caption:''}];
+ assert.equal(validateDraft(d,withSections).valid,false);
+ d.section_edits=[{id:'habitat',title:'Valid',caption:'x'.repeat(2001)}];
+ assert.equal(validateDraft(d,withSections).valid,false);
+ d.section_edits=[{id:'habitat',title:'Valid',caption:'',published:true}];
+ assert.equal(validateDraft(d,withSections).valid,false);
+});
