@@ -17,10 +17,18 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
  function field(name,value,max,rows){const label=document.createElement('label');label.textContent=name;const input=document.createElement(rows?'textarea':'input');input.value=value;input.maxLength=max;input.style.width='100%';if(rows)input.rows=rows;label.append(input);form.append(label);return input;}
  const titleInput=field('Proposed application title',draft.title,160,0);
  const descriptionInput=field('Update notes',draft.description,4000,4);
+ const sectionInputs=[];
+ for(const section of app.sections||[]){
+  if(typeof section.id!=='string')continue;
+  const saved=(draft.section_edits||[]).find(e=>e.id===section.id);
+  const sectionTitle=field('Section '+section.id+' title',saved?.title??section.title??section.id,160,0);
+  const sectionCaption=field('Section '+section.id+' caption (draft only)',saved?.caption??section.caption??'',2000,3);
+  sectionInputs.push({id:section.id,title:sectionTitle,caption:sectionCaption});
+ }
  const preview=document.createElement('pre');preview.setAttribute('aria-live','polite');
  const status=document.createElement('p');status.setAttribute('role','status');
- function proposed(){return {...draft,title:titleInput.value,description:descriptionInput.value,updated_at:new Date().toISOString()};}
- function check(){const next=proposed(),result=validateDraft(next,app);preview.textContent='Current: '+app.title+'\\nProposed: '+next.title+'\\nNotes: '+next.description;status.textContent=result.valid?'Draft valid — not published':result.errors.join('; ');return {next,result};}
+ function proposed(){return {...draft,title:titleInput.value,description:descriptionInput.value,section_edits:sectionInputs.map(s=>({id:s.id,title:s.title.value,caption:s.caption.value})),updated_at:new Date().toISOString()};}
+ function check(){const next=proposed(),result=validateDraft(next,app);preview.textContent='Current: '+app.title+'\\nProposed: '+next.title+'\\nNotes: '+next.description+'\\nSection edits: '+next.section_edits.map(s=>s.id+': '+s.title).join('; ');status.textContent=result.valid?'Draft valid — not published':result.errors.join('; ');return {next,result};}
  const previewButton=document.createElement('button');previewButton.type='button';previewButton.className='button';previewButton.textContent='Preview and validate';previewButton.onclick=check;
  const saveButton=document.createElement('button');saveButton.type='submit';saveButton.className='button';saveButton.textContent='Save on this device';
  form.append(previewButton,saveButton,preview);
