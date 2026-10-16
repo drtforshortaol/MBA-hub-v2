@@ -65,3 +65,33 @@ jobs:
           path: preview
       - id: deployment
         uses: actions/deploy-pages@v4
+      - name: Smoke-test published V2 Hub
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          python3 - <<'PY'
+          import json, os, time, urllib.request
+          base=os.environ['PAGE_URL'].rstrip('/')+'/'
+          def read(path):
+              with urllib.request.urlopen(base+path, timeout=20) as response:
+                  assert response.status==200, f"{path}: HTTP {response.status}"
+                  return response.read()
+          for attempt in range(8):
+              try:
+                  homepage=read('index.html')
+                  assert b'core/hub.js' in homepage, 'Hub script not found'
+                  registry=json.loads(read('registry.json'))
+                  apps=registry['apps']
+                  assert len(apps)>=32, 'Incomplete application collection'
+                  for app in apps:
+                      read(app['entry_point'])
+                  for image in ('IMG_4212.jpeg','IMG_4213.jpeg','IMG_4214.jpeg','IMG_4215.jpeg','IMG_4216.jpeg'):
+                      assert len(read('apps/'+image))>100, image
+                  read('release.json')
+                  print(f"Published V2 smoke test passed: {len(apps)} apps, 5 Seahorse photos")
+                  break
+              except Exception as error:
+                  if attempt==7: raise
+                  print(f"Waiting for Pages propagation ({attempt+1}/8): {error}")
+                  time.sleep(15)
+          PY
