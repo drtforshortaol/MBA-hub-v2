@@ -16,6 +16,7 @@ test('every application folder is automatically registered exactly once',()=>{
  assert.equal(registry.apps.length,appDirs.length);
  const ids=registry.apps.map(a=>a.app_id);
  assert.equal(new Set(ids).size,ids.length);
+ assert.deepEqual(ids,[...ids].sort((a,b)=>a.localeCompare(b)),'registry ordering must be deterministic');
  for(const dir of appDirs){
   const manifest=read(path.join('src/apps',dir.name,'manifest.json'));
   assert.equal(registry.apps.filter(a=>a.app_id===manifest.app_id).length,1,dir.name);
@@ -34,7 +35,7 @@ test('all registered applications are searchable and bundled offline',()=>{
  }
 });
 
-test('categories are alphabetized and application titles sort predictably',()=>{
+test('categories are alphabetized and application category references are valid',()=>{
  const titles=registry.categories.map(c=>c.title);
  assert.deepEqual(titles,[...titles].sort((a,b)=>a.localeCompare(b)));
  for(const app of registry.apps)assert(registry.categories.some(c=>c.id===app.category),app.app_id+' invalid category');
