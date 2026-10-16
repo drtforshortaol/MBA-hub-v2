@@ -15,9 +15,10 @@ export function validateChangeRequest(value,apps){
   else{
    const known=new Set((app.sections||[]).map(s=>s.id)),seen=new Set();
    for(const edit of value.section_edits){
-    if(!edit||typeof edit!=='object'||Array.isArray(edit)||Object.keys(edit).some(k=>!['id','title','caption'].includes(k))||typeof edit.id!=='string'||!known.has(edit.id)||seen.has(edit.id)){errors.push('unknown, duplicate or protected section fields');continue;}
+    if(!edit||typeof edit!=='object'||Array.isArray(edit)||Object.keys(edit).some(k=>!['id','title','text','caption'].includes(k))||typeof edit.id!=='string'||!known.has(edit.id)||seen.has(edit.id)){errors.push('unknown, duplicate or protected section fields');continue;}
     seen.add(edit.id);
     if(typeof edit.title!=='string'||!edit.title.trim()||edit.title.length>160)errors.push('invalid section title');
+    if(edit.text!==undefined&&(typeof edit.text!=='string'||edit.text.length>12000))errors.push('invalid section text');
     if(typeof edit.caption!=='string'||edit.caption.length>2000)errors.push('invalid section caption');
    }
   }
