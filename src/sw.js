@@ -29,7 +29,7 @@ self.addEventListener('message',event=>{
  const type=event.data?.type;if(type==='REPAIR'){if(!NAMESPACE.endsWith('-developer'))throw Error('Read-only environment');await prepare();}
  else if(type!=='STATUS'&&type!=='ACTIVATE_UPDATE')throw Error('Unsupported command');
  const cache=await caches.open(CACHE),response=await cache.match(absolute('release.json'));if(!response){event.ports[0]?.postMessage({complete:false,count:0,total:0,release:RELEASE});return;}
- const manifest=await response.json();let count=0;for(const item of manifest.resources){if(await verified(await cache.match(absolute(item.url)),item))count++;}
+ const manifest=await response.json();if(manifest.release!==RELEASE||!Array.isArray(manifest.resources)||!manifest.resources.length)throw Error('Invalid cached release manifest');const seen=new Set();for(const item of manifest.resources){if(typeof item.url!=='string'||!item.url||item.url.startsWith('/')||item.url.split('/').some(p=>!p||p==='.'||p==='..')||/[?#%\\\\]/.test(item.url)||!(/^[a-f0-9]{64}$/.test(item.sha256))||!Number.isSafeInteger(item.bytes)||item.bytes<0||seen.has(item.url))throw Error('Invalid cached release manifest');seen.add(item.url);}let count=0;for(const item of manifest.resources){if(await verified(await cache.match(absolute(item.url)),item))count++;}
  if(type==='ACTIVATE_UPDATE'){if(count!==manifest.resources.length)throw Error('Update is not completely verified');event.ports[0]?.postMessage({activating:true,release:RELEASE});await self.skipWaiting();return;}
  event.ports[0]?.postMessage({complete:count===manifest.resources.length,count,total:manifest.resources.length,release:RELEASE});
  }catch(e){event.ports[0]?.postMessage({error:e.message});}})());
