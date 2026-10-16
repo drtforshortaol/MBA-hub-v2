@@ -1,11 +1,11 @@
 import test from 'node:test';import assert from 'node:assert/strict';import vm from 'node:vm';import fs from 'node:fs';import {webcrypto} from 'node:crypto';
-async function worker({fail=false,offline=false,namespace='mba-v2-tester',prior=true,mutateManifest}={}){
+async function worker({fail=false,failAfter=null,offline=false,namespace='mba-v2-tester',prior=true,mutateManifest}={}){
  const handlers={},stores=new Map(),deletions=[],fetched=[];const root='https://example.test/v2/tester/';const manifest=JSON.parse(fs.readFileSync('dist/tester/release.json','utf8'));const installedRelease=manifest.release;if(mutateManifest)mutateManifest(manifest);
  const make=()=>{const files=new Map();return {files,async match(url){return files.get(String(url))?.clone();},async put(url,r){files.set(String(url),r.clone());}};};
  if(prior){const old=make();for(const item of manifest.resources)await old.put(new URL(item.url,root),new Response(fs.readFileSync('dist/tester/'+item.url)));stores.set(namespace+':/v2/tester/:prior',old);}stores.set('mba-shared-assets-v1',make());
  const caches={async keys(){return [...stores.keys()];},async open(key){if(!stores.has(key))stores.set(key,make());return stores.get(key);},async delete(key){deletions.push(key);return stores.delete(key);}};
  let skipped=false;const self={location:{href:root+'sw.js'},clients:{async claim(){}},async skipWaiting(){skipped=true;},addEventListener(type,fn){handlers[type]=fn;}};
- const fetch=async url=>{fetched.push(String(url));if(String(url).endsWith('release.json'))return new Response(JSON.stringify(manifest));if(offline)throw Error('Network unavailable');if(fail)return new Response('missing',{status:404});return new Response(fs.readFileSync('dist/tester/'+new URL(url).pathname.slice('/v2/tester/'.length)));};
+ const fetch=async url=>{fetched.push(String(url));if(String(url).endsWith('release.json'))return new Response(JSON.stringify(manifest));if(offline)throw Error('Network unavailable');if(failAfter!==null&&fetched.length>failAfter)throw Error('Interrupted download');if(fail)return new Response('missing',{status:404});return new Response(fs.readFileSync('dist/tester/'+new URL(url).pathname.slice('/v2/tester/'.length)));};
  let source=fs.readFileSync('src/sw.js','utf8').replaceAll('__NAMESPACE__',namespace).replaceAll('__RELEASE__',installedRelease);vm.runInNewContext(source,{self,caches,fetch,Response,URL,crypto:webcrypto});
  async function invoke(type,event={}){let promise;handlers[type]({...event,waitUntil(p){promise=p;},respondWith(p){promise=p;}});return promise;}
  return {invoke,stores,deletions,fetched,root,manifest,get skipped(){return skipped;}};
@@ -320,4 +320,24 @@ test('offline fallback does not serve unregistered paths from rollback caches',a
  await prior.put(new URL('apps/unknown/index.html',w.root),new Response('unexpected'));
  const response=await w.invoke('fetch',{request:{method:'GET',url:new URL('apps/unknown/index.html',w.root).href}});
  assert.equal(response.status,503);
+});
+
+
+test('interrupted multi-resource download removes partial release and preserves V1 cache',async()=>{
+ const w=await worker({prior:false,failAfter:2});
+ await assert.rejects(w.invoke('install'),/Interrupted download/);
+ assert(w.fetched.length>2,'interruption must happen after at least one asset');
+ assert(![...w.stores.keys()].some(k=>k.endsWith(w.manifest.release)));
+ assert(w.stores.has('mba-shared-assets-v1'));
+ assert(w.deletions.some(k=>k.endsWith(w.manifest.release)));
+});
+
+test('interrupted update retains previous rollback cache without exposing partial current release',async()=>{
+ const w=await worker({prior:true,failAfter:2});
+ const prior=w.stores.get('mba-v2-tester:/v2/tester/:prior');
+ prior.files.delete(new URL(w.manifest.resources[0].url,w.root).href);
+ await assert.rejects(w.invoke('install'),/Interrupted download/);
+ assert(w.stores.has('mba-v2-tester:/v2/tester/:prior'));
+ assert(![...w.stores.keys()].some(k=>k.endsWith(w.manifest.release)));
+ assert(w.stores.has('mba-shared-assets-v1'));
 });
