@@ -20,6 +20,33 @@ self.addEventListener('activate',event=>event.waitUntil((async()=>{
 self.addEventListener('fetch',event=>{
  const url=new URL(event.request.url);if(event.request.method!=='GET'||url.origin!==ROOT.origin||!url.pathname.startsWith(ROOT.pathname))return;
  event.respondWith((async()=>{const cache=await caches.open(CACHE);url.search='';url.hash='';if(url.pathname.endsWith('/'))url.pathname+='index.html';const hit=await cache.match(url.href);if(hit){const manifestResponse=await cache.match(absolute('release.json'));if(manifestResponse){try{const manifest=await manifestResponse.json();const relative=url.pathname.slice(ROOT.pathname.length);const item=manifest.resources?.find(entry=>entry.url===relative);if(item&&await verified(hit,item))return hit;}catch{/* Invalid cache metadata must not authorize serving unverified assets. */}}}
+ // Recover an identical verified asset from a previous compatible release if the current cache is corrupt.
+ const currentManifest=await cache.match(absolute('release.json'));
+ if(currentManifest){
+  try{
+   const manifest=await currentManifest.json();
+   if(manifest.release===RELEASE&&manifest.environment===NAMESPACE.slice('mba-v2-'.length)){
+    const relative=url.pathname.slice(ROOT.pathname.length);
+    const item=manifest.resources?.find(entry=>entry.url===relative);
+    if(item&&typeof item.sha256==='string'&&/^[a-f0-9]{64}$/.test(item.sha256)&&Number.isSafeInteger(item.bytes)&&item.bytes>=0){
+     for(const key of await caches.keys()){
+      if(!key.startsWith(PREFIX)||key===CACHE)continue;
+      const previous=await caches.open(key),metadata=await previous.match(absolute('release.json'));
+      if(!metadata)continue;
+      try{
+       const oldManifest=await metadata.json();
+       if(oldManifest.release!==key.slice(PREFIX.length)||oldManifest.environment!==manifest.environment)continue;
+       const oldItem=oldManifest.resources?.find(entry=>entry.url===relative&&entry.sha256===item.sha256&&entry.bytes===item.bytes);
+       if(!oldItem)continue;
+       const candidate=await previous.match(url.href);
+       if(await verified(candidate,item))return candidate;
+      }catch{/* Ignore incompatible rollback cache. */}
+     }
+    }
+   }
+  }catch{/* A corrupt manifest cannot authorize fallback content. */}
+ }
+ }
  // Unknown destinations are never silently replaced with the Hub.
  try{return await fetch(event.request);}catch{return new Response('This resource is not prepared offline.',{status:503,headers:{'Content-Type':'text/plain'}});}})());
 });
