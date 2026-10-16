@@ -63,3 +63,17 @@ test('registry rejects unknown categories and unrecognized app templates',()=>{
  assert(errors.some(e=>e.includes('unknown category')));
  assert(errors.some(e=>e.includes('unknown template')));
 });
+
+test('registry rejects unsafe media catalog paths even when existence lookup succeeds',()=>{
+ const fixture=make();
+ fixture.media.assets=[{asset_id:'unsafe',path:'../outside.svg',owner:'team',alt:'Illustration',credit:'team',permission:'owner-approved-v1'}];
+ fixture.apps[0].media=['unsafe'];
+ assert(validate(fixture).includes('invalid media unsafe'));
+});
+
+test('registry accepts safe media catalog paths',()=>{
+ const fixture=make();
+ fixture.media.assets=[{asset_id:'safe',path:'shared/media/ray.svg',owner:'team',alt:'Ray',credit:'team',permission:'owner-approved-v1'}];
+ fixture.apps[0].media=['safe'];
+ assert.deepEqual(validate(fixture),[]);
+});
