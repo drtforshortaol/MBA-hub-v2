@@ -141,3 +141,21 @@ test('offline fetch rejects corrupted cache when network is unavailable',async()
  assert.equal(response.status,503);
  assert(w.stores.has('mba-shared-assets-v1'));
 });
+
+test('activation retains verified prior release for rollback',async()=>{
+ const w=await worker();await w.invoke('install');
+ const old=w.stores.get('mba-v2-tester:/v2/tester/:prior');
+ await old.put(new URL('release.json',w.root),new Response(JSON.stringify(w.manifest)));
+ await w.invoke('activate');
+ assert(w.stores.has('mba-v2-tester:/v2/tester/:prior'));
+ assert(w.stores.has('mba-shared-assets-v1'));
+});
+test('activation discards invalid rollback candidate without deleting V1 assets',async()=>{
+ const w=await worker();await w.invoke('install');
+ const old=w.stores.get('mba-v2-tester:/v2/tester/:prior');
+ await old.put(new URL('release.json',w.root),new Response(JSON.stringify(w.manifest)));
+ old.files.delete(new URL(w.manifest.resources[0].url,w.root).href);
+ await w.invoke('activate');
+ assert(!w.stores.has('mba-v2-tester:/v2/tester/:prior'));
+ assert(w.stores.has('mba-shared-assets-v1'));
+});
