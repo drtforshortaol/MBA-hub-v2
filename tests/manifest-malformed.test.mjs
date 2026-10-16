@@ -19,3 +19,11 @@ test('duplicate entry points are rejected',()=>{
  const data=base();data.apps.push({...data.apps[0],app_id:'another'});
  assert(validate(data).some(error=>error.includes('duplicate entry point')));
 });
+
+test('cross-links to a malformed target report errors without throwing',()=>{
+ const data=base();
+ data.apps[0].cross_links=[{app_id:'target',section_id:'overview'}];
+ data.apps.push({...data.apps[0],app_id:'target',entry_point:'apps/target/index.html',cross_links:[],sections:undefined});
+ assert.doesNotThrow(()=>validate(data));
+ assert(validate(data).some(error=>error.includes('dangling cross-link target')));
+});
