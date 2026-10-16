@@ -46,3 +46,31 @@ test('offline install refuses empty release resource lists',async()=>{const w=aw
 test('offline install refuses absolute release paths',async()=>{const w=await worker({prior:false,mutateManifest:m=>m.resources.push({...m.resources[0],url:'/outside.html'})});await assert.rejects(w.invoke('install'),/Unsafe or duplicate release resource/);assert.equal(w.fetched.length,1);});
 test('offline install refuses query and fragment release paths',async()=>{for(const suffix of ['?download=1','#fragment']){const w=await worker({prior:false,mutateManifest:m=>m.resources.push({...m.resources[0],url:'apps/one/index.html'+suffix})});await assert.rejects(w.invoke('install'),/Unsafe or duplicate release resource/);assert.equal(w.fetched.length,1);}});
 test('offline worker ignores same-origin commands outside its deployment scope',async()=>{const w=await worker();await w.invoke('install');let called=false;await w.invoke('message',{source:{url:'https://example.test/v2/other/index.html'},data:{type:'ACTIVATE_UPDATE'},ports:[{postMessage(){called=true;}}]});assert.equal(called,false);assert.equal(w.skipped,false);});
+
+
+test('offline installer rejects invalid SHA-256 digests before downloading assets',async()=>{
+ const w=await worker({prior:false,mutateManifest:m=>{m.resources[0].sha256='not-a-sha256';}});
+ await assert.rejects(w.invoke('install'),/Unsafe or duplicate release resource/);
+ assert.equal(w.fetched.length,1);
+ assert(w.stores.has('mba-shared-assets-v1'));
+});
+test('offline installer rejects missing or invalid resource byte lengths',async()=>{
+ for(const value of [undefined,-1,1.5,'100']){
+  const w=await worker({prior:false,mutateManifest:m=>{m.resources[0].bytes=value;}});
+  await assert.rejects(w.invoke('install'),/Unsafe or duplicate release resource/);
+  assert.equal(w.fetched.length,1);
+ }
+});
+test('offline STATUS detects altered declared resource byte lengths',async()=>{
+ const w=await worker();
+ await w.invoke('install');
+ const cache=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+ const releaseURL=new URL('release.json',w.root);
+ const altered=structuredClone(w.manifest);
+ altered.resources[0].bytes++;
+ await cache.put(releaseURL,new Response(JSON.stringify(altered)));
+ let reply;
+ await w.invoke('message',{source:{url:w.root+'index.html'},data:{type:'STATUS'},ports:[{postMessage(v){reply=v;}}]});
+ assert.equal(reply.complete,false);
+ assert.equal(reply.count,altered.resources.length-1);
+});
