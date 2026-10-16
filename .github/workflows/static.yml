@@ -31,21 +31,22 @@ jobs:
           npm run build
           npm test
           npm run security:scan
-      - name: Create limited public preview
+      - name: Prepare complete V2 hub preview
         run: |
-          mkdir -p preview/big-bellied-seahorse
+          mkdir -p preview
+          cp -a dist/developer/. preview/
           python3 - <<'PY'
           from pathlib import Path
           import re
-          html=Path('src/apps/big-bellied-seahorse/index.html').read_text()
+          p=Path('preview/apps/big-bellied-seahorse/index.html')
+          html=p.read_text()
           html=re.sub(r'<figure>\s*<img\b[^>]*>\s*(?:<figcaption>.*?</figcaption>)?\s*</figure>', '<p>Illustration omitted pending publication permission.</p>', html, flags=re.S)
-          html=html.replace('<script type="module" src="../../core/app-contract.js"></script>', '')
-          html=html.replace('href="../../index.html"', 'href="../index.html"')
-          html=html.replace('href="../naturalist-field-notes/index.html"', 'href="../index.html"')
-          Path('preview/big-bellied-seahorse/index.html').write_text(html)
-          Path('preview/index.html').write_text('<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><title>MBA V2 Preview</title><main style="font:18px system-ui;padding:2rem"><h1>MBA V2 Development Preview</h1><p>Draft, not production.</p><a href="big-bellied-seahorse/index.html">Open Big-Bellied Seahorse</a></main>')
-          assert '<img' not in html, 'unreviewed image in public preview'
+          p.write_text(html)
+          assert '<img' not in html
           PY
+          test -s preview/index.html
+          test -s preview/registry.json
+          test -s preview/apps/big-bellied-seahorse/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
