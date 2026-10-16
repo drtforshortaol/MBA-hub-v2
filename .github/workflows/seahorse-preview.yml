@@ -46,6 +46,11 @@ jobs:
           Path('preview/big-bellied-seahorse/index.html').write_text(html)
           Path('preview/index.html').write_text('<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><title>MBA V2 Development Preview</title><main style="font:18px system-ui;padding:2rem"><h1>MBA V2 Development Preview</h1><p>Draft scientific content; not a production release.</p><a href="big-bellied-seahorse/index.html">Open Big-Bellied Seahorse</a></main>')
           PY
+      - name: Verify preview output
+        run: |
+          test -s preview/index.html
+          test -s preview/big-bellied-seahorse/index.html
+          if grep -Eq '<img[[:space:]]' preview/big-bellied-seahorse/index.html; then echo 'Unreviewed image remains in preview' >&2; exit 1; fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
