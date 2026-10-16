@@ -24,6 +24,9 @@ This procedure applies only to the authorized V2 development branch. Never chang
 ## Check the entire application registry
 Run `npm run content:check:all` after shared media, knowledge, or navigation changes. The read-only command reports every registered application and returns a nonzero exit status if validation fails. Use `npm run content:check -- <permanent-app-id>` to inspect one app. Run the full test, validation, and security suites before considering a change complete. The preflight checks are developer diagnostics, not release approvals or device acceptance evidence.
 
+## Developer Mode change requests
+The developer-only application inspector can export a JSON change request with an app ID, app version, and description. This is a review artifact, not an edit or publication operation. The request format is checked by `scripts/change-request-validation.mjs` and covered by automated tests. Review the request against the current registry before applying changes in the authorized development branch; stale versions or unknown IDs must be rejected. Downloading a request does not constitute approval or completion.
+
 ## Before proposing release
 - Verify category navigation, search, deep links, Back/Return to Hub, offline entry, and media rendering for each changed app.
 - Confirm all release gates, device tests, and media permissions are satisfied. Do not set approval flags without evidence.
