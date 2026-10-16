@@ -74,3 +74,21 @@ test('offline STATUS detects altered declared resource byte lengths',async()=>{
  assert.equal(reply.complete,false);
  assert.equal(reply.count,altered.resources.length-1);
 });
+
+test('activation refuses incomplete current release without deleting prior V2 or V1 caches',async()=>{
+ const w=await worker();await w.invoke('install');
+ const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+ current.files.delete(new URL(w.manifest.resources[0].url,w.root).href);
+ await assert.rejects(w.invoke('activate'),/Prepared release incomplete/);
+ assert(w.stores.has('mba-v2-tester:/v2/tester/:prior'));
+ assert(w.stores.has('mba-shared-assets-v1'));
+ assert.equal(w.deletions.length,0);
+});
+test('activation refuses missing release manifest and preserves prior caches',async()=>{
+ const w=await worker();await w.invoke('install');
+ const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+ current.files.delete(new URL('release.json',w.root).href);
+ await assert.rejects(w.invoke('activate'),/Prepared release missing/);
+ assert(w.stores.has('mba-v2-tester:/v2/tester/:prior'));
+ assert(w.stores.has('mba-shared-assets-v1'));
+});
