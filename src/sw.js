@@ -5,10 +5,11 @@ async function verified(response,item){return response&&response.ok&&(await dige
 async function prepare(){
  const response=await fetch(absolute('release.json'),{cache:'no-store'});if(!response.ok)throw Error('Release manifest unavailable');const manifest=await response.clone().json();if(manifest.release!==RELEASE)throw Error('Deployment changed during offline preparation');
  const cache=await caches.open(CACHE),previous=(await caches.keys()).filter(k=>k.startsWith(PREFIX)&&k!==CACHE);
+ // A failed preparation must never leave a partial bundle marked as ready.
  for(const item of manifest.resources){let resource=await cache.match(absolute(item.url));if(!await verified(resource,item)){resource=null;for(const old of previous){const candidate=await (await caches.open(old)).match(absolute(item.url));if(await verified(candidate,item)){resource=candidate;break;}}if(!resource)resource=await fetch(absolute(item.url),{cache:'no-store'});if(!await verified(resource,item))throw Error('Asset verification failed: '+item.url);await cache.put(absolute(item.url),resource);}}
  await cache.put(absolute('release.json'),response);return manifest;
 }
-self.addEventListener('install',event=>event.waitUntil(prepare()));
+self.addEventListener('install',event=>event.waitUntil((async()=>{try{await prepare();}catch(error){await caches.delete(CACHE);throw error;}})()));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{
  // Keep this and one prior compatible bundle. Touch only this environment and URL scope.
  const keys=(await caches.keys()).filter(k=>k.startsWith(PREFIX)&&k!==CACHE);for(const k of keys.slice(0,-1))await caches.delete(k);await self.clients.claim();
