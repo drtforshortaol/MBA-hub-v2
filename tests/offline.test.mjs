@@ -7,7 +7,7 @@ async function worker({fail=false,namespace='mba-v2-tester',prior=true,mutateMan
  let skipped=false;const self={location:{href:root+'sw.js'},clients:{async claim(){}},async skipWaiting(){skipped=true;},addEventListener(type,fn){handlers[type]=fn;}};
  const fetch=async url=>{fetched.push(String(url));if(String(url).endsWith('release.json'))return new Response(JSON.stringify(manifest));if(fail)return new Response('missing',{status:404});return new Response(fs.readFileSync('dist/tester/'+new URL(url).pathname.slice('/v2/tester/'.length)));};
  let source=fs.readFileSync('src/sw.js','utf8').replaceAll('__NAMESPACE__',namespace).replaceAll('__RELEASE__',installedRelease);vm.runInNewContext(source,{self,caches,fetch,Response,URL,crypto:webcrypto});
- async function invoke(type,event={}){let promise;handlers[type]({...event,waitUntil(p){promise=p;}});return promise;}
+ async function invoke(type,event={}){let promise;handlers[type]({...event,waitUntil(p){promise=p;},respondWith(p){promise=p;}});return promise;}
  return {invoke,stores,deletions,fetched,root,manifest,get skipped(){return skipped;}};
 }
 test('incremental install reuses verified unchanged assets',async()=>{const w=await worker();await w.invoke('install');assert.equal(w.fetched.length,1);assert(w.stores.has('mba-shared-assets-v1'));});
@@ -123,4 +123,21 @@ test('STATUS and ACTIVATE_UPDATE reject corrupted cached manifest metadata',asyn
   assert.equal(w.skipped,false);
   assert(w.stores.has('mba-shared-assets-v1'));
  }
+});
+
+test('offline fetch serves verified cached resources',async()=>{
+ const w=await worker();await w.invoke('install');
+ const item=w.manifest.resources[0];
+ const response=await w.invoke('fetch',{request:{method:'GET',url:new URL(item.url,w.root).href}});
+ assert.equal(response.status,200);
+ assert.equal((await response.arrayBuffer()).byteLength,item.bytes);
+});
+test('offline fetch rejects corrupted cache when network is unavailable',async()=>{
+ const w=await worker({fail:true});await w.invoke('install');
+ const item=w.manifest.resources[0];
+ const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+ await current.put(new URL(item.url,w.root),new Response('corrupted'));
+ const response=await w.invoke('fetch',{request:{method:'GET',url:new URL(item.url,w.root).href}});
+ assert.equal(response.status,503);
+ assert(w.stores.has('mba-shared-assets-v1'));
 });
