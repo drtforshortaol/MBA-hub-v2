@@ -1,43 +1,54 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
-
+name: Deploy Seahorse Development Preview to Pages
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
+    paths: [".github/workflows/static.yml"]
   workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
-
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout approved development branch
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
+          ref: security-review-evo-foundation-20261014
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate
+        run: |
+          npm run validate
+          npm run build
+          npm test
+          npm run security:scan
+      - name: Create limited public preview
+        run: |
+          mkdir -p preview/big-bellied-seahorse
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          html=Path('src/apps/big-bellied-seahorse/index.html').read_text()
+          html=re.sub(r'<figure>\s*<img\b[^>]*>\s*(?:<figcaption>.*?</figcaption>)?\s*</figure>', '<p>Illustration omitted pending publication permission.</p>', html, flags=re.S)
+          html=html.replace('<script type="module" src="../../core/app-contract.js"></script>', '')
+          html=html.replace('href="../../index.html"', 'href="../index.html"')
+          html=html.replace('href="../naturalist-field-notes/index.html"', 'href="../index.html"')
+          Path('preview/big-bellied-seahorse/index.html').write_text(html)
+          Path('preview/index.html').write_text('<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><title>MBA V2 Preview</title><main style="font:18px system-ui;padding:2rem"><h1>MBA V2 Development Preview</h1><p>Draft, not production.</p><a href="big-bellied-seahorse/index.html">Open Big-Bellied Seahorse</a></main>')
+          assert '<img' not in html, 'unreviewed image in public preview'
+          PY
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: preview
+      - id: deployment
+        uses: actions/deploy-pages@v4
