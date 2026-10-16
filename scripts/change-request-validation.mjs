@@ -8,7 +8,7 @@ export function validateChangeRequest(value,apps){
  if(!app)errors.push('unknown application ID');
  if(!app||value.app_version!==app.version)errors.push('application version mismatch');
  if(typeof value.description!=='string'||!value.description.trim()||value.description.length>4000)errors.push('description must be 1–4000 characters');
- if(Object.keys(value).some(key=>!['schema_version','kind','app_id','app_version','description','proposed_title','section_edits'].includes(key)))errors.push('unrecognized request fields');
+ if(Object.keys(value).some(key=>!['schema_version','kind','app_id','app_version','description','proposed_title','section_edits','photo_notes'].includes(key)))errors.push('unrecognized request fields');
  if(value.proposed_title!==undefined&&(typeof value.proposed_title!=='string'||!value.proposed_title.trim()||value.proposed_title.length>160))errors.push('invalid proposed title');
  if(value.section_edits!==undefined){
   if(!Array.isArray(value.section_edits)||value.section_edits.length>(app?.sections?.length??0))errors.push('invalid section edits');
@@ -21,6 +21,18 @@ export function validateChangeRequest(value,apps){
     if(edit.text!==undefined&&(typeof edit.text!=='string'||edit.text.length>12000))errors.push('invalid section text');
     if(typeof edit.caption!=='string'||edit.caption.length>2000)errors.push('invalid section caption');
    }
+  }
+ }
+ if(value.photo_notes!==undefined){
+  const extensions=['.png','.jpg','.jpeg','.webp','.gif','.avif'];
+  const allowed=new Set((app?.offline_assets||[]).filter(asset=>typeof asset==='string'&&extensions.some(ext=>asset.toLowerCase().endsWith(ext))));
+  const seen=new Set();
+  if(!Array.isArray(value.photo_notes)||value.photo_notes.length>allowed.size)errors.push('invalid photo notes');
+  else for(const note of value.photo_notes){
+   if(!note||typeof note!=='object'||Array.isArray(note)||Object.keys(note).some(key=>!['asset','caption','alt_text'].includes(key))||typeof note.asset!=='string'||!allowed.has(note.asset)||seen.has(note.asset)){errors.push('unknown or duplicate photo asset');continue;}
+   seen.add(note.asset);
+   if(typeof note.caption!=='string'||note.caption.length>2000)errors.push('invalid photo caption');
+   if(typeof note.alt_text!=='string'||note.alt_text.length>500)errors.push('invalid photo alternative text');
   }
  }
  return {valid:errors.length===0,errors};
