@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {validate} from '../scripts/build.mjs';
+const category={id:'animals',title:'Animals'};
+const app={schema_version:1,app_id:'app-one',title:'One',owner:'owner',version:'1',entry_point:'apps/one/index.html',type:'reference',status:'development',category:'animals',offline_assets:['apps/one/index.html'],sections:[],media:[],knowledge:[],dependencies:[],cross_links:[]};
+const input=()=>({apps:[structuredClone(app)],categories:[structuredClone(category)],media:{assets:[]},knowledge:{records:[]},exists:()=>true});
+test('valid minimal manifest passes structural validation',()=>assert.deepEqual(validate(input()),[]));
+test('duplicate offline resources are rejected',()=>{const v=input();v.apps[0].offline_assets.push(v.apps[0].entry_point);assert.match(validate(v).join('\n'),/duplicate offline asset/);});
+test('categories require stable ID and title',()=>{const v=input();v.categories[0].title='';assert.match(validate(v).join('\n'),/invalid category metadata/);});
+test('unscoped self links are rejected',()=>{const v=input();v.apps[0].cross_links.push({app_id:'app-one'});assert.match(validate(v).join('\n'),/unscoped self-link/);});
