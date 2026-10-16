@@ -24,3 +24,15 @@ test('invalid restore tokens fall back to the main Hub',()=>{const store=storage
 test('malformed stored navigation state cannot restore an invalid snapshot',()=>{const store=storage();for(const value of [null,42,'invalid',[],true]){store.setItem('tester:return:malformed',JSON.stringify({url:root+'index.html#search',state:value}));assert.equal(visitContext(root,'malformed',store,'tester'),null);assert.equal(returnToVisit(root,root+'apps/one/index.html?visit=malformed',store,'tester').searchParams.get('home'),'1');}});
 
 test('Hub initializes safely when session navigation data is malformed',async()=>{const {readFileSync}=await import('node:fs');const source=readFileSync(new URL('../src/core/hub.js',import.meta.url),'utf8');assert.match(source,/if\(!state\|\|typeof state!=='object'\|\|Array\.isArray\(state\)\)state=\{\};/);assert.match(source,/let url;try\{url=new URL\(link\.href\);\}catch\{return;\}/);});
+
+test('Hub link validation enforces application scope and rejects malformed paths',async()=>{
+ const {readFileSync}=await import('node:fs');
+ const {runInNewContext}=await import('node:vm');
+ const source=readFileSync(new URL('../src/core/hub.js',import.meta.url),'utf8');
+ const declaration=source.split('\n').find(line=>line.startsWith('const safeHref='));
+ assert(declaration,'Hub URL validator must be present');
+ const script=declaration.replaceAll('import.meta.url',JSON.stringify(root+'core/hub.js'))+'\nsafeHref';
+ const safe=runInNewContext(script,{URL,location:{origin:'https://example.test'}});
+ assert.equal(safe('apps/one/index.html'),root+'apps/one/index.html');
+ for(const url of ['https://other.test/v2/apps/one/index.html','https://example.test/v2-other/apps/one/index.html','../apps/one/index.html','/v2/apps/one/index.html','apps/%2e%2e/escape.html','apps/one\\\\index.html','search-index.json','not-a-valid-app.html','javascript:alert(1)',''])assert.equal(safe(url),'#','unsafe link: '+url);
+});
