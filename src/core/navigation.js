@@ -4,7 +4,7 @@ export function restoredHubState(saved,url){return new URL(url).searchParams.get
 function key(namespace,id){return `${namespace}:return:${id}`;}
 export function captureVisit(destination,root,origin,state,storage,namespace,id){
  const target=new URL(destination,origin),scope=new URL(root),source=new URL(origin,scope);
- if(target.origin!==scope.origin||!target.pathname.startsWith(scope.pathname+'apps/')||!(/^[a-zA-Z0-9-]{1,100}$/.test(id))||source.origin!==scope.origin||![scope.pathname,new URL('index.html',scope).pathname].includes(source.pathname))return target;
+ if(target.origin!==scope.origin||!target.pathname.startsWith(scope.pathname+'apps/')||/[\\%]/.test(target.pathname)||!(/^[a-zA-Z0-9-]{1,100}$/.test(id))||source.origin!==scope.origin||![scope.pathname,new URL('index.html',scope).pathname].includes(source.pathname))return target;
  try{storage.setItem(key(namespace,id),JSON.stringify({url:origin,state:structuredClone(state)}));target.searchParams.set('visit',id);}catch{}
  return target;
 }
