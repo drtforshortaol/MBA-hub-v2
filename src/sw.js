@@ -2,7 +2,7 @@ const NAMESPACE='__NAMESPACE__',RELEASE='__RELEASE__',ROOT=new URL('./',self.loc
 const absolute=p=>new URL(p,ROOT).href;
 async function verified(response,item){if(!response||!response.ok)return false;const bytes=await response.clone().arrayBuffer();if(bytes.byteLength!==item.bytes)return false;return [...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(x=>x.toString(16).padStart(2,'0')).join('')===item.sha256;}
 async function prepare(){
- const response=await fetch(absolute('release.json'),{cache:'no-store'});if(!response.ok)throw Error('Release manifest unavailable');const manifest=await response.clone().json();if(manifest.release!==RELEASE||manifest.environment!==NAMESPACE.slice('mba-v2-'.length))throw Error('Deployment changed or environment mismatch during offline preparation');
+ const response=await fetch(absolute('release.json'),{cache:'no-store'});if(!response.ok)throw Error('Release manifest unavailable');const manifest=await response.clone().json();if(manifest.release!==RELEASE||manifest.environment!==NAMESPACE.slice('mba-v2-'.length))throw Error('Deployment changed during offline preparation (release or environment mismatch)');
  if(!Array.isArray(manifest.resources)||!manifest.resources.length)throw Error('Invalid release resources');
  const paths=new Set();for(const item of manifest.resources){if(typeof item.url!=='string'||!item.url||item.url.startsWith('/')||item.url.split('/').some(p=>!p||p==='.'||p==='..')||/[?#%\\\\]/.test(item.url)||!(/^[a-f0-9]{64}$/.test(item.sha256))||!Number.isSafeInteger(item.bytes)||item.bytes<0||paths.has(item.url))throw Error('Unsafe or duplicate release resource');paths.add(item.url);}
 
