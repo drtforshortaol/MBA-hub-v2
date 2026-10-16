@@ -10,3 +10,5 @@ test('return contexts do not cross environment or URL-scope boundaries',()=>{con
 test('direct app entry has a safe main-Hub fallback',()=>{assert.equal(returnToVisit(root,root+'apps/one/index.html',storage(),'tester').searchParams.get('home'),'1');});
 
 test('animal filter clears pressed state when the active letter is toggled off',async()=>{const {readFileSync}=await import('node:fs');const source=readFileSync(new URL('../src/core/hub.js',import.meta.url),'utf8');assert.match(source,/String\(Boolean\(letter\)\&\&x\.textContent===letter\)/);assert.equal(Boolean('')&&'A'==='A',false);assert.equal(Boolean('A')&&'A'==='A',true);});
+
+test('navigation snapshots reject non-app destinations and non-Hub restore origins',()=>{const store=storage();const other=captureVisit(root+'search-index.json',root,root+'index.html',{},store,'tester','not-app');assert.equal(other.searchParams.has('visit'),false);store.setItem('tester:return:bad-origin',JSON.stringify({url:root+'apps/one/index.html',state:{}}));assert.equal(visitContext(root,'bad-origin',store,'tester'),null);});
