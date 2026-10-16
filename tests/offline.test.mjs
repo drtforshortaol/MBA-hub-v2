@@ -92,3 +92,21 @@ test('activation refuses missing release manifest and preserves prior caches',as
  assert(w.stores.has('mba-v2-tester:/v2/tester/:prior'));
  assert(w.stores.has('mba-shared-assets-v1'));
 });
+
+test('activation rejects malformed cached resource metadata before cache pruning',async()=>{
+ for(const change of [
+  m=>{m.resources[0].sha256='bad';},
+  m=>{m.resources[0].bytes=-1;},
+  m=>{m.resources.push({...m.resources[0]});},
+  m=>{m.resources[0].url='../escape.html';}
+ ]){
+  const w=await worker();await w.invoke('install');
+  const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+  const altered=structuredClone(w.manifest);change(altered);
+  await current.put(new URL('release.json',w.root),new Response(JSON.stringify(altered)));
+  await assert.rejects(w.invoke('activate'),/Prepared release invalid/);
+  assert.equal(w.deletions.length,0);
+  assert(w.stores.has('mba-v2-tester:/v2/tester/:prior'));
+  assert(w.stores.has('mba-shared-assets-v1'));
+ }
+});
