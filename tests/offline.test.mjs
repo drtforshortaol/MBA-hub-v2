@@ -253,3 +253,36 @@ test('activation rejects rollback cache from a different environment',async()=>{
  assert(!w.stores.has('mba-v2-tester:/v2/tester/:prior'));
  assert(w.stores.has('mba-shared-assets-v1'));
 });
+
+test('offline fetch recovers a corrupted current asset from a verified compatible rollback cache',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');
+ const item=w.manifest.resources[0];
+ const prior=w.stores.get('mba-v2-tester:/v2/tester/:prior');
+ await prior.put(new URL('release.json',w.root),new Response(JSON.stringify({...w.manifest,release:'prior'})));
+ const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+ await current.put(new URL(item.url,w.root),new Response('corrupt'));
+ const response=await w.invoke('fetch',{request:{method:'GET',url:new URL(item.url,w.root).href}});
+ assert.equal(response.status,200);
+ assert.equal((await response.arrayBuffer()).byteLength,item.bytes);
+});
+test('offline fallback rejects rollback caches from another environment',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');
+ const item=w.manifest.resources[0];
+ const prior=w.stores.get('mba-v2-tester:/v2/tester/:prior');
+ await prior.put(new URL('release.json',w.root),new Response(JSON.stringify({...w.manifest,release:'prior',environment:'developer'})));
+ const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+ await current.put(new URL(item.url,w.root),new Response('corrupt'));
+ const response=await w.invoke('fetch',{request:{method:'GET',url:new URL(item.url,w.root).href}});
+ assert.equal(response.status,503);
+});
+test('offline fallback rejects rollback assets whose hashes differ from the current release',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');
+ const item=w.manifest.resources[0];
+ const prior=w.stores.get('mba-v2-tester:/v2/tester/:prior');
+ const old=structuredClone(w.manifest);old.release='prior';old.resources[0].sha256='0'.repeat(64);
+ await prior.put(new URL('release.json',w.root),new Response(JSON.stringify(old)));
+ const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+ await current.put(new URL(item.url,w.root),new Response('corrupt'));
+ const response=await w.invoke('fetch',{request:{method:'GET',url:new URL(item.url,w.root).href}});
+ assert.equal(response.status,503);
+});
