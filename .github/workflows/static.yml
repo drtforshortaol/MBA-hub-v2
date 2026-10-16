@@ -83,8 +83,15 @@ jobs:
                   registry=json.loads(read('registry.json'))
                   apps=registry['apps']
                   assert len(apps)>=32, 'Incomplete application collection'
+                  assert len({a['app_id'] for a in apps})==len(apps), 'Duplicate application IDs'
+                  assert all(a.get('entry_point') and a.get('offline_assets') for a in apps), 'Incomplete app manifests'
                   for app in apps:
-                      read(app['entry_point'])
+                      assert app['entry_point'] in app['offline_assets'], f"Entry not cached: {app['app_id']}"
+                      assert len(read(app['entry_point']))>0, f"Empty app: {app['app_id']}"
+                  search=json.loads(read('search-index.json'))
+                  assert all(any(item.get('app_id')==a['app_id'] for item in search) for a in apps), 'App missing from search'
+                  read('manifest.webmanifest')
+                  read('environment.json')
                   for image in ('IMG_4212.jpeg','IMG_4213.jpeg','IMG_4214.jpeg','IMG_4215.jpeg','IMG_4216.jpeg'):
                       assert len(read('apps/'+image))>100, image
                   read('release.json')
