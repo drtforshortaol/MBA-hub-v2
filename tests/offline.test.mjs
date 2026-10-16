@@ -372,3 +372,31 @@ test('offline navigation ignores query parameters for registered resources',asyn
  assert.equal(response.status,200);
  assert.equal((await response.arrayBuffer()).byteLength,entry.bytes);
 });
+
+
+test('offline app navigation recovers a corrupted entry from a compatible rollback release',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');
+ const entry=w.manifest.resources.find(item=>item.url.startsWith('apps/')&&item.url.endsWith('/index.html'));
+ assert(entry,'a registered app entry must exist');
+ const url=new URL(entry.url,w.root);
+ const prior=w.stores.get('mba-v2-tester:/v2/tester/:prior');
+ await prior.put(new URL('release.json',w.root),new Response(JSON.stringify({...w.manifest,release:'prior'})));
+ const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+ await current.put(url,new Response('corrupt'));
+ const response=await w.invoke('fetch',{request:{method:'GET',url:url.href}});
+ assert.equal(response.status,200);
+ assert.equal((await response.arrayBuffer()).byteLength,entry.bytes);
+});
+
+test('offline app navigation refuses rollback entries from another environment',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');
+ const entry=w.manifest.resources.find(item=>item.url.startsWith('apps/')&&item.url.endsWith('/index.html'));
+ assert(entry,'a registered app entry must exist');
+ const url=new URL(entry.url,w.root);
+ const prior=w.stores.get('mba-v2-tester:/v2/tester/:prior');
+ await prior.put(new URL('release.json',w.root),new Response(JSON.stringify({...w.manifest,release:'prior',environment:'developer'})));
+ const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+ await current.put(url,new Response('corrupt'));
+ const response=await w.invoke('fetch',{request:{method:'GET',url:url.href}});
+ assert.equal(response.status,503);
+});
