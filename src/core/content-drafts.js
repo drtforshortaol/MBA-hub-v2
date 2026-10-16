@@ -14,9 +14,10 @@ export function validateDraft(draft,app){
   else{
    const ids=new Set(),allowed=new Map((app.sections||[]).map(s=>[s.id,s]));
    for(const edit of draft.section_edits){
-    if(!edit||typeof edit!=='object'||Array.isArray(edit)||Object.keys(edit).some(k=>!['id','title','caption'].includes(k))||typeof edit.id!=='string'||!allowed.has(edit.id)||ids.has(edit.id)){errors.push('Invalid or duplicate section identifier');continue;}
+    if(!edit||typeof edit!=='object'||Array.isArray(edit)||Object.keys(edit).some(k=>!['id','title','text','caption'].includes(k))||typeof edit.id!=='string'||!allowed.has(edit.id)||ids.has(edit.id)){errors.push('Invalid or duplicate section identifier');continue;}
     ids.add(edit.id);
     if(typeof edit.title!=='string'||!edit.title.trim()||edit.title.length>160)errors.push('Invalid section title');
+    if(edit.text!==undefined&&(typeof edit.text!=='string'||edit.text.length>12000))errors.push('Invalid section text');
     if(typeof edit.caption!=='string'||edit.caption.length>2000)errors.push('Invalid section caption');
    }
   }
