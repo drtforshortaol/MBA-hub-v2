@@ -53,7 +53,7 @@ export function build(){
   // Diagnostics code and maintenance handlers are physically absent from tester artifacts.
   if(environment==='developer')fs.appendFileSync(`${out}/core/hub.js`,"\nimport('./developer.js');\n");
   const files=[];function walk(dir){for(const ent of fs.readdirSync(dir,{withFileTypes:true})){const p=path.join(dir,ent.name);if(ent.isDirectory())walk(p);else files.push(p.slice(out.length+1));}}walk(out);
-  const resources=files.filter(p=>p!=='sw.js').map(url=>({url,sha256:hash(fs.readFileSync(`${out}/${url}`)),bytes:fs.statSync(`${out}/${url}`).size}));
+  const resources=files.filter(p=>p!=='sw.js').sort().map(url=>({url,sha256:hash(fs.readFileSync(`${out}/${url}`)),bytes:fs.statSync(`${out}/${url}`).size}));
   const release=hash(JSON.stringify(resources)).slice(0,16);put('release.json',{schema_version:1,version:platform.version,environment,release,resources});
   fs.writeFileSync(`${out}/sw.js`,fs.readFileSync('src/sw.js','utf8').replaceAll('__NAMESPACE__',`mba-v2-${environment}`).replaceAll('__RELEASE__',release));
  }
