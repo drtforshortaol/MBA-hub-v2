@@ -64,3 +64,20 @@ test('restoration removes stale home flag without changing the captured search r
  assert.equal(back.hash,'#search');
  assert.equal(back.searchParams.get('restore'),'restore-route');
 });
+
+test('Hub sanitizes malformed category, scroll, and search fields before rendering',async()=>{
+ const {readFileSync}=await import('node:fs');
+ const {runInNewContext}=await import('node:vm');
+ const source=readFileSync(new URL('../src/core/hub.js',import.meta.url),'utf8');
+ const lines=source.split('\n').filter(line=>line.startsWith('state.open=')||line.startsWith('state.scroll=')||line.startsWith('state.query='));
+ assert.equal(lines.length,3,'expected three navigation field guards');
+ const normalize=runInNewContext('(state)=>{'+lines.join('\n')+'return state;}',{Number,Array});
+ const malformed=normalize({open:'animals',scroll:Infinity,query:{text:'ray'}});
+ assert.equal(malformed.scroll,0);
+ assert.equal(malformed.query,'');
+ assert.deepEqual(Array.from(malformed.open),[]);
+ const valid=normalize({open:['animals',null,'exhibits',4],scroll:245,query:'nudibranch'});
+ assert.deepEqual(Array.from(valid.open),['animals','exhibits']);
+ assert.equal(valid.scroll,245);
+ assert.equal(valid.query,'nudibranch');
+});
