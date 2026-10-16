@@ -225,3 +225,31 @@ test('offline install accepts a correctly scoped tester manifest',async()=>{
  await w.invoke('install');
  assert([...w.stores.keys()].some(key=>key.endsWith(w.manifest.release)));
 });
+
+test('activation refuses cached manifests from another environment without deleting rollback caches',async()=>{
+ const w=await worker();await w.invoke('install');
+ const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+ await current.put(new URL('release.json',w.root),new Response(JSON.stringify({...w.manifest,environment:'developer'})));
+ await assert.rejects(w.invoke('activate'),/Prepared release invalid/);
+ assert.equal(w.deletions.length,0);
+ assert(w.stores.has('mba-shared-assets-v1'));
+});
+test('STATUS and update activation refuse cross-environment cached manifests',async()=>{
+ for(const type of ['STATUS','ACTIVATE_UPDATE']){
+  const w=await worker();await w.invoke('install');
+  const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+  await current.put(new URL('release.json',w.root),new Response(JSON.stringify({...w.manifest,environment:'developer'})));
+  let reply;
+  await w.invoke('message',{source:{url:w.root+'index.html'},data:{type},ports:[{postMessage(v){reply=v;}}]});
+  assert.match(reply.error,/Invalid cached release manifest/);
+  assert.equal(w.skipped,false);
+ }
+});
+test('activation rejects rollback cache from a different environment',async()=>{
+ const w=await worker();await w.invoke('install');
+ const old=w.stores.get('mba-v2-tester:/v2/tester/:prior');
+ await old.put(new URL('release.json',w.root),new Response(JSON.stringify({...w.manifest,release:'prior',environment:'developer'})));
+ await w.invoke('activate');
+ assert(!w.stores.has('mba-v2-tester:/v2/tester/:prior'));
+ assert(w.stores.has('mba-shared-assets-v1'));
+});
