@@ -110,3 +110,17 @@ test('activation rejects malformed cached resource metadata before cache pruning
   assert(w.stores.has('mba-shared-assets-v1'));
  }
 });
+
+test('STATUS and ACTIVATE_UPDATE reject corrupted cached manifest metadata',async()=>{
+ for(const type of ['STATUS','ACTIVATE_UPDATE']){
+  const w=await worker();await w.invoke('install');
+  const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+  const altered=structuredClone(w.manifest);altered.resources[0].sha256='invalid';
+  await current.put(new URL('release.json',w.root),new Response(JSON.stringify(altered)));
+  let reply;
+  await w.invoke('message',{source:{url:w.root+'refresh.html'},data:{type},ports:[{postMessage(v){reply=v;}}]});
+  assert.match(reply.error,/Invalid cached release manifest/);
+  assert.equal(w.skipped,false);
+  assert(w.stores.has('mba-shared-assets-v1'));
+ }
+});
