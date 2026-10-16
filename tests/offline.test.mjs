@@ -286,3 +286,38 @@ test('offline fallback rejects rollback assets whose hashes differ from the curr
  const response=await w.invoke('fetch',{request:{method:'GET',url:new URL(item.url,w.root).href}});
  assert.equal(response.status,503);
 });
+
+test('offline fallback skips corrupted rollback asset and recovers from another verified release',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');
+ const item=w.manifest.resources[0],assetURL=new URL(item.url,w.root);
+ const first=w.stores.get('mba-v2-tester:/v2/tester/:prior');
+ await first.put(new URL('release.json',w.root),new Response(JSON.stringify({...w.manifest,release:'prior'})));
+ await first.put(assetURL,new Response('corrupt'));
+ const second=await (async()=>{const cache={files:new Map(),async match(url){return this.files.get(String(url))?.clone();},async put(url,response){this.files.set(String(url),response.clone());}};w.stores.set('mba-v2-tester:/v2/tester/:second',cache);return cache;})();
+ await second.put(new URL('release.json',w.root),new Response(JSON.stringify({...w.manifest,release:'second'})));
+ await second.put(assetURL,new Response(fs.readFileSync('dist/tester/'+item.url)));
+ const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+ await current.put(assetURL,new Response('corrupt'));
+ const response=await w.invoke('fetch',{request:{method:'GET',url:assetURL.href}});
+ assert.equal(response.status,200);
+ assert.equal((await response.arrayBuffer()).byteLength,item.bytes);
+});
+test('offline fallback rejects a rollback candidate with a mismatched declared size',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');
+ const item=w.manifest.resources[0],assetURL=new URL(item.url,w.root);
+ const prior=w.stores.get('mba-v2-tester:/v2/tester/:prior');
+ const old=structuredClone(w.manifest);old.release='prior';old.resources[0].bytes++;
+ await prior.put(new URL('release.json',w.root),new Response(JSON.stringify(old)));
+ const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+ await current.put(assetURL,new Response('corrupt'));
+ const response=await w.invoke('fetch',{request:{method:'GET',url:assetURL.href}});
+ assert.equal(response.status,503);
+});
+test('offline fallback does not serve unregistered paths from rollback caches',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');
+ const prior=w.stores.get('mba-v2-tester:/v2/tester/:prior');
+ await prior.put(new URL('release.json',w.root),new Response(JSON.stringify({...w.manifest,release:'prior'})));
+ await prior.put(new URL('apps/unknown/index.html',w.root),new Response('unexpected'));
+ const response=await w.invoke('fetch',{request:{method:'GET',url:new URL('apps/unknown/index.html',w.root).href}});
+ assert.equal(response.status,503);
+});
