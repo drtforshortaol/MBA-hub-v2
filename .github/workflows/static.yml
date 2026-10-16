@@ -1,4 +1,4 @@
-name: Deploy Seahorse Development Preview to Pages
+name: Deploy MBA V2 Development Hub to Pages
 on:
   push:
     branches: ["main"]
@@ -35,15 +35,10 @@ jobs:
         run: |
           mkdir -p preview
           cp -a dist/developer/. preview/
-          python3 - <<'PY'
-          from pathlib import Path
-          import re
-          p=Path('preview/apps/big-bellied-seahorse/index.html')
-          html=p.read_text()
-          html=re.sub(r'<figure>\s*<img\b[^>]*>\s*(?:<figcaption>.*?</figcaption>)?\s*</figure>', '<p>Illustration omitted pending publication permission.</p>', html, flags=re.S)
-          p.write_text(html)
-          assert '<img' not in html
-          PY
+          # Owner approved inclusion of the Seahorse photographs in the V2 preview.
+          for image in IMG_4212.jpeg IMG_4213.jpeg IMG_4214.jpeg IMG_4215.jpeg IMG_4216.jpeg; do
+            test -s "preview/apps/$image"
+          done
           test -s preview/index.html
           test -s preview/registry.json
           test -s preview/apps/big-bellied-seahorse/index.html
