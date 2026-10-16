@@ -177,3 +177,26 @@ test('activation rejects rollback manifest with unsafe resource URL',async()=>{
  assert(!w.stores.has('mba-v2-tester:/v2/tester/:prior'));
  assert(w.stores.has('mba-shared-assets-v1'));
 });
+
+test('offline fetch serves nested registered app entry points from verified cache',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');
+ const entries=w.manifest.resources.filter(item=>item.url.startsWith('apps/')&&item.url.endsWith('/index.html')).slice(0,5);
+ assert(entries.length>0,'built distribution must contain registered app entry points');
+ for(const item of entries){
+  const response=await w.invoke('fetch',{request:{method:'GET',url:new URL(item.url,w.root).href}});
+  assert.equal(response.status,200,item.url);
+  assert.equal((await response.arrayBuffer()).byteLength,item.bytes,item.url);
+ }
+});
+test('offline fetch does not replace unknown app routes with Hub HTML',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');
+ const response=await w.invoke('fetch',{request:{method:'GET',url:w.root+'apps/not-registered/index.html'}});
+ assert.equal(response.status,503);
+ assert.match(await response.text(),/not prepared offline/);
+});
+test('offline fetch ignores cross-origin and out-of-scope requests',async()=>{
+ const w=await worker();await w.invoke('install');
+ assert.equal(await w.invoke('fetch',{request:{method:'GET',url:'https://other.test/v2/tester/index.html'}}),undefined);
+ assert.equal(await w.invoke('fetch',{request:{method:'GET',url:'https://example.test/v2/other/index.html'}}),undefined);
+ assert.equal(await w.invoke('fetch',{request:{method:'POST',url:w.root+'index.html'}}),undefined);
+});
