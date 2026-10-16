@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {validateChangeRequest} from '../scripts/change-request-validation.mjs';
+const apps=[{app_id:'ray',version:'1.0.0'}];
+const valid=()=>({schema_version:1,kind:'mba-v2-content-change-request',app_id:'ray',app_version:'1.0.0',description:'Update overview'});
+test('accepts well-formed change request for current app version',()=>assert.equal(validateChangeRequest(valid(),apps).valid,true));
+test('rejects unknown application and stale version',()=>{const r=validateChangeRequest({...valid(),app_id:'other',app_version:'0.1.0'},apps);assert.equal(r.valid,false);assert(r.errors.includes('unknown application ID'));});
+test('rejects empty or excessive description',()=>{for(const description of ['', ' '.repeat(4),'x'.repeat(4001)])assert.equal(validateChangeRequest({...valid(),description},apps).valid,false);});
+test('rejects incorrect schema or request type',()=>assert.equal(validateChangeRequest({...valid(),schema_version:2,kind:'release'},apps).valid,false));
+test('rejects non-object requests',()=>assert.equal(validateChangeRequest(null,apps).valid,false));
