@@ -127,7 +127,7 @@ function element(tag, className, parent, value) {
 }
 
 function appendPhones(parent, value) {
-  String(value ?? '').split(/(\\(?\\d{3}\\)?[ .-]?\\d{3}[ .-]?\\d{4})/g).forEach(part => {
+  String(value ?? '').split(/(\(\d{3}\)|\d{3})[ .-]?\d{3}[ .-]?\d{4}/g).forEach(part => {
     const digits = part.replace(/\\D/g, '');
     if (/^\\d{10}$/.test(digits)) {
       const link = element('a', 'tap-phone', parent, part);
