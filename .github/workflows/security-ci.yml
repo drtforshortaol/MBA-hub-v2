@@ -33,3 +33,5 @@ jobs:
       - run: npm run build
       - run: npm run security:scan
       - run: npm test
+      - name: Verify built tester artifacts remain intact after tests
+        run: node --test tests/security-review.test.mjs
