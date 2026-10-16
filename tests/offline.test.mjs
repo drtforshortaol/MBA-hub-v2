@@ -145,7 +145,7 @@ test('offline fetch rejects corrupted cache when network is unavailable',async()
 test('activation retains verified prior release for rollback',async()=>{
  const w=await worker();await w.invoke('install');
  const old=w.stores.get('mba-v2-tester:/v2/tester/:prior');
- await old.put(new URL('release.json',w.root),new Response(JSON.stringify(w.manifest)));
+ await old.put(new URL('release.json',w.root),new Response(JSON.stringify({...w.manifest,release:'prior'})));
  await w.invoke('activate');
  assert(w.stores.has('mba-v2-tester:/v2/tester/:prior'));
  assert(w.stores.has('mba-shared-assets-v1'));
@@ -153,8 +153,26 @@ test('activation retains verified prior release for rollback',async()=>{
 test('activation discards invalid rollback candidate without deleting V1 assets',async()=>{
  const w=await worker();await w.invoke('install');
  const old=w.stores.get('mba-v2-tester:/v2/tester/:prior');
- await old.put(new URL('release.json',w.root),new Response(JSON.stringify(w.manifest)));
+ await old.put(new URL('release.json',w.root),new Response(JSON.stringify({...w.manifest,release:'prior'})));
  old.files.delete(new URL(w.manifest.resources[0].url,w.root).href);
+ await w.invoke('activate');
+ assert(!w.stores.has('mba-v2-tester:/v2/tester/:prior'));
+ assert(w.stores.has('mba-shared-assets-v1'));
+});
+
+test('activation rejects rollback caches with mismatched release identity',async()=>{
+ const w=await worker();await w.invoke('install');
+ const old=w.stores.get('mba-v2-tester:/v2/tester/:prior');
+ await old.put(new URL('release.json',w.root),new Response(JSON.stringify(w.manifest)));
+ await w.invoke('activate');
+ assert(!w.stores.has('mba-v2-tester:/v2/tester/:prior'));
+ assert(w.stores.has('mba-shared-assets-v1'));
+});
+test('activation rejects rollback manifest with unsafe resource URL',async()=>{
+ const w=await worker();await w.invoke('install');
+ const old=w.stores.get('mba-v2-tester:/v2/tester/:prior');
+ const previous=structuredClone(w.manifest);previous.release='prior';previous.resources[0].url='../escape.html';
+ await old.put(new URL('release.json',w.root),new Response(JSON.stringify(previous)));
  await w.invoke('activate');
  assert(!w.stores.has('mba-v2-tester:/v2/tester/:prior'));
  assert(w.stores.has('mba-shared-assets-v1'));
