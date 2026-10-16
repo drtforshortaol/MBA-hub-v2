@@ -1,9 +1,5 @@
-import test from 'node:test';import assert from 'node:assert/strict';import vm from 'node:vm';import fs from 'node:fs';import {execFileSync} from 'node:child_process';
-// Build outputs are shared by other suites; regenerate if a parallel test removed them.
-function ensureTesterBuild(){if(!fs.existsSync('dist/tester/release.json'))execFileSync(process.execPath,['scripts/build.mjs'],{stdio:'pipe'});}
-import {webcrypto} from 'node:crypto';
+import test from 'node:test';import assert from 'node:assert/strict';import vm from 'node:vm';import fs from 'node:fs';import {webcrypto} from 'node:crypto';
 async function worker({fail=false,namespace='mba-v2-tester',prior=true,mutateManifest}={}){
- ensureTesterBuild();
  const handlers={},stores=new Map(),deletions=[],fetched=[];const root='https://example.test/v2/tester/';const manifest=JSON.parse(fs.readFileSync('dist/tester/release.json','utf8'));const installedRelease=manifest.release;if(mutateManifest)mutateManifest(manifest);
  const make=()=>{const files=new Map();return {files,async match(url){return files.get(String(url))?.clone();},async put(url,r){files.set(String(url),r.clone());}};};
  if(prior){const old=make();for(const item of manifest.resources)await old.put(new URL(item.url,root),new Response(fs.readFileSync('dist/tester/'+item.url)));stores.set(namespace+':/v2/tester/:prior',old);}stores.set('mba-shared-assets-v1',make());
