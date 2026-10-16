@@ -1,7 +1,7 @@
 // Developer-only, local drafts. Never changes published application data.
 export const DRAFT_SCHEMA=1;
 export function draftKey(namespace,appId){return namespace+':content-draft:'+appId;}
-export function createDraft(app){return {schema_version:DRAFT_SCHEMA,kind:'mba-v2-local-content-draft',app_id:app.app_id,app_version:app.version,title:app.title,description:'',section_edits:[],updated_at:new Date().toISOString()};}
+export function createDraft(app){return {schema_version:DRAFT_SCHEMA,kind:'mba-v2-local-content-draft',app_id:app.app_id,app_version:app.version,title:app.title,description:'',section_edits:[],photo_notes:[],updated_at:new Date().toISOString()};}
 export function validateDraft(draft,app){
  const errors=[];
  if(!draft||typeof draft!=='object'||Array.isArray(draft))return {valid:false,errors:['Draft must be an object']};
@@ -22,7 +22,19 @@ export function validateDraft(draft,app){
    }
   }
  }
- if(Object.keys(draft).some(key=>!['schema_version','kind','app_id','app_version','title','description','section_edits','updated_at'].includes(key)))errors.push('Unrecognized or protected fields');
+ if(draft.photo_notes!==undefined){
+  const extensions=['.png','.jpg','.jpeg','.webp','.gif','.avif'];
+  const allowed=new Set((app?.offline_assets||[]).filter(asset=>typeof asset==='string'&&extensions.some(ext=>asset.toLowerCase().endsWith(ext))));
+  const seen=new Set();
+  if(!Array.isArray(draft.photo_notes)||draft.photo_notes.length>allowed.size)errors.push('Invalid photo notes');
+  else for(const note of draft.photo_notes){
+   if(!note||typeof note!=='object'||Array.isArray(note)||Object.keys(note).some(key=>!['asset','caption','alt_text'].includes(key))||typeof note.asset!=='string'||!allowed.has(note.asset)||seen.has(note.asset)){errors.push('Unknown or duplicate photo asset');continue;}
+   seen.add(note.asset);
+   if(typeof note.caption!=='string'||note.caption.length>2000)errors.push('Invalid photo caption');
+   if(typeof note.alt_text!=='string'||note.alt_text.length>500)errors.push('Invalid photo alternative text');
+  }
+ }
+ if(Object.keys(draft).some(key=>!['schema_version','kind','app_id','app_version','title','description','section_edits','photo_notes','updated_at'].includes(key)))errors.push('Unrecognized or protected fields');
  return {valid:errors.length===0,errors};
 }
 export function loadDraft(storage,namespace,app){try{const raw=storage.getItem(draftKey(namespace,app.app_id));if(!raw)return null;const draft=JSON.parse(raw);return validateDraft(draft,app).valid?draft:null;}catch{return null;}}
