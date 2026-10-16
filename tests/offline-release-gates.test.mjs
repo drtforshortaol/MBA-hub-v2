@@ -26,3 +26,23 @@ test('inherited V1 content does not remove operational release gates',()=>{
  const errors=releaseErrors({},[], {assets:[]},{apps:[]});
  assert(errors.some(x=>x.startsWith('release gate:')));
 });
+
+test('release gate remains blocked for unreviewed development applications',()=>{
+ const platform={migrationComplete:true,ownerApproved:true,pilotPassed:true,deviceOfflinePassed:true,rollbackDevicePassed:true,privacyReviewed:true};
+ const errors=releaseErrors(platform,[{app_id:'ray',status:'development'}],{assets:[]},{apps:[{id:'ray'}]});
+ assert(errors.includes('content review pending: ray'));
+});
+
+test('inherited V1 approval applies only to explicitly marked applications',()=>{
+ const platform={migrationComplete:true,ownerApproved:true,pilotPassed:true,deviceOfflinePassed:true,rollbackDevicePassed:true,privacyReviewed:true};
+ const apps=[{app_id:'legacy',status:'development',source_repository:'legacy-repo',publication_review:'inherited-v1-approved'},{app_id:'new',status:'development'}];
+ const errors=releaseErrors(platform,apps,{assets:[]},{apps:[{id:'legacy'},{id:'new'}]});
+ assert(!errors.includes('content review pending: legacy'));
+ assert(errors.includes('content review pending: new'));
+});
+
+test('offline path validation rejects control characters and Unicode lookalike separators',()=>{
+ for(const unsafe of ['apps/one/index.html\n','apps/one/index.html\r','apps/one/index.html\0','apps/one／index.html','apps/one∕index.html']){
+  assert.equal(safeLocalPath(unsafe),false,JSON.stringify(unsafe));
+ }
+});
