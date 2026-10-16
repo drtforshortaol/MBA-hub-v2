@@ -8,6 +8,8 @@ export function safeLocalPath(value){
 export function validate({apps,categories,media,knowledge,exists,interfaces={interfaces:[{id:'navigation',version:'1.0.0',owner:'platform'}]}}){
  const errors=[], ids=new Set(),entryPoints=new Set(),cats=new Set(categories.map(c=>c.id)), assets=new Map(media.assets.map(a=>[a.asset_id,a])), facts=new Map(knowledge.records.map(k=>[k.id,k]));
  if(cats.size!==categories.length)errors.push('duplicate category');
+ for(const c of categories){if(!c.id||!c.title)errors.push('invalid category metadata');}
+
  if(assets.size!==media.assets.length)errors.push('duplicate media ID');if(facts.size!==knowledge.records.length)errors.push('duplicate knowledge ID');
  for(const a of apps){
   if(ids.has(a.app_id))errors.push(`duplicate app ${a.app_id}`);ids.add(a.app_id);
@@ -23,6 +25,8 @@ export function validate({apps,categories,media,knowledge,exists,interfaces={int
   if(!['species','field-notes','reference','library','interactive'].includes(a.type))errors.push(`unknown template ${a.type}`);
   if(!Array.isArray(a.offline_assets)||!a.offline_assets.includes(a.entry_point))errors.push(`entry absent from offline bundle ${a.app_id}`);
   for(const p of a.offline_assets)if(!safeLocalPath(p)||!exists(p))errors.push(`missing/unsafe asset ${p}`);
+  if(new Set(a.offline_assets).size!==a.offline_assets.length)errors.push(`duplicate offline asset in ${a.app_id}`);
+  for(const l of a.cross_links)if(l.app_id===a.app_id&&!l.section_id)errors.push(`unscoped self-link ${a.app_id}`);
   const sections=new Set();for(const s of a.sections){if(sections.has(s.id))errors.push(`duplicate section ${s.id}`);sections.add(s.id);}
   for(const id of a.media)if(!assets.has(id))errors.push(`missing media ${id}`);
   for(const id of a.knowledge)if(!facts.has(id))errors.push(`missing knowledge ${id}`);
