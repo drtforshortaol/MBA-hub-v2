@@ -19,3 +19,14 @@ test('validates controlled section edit requests and permanent IDs',()=>{
  assert.equal(validateChangeRequest({...request,proposed_title:' '},registry).valid,false);
  assert.equal(validateChangeRequest({...request,release:true},registry).valid,false);
 });
+
+test('body text validation for exported changes',()=>{
+ const registry=[{app_id:'ray',version:'1.0.0',sections:[{id:'habitat',title:'Habitat'}]}];
+ const request={...valid(),section_edits:[{id:'habitat',title:'Habitat',text:'Updated',caption:''}]};
+ assert.equal(validateChangeRequest(request,registry).valid,true);
+ request.section_edits[0].text='x'.repeat(12001);
+ assert.equal(validateChangeRequest(request,registry).valid,false);
+ request.section_edits[0].text='Valid';
+ request.section_edits[0].id='other';
+ assert.equal(validateChangeRequest(request,registry).valid,false);
+});
