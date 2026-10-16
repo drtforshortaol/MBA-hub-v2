@@ -46,7 +46,6 @@ self.addEventListener('fetch',event=>{
    }
   }catch{/* A corrupt manifest cannot authorize fallback content. */}
  }
- }
  // Unknown destinations are never silently replaced with the Hub.
  try{return await fetch(event.request);}catch{return new Response('This resource is not prepared offline.',{status:503,headers:{'Content-Type':'text/plain'}});}})());
 });
