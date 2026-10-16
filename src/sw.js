@@ -4,6 +4,9 @@ async function digest(response){const bytes=await response.clone().arrayBuffer()
 async function verified(response,item){return response&&response.ok&&(await digest(response))===item.sha256;}
 async function prepare(){
  const response=await fetch(absolute('release.json'),{cache:'no-store'});if(!response.ok)throw Error('Release manifest unavailable');const manifest=await response.clone().json();if(manifest.release!==RELEASE)throw Error('Deployment changed during offline preparation');
+ if(!Array.isArray(manifest.resources)||!manifest.resources.length)throw Error('Invalid release resources');
+ const paths=new Set();for(const item of manifest.resources){if(typeof item.url!=='string'||!item.url||item.url.startsWith('/')||item.url.split('/').some(p=>!p||p==='.'||p==='..')||/[?#%\\\\]/.test(item.url)||!item.sha256||paths.has(item.url))throw Error('Unsafe or duplicate release resource');paths.add(item.url);}
+
  const cache=await caches.open(CACHE),previous=(await caches.keys()).filter(k=>k.startsWith(PREFIX)&&k!==CACHE);
  // A failed preparation must never leave a partial bundle marked as ready.
  for(const item of manifest.resources){let resource=await cache.match(absolute(item.url));if(!await verified(resource,item)){resource=null;for(const old of previous){const candidate=await (await caches.open(old)).match(absolute(item.url));if(await verified(candidate,item)){resource=candidate;break;}}if(!resource)resource=await fetch(absolute(item.url),{cache:'no-store'});if(!await verified(resource,item))throw Error('Asset verification failed: '+item.url);await cache.put(absolute(item.url),resource);}}
