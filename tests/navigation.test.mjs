@@ -71,7 +71,7 @@ test('Hub sanitizes malformed category, scroll, and search fields before renderi
  const source=readFileSync(new URL('../src/core/hub.js',import.meta.url),'utf8');
  const lines=source.split('\n').filter(line=>line.startsWith('state.open=')||line.startsWith('state.scroll=')||line.startsWith('state.query='));
  assert.equal(lines.length,3,'expected three navigation field guards');
- const normalize=runInNewContext('(state)=>{'+lines.join('\n')+'return state;}',{Number,Array});
+ const normalize=runInNewContext('(state)=>{'+lines.join('\n')+'return state;}',{Number,Array,Set,registry:{categories:[{id:'animals'},{id:'exhibits'}]}});
  const malformed=normalize({open:'animals',scroll:Infinity,query:{text:'ray'}});
  assert.equal(malformed.scroll,0);
  assert.equal(malformed.query,'');
@@ -80,4 +80,15 @@ test('Hub sanitizes malformed category, scroll, and search fields before renderi
  assert.deepEqual(Array.from(valid.open),['animals','exhibits']);
  assert.equal(valid.scroll,245);
  assert.equal(valid.query,'nudibranch');
+});
+
+test('restored category IDs must exist in the current registry and cannot duplicate',async()=>{
+ const {readFileSync}=await import('node:fs');
+ const {runInNewContext}=await import('node:vm');
+ const source=readFileSync(new URL('../src/core/hub.js',import.meta.url),'utf8');
+ const line=source.split('\n').find(item=>item.startsWith('state.open='));
+ assert(line,'category restoration guard missing');
+ const restore=runInNewContext('(state)=>{'+line+'return state.open;}',{Array,Set,registry:{categories:[{id:'animals'},{id:'exhibits'}]}});
+ assert.deepEqual(Array.from(restore({open:['animals','animals','unknown',null,'exhibits']})),['animals','exhibits']);
+ assert.deepEqual(Array.from(restore({open:'animals'})),[]);
 });
