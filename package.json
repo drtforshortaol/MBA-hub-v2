@@ -11,6 +11,7 @@
     "security:scan": "node scripts/security-scan.mjs",
     "content:check": "node scripts/content-preflight.mjs --app",
     "content:check:all": "node scripts/content-preflight.mjs --all",
-    "content:request:check": "node scripts/check-change-request.mjs"
+    "content:request:check": "node scripts/check-change-request.mjs",
+    "content:request:preview": "node scripts/preview-change-request.mjs"
   }
 }
