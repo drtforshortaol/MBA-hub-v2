@@ -12,10 +12,12 @@ export function suggestContentDestination(update,applications){
   const coverage=appWords.size?overlap/appWords.size:0;
   const sections=Array.isArray(app.sections)?app.sections:[];
   const matches=sections.filter(s=>typeof s.id==='string').map(s=>({id:s.id,title:s.title??s.id,score:[...tokens(s.title??s.id)].reduce((n,w)=>n+(words.has(w)?2:0),0)})).sort((a,b)=>b.score-a.score||a.id.localeCompare(b.id));
-  return {app_id:app.app_id,title:app.title??app.app_id,score:overlap*5+(matches[0]?.score??0),app_overlap:overlap,coverage,section:matches[0]?.score>0?matches[0].id:null};
+  const topSection=matches[0];
+  const sectionAmbiguous=Boolean(topSection?.score>0&&matches[1]?.score===topSection.score);
+  return {app_id:app.app_id,title:app.title??app.app_id,score:overlap*5+(topSection?.score??0),app_overlap:overlap,coverage,section:topSection?.score>0&&!sectionAmbiguous?topSection.id:null,section_ambiguous:sectionAmbiguous};
  }).sort((a,b)=>b.score-a.score||a.app_id.localeCompare(b.app_id));
  const best=ranked[0],second=ranked[1];
  // A section-only match must not redirect an update into an unrelated species.
- if(!best||best.app_overlap===0||best.coverage<0.5||second?.score===best.score)return {valid:true,action:'review-placement',reason:'no unambiguous existing application match',candidates:ranked.slice(0,3),requires_review:true,published:false};
- return {valid:true,action:'update-existing',app_id:best.app_id,section_id:best.section,confidence:best.coverage===1&&best.score>=9?'high':'medium',requires_review:true,published:false,candidates:ranked.slice(0,3)};
+ if(!best||best.app_overlap===0||best.coverage<0.5||second?.score===best.score||(second?.app_overlap===best.app_overlap&&second?.coverage===best.coverage))return {valid:true,action:'review-placement',reason:'no unambiguous existing application match',candidates:ranked.slice(0,3),requires_review:true,published:false};
+ return {valid:true,action:'update-existing',app_id:best.app_id,section_id:best.section,confidence:best.coverage===1&&best.score>=9&&!best.section_ambiguous?'high':'medium',requires_review:true,published:false,candidates:ranked.slice(0,3)};
 }
