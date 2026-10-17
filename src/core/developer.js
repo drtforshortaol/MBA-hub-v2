@@ -51,6 +51,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    // change must not silently reattach decisions to different proposed targets.
    const reviewIdentity=JSON.stringify({source,entries:packet.entries.map(e=>({text:e.source_text,placement:e.placement,review_flags:e.review.flags,existing_content:e.existing_content}))});
    const sourceFingerprint=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(reviewIdentity)).then(bytes=>Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join(''));
+   if(intakeText.value!==source){intakeStatus.textContent='Source changed while classification was running. Generate again.';return;}
    const reviewKey=reviewStorageKey(env.namespace,sourceFingerprint);
    const legacySourceFingerprint=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(source)).then(bytes=>Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join(''));
    const legacyReviewKey=reviewStorageKey(env.namespace,legacySourceFingerprint);
