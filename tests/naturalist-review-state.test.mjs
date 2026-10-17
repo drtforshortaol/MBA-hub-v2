@@ -290,3 +290,18 @@ test('review recovery binds extraction provenance and required-review state',()=
   assert.equal(importReviewPacket({...packet,entries:stripped},'hash',entries),null,field+' missing');
  }
 });
+
+test('local review recovery rejects ambiguous preparation and publication flags',()=>{
+ const store=storage(),key='review-flags',decisions=newReviewDecisions(entries);
+ const record={schema_version:1,review_context_sha256:'hash',review_decisions:decisions};
+ store.setItem(key,JSON.stringify(record));
+ assert.deepEqual(readReview(store,key,'hash',entries),decisions);
+ for(const field of ['published','committed','prepared','can_auto_publish']){
+  for(const value of [true,null,1,'false',{},[]]){
+   store.setItem(key,JSON.stringify({...record,[field]:value}));
+   assert.equal(readReview(store,key,'hash',entries),null,field+'='+String(value));
+  }
+  store.setItem(key,JSON.stringify({...record,[field]:false}));
+  assert.deepEqual(readReview(store,key,'hash',entries),decisions);
+ }
+});
