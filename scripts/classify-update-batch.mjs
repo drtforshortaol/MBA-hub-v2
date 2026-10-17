@@ -1,3 +1,4 @@
+import {assessNaturalistReviewGates} from './assess-naturalist-review-gates.mjs';
 import {proposeUpdatePlacement} from './propose-update-placement.mjs';
 import {extractUpdateStatements} from './extract-update-statements.mjs';
 import {suggestContentDestination} from './suggest-content-destination.mjs';
@@ -14,7 +15,8 @@ export function classifyUpdateBatch(input,applications){
   const app=route.app_id&&Array.isArray(applications)?applications.find(a=>a.app_id===route.app_id):null;
   const existing_content=app?assessExistingContent(text,app,{sectionId:route.section_id}):null;
   const placement=proposeUpdatePlacement(text,route,existing_content);
-  return {index,text,placement,source_block:extracted.entries[index].source_block,extraction:extracted.entries[index].extraction,route,existing_content,review_required:true,committed:false,published:false};
+  const review=assessNaturalistReviewGates({route,placement,existing_content,extraction:extracted.entries[index].extraction});
+  return {index,text,placement,review,source_block:extracted.entries[index].source_block,extraction:extracted.entries[index].extraction,route,existing_content,review_required:true,committed:false,published:false};
  });
  return {valid:true,entries,requires_review:true,committed:false,published:false};
 }
