@@ -89,6 +89,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     if(!isCurrentReview()){intakeStatus.textContent='Review no longer current. Regenerate before saving.';return;}
     if(!validateDecisions()){intakeStatus.textContent='Review decisions invalid. Nothing saved.';return;}
     intakeStatus.textContent=writeReview(localStorage,reviewKey,sourceFingerprint,packet.review_decisions,packet.entries)?'Review decisions saved on this device. Publication remains disabled.':'Local storage unavailable; download the review packet to retain decisions.';
+    if(typeof showQueue==='function')showQueue();
    };
    const navigation=document.createElement('div');
    navigation.setAttribute('role','group');
@@ -302,6 +303,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    const queueStatus=document.createElement('p');queueStatus.setAttribute('role','status');
    const queueItems=document.createElement('ol');
    const replacementDrafts=new Map();
+   // Replacement drafts remain in-memory and are never persisted as approvals.
    const refreshQueue=document.createElement('button');refreshQueue.type='button';refreshQueue.className='button';refreshQueue.textContent='Refresh reviewed actions';
    function showQueue(){
     if(!isCurrentReview()){queueStatus.textContent='Review is stale; regenerate classification.';queueItems.replaceChildren();return;}
@@ -351,6 +353,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    const exportDrafts=document.createElement('button');exportDrafts.type='button';exportDrafts.className='button';exportDrafts.textContent='Download validated draft proposals';
    exportDrafts.addEventListener('click',()=>{
     if(!isCurrentReview()||!validateDecisions()){intakeStatus.textContent='Review is stale or invalid. No draft exported.';return;}
+    if(packet.review_decisions.some(decision=>decision.scientific_status!=='verified'||decision.editorial_status!=='approved'||decision.proposed_action==='needs-review')){intakeStatus.textContent='Complete every scientific and editorial decision before exporting draft proposals.';return;}
     const queue=reviewActionQueue(packet.review_decisions,packet.entries);
     if(!queue.valid){intakeStatus.textContent='Invalid review queue.';return;}
     const drafts=[];
