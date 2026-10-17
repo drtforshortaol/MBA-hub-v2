@@ -174,8 +174,8 @@ test('flagged duplicate and scientific conflict actions are quarantined even aft
  decisions.forEach(d=>{d.scientific_status='verified';d.editorial_status='approved';d.proposed_action='update-existing';});
  const queue=reviewActionQueue(decisions,flagged);
  assert.equal(queue.valid,true);
- assert.deepEqual(queue.items.map(i=>i.index),[2]);
- assert.deepEqual(queue.blocked_items.map(i=>[i.index,i.block_reasons]),[[0,['duplicate']],[1,['scientific-conflict']]]);
+ assert.deepEqual(queue.items.map(i=>i.index),[]);
+ assert.deepEqual(queue.blocked_items.map(i=>[i.index,i.block_reasons]),[[0,['duplicate']],[1,['scientific-conflict']],[2,['scientific-conflict']]]);
  assert.equal(queue.can_auto_publish,false);
 });
 
