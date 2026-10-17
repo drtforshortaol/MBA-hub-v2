@@ -8,7 +8,7 @@ export function prepareAutomaticUpdate(update,applications,{replacementText}={})
  if(routing.action!=='update-existing')return {...routing,prepared:false};
  const app=applications.find(item=>item.app_id===routing.app_id);
  if(!app)return {valid:false,errors:['selected application not found']};
- if(!routing.section_id)return {...routing,action:'review-section',prepared:false,reason:'no matching existing section'};
+ if(!routing.section_id)return {...routing,action:'propose-new-section',prepared:false,proposal_type:'new-section',target_app_id:app.app_id,requires_review:true,reason:'existing application matched; no existing section matched'};
  const section=app.sections?.find(item=>item.id===routing.section_id);
  if(!section||typeof section.text!=='string')return {...routing,action:'review-section',prepared:false,reason:'section is not editable text'};
  if(typeof replacementText!=='string'||!replacementText.trim())return {...routing,action:'review-content',prepared:false,reason:'verified replacement text required'};
