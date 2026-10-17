@@ -11,6 +11,7 @@ export function validateReviewDecisions(decisions,entries){
  return decisions.every((d,i)=>d&&typeof d==='object'&&!Array.isArray(d)&&Object.keys(d).every(k=>['index','scientific_status','editorial_status','proposed_action','reviewer_notes'].includes(k))&&d.index===i&&SCIENCE.has(d.scientific_status)&&EDITORIAL.has(d.editorial_status)&&ACTIONS.has(d.proposed_action)&&typeof d.reviewer_notes==='string'&&d.reviewer_notes.length<=4000);
 }
 export function reviewProgress(decisions){
+ if(!Array.isArray(decisions))return {completed:0,total:0,revisions:0,can_auto_publish:false};
  const completed=decisions.filter(d=>d.scientific_status==='verified'&&d.editorial_status==='approved').length;
  const revisions=decisions.filter(d=>d.scientific_status==='needs-revision'||d.editorial_status==='needs-revision').length;
  return {completed,total:decisions.length,revisions,can_auto_publish:false};
@@ -19,7 +20,7 @@ export function reviewStorageKey(namespace,fingerprint){return namespace+':natur
 export function reviewRecoveryCheck(decisions,entries){
  if(!validateReviewDecisions(decisions,entries))return {valid:false,reason:'invalid-decisions',can_auto_publish:false};
  const progress=reviewProgress(decisions);
- return {valid:true,reason:progress.revisions?'revisions-required':progress.completed===progress.total?'review-complete':'review-incomplete',...progress,can_auto_publish:false};
+ return {valid:true,reason:progress.revisions?'revisions-required':progress.total>0&&progress.completed===progress.total?'review-complete':'review-incomplete',...progress,can_auto_publish:false};
 }
 export function readReview(storage,key,fingerprint,entries){
  try{
