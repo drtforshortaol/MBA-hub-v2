@@ -130,3 +130,17 @@ test('portable review import rejects packets claiming publication or preparation
   assert.equal(importReviewPacket({...packet,[field]:true},'hash',entries),null);
  }
 });
+
+test('all review stages are required before completion for every supported action',()=>{
+ for(const action of ['update-existing','new-content','no-change']){
+  const decisions=newReviewDecisions([entries[0]]);
+  decisions[0].proposed_action=action;
+  assert.equal(reviewProgress(decisions).completed,0);
+  decisions[0].scientific_status='verified';
+  assert.equal(reviewProgress(decisions).completed,0);
+  decisions[0].editorial_status='approved';
+  assert.equal(reviewProgress(decisions).completed,1);
+  assert.equal(reviewRecoveryCheck(decisions,[entries[0]]).reason,'review-complete');
+  assert.equal(reviewRecoveryCheck(decisions,[entries[0]]).can_auto_publish,false);
+ }
+});
