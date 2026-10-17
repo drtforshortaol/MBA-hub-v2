@@ -26,3 +26,9 @@ test('validated Naturalist proposals export without changing content',()=>{
  assert.match(developer,/No valid reviewed replacement drafts available for export/);
  assert.match(developer,/committed:false,published:false,can_auto_publish:false/);
 });
+
+test('review recovery fingerprint includes routing and target version',()=>{
+ assert.match(developer,/route:result\.entries\[e\.index\]\?\.route/);
+ assert.match(developer,/app_version:registry\.apps\.find/);
+ assert.match(developer,/reviewStorageKey\(env\.namespace,sourceFingerprint\)/);
+});
