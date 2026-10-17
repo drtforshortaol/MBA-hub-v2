@@ -144,3 +144,25 @@ test('all review stages are required before completion for every supported actio
   assert.equal(reviewRecoveryCheck(decisions,[entries[0]]).can_auto_publish,false);
  }
 });
+
+test('read-only action queue includes only fully approved actionable changes',async()=>{
+ const {reviewActionQueue}=await import('../src/core/naturalist-review-state.js');
+ const decisions=newReviewDecisions(entries);
+ decisions[0].scientific_status='verified';
+ decisions[0].editorial_status='approved';
+ decisions[0].proposed_action='new-content';
+ decisions[0].reviewer_notes='Add species story';
+ decisions[1].scientific_status='verified';
+ decisions[1].editorial_status='approved';
+ decisions[1].proposed_action='no-change';
+ const queue=reviewActionQueue(decisions,entries);
+ assert.equal(queue.valid,true);
+ assert.equal(queue.reason,'review-complete');
+ assert.equal(queue.can_auto_publish,false);
+ assert.deepEqual(queue.items,[{index:0,action:'new-content',entry:entries[0],reviewer_notes:'Add species story'}]);
+ decisions[1].proposed_action='update-existing';
+ assert.equal(reviewActionQueue(decisions,entries).items.length,2);
+ decisions[0].editorial_status='needs-revision';
+ assert.deepEqual(reviewActionQueue(decisions,entries).items.map(item=>item.index),[1]);
+ assert.deepEqual(reviewActionQueue([{...decisions[0],published:true},decisions[1]],entries),{valid:false,reason:'invalid-decisions',items:[],can_auto_publish:false});
+});
