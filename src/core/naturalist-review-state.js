@@ -25,7 +25,11 @@ export function readReview(storage,key,fingerprint,entries){
 }
 export function writeReview(storage,key,fingerprint,decisions,entries){
  if(!validateReviewDecisions(decisions,entries))return false;
- try{storage.setItem(key,JSON.stringify({schema_version:REVIEW_SCHEMA,review_context_sha256:fingerprint,review_decisions:decisions}));return true;}catch{return false;}
+ try{
+  storage.setItem(key,JSON.stringify({schema_version:REVIEW_SCHEMA,review_context_sha256:fingerprint,review_decisions:decisions}));
+  const restored=readReview(storage,key,fingerprint,entries);
+  return restored!==null&&JSON.stringify(restored)===JSON.stringify(decisions);
+ }catch{return false;}
 }
 
 export function importReviewPacket(packet,fingerprint,entries){
