@@ -62,6 +62,16 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    }catch{intakeStatus.textContent='Saved review unavailable; using pending decisions.';}
    // Only annotations are persisted. Original notes and classified source text
    // remain in the downloadable packet, never in device review storage.
+   function reviewDecisionSummary(){
+    const decisions=packet.review_decisions;
+    const completed=decisions.filter(d=>d.scientific_status==='verified'&&d.editorial_status==='approved').length;
+    const revisions=decisions.filter(d=>d.scientific_status==='needs-revision'||d.editorial_status==='needs-revision').length;
+    return completed+' of '+decisions.length+' reviewed in both stages; '+revisions+' flagged for revision. Publication remains disabled.';
+   }
+   const reviewProgress=document.createElement('p');reviewProgress.setAttribute('role','status');
+   const updateReviewSummary=()=>{reviewProgress.textContent=reviewDecisionSummary();};
+   updateReviewSummary();
+   reviewOutput.append(reviewProgress);
    const saveReview=()=>{
     if(intakeText.value!==source){intakeStatus.textContent='Source changed. Regenerate before saving.';return;}
     try{
@@ -101,7 +111,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      const wrapper=document.createElement('label');wrapper.textContent=title+' ';
      const select=document.createElement('select');
      for(const [value,name] of options){const option=document.createElement('option');option.value=value;option.textContent=name;select.append(option);}
-     select.value=decision[key];select.addEventListener('change',()=>{decision[key]=select.value;updateProgress();saveReview();});
+     select.value=decision[key];select.addEventListener('change',()=>{decision[key]=select.value;updateProgress();updateReviewSummary();saveReview();});
      wrapper.append(select);form.append(wrapper);
     }
     selectDecision('Scientific review','scientific_status',[['pending','Pending'],['needs-revision','Needs revision'],['verified','Verified by reviewer']]);
@@ -121,6 +131,14 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     notesLabel.append(notes);form.append(notesLabel);
     item.append(label,body,flags,details,warning,form);reviewOutput.append(item);
    }
+   const clearButton=document.createElement('button');clearButton.type='button';clearButton.className='button';clearButton.textContent='Reset saved review decisions';
+   clearButton.addEventListener('click',()=>{
+    if(intakeText.value!==source){intakeStatus.textContent='Source changed. Regenerate before resetting.';return;}
+    if(!confirm('Reset review decisions for this Naturalist submission? Original notes will remain in the input.'))return;
+    try{localStorage.removeItem(reviewKey);}catch{intakeStatus.textContent='Unable to clear local storage.';return;}
+    reviewOutput.replaceChildren();intakeStatus.textContent='Saved review decisions cleared. Generate a new packet to start pending reviews.';
+   });
+   reviewOutput.append(clearButton);
    const saveButton=document.createElement('button');saveButton.type='button';saveButton.className='button';saveButton.textContent='Save review decisions on this device';saveButton.addEventListener('click',saveReview);
    reviewOutput.append(saveButton);
    const download=document.createElement('button');download.type='button';download.className='button';download.textContent='Download review packet';
