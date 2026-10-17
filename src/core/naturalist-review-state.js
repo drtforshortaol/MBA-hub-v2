@@ -76,7 +76,7 @@ export function reviewActionQueue(decisions,entries){
   const item={index,action:decision.proposed_action,entry,reviewer_notes:decision.reviewer_notes};
   // A review decision is not an override for a classifier safety flag.
   // Keep flagged actions visible, but never place them in the preparable queue.
-  const duplicate=entry?.duplicate_of!=null;
+  const duplicate=entry?.duplicate_of!=null||entries.some((other,j)=>j!==index&&other?.duplicate_of===index);
   // Conflicts are undirected safety relationships even when the classifier
   // records only one side of the pair. Never prepare the unflagged endpoint.
   const conflict=Array.isArray(entry?.conflict_with)&&entry.conflict_with.length>0||
@@ -84,7 +84,7 @@ export function reviewActionQueue(decisions,entries){
   const malformed=entry==null||typeof entry!=='object'||Array.isArray(entry)||
    (Object.hasOwn(entry,'index')&&entry.index!==index)||
    (Object.hasOwn(entry,'conflict_with')&&!Array.isArray(entry.conflict_with))||
-   (duplicate&&(!Number.isInteger(entry.duplicate_of)||entry.duplicate_of<0||entry.duplicate_of>=entries.length||entry.duplicate_of===index))||
+   (entry.duplicate_of!=null&&(!Number.isInteger(entry.duplicate_of)||entry.duplicate_of<0||entry.duplicate_of>=entries.length||entry.duplicate_of===index))||
    (Array.isArray(entry.conflict_with)&&entry.conflict_with.some(i=>!Number.isInteger(i)||i<0||i>=entries.length||i===index));
   if(duplicate||conflict||malformed)blocked_items.push({...item,block_reasons:[...(duplicate?['duplicate']:[]),...(conflict?['scientific-conflict']:[]),...(malformed?['invalid-classification']:[])]});
   else items.push(item);
