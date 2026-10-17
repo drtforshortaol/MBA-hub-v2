@@ -11,8 +11,11 @@ export function extractUpdateStatements(input){
   // Preserve abbreviations and uncertain boundaries rather than risking false segmentation.
   const ambiguous=/\b(?:Dr|Mr|Mrs|Ms|Prof|St|vs|e\.g|i\.e)\./i.test(original);
   const parts=ambiguous?[original]:original.split(/(?<=[.!?])\s+(?=[A-Z](?:[a-z]|\s))/);
-  // Pronoun-led continuations depend on earlier context and must stay together.
-  if(parts.length>1&&parts.slice(1).some(p=>/^(?:It|Its|They|Their|This|These|Those|He|She|We|Such)\b/.test(p))){parts.splice(0,parts.length,original);}
+  // Keep pronoun-led continuations attached to the preceding claim, not the whole block.
+  for(let i=1;i<parts.length;){
+   if(/^(?:It|Its|They|Their|This|These|Those|He|She|We|Such)\b/.test(parts[i])){parts[i-1]+=' '+parts[i];parts.splice(i,1);}
+   else i++;
+  }
   for(const text of parts){
    if(text.trim())entries.push({text:text.trim(),source_block:original,extraction:parts.length>1?'sentence-boundary':'original-block',requires_review:true});
   }
