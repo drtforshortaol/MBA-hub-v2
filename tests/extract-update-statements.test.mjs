@@ -23,3 +23,10 @@ test('batch classification retains source and never publishes',()=>{
 test('rejects oversized intake',()=>{
  assert.equal(extractUpdateStatements('x'.repeat(60001)).valid,false);
 });
+
+test('separates independent sentence beginning with article A',()=>{
+ const source='Sea otters use tools. A new aquarium exhibit opens next month.';
+ const result=extractUpdateStatements(source);
+ assert.equal(result.entries.length,2);
+ assert.equal(result.entries[1].text,'A new aquarium exhibit opens next month.');
+});
