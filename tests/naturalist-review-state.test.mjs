@@ -218,3 +218,17 @@ test('portable review import rejects ambiguous publication state values',()=>{
   assert.deepEqual(importReviewPacket({...packet,[field]:false},'hash',entries),packet.review_decisions);
  }
 });
+
+test('portable recovery rejects mismatched embedded classification despite matching fingerprint',()=>{
+ const entries=[{index:0,source_text:'Sea otter',duplicate_of:null,conflict_with:[],placement:{target_app_id:'animals'},review:{flags:[]},existing_content:null}];
+ const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',review_context_sha256:'hash',review_decisions:newReviewDecisions(entries),entries:structuredClone(entries),published:false,committed:false,prepared:false};
+ assert.deepEqual(importReviewPacket(packet,'hash',entries),packet.review_decisions);
+ for(const changed of [
+  [{...entries[0],source_text:'Different source'}],
+  [{...entries[0],placement:{target_app_id:'exhibits'}}],
+  [{...entries[0],conflict_with:[0]}]
+ ]){
+  assert.equal(importReviewPacket({...packet,entries:changed},'hash',entries),null);
+ }
+ assert.equal(importReviewPacket({...packet,entries:[]},'hash',entries),null);
+});
