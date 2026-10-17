@@ -10,3 +10,11 @@ test('Developer Mode exposes replacement drafts without publishing',()=>{
  assert.match(developer,/reviewActionQueue\(packet.review_decisions,packet.entries\)/);
  assert.match(developer,/can_auto_publish:false/);
 });
+
+test('Developer Mode validates drafts against canonical schema and blocks conflicts',()=>{
+ assert.match(developer,/Check replacement drafts/);
+ assert.match(developer,/validateDraft\(draft,app\)/);
+ assert.match(developer,/entry\.duplicate_of!=null/);
+ assert.match(developer,/entry\.route\?\.section_id/);
+ assert.match(developer,/validation only, nothing saved or published/);
+});
