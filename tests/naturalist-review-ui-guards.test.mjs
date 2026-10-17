@@ -52,3 +52,13 @@ test('asynchronous digest completion rejects superseded review generations',()=>
  const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
  assert.match(code,/if\(generation!==activeReviewGeneration\|\|intakeText\.value!==source\)\{intakeStatus\.textContent='Source or review generation changed/);
 });
+
+test('flagged-statement triage provides a review-only shortcut',()=>{
+ const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
+ assert.match(code,/Next flagged statement/);
+ assert.match(code,/packet\.entries\[index\]/);
+ assert.match(code,/entry\.review\.flags\.length/);
+ assert.match(code,/showStatement\(index\)/);
+ assert.match(code,/potential scientific conflict pairs/);
+ assert.match(code,/All findings require human review/);
+});
