@@ -51,7 +51,7 @@ export function build(){
   // Browser-safe review engine is generated from the canonical CLI modules.
   // No duplicate classification implementation is maintained.
   if(environment==='developer'){
-   const modules=['extract-update-statements','find-batch-duplicates','suggest-content-destination','assess-existing-content','propose-update-placement','assess-naturalist-review-gates','classify-update-batch','summarize-naturalist-review'];
+   const modules=['extract-update-statements','find-batch-duplicates','find-batch-conflict-signals','suggest-content-destination','assess-existing-content','propose-update-placement','assess-naturalist-review-gates','classify-update-batch','summarize-naturalist-review'];
    const engineDir=`${out}/core/naturalist-engine`;
    fs.mkdirSync(engineDir,{recursive:true});
    for(const name of modules){
