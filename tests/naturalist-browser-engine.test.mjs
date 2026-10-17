@@ -5,7 +5,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
-const modules=['extract-update-statements','find-batch-duplicates','suggest-content-destination','assess-existing-content','propose-update-placement','assess-naturalist-review-gates','classify-update-batch','summarize-naturalist-review'];
+const modules=['extract-update-statements','find-batch-duplicates','find-batch-conflict-signals','suggest-content-destination','assess-existing-content','propose-update-placement','assess-naturalist-review-gates','classify-update-batch','summarize-naturalist-review'];
 
 test('developer build ships browser-compatible canonical Naturalist engine',()=>{
  for(const name of modules){
