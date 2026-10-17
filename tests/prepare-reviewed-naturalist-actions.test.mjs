@@ -27,3 +27,10 @@ test('invalid review decisions and intake fail closed',()=>{
  assert.equal(prepareReviewedNaturalistActions({valid:true,entries},[],[]).valid,false);
  assert.equal(prepareReviewedNaturalistActions(null,[],[]).valid,false);
 });
+
+test('draft requires a matching classified section route',()=>{
+ const d=approved();d[1].proposed_action='no-change';
+ const r=prepareReviewedNaturalistActions({valid:true,entries},d,[],{0:'Replacement'});
+ assert.equal(r.items[0].status,'routing-review');
+ assert.equal(r.prepared,false);
+});
