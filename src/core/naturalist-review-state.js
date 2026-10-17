@@ -27,6 +27,9 @@ export function readReview(storage,key,fingerprint,entries){
  try{
   const record=JSON.parse(storage.getItem(key)||'null');
   if(record?.schema_version!==REVIEW_SCHEMA||record.review_context_sha256!==fingerprint||!validateReviewDecisions(record.review_decisions,entries))return null;
+  for(const field of ['published','committed','prepared','can_auto_publish']){
+   if(Object.hasOwn(record,field)&&record[field]!==false)return null;
+  }
   return record.review_decisions.map(d=>({...d}));
  }catch{return null;}
 }
