@@ -20,3 +20,15 @@ test('classification retains review-only conflict flags',()=>{
  assert.ok(result.entries[1].review.flags.includes('possible-scientific-conflict-in-submission'));
  assert.equal(result.published,false);
 });
+
+test('contractions do not conceal potential scientific contradictions',()=>{
+ const result=findBatchConflictSignals([{text:'Sea otters can open shellfish with tools'},{text:"Sea otters can't open shellfish with tools"}]);
+ assert.equal(result.items.length,1);
+ assert.equal(result.items[0].signal,'negation-difference-review');
+});
+test('both sides of potential conflicts are flagged for review',()=>{
+ const result=classifyUpdateBatch('Sea otters use tools to open shellfish. Sea otters do not use tools to open shellfish.',[]);
+ assert.deepEqual(result.entries[0].conflict_with,[1]);
+ assert.deepEqual(result.entries[1].conflict_with,[0]);
+ assert.ok(result.entries.every(e=>e.review.flags.includes('possible-scientific-conflict-in-submission')));
+});
