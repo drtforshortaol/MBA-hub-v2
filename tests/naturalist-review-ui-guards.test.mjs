@@ -130,3 +130,11 @@ test('revision triage navigates reviewer decisions without changing them',()=>{
  assert.match(code,/if\(!isCurrentReview\(\)\)return/);
  assert.match(code,/navigation\.append\(previous,position,next,nextPending,nextFlagged,nextRevision\)/);
 });
+
+test('successful recovery automatically reloads persisted review without publishing',()=>{
+ const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
+ assert.match(code,/if\(!saved\)\{intakeStatus\.textContent='Storage unavailable/);
+ assert.match(code,/Decisions restored locally\. Reloading review interface/);
+ assert.match(code,/reviewButton\.click\(\)/);
+ assert.match(code,/if\(!isCurrentReview\(\)\)return;\s*if\(!imported\)/);
+});
