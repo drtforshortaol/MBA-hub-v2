@@ -32,3 +32,9 @@ test('review recovery fingerprint includes routing and target version',()=>{
  assert.match(developer,/app_version:registry\.apps\.find/);
  assert.match(developer,/reviewStorageKey\(env\.namespace,sourceFingerprint\)/);
 });
+
+test('draft export requires all scientific and editorial decisions complete',()=>{
+ assert.match(developer,/Complete every scientific and editorial decision before exporting draft proposals/);
+ assert.match(developer,/packet\.review_decisions\.some\(decision=>/);
+ assert.match(developer,/if\(typeof showQueue==='function'\)showQueue\(\)/);
+});
