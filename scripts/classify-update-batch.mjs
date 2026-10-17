@@ -1,3 +1,4 @@
+import {proposeUpdatePlacement} from './propose-update-placement.mjs';
 import {extractUpdateStatements} from './extract-update-statements.mjs';
 import {suggestContentDestination} from './suggest-content-destination.mjs';
 import {assessExistingContent} from './assess-existing-content.mjs';
@@ -12,7 +13,8 @@ export function classifyUpdateBatch(input,applications){
   const route=suggestContentDestination(text,applications);
   const app=route.app_id&&Array.isArray(applications)?applications.find(a=>a.app_id===route.app_id):null;
   const existing_content=app?assessExistingContent(text,app,{sectionId:route.section_id}):null;
-  return {index,text,source_block:extracted.entries[index].source_block,extraction:extracted.entries[index].extraction,route,existing_content,review_required:true,committed:false,published:false};
+  const placement=proposeUpdatePlacement(text,route,existing_content);
+  return {index,text,placement,source_block:extracted.entries[index].source_block,extraction:extracted.entries[index].extraction,route,existing_content,review_required:true,committed:false,published:false};
  });
  return {valid:true,entries,requires_review:true,committed:false,published:false};
 }
