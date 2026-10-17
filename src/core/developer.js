@@ -99,8 +99,8 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     previous.disabled=activeStatement===0;next.disabled=activeStatement===statementCards.length-1;
     position.textContent=' Statement '+(activeStatement+1)+' of '+statementCards.length+' ';
    }
-   previous.addEventListener('click',()=>showStatement(activeStatement-1));
-   next.addEventListener('click',()=>showStatement(activeStatement+1));
+   previous.addEventListener('click',()=>{if(isCurrentReview())showStatement(activeStatement-1);});
+   next.addEventListener('click',()=>{if(isCurrentReview())showStatement(activeStatement+1);});
    const nextPending=document.createElement('button');nextPending.type='button';nextPending.className='button';nextPending.textContent='Next incomplete review';
    const incomplete=index=>{const decision=packet.review_decisions[index];return decision.scientific_status!=='verified'||decision.editorial_status!=='approved';};
    nextPending.addEventListener('click',()=>{
@@ -160,7 +160,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
       if(!Number.isInteger(relatedIndex)||relatedIndex<0||relatedIndex>=packet.entries.length||relatedIndex===entry.index)continue;
       const jump=document.createElement('button');jump.type='button';jump.className='button';
       jump.textContent='View statement '+(relatedIndex+1);
-      jump.addEventListener('click',()=>{showStatement(relatedIndex);statementCards[relatedIndex]?.scrollIntoView({block:'nearest'});});
+      jump.addEventListener('click',()=>{if(!isCurrentReview())return;showStatement(relatedIndex);statementCards[relatedIndex]?.scrollIntoView({block:'nearest'});});
       related.append(jump);
      }
     }
@@ -178,7 +178,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      const wrapper=document.createElement('label');wrapper.textContent=title+' ';
      const select=document.createElement('select');
      for(const [value,name] of options){const option=document.createElement('option');option.value=value;option.textContent=name;select.append(option);}
-     select.value=decision[key];select.addEventListener('change',()=>{decision[key]=select.value;updateProgress();updateReviewSummary();saveReview();});
+     select.value=decision[key];select.addEventListener('change',()=>{if(!isCurrentReview())return;decision[key]=select.value;updateProgress();updateReviewSummary();saveReview();});
      wrapper.append(select);form.append(wrapper);
     }
     selectDecision('Scientific review','scientific_status',[['pending','Pending'],['needs-revision','Needs revision'],['verified','Verified by reviewer']]);
@@ -194,7 +194,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     updateProgress();
     const notesLabel=document.createElement('label');notesLabel.textContent='Reviewer notes';
     const notes=document.createElement('textarea');notes.rows=3;notes.maxLength=4000;notes.style.width='100%';
-    notes.value=decision.reviewer_notes;notes.addEventListener('input',()=>{decision.reviewer_notes=notes.value;saveReview();});
+    notes.value=decision.reviewer_notes;notes.addEventListener('input',()=>{if(!isCurrentReview())return;decision.reviewer_notes=notes.value;saveReview();});
     notesLabel.append(notes);form.append(notesLabel);
     item.append(label,body,flags,related,details,warning,form);reviewOutput.append(item);statementCards.push(item);
    }
