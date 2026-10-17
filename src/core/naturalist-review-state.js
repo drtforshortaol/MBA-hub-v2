@@ -27,3 +27,11 @@ export function writeReview(storage,key,fingerprint,decisions,entries){
  if(!validateReviewDecisions(decisions,entries))return false;
  try{storage.setItem(key,JSON.stringify({schema_version:REVIEW_SCHEMA,review_context_sha256:fingerprint,review_decisions:decisions}));return true;}catch{return false;}
 }
+
+export function importReviewPacket(packet,fingerprint,entries){
+ if(!packet||typeof packet!=='object'||Array.isArray(packet))return null;
+ if(packet.schema_version!==REVIEW_SCHEMA||packet.kind!=='mba-v2-naturalist-review-packet')return null;
+ if(packet.review_context_sha256!==fingerprint)return null;
+ if(!validateReviewDecisions(packet.review_decisions,entries))return null;
+ return packet.review_decisions.map(d=>({...d}));
+}
