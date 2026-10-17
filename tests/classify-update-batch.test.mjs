@@ -14,3 +14,10 @@ test('rejects invalid and oversized intake',()=>{
  assert.equal(classifyUpdateBatch('',apps).valid,false);
  assert.equal(classifyUpdateBatch('a'.repeat(60001),apps).valid,false);
 });
+
+test('rejects missing catalog rather than creating malformed placement reviews',()=>{
+ const result=classifyUpdateBatch('Sea otters use tools.',undefined);
+ assert.equal(result.valid,false);
+ assert.deepEqual(result.errors,['application catalog required']);
+ assert.equal(result.entries,undefined);
+});
