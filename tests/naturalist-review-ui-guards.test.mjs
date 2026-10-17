@@ -83,3 +83,12 @@ test('duplicate navigation links to original statement without altering decision
  assert.match(code,/showStatement\(entry\.duplicate_of\)/);
  assert.match(code,/if\(!isCurrentReview\(\)\)return;showStatement\(entry\.duplicate_of\)/);
 });
+
+test('all reviewer interaction paths reject stale review contexts',()=>{
+ const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
+ assert.match(code,/previous\.addEventListener\('click',\(\)=>\{if\(isCurrentReview\(\)\)showStatement/);
+ assert.match(code,/next\.addEventListener\('click',\(\)=>\{if\(isCurrentReview\(\)\)showStatement/);
+ assert.match(code,/jump\.addEventListener\('click',\(\)=>\{if\(!isCurrentReview\(\)\)return;showStatement/);
+ assert.match(code,/select\.addEventListener\('change',\(\)=>\{if\(!isCurrentReview\(\)\)return;decision\[key\]=/);
+ assert.match(code,/notes\.addEventListener\('input',\(\)=>\{if\(!isCurrentReview\(\)\)return;decision\.reviewer_notes=/);
+});
