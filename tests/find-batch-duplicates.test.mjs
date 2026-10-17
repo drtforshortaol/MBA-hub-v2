@@ -21,3 +21,13 @@ test('batch duplicate is retained and flagged for review',()=>{
 test('rejects malformed duplicate input',()=>{
  assert.equal(findBatchDuplicates(null).valid,false);
 });
+
+test('typographic punctuation and Unicode width do not hide repeated claims',()=>{
+ const result=findBatchDuplicates([{text:'Sea otters use rocks — near shore.'},{text:'Ｓｅａ otters use rocks - near shore!'}]);
+ assert.equal(result.items[1].duplicate_of,0);
+ assert.equal(result.published,false);
+});
+test('scientifically different negated claim is not a duplicate',()=>{
+ const result=findBatchDuplicates([{text:'Sea otters use rocks.'},{text:'Sea otters do not use rocks.'}]);
+ assert.equal(result.items[1].duplicate_of,null);
+});
