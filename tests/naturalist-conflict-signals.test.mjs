@@ -45,3 +45,10 @@ test('contracted forms of is not trigger review without asserting a contradictio
  assert.equal(result.items[0].signal,'negation-difference-review');
  assert.equal(result.can_auto_publish,false);
 });
+
+test('curly apostrophes in contractions do not conceal a possible conflict',()=>{
+ const result=findBatchConflictSignals([{text:'Sea otters can open shellfish with tools'},{text:'Sea otters can’t open shellfish with tools'}]);
+ assert.equal(result.items.length,1);
+ assert.equal(result.items[0].requires_scientific_review,true);
+ assert.equal(result.can_auto_publish,false);
+});
