@@ -155,3 +155,8 @@ test('asynchronous recovery and reset reject superseded generation',()=>{
  assert.match(code,/if\(!isCurrentReview\(\)\|\|generation!==activeReviewGeneration\)return;\s*if\(!imported\)/);
  assert.match(code,/if\(!isCurrentReview\(\)\|\|generation!==activeReviewGeneration\)\{intakeStatus\.textContent='Review no longer current\. Regenerate before resetting/);
 });
+
+test('all reviewer controls bind to the active generation as well as fingerprint',()=>{
+ const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
+ assert.match(code,/const isCurrentReview=\(\)=>generation===activeReviewGeneration&&intakeText\.value===source&&reviewOutput\.dataset\.reviewFingerprint===sourceFingerprint/);
+});
