@@ -254,7 +254,8 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      const saved=writeReview(localStorage,reviewKey,sourceFingerprint,imported,packet.entries);
      if(!saved){intakeStatus.textContent='Storage unavailable. Recovery not retained; keep your original downloaded packet.';return;}
      reviewOutput.replaceChildren();delete reviewOutput.dataset.reviewFingerprint;
-     intakeStatus.textContent='Decisions restored locally. Generate review packet again to load restored decisions. Nothing published.';
+     intakeStatus.textContent='Decisions restored locally. Reloading review interface; nothing published.';
+     reviewButton.click();
     }catch{if(isCurrentReview())intakeStatus.textContent='Invalid recovery file. No decisions changed.';}
    });
    reviewOutput.append(recoveryLabel);
