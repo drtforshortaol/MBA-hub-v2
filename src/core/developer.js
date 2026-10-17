@@ -93,7 +93,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    function showStatement(index){
     if(!statementCards.length)return;
     activeStatement=Math.max(0,Math.min(index,statementCards.length-1));
-    for(let i=0;i<statementCards.length;i++)statementCards[i].hidden=i!==activeStatement;
+    for(let i=0;i<statementCards.length;i++){statementCards[i].hidden=i!==activeStatement;statementCards[i].open=i===activeStatement;}
     previous.disabled=activeStatement===0;next.disabled=activeStatement===statementCards.length-1;
     position.textContent=' Statement '+(activeStatement+1)+' of '+statementCards.length+' ';
    }
