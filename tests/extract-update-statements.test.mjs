@@ -30,3 +30,12 @@ test('separates independent sentence beginning with article A',()=>{
  assert.equal(result.entries.length,2);
  assert.equal(result.entries[1].text,'A new aquarium exhibit opens next month.');
 });
+
+test('keeps pronoun continuation with its preceding claim while splitting unrelated claims',()=>{
+ const source='Sea otters use rocks. They crack shells with them. Octopuses change texture.';
+ const result=extractUpdateStatements(source);
+ assert.equal(result.entries.length,2);
+ assert.equal(result.entries[0].text,'Sea otters use rocks. They crack shells with them.');
+ assert.equal(result.entries[1].text,'Octopuses change texture.');
+ assert.equal(result.entries[0].source_block,source);
+});
