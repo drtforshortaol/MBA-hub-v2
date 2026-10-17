@@ -1,6 +1,6 @@
 import {createDraft,loadDraft,saveDraft,validateDraft} from './content-drafts.js';
 import {request} from './worker-channel.js';
-import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview} from './naturalist-review-state.js';
+import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket} from './naturalist-review-state.js';
 const env=await fetch('environment.json').then(r=>r.json());if(!env.developer)throw Error('Developer module prohibited in this environment');
 const panel=document.querySelector('#developer'),title=document.querySelector('#title');let taps=0,last=0;
 title.addEventListener('click',()=>{if(Date.now()-last>2200)taps=0;last=Date.now();if(++taps===5){taps=0;panel.hidden=!panel.hidden;if(!panel.hidden)render();}});
@@ -199,6 +199,26 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     item.append(label,body,flags,related,details,warning,form);reviewOutput.append(item);statementCards.push(item);
    }
    if(statementCards.length>1){reviewOutput.insertBefore(navigation,statementCards[0]);showStatement(0);}
+   const recoveryLabel=document.createElement('label');recoveryLabel.textContent='Restore decisions from a downloaded review packet (same classification only)';
+   const recoveryInput=document.createElement('input');recoveryInput.type='file';recoveryInput.accept='.json,application/json';
+   recoveryLabel.append(recoveryInput);
+   recoveryInput.addEventListener('change',async()=>{
+    if(!isCurrentReview())return;
+    const file=recoveryInput.files?.[0];if(!file)return;
+    if(file.size>2000000){intakeStatus.textContent='Review packet exceeds 2 MB recovery limit.';return;}
+    try{
+     const imported=importReviewPacket(JSON.parse(await file.text()),sourceFingerprint,packet.entries);
+     if(!isCurrentReview())return;
+     if(!imported){intakeStatus.textContent='Recovery rejected: packet does not match this classification or decisions are invalid.';return;}
+     packet.review_decisions=imported;
+     reviewOutput.replaceChildren();delete reviewOutput.dataset.reviewFingerprint;
+     intakeStatus.textContent='Review decisions recovered in memory. Generate a new packet to display them; no content published.';
+     // Persist before re-rendering, so the next generation restores the recovered annotations.
+     const saved=writeReview(localStorage,reviewKey,sourceFingerprint,imported,packet.entries);
+     if(!saved)intakeStatus.textContent='Storage unavailable. Recovery not retained; keep your original downloaded packet.';
+    }catch{if(isCurrentReview())intakeStatus.textContent='Invalid recovery file. No decisions changed.';}
+   });
+   reviewOutput.append(recoveryLabel);
    const clearButton=document.createElement('button');clearButton.type='button';clearButton.className='button';clearButton.textContent='Reset saved review decisions';
    clearButton.addEventListener('click',()=>{
     if(!isCurrentReview()){intakeStatus.textContent='Review no longer current. Regenerate before resetting.';return;}
