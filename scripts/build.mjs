@@ -48,6 +48,17 @@ export function build(){
  for(const environment of environments){
   const out=`dist/${environment}`;fs.rmSync(out,{recursive:true,force:true});fs.cpSync('src',out,{recursive:true});
   if(environment!=='developer')fs.rmSync(`${out}/core/developer.js`,{force:true});
+  // Browser-safe review engine is generated from the canonical CLI modules.
+  // No duplicate classification implementation is maintained.
+  if(environment==='developer'){
+   const modules=['extract-update-statements','find-batch-duplicates','suggest-content-destination','assess-existing-content','propose-update-placement','assess-naturalist-review-gates','classify-update-batch','summarize-naturalist-review'];
+   const engineDir=`${out}/core/naturalist-engine`;
+   fs.mkdirSync(engineDir,{recursive:true});
+   for(const name of modules){
+    const source=fs.readFileSync(`scripts/${name}.mjs`,'utf8').replace(/from (['"])\.\/([^'"]+)\.mjs\1/g,(_,quote,dependency)=>`from ${quote}./${dependency}.js${quote}`);
+    fs.writeFileSync(`${engineDir}/${name}.js`,source);
+   }
+  }
   const bundleApps=environment==='developer'?apps:preparePublicReview(out,apps);
   const registry={schema_version:1,version:platform.version,environment,categories,apps:bundleApps};
   const put=(p,data)=>fs.writeFileSync(`${out}/${p}`,JSON.stringify(data,null,2));put('registry.json',registry);
