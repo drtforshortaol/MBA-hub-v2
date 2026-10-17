@@ -232,3 +232,14 @@ test('portable recovery rejects mismatched embedded classification despite match
  }
  assert.equal(importReviewPacket({...packet,entries:[]},'hash',entries),null);
 });
+
+test('review recovery rejects stripped classification fields even when null-valued',()=>{
+ const entries=[{index:0,source_text:'Octopus',duplicate_of:null,conflict_with:[],placement:null,review:null,existing_content:null}];
+ const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',review_context_sha256:'hash',review_decisions:newReviewDecisions(entries),entries:structuredClone(entries)};
+ assert.deepEqual(importReviewPacket(packet,'hash',entries),packet.review_decisions);
+ for(const field of ['source_text','duplicate_of','conflict_with','placement','review','existing_content']){
+  const altered=structuredClone(entries);
+  delete altered[0][field];
+  assert.equal(importReviewPacket({...packet,entries:altered},'hash',entries),null,field);
+ }
+});
