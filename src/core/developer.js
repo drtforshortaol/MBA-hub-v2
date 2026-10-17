@@ -210,12 +210,10 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      const imported=importReviewPacket(JSON.parse(await file.text()),sourceFingerprint,packet.entries);
      if(!isCurrentReview())return;
      if(!imported){intakeStatus.textContent='Recovery rejected: packet does not match this classification or decisions are invalid.';return;}
-     packet.review_decisions=imported;
-     reviewOutput.replaceChildren();delete reviewOutput.dataset.reviewFingerprint;
-     intakeStatus.textContent='Review decisions recovered in memory. Generate a new packet to display them; no content published.';
-     // Persist before re-rendering, so the next generation restores the recovered annotations.
      const saved=writeReview(localStorage,reviewKey,sourceFingerprint,imported,packet.entries);
-     if(!saved)intakeStatus.textContent='Storage unavailable. Recovery not retained; keep your original downloaded packet.';
+     if(!saved){intakeStatus.textContent='Storage unavailable. Recovery not retained; keep your original downloaded packet.';return;}
+     reviewOutput.replaceChildren();delete reviewOutput.dataset.reviewFingerprint;
+     intakeStatus.textContent='Decisions restored locally. Generate review packet again to load restored decisions. Nothing published.';
     }catch{if(isCurrentReview())intakeStatus.textContent='Invalid recovery file. No decisions changed.';}
    });
    reviewOutput.append(recoveryLabel);
