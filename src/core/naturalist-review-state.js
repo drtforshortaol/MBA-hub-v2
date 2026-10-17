@@ -52,6 +52,7 @@ export function importReviewPacket(packet,fingerprint,entries){
  // a caller-supplied fingerprint. Legacy packets without entries remain valid.
  if(Object.hasOwn(packet,'entries')){
   if(!Array.isArray(packet.entries)||packet.entries.length!==entries.length)return null;
+  if(packet.entries.some((item,i)=>!item||typeof item!=='object'||Array.isArray(item)||item.index!==i))return null;
   for(let i=0;i<entries.length;i++){
    const actual=packet.entries[i],expected=entries[i];
    if(!actual||typeof actual!=='object'||Array.isArray(actual)||actual.index!==i)return null;
