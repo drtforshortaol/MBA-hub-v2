@@ -243,3 +243,15 @@ test('review recovery rejects stripped classification fields even when null-valu
   assert.equal(importReviewPacket({...packet,entries:altered},'hash',entries),null,field);
  }
 });
+
+test('reordered classifier entries cannot be prepared under approved decision indexes',async()=>{
+ const {reviewActionQueue}=await import('../src/core/naturalist-review-state.js');
+ const entries=[{index:1,duplicate_of:null,conflict_with:[]},{index:0,duplicate_of:null,conflict_with:[]},{index:2,duplicate_of:null,conflict_with:[]}];
+ const decisions=newReviewDecisions(entries);
+ decisions.forEach(d=>{d.scientific_status='verified';d.editorial_status='approved';d.proposed_action='update-existing';});
+ const queue=reviewActionQueue(decisions,entries);
+ assert.deepEqual(queue.items.map(x=>x.index),[2]);
+ assert.deepEqual(queue.blocked_items.map(x=>x.index),[0,1]);
+ assert.ok(queue.blocked_items.every(x=>x.block_reasons.includes('invalid-classification')));
+ assert.equal(queue.can_auto_publish,false);
+});
