@@ -1,5 +1,5 @@
 // Deterministic, review-only routing. No publication or manifest writes.
-const normalize=s=>String(s??'').toLowerCase().normalize('NFKD').replace(/[^a-z0-9 ]/g,' ').replace(/\\s+/g,' ').trim();
+const normalize=s=>String(s??'').toLowerCase().normalize('NFKD').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();
 const tokens=s=>new Set(normalize(s).split(' ').filter(w=>w.length>2));
 export function suggestContentDestination(update,applications){
  if(typeof update!=='string'||!update.trim())return {valid:false,errors:['update text required']};
