@@ -38,3 +38,17 @@ test('scientific conflict links navigate to related statements without editing d
  assert.match(code,/statementCards\[relatedIndex\]\?\.scrollIntoView/);
  assert.match(code,/item\.append\(label,body,flags,related,details,warning,form\)/);
 });
+
+test('mobile reviewer can advance to incomplete statements without granting publication',()=>{
+ const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
+ assert.match(code,/Next incomplete review/);
+ assert.match(code,/decision\.scientific_status!=='verified'\|\|decision\.editorial_status!=='approved'/);
+ assert.match(code,/\(activeStatement\+offset\)%count/);
+ assert.match(code,/if\(!isCurrentReview\(\)\)return/);
+ assert.match(code,/showStatement\(index\)/);
+ assert.match(code,/Publication remains disabled/);
+});
+test('asynchronous digest completion rejects superseded review generations',()=>{
+ const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
+ assert.match(code,/if\(generation!==activeReviewGeneration\|\|intakeText\.value!==source\)\{intakeStatus\.textContent='Source or review generation changed/);
+});
