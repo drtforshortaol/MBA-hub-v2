@@ -207,3 +207,14 @@ test('asymmetric scientific conflict blocks both endpoints from preparation',asy
  assert.ok(queue.blocked_items.every(x=>x.block_reasons.includes('scientific-conflict')));
  assert.equal(queue.can_auto_publish,false);
 });
+
+test('portable review import rejects ambiguous publication state values',()=>{
+ const entries=[{index:0}];
+ const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',review_context_sha256:'hash',review_decisions:newReviewDecisions(entries)};
+ for(const field of ['published','committed','prepared','can_auto_publish']){
+  for(const value of [null,1,'false',{},[]]){
+   assert.equal(importReviewPacket({...packet,[field]:value},'hash',entries),null);
+  }
+  assert.deepEqual(importReviewPacket({...packet,[field]:false},'hash',entries),packet.review_decisions);
+ }
+});
