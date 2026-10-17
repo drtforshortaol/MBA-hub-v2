@@ -10,6 +10,7 @@ export function assessExistingContent(update,app,{sectionId}={}){
  const normalized=normalize(update);
  const repeated=comparisons.find(c=>c.exact);
  const exactAnywhere=app.sections.some(s=>typeof s.text==='string'&&normalize(s.text)===normalized);
- const bestMatch=repeated??best;
+ const exactSection=app.sections.find(s=>typeof s.text==='string'&&normalize(s.text)===normalized);
+ const bestMatch=exactSection?{section_id:exactSection.id,similarity:1,exact:true}:repeated??best;
  return {valid:true,status:exactAnywhere?'exact-duplicate':best?.similarity>=0.75?'possible-overlap':'no-strong-overlap',match:bestMatch??null,contradiction_check:'not-performed',scientific_verification:'required',requires_review:true,published:false};
 }
