@@ -4,6 +4,28 @@ const env=await fetch('environment.json').then(r=>r.json());if(!env.developer)th
 const panel=document.querySelector('#developer'),title=document.querySelector('#title');let taps=0,last=0;
 title.addEventListener('click',()=>{if(Date.now()-last>2200)taps=0;last=Date.now();if(++taps===5){taps=0;panel.hidden=!panel.hidden;if(!panel.hidden)render();}});
 async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','Diagnostics only. Publishing authority remains outside this app.'],['button','Update Now','update'],['button','Repair offline files','repair'],['pre','Checking…','diagnostics'],['h2','Application inventory'],['label','Filter applications'],['input','','app-filter'],['div','','app-inventory'],['div','','app-details'],['h2','Tasks'],['label','Capture an item to fix later'],['input','','task'],['button','Add task','add'],['div','','tasks']].map(([tag,label,id])=>{const el=document.createElement(tag);if(id)el.id=id;if(tag==='label')el.htmlFor=label==='Filter applications'?'app-filter':'task';if(tag==='p')el.className='quiet';if(tag==='button')el.className='button';if(tag!=='input')el.textContent=label;return el;}));
+
+ // Naturalist intake is deliberately local and review-only. Packet classification
+ // remains in the Node development CLI until its shared logic is browser-safe.
+ const intake=document.createElement('section');
+ const intakeTitle=document.createElement('h3');intakeTitle.textContent='Naturalist update intake';
+ const intakeHint=document.createElement('p');intakeHint.className='quiet';intakeHint.textContent='Paste the full Naturalist update. Download a source-preserving intake request for scientific and editorial review. This does not classify, approve, or publish content.';
+ const intakeLabel=document.createElement('label');intakeLabel.htmlFor='naturalist-source';intakeLabel.textContent='Naturalist source notes';
+ const intakeText=document.createElement('textarea');intakeText.id='naturalist-source';intakeText.rows=8;intakeText.maxLength=60000;intakeText.style.width='100%';
+ const intakeStatus=document.createElement('p');intakeStatus.setAttribute('role','status');
+ const intakeButton=document.createElement('button');intakeButton.type='button';intakeButton.className='button';intakeButton.textContent='Download review intake';
+ intakeButton.addEventListener('click',()=>{
+  const source=intakeText.value;
+  if(!source.trim()){intakeStatus.textContent='Source notes are required.';return;}
+  const payload={schema_version:1,kind:'mba-v2-naturalist-intake',original_source:source,scientific_verification:'required',editorial_review:'required',approval_state:'pending',classified:false,committed:false,published:false};
+  const blob=new Blob([JSON.stringify(payload,null,2)+'\\n'],{type:'application/json'});
+  const url=URL.createObjectURL(blob),link=document.createElement('a');
+  link.href=url;link.download='mba-naturalist-intake.json';link.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+  intakeStatus.textContent='Review intake downloaded. No content or repository changed.';
+ });
+ intake.append(intakeTitle,intakeHint,intakeLabel,intakeText,intakeButton,intakeStatus);
+ panel.insertBefore(intake,document.querySelector('#app-inventory').previousSibling);
  const inventory=document.querySelector('#app-inventory'),filter=document.querySelector('#app-filter');
  const registry=await fetch('registry.json').then(r=>{if(!r.ok)throw Error('Registry unavailable');return r.json();});
  function drawInventory(){const query=filter.value.trim().toLocaleLowerCase();const apps=registry.apps.filter(a=>[a.title,a.app_id,a.category,a.status].some(value=>String(value||'').toLocaleLowerCase().includes(query))).sort((a,b)=>a.title.localeCompare(b.title));inventory.replaceChildren();const count=document.createElement('p');count.textContent=apps.length+' of '+registry.apps.length+' applications';inventory.append(count);for(const app of apps){const row=document.createElement('p'),label=document.createElement('strong'),meta=document.createElement('span');label.textContent=app.title+' ';meta.textContent='('+app.app_id+') · '+app.category+' · '+app.status;const inspect=document.createElement('button');inspect.type='button';inspect.className='button';inspect.textContent='Inspect';inspect.setAttribute('aria-label','Inspect '+app.title);inspect.addEventListener('click',()=>showDetails(app));row.append(label,meta,document.createTextNode(' '),inspect);inventory.append(row);}}
