@@ -1,6 +1,6 @@
 import {createDraft,loadDraft,saveDraft,validateDraft} from './content-drafts.js';
 import {request} from './worker-channel.js';
-import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket} from './naturalist-review-state.js';
+import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket,reviewRecoveryCheck} from './naturalist-review-state.js';
 const env=await fetch('environment.json').then(r=>r.json());if(!env.developer)throw Error('Developer module prohibited in this environment');
 const panel=document.querySelector('#developer'),title=document.querySelector('#title');let taps=0,last=0;
 title.addEventListener('click',()=>{if(Date.now()-last>2200)taps=0;last=Date.now();if(++taps===5){taps=0;panel.hidden=!panel.hidden;if(!panel.hidden)render();}});
@@ -66,8 +66,8 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    try{saved=readReview(localStorage,reviewKey,sourceFingerprint,packet.entries);}catch{/* Browser storage can be disabled; packet remains downloadable. */}
    if(saved)packet.review_decisions=saved;
    function reviewDecisionSummary(){
-    const progress=reviewProgress(packet.review_decisions);
-    return progress.completed+' of '+progress.total+' reviewed in both stages; '+progress.revisions+' flagged for revision. Publication remains disabled.';
+    const progress=reviewRecoveryCheck(packet.review_decisions,packet.entries);
+    return progress.valid?progress.completed+' of '+progress.total+' reviewed in both stages; '+progress.revisions+' flagged for revision. Status: '+progress.reason+'. Publication remains disabled.':'Invalid review decisions. Publication remains disabled.';
    }
    const reviewProgressDisplay=document.createElement('p');reviewProgressDisplay.setAttribute('role','status');
    const updateReviewSummary=()=>{reviewProgressDisplay.textContent=reviewDecisionSummary();};
