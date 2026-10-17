@@ -5,7 +5,7 @@ import {prepareChangeRequest} from './prepare-change-request.mjs';
 export function prepareAutomaticUpdate(update,applications,{replacementText}={}){
  const routing=suggestContentDestination(update,applications);
  if(!routing.valid)return routing;
- if(routing.action!=='update-existing')return {...routing,prepared:false};
+ if(routing.action!=='update-existing')return {...routing,action:'review-placement',proposal_type:'new-application-candidate',prepared:false,reason:'no confidently matched existing application; review before creating an application'};
  const app=applications.find(item=>item.app_id===routing.app_id);
  if(!app)return {valid:false,errors:['selected application not found']};
  if(!routing.section_id)return {...routing,action:'propose-new-section',prepared:false,proposal_type:'new-section',target_app_id:app.app_id,requires_review:true,reason:'existing application matched; no existing section matched'};
