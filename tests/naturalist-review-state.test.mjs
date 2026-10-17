@@ -77,3 +77,12 @@ test('empty reviews are not reported as completed editorial work',()=>{
  assert.equal(reviewRecoveryCheck(empty,[]).can_auto_publish,false);
  assert.deepEqual(reviewProgress(null),{completed:0,total:0,revisions:0,can_auto_publish:false});
 });
+
+test('review persistence and portable import require a nonempty classification fingerprint',()=>{
+ const decisions=newReviewDecisions(entries),store=storage();
+ assert.equal(writeReview(store,'key','',decisions,entries),false);
+ assert.equal(readReview(store,'key','',entries),null);
+ const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',review_context_sha256:'',review_decisions:decisions};
+ assert.equal(importReviewPacket(packet,'',entries),null);
+ assert.equal(importReviewPacket(packet,undefined,entries),null);
+});
