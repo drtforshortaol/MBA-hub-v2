@@ -38,3 +38,10 @@ test('negation differences without shared scientific subject remain unflagged',(
  assert.equal(result.items.length,0);
  assert.equal(result.can_auto_publish,false);
 });
+
+test('contracted forms of is not trigger review without asserting a contradiction',()=>{
+ const result=findBatchConflictSignals([{text:'A sea otter is active during the day'},{text:"A sea otter isn't active during the day"}]);
+ assert.equal(result.items.length,1);
+ assert.equal(result.items[0].signal,'negation-difference-review');
+ assert.equal(result.can_auto_publish,false);
+});
