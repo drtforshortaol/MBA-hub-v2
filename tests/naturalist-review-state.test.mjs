@@ -111,3 +111,13 @@ test('advisory progress tolerates null and primitive records without marking rev
  assert.deepEqual(reviewProgress(malformed),{completed:0,total:6,revisions:0,can_auto_publish:false});
  assert.equal(reviewRecoveryCheck(malformed,malformed).valid,false);
 });
+
+test('whitespace-only classification fingerprints cannot persist or restore reviews',()=>{
+ const decisions=newReviewDecisions(entries),store=storage();
+ const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',review_context_sha256:'   ',review_decisions:decisions};
+ assert.equal(writeReview(store,'key','   ',decisions,entries),false);
+ assert.equal(readReview(store,'key','   ',entries),null);
+ assert.equal(importReviewPacket(packet,'   ',entries),null);
+ assert.equal(writeReview(store,'key','real-id',decisions,entries),true);
+ assert.deepEqual(readReview(store,'key','real-id',entries),decisions);
+});
