@@ -82,6 +82,24 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     if(!validateDecisions()){intakeStatus.textContent='Review decisions invalid. Nothing saved.';return;}
     intakeStatus.textContent=writeReview(localStorage,reviewKey,sourceFingerprint,packet.review_decisions,packet.entries)?'Review decisions saved on this device. Publication remains disabled.':'Local storage unavailable; download the review packet to retain decisions.';
    };
+   const navigation=document.createElement('div');
+   navigation.setAttribute('role','group');
+   navigation.setAttribute('aria-label','Naturalist statement navigation');
+   const previous=document.createElement('button');previous.type='button';previous.className='button';previous.textContent='Previous statement';
+   const next=document.createElement('button');next.type='button';next.className='button';next.textContent='Next statement';
+   const position=document.createElement('span');position.setAttribute('role','status');
+   const statementCards=[];
+   let activeStatement=0;
+   function showStatement(index){
+    if(!statementCards.length)return;
+    activeStatement=Math.max(0,Math.min(index,statementCards.length-1));
+    for(let i=0;i<statementCards.length;i++)statementCards[i].hidden=i!==activeStatement;
+    previous.disabled=activeStatement===0;next.disabled=activeStatement===statementCards.length-1;
+    position.textContent=' Statement '+(activeStatement+1)+' of '+statementCards.length+' ';
+   }
+   previous.addEventListener('click',()=>showStatement(activeStatement-1));
+   next.addEventListener('click',()=>showStatement(activeStatement+1));
+   navigation.append(previous,position,next);
    const heading=document.createElement('h4');heading.textContent='Proposed updates — review required';
    const summary=document.createElement('p');summary.textContent=packet.review_summary.statement_count+' statements; '+packet.review_summary.duplicate_statement_count+' repeated within submission.';
    reviewOutput.append(heading,summary);
@@ -132,8 +150,9 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     const notes=document.createElement('textarea');notes.rows=3;notes.maxLength=4000;notes.style.width='100%';
     notes.value=decision.reviewer_notes;notes.addEventListener('input',()=>{decision.reviewer_notes=notes.value;saveReview();});
     notesLabel.append(notes);form.append(notesLabel);
-    item.append(label,body,flags,details,warning,form);reviewOutput.append(item);
+    item.append(label,body,flags,details,warning,form);reviewOutput.append(item);statementCards.push(item);
    }
+   if(statementCards.length>1){reviewOutput.insertBefore(navigation,statementCards[0]);showStatement(0);}
    const clearButton=document.createElement('button');clearButton.type='button';clearButton.className='button';clearButton.textContent='Reset saved review decisions';
    clearButton.addEventListener('click',()=>{
     if(!isCurrentReview()){intakeStatus.textContent='Review no longer current. Regenerate before resetting.';return;}
