@@ -164,7 +164,7 @@ test('read-only action queue includes only fully approved actionable changes',as
  assert.equal(reviewActionQueue(decisions,entries).items.length,2);
  decisions[0].editorial_status='needs-revision';
  assert.deepEqual(reviewActionQueue(decisions,entries).items.map(item=>item.index),[1]);
- assert.deepEqual(reviewActionQueue([{...decisions[0],published:true},decisions[1]],entries),{valid:false,reason:'invalid-decisions',items:[],can_auto_publish:false});
+ assert.deepEqual(reviewActionQueue([{...decisions[0],published:true},decisions[1]],entries),{valid:false,reason:'invalid-decisions',items:[],blocked_items:[],can_auto_publish:false});
 });
 
 test('flagged duplicate and scientific conflict actions are quarantined even after both approvals',async()=>{
