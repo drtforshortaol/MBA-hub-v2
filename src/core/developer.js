@@ -76,8 +76,17 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    const updateReviewSummary=()=>{reviewProgress.textContent=reviewDecisionSummary();};
    updateReviewSummary();
    reviewOutput.append(reviewProgress);
+   const validateDecisions=()=>{
+    const scientific=new Set(['pending','needs-revision','verified']);
+    const editorial=new Set(['pending','needs-revision','approved']);
+    const actions=new Set(['needs-review','update-existing','new-content','no-change']);
+    return packet.review_decisions.length===packet.entries.length&&packet.review_decisions.every((decision,index)=>
+     decision&&decision.index===index&&scientific.has(decision.scientific_status)&&editorial.has(decision.editorial_status)&&
+     actions.has(decision.proposed_action)&&typeof decision.reviewer_notes==='string'&&decision.reviewer_notes.length<=4000);
+   };
    const saveReview=()=>{
     if(intakeText.value!==source){intakeStatus.textContent='Source changed. Regenerate before saving.';return;}
+    if(!validateDecisions()){intakeStatus.textContent='Review decisions invalid. Nothing saved.';return;}
     try{
      localStorage.setItem(reviewKey,JSON.stringify({schema_version:1,review_context_sha256:sourceFingerprint,review_decisions:packet.review_decisions}));
      intakeStatus.textContent='Review decisions saved on this device. No publication or approval authority granted.';
@@ -148,6 +157,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    const download=document.createElement('button');download.type='button';download.className='button';download.textContent='Download review packet';
    download.onclick=()=>{
     if(intakeText.value!==source){intakeStatus.textContent='Source changed. Regenerate the review packet.';reviewOutput.replaceChildren();return;}
+    if(!validateDecisions()){intakeStatus.textContent='Review decisions invalid. Nothing downloaded.';return;}
     const blob=new Blob([JSON.stringify(packet,null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');
     link.href=url;link.download='mba-naturalist-review-packet.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
    };
