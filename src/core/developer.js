@@ -5,8 +5,8 @@ const panel=document.querySelector('#developer'),title=document.querySelector('#
 title.addEventListener('click',()=>{if(Date.now()-last>2200)taps=0;last=Date.now();if(++taps===5){taps=0;panel.hidden=!panel.hidden;if(!panel.hidden)render();}});
 async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','Diagnostics only. Publishing authority remains outside this app.'],['button','Update Now','update'],['button','Repair offline files','repair'],['pre','Checking…','diagnostics'],['h2','Application inventory'],['label','Filter applications'],['input','','app-filter'],['div','','app-inventory'],['div','','app-details'],['h2','Tasks'],['label','Capture an item to fix later'],['input','','task'],['button','Add task','add'],['div','','tasks']].map(([tag,label,id])=>{const el=document.createElement(tag);if(id)el.id=id;if(tag==='label')el.htmlFor=label==='Filter applications'?'app-filter':'task';if(tag==='p')el.className='quiet';if(tag==='button')el.className='button';if(tag!=='input')el.textContent=label;return el;}));
 
- // Naturalist intake is deliberately local and review-only. Packet classification
- // remains in the Node development CLI until its shared logic is browser-safe.
+ // Naturalist intake and classification are local and review-only.
+ // Browser engine is built from the canonical Node processing modules.
  const intake=document.createElement('section');
  const intakeTitle=document.createElement('h3');intakeTitle.textContent='Naturalist update intake';
  const intakeHint=document.createElement('p');intakeHint.className='quiet';intakeHint.textContent='Paste the full Naturalist update. Download a source-preserving intake request for scientific and editorial review. This does not classify, approve, or publish content.';
@@ -55,7 +55,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    }
    const download=document.createElement('button');download.type='button';download.className='button';download.textContent='Download review packet';
    download.onclick=()=>{
-    const blob=new Blob([JSON.stringify(packet,null,2)+'\\n'],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');
+    const blob=new Blob([JSON.stringify(packet,null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');
     link.href=url;link.download='mba-naturalist-review-packet.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
    };
    reviewOutput.append(download);intakeStatus.textContent='Review packet ready. Nothing approved, committed, or published.';
