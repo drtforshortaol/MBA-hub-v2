@@ -35,3 +35,10 @@ test('exact match outside selected section reports actual section',()=>{
  assert.equal(result.status,'exact-duplicate');
  assert.equal(result.match.section_id,'tools');
 });
+
+test('contractions such as did not and did not contracted are flagged for review',()=>{
+ const sample={...app,sections:[{id:'feeding',title:'Feeding',text:'Sea otters did use rocks to open shellfish.'}]};
+ const result=assessExistingContent("Sea otters didn't use rocks to open shellfish.",sample);
+ assert.equal(result.potential_conflict_signal,'negation-difference-review');
+ assert.equal(result.published,false);
+});
