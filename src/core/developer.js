@@ -318,7 +318,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      const target=entry.placement?.target_app_id||'unresolved';
      li.textContent='Statement '+(item.index+1)+' · '+item.action+' · '+target+' · '+(blocked?'BLOCKED: duplicate or potential scientific conflict':item.action==='new-content'?'Placement review required':'Draft preparation requires verified replacement text')+' · '+entry.source_text.slice(0,120);
      if(!blocked&&item.action==='update-existing'){
-      const replacementLabel=document.createElement('label');replacementLabel.textContent='Verified replacement text for statement '+(item.index+1);
+      const replacementLabel=document.createElement('label');replacementLabel.textContent='Proposed replacement text (scientific verification required) for statement '+(item.index+1);
       const replacementInput=document.createElement('textarea');replacementInput.rows=4;replacementInput.maxLength=20000;replacementInput.style.width='100%';
       replacementInput.value=replacementDrafts.get(item.index)||'';
       replacementInput.addEventListener('input',()=>{if(!isCurrentReview())return;replacementDrafts.set(item.index,replacementInput.value);});
@@ -357,6 +357,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     const queue=reviewActionQueue(packet.review_decisions,packet.entries);
     if(!queue.valid){intakeStatus.textContent='Invalid review queue.';return;}
     const drafts=[];
+    const pendingUpdates=queue.items.filter(item=>item.action==='update-existing');
     for(const item of queue.items){
      const entry=result.entries[item.index];
      if(item.action!=='update-existing'||entry.duplicate_of!=null||(entry.conflict_with||[]).length)continue;
@@ -369,6 +370,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      const converted=naturalistChangeRequest(draft,app);
      if(converted.valid)drafts.push({statement_index:item.index,reviewer_notes:item.reviewer_notes,draft,change_request:converted.request});
     }
+    if(drafts.length!==pendingUpdates.length){intakeStatus.textContent='Export blocked: '+(pendingUpdates.length-drafts.length)+' reviewed updates lack a valid, unblocked replacement proposal. Resolve all updates before exporting.';return;}
     if(!drafts.length){intakeStatus.textContent='No valid reviewed replacement drafts available for export.';return;}
     const payload={schema_version:1,kind:'mba-v2-naturalist-draft-proposals',review_context_sha256:sourceFingerprint,drafts,requires_review:true,prepared:false,committed:false,published:false,can_auto_publish:false};
     const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
