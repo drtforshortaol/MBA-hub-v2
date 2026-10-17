@@ -136,7 +136,7 @@ test('successful recovery automatically reloads persisted review without publish
  assert.match(code,/if\(!saved\)\{intakeStatus\.textContent='Storage unavailable/);
  assert.match(code,/Decisions restored locally\. Reloading review interface/);
  assert.match(code,/reviewButton\.click\(\)/);
- assert.match(code,/if\(!isCurrentReview\(\)\)return;\s*if\(!imported\)/);
+ assert.match(code,/if\(!isCurrentReview\(\)\|\|generation!==activeReviewGeneration\)return;\s*if\(!imported\)/);
 });
 
 test('direct statement picker stays synchronized with previous, next and flagged navigation',()=>{
@@ -147,4 +147,11 @@ test('direct statement picker stays synchronized with previous, next and flagged
  assert.match(code,/if\(!isCurrentReview\(\)\)return/);
  assert.match(code,/index>=0&&index<statementCards\.length/);
  assert.match(code,/navigation\.append\(previous,position,next,nextPending,nextFlagged,nextRevision,jumpToStatement\)/);
+});
+
+test('asynchronous recovery and reset reject superseded generation',()=>{
+ const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
+ assert.match(code,/recoveryInput\.addEventListener\('change',async\(\)=>\{\s*if\(!isCurrentReview\(\)\|\|generation!==activeReviewGeneration\)return/);
+ assert.match(code,/if\(!isCurrentReview\(\)\|\|generation!==activeReviewGeneration\)return;\s*if\(!imported\)/);
+ assert.match(code,/if\(!isCurrentReview\(\)\|\|generation!==activeReviewGeneration\)\{intakeStatus\.textContent='Review no longer current\. Regenerate before resetting/);
 });
