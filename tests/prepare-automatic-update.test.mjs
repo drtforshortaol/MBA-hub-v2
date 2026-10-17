@@ -15,5 +15,10 @@ test('requires supplied verified text rather than inventing content',()=>{
 });
 test('ambiguous destination does not produce a proposal',()=>{
  const r=prepareAutomaticUpdate('Add ocean current information',apps,{replacementText:'New'});
- assert.equal(r.action,'review-placement');assert.equal(r.prepared,false);
+ assert.equal(r.action,'review-placement');assert.equal(r.proposal_type,'new-application-candidate');assert.equal(r.prepared,false);
+});
+
+test('matching app without matching section creates a review-only new-section candidate',()=>{
+ const r=prepareAutomaticUpdate('Add giant Pacific octopus feeding behavior',apps,{replacementText:'Proposed text'});
+ assert.equal(r.action,'propose-new-section');assert.equal(r.proposal_type,'new-section');assert.equal(r.target_app_id,'giant-pacific-octopus');assert.equal(r.prepared,false);assert.equal(r.published,false);
 });
