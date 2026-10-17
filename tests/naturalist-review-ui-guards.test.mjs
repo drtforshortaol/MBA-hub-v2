@@ -74,3 +74,12 @@ test('disabled browser storage does not prevent generating downloadable review p
  assert.match(code,/if\(saved\)packet\.review_decisions=saved/);
  assert.match(code,/Download review packet/);
 });
+
+test('duplicate navigation links to original statement without altering decisions',()=>{
+ const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
+ assert.match(code,/Number\.isInteger\(entry\.duplicate_of\)/);
+ assert.match(code,/entry\.duplicate_of<packet\.entries\.length/);
+ assert.match(code,/View original statement/);
+ assert.match(code,/showStatement\(entry\.duplicate_of\)/);
+ assert.match(code,/if\(!isCurrentReview\(\)\)return;showStatement\(entry\.duplicate_of\)/);
+});
