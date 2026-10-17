@@ -310,7 +310,8 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     const queue=reviewActionQueue(packet.review_decisions,packet.entries);
     queueItems.replaceChildren();
     if(!queue.valid){queueStatus.textContent='Review decisions invalid.';return;}
-    queueStatus.textContent=queue.items.length+' reviewed content actions. Duplicates and scientific conflicts remain blocked from preparation. No publishing available.';
+    queueStatus.textContent=queue.items.length+' preparable reviewed actions; '+(queue.blocked_items?.length??0)+' blocked duplicates or scientific conflicts. No publishing available.';
+    for(const item of queue.blocked_items||[]){const li=document.createElement('li');li.textContent='BLOCKED statement '+(item.index+1)+' · '+item.block_reasons.join(', ')+' · '+(item.entry?.source_text||'').slice(0,120);queueItems.append(li);}
     for(const item of queue.items){
      const entry=packet.entries[item.index];
      const blocked=entry.duplicate_of!=null||(entry.conflict_with||[]).length>0;
