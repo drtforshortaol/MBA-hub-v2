@@ -121,3 +121,12 @@ test('whitespace-only classification fingerprints cannot persist or restore revi
  assert.equal(writeReview(store,'key','real-id',decisions,entries),true);
  assert.deepEqual(readReview(store,'key','real-id',entries),decisions);
 });
+
+test('portable review import rejects packets claiming publication or preparation',()=>{
+ const decisions=newReviewDecisions(entries);
+ const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',review_context_sha256:'hash',review_decisions:decisions,published:false,committed:false,prepared:false};
+ assert.deepEqual(importReviewPacket(packet,'hash',entries),decisions);
+ for(const field of ['published','committed','prepared','can_auto_publish']){
+  assert.equal(importReviewPacket({...packet,[field]:true},'hash',entries),null);
+ }
+});
