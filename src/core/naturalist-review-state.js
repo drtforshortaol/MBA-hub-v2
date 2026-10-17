@@ -47,3 +47,15 @@ export function importReviewPacket(packet,fingerprint,entries){
  if(!validateReviewDecisions(packet.review_decisions,entries))return null;
  return packet.review_decisions.map(d=>({...d}));
 }
+
+
+// A read-only work queue for approved review decisions. Never stages or publishes content.
+export function reviewActionQueue(decisions,entries){
+ if(!validateReviewDecisions(decisions,entries))return {valid:false,reason:'invalid-decisions',items:[],can_auto_publish:false};
+ const items=decisions.flatMap((decision,index)=>{
+  const ready=decision.scientific_status==='verified'&&decision.editorial_status==='approved'&&decision.proposed_action!=='needs-review';
+  if(!ready||decision.proposed_action==='no-change')return [];
+  return [{index,action:decision.proposed_action,entry:entries[index],reviewer_notes:decision.reviewer_notes}];
+ });
+ return {valid:true,reason:reviewRecoveryCheck(decisions,entries).reason,items,can_auto_publish:false};
+}
