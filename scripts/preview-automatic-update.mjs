@@ -28,7 +28,13 @@ export function previewNaturalistPacket(update){
 export function previewAutomaticUpdate(update,{replacementText}={}){
  return prepareAutomaticUpdate(update,loadApplicationCatalog(),{replacementText});
 }
+// Explicit review-packet CLI mode is read-only; legacy preview remains unchanged.
 if(process.argv[1]===fileURLToPath(import.meta.url)){
+ if(process.argv[2]==='--naturalist-packet'){
+  if(process.argv.length!==4||!process.argv[3]?.trim()){console.error('Usage: node scripts/preview-automatic-update.mjs --naturalist-packet <update text>');process.exitCode=2;}
+  else try{const packet=previewNaturalistPacket(process.argv[3]);console.log(JSON.stringify(packet,null,2));if(!packet.valid&&packet.valid!==undefined)process.exitCode=1;}
+  catch(error){console.error('Unable to preview Naturalist packet:',error.message);process.exitCode=1;}
+ }else 
  if(process.argv.length<3||process.argv.length>4){console.error('Usage: node scripts/preview-automatic-update.mjs <update text> [verified replacement text]');process.exitCode=2;}
  else try{const result=previewAutomaticUpdate(process.argv[2],{replacementText:process.argv[3]});console.log(JSON.stringify(result,null,2));if(!result.valid||result.proposal?.valid===false)process.exitCode=1;}
  catch(error){console.error('Unable to preview automatic update:',error.message);process.exitCode=1;}
