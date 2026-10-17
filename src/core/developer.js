@@ -256,12 +256,12 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    const recoveryInput=document.createElement('input');recoveryInput.type='file';recoveryInput.accept='.json,application/json';
    recoveryLabel.append(recoveryInput);
    recoveryInput.addEventListener('change',async()=>{
-    if(!isCurrentReview())return;
+    if(!isCurrentReview()||generation!==activeReviewGeneration)return;
     const file=recoveryInput.files?.[0];if(!file)return;
     if(file.size>2000000){intakeStatus.textContent='Review packet exceeds 2 MB recovery limit.';return;}
     try{
      const imported=importReviewPacket(JSON.parse(await file.text()),sourceFingerprint,packet.entries);
-     if(!isCurrentReview())return;
+     if(!isCurrentReview()||generation!==activeReviewGeneration)return;
      if(!imported){intakeStatus.textContent='Recovery rejected: packet does not match this classification or decisions are invalid.';return;}
      const saved=writeReview(localStorage,reviewKey,sourceFingerprint,imported,packet.entries);
      if(!saved){intakeStatus.textContent='Storage unavailable. Recovery not retained; keep your original downloaded packet.';return;}
@@ -273,7 +273,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    reviewOutput.append(recoveryLabel);
    const clearButton=document.createElement('button');clearButton.type='button';clearButton.className='button';clearButton.textContent='Reset saved review decisions';
    clearButton.addEventListener('click',()=>{
-    if(!isCurrentReview()){intakeStatus.textContent='Review no longer current. Regenerate before resetting.';return;}
+    if(!isCurrentReview()||generation!==activeReviewGeneration){intakeStatus.textContent='Review no longer current. Regenerate before resetting.';return;}
     if(!confirm('Reset review decisions for this Naturalist submission? Original notes will remain in the input.'))return;
     try{localStorage.removeItem(reviewKey);}catch{intakeStatus.textContent='Unable to clear local storage.';return;}
     reviewOutput.replaceChildren();intakeStatus.textContent='Saved review decisions cleared. Generate a new packet to start pending reviews.';
