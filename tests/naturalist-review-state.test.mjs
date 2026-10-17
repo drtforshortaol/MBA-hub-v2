@@ -178,3 +178,20 @@ test('flagged duplicate and scientific conflict actions are quarantined even aft
  assert.deepEqual(queue.blocked_items.map(i=>[i.index,i.block_reasons]),[[0,['duplicate']],[1,['scientific-conflict']]]);
  assert.equal(queue.can_auto_publish,false);
 });
+
+test('malformed classifier references cannot enter the preparable Naturalist queue',async()=>{
+ const {reviewActionQueue}=await import('../src/core/naturalist-review-state.js');
+ const malformed=[
+  {index:0,duplicate_of:null,conflict_with:[999]},
+  {index:1,duplicate_of:1,conflict_with:[]},
+  {index:2,duplicate_of:null,conflict_with:'invalid'},
+  {index:3,duplicate_of:null}
+ ];
+ const decisions=newReviewDecisions(malformed);
+ decisions.forEach(d=>{d.scientific_status='verified';d.editorial_status='approved';d.proposed_action='update-existing';});
+ const result=reviewActionQueue(decisions,malformed);
+ assert.equal(result.items.length,0);
+ assert.deepEqual(result.blocked_items.map(x=>x.index),[0,1,2,3]);
+ assert.ok(result.blocked_items.every(x=>x.block_reasons.includes('invalid-classification')));
+ assert.equal(result.can_auto_publish,false);
+});
