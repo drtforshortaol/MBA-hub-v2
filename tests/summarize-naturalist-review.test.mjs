@@ -29,3 +29,12 @@ test('preview packet contains read-only review summary',()=>{
  assert.equal(packet.review_summary.can_auto_publish,false);
  assert.equal(packet.published,false);
 });
+
+test('summary counts both sides of a possible scientific conflict without approving claims',()=>{
+ const packet=previewNaturalistPacket('Sea otters use tools to open shellfish. Sea otters do not use tools to open shellfish.');
+ assert.equal(packet.valid,true);
+ assert.equal(packet.conflict_signals.length,1);
+ assert.equal(packet.review_summary.conflicted_statement_count,2);
+ assert.equal(packet.review_summary.can_auto_publish,false);
+ assert.equal(packet.published,false);
+});
