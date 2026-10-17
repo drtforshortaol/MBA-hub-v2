@@ -23,7 +23,7 @@ export function reviewRecoveryCheck(decisions,entries){
  return {valid:true,reason:progress.revisions?'revisions-required':progress.total>0&&progress.completed===progress.total?'review-complete':'review-incomplete',...progress,can_auto_publish:false};
 }
 export function readReview(storage,key,fingerprint,entries){
- if(typeof fingerprint!=='string'||!fingerprint)return null;
+ if(typeof fingerprint!=='string'||!fingerprint.trim())return null;
  try{
   const record=JSON.parse(storage.getItem(key)||'null');
   if(record?.schema_version!==REVIEW_SCHEMA||record.review_context_sha256!==fingerprint||!validateReviewDecisions(record.review_decisions,entries))return null;
@@ -31,7 +31,7 @@ export function readReview(storage,key,fingerprint,entries){
  }catch{return null;}
 }
 export function writeReview(storage,key,fingerprint,decisions,entries){
- if(typeof fingerprint!=='string'||!fingerprint||!validateReviewDecisions(decisions,entries))return false;
+ if(typeof fingerprint!=='string'||!fingerprint.trim()||!validateReviewDecisions(decisions,entries))return false;
  try{
   storage.setItem(key,JSON.stringify({schema_version:REVIEW_SCHEMA,review_context_sha256:fingerprint,review_decisions:decisions}));
   const restored=readReview(storage,key,fingerprint,entries);
@@ -42,7 +42,7 @@ export function writeReview(storage,key,fingerprint,decisions,entries){
 export function importReviewPacket(packet,fingerprint,entries){
  if(!packet||typeof packet!=='object'||Array.isArray(packet))return null;
  if(packet.schema_version!==REVIEW_SCHEMA||packet.kind!=='mba-v2-naturalist-review-packet')return null;
- if(typeof fingerprint!=='string'||!fingerprint||packet.review_context_sha256!==fingerprint)return null;
+ if(typeof fingerprint!=='string'||!fingerprint.trim()||packet.review_context_sha256!==fingerprint)return null;
  if(!validateReviewDecisions(packet.review_decisions,entries))return null;
  return packet.review_decisions.map(d=>({...d}));
 }
