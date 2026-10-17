@@ -63,7 +63,8 @@ export function reviewActionQueue(decisions,entries){
   const duplicate=entry?.duplicate_of!=null;
   const conflict=Array.isArray(entry?.conflict_with)&&entry.conflict_with.length>0;
   const malformed=entry==null||typeof entry!=='object'||Array.isArray(entry)||
-   !Object.hasOwn(entry,'duplicate_of')||!Array.isArray(entry.conflict_with)||
+   (Object.hasOwn(entry,'duplicate_of')!==Object.hasOwn(entry,'conflict_with'))||
+   (Object.hasOwn(entry,'conflict_with')&&!Array.isArray(entry.conflict_with))||
    (duplicate&&(!Number.isInteger(entry.duplicate_of)||entry.duplicate_of<0||entry.duplicate_of>=entries.length||entry.duplicate_of===index))||
    (Array.isArray(entry.conflict_with)&&entry.conflict_with.some(i=>!Number.isInteger(i)||i<0||i>=entries.length||i===index));
   if(duplicate||conflict||malformed)blocked_items.push({...item,block_reasons:[...(duplicate?['duplicate']:[]),...(conflict?['scientific-conflict']:[]),...(malformed?['invalid-classification']:[])]});
