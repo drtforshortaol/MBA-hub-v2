@@ -72,7 +72,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    if(saved)packet.review_decisions=saved;
    function reviewDecisionSummary(){
     const progress=reviewRecoveryCheck(packet.review_decisions,packet.entries);
-    return progress.valid?progress.completed+' of '+progress.total+' reviewed in both stages; '+progress.revisions+' flagged for revision. Status: '+progress.reason+'. Publication remains disabled.':'Invalid review decisions. Publication remains disabled.';
+    return progress.valid?progress.completed+' of '+progress.total+' scientifically verified, editorially approved, and assigned an action; '+progress.revisions+' flagged for revision. Status: '+progress.reason+'. Publication remains disabled.':'Invalid review decisions. Publication remains disabled.';
    }
    const reviewProgressDisplay=document.createElement('p');reviewProgressDisplay.setAttribute('role','status');
    const updateReviewSummary=()=>{reviewProgressDisplay.textContent=reviewDecisionSummary();};
