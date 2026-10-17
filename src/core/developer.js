@@ -1,3 +1,4 @@
+import {naturalistChangeRequest} from './naturalist-change-request.js';
 import {createDraft,loadDraft,saveDraft,validateDraft} from './content-drafts.js';
 import {request} from './worker-channel.js';
 import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket,reviewRecoveryCheck,reviewActionQueue} from './naturalist-review-state.js';
@@ -362,7 +363,8 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      if(entry.route?.action!=='update-existing'||!section||typeof section.text!=='string'||!replacement?.trim())continue;
      const draft=createDraft(app);draft.description=entry.text.slice(0,4000);
      draft.section_edits=[{id:section.id,title:section.title,caption:section.caption??'',text:replacement}];
-     if(validateDraft(draft,app).valid)drafts.push({statement_index:item.index,reviewer_notes:item.reviewer_notes,draft});
+     const converted=naturalistChangeRequest(draft,app);
+     if(converted.valid)drafts.push({statement_index:item.index,reviewer_notes:item.reviewer_notes,draft,change_request:converted.request});
     }
     if(!drafts.length){intakeStatus.textContent='No valid reviewed replacement drafts available for export.';return;}
     const payload={schema_version:1,kind:'mba-v2-naturalist-draft-proposals',review_context_sha256:sourceFingerprint,drafts,requires_review:true,prepared:false,committed:false,published:false,can_auto_publish:false};
