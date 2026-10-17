@@ -128,7 +128,7 @@ test('revision triage navigates reviewer decisions without changing them',()=>{
  assert.match(code,/Next needs-revision decision/);
  assert.match(code,/decision\.scientific_status==='needs-revision'\|\|decision\.editorial_status==='needs-revision'/);
  assert.match(code,/if\(!isCurrentReview\(\)\)return/);
- assert.match(code,/navigation\.append\(previous,position,next,nextPending,nextFlagged,nextRevision\)/);
+ assert.match(code,/navigation\.append\(previous,position,next,nextPending,nextFlagged,nextRevision,jumpToStatement\)/);
 });
 
 test('successful recovery automatically reloads persisted review without publishing',()=>{
