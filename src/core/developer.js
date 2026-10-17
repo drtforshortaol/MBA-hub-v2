@@ -30,6 +30,8 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
  const reviewButton=document.createElement('button');reviewButton.type='button';reviewButton.className='button';reviewButton.textContent='Generate review packet';
  const reviewOutput=document.createElement('div');reviewOutput.setAttribute('aria-live','polite');
  intake.insertBefore(reviewButton,intakeStatus);intake.insertBefore(reviewOutput,intakeStatus);
+ // Invalidate generated decisions immediately when their source changes.
+ intakeText.addEventListener('input',()=>{reviewOutput.replaceChildren();intakeStatus.textContent='Source changed. Generate a new review packet before downloading.';});
  reviewButton.addEventListener('click',async()=>{
   reviewOutput.replaceChildren();
   const source=intakeText.value;
@@ -55,6 +57,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    }
    const download=document.createElement('button');download.type='button';download.className='button';download.textContent='Download review packet';
    download.onclick=()=>{
+    if(intakeText.value!==source){intakeStatus.textContent='Source changed. Regenerate the review packet.';reviewOutput.replaceChildren();return;}
     const blob=new Blob([JSON.stringify(packet,null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');
     link.href=url;link.download='mba-naturalist-review-packet.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
    };
