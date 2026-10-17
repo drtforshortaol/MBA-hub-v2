@@ -1,7 +1,7 @@
 // Conservative cross-statement conflict signals; no scientific conclusion is inferred.
-const normalize=text=>String(text??'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
-const negated=text=>/\b(?:not|never|no|cannot|can't|doesn't|don't|without|unable)\b/i.test(text);
-const terms=text=>new Set(normalize(text).split(' ').filter(word=>word.length>3&&!['never','cannot','without','doesn','don'].includes(word)));
+const normalize=text=>String(text??'').toLowerCase().replace(/\b(?:can't|cannot)\b/g,'can not').replace(/\b(?:doesn't|don't|didn't)\b/g,'do not').replace(/[^a-z0-9]+/g,' ').trim();
+const negated=text=>/\b(?:not|never|no|cannot|can't|doesn't|don't|didn't|without|unable)\b/i.test(text);
+const terms=text=>new Set(normalize(text).split(' ').filter(word=>word.length>3&&!['never','cannot','without','doesn','don','didn'].includes(word)));
 export function findBatchConflictSignals(entries){
  if(!Array.isArray(entries))return {valid:false,errors:['entries array required']};
  const items=[];
