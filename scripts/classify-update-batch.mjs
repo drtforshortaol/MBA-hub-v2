@@ -29,9 +29,11 @@ export function classifyUpdateBatch(input,applications){
  }
  const conflicts=findBatchConflictSignals(entries);
  for(const signal of conflicts.items){
-  const entry=entries[signal.index];
-  entry.review={...entry.review,flags:[...new Set([...entry.review.flags,'possible-scientific-conflict-in-submission'])]};
-  entry.conflict_with=[...(entry.conflict_with||[]),signal.compared_with];
+  for(const [index,related] of [[signal.index,signal.compared_with],[signal.compared_with,signal.index]]){
+   const entry=entries[index];
+   entry.review={...entry.review,flags:[...new Set([...entry.review.flags,'possible-scientific-conflict-in-submission'])]};
+   entry.conflict_with=[...new Set([...(entry.conflict_with||[]),related])];
+  }
  }
  return {valid:true,entries,conflict_signals:conflicts.items,requires_review:true,committed:false,published:false};
 }
