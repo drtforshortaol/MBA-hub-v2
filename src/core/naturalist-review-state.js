@@ -12,8 +12,8 @@ export function validateReviewDecisions(decisions,entries){
 }
 export function reviewProgress(decisions){
  if(!Array.isArray(decisions))return {completed:0,total:0,revisions:0,can_auto_publish:false};
- const completed=decisions.filter(d=>d?.scientific_status==='verified'&&d.editorial_status==='approved'&&ACTIONS.has(d.proposed_action)&&d.proposed_action!=='needs-review').length;
- const revisions=decisions.filter(d=>d?.scientific_status==='needs-revision'||d?.editorial_status==='needs-revision').length;
+ const completed=decisions.filter(d=>d&&typeof d==='object'&&!Array.isArray(d)&&d.scientific_status==='verified'&&d.editorial_status==='approved'&&ACTIONS.has(d.proposed_action)&&d.proposed_action!=='needs-review').length;
+ const revisions=decisions.filter(d=>d&&typeof d==='object'&&!Array.isArray(d)&&(d.scientific_status==='needs-revision'||d.editorial_status==='needs-revision')).length;
  return {completed,total:decisions.length,revisions,can_auto_publish:false};
 }
 export function reviewStorageKey(namespace,fingerprint){return namespace+':naturalist-review:'+fingerprint;}
