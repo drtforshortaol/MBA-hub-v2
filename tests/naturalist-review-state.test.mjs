@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview} from '../src/core/naturalist-review-state.js';
+import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket} from '../src/core/naturalist-review-state.js';
 const entries=[{index:0},{index:1}];
 function storage(){const data=new Map();return {getItem:k=>data.get(k)??null,setItem:(k,v)=>data.set(k,v),removeItem:k=>data.delete(k)};}
 test('new reviews default to pending and never grant publication',()=>{
@@ -34,4 +34,17 @@ test('storage errors do not corrupt reviews',()=>{
  const broken={getItem(){throw Error('blocked')},setItem(){throw Error('blocked')}};
  assert.equal(readReview(broken,'key','hash',entries),null);
  assert.equal(writeReview(broken,'key','hash',newReviewDecisions(entries),entries),false);
+});
+
+test('portable review recovery requires matching classification and validated decisions',()=>{
+ const decisions=newReviewDecisions(entries);
+ decisions[0].reviewer_notes='Checked against original source';
+ const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',review_context_sha256:'matching',review_decisions:decisions};
+ assert.deepEqual(importReviewPacket(packet,'matching',entries),decisions);
+ const restored=importReviewPacket(packet,'matching',entries);
+ restored[0].reviewer_notes='changed';
+ assert.equal(decisions[0].reviewer_notes,'Checked against original source');
+ assert.equal(importReviewPacket(packet,'different',entries),null);
+ assert.equal(importReviewPacket({...packet,kind:'unknown'},'matching',entries),null);
+ assert.equal(importReviewPacket({...packet,review_decisions:[{...decisions[0],published:true},decisions[1]]},'matching',entries),null);
 });
