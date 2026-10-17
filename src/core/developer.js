@@ -63,8 +63,9 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      packet.review_decisions=saved.review_decisions.map(decision=>({...decision}));
     }
    }catch{intakeStatus.textContent='Saved review unavailable; using pending decisions.';}
-   // Only annotations are persisted. Original notes and classified source text
-   // remain in the downloadable packet, never in device review storage.
+   // Only annotations are persisted. The key fingerprints source and current
+   // classification context; neither original notes nor extracted source text
+   // are stored in the local review record.
    function reviewDecisionSummary(){
     const decisions=packet.review_decisions;
     const completed=decisions.filter(d=>d.scientific_status==='verified'&&d.editorial_status==='approved').length;
