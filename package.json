@@ -14,6 +14,7 @@
     "content:request:check": "node scripts/check-change-request.mjs",
     "content:request:preview": "node scripts/preview-change-request.mjs",
     "content:request:packet": "node scripts/prepare-submission-packet.mjs",
-    "content:request:stage": "node scripts/stage-submission-packet.mjs"
+    "content:request:stage": "node scripts/stage-submission-packet.mjs",
+    "content:auto:preview": "node scripts/preview-automatic-update.mjs"
   }
 }
