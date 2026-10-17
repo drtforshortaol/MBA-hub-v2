@@ -32,7 +32,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
  const reviewOutput=document.createElement('div');reviewOutput.setAttribute('aria-live','polite');
  intake.insertBefore(reviewButton,intakeStatus);intake.insertBefore(reviewOutput,intakeStatus);
  // Invalidate generated decisions immediately when their source changes.
- intakeText.addEventListener('input',()=>{reviewOutput.replaceChildren();intakeStatus.textContent='Source changed. Generate a new review packet before downloading.';});
+ intakeText.addEventListener('input',()=>{reviewOutput.replaceChildren();delete reviewOutput.dataset.reviewFingerprint;intakeStatus.textContent='Source changed. Generate a new review packet before downloading.';});
  reviewButton.addEventListener('click',async()=>{
   reviewOutput.replaceChildren();
   const source=intakeText.value;
