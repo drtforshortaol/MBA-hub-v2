@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {prepareAutomaticUpdate} from './prepare-automatic-update.mjs';
+import {classifyUpdateBatch} from './classify-update-batch.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 // Read-only catalog derived from existing manifests, never inferred from filenames alone.
 export function loadApplicationCatalog(){
@@ -16,6 +17,7 @@ export function loadApplicationCatalog(){
  }
  return apps.sort((a,b)=>a.app_id.localeCompare(b.app_id));
 }
+export function previewUpdateBatch(update){return classifyUpdateBatch(update,loadApplicationCatalog());}
 export function previewAutomaticUpdate(update,{replacementText}={}){
  return prepareAutomaticUpdate(update,loadApplicationCatalog(),{replacementText});
 }
