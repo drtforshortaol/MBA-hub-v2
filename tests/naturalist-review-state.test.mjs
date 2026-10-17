@@ -7,7 +7,7 @@ test('new reviews default to pending and never grant publication',()=>{
  const decisions=newReviewDecisions(entries);
  assert.equal(validateReviewDecisions(decisions,entries),true);
  assert.deepEqual(reviewProgress(decisions),{completed:0,total:2,revisions:0,can_auto_publish:false});
- decisions[0].scientific_status='verified';decisions[0].editorial_status='approved';
+ decisions[0].scientific_status='verified';decisions[0].editorial_status='approved';decisions[0].proposed_action='update-existing';
  decisions[1].scientific_status='needs-revision';
  assert.deepEqual(reviewProgress(decisions),{completed:1,total:2,revisions:1,can_auto_publish:false});
 });
@@ -63,7 +63,7 @@ test('review save verifies persistence instead of trusting a silent storage writ
 test('review completion status remains advisory and never grants publication',()=>{
  const decisions=newReviewDecisions(entries);
  assert.deepEqual(reviewRecoveryCheck(decisions,entries),{valid:true,reason:'review-incomplete',completed:0,total:2,revisions:0,can_auto_publish:false});
- decisions.forEach(d=>{d.scientific_status='verified';d.editorial_status='approved';});
+ decisions.forEach(d=>{d.scientific_status='verified';d.editorial_status='approved';d.proposed_action='no-change';});
  assert.deepEqual(reviewRecoveryCheck(decisions,entries),{valid:true,reason:'review-complete',completed:2,total:2,revisions:0,can_auto_publish:false});
  decisions[0].editorial_status='needs-revision';
  assert.deepEqual(reviewRecoveryCheck(decisions,entries),{valid:true,reason:'revisions-required',completed:1,total:2,revisions:1,can_auto_publish:false});
@@ -85,4 +85,14 @@ test('review persistence and portable import require a nonempty classification f
  const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',review_context_sha256:'',review_decisions:decisions};
  assert.equal(importReviewPacket(packet,'',entries),null);
  assert.equal(importReviewPacket(packet,undefined,entries),null);
+});
+
+test('verification and editorial approval without an action do not complete a review',()=>{
+ const decisions=newReviewDecisions(entries);
+ decisions.forEach(d=>{d.scientific_status='verified';d.editorial_status='approved';});
+ assert.equal(reviewProgress(decisions).completed,0);
+ assert.equal(reviewRecoveryCheck(decisions,entries).reason,'review-incomplete');
+ decisions[0].proposed_action='new-content';
+ assert.equal(reviewProgress(decisions).completed,1);
+ assert.equal(reviewRecoveryCheck(decisions,entries).can_auto_publish,false);
 });
