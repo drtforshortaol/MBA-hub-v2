@@ -276,3 +276,17 @@ test('portable review import refuses reordered classification records',()=>{
  assert.equal(importReviewPacket({...packet,entries:reversed},'hash',entries),null);
  assert.equal(importReviewPacket({...packet,entries:[null,entries[1]]},'hash',entries),null);
 });
+
+test('review recovery binds extraction provenance and required-review state',()=>{
+ const entries=[{index:0,source_text:'Sea stars',source_block:'Source paragraph',extraction:{method:'paragraph'},duplicate_of:null,conflict_with:[],placement:null,review:null,existing_content:null,review_required:true}];
+ const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',review_context_sha256:'hash',review_decisions:newReviewDecisions(entries),entries:structuredClone(entries)};
+ assert.deepEqual(importReviewPacket(packet,'hash',entries),packet.review_decisions);
+ for(const field of ['source_block','extraction','review_required']){
+  const changed=structuredClone(entries);
+  changed[0][field]=field==='review_required'?false:'tampered';
+  assert.equal(importReviewPacket({...packet,entries:changed},'hash',entries),null,field);
+  const stripped=structuredClone(entries);
+  delete stripped[0][field];
+  assert.equal(importReviewPacket({...packet,entries:stripped},'hash',entries),null,field+' missing');
+ }
+});
