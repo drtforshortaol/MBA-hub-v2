@@ -4,9 +4,9 @@ import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageK
 const env=await fetch('environment.json').then(r=>r.json());if(!env.developer)throw Error('Developer module prohibited in this environment');
 const panel=document.querySelector('#developer'),title=document.querySelector('#title');let taps=0,last=0;
 title.addEventListener('click',()=>{if(Date.now()-last>2200)taps=0;last=Date.now();if(++taps===5){taps=0;panel.hidden=!panel.hidden;if(!panel.hidden)render();}});
-async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','Diagnostics only. Publishing authority remains outside this app.'],['button','Update Now','update'],['button','Repair offline files','repair'],['pre','Checking…','diagnostics'],['h2','Application inventory'],['label','Filter applications'],['input','','app-filter'],['div','','app-inventory'],['div','','app-details'],['h2','Tasks'],['label','Capture an item to fix later'],['input','','task'],['button','Add task','add'],['div','','tasks']].map(([tag,label,id])=>{const el=document.createElement(tag);if(id)el.id=id;if(tag==='label')el.htmlFor=label==='Filter applications'?'app-filter':'task';if(tag==='p')el.className='quiet';if(tag==='button')el.className='button';if(tag!=='input')el.textContent=label;return el;}));
+async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','Diagnostics only. Publishing authority remains outside this app.'],['button','Update Now','update'],['button','Repair offline files','repair'],['details','','diagnostics-details'],['h2','Application inventory'],['label','Filter applications'],['input','','app-filter'],['div','','app-inventory'],['div','','app-details'],['h2','Tasks'],['label','Capture an item to fix later'],['input','','task'],['button','Add task','add'],['div','','tasks']].map(([tag,label,id])=>{const el=document.createElement(tag);if(id)el.id=id;if(tag==='label')el.htmlFor=label==='Filter applications'?'app-filter':'task';if(tag==='p')el.className='quiet';if(tag==='button')el.className='button';if(tag!=='input')el.textContent=label;return el;}));
 
- // Naturalist intake and classification are local and review-only.
+ const diagnosticsDetails=document.querySelector('#diagnostics-details');\n const diagnosticsLabel=document.createElement('summary');diagnosticsLabel.textContent='Technical diagnostics (tap to expand)';\n const diagnosticsOutput=document.createElement('pre');diagnosticsOutput.id='diagnostics';diagnosticsOutput.textContent='Checking…';\n diagnosticsDetails.append(diagnosticsLabel,diagnosticsOutput);\n\n // Naturalist intake and classification are local and review-only.
  // Browser engine is built from the canonical Node processing modules.
  const intake=document.createElement('section');
  const intakeTitle=document.createElement('h3');intakeTitle.textContent='Naturalist update intake';
@@ -249,7 +249,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     const notes=document.createElement('textarea');notes.rows=3;notes.maxLength=4000;notes.style.width='100%';
     notes.value=decision.reviewer_notes;notes.addEventListener('input',()=>{if(!isCurrentReview())return;decision.reviewer_notes=notes.value;saveReview();});
     notesLabel.append(notes);form.append(notesLabel);
-    item.append(label,body,flags,related,details,warning,form);reviewOutput.append(item);statementCards.push(item);
+    const technical=document.createElement('details');\n    const technicalSummary=document.createElement('summary');technicalSummary.textContent='Technical classification details (rarely needed)';\n    technical.append(technicalSummary,details);\n    item.append(label,body,flags,related,technical,warning,form);reviewOutput.append(item);statementCards.push(item);
    }
    if(statementCards.length>1){reviewOutput.insertBefore(navigation,statementCards[0]);showStatement(0);}
    const recoveryLabel=document.createElement('label');recoveryLabel.textContent='Restore decisions from a downloaded review packet (same classification only)';
