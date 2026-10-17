@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket} from '../src/core/naturalist-review-state.js';
+import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket,reviewRecoveryCheck} from '../src/core/naturalist-review-state.js';
 const entries=[{index:0},{index:1}];
 function storage(){const data=new Map();return {getItem:k=>data.get(k)??null,setItem:(k,v)=>data.set(k,v),removeItem:k=>data.delete(k)};}
 test('new reviews default to pending and never grant publication',()=>{
@@ -58,4 +58,14 @@ test('review save verifies persistence instead of trusting a silent storage writ
  const normal=storage();
  assert.equal(writeReview(normal,key,fingerprint,decisions,entries),true);
  assert.deepEqual(readReview(normal,key,fingerprint,entries),decisions);
+});
+
+test('review completion status remains advisory and never grants publication',()=>{
+ const decisions=newReviewDecisions(entries);
+ assert.deepEqual(reviewRecoveryCheck(decisions,entries),{valid:true,reason:'review-incomplete',completed:0,total:2,revisions:0,can_auto_publish:false});
+ decisions.forEach(d=>{d.scientific_status='verified';d.editorial_status='approved';});
+ assert.deepEqual(reviewRecoveryCheck(decisions,entries),{valid:true,reason:'review-complete',completed:2,total:2,revisions:0,can_auto_publish:false});
+ decisions[0].editorial_status='needs-revision';
+ assert.deepEqual(reviewRecoveryCheck(decisions,entries),{valid:true,reason:'revisions-required',completed:1,total:2,revisions:1,can_auto_publish:false});
+ assert.deepEqual(reviewRecoveryCheck([{...decisions[0],published:true},decisions[1]],entries),{valid:false,reason:'invalid-decisions',can_auto_publish:false});
 });
