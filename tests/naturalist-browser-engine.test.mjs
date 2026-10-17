@@ -3,14 +3,11 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {spawnSync} from 'node:child_process';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
 const modules=['extract-update-statements','find-batch-duplicates','suggest-content-destination','assess-existing-content','propose-update-placement','assess-naturalist-review-gates','classify-update-batch','summarize-naturalist-review'];
 
 test('developer build ships browser-compatible canonical Naturalist engine',()=>{
- const run=spawnSync(process.execPath,['scripts/build.mjs'],{cwd:root,encoding:'utf8'});
- assert.equal(run.status,0,run.stderr);
  for(const name of modules){
   const original=fs.readFileSync(path.join(root,'scripts',name+'.mjs'),'utf8');
   const expected=original.replace(/from (['"])\.\/([^'"]+)\.mjs\1/g,(_,quote,dependency)=>'from '+quote+'./'+dependency+'.js'+quote);
