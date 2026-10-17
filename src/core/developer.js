@@ -71,8 +71,10 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    // Retire legacy source-only review keys without importing their decisions:
    // the old key did not bind approvals to the current routing context.
    if(legacyReviewKey!==reviewKey){try{localStorage.removeItem(legacyReviewKey);}catch{/* storage may be unavailable */}}
+   const isCurrentReview=()=>intakeText.value===source&&reviewOutput.dataset.reviewFingerprint===sourceFingerprint;
+   reviewOutput.dataset.reviewFingerprint=sourceFingerprint;
    const saveReview=()=>{
-    if(intakeText.value!==source){intakeStatus.textContent='Source changed. Regenerate before saving.';return;}
+    if(!isCurrentReview()){intakeStatus.textContent='Review no longer current. Regenerate before saving.';return;}
     if(!validateDecisions()){intakeStatus.textContent='Review decisions invalid. Nothing saved.';return;}
     intakeStatus.textContent=writeReview(localStorage,reviewKey,sourceFingerprint,packet.review_decisions,packet.entries)?'Review decisions saved on this device. Publication remains disabled.':'Local storage unavailable; download the review packet to retain decisions.';
    };
@@ -130,7 +132,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    }
    const clearButton=document.createElement('button');clearButton.type='button';clearButton.className='button';clearButton.textContent='Reset saved review decisions';
    clearButton.addEventListener('click',()=>{
-    if(intakeText.value!==source){intakeStatus.textContent='Source changed. Regenerate before resetting.';return;}
+    if(!isCurrentReview()){intakeStatus.textContent='Review no longer current. Regenerate before resetting.';return;}
     if(!confirm('Reset review decisions for this Naturalist submission? Original notes will remain in the input.'))return;
     try{localStorage.removeItem(reviewKey);}catch{intakeStatus.textContent='Unable to clear local storage.';return;}
     reviewOutput.replaceChildren();intakeStatus.textContent='Saved review decisions cleared. Generate a new packet to start pending reviews.';
@@ -140,7 +142,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    reviewOutput.append(saveButton);
    const download=document.createElement('button');download.type='button';download.className='button';download.textContent='Download review packet';
    download.onclick=()=>{
-    if(intakeText.value!==source){intakeStatus.textContent='Source changed. Regenerate the review packet.';reviewOutput.replaceChildren();return;}
+    if(!isCurrentReview()){intakeStatus.textContent='Review no longer current. Regenerate the review packet.';reviewOutput.replaceChildren();return;}
     if(!validateDecisions()){intakeStatus.textContent='Review decisions invalid. Nothing downloaded.';return;}
     const blob=new Blob([JSON.stringify(packet,null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');
     link.href=url;link.download='mba-naturalist-review-packet.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
