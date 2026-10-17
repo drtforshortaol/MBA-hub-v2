@@ -10,7 +10,7 @@ export function extractUpdateStatements(input){
   if(!original)continue;
   // Preserve abbreviations and uncertain boundaries rather than risking false segmentation.
   const ambiguous=/\b(?:Dr|Mr|Mrs|Ms|Prof|St|vs|e\.g|i\.e)\./i.test(original);
-  const parts=ambiguous?[original]:original.split(/(?<=[.!?])\s+(?=(?:[A-Z][a-z]|A\\s))/);
+  const parts=ambiguous?[original]:original.split(/(?<=[.!?])\s+(?=[A-Z](?:[a-z]|\s))/);
   // Pronoun-led continuations depend on earlier context and must stay together.
   if(parts.length>1&&parts.slice(1).some(p=>/^(?:It|Its|They|Their|This|These|Those|He|She|We|Such)\b/.test(p))){parts.splice(0,parts.length,original);}
   for(const text of parts){
