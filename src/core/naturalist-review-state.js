@@ -41,7 +41,7 @@ export function writeReview(storage,key,fingerprint,decisions,entries){
 export function importReviewPacket(packet,fingerprint,entries){
  if(!packet||typeof packet!=='object'||Array.isArray(packet))return null;
  if(packet.schema_version!==REVIEW_SCHEMA||packet.kind!=='mba-v2-naturalist-review-packet')return null;
- if(packet.review_context_sha256!==fingerprint)return null;
+ if(typeof fingerprint!=='string'||!fingerprint||packet.review_context_sha256!==fingerprint)return null;
  if(!validateReviewDecisions(packet.review_decisions,entries))return null;
  return packet.review_decisions.map(d=>({...d}));
 }
