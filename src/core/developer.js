@@ -53,15 +53,17 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    // Review decisions are annotations only: never mutate canonical classifications.
    // Include the classification outcome in the review key: a registry or routing
    // change must not silently reattach decisions to different proposed targets.
-   const reviewIdentity=JSON.stringify({source,entries:packet.entries.map(e=>({text:e.source_text,placement:e.placement,review_flags:e.review.flags,existing_content:e.existing_content}))});
+   const reviewIdentity=JSON.stringify({source,entries:packet.entries.map(e=>({text:e.source_text,placement:e.placement,review_flags:e.review.flags,conflict_with:e.conflict_with,duplicate_of:e.duplicate_of,existing_content:e.existing_content}))});
    const sourceFingerprint=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(reviewIdentity)).then(bytes=>Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join(''));
    if(generation!==activeReviewGeneration||intakeText.value!==source){intakeStatus.textContent='Source or review generation changed while classification was running. Generate again.';return;}
    const reviewKey=reviewStorageKey(env.namespace,sourceFingerprint);
    const legacySourceFingerprint=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(source)).then(bytes=>Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join(''));
    const legacyReviewKey=reviewStorageKey(env.namespace,legacySourceFingerprint);
+   if(generation!==activeReviewGeneration||intakeText.value!==source)return;
    packet.review_context_sha256=sourceFingerprint;
    packet.review_decisions=newReviewDecisions(packet.entries);
-   const saved=readReview(localStorage,reviewKey,sourceFingerprint,packet.entries);
+   let saved=null;
+   try{saved=readReview(localStorage,reviewKey,sourceFingerprint,packet.entries);}catch{/* Browser storage can be disabled; packet remains downloadable. */}
    if(saved)packet.review_decisions=saved;
    function reviewDecisionSummary(){
     const progress=reviewProgress(packet.review_decisions);
