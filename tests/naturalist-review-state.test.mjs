@@ -185,7 +185,7 @@ test('malformed classifier references cannot enter the preparable Naturalist que
   {index:0,duplicate_of:null,conflict_with:[999]},
   {index:1,duplicate_of:1,conflict_with:[]},
   {index:2,duplicate_of:null,conflict_with:'invalid'},
-  {index:3,duplicate_of:null}
+  {index:3,duplicate_of:'invalid',conflict_with:[]}
  ];
  const decisions=newReviewDecisions(malformed);
  decisions.forEach(d=>{d.scientific_status='verified';d.editorial_status='approved';d.proposed_action='update-existing';});
