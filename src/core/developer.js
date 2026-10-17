@@ -49,7 +49,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    const result=classifyUpdateBatch(source,registry.apps);
    if(!result.valid){intakeStatus.textContent=(result.errors||['Invalid source']).join('; ');return;}
    if(generation!==activeReviewGeneration||intakeText.value!==source)return;
-   const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',original_source:source,review_summary:summarizeNaturalistReview(result.entries),entries:result.entries.map(entry=>({index:entry.index,duplicate_of:entry.duplicate_of,source_text:entry.text,source_block:entry.source_block,extraction:entry.extraction,placement:entry.placement,review:entry.review,existing_content:entry.existing_content,review_required:true})),scientific_verification:'required',editorial_review:'required',requires_review:true,prepared:false,committed:false,published:false};
+   const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',original_source:source,review_summary:summarizeNaturalistReview(result.entries),conflict_signals:result.conflict_signals,entries:result.entries.map(entry=>({index:entry.index,duplicate_of:entry.duplicate_of,conflict_with:entry.conflict_with??[],source_text:entry.text,source_block:entry.source_block,extraction:entry.extraction,placement:entry.placement,review:entry.review,existing_content:entry.existing_content,review_required:true})),scientific_verification:'required',editorial_review:'required',requires_review:true,prepared:false,committed:false,published:false};
    // Review decisions are annotations only: never mutate canonical classifications.
    // Include the classification outcome in the review key: a registry or routing
    // change must not silently reattach decisions to different proposed targets.
@@ -113,6 +113,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      ['Original source block',entry.source_block],
      ['Extraction method',entry.extraction],
      ['Duplicate of statement',entry.duplicate_of===null||entry.duplicate_of===undefined?'None':String(entry.duplicate_of+1)],
+     ['Potentially conflicting statements',(entry.conflict_with||[]).length?entry.conflict_with.map(index=>index+1).join(', '):'None detected'],
      ['Existing-content assessment',entry.existing_content],
      ['Placement assessment',entry.placement],
      ['Scientific and editorial review',entry.review]
