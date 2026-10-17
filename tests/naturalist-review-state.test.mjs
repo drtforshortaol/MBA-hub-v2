@@ -48,3 +48,14 @@ test('portable review recovery requires matching classification and validated de
  assert.equal(importReviewPacket({...packet,kind:'unknown'},'matching',entries),null);
  assert.equal(importReviewPacket({...packet,review_decisions:[{...decisions[0],published:true},decisions[1]]},'matching',entries),null);
 });
+
+test('review save verifies persistence instead of trusting a silent storage write',()=>{
+ const decisions=newReviewDecisions(entries),key='review',fingerprint='same';
+ const ignored={setItem(){},getItem(){return null;}};
+ assert.equal(writeReview(ignored,key,fingerprint,decisions,entries),false);
+ const stale={setItem(){},getItem(){return JSON.stringify({schema_version:1,review_context_sha256:fingerprint,review_decisions:[{...decisions[0],reviewer_notes:'stale'},decisions[1]]});}};
+ assert.equal(writeReview(stale,key,fingerprint,decisions,entries),false);
+ const normal=storage();
+ assert.equal(writeReview(normal,key,fingerprint,decisions,entries),true);
+ assert.deepEqual(readReview(normal,key,fingerprint,entries),decisions);
+});
