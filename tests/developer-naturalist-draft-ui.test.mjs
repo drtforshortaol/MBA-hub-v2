@@ -18,3 +18,11 @@ test('Developer Mode validates drafts against canonical schema and blocks confli
  assert.match(developer,/entry\.route\?\.section_id/);
  assert.match(developer,/validation only, nothing saved or published/);
 });
+
+test('validated Naturalist proposals export without changing content',()=>{
+ assert.match(developer,/Download validated draft proposals/);
+ assert.match(developer,/mba-v2-naturalist-draft-proposals/);
+ assert.match(developer,/validateDraft\(draft,app\)\.valid/);
+ assert.match(developer,/No valid reviewed replacement drafts available for export/);
+ assert.match(developer,/committed:false,published:false,can_auto_publish:false/);
+});
