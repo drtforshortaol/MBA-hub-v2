@@ -1,6 +1,6 @@
 import {createDraft,loadDraft,saveDraft,validateDraft} from './content-drafts.js';
 import {request} from './worker-channel.js';
-import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket,reviewRecoveryCheck} from './naturalist-review-state.js';
+import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket,reviewRecoveryCheck,reviewActionQueue} from './naturalist-review-state.js';
 const env=await fetch('environment.json').then(r=>r.json());if(!env.developer)throw Error('Developer module prohibited in this environment');
 const panel=document.querySelector('#developer'),title=document.querySelector('#title');let taps=0,last=0;
 title.addEventListener('click',()=>{if(Date.now()-last>2200)taps=0;last=Date.now();if(++taps===5){taps=0;panel.hidden=!panel.hidden;if(!panel.hidden)render();}});
@@ -296,7 +296,30 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     const blob=new Blob([JSON.stringify(packet,null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');
     link.href=url;link.download='mba-naturalist-review-packet.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
    };
-   reviewOutput.append(download);intakeStatus.textContent='Review packet ready. Nothing approved, committed, or published.';
+   reviewOutput.append(download);
+   const queueHeading=document.createElement('h4');queueHeading.textContent='Reviewed content action queue';
+   const queueStatus=document.createElement('p');queueStatus.setAttribute('role','status');
+   const queueItems=document.createElement('ol');
+   const refreshQueue=document.createElement('button');refreshQueue.type='button';refreshQueue.className='button';refreshQueue.textContent='Refresh reviewed actions';
+   function showQueue(){
+    if(!isCurrentReview()){queueStatus.textContent='Review is stale; regenerate classification.';queueItems.replaceChildren();return;}
+    const queue=reviewActionQueue(packet.review_decisions,packet.entries);
+    queueItems.replaceChildren();
+    if(!queue.valid){queueStatus.textContent='Review decisions invalid.';return;}
+    queueStatus.textContent=queue.items.length+' reviewed content actions. Duplicates and scientific conflicts remain blocked from preparation. No publishing available.';
+    for(const item of queue.items){
+     const entry=packet.entries[item.index];
+     const blocked=entry.duplicate_of!=null||(entry.conflict_with||[]).length>0;
+     const li=document.createElement('li');
+     const target=entry.placement?.target_app_id||'unresolved';
+     li.textContent='Statement '+(item.index+1)+' · '+item.action+' · '+target+' · '+(blocked?'BLOCKED: duplicate or potential scientific conflict':item.action==='new-content'?'Placement review required':'Draft preparation requires verified replacement text')+' · '+entry.source_text.slice(0,120);
+     queueItems.append(li);
+    }
+   }
+   refreshQueue.addEventListener('click',showQueue);
+   reviewOutput.append(queueHeading,queueStatus,refreshQueue,queueItems);
+   showQueue();
+   intakeStatus.textContent='Review packet ready. Nothing approved, committed, or published.';
   }catch(error){if(generation===activeReviewGeneration)intakeStatus.textContent='Review generation unavailable: '+error.message;}
  });
  const inventory=document.querySelector('#app-inventory'),filter=document.querySelector('#app-filter');
