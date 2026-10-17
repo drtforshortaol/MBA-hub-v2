@@ -56,7 +56,8 @@ export function importReviewPacket(packet,fingerprint,entries){
    const actual=packet.entries[i],expected=entries[i];
    if(!actual||typeof actual!=='object'||Array.isArray(actual)||actual.index!==i)return null;
    for(const field of ['source_text','duplicate_of','conflict_with','placement','review','existing_content']){
-    if(JSON.stringify(actual[field]??null)!==JSON.stringify(expected?.[field]??null))return null;
+    if(Object.hasOwn(expected,field)!==Object.hasOwn(actual,field))return null;
+    if(JSON.stringify(actual[field]??null)!==JSON.stringify(expected[field]??null))return null;
    }
   }
  }
