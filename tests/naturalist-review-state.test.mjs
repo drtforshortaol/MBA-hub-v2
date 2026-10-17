@@ -69,3 +69,11 @@ test('review completion status remains advisory and never grants publication',()
  assert.deepEqual(reviewRecoveryCheck(decisions,entries),{valid:true,reason:'revisions-required',completed:1,total:2,revisions:1,can_auto_publish:false});
  assert.deepEqual(reviewRecoveryCheck([{...decisions[0],published:true},decisions[1]],entries),{valid:false,reason:'invalid-decisions',can_auto_publish:false});
 });
+
+test('empty reviews are not reported as completed editorial work',()=>{
+ const empty=newReviewDecisions([]);
+ assert.equal(validateReviewDecisions(empty,[]),true);
+ assert.equal(reviewRecoveryCheck(empty,[]).reason,'review-incomplete');
+ assert.equal(reviewRecoveryCheck(empty,[]).can_auto_publish,false);
+ assert.deepEqual(reviewProgress(null),{completed:0,total:0,revisions:0,can_auto_publish:false});
+});
