@@ -24,6 +24,7 @@ jobs:
       - name: Validate source and content
         run: |
           npm run validate
+          npm run build
           npm test
           npm run security:scan
       - name: Build current developer preview
