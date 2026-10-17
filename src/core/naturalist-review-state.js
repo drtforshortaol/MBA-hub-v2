@@ -48,6 +48,18 @@ export function importReviewPacket(packet,fingerprint,entries){
  }
  if(typeof fingerprint!=='string'||!fingerprint.trim()||packet.review_context_sha256!==fingerprint)return null;
  if(!validateReviewDecisions(packet.review_decisions,entries))return null;
+ // Recovery is tied to the exact source and classification snapshot, not only
+ // a caller-supplied fingerprint. Legacy packets without entries remain valid.
+ if(Object.hasOwn(packet,'entries')){
+  if(!Array.isArray(packet.entries)||packet.entries.length!==entries.length)return null;
+  for(let i=0;i<entries.length;i++){
+   const actual=packet.entries[i],expected=entries[i];
+   if(!actual||typeof actual!=='object'||Array.isArray(actual)||actual.index!==i)return null;
+   for(const field of ['source_text','duplicate_of','conflict_with','placement','review','existing_content']){
+    if(JSON.stringify(actual[field]??null)!==JSON.stringify(expected?.[field]??null))return null;
+   }
+  }
+ }
  return packet.review_decisions.map(d=>({...d}));
 }
 
