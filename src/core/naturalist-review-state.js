@@ -62,7 +62,11 @@ export function reviewActionQueue(decisions,entries){
   // Keep flagged actions visible, but never place them in the preparable queue.
   const duplicate=entry?.duplicate_of!=null;
   const conflict=Array.isArray(entry?.conflict_with)&&entry.conflict_with.length>0;
-  if(duplicate||conflict)blocked_items.push({...item,block_reasons:[...(duplicate?['duplicate']:[]),...(conflict?['scientific-conflict']:[])]});
+  const malformed=entry==null||typeof entry!=='object'||Array.isArray(entry)||
+   !Object.hasOwn(entry,'duplicate_of')||!Array.isArray(entry.conflict_with)||
+   (duplicate&&(!Number.isInteger(entry.duplicate_of)||entry.duplicate_of<0||entry.duplicate_of>=entries.length||entry.duplicate_of===index))||
+   (Array.isArray(entry.conflict_with)&&entry.conflict_with.some(i=>!Number.isInteger(i)||i<0||i>=entries.length||i===index));
+  if(duplicate||conflict||malformed)blocked_items.push({...item,block_reasons:[...(duplicate?['duplicate']:[]),...(conflict?['scientific-conflict']:[]),...(malformed?['invalid-classification']:[])]});
   else items.push(item);
  });
  return {valid:true,reason:reviewRecoveryCheck(decisions,entries).reason,items,blocked_items,can_auto_publish:false};
