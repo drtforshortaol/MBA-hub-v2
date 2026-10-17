@@ -8,6 +8,8 @@ test('review packet preserves source and prohibits publication',()=>{
  assert.equal(packet.original_source,source);
  assert.equal(packet.entries[0].source_text,source);
  assert.equal(packet.entries[0].placement.proposal_type,'aquarium-update-candidate');
+ assert.equal(packet.entries[0].review.approval_state,'pending');
+ assert.equal(packet.entries[0].review.can_auto_publish,false);
  assert.equal(packet.prepared,false);
  assert.equal(packet.published,false);
 });
