@@ -138,3 +138,13 @@ test('successful recovery automatically reloads persisted review without publish
  assert.match(code,/reviewButton\.click\(\)/);
  assert.match(code,/if\(!isCurrentReview\(\)\)return;\s*if\(!imported\)/);
 });
+
+test('direct statement picker stays synchronized with previous, next and flagged navigation',()=>{
+ const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
+ assert.match(code,/aria-label','Jump to statement/);
+ assert.match(code,/jumpToStatement\.value=String\(activeStatement\)/);
+ assert.match(code,/jumpToStatement\.addEventListener\('change'/);
+ assert.match(code,/if\(!isCurrentReview\(\)\)return/);
+ assert.match(code,/index>=0&&index<statementCards\.length/);
+ assert.match(code,/navigation\.append\(previous,position,next,nextPending,nextFlagged,nextRevision,jumpToStatement\)/);
+});
