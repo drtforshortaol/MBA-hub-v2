@@ -45,6 +45,8 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    const result=classifyUpdateBatch(source,registry.apps);
    if(!result.valid){intakeStatus.textContent=(result.errors||['Invalid source']).join('; ');return;}
    const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',original_source:source,review_summary:summarizeNaturalistReview(result.entries),entries:result.entries.map(entry=>({index:entry.index,duplicate_of:entry.duplicate_of,source_text:entry.text,source_block:entry.source_block,extraction:entry.extraction,placement:entry.placement,review:entry.review,existing_content:entry.existing_content,review_required:true})),scientific_verification:'required',editorial_review:'required',requires_review:true,prepared:false,committed:false,published:false};
+   // Review decisions are annotations only: never mutate canonical classifications.
+   packet.review_decisions=packet.entries.map(entry=>({index:entry.index,scientific_status:'pending',editorial_status:'pending',proposed_action:'needs-review',reviewer_notes:''}));
    const heading=document.createElement('h4');heading.textContent='Proposed updates — review required';
    const summary=document.createElement('p');summary.textContent=packet.review_summary.statement_count+' statements; '+packet.review_summary.duplicate_statement_count+' repeated within submission.';
    reviewOutput.append(heading,summary);
@@ -71,7 +73,23 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     }
     const warning=document.createElement('p');warning.className='quiet';
     warning.textContent='Pending scientific verification and editorial approval. This packet cannot publish updates.';
-    item.append(label,body,flags,details,warning);reviewOutput.append(item);
+    const decision=packet.review_decisions[entry.index];
+    const form=document.createElement('div');
+    function selectDecision(title,key,options){
+     const wrapper=document.createElement('label');wrapper.textContent=title+' ';
+     const select=document.createElement('select');
+     for(const [value,name] of options){const option=document.createElement('option');option.value=value;option.textContent=name;select.append(option);}
+     select.value=decision[key];select.addEventListener('change',()=>{decision[key]=select.value;});
+     wrapper.append(select);form.append(wrapper);
+    }
+    selectDecision('Scientific review','scientific_status',[['pending','Pending'],['needs-revision','Needs revision'],['verified','Verified by reviewer']]);
+    selectDecision('Editorial review','editorial_status',[['pending','Pending'],['needs-revision','Needs revision'],['approved','Approved by editor']]);
+    selectDecision('Proposed action','proposed_action',[['needs-review','Needs review'],['update-existing','Update existing'],['new-content','Propose new content'],['no-change','No change']]);
+    const notesLabel=document.createElement('label');notesLabel.textContent='Reviewer notes';
+    const notes=document.createElement('textarea');notes.rows=3;notes.maxLength=4000;notes.style.width='100%';
+    notes.addEventListener('input',()=>{decision.reviewer_notes=notes.value;});
+    notesLabel.append(notes);form.append(notesLabel);
+    item.append(label,body,flags,details,warning,form);reviewOutput.append(item);
    }
    const download=document.createElement('button');download.type='button';download.className='button';download.textContent='Download review packet';
    download.onclick=()=>{
