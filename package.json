@@ -15,6 +15,7 @@
     "content:request:preview": "node scripts/preview-change-request.mjs",
     "content:request:packet": "node scripts/prepare-submission-packet.mjs",
     "content:request:stage": "node scripts/stage-submission-packet.mjs",
-    "content:auto:preview": "node scripts/preview-automatic-update.mjs"
+    "content:auto:preview": "node scripts/preview-automatic-update.mjs",
+    "content:naturalist:packet": "node scripts/preview-automatic-update.mjs --naturalist-packet"
   }
 }
