@@ -4,7 +4,7 @@ import fs from 'node:fs';
 const developer=fs.readFileSync(new URL('../src/core/developer.js',import.meta.url),'utf8');
 test('Developer Mode exposes replacement drafts without publishing',()=>{
  assert.match(developer,/replacementDrafts=new Map\(\)/);
- assert.match(developer,/Verified replacement text for statement/);
+ assert.match(developer,/Proposed replacement text (scientific verification required) for statement/);
  assert.match(developer,/draft-validation-required/);
  assert.match(developer,/replacement_text:/);
  assert.match(developer,/reviewActionQueue\(packet.review_decisions,packet.entries\)/);
@@ -37,4 +37,11 @@ test('draft export requires all scientific and editorial decisions complete',()=
  assert.match(developer,/Complete every scientific and editorial decision before exporting draft proposals/);
  assert.match(developer,/packet\.review_decisions\.some\(decision=>/);
  assert.match(developer,/if\(typeof showQueue==='function'\)showQueue\(\)/);
+});
+
+test('Naturalist export fails closed instead of silently omitting invalid updates',()=>{
+ assert.match(developer,/drafts\.length!==pendingUpdates\.length/);
+ assert.match(developer,/Export blocked:/);
+ assert.match(developer,/Resolve all updates before exporting/);
+ assert.match(developer,/scientific verification required/);
 });
