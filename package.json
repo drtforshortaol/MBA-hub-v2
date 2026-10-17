@@ -7,6 +7,15 @@
     "build": "node scripts/build.mjs",
     "test": "node --test tests/*.test.mjs",
     "validate": "node scripts/build.mjs --check",
-    "serve": "python3 -m http.server 8080 --directory dist/developer"
+    "serve": "python3 -m http.server 8080 --directory dist/developer",
+    "security:scan": "node scripts/security-scan.mjs",
+    "content:check": "node scripts/content-preflight.mjs --app",
+    "content:check:all": "node scripts/content-preflight.mjs --all",
+    "content:request:check": "node scripts/check-change-request.mjs",
+    "content:request:preview": "node scripts/preview-change-request.mjs",
+    "content:request:packet": "node scripts/prepare-submission-packet.mjs",
+    "content:request:stage": "node scripts/stage-submission-packet.mjs",
+    "content:auto:preview": "node scripts/preview-automatic-update.mjs",
+    "content:naturalist:packet": "node scripts/preview-automatic-update.mjs --naturalist-packet"
   }
 }

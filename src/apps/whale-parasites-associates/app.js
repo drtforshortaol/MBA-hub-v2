@@ -66,7 +66,7 @@ function buildFilters() {
   const filterTabs = document.getElementById("filterTabs");
   if (!filterTabs) return;
 
-  filterTabs.innerHTML = FILTERS.map(([id, label], index) => `
+  const filterMarkup = FILTERS.map(([id, label], index) => `
     <button
       class="filter-tab ${index === 0 ? "active" : ""}"
       type="button"
@@ -76,6 +76,7 @@ function buildFilters() {
       ${escapeHTML(label)}
     </button>
   `).join("");
+  filterTabs.replaceChildren(...Array.from(new DOMParser().parseFromString(filterMarkup, "text/html").body.children));
 
   document.querySelectorAll(".filter-tab").forEach((button) => {
     button.addEventListener("click", () => {
@@ -97,7 +98,7 @@ function buildCards() {
   const cardList = document.getElementById("cardList");
   if (!cardList) return;
 
-  cardList.innerHTML = PARASITES.map((item) => {
+  const cardMarkup = PARASITES.map((item) => {
     const paragraphs = item.paragraphs
       .map((paragraph) => `<p>${escapeHTML(paragraph)}</p>`)
       .join("");
@@ -171,6 +172,7 @@ function buildCards() {
       </details>
     `;
   }).join("");
+  cardList.replaceChildren(...Array.from(new DOMParser().parseFromString(cardMarkup, "text/html").body.children));
 }
 
 function setupSearch() {

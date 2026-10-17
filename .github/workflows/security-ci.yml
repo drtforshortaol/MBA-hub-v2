@@ -1,0 +1,37 @@
+name: Security CI
+on:
+  pull_request:
+  push:
+    branches: [security-review-evo-foundation-20261014]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate provisional EVO classifications
+        run: python scripts/validation/validate_evo_relationship_classes.py
+      - name: Validate provisional Timeline crosswalk
+        run: python scripts/validation/validate_evo_timeline_crosswalk.py
+      - name: Verify EVO candidate registry identity and approval boundary
+        run: python scripts/validation/validate_evo_candidate_integrity.py
+      - name: Run EVO negative mutation regressions
+        run: python -m unittest discover -s scripts/validation -p 'test_evo_*.py' -v
+      - name: Validate cross-app interface contract
+        run: python scripts/validation/validate_evo_integration_contract.py
+      - name: Verify independent EVO integration boundary
+        run: python scripts/validation/validate_evo_boundary_contract.py
+      - run: npm run validate
+      - run: npm run build
+      - run: npm run security:scan
+      - run: npm test
+      - name: Verify built tester artifacts remain intact after tests
+        run: node --test tests/security-review.test.mjs

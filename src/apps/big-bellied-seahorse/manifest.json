@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "app_id": "big-bellied-seahorse",
+  "title": "Big-Bellied Seahorse",
+  "category": "animals",
+  "type": "species",
+  "version": "2.0.0-alpha.7",
+  "entry_point": "apps/big-bellied-seahorse/index.html",
+  "status": "development",
+  "owner": "big-bellied-seahorse",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/big-bellied-seahorse/index.html",
+    "apps/IMG_4212.jpeg",
+    "apps/IMG_4213.jpeg",
+    "apps/IMG_4214.jpeg",
+    "apps/IMG_4215.jpeg",
+    "apps/IMG_4216.jpeg"
+  ],
+  "media": [],
+  "knowledge": [],
+  "cross_links": [
+    {
+      "app_id": "naturalist-field-notes"
+    }
+  ],
+  "sections": [
+    {
+      "id": "Overview",
+      "title": "Overview",
+      "text": "Big-bellied or pot-bellied seahorse (Hippocampus abdominalis) is among the largest seahorses. Source reports average length 7 inches and maximum 14 inches.",
+      "aliases": []
+    },
+    {
+      "id": "Habitat-and-range",
+      "title": "Habitat and range",
+      "text": "Found around southeastern Australia, Tasmania and New Zealand, in seagrass, macroalgae, rocky reefs and sheltered bays.",
+      "aliases": []
+    },
+    {
+      "id": "Feeding",
+      "title": "Feeding",
+      "text": "An ambush predator of small crustaceans including mysids and amphipods. Seahorses use rapid pivot feeding and suction to capture prey.",
+      "aliases": []
+    },
+    {
+      "id": "Male-pregnancy",
+      "title": "Male pregnancy",
+      "text": "The female transfers eggs to the male brood pouch after courtship. The male broods developing young. The source describes about 24 to 30 days of development and broods commonly numbering in the hundreds.",
+      "aliases": []
+    },
+    {
+      "id": "Young-and-life-cycle",
+      "title": "Young and life cycle",
+      "text": "Newborn seahorses are tiny, independent fry. The source describes juveniles temporarily holding drifting seaweed before settling in coastal habitats.",
+      "aliases": []
+    },
+    {
+      "id": "Armor-and-camouflage",
+      "title": "Armor and camouflage",
+      "text": "Bony plates protect the body, the grasping tail anchors the fish, and changes in coloration help camouflage and communication.",
+      "aliases": []
+    },
+    {
+      "id": "Conservation",
+      "title": "Conservation",
+      "text": "The weekly source lists IUCN Least Concern and CITES Appendix II. Habitat loss, bycatch and wildlife trade remain useful conservation topics. Confirm current listings before public release.",
+      "aliases": []
+    },
+    {
+      "id": "Aquarium-history",
+      "title": "Aquarium history",
+      "text": "The source recalls big-bellied seahorses in Splash Zone and The Secret Lives of Seahorses. Ocean in Motion is a new exhibit with a different layout, not simply Splash Zone 3.0.",
+      "aliases": []
+    },
+    {
+      "id": "Guide-talking-points",
+      "title": "Guide talking points",
+      "text": "Why do males have a pouch? To brood developing young. Are seahorses the only egg-carrying males? No: male brooding also occurs in pipefish and other animals. Why the curled tail? To grip vegetation and other structures.",
+      "aliases": []
+    },
+    {
+      "id": "References",
+      "title": "References",
+      "text": "Source: Naturalist update covering October 8–14, 2026. Suggested verification sources: Australian Museum, Project Seahorse, Fishes of Australia and peer-reviewed studies provided with the weekly update. Unverified numerical and anatomical claims are source-attributed, not independently certified.",
+      "aliases": []
+    }
+  ],
+  "publication_review": "pending"
+}

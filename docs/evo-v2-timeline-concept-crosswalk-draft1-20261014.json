@@ -1,0 +1,528 @@
+{
+  "schemaVersion": "0.1-draft",
+  "status": "provisional-unapproved",
+  "description": "Timeline events have independent TL identifiers for crosswalk purposes only; these are provisional crosswalk IDs, not production IDs. Links are contextual candidates, not same-as ancestry or approvals.",
+  "sources": [
+    "docs/evo-v2-scientific-validation-triage-20261014.json",
+    "docs/evo-v2-complete-migration-registry-draft-20261014.json",
+    "docs/evo-v2-timeline-concept-identifier-reconciliation-draft1-20261014.md"
+  ],
+  "relationRoles": [
+    "concept-subject",
+    "process-or-transition-context",
+    "lineage-persistence-context",
+    "additional-lineage-context"
+  ],
+  "events": [
+    {
+      "eventId": "TL-0001",
+      "legacyOrdinal": 1,
+      "legacyTitle": "Universe begins",
+      "linkStatus": "unmatched",
+      "references": [],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "standard"
+    },
+    {
+      "eventId": "TL-0002",
+      "legacyOrdinal": 2,
+      "legacyTitle": "First stars and galaxies",
+      "linkStatus": "unmatched",
+      "references": [],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "standard"
+    },
+    {
+      "eventId": "TL-0003",
+      "legacyOrdinal": 3,
+      "legacyTitle": "Sun and Solar System form",
+      "linkStatus": "unmatched",
+      "references": [],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "standard"
+    },
+    {
+      "eventId": "TL-0004",
+      "legacyOrdinal": 4,
+      "legacyTitle": "Earth forms",
+      "linkStatus": "unmatched",
+      "references": [],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "standard"
+    },
+    {
+      "eventId": "TL-0005",
+      "legacyOrdinal": 5,
+      "legacyTitle": "Moon forms — giant impact",
+      "linkStatus": "unmatched",
+      "references": [],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "standard"
+    },
+    {
+      "eventId": "TL-0006",
+      "legacyOrdinal": 6,
+      "legacyTitle": "Early crust and liquid water",
+      "linkStatus": "unmatched",
+      "references": [],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "standard"
+    },
+    {
+      "eventId": "TL-0007",
+      "legacyOrdinal": 7,
+      "legacyTitle": "Origin of life",
+      "linkStatus": "unmatched",
+      "references": [],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0008",
+      "legacyOrdinal": 8,
+      "legacyTitle": "FUCA-type stage (?)",
+      "linkStatus": "unmatched",
+      "references": [],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0009",
+      "legacyOrdinal": 9,
+      "legacyTitle": "LUCA — Last Universal Common Ancestor",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "EV-0100",
+          "role": "concept-subject",
+          "source": "original-triage"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "standard"
+    },
+    {
+      "eventId": "TL-0010",
+      "legacyOrdinal": 10,
+      "legacyTitle": "The Great Split — Bacteria and Archaea",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "TR-0100",
+          "role": "process-or-transition-context",
+          "source": "original-triage"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0011",
+      "legacyOrdinal": 11,
+      "legacyTitle": "Cyanobacteria harness sunlight",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "EV-0122",
+          "role": "concept-subject",
+          "source": "original-triage"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0012",
+      "legacyOrdinal": 12,
+      "legacyTitle": "Great Oxidation Event — oxygen changes the planet",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "EV-0125",
+          "role": "concept-subject",
+          "source": "original-triage"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "standard"
+    },
+    {
+      "eventId": "TL-0013",
+      "legacyOrdinal": 13,
+      "legacyTitle": "Aerobic Alphaproteobacteria — extract stored energy",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "EV-0103",
+          "role": "concept-subject",
+          "source": "original-triage"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0014",
+      "legacyOrdinal": 14,
+      "legacyTitle": "Alphaproteobacteria continue to the present",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "EV-0103",
+          "role": "lineage-persistence-context",
+          "source": "registry-reconciliation"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0015",
+      "legacyOrdinal": 15,
+      "legacyTitle": "Mitochondrial endosymbiosis — the energy partnership",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "TR-0104",
+          "role": "process-or-transition-context",
+          "source": "original-triage"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0016",
+      "legacyOrdinal": 16,
+      "legacyTitle": "LECA — Last Eukaryotic Common Ancestor",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "EV-0110",
+          "role": "concept-subject",
+          "source": "original-triage"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "standard"
+    },
+    {
+      "eventId": "TL-0017",
+      "legacyOrdinal": 17,
+      "legacyTitle": "Animals and fungi are established lineages",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "EV-0112",
+          "role": "concept-subject",
+          "source": "original-triage"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0018",
+      "legacyOrdinal": 18,
+      "legacyTitle": "Marine animals become conspicuous",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "EV-0114",
+          "role": "concept-subject",
+          "source": "original-triage"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0019",
+      "legacyOrdinal": 19,
+      "legacyTitle": "Cambrian marine diversification",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "EV-0114",
+          "role": "concept-subject",
+          "source": "original-triage"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0020",
+      "legacyOrdinal": 20,
+      "legacyTitle": "Some arthropods colonize land",
+      "linkStatus": "unmatched",
+      "references": [],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0021",
+      "legacyOrdinal": 21,
+      "legacyTitle": "Vertebrates begin the transition onto land",
+      "linkStatus": "unmatched",
+      "references": [],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0022",
+      "legacyOrdinal": 22,
+      "legacyTitle": "Early primates",
+      "linkStatus": "unmatched",
+      "references": [],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0023",
+      "legacyOrdinal": 23,
+      "legacyTitle": "Hominin lineage diverges from the chimpanzee/bonobo lineage",
+      "linkStatus": "unmatched",
+      "references": [],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0024",
+      "legacyOrdinal": 24,
+      "legacyTitle": "Earliest Homo",
+      "linkStatus": "unmatched",
+      "references": [],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0025",
+      "legacyOrdinal": 25,
+      "legacyTitle": "Homo sapiens",
+      "linkStatus": "unmatched",
+      "references": [],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0026",
+      "legacyOrdinal": 26,
+      "legacyTitle": "Primary endosymbiosis",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "TR-0120",
+          "role": "process-or-transition-context",
+          "source": "original-triage"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0027",
+      "legacyOrdinal": 27,
+      "legacyTitle": "Red and green algal lineages",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "EV-0116",
+          "role": "concept-subject",
+          "source": "original-triage"
+        },
+        {
+          "targetId": "EV-0117",
+          "role": "additional-lineage-context",
+          "source": "registry-reconciliation"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0028",
+      "legacyOrdinal": 28,
+      "legacyTitle": "Land plants",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "EV-0118",
+          "role": "concept-subject",
+          "source": "original-triage"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "standard"
+    },
+    {
+      "eventId": "TL-0029",
+      "legacyOrdinal": 29,
+      "legacyTitle": "Vascular plants",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "EV-0136",
+          "role": "concept-subject",
+          "source": "registry-reconciliation"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "standard"
+    },
+    {
+      "eventId": "TL-0030",
+      "legacyOrdinal": 30,
+      "legacyTitle": "Seed plants",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "EV-0137",
+          "role": "concept-subject",
+          "source": "registry-reconciliation"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "standard"
+    },
+    {
+      "eventId": "TL-0031",
+      "legacyOrdinal": 31,
+      "legacyTitle": "Gymnosperm lineages expand",
+      "linkStatus": "unmatched",
+      "references": [],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0032",
+      "legacyOrdinal": 32,
+      "legacyTitle": "Flowering plants",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "EV-0138",
+          "role": "concept-subject",
+          "source": "registry-reconciliation"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "standard"
+    },
+    {
+      "eventId": "TL-0033",
+      "legacyOrdinal": 33,
+      "legacyTitle": "Secondary endosymbiosis involving a red alga",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "TR-0133",
+          "role": "process-or-transition-context",
+          "source": "original-triage"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0034",
+      "legacyOrdinal": 34,
+      "legacyTitle": "Brown-algal lineage develops and diversifies",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "EV-0121",
+          "role": "concept-subject",
+          "source": "original-triage"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    },
+    {
+      "eventId": "TL-0035",
+      "legacyOrdinal": 35,
+      "legacyTitle": "Kelp emerges",
+      "linkStatus": "candidate-unverified",
+      "references": [
+        {
+          "targetId": "EV-0147",
+          "role": "concept-subject",
+          "source": "registry-reconciliation"
+        }
+      ],
+      "evidenceStatus": "scientific-evidence-pending",
+      "approvalStatus": "unapproved",
+      "canonicalEndpointApproval": false,
+      "reviewPriority": "high"
+    }
+  ]
+}

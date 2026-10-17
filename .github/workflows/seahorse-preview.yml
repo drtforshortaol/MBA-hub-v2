@@ -1,0 +1,59 @@
+name: Seahorse Development Preview
+# Developer-only preview; does not alter production or public tester.
+on:
+  push:
+    branches: [security-review-evo-foundation-20261014]
+    paths:
+      - 'src/apps/big-bellied-seahorse/**'
+      - '.github/workflows/seahorse-preview.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: seahorse-preview-pages
+  cancel-in-progress: true
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate app and regression tests
+        run: |
+          npm run validate
+          npm run build
+          npm test
+          npm run security:scan
+      - name: Prepare public-safe preview
+        run: |
+          mkdir -p preview/big-bellied-seahorse
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          html=Path('src/apps/big-bellied-seahorse/index.html').read_text()
+          # Uploaded illustrations require separate publication permission.
+          html=re.sub(r'<figure>\s*<img\b[^>]*>\s*(?:<figcaption>.*?</figcaption>)?\s*</figure>', '<p class="preview-image-note">Illustration omitted from public preview pending publication permission.</p>', html, flags=re.S)
+          html=html.replace('<script type="module" src="../../core/app-contract.js"></script>', '')
+          html=html.replace('href="../../index.html"', 'href="../index.html"')
+          html=html.replace('href="../naturalist-field-notes/index.html"', 'href="../index.html"')
+          Path('preview/big-bellied-seahorse/index.html').write_text(html)
+          Path('preview/index.html').write_text('<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><title>MBA V2 Development Preview</title><main style="font:18px system-ui;padding:2rem"><h1>MBA V2 Development Preview</h1><p>Draft scientific content; not a production release.</p><a href="big-bellied-seahorse/index.html">Open Big-Bellied Seahorse</a></main>')
+          PY
+      - name: Verify preview output
+        run: |
+          test -s preview/index.html
+          test -s preview/big-bellied-seahorse/index.html
+          if grep -Eq '<img[[:space:]]' preview/big-bellied-seahorse/index.html; then echo 'Unreviewed image remains in preview' >&2; exit 1; fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: preview
+      - id: deployment
+        uses: actions/deploy-pages@v4
