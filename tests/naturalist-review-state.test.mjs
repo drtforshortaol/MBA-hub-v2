@@ -96,3 +96,12 @@ test('verification and editorial approval without an action do not complete a re
  assert.equal(reviewProgress(decisions).completed,1);
  assert.equal(reviewRecoveryCheck(decisions,entries).can_auto_publish,false);
 });
+
+test('invalid proposed actions never count as completed even in advisory progress',()=>{
+ const decisions=newReviewDecisions(entries);
+ decisions[0].scientific_status='verified';
+ decisions[0].editorial_status='approved';
+ decisions[0].proposed_action='publish';
+ assert.equal(reviewProgress(decisions).completed,0);
+ assert.equal(reviewRecoveryCheck(decisions,entries).valid,false);
+});
