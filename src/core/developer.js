@@ -55,7 +55,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    // change must not silently reattach decisions to different proposed targets.
    const reviewIdentity=JSON.stringify({source,entries:packet.entries.map(e=>({text:e.source_text,placement:e.placement,review_flags:e.review.flags,existing_content:e.existing_content}))});
    const sourceFingerprint=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(reviewIdentity)).then(bytes=>Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join(''));
-   if(intakeText.value!==source){intakeStatus.textContent='Source changed while classification was running. Generate again.';return;}
+   if(generation!==activeReviewGeneration||intakeText.value!==source){intakeStatus.textContent='Source or review generation changed while classification was running. Generate again.';return;}
    const reviewKey=reviewStorageKey(env.namespace,sourceFingerprint);
    const legacySourceFingerprint=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(source)).then(bytes=>Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join(''));
    const legacyReviewKey=reviewStorageKey(env.namespace,legacySourceFingerprint);
@@ -99,7 +99,18 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    }
    previous.addEventListener('click',()=>showStatement(activeStatement-1));
    next.addEventListener('click',()=>showStatement(activeStatement+1));
-   navigation.append(previous,position,next);
+   const nextPending=document.createElement('button');nextPending.type='button';nextPending.className='button';nextPending.textContent='Next incomplete review';
+   const incomplete=index=>{const decision=packet.review_decisions[index];return decision.scientific_status!=='verified'||decision.editorial_status!=='approved';};
+   nextPending.addEventListener('click',()=>{
+    if(!isCurrentReview())return;
+    const count=statementCards.length;
+    for(let offset=1;offset<=count;offset++){
+     const index=(activeStatement+offset)%count;
+     if(incomplete(index)){showStatement(index);statementCards[index]?.scrollIntoView({block:'nearest'});return;}
+    }
+    intakeStatus.textContent='All statements have both reviews recorded. Publication remains disabled.';
+   });
+   navigation.append(previous,position,next,nextPending);
    const heading=document.createElement('h4');heading.textContent='Proposed updates — review required';
    const summary=document.createElement('p');summary.textContent=packet.review_summary.statement_count+' statements; '+packet.review_summary.duplicate_statement_count+' repeated within submission.';
    reviewOutput.append(heading,summary);
