@@ -71,7 +71,7 @@ export function importReviewPacket(packet,fingerprint,entries){
 
 // A read-only work queue for approved review decisions. Never stages or publishes content.
 export function reviewActionQueue(decisions,entries){
- if(!validateReviewDecisions(decisions,entries))return {valid:false,reason:'invalid-decisions',items:[],can_auto_publish:false};
+ if(!validateReviewDecisions(decisions,entries))return {valid:false,reason:'invalid-decisions',items:[],blocked_items:[],can_auto_publish:false};
  const items=[],blocked_items=[];
  decisions.forEach((decision,index)=>{
   const ready=decision.scientific_status==='verified'&&decision.editorial_status==='approved'&&decision.proposed_action!=='needs-review';
