@@ -16,3 +16,13 @@ test('Naturalist draft conversion rejects unknown section and version',()=>{
  assert.equal(naturalistChangeRequest({...draft,section_edits:[{id:'unknown',title:'Wrong',caption:'',text:'No'}]},app).valid,false);
  assert.equal(naturalistChangeRequest({...draft,section_edits:[]},app).valid,false);
 });
+
+test('Naturalist conversion enforces canonical request description limit',()=>{
+ const invalid={...draft,description:'x'.repeat(4001)};
+ assert.equal(naturalistChangeRequest(invalid,app).valid,false);
+});
+test('shared browser and CLI validators agree',async()=>{
+ const {validateChangeRequest:browser}=await import('../src/core/change-request-validation.js');
+ const request=naturalistChangeRequest(draft,app).request;
+ assert.deepEqual(browser(request,[app]),validateChangeRequest(request,[app]));
+});
