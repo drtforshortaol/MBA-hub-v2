@@ -8,7 +8,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 export function stageSubmissionPacket(packet,manifestBytes){
  const result=verifySubmissionPacket(packet,manifestBytes);
  if(!result.valid)return {valid:false,errors:result.errors};
- const next=JSON.stringify(packet.proposed_manifest,null,2)+'\\n';
+ const next=JSON.stringify(packet.proposed_manifest,null,2)+'\n';
  return {valid:true,requires_review:true,approved:false,committed:false,published:false,
   target_repository:packet.target_repository,target_branch:packet.target_branch,
   manifest_path:packet.manifest_path,base_manifest_sha256:packet.base_manifest_sha256,
