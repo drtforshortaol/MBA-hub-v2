@@ -53,7 +53,25 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     label.textContent=(entry.index+1)+'. '+entry.source_text.slice(0,130);
     body.textContent='Proposed: '+entry.placement.proposal_type+' · App: '+(entry.placement.target_app_id||'unresolved')+' · Section: '+(entry.placement.target_section_id||'unresolved');
     flags.textContent='Review flags: '+(entry.review.flags.join(', ')||'none detected; scientific review still required');
-    item.append(label,body,flags);reviewOutput.append(item);
+    const details=document.createElement('dl');
+    const fields=[
+     ['Original source block',entry.source_block],
+     ['Extraction method',entry.extraction],
+     ['Duplicate of statement',entry.duplicate_of===null||entry.duplicate_of===undefined?'None':String(entry.duplicate_of+1)],
+     ['Existing-content assessment',entry.existing_content],
+     ['Placement assessment',entry.placement],
+     ['Scientific and editorial review',entry.review]
+    ];
+    for(const [name,value] of fields){
+     const dt=document.createElement('dt'),dd=document.createElement('dd');
+     dt.textContent=name;
+     dd.textContent=value===null||value===undefined?'Not available':typeof value==='object'?JSON.stringify(value,null,2):String(value);
+     dd.style.whiteSpace='pre-wrap';dd.style.overflowWrap='anywhere';
+     details.append(dt,dd);
+    }
+    const warning=document.createElement('p');warning.className='quiet';
+    warning.textContent='Pending scientific verification and editorial approval. This packet cannot publish updates.';
+    item.append(label,body,flags,details,warning);reviewOutput.append(item);
    }
    const download=document.createElement('button');download.type='button';download.className='button';download.textContent='Download review packet';
    download.onclick=()=>{
