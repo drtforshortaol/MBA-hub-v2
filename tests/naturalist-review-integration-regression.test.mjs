@@ -33,7 +33,9 @@ test('corrupt or mismatched review packets fail closed',()=>{
  store.setItem(key,JSON.stringify({schema_version:1,review_context_sha256:'context',review_decisions:[{...newReviewDecisions(entries)[0],editorial_status:'published'}]}));
  assert.equal(readReview(store,key,'context',entries),null);
  store.setItem(key,JSON.stringify({schema_version:1,review_context_sha256:'context',review_decisions:newReviewDecisions(entries),published:true}));
- // The annotation reader does not treat unrelated packet fields as publication authorization.
+ // A publication claim invalidates the record rather than being silently ignored.
+ assert.equal(readReview(store,key,'context',entries),null);
+ store.setItem(key,JSON.stringify({schema_version:1,review_context_sha256:'context',review_decisions:newReviewDecisions(entries),published:false}));
  assert.equal(readReview(store,key,'context',entries)?.length,1);
  assert.equal(reviewProgress(readReview(store,key,'context',entries)).can_auto_publish,false);
 });
