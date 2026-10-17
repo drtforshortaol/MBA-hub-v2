@@ -18,6 +18,12 @@ export function loadApplicationCatalog(){
  return apps.sort((a,b)=>a.app_id.localeCompare(b.app_id));
 }
 export function previewUpdateBatch(update){return classifyUpdateBatch(update,loadApplicationCatalog());}
+// Structured draft packet only: source material and existing manifests remain unchanged.
+export function previewNaturalistPacket(update){
+ const result=previewUpdateBatch(update);
+ if(!result.valid)return result;
+ return {schema_version:1,kind:'mba-v2-naturalist-review-packet',original_source:update,entries:result.entries.map(entry=>({index:entry.index,source_text:entry.text,source_block:entry.source_block,extraction:entry.extraction,placement:entry.placement,existing_content:entry.existing_content,review_required:true})),scientific_verification:'required',requires_review:true,prepared:false,committed:false,published:false};
+}
 export function previewAutomaticUpdate(update,{replacementText}={}){
  return prepareAutomaticUpdate(update,loadApplicationCatalog(),{replacementText});
 }
