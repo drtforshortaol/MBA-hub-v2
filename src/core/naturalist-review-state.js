@@ -23,6 +23,7 @@ export function reviewRecoveryCheck(decisions,entries){
  return {valid:true,reason:progress.revisions?'revisions-required':progress.total>0&&progress.completed===progress.total?'review-complete':'review-incomplete',...progress,can_auto_publish:false};
 }
 export function readReview(storage,key,fingerprint,entries){
+ if(typeof fingerprint!=='string'||!fingerprint)return null;
  try{
   const record=JSON.parse(storage.getItem(key)||'null');
   if(record?.schema_version!==REVIEW_SCHEMA||record.review_context_sha256!==fingerprint||!validateReviewDecisions(record.review_decisions,entries))return null;
@@ -30,7 +31,7 @@ export function readReview(storage,key,fingerprint,entries){
  }catch{return null;}
 }
 export function writeReview(storage,key,fingerprint,decisions,entries){
- if(!validateReviewDecisions(decisions,entries))return false;
+ if(typeof fingerprint!=='string'||!fingerprint||!validateReviewDecisions(decisions,entries))return false;
  try{
   storage.setItem(key,JSON.stringify({schema_version:REVIEW_SCHEMA,review_context_sha256:fingerprint,review_decisions:decisions}));
   const restored=readReview(storage,key,fingerprint,entries);
