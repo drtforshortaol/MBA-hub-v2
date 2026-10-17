@@ -26,6 +26,41 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
  });
  intake.append(intakeTitle,intakeHint,intakeLabel,intakeText,intakeButton,intakeStatus);
  panel.insertBefore(intake,document.querySelector('#app-inventory').previousSibling);
+
+ const reviewButton=document.createElement('button');reviewButton.type='button';reviewButton.className='button';reviewButton.textContent='Generate review packet';
+ const reviewOutput=document.createElement('div');reviewOutput.setAttribute('aria-live','polite');
+ intake.insertBefore(reviewButton,intakeStatus);intake.insertBefore(reviewOutput,intakeStatus);
+ reviewButton.addEventListener('click',async()=>{
+  reviewOutput.replaceChildren();
+  const source=intakeText.value;
+  if(!source.trim()){intakeStatus.textContent='Source notes are required.';return;}
+  intakeStatus.textContent='Preparing review-only classification…';
+  try{
+   const [{classifyUpdateBatch},{summarizeNaturalistReview}]=await Promise.all([
+    import('./naturalist-engine/classify-update-batch.js'),
+    import('./naturalist-engine/summarize-naturalist-review.js')
+   ]);
+   const result=classifyUpdateBatch(source,registry.apps);
+   if(!result.valid){intakeStatus.textContent=(result.errors||['Invalid source']).join('; ');return;}
+   const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',original_source:source,review_summary:summarizeNaturalistReview(result.entries),entries:result.entries.map(entry=>({index:entry.index,duplicate_of:entry.duplicate_of,source_text:entry.text,source_block:entry.source_block,extraction:entry.extraction,placement:entry.placement,review:entry.review,existing_content:entry.existing_content,review_required:true})),scientific_verification:'required',editorial_review:'required',requires_review:true,prepared:false,committed:false,published:false};
+   const heading=document.createElement('h4');heading.textContent='Proposed updates — review required';
+   const summary=document.createElement('p');summary.textContent=packet.review_summary.statement_count+' statements; '+packet.review_summary.duplicate_statement_count+' repeated within submission.';
+   reviewOutput.append(heading,summary);
+   for(const entry of packet.entries){
+    const item=document.createElement('details'),label=document.createElement('summary'),body=document.createElement('p'),flags=document.createElement('p');
+    label.textContent=(entry.index+1)+'. '+entry.source_text.slice(0,130);
+    body.textContent='Proposed: '+entry.placement.proposal_type+' · App: '+(entry.placement.target_app_id||'unresolved')+' · Section: '+(entry.placement.target_section_id||'unresolved');
+    flags.textContent='Review flags: '+(entry.review.flags.join(', ')||'none detected; scientific review still required');
+    item.append(label,body,flags);reviewOutput.append(item);
+   }
+   const download=document.createElement('button');download.type='button';download.className='button';download.textContent='Download review packet';
+   download.onclick=()=>{
+    const blob=new Blob([JSON.stringify(packet,null,2)+'\\n'],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');
+    link.href=url;link.download='mba-naturalist-review-packet.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+   };
+   reviewOutput.append(download);intakeStatus.textContent='Review packet ready. Nothing approved, committed, or published.';
+  }catch(error){intakeStatus.textContent='Review generation unavailable: '+error.message;}
+ });
  const inventory=document.querySelector('#app-inventory'),filter=document.querySelector('#app-filter');
  const registry=await fetch('registry.json').then(r=>{if(!r.ok)throw Error('Registry unavailable');return r.json();});
  function drawInventory(){const query=filter.value.trim().toLocaleLowerCase();const apps=registry.apps.filter(a=>[a.title,a.app_id,a.category,a.status].some(value=>String(value||'').toLocaleLowerCase().includes(query))).sort((a,b)=>a.title.localeCompare(b.title));inventory.replaceChildren();const count=document.createElement('p');count.textContent=apps.length+' of '+registry.apps.length+' applications';inventory.append(count);for(const app of apps){const row=document.createElement('p'),label=document.createElement('strong'),meta=document.createElement('span');label.textContent=app.title+' ';meta.textContent='('+app.app_id+') · '+app.category+' · '+app.status;const inspect=document.createElement('button');inspect.type='button';inspect.className='button';inspect.textContent='Inspect';inspect.setAttribute('aria-label','Inspect '+app.title);inspect.addEventListener('click',()=>showDetails(app));row.append(label,meta,document.createTextNode(' '),inspect);inventory.append(row);}}
