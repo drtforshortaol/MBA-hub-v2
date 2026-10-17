@@ -110,9 +110,22 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     }
     intakeStatus.textContent='All statements have both reviews recorded. Publication remains disabled.';
    });
-   navigation.append(previous,position,next,nextPending);
+   const nextFlagged=document.createElement('button');nextFlagged.type='button';nextFlagged.className='button';nextFlagged.textContent='Next flagged statement';
+   nextFlagged.addEventListener('click',()=>{
+    if(!isCurrentReview())return;
+    const count=statementCards.length;
+    for(let offset=1;offset<=count;offset++){
+     const index=(activeStatement+offset)%count;
+     const entry=packet.entries[index];
+     if(entry.review.flags.length||entry.duplicate_of!==null&&entry.duplicate_of!==undefined){
+      showStatement(index);statementCards[index]?.scrollIntoView({block:'nearest'});return;
+     }
+    }
+    intakeStatus.textContent='No automatically flagged statements. Scientific and editorial review is still required.';
+   });
+   navigation.append(previous,position,next,nextPending,nextFlagged);
    const heading=document.createElement('h4');heading.textContent='Proposed updates — review required';
-   const summary=document.createElement('p');summary.textContent=packet.review_summary.statement_count+' statements; '+packet.review_summary.duplicate_statement_count+' repeated within submission.';
+   const summary=document.createElement('p');summary.textContent=packet.review_summary.statement_count+' statements; '+packet.review_summary.duplicate_statement_count+' repeated within submission; '+(packet.conflict_signals?.length??0)+' potential scientific conflict pairs. All findings require human review.';
    reviewOutput.append(heading,summary);
    for(const entry of packet.entries){
     const item=document.createElement('details'),label=document.createElement('summary'),body=document.createElement('p'),flags=document.createElement('p');
