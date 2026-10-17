@@ -325,6 +325,28 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     }
    }
    refreshQueue.addEventListener('click',showQueue);
+   const checkDrafts=document.createElement('button');checkDrafts.type='button';checkDrafts.className='button';checkDrafts.textContent='Check replacement drafts';
+   const draftFeedback=document.createElement('p');draftFeedback.setAttribute('role','status');
+   checkDrafts.addEventListener('click',()=>{
+    if(!isCurrentReview()||!validateDecisions()){draftFeedback.textContent='Regenerate the current review before checking drafts.';return;}
+    const queue=reviewActionQueue(packet.review_decisions,packet.entries);
+    const outcomes=queue.items.map(item=>{
+     const entry=result.entries[item.index];
+     if(entry.duplicate_of!=null||(entry.conflict_with||[]).length)return 'blocked';
+     if(item.action!=='update-existing')return 'placement-review';
+     const app=registry.apps.find(a=>a.app_id===entry.route?.app_id);
+     const section=app?.sections?.find(x=>x.id===entry.route?.section_id);
+     const replacement=replacementDrafts.get(item.index);
+     if(!replacement?.trim())return 'replacement-required';
+     if(entry.route?.action!=='update-existing'||!section||typeof section.text!=='string')return 'routing-review';
+     const draft=createDraft(app);
+     draft.description=entry.text.slice(0,4000);
+     draft.section_edits=[{id:section.id,title:section.title,caption:section.caption??'',text:replacement}];
+     return validateDraft(draft,app).valid?'draft-valid':'draft-invalid';
+    });
+    draftFeedback.textContent=outcomes.length?outcomes.join(', ')+'; validation only, nothing saved or published.':'No reviewed actions to validate.';
+   });
+   reviewOutput.append(checkDrafts,draftFeedback);
    const exportQueue=document.createElement('button');exportQueue.type='button';exportQueue.className='button';exportQueue.textContent='Download reviewed action packet';
    exportQueue.addEventListener('click',()=>{
     if(!isCurrentReview()||!validateDecisions()){intakeStatus.textContent='Current, valid review decisions required before export.';return;}
