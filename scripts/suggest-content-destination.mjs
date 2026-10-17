@@ -13,8 +13,12 @@ export function suggestContentDestination(update,applications){
   const sections=Array.isArray(app.sections)?app.sections:[];
   const matches=sections.filter(s=>typeof s.id==='string').map(s=>({id:s.id,title:s.title??s.id,score:[...tokens(s.title??s.id)].reduce((n,w)=>n+(words.has(w)?2:0),0)})).sort((a,b)=>b.score-a.score||a.id.localeCompare(b.id));
   const topSection=matches[0];
+  // A single generic heading token is insufficient evidence for section placement.
+  const sectionTokens=topSection?tokens(topSection.title):new Set();
+  const sectionCoverage=sectionTokens.size?topSection.score/(2*sectionTokens.size):0;
+  const sectionSupported=Boolean(topSection?.score>=2&&(sectionTokens.size===1||sectionCoverage>=0.5));
   const sectionAmbiguous=Boolean(topSection?.score>0&&matches[1]?.score===topSection.score);
-  return {app_id:app.app_id,title:app.title??app.app_id,score:overlap*5+(topSection?.score??0),app_overlap:overlap,coverage,section:topSection?.score>0&&!sectionAmbiguous?topSection.id:null,section_ambiguous:sectionAmbiguous};
+  return {app_id:app.app_id,title:app.title??app.app_id,score:overlap*5+(topSection?.score??0),app_overlap:overlap,coverage,section:sectionSupported&&!sectionAmbiguous?topSection.id:null,section_ambiguous:sectionAmbiguous};
  }).sort((a,b)=>b.score-a.score||a.app_id.localeCompare(b.app_id));
  const best=ranked[0],second=ranked[1];
  // A section-only match must not redirect an update into an unrelated species.
