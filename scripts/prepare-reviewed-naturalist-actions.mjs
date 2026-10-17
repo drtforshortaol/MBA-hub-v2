@@ -8,7 +8,7 @@ export function prepareReviewedNaturalistActions(classification,decisions,applic
  const entries=classification.entries;
  const queue=reviewActionQueue(decisions,entries);
  if(!queue.valid)return {...queue,prepared:false,published:false};
- const items=queue.items.map(({index,action,entry,reviewer_notes})=>{
+ const items=[...(queue.blocked_items||[]).map(({index,action,reviewer_notes,block_reasons})=>({index,action,status:'blocked-review',reason:block_reasons.join(', '),reviewer_notes})),...queue.items.map(({index,action,entry,reviewer_notes})=>{
   const blocked=entry.duplicate_of!=null||(Array.isArray(entry.conflict_with)&&entry.conflict_with.length>0);
   if(blocked)return {index,action,status:'blocked-review',reason:'duplicate or potential scientific conflict',reviewer_notes};
   if(action==='new-content')return {index,action,status:'placement-review',placement:entry.placement,reviewer_notes};
@@ -20,6 +20,7 @@ export function prepareReviewedNaturalistActions(classification,decisions,applic
   const result=prepareAutomaticUpdate(entry.text,applications,{replacementText:replacement});
   const matches=result.prepared===true&&result.app_id===route.app_id&&result.section_id===route.section_id&&result.request?.app_id===route.app_id&&result.request?.section_edits?.[0]?.id===route.section_id;
   return {index,action,status:matches?'draft-ready':'routing-review',result,reviewer_notes};
- });
+ })];
+ items.sort((a,b)=>a.index-b.index);
  return {valid:true,reason:queue.reason,items,prepared:items.length>0&&items.every(item=>item.status==='draft-ready'),published:false,can_auto_publish:false};
 }
