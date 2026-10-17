@@ -101,3 +101,14 @@ test('Developer Mode recovery requires matching review context and storage succe
  assert.match(code,/if\(!saved\)\{intakeStatus\.textContent='Storage unavailable/);
  assert.match(code,/Decisions restored locally/);
 });
+
+test('inline comparison presents original evidence without changing review decisions',()=>{
+ const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
+ assert.match(code,/aria-label','Statement comparison/);
+ assert.match(code,/new Set\(candidates\)/);
+ assert.match(code,/candidate>=packet\.entries\.length/);
+ assert.match(code,/Current: '\+entry\.source_text/);
+ assert.match(code,/Compare: '\+other\.source_text/);
+ assert.match(code,/Other proposed placement:/);
+ assert.match(code,/related\.append\(comparison\)/);
+});
