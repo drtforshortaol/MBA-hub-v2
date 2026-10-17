@@ -92,3 +92,12 @@ test('all reviewer interaction paths reject stale review contexts',()=>{
  assert.match(code,/select\.addEventListener\('change',\(\)=>\{if\(!isCurrentReview\(\)\)return;decision\[key\]=/);
  assert.match(code,/notes\.addEventListener\('input',\(\)=>\{if\(!isCurrentReview\(\)\)return;decision\.reviewer_notes=/);
 });
+
+test('Developer Mode recovery requires matching review context and storage success',()=>{
+ const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
+ assert.match(code,/importReviewPacket\(JSON\.parse\(await file\.text\(\)\),sourceFingerprint,packet\.entries\)/);
+ assert.match(code,/if\(!isCurrentReview\(\)\)return;/);
+ assert.match(code,/if\(file\.size>2000000\)/);
+ assert.match(code,/if\(!saved\)\{intakeStatus\.textContent='Storage unavailable/);
+ assert.match(code,/Decisions restored locally/);
+});
