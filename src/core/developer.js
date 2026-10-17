@@ -77,7 +77,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    // Retire legacy source-only review keys without importing their decisions:
    // the old key did not bind approvals to the current routing context.
    if(legacyReviewKey!==reviewKey){try{localStorage.removeItem(legacyReviewKey);}catch{/* storage may be unavailable */}}
-   const isCurrentReview=()=>intakeText.value===source&&reviewOutput.dataset.reviewFingerprint===sourceFingerprint;
+   const isCurrentReview=()=>generation===activeReviewGeneration&&intakeText.value===source&&reviewOutput.dataset.reviewFingerprint===sourceFingerprint;
    reviewOutput.dataset.reviewFingerprint=sourceFingerprint;
    const saveReview=()=>{
     if(!isCurrentReview()){intakeStatus.textContent='Review no longer current. Regenerate before saving.';return;}
