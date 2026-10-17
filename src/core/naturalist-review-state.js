@@ -82,6 +82,7 @@ export function reviewActionQueue(decisions,entries){
   const conflict=Array.isArray(entry?.conflict_with)&&entry.conflict_with.length>0||
    entries.some((other,j)=>j!==index&&Array.isArray(other?.conflict_with)&&other.conflict_with.includes(index));
   const malformed=entry==null||typeof entry!=='object'||Array.isArray(entry)||
+   (Object.hasOwn(entry,'index')&&entry.index!==index)||
    (Object.hasOwn(entry,'conflict_with')&&!Array.isArray(entry.conflict_with))||
    (duplicate&&(!Number.isInteger(entry.duplicate_of)||entry.duplicate_of<0||entry.duplicate_of>=entries.length||entry.duplicate_of===index))||
    (Array.isArray(entry.conflict_with)&&entry.conflict_with.some(i=>!Number.isInteger(i)||i<0||i>=entries.length||i===index));
