@@ -18,7 +18,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
   const source=intakeText.value;
   if(!source.trim()){intakeStatus.textContent='Source notes are required.';return;}
   const payload={schema_version:1,kind:'mba-v2-naturalist-intake',original_source:source,scientific_verification:'required',editorial_review:'required',approval_state:'pending',classified:false,committed:false,published:false};
-  const blob=new Blob([JSON.stringify(payload,null,2)+'\\n'],{type:'application/json'});
+  const blob=new Blob([JSON.stringify(payload,null,2)+'\n'],{type:'application/json'});
   const url=URL.createObjectURL(blob),link=document.createElement('a');
   link.href=url;link.download='mba-naturalist-intake.json';link.click();
   setTimeout(()=>URL.revokeObjectURL(url),1000);
