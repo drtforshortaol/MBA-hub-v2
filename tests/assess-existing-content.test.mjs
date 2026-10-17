@@ -15,3 +15,10 @@ test('intake carries overlap assessment for matching applications',()=>{
  const r=classifyUpdateBatch('Sea otter tool use rocks to open shellfish.',[app]);
  assert.equal(r.entries[0].route.app_id,'sea-otter');assert.equal(r.entries[0].existing_content.valid,true);
 });
+
+test('punctuation-only changes are still duplicates',()=>{
+ const r=assessExistingContent('Sea otters use rocks to open shellfish!',app);
+ assert.equal(r.status,'exact-duplicate');
+ assert.equal(r.scientific_verification,'required');
+ assert.equal(r.published,false);
+});
