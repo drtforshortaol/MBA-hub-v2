@@ -23,7 +23,7 @@ export function previewUpdateBatch(update){return classifyUpdateBatch(update,loa
 export function previewNaturalistPacket(update){
  const result=previewUpdateBatch(update);
  if(!result.valid)return result;
- return {schema_version:1,kind:'mba-v2-naturalist-review-packet',original_source:update,review_summary:summarizeNaturalistReview(result.entries),conflict_signals:result.conflict_signals,entries:result.entries.map(entry=>({index:entry.index,duplicate_of:entry.duplicate_of,conflict_with:entry.conflict_with??[],source_text:entry.text,source_block:entry.source_block,extraction:entry.extraction,placement:entry.placement,review:entry.review,existing_content:entry.existing_content,review_required:true})),scientific_verification:'required',requires_review:true,prepared:false,committed:false,published:false};
+ return {valid:true,schema_version:1,kind:'mba-v2-naturalist-review-packet',original_source:update,review_summary:summarizeNaturalistReview(result.entries),conflict_signals:result.conflict_signals,entries:result.entries.map(entry=>({index:entry.index,duplicate_of:entry.duplicate_of,conflict_with:entry.conflict_with??[],source_text:entry.text,source_block:entry.source_block,extraction:entry.extraction,placement:entry.placement,review:entry.review,existing_content:entry.existing_content,review_required:true})),scientific_verification:'required',requires_review:true,prepared:false,committed:false,published:false};
 }
 export function previewAutomaticUpdate(update,{replacementText}={}){
  return prepareAutomaticUpdate(update,loadApplicationCatalog(),{replacementText});
