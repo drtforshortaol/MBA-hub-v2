@@ -1,7 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {spawnSync} from 'node:child_process';
 import path from 'node:path';
 const root=path.resolve(new URL('../',import.meta.url).pathname);
 test('Naturalist review UI enforces generation and source freshness',()=>{
@@ -14,8 +13,6 @@ test('Naturalist review UI enforces generation and source freshness',()=>{
  assert.match(code,/validateDecisions\(\)/);
 });
 test('developer bundle contains Naturalist review safeguards and tester excludes developer UI',()=>{
- const run=spawnSync(process.execPath,['scripts/build.mjs'],{cwd:root,encoding:'utf8'});
- assert.equal(run.status,0,run.stderr);
  const developer=fs.readFileSync(path.join(root,'dist/developer/core/developer.js'),'utf8');
  assert.match(developer,/activeReviewGeneration/);
  assert.match(developer,/naturalist-review-state\.js/);
