@@ -14,3 +14,12 @@ test('rejects missing update and catalog',()=>{
  assert.equal(suggestContentDestination('',apps).valid,false);
  assert.equal(suggestContentDestination('octopus',null).valid,false);
 });
+
+test('matches an application without inventing a weak section match',()=>{
+ const catalog=[{app_id:'sea-slugs-nudibranchs',title:'Sea Slugs Nudibranchs',sections:[{id:'sea-slug-search',title:'Sea Slug Search 2026'}]}];
+ const result=suggestContentDestination('Sea slugs nudibranchs are observed on rocks.',catalog);
+ assert.equal(result.action,'update-existing');
+ assert.equal(result.app_id,'sea-slugs-nudibranchs');
+ assert.equal(result.section_id,null);
+ assert.equal(result.published,false);
+});
