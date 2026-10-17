@@ -16,6 +16,11 @@ export function reviewProgress(decisions){
  return {completed,total:decisions.length,revisions,can_auto_publish:false};
 }
 export function reviewStorageKey(namespace,fingerprint){return namespace+':naturalist-review:'+fingerprint;}
+export function reviewRecoveryCheck(decisions,entries){
+ if(!validateReviewDecisions(decisions,entries))return {valid:false,reason:'invalid-decisions',can_auto_publish:false};
+ const progress=reviewProgress(decisions);
+ return {valid:true,reason:progress.revisions?'revisions-required':progress.completed===progress.total?'review-complete':'review-incomplete',...progress,can_auto_publish:false};
+}
 export function readReview(storage,key,fingerprint,entries){
  try{
   const record=JSON.parse(storage.getItem(key)||'null');
