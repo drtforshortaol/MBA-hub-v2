@@ -51,6 +51,8 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    const reviewIdentity=JSON.stringify({source,entries:packet.entries.map(e=>({text:e.source_text,placement:e.placement,review_flags:e.review.flags,existing_content:e.existing_content}))});
    const sourceFingerprint=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(reviewIdentity)).then(bytes=>Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join(''));
    const reviewKey=env.namespace+':naturalist-review:'+sourceFingerprint;
+   const legacySourceFingerprint=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(source)).then(bytes=>Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join(''));
+   const legacyReviewKey=env.namespace+':naturalist-review:'+legacySourceFingerprint;
    packet.review_context_sha256=sourceFingerprint;
    packet.review_decisions=packet.entries.map(entry=>({index:entry.index,scientific_status:'pending',editorial_status:'pending',proposed_action:'needs-review',reviewer_notes:''}));
    try{
@@ -84,6 +86,9 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      decision&&decision.index===index&&scientific.has(decision.scientific_status)&&editorial.has(decision.editorial_status)&&
      actions.has(decision.proposed_action)&&typeof decision.reviewer_notes==='string'&&decision.reviewer_notes.length<=4000);
    };
+   // Retire legacy source-only review keys without importing their decisions:
+   // the old key did not bind approvals to the current routing context.
+   if(legacyReviewKey!==reviewKey){try{localStorage.removeItem(legacyReviewKey);}catch{/* storage may be unavailable */}}
    const saveReview=()=>{
     if(intakeText.value!==source){intakeStatus.textContent='Source changed. Regenerate before saving.';return;}
     if(!validateDecisions()){intakeStatus.textContent='Review decisions invalid. Nothing saved.';return;}
