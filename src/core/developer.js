@@ -300,6 +300,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    const queueHeading=document.createElement('h4');queueHeading.textContent='Reviewed content action queue';
    const queueStatus=document.createElement('p');queueStatus.setAttribute('role','status');
    const queueItems=document.createElement('ol');
+   const replacementDrafts=new Map();
    const refreshQueue=document.createElement('button');refreshQueue.type='button';refreshQueue.className='button';refreshQueue.textContent='Refresh reviewed actions';
    function showQueue(){
     if(!isCurrentReview()){queueStatus.textContent='Review is stale; regenerate classification.';queueItems.replaceChildren();return;}
@@ -313,6 +314,13 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      const li=document.createElement('li');
      const target=entry.placement?.target_app_id||'unresolved';
      li.textContent='Statement '+(item.index+1)+' · '+item.action+' · '+target+' · '+(blocked?'BLOCKED: duplicate or potential scientific conflict':item.action==='new-content'?'Placement review required':'Draft preparation requires verified replacement text')+' · '+entry.source_text.slice(0,120);
+     if(!blocked&&item.action==='update-existing'){
+      const replacementLabel=document.createElement('label');replacementLabel.textContent='Verified replacement text for statement '+(item.index+1);
+      const replacementInput=document.createElement('textarea');replacementInput.rows=4;replacementInput.maxLength=20000;replacementInput.style.width='100%';
+      replacementInput.value=replacementDrafts.get(item.index)||'';
+      replacementInput.addEventListener('input',()=>{if(!isCurrentReview())return;replacementDrafts.set(item.index,replacementInput.value);});
+      replacementLabel.append(replacementInput);li.append(replacementLabel);
+     }
      queueItems.append(li);
     }
    }
@@ -325,7 +333,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     const actions=queue.items.map(item=>{
      const entry=packet.entries[item.index];
      const blocked=entry.duplicate_of!=null||(entry.conflict_with||[]).length>0;
-     return {index:item.index,action:item.action,source_text:entry.source_text,placement:entry.placement,reviewer_notes:item.reviewer_notes,duplicate_of:entry.duplicate_of,conflict_with:entry.conflict_with,preparation_status:blocked?'blocked-review':item.action==='new-content'?'placement-review':'verified-replacement-required'};
+     return {index:item.index,action:item.action,source_text:entry.source_text,placement:entry.placement,reviewer_notes:item.reviewer_notes,duplicate_of:entry.duplicate_of,conflict_with:entry.conflict_with,preparation_status:blocked?'blocked-review':item.action==='new-content'?'placement-review':replacementDrafts.get(item.index)?.trim()?'draft-validation-required':'verified-replacement-required',replacement_text:!blocked&&item.action==='update-existing'?(replacementDrafts.get(item.index)||''):undefined};
     });
     const payload={schema_version:1,kind:'mba-v2-naturalist-reviewed-action-packet',review_context_sha256:sourceFingerprint,original_source:source,actions,scientific_verification:'reviewer-recorded',requires_review:true,prepared:false,committed:false,published:false,can_auto_publish:false};
     const blob=new Blob([JSON.stringify(payload,null,2)+'\\n'],{type:'application/json'});
