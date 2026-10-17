@@ -18,6 +18,6 @@ export function suggestContentDestination(update,applications){
  }).sort((a,b)=>b.score-a.score||a.app_id.localeCompare(b.app_id));
  const best=ranked[0],second=ranked[1];
  // A section-only match must not redirect an update into an unrelated species.
- if(!best||best.app_overlap===0||best.coverage<0.5||second?.score===best.score||(second?.app_overlap===best.app_overlap&&second?.coverage===best.coverage))return {valid:true,action:'review-placement',reason:'no unambiguous existing application match',candidates:ranked.slice(0,3),requires_review:true,published:false};
+ if(!best||best.app_overlap===0||best.coverage<0.5||second?.score===best.score||(second?.app_overlap===best.app_overlap&&second?.coverage===best.coverage)||(second?.app_overlap===best.app_overlap&&normalize(second?.title)===normalize(best.title)))return {valid:true,action:'review-placement',reason:'no unambiguous existing application match',candidates:ranked.slice(0,3),requires_review:true,published:false};
  return {valid:true,action:'update-existing',app_id:best.app_id,section_id:best.section,confidence:best.coverage===1&&best.score>=9&&!best.section_ambiguous?'high':'medium',requires_review:true,published:false,candidates:ranked.slice(0,3)};
 }
