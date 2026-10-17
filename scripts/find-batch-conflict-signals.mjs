@@ -1,6 +1,7 @@
 // Conservative cross-statement conflict signals; no scientific conclusion is inferred.
-const normalize=text=>String(text??'').toLowerCase().replace(/\b(?:can't|cannot)\b/g,'can not').replace(/\b(?:doesn't|don't|didn't|isn't|aren't|wasn't|weren't|won't)\b/g,'not').replace(/[^a-z0-9]+/g,' ').trim();
-const negated=text=>/\b(?:not|never|no|cannot|can't|doesn't|don't|didn't|isn't|aren't|wasn't|weren't|won't|without|unable)\b/i.test(text);
+const canonical=text=>String(text??'').normalize('NFKC').replace(/[\u2018\u2019]/g,"'");
+const normalize=text=>canonical(text).toLowerCase().replace(/\b(?:can't|cannot)\b/g,'can not').replace(/\b(?:doesn't|don't|didn't|isn't|aren't|wasn't|weren't|won't)\b/g,'not').replace(/[^a-z0-9]+/g,' ').trim();
+const negated=text=>/\b(?:not|never|no|cannot|can't|doesn't|don't|didn't|isn't|aren't|wasn't|weren't|won't|without|unable)\b/i.test(canonical(text));
 const terms=text=>new Set(normalize(text).split(' ').filter(word=>word.length>3&&!['never','cannot','without','doesn','don','didn'].includes(word)));
 // Treat negation as a review signal only when the subject and predicate overlap.
 // A negated clause about another animal or behavior is not a contradiction.
