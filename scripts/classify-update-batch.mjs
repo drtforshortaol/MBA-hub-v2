@@ -1,3 +1,4 @@
+import {findBatchDuplicates} from './find-batch-duplicates.mjs';
 import {assessNaturalistReviewGates} from './assess-naturalist-review-gates.mjs';
 import {proposeUpdatePlacement} from './propose-update-placement.mjs';
 import {extractUpdateStatements} from './extract-update-statements.mjs';
@@ -18,5 +19,12 @@ export function classifyUpdateBatch(input,applications){
   const review=assessNaturalistReviewGates({route,placement,existing_content,extraction:extracted.entries[index].extraction});
   return {index,text,placement,review,source_block:extracted.entries[index].source_block,extraction:extracted.entries[index].extraction,route,existing_content,review_required:true,committed:false,published:false};
  });
+ const duplicates=findBatchDuplicates(entries);
+ for(const item of duplicates.items){
+  entries[item.index].duplicate_of=item.duplicate_of;
+  if(item.duplicate_of!==null){
+   entries[item.index].review={...entries[item.index].review,flags:[...entries[item.index].review.flags,'duplicate-in-submission']};
+  }
+ }
  return {valid:true,entries,requires_review:true,committed:false,published:false};
 }
