@@ -61,7 +61,10 @@ export function reviewActionQueue(decisions,entries){
   // A review decision is not an override for a classifier safety flag.
   // Keep flagged actions visible, but never place them in the preparable queue.
   const duplicate=entry?.duplicate_of!=null;
-  const conflict=Array.isArray(entry?.conflict_with)&&entry.conflict_with.length>0;
+  // Conflicts are undirected safety relationships even when the classifier
+  // records only one side of the pair. Never prepare the unflagged endpoint.
+  const conflict=Array.isArray(entry?.conflict_with)&&entry.conflict_with.length>0||
+   entries.some((other,j)=>j!==index&&Array.isArray(other?.conflict_with)&&other.conflict_with.includes(index));
   const malformed=entry==null||typeof entry!=='object'||Array.isArray(entry)||
    (Object.hasOwn(entry,'duplicate_of')!==Object.hasOwn(entry,'conflict_with'))||
    (Object.hasOwn(entry,'conflict_with')&&!Array.isArray(entry.conflict_with))||
