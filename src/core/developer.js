@@ -347,6 +347,31 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     draftFeedback.textContent=outcomes.length?outcomes.join(', ')+'; validation only, nothing saved or published.':'No reviewed actions to validate.';
    });
    reviewOutput.append(checkDrafts,draftFeedback);
+   const exportDrafts=document.createElement('button');exportDrafts.type='button';exportDrafts.className='button';exportDrafts.textContent='Download validated draft proposals';
+   exportDrafts.addEventListener('click',()=>{
+    if(!isCurrentReview()||!validateDecisions()){intakeStatus.textContent='Review is stale or invalid. No draft exported.';return;}
+    const queue=reviewActionQueue(packet.review_decisions,packet.entries);
+    if(!queue.valid){intakeStatus.textContent='Invalid review queue.';return;}
+    const drafts=[];
+    for(const item of queue.items){
+     const entry=result.entries[item.index];
+     if(item.action!=='update-existing'||entry.duplicate_of!=null||(entry.conflict_with||[]).length)continue;
+     const app=registry.apps.find(a=>a.app_id===entry.route?.app_id);
+     const section=app?.sections?.find(x=>x.id===entry.route?.section_id);
+     const replacement=replacementDrafts.get(item.index);
+     if(entry.route?.action!=='update-existing'||!section||typeof section.text!=='string'||!replacement?.trim())continue;
+     const draft=createDraft(app);draft.description=entry.text.slice(0,4000);
+     draft.section_edits=[{id:section.id,title:section.title,caption:section.caption??'',text:replacement}];
+     if(validateDraft(draft,app).valid)drafts.push({statement_index:item.index,reviewer_notes:item.reviewer_notes,draft});
+    }
+    if(!drafts.length){intakeStatus.textContent='No valid reviewed replacement drafts available for export.';return;}
+    const payload={schema_version:1,kind:'mba-v2-naturalist-draft-proposals',review_context_sha256:sourceFingerprint,drafts,requires_review:true,prepared:false,committed:false,published:false,can_auto_publish:false};
+    const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+    const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='mba-naturalist-draft-proposals.json';link.click();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+    intakeStatus.textContent=drafts.length+' validated local draft proposals exported. No content saved or published.';
+   });
+   reviewOutput.append(exportDrafts);
    const exportQueue=document.createElement('button');exportQueue.type='button';exportQueue.className='button';exportQueue.textContent='Download reviewed action packet';
    exportQueue.addEventListener('click',()=>{
     if(!isCurrentReview()||!validateDecisions()){intakeStatus.textContent='Current, valid review decisions required before export.';return;}
