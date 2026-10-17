@@ -164,6 +164,12 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
       related.append(jump);
      }
     }
+    if(Number.isInteger(entry.duplicate_of)&&entry.duplicate_of>=0&&entry.duplicate_of<packet.entries.length&&entry.duplicate_of!==entry.index){
+     const duplicateLabel=document.createElement('p');duplicateLabel.textContent='Possible duplicate of statement '+(entry.duplicate_of+1)+'. Compare before deciding whether to retain both.';
+     const jumpDuplicate=document.createElement('button');jumpDuplicate.type='button';jumpDuplicate.className='button';jumpDuplicate.textContent='View original statement '+(entry.duplicate_of+1);
+     jumpDuplicate.addEventListener('click',()=>{if(!isCurrentReview())return;showStatement(entry.duplicate_of);statementCards[entry.duplicate_of]?.scrollIntoView({block:'nearest'});});
+     related.append(duplicateLabel,jumpDuplicate);
+    }
     const warning=document.createElement('p');warning.className='quiet';
     warning.textContent='Pending scientific verification and editorial approval. This packet cannot publish updates.';
     const decision=packet.review_decisions[entry.index];
