@@ -18,3 +18,13 @@ test('developer bundle contains Naturalist review safeguards and tester excludes
  assert.match(developer,/naturalist-review-state\.js/);
  assert.equal(fs.existsSync(path.join(root,'dist/tester/core/developer.js')),false);
 });
+
+test('mobile review navigation exposes one expanded statement at a time',()=>{
+ const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
+ assert.match(code,/aria-label','Naturalist statement navigation/);
+ assert.match(code,/statementCards\[i\]\.hidden=i!==activeStatement/);
+ assert.match(code,/statementCards\[i\]\.open=i===activeStatement/);
+ assert.match(code,/previous\.disabled=activeStatement===0/);
+ assert.match(code,/next\.disabled=activeStatement===statementCards\.length-1/);
+ assert.match(code,/statementCards\.length>1/);
+});
