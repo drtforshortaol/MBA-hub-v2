@@ -49,6 +49,8 @@ jobs:
           retention-days: 14
 
   deploy:
+    # Preview publication requires explicit authorization; build artifacts remain downloadable.
+    if: ${{ false }}
     name: Deploy public iPhone preview
     needs: preview
     runs-on: ubuntu-latest
