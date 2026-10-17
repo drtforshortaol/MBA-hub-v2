@@ -28,3 +28,13 @@ test('mobile review navigation exposes one expanded statement at a time',()=>{
  assert.match(code,/next\.disabled=activeStatement===statementCards\.length-1/);
  assert.match(code,/statementCards\.length>1/);
 });
+
+test('scientific conflict links navigate to related statements without editing decisions',()=>{
+ const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
+ assert.match(code,/entry\.conflict_with\?\.length/);
+ assert.match(code,/Number\.isInteger\(relatedIndex\)/);
+ assert.match(code,/relatedIndex>=packet\.entries\.length/);
+ assert.match(code,/showStatement\(relatedIndex\)/);
+ assert.match(code,/statementCards\[relatedIndex\]\?\.scrollIntoView/);
+ assert.match(code,/item\.append\(label,body,flags,related,details,warning,form\)/);
+});
