@@ -46,13 +46,16 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    if(!result.valid){intakeStatus.textContent=(result.errors||['Invalid source']).join('; ');return;}
    const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',original_source:source,review_summary:summarizeNaturalistReview(result.entries),entries:result.entries.map(entry=>({index:entry.index,duplicate_of:entry.duplicate_of,source_text:entry.text,source_block:entry.source_block,extraction:entry.extraction,placement:entry.placement,review:entry.review,existing_content:entry.existing_content,review_required:true})),scientific_verification:'required',editorial_review:'required',requires_review:true,prepared:false,committed:false,published:false};
    // Review decisions are annotations only: never mutate canonical classifications.
-   const sourceFingerprint=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(source)).then(bytes=>Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join(''));
+   // Include the classification outcome in the review key: a registry or routing
+   // change must not silently reattach decisions to different proposed targets.
+   const reviewIdentity=JSON.stringify({source,entries:packet.entries.map(e=>({text:e.source_text,placement:e.placement,review_flags:e.review.flags,existing_content:e.existing_content}))});
+   const sourceFingerprint=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(reviewIdentity)).then(bytes=>Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join(''));
    const reviewKey=env.namespace+':naturalist-review:'+sourceFingerprint;
-   packet.source_sha256=sourceFingerprint;
+   packet.review_context_sha256=sourceFingerprint;
    packet.review_decisions=packet.entries.map(entry=>({index:entry.index,scientific_status:'pending',editorial_status:'pending',proposed_action:'needs-review',reviewer_notes:''}));
    try{
     const saved=JSON.parse(localStorage.getItem(reviewKey)||'null');
-    if(saved?.schema_version===1&&saved.source_sha256===sourceFingerprint&&Array.isArray(saved.review_decisions)&&saved.review_decisions.length===packet.entries.length){
+    if(saved?.schema_version===1&&saved.review_context_sha256===sourceFingerprint&&Array.isArray(saved.review_decisions)&&saved.review_decisions.length===packet.entries.length){
      const science=new Set(['pending','needs-revision','verified']),editorial=new Set(['pending','needs-revision','approved']),actions=new Set(['needs-review','update-existing','new-content','no-change']);
      for(const [index,decision] of saved.review_decisions.entries()){
       if(decision?.index!==index||!science.has(decision.scientific_status)||!editorial.has(decision.editorial_status)||!actions.has(decision.proposed_action)||typeof decision.reviewer_notes!=='string'||decision.reviewer_notes.length>4000)throw Error('Invalid saved review');
@@ -75,7 +78,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    const saveReview=()=>{
     if(intakeText.value!==source){intakeStatus.textContent='Source changed. Regenerate before saving.';return;}
     try{
-     localStorage.setItem(reviewKey,JSON.stringify({schema_version:1,source_sha256:sourceFingerprint,review_decisions:packet.review_decisions}));
+     localStorage.setItem(reviewKey,JSON.stringify({schema_version:1,review_context_sha256:sourceFingerprint,review_decisions:packet.review_decisions}));
      intakeStatus.textContent='Review decisions saved on this device. No publication or approval authority granted.';
     }catch{intakeStatus.textContent='Local storage unavailable; download the review packet to retain decisions.';}
    };
