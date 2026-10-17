@@ -125,7 +125,20 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     }
     intakeStatus.textContent='No automatically flagged statements. Scientific and editorial review is still required.';
    });
-   navigation.append(previous,position,next,nextPending,nextFlagged);
+   const nextRevision=document.createElement('button');nextRevision.type='button';nextRevision.className='button';nextRevision.textContent='Next needs-revision decision';
+   nextRevision.addEventListener('click',()=>{
+    if(!isCurrentReview())return;
+    const count=statementCards.length;
+    for(let offset=1;offset<=count;offset++){
+     const index=(activeStatement+offset)%count;
+     const decision=packet.review_decisions[index];
+     if(decision.scientific_status==='needs-revision'||decision.editorial_status==='needs-revision'){
+      showStatement(index);statementCards[index]?.scrollIntoView({block:'nearest'});return;
+     }
+    }
+    intakeStatus.textContent='No reviewer-marked revision decisions in this packet.';
+   });
+   navigation.append(previous,position,next,nextPending,nextFlagged,nextRevision);
    const heading=document.createElement('h4');heading.textContent='Proposed updates — review required';
    const summary=document.createElement('p');summary.textContent=packet.review_summary.statement_count+' statements; '+packet.review_summary.duplicate_statement_count+' repeated within submission; '+(packet.conflict_signals?.length??0)+' potential scientific conflict pairs. All findings require human review.';
    reviewOutput.append(heading,summary);
