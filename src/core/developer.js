@@ -98,6 +98,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     for(let i=0;i<statementCards.length;i++){statementCards[i].hidden=i!==activeStatement;statementCards[i].open=i===activeStatement;}
     previous.disabled=activeStatement===0;next.disabled=activeStatement===statementCards.length-1;
     position.textContent=' Statement '+(activeStatement+1)+' of '+statementCards.length+' ';
+    if(jumpToStatement)jumpToStatement.value=String(activeStatement);
    }
    previous.addEventListener('click',()=>{if(isCurrentReview())showStatement(activeStatement-1);});
    next.addEventListener('click',()=>{if(isCurrentReview())showStatement(activeStatement+1);});
@@ -138,7 +139,18 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     }
     intakeStatus.textContent='No reviewer-marked revision decisions in this packet.';
    });
-   navigation.append(previous,position,next,nextPending,nextFlagged,nextRevision);
+   const jumpToStatement=document.createElement('select');jumpToStatement.setAttribute('aria-label','Jump to statement');
+   packet.entries.forEach((entry,index)=>{
+    const option=document.createElement('option');option.value=String(index);
+    option.textContent=(index+1)+'. '+entry.source_text.slice(0,65);
+    jumpToStatement.append(option);
+   });
+   jumpToStatement.addEventListener('change',()=>{
+    if(!isCurrentReview())return;
+    const index=Number(jumpToStatement.value);
+    if(Number.isInteger(index)&&index>=0&&index<statementCards.length){showStatement(index);statementCards[index]?.scrollIntoView({block:'nearest'});}
+   });
+   navigation.append(previous,position,next,nextPending,nextFlagged,nextRevision,jumpToStatement);
    const heading=document.createElement('h4');heading.textContent='Proposed updates — review required';
    const summary=document.createElement('p');summary.textContent=packet.review_summary.statement_count+' statements; '+packet.review_summary.duplicate_statement_count+' repeated within submission; '+(packet.conflict_signals?.length??0)+' potential scientific conflict pairs. All findings require human review.';
    reviewOutput.append(heading,summary);
