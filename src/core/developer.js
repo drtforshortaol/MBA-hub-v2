@@ -1,5 +1,6 @@
 import {createDraft,loadDraft,saveDraft,validateDraft} from './content-drafts.js';
 import {request} from './worker-channel.js';
+import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview} from './naturalist-review-state.js';
 const env=await fetch('environment.json').then(r=>r.json());if(!env.developer)throw Error('Developer module prohibited in this environment');
 const panel=document.querySelector('#developer'),title=document.querySelector('#title');let taps=0,last=0;
 title.addEventListener('click',()=>{if(Date.now()-last>2200)taps=0;last=Date.now();if(++taps===5){taps=0;panel.hidden=!panel.hidden;if(!panel.hidden)render();}});
@@ -50,52 +51,29 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    // change must not silently reattach decisions to different proposed targets.
    const reviewIdentity=JSON.stringify({source,entries:packet.entries.map(e=>({text:e.source_text,placement:e.placement,review_flags:e.review.flags,existing_content:e.existing_content}))});
    const sourceFingerprint=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(reviewIdentity)).then(bytes=>Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join(''));
-   const reviewKey=env.namespace+':naturalist-review:'+sourceFingerprint;
+   const reviewKey=reviewStorageKey(env.namespace,sourceFingerprint);
    const legacySourceFingerprint=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(source)).then(bytes=>Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join(''));
-   const legacyReviewKey=env.namespace+':naturalist-review:'+legacySourceFingerprint;
+   const legacyReviewKey=reviewStorageKey(env.namespace,legacySourceFingerprint);
    packet.review_context_sha256=sourceFingerprint;
-   packet.review_decisions=packet.entries.map(entry=>({index:entry.index,scientific_status:'pending',editorial_status:'pending',proposed_action:'needs-review',reviewer_notes:''}));
-   try{
-    const saved=JSON.parse(localStorage.getItem(reviewKey)||'null');
-    if(saved?.schema_version===1&&saved.review_context_sha256===sourceFingerprint&&Array.isArray(saved.review_decisions)&&saved.review_decisions.length===packet.entries.length){
-     const science=new Set(['pending','needs-revision','verified']),editorial=new Set(['pending','needs-revision','approved']),actions=new Set(['needs-review','update-existing','new-content','no-change']);
-     for(const [index,decision] of saved.review_decisions.entries()){
-      if(decision?.index!==index||!science.has(decision.scientific_status)||!editorial.has(decision.editorial_status)||!actions.has(decision.proposed_action)||typeof decision.reviewer_notes!=='string'||decision.reviewer_notes.length>4000)throw Error('Invalid saved review');
-     }
-     packet.review_decisions=saved.review_decisions.map(decision=>({...decision}));
-    }
-   }catch{intakeStatus.textContent='Saved review unavailable; using pending decisions.';}
-   // Only annotations are persisted. The key fingerprints source and current
-   // classification context; neither original notes nor extracted source text
-   // are stored in the local review record.
+   packet.review_decisions=newReviewDecisions(packet.entries);
+   const saved=readReview(localStorage,reviewKey,sourceFingerprint,packet.entries);
+   if(saved)packet.review_decisions=saved;
    function reviewDecisionSummary(){
-    const decisions=packet.review_decisions;
-    const completed=decisions.filter(d=>d.scientific_status==='verified'&&d.editorial_status==='approved').length;
-    const revisions=decisions.filter(d=>d.scientific_status==='needs-revision'||d.editorial_status==='needs-revision').length;
-    return completed+' of '+decisions.length+' reviewed in both stages; '+revisions+' flagged for revision. Publication remains disabled.';
+    const progress=reviewProgress(packet.review_decisions);
+    return progress.completed+' of '+progress.total+' reviewed in both stages; '+progress.revisions+' flagged for revision. Publication remains disabled.';
    }
-   const reviewProgress=document.createElement('p');reviewProgress.setAttribute('role','status');
-   const updateReviewSummary=()=>{reviewProgress.textContent=reviewDecisionSummary();};
+   const reviewProgressDisplay=document.createElement('p');reviewProgressDisplay.setAttribute('role','status');
+   const updateReviewSummary=()=>{reviewProgressDisplay.textContent=reviewDecisionSummary();};
    updateReviewSummary();
-   reviewOutput.append(reviewProgress);
-   const validateDecisions=()=>{
-    const scientific=new Set(['pending','needs-revision','verified']);
-    const editorial=new Set(['pending','needs-revision','approved']);
-    const actions=new Set(['needs-review','update-existing','new-content','no-change']);
-    return packet.review_decisions.length===packet.entries.length&&packet.review_decisions.every((decision,index)=>
-     decision&&decision.index===index&&scientific.has(decision.scientific_status)&&editorial.has(decision.editorial_status)&&
-     actions.has(decision.proposed_action)&&typeof decision.reviewer_notes==='string'&&decision.reviewer_notes.length<=4000);
-   };
+   reviewOutput.append(reviewProgressDisplay);
+   const validateDecisions=()=>validateReviewDecisions(packet.review_decisions,packet.entries);
    // Retire legacy source-only review keys without importing their decisions:
    // the old key did not bind approvals to the current routing context.
    if(legacyReviewKey!==reviewKey){try{localStorage.removeItem(legacyReviewKey);}catch{/* storage may be unavailable */}}
    const saveReview=()=>{
     if(intakeText.value!==source){intakeStatus.textContent='Source changed. Regenerate before saving.';return;}
     if(!validateDecisions()){intakeStatus.textContent='Review decisions invalid. Nothing saved.';return;}
-    try{
-     localStorage.setItem(reviewKey,JSON.stringify({schema_version:1,review_context_sha256:sourceFingerprint,review_decisions:packet.review_decisions}));
-     intakeStatus.textContent='Review decisions saved on this device. No publication or approval authority granted.';
-    }catch{intakeStatus.textContent='Local storage unavailable; download the review packet to retain decisions.';}
+    intakeStatus.textContent=writeReview(localStorage,reviewKey,sourceFingerprint,packet.review_decisions,packet.entries)?'Review decisions saved on this device. Publication remains disabled.':'Local storage unavailable; download the review packet to retain decisions.';
    };
    const heading=document.createElement('h4');heading.textContent='Proposed updates — review required';
    const summary=document.createElement('p');summary.textContent=packet.review_summary.statement_count+' statements; '+packet.review_summary.duplicate_statement_count+' repeated within submission.';
