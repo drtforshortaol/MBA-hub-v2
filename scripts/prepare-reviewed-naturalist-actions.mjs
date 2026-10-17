@@ -14,8 +14,12 @@ export function prepareReviewedNaturalistActions(classification,decisions,applic
   if(action==='new-content')return {index,action,status:'placement-review',placement:entry.placement,reviewer_notes};
   const replacement=replacements[index];
   if(typeof replacement!=='string'||!replacement.trim())return {index,action,status:'replacement-required',reviewer_notes};
+  const route=entry.route;
+  if(!route||route.action!=='update-existing'||typeof route.app_id!=='string'||typeof route.section_id!=='string')
+   return {index,action,status:'routing-review',reason:'classification lacks a specific existing section',reviewer_notes};
   const result=prepareAutomaticUpdate(entry.text,applications,{replacementText:replacement});
-  return {index,action,status:result.prepared===true?'draft-ready':'routing-review',result,reviewer_notes};
+  const matches=result.prepared===true&&result.app_id===route.app_id&&result.section_id===route.section_id&&result.request?.app_id===route.app_id&&result.request?.section_edits?.[0]?.id===route.section_id;
+  return {index,action,status:matches?'draft-ready':'routing-review',result,reviewer_notes};
  });
  return {valid:true,reason:queue.reason,items,prepared:items.length>0&&items.every(item=>item.status==='draft-ready'),published:false,can_auto_publish:false};
 }
