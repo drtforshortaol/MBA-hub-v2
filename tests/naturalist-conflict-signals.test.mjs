@@ -32,3 +32,9 @@ test('both sides of potential conflicts are flagged for review',()=>{
  assert.deepEqual(result.entries[1].conflict_with,[0]);
  assert.ok(result.entries.every(e=>e.review.flags.includes('possible-scientific-conflict-in-submission')));
 });
+
+test('negation differences without shared scientific subject remain unflagged',()=>{
+ const result=findBatchConflictSignals([{text:'Sea otters use tools to open shellfish'},{text:'Octopuses do not use tools to open shellfish'}]);
+ assert.equal(result.items.length,0);
+ assert.equal(result.can_auto_publish,false);
+});
