@@ -125,6 +125,19 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      dd.style.whiteSpace='pre-wrap';dd.style.overflowWrap='anywhere';
      details.append(dt,dd);
     }
+    // Reviewers can jump directly between related statements without losing decisions.
+    const related=document.createElement('div');
+    if(entry.conflict_with?.length){
+     const relatedLabel=document.createElement('p');relatedLabel.textContent='Potential scientific conflict — compare statements:';
+     related.append(relatedLabel);
+     for(const relatedIndex of entry.conflict_with){
+      if(!Number.isInteger(relatedIndex)||relatedIndex<0||relatedIndex>=packet.entries.length||relatedIndex===entry.index)continue;
+      const jump=document.createElement('button');jump.type='button';jump.className='button';
+      jump.textContent='View statement '+(relatedIndex+1);
+      jump.addEventListener('click',()=>{showStatement(relatedIndex);statementCards[relatedIndex]?.scrollIntoView({block:'nearest'});});
+      related.append(jump);
+     }
+    }
     const warning=document.createElement('p');warning.className='quiet';
     warning.textContent='Pending scientific verification and editorial approval. This packet cannot publish updates.';
     const decision=packet.review_decisions[entry.index];
@@ -151,7 +164,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     const notes=document.createElement('textarea');notes.rows=3;notes.maxLength=4000;notes.style.width='100%';
     notes.value=decision.reviewer_notes;notes.addEventListener('input',()=>{decision.reviewer_notes=notes.value;saveReview();});
     notesLabel.append(notes);form.append(notesLabel);
-    item.append(label,body,flags,details,warning,form);reviewOutput.append(item);statementCards.push(item);
+    item.append(label,body,flags,related,details,warning,form);reviewOutput.append(item);statementCards.push(item);
    }
    if(statementCards.length>1){reviewOutput.insertBefore(navigation,statementCards[0]);showStatement(0);}
    const clearButton=document.createElement('button');clearButton.type='button';clearButton.className='button';clearButton.textContent='Reset saved review decisions';
