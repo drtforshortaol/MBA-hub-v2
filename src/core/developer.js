@@ -317,7 +317,24 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     }
    }
    refreshQueue.addEventListener('click',showQueue);
-   reviewOutput.append(queueHeading,queueStatus,refreshQueue,queueItems);
+   const exportQueue=document.createElement('button');exportQueue.type='button';exportQueue.className='button';exportQueue.textContent='Download reviewed action packet';
+   exportQueue.addEventListener('click',()=>{
+    if(!isCurrentReview()||!validateDecisions()){intakeStatus.textContent='Current, valid review decisions required before export.';return;}
+    const queue=reviewActionQueue(packet.review_decisions,packet.entries);
+    if(!queue.valid){intakeStatus.textContent='Invalid action queue.';return;}
+    const actions=queue.items.map(item=>{
+     const entry=packet.entries[item.index];
+     const blocked=entry.duplicate_of!=null||(entry.conflict_with||[]).length>0;
+     return {index:item.index,action:item.action,source_text:entry.source_text,placement:entry.placement,reviewer_notes:item.reviewer_notes,duplicate_of:entry.duplicate_of,conflict_with:entry.conflict_with,preparation_status:blocked?'blocked-review':item.action==='new-content'?'placement-review':'verified-replacement-required'};
+    });
+    const payload={schema_version:1,kind:'mba-v2-naturalist-reviewed-action-packet',review_context_sha256:sourceFingerprint,original_source:source,actions,scientific_verification:'reviewer-recorded',requires_review:true,prepared:false,committed:false,published:false,can_auto_publish:false};
+    const blob=new Blob([JSON.stringify(payload,null,2)+'\\n'],{type:'application/json'});
+    const url=URL.createObjectURL(blob),link=document.createElement('a');
+    link.href=url;link.download='mba-naturalist-reviewed-actions.json';link.click();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+    intakeStatus.textContent='Reviewed action packet downloaded. No application content changed.';
+   });
+   reviewOutput.append(queueHeading,queueStatus,refreshQueue,queueItems,exportQueue);
    showQueue();
    intakeStatus.textContent='Review packet ready. Nothing approved, committed, or published.';
   }catch(error){if(generation===activeReviewGeneration)intakeStatus.textContent='Review generation unavailable: '+error.message;}
