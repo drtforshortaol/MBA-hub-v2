@@ -112,3 +112,13 @@ test('inline comparison presents original evidence without changing review decis
  assert.match(code,/Other proposed placement:/);
  assert.match(code,/related\.append\(comparison\)/);
 });
+
+test('existing-content comparison presents source, classifier evidence and review warning',()=>{
+ const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
+ assert.match(code,/aria-label','Existing content comparison/);
+ assert.match(code,/Naturalist statement: '\+entry\.source_text/);
+ assert.match(code,/JSON\.stringify\(entry\.existing_content\?\?null,null,2\)/);
+ assert.match(code,/Proposed destination:/);
+ assert.match(code,/Automated comparison is advisory/);
+ assert.match(code,/details\.append\(existingComparison\)/);
+});
