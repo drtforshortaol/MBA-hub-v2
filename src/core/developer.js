@@ -170,6 +170,23 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      jumpDuplicate.addEventListener('click',()=>{if(!isCurrentReview())return;showStatement(entry.duplicate_of);statementCards[entry.duplicate_of]?.scrollIntoView({block:'nearest'});});
      related.append(duplicateLabel,jumpDuplicate);
     }
+    // Side-by-side textual evidence keeps both statements visible on mobile.
+    if((entry.conflict_with||[]).length||Number.isInteger(entry.duplicate_of)){
+     const comparison=document.createElement('section');comparison.setAttribute('aria-label','Statement comparison');
+     const comparisonTitle=document.createElement('h5');comparisonTitle.textContent='Compare source statements';comparison.append(comparisonTitle);
+     const candidates=[...(entry.conflict_with||[]),entry.duplicate_of];
+     for(const candidate of new Set(candidates)){
+      if(!Number.isInteger(candidate)||candidate<0||candidate>=packet.entries.length||candidate===entry.index)continue;
+      const other=packet.entries[candidate];
+      const row=document.createElement('div');
+      const heading=document.createElement('strong');heading.textContent='Statement '+(candidate+1)+(candidate===entry.duplicate_of?' — possible duplicate':' — potential conflict');
+      const original=document.createElement('p');original.textContent='Current: '+entry.source_text;
+      const counterpart=document.createElement('p');counterpart.textContent='Compare: '+other.source_text;
+      const context=document.createElement('p');context.textContent='Other proposed placement: '+(other.placement.target_app_id||'unresolved')+' / '+(other.placement.target_section_id||'unresolved');
+      row.append(heading,original,counterpart,context);comparison.append(row);
+     }
+     related.append(comparison);
+    }
     const warning=document.createElement('p');warning.className='quiet';
     warning.textContent='Pending scientific verification and editorial approval. This packet cannot publish updates.';
     const decision=packet.review_decisions[entry.index];
