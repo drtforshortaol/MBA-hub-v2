@@ -151,6 +151,17 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      dd.style.whiteSpace='pre-wrap';dd.style.overflowWrap='anywhere';
      details.append(dt,dd);
     }
+    // Present canonical existing-content evidence before proposing a change.
+    const existingComparison=document.createElement('section');
+    existingComparison.setAttribute('aria-label','Existing content comparison');
+    const existingHeading=document.createElement('h5');existingHeading.textContent='Compare with existing content';
+    const existingSource=document.createElement('p');existingSource.textContent='Naturalist statement: '+entry.source_text;
+    const existingAssessment=document.createElement('pre');existingAssessment.style.whiteSpace='pre-wrap';existingAssessment.style.overflowWrap='anywhere';
+    existingAssessment.textContent='Classifier assessment: '+JSON.stringify(entry.existing_content??null,null,2);
+    const existingTarget=document.createElement('p');existingTarget.textContent='Proposed destination: '+(entry.placement.target_app_id||'unresolved')+' / '+(entry.placement.target_section_id||'unresolved');
+    const existingWarning=document.createElement('p');existingWarning.textContent='Automated comparison is advisory; verify against the original content before approving changes.';
+    existingComparison.append(existingHeading,existingSource,existingAssessment,existingTarget,existingWarning);
+    details.append(existingComparison);
     // Reviewers can jump directly between related statements without losing decisions.
     const related=document.createElement('div');
     if(entry.conflict_with?.length){
