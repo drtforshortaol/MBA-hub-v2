@@ -166,3 +166,15 @@ test('read-only action queue includes only fully approved actionable changes',as
  assert.deepEqual(reviewActionQueue(decisions,entries).items.map(item=>item.index),[1]);
  assert.deepEqual(reviewActionQueue([{...decisions[0],published:true},decisions[1]],entries),{valid:false,reason:'invalid-decisions',items:[],can_auto_publish:false});
 });
+
+test('flagged duplicate and scientific conflict actions are quarantined even after both approvals',async()=>{
+ const {reviewActionQueue}=await import('../src/core/naturalist-review-state.js');
+ const flagged=[{index:0,source_text:'A',duplicate_of:1,conflict_with:[]},{index:1,source_text:'B',duplicate_of:null,conflict_with:[2]},{index:2,source_text:'C',duplicate_of:null,conflict_with:[]}];
+ const decisions=newReviewDecisions(flagged);
+ decisions.forEach(d=>{d.scientific_status='verified';d.editorial_status='approved';d.proposed_action='update-existing';});
+ const queue=reviewActionQueue(decisions,flagged);
+ assert.equal(queue.valid,true);
+ assert.deepEqual(queue.items.map(i=>i.index),[2]);
+ assert.deepEqual(queue.blocked_items.map(i=>[i.index,i.block_reasons]),[[0,['duplicate']],[1,['scientific-conflict']]]);
+ assert.equal(queue.can_auto_publish,false);
+});
