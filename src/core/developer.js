@@ -32,8 +32,10 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
  const reviewOutput=document.createElement('div');reviewOutput.setAttribute('aria-live','polite');
  intake.insertBefore(reviewButton,intakeStatus);intake.insertBefore(reviewOutput,intakeStatus);
  // Invalidate generated decisions immediately when their source changes.
- intakeText.addEventListener('input',()=>{reviewOutput.replaceChildren();delete reviewOutput.dataset.reviewFingerprint;intakeStatus.textContent='Source changed. Generate a new review packet before downloading.';});
+ intakeText.addEventListener('input',()=>{activeReviewGeneration++;reviewOutput.replaceChildren();delete reviewOutput.dataset.reviewFingerprint;intakeStatus.textContent='Source changed. Generate a new review packet before downloading.';});
+ let activeReviewGeneration=0;
  reviewButton.addEventListener('click',async()=>{
+  const generation=++activeReviewGeneration;
   reviewOutput.replaceChildren();
   const source=intakeText.value;
   if(!source.trim()){intakeStatus.textContent='Source notes are required.';return;}
@@ -43,8 +45,10 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     import('./naturalist-engine/classify-update-batch.js'),
     import('./naturalist-engine/summarize-naturalist-review.js')
    ]);
+   if(generation!==activeReviewGeneration||intakeText.value!==source)return;
    const result=classifyUpdateBatch(source,registry.apps);
    if(!result.valid){intakeStatus.textContent=(result.errors||['Invalid source']).join('; ');return;}
+   if(generation!==activeReviewGeneration||intakeText.value!==source)return;
    const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',original_source:source,review_summary:summarizeNaturalistReview(result.entries),entries:result.entries.map(entry=>({index:entry.index,duplicate_of:entry.duplicate_of,source_text:entry.text,source_block:entry.source_block,extraction:entry.extraction,placement:entry.placement,review:entry.review,existing_content:entry.existing_content,review_required:true})),scientific_verification:'required',editorial_review:'required',requires_review:true,prepared:false,committed:false,published:false};
    // Review decisions are annotations only: never mutate canonical classifications.
    // Include the classification outcome in the review key: a registry or routing
@@ -148,7 +152,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     link.href=url;link.download='mba-naturalist-review-packet.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
    };
    reviewOutput.append(download);intakeStatus.textContent='Review packet ready. Nothing approved, committed, or published.';
-  }catch(error){intakeStatus.textContent='Review generation unavailable: '+error.message;}
+  }catch(error){if(generation===activeReviewGeneration)intakeStatus.textContent='Review generation unavailable: '+error.message;}
  });
  const inventory=document.querySelector('#app-inventory'),filter=document.querySelector('#app-filter');
  const registry=await fetch('registry.json').then(r=>{if(!r.ok)throw Error('Registry unavailable');return r.json();});
