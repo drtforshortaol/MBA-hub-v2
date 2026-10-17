@@ -175,7 +175,7 @@ test('flagged duplicate and scientific conflict actions are quarantined even aft
  const queue=reviewActionQueue(decisions,flagged);
  assert.equal(queue.valid,true);
  assert.deepEqual(queue.items.map(i=>i.index),[]);
- assert.deepEqual(queue.blocked_items.map(i=>[i.index,i.block_reasons]),[[0,['duplicate']],[1,['scientific-conflict']],[2,['scientific-conflict']]]);
+ assert.deepEqual(queue.blocked_items.map(i=>[i.index,i.block_reasons]),[[0,['duplicate']],[1,['duplicate','scientific-conflict']],[2,['scientific-conflict']]]);
  assert.equal(queue.can_auto_publish,false);
 });
 
@@ -253,5 +253,17 @@ test('reordered classifier entries cannot be prepared under approved decision in
  assert.deepEqual(queue.items.map(x=>x.index),[2]);
  assert.deepEqual(queue.blocked_items.map(x=>x.index),[0,1]);
  assert.ok(queue.blocked_items.every(x=>x.block_reasons.includes('invalid-classification')));
+ assert.equal(queue.can_auto_publish,false);
+});
+
+test('original and duplicate Naturalist statements are both quarantined',async()=>{
+ const {reviewActionQueue}=await import('../src/core/naturalist-review-state.js');
+ const entries=[{index:0,duplicate_of:null,conflict_with:[]},{index:1,duplicate_of:0,conflict_with:[]},{index:2,duplicate_of:null,conflict_with:[]}];
+ const decisions=newReviewDecisions(entries);
+ decisions.forEach(d=>{d.scientific_status='verified';d.editorial_status='approved';d.proposed_action='update-existing';});
+ const queue=reviewActionQueue(decisions,entries);
+ assert.deepEqual(queue.items.map(x=>x.index),[2]);
+ assert.deepEqual(queue.blocked_items.map(x=>x.index),[0,1]);
+ assert.ok(queue.blocked_items.every(x=>x.block_reasons.includes('duplicate')));
  assert.equal(queue.can_auto_publish,false);
 });
