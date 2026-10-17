@@ -1,0 +1,22 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {findBatchConflictSignals} from '../scripts/find-batch-conflict-signals.mjs';
+import {classifyUpdateBatch} from '../scripts/classify-update-batch.mjs';
+test('flags similar statements with differing negation for scientific review',()=>{
+ const input=[{text:'Sea otters use tools to open shellfish'},{text:'Sea otters do not use tools to open shellfish'}];
+ const result=findBatchConflictSignals(input);
+ assert.equal(result.items.length,1);
+ assert.equal(result.items[0].compared_with,0);
+ assert.equal(result.can_auto_publish,false);
+});
+test('does not label repeated affirmative statements as conflicts',()=>{
+ assert.deepEqual(findBatchConflictSignals([{text:'Sea otters use tools'},{text:'Sea otters use tools'}]).items,[]);
+});
+test('classification retains review-only conflict flags',()=>{
+ const result=classifyUpdateBatch('Sea otters use tools to open shellfish. Sea otters do not use tools to open shellfish.',[]);
+ assert.equal(result.valid,true);
+ assert.equal(result.entries.length,2);
+ assert.equal(result.conflict_signals.length,1);
+ assert.ok(result.entries[1].review.flags.includes('possible-scientific-conflict-in-submission'));
+ assert.equal(result.published,false);
+});
