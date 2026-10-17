@@ -267,3 +267,12 @@ test('original and duplicate Naturalist statements are both quarantined',async()
  assert.ok(queue.blocked_items.every(x=>x.block_reasons.includes('duplicate')));
  assert.equal(queue.can_auto_publish,false);
 });
+
+test('portable review import refuses reordered classification records',()=>{
+ const entries=[{index:0,source_text:'A',duplicate_of:null,conflict_with:[],placement:null,review:null,existing_content:null},{index:1,source_text:'B',duplicate_of:null,conflict_with:[],placement:null,review:null,existing_content:null}];
+ const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',review_context_sha256:'hash',review_decisions:newReviewDecisions(entries),entries:structuredClone(entries)};
+ assert.deepEqual(importReviewPacket(packet,'hash',entries),packet.review_decisions);
+ const reversed=structuredClone(entries).reverse();
+ assert.equal(importReviewPacket({...packet,entries:reversed},'hash',entries),null);
+ assert.equal(importReviewPacket({...packet,entries:[null,entries[1]]},'hash',entries),null);
+});
