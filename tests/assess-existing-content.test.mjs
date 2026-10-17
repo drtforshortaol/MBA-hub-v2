@@ -22,3 +22,16 @@ test('punctuation-only changes are still duplicates',()=>{
  assert.equal(r.scientific_verification,'required');
  assert.equal(r.published,false);
 });
+
+test('negation difference is a review signal, never a verified contradiction',()=>{
+ const result=assessExistingContent('Sea otters do not use rocks to open shellfish.',app);
+ assert.equal(result.potential_conflict_signal,'negation-difference-review');
+ assert.equal(result.contradiction_check,'not-performed');
+ assert.equal(result.published,false);
+});
+test('exact match outside selected section reports actual section',()=>{
+ const sample={...app,sections:[{id:'other',title:'Other',text:'Unrelated.'},...app.sections]};
+ const result=assessExistingContent('Sea otters use rocks to open shellfish.',sample,{sectionId:'other'});
+ assert.equal(result.status,'exact-duplicate');
+ assert.equal(result.match.section_id,'tools');
+});
