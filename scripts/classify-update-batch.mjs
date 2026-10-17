@@ -9,6 +9,7 @@ import {assessExistingContent} from './assess-existing-content.mjs';
 export function classifyUpdateBatch(input,applications){
  if(typeof input!=='string'||!input.trim())return {valid:false,errors:['update text required']};
  if(input.length>60000)return {valid:false,errors:['update exceeds intake limit']};
+ if(!Array.isArray(applications))return {valid:false,errors:['application catalog required']};
  const extracted=extractUpdateStatements(input);
  if(!extracted.valid)return extracted;
  const blocks=extracted.entries.map(e=>e.text);
