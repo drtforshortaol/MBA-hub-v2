@@ -105,3 +105,9 @@ test('invalid proposed actions never count as completed even in advisory progres
  assert.equal(reviewProgress(decisions).completed,0);
  assert.equal(reviewRecoveryCheck(decisions,entries).valid,false);
 });
+
+test('advisory progress tolerates null and primitive records without marking review complete',()=>{
+ const malformed=[null,undefined,42,'unexpected',[],{scientific_status:'verified',editorial_status:'approved',proposed_action:'publish'}];
+ assert.deepEqual(reviewProgress(malformed),{completed:0,total:6,revisions:0,can_auto_publish:false});
+ assert.equal(reviewRecoveryCheck(malformed,malformed).valid,false);
+});
