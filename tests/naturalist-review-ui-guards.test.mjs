@@ -122,3 +122,11 @@ test('existing-content comparison presents source, classifier evidence and revie
  assert.match(code,/Automated comparison is advisory/);
  assert.match(code,/details\.append\(existingComparison\)/);
 });
+
+test('revision triage navigates reviewer decisions without changing them',()=>{
+ const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
+ assert.match(code,/Next needs-revision decision/);
+ assert.match(code,/decision\.scientific_status==='needs-revision'\|\|decision\.editorial_status==='needs-revision'/);
+ assert.match(code,/if\(!isCurrentReview\(\)\)return/);
+ assert.match(code,/navigation\.append\(previous,position,next,nextPending,nextFlagged,nextRevision\)/);
+});
