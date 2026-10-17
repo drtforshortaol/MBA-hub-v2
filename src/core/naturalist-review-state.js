@@ -52,10 +52,18 @@ export function importReviewPacket(packet,fingerprint,entries){
 // A read-only work queue for approved review decisions. Never stages or publishes content.
 export function reviewActionQueue(decisions,entries){
  if(!validateReviewDecisions(decisions,entries))return {valid:false,reason:'invalid-decisions',items:[],can_auto_publish:false};
- const items=decisions.flatMap((decision,index)=>{
+ const items=[],blocked_items=[];
+ decisions.forEach((decision,index)=>{
   const ready=decision.scientific_status==='verified'&&decision.editorial_status==='approved'&&decision.proposed_action!=='needs-review';
-  if(!ready||decision.proposed_action==='no-change')return [];
-  return [{index,action:decision.proposed_action,entry:entries[index],reviewer_notes:decision.reviewer_notes}];
+  if(!ready||decision.proposed_action==='no-change')return;
+  const entry=entries[index];
+  const item={index,action:decision.proposed_action,entry,reviewer_notes:decision.reviewer_notes};
+  // A review decision is not an override for a classifier safety flag.
+  // Keep flagged actions visible, but never place them in the preparable queue.
+  const duplicate=entry?.duplicate_of!=null;
+  const conflict=Array.isArray(entry?.conflict_with)&&entry.conflict_with.length>0;
+  if(duplicate||conflict)blocked_items.push({...item,block_reasons:[...(duplicate?['duplicate']:[]),...(conflict?['scientific-conflict']:[])]});
+  else items.push(item);
  });
- return {valid:true,reason:reviewRecoveryCheck(decisions,entries).reason,items,can_auto_publish:false};
+ return {valid:true,reason:reviewRecoveryCheck(decisions,entries).reason,items,blocked_items,can_auto_publish:false};
 }
