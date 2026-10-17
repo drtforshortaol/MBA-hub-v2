@@ -62,3 +62,15 @@ test('flagged-statement triage provides a review-only shortcut',()=>{
  assert.match(code,/potential scientific conflict pairs/);
  assert.match(code,/All findings require human review/);
 });
+
+test('review identity includes conflict and duplicate relationships',()=>{
+ const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
+ assert.match(code,/conflict_with:e\.conflict_with,duplicate_of:e\.duplicate_of/);
+ assert.match(code,/if\(generation!==activeReviewGeneration\|\|intakeText\.value!==source\)return;\s*packet\.review_context_sha256=/);
+});
+test('disabled browser storage does not prevent generating downloadable review packets',()=>{
+ const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
+ assert.match(code,/try\{saved=readReview\(localStorage,reviewKey,sourceFingerprint,packet\.entries\);\}catch/);
+ assert.match(code,/if\(saved\)packet\.review_decisions=saved/);
+ assert.match(code,/Download review packet/);
+});
