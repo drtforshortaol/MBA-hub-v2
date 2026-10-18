@@ -68,3 +68,14 @@ Seven behavior regressions execute the actual Hub routing implementation with de
 Search errors now include explicit Try again and Back to Hub controls, so recovery does not depend on a hash change. Malformed index payloads or records are rejected before caching and use the same recovery path. The retry regression invokes the actual recovery button handler.
 
 Validation: 437/437 isolated branch automated tests passed; strict content preflight passed all 33 apps; build, 33-app/11-category validation and security scanning passed. Generated build reports excluded. No publication or deployment performed.
+
+
+### App snapshot ownership and recovery — continuation
+
+Contextual app restoration now checks that a saved snapshot belongs to the current app page, including its query, fragment and preceding visit token. Copying a restore token to another app or deep link no longer fills unrelated controls, repositions that page or suppresses its section navigation. Replaced restore tokens are ignored during this comparison so chained contextual Back continues to work.
+
+Session snapshot fields are normalized before replay: malformed collections become empty, panel references are deduplicated, invalid detail indices are removed, scroll is finite and nonnegative, and input records require string IDs and values. Malformed or unavailable storage falls back to ordinary app entry.
+
+Recovery used a clean Git clone with no copied untracked files. The local predecessor tree (`6afaf6dd0364b99db2833e770bad08dff502ede3`) exactly matched verified remote branch head `784fc99b9c55723f3f5e3d41a6c3c31ef951db5a`; only commit metadata differed. No AGENTS.md was present.
+
+Validation: 442/442 isolated Node tests passed, including five new ownership/recovery regressions and existing offline worker checks; build and 33-app/11-category validation passed; strict content preflight passed all 33 apps; security scan passed. Generated reports were excluded. No scientific content, IDs, approvals, deployment or preview changed. Physical review remains outstanding.
