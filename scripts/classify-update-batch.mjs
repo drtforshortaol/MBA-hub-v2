@@ -21,7 +21,7 @@ export function classifyUpdateBatch(input,applications){
   const existing_content=app?assessExistingContent(text,app,{sectionId:route.section_id}):null;
   const placement=proposeUpdatePlacement(text,route,existing_content);
   const review=assessNaturalistReviewGates({route,placement,existing_content,extraction:extracted.entries[index].extraction});
-  return {index,text,placement,review,reviewed_app_version:app?.version??null,reviewed_section_snapshot,source_block:extracted.entries[index].source_block,extraction:extracted.entries[index].extraction,route,existing_content,review_required:true,committed:false,published:false};
+  return {index,text,reviewed_source_snapshot:JSON.stringify({text,source_block:extracted.entries[index].source_block,extraction:extracted.entries[index].extraction}),placement,review,reviewed_app_version:app?.version??null,reviewed_section_snapshot,source_block:extracted.entries[index].source_block,extraction:extracted.entries[index].extraction,route,existing_content,review_required:true,committed:false,published:false};
  });
  const duplicates=findBatchDuplicates(entries);
  for(const item of duplicates.items){

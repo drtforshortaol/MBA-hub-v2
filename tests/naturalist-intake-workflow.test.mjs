@@ -72,3 +72,24 @@ test('Naturalist review snapshot also guards additional section metadata',()=>{
   assert.equal(preview.published,false);
  }
 });
+
+
+test('Naturalist draft preparation rejects tampered classified source while preserving valid source',()=>{
+ const apps=[{app_id:'giant-pacific-octopus',version:'1',title:'Giant Pacific Octopus',sections:[{id:'camouflage',title:'Camouflage',text:'Old',aliases:['color']}],offline_assets:[]}];
+ const intake=createNaturalistIntake('Update giant Pacific octopus camouflage',apps);
+ assert.equal(intake.classification.entries[0].route.section_id,'camouflage');
+ const approved=updateNaturalistDecision(intake,0,{scientific_status:'verified',editorial_status:'approved',proposed_action:'update-existing'});
+ const ready=previewNaturalistDrafts(approved,apps,{0:'Scientifically reviewed content'});
+ assert.equal(ready.items[0].status,'draft-ready');
+ assert.equal(ready.prepared,true);
+ assert.equal(ready.published,false);
+ assert.equal(ready.items[0].result.proposal.proposed_manifest.sections[0].text,'Scientifically reviewed content');
+ for(const field of ['text','source_block']){
+  const changed=structuredClone(approved);
+  changed.classification.entries[0][field]='Tampered text';
+  const result=previewNaturalistDrafts(changed,apps,{0:'Scientifically reviewed content'});
+  assert.equal(result.items[0].status,'blocked-review',field);
+  assert.equal(result.prepared,false);
+  assert.equal(result.published,false);
+ }
+});
