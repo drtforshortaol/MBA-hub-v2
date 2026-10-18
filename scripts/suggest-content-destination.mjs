@@ -5,6 +5,10 @@ const tokens=s=>new Set(normalize(s).split(' ').filter(w=>w.length>2&&!STOP.has(
 export function suggestContentDestination(update,applications){
  if(typeof update!=='string'||!update.trim())return {valid:false,errors:['update text required']};
  if(!Array.isArray(applications))return {valid:false,errors:['application catalog required']};
+ // Ambiguous identifiers make a destination unsafe even when lexical ranking is high.
+ const ids=applications.filter(a=>a&&typeof a.app_id==='string').map(a=>a.app_id);
+ if(new Set(ids).size!==ids.length)return {valid:true,action:'review-placement',reason:'duplicate application identifiers in catalog',requires_review:true,published:false,candidates:[]};
+ if(applications.some(a=>a&&Array.isArray(a.sections)&&a.sections.some((section,i)=>section&&typeof section.id==='string'&&a.sections.findIndex(other=>other?.id===section.id)!==i)))return {valid:true,action:'review-placement',reason:'duplicate section identifiers in catalog',requires_review:true,published:false,candidates:[]};
  const words=tokens(update);
  const ranked=applications.filter(a=>a&&typeof a.app_id==='string'&&/^[a-z0-9-]+$/.test(a.app_id)).map(app=>{
   const appWords=new Set([...tokens(app.title),...tokens(app.app_id.replace(/-/g,' '))]);

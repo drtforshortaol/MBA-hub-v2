@@ -23,3 +23,17 @@ test('matches an application without inventing a weak section match',()=>{
  assert.equal(result.section_id,null);
  assert.equal(result.published,false);
 });
+
+
+test('duplicate application or section identifiers require manual placement review',()=>{
+ const duplicateApps=[apps[0],structuredClone(apps[0])];
+ const appResult=suggestContentDestination('Giant Pacific octopus camouflage',duplicateApps);
+ assert.equal(appResult.action,'review-placement');
+ assert.match(appResult.reason,/duplicate application/);
+ assert.equal(appResult.published,false);
+ const duplicateSections=[{...apps[0],sections:[apps[0].sections[0],{...apps[0].sections[0],title:'Different content'}]}];
+ const sectionResult=suggestContentDestination('Giant Pacific octopus camouflage',duplicateSections);
+ assert.equal(sectionResult.action,'review-placement');
+ assert.match(sectionResult.reason,/duplicate section/);
+ assert.equal(sectionResult.published,false);
+});
