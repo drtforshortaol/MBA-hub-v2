@@ -20,3 +20,12 @@ Avoid modifying files owned by other tracks. Cross-track shared files require in
 
 ## Execution
 This branch isolates work; it does not by itself start an autonomous development agent. Work must be invoked through an available execution session or GitHub workflow.
+
+## October 18 implementation checkpoint
+
+- Installed app cache status now re-verifies after page restoration, foregrounding, connection changes and service-worker controller changes. This covers suspended iPhone PWA sessions that previously kept an old Ready offline label.
+- Overlapping lifecycle events coalesce into one pending verification; errors allow a later resume to retry. Status displays Checking offline files while verification runs.
+- Reconnection checks for a new worker without activating an update or changing existing approval gates.
+- Validation: build PASS; 409/409 automated tests PASS, including five new lifecycle behavior tests; build validation PASS (33 apps, 11 categories); security scan PASS.
+- New lifecycle module appears in generated tester release resources, preserving offline availability of its static import.
+- Physical iPhone suspension, storage eviction and airplane-mode checks remain manual device-review work. Automated checks do not satisfy device release gates.
