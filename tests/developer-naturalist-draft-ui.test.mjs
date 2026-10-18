@@ -57,3 +57,11 @@ test('Developer Mode surfaces blocked review actions in draft checks and portabl
  assert.match(developer,/preparation_status:'blocked-review'/);
  assert.match(developer,/block_reasons:\[\.\.\.item\.block_reasons\]/);
 });
+
+test('reviewed action packet downloads contain valid JSON rather than escaped trailing characters',()=>{
+ const start=developer.indexOf("kind:'mba-v2-naturalist-reviewed-action-packet'");
+ assert.ok(start>=0);
+ const tail=developer.slice(start,start+800);
+ assert.ok(tail.includes("JSON.stringify(payload,null,2)+'\\n'"));
+ assert.ok(!tail.includes("JSON.stringify(payload,null,2)+'\\\\n'"));
+});
