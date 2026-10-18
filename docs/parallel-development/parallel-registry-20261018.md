@@ -36,3 +36,15 @@ Content preflight now loads and forwards the same shared interface declarations 
 The strict per-app offline-media registration rule remains unchanged. `content:check:all` still exits with failure: 226 offline-media declaration findings across 28 of 33 applications. These findings concern media paths absent from app manifests' explicit `offline_assets` lists; the build currently includes the shared files in the verified release bundle. They require a separate registration-contract reconciliation and are not recorded as passed. No content or scientific approvals were changed.
 
 Verification after interface fix: 416 automated tests passed; 33-app/11-category validation and security scan passed. Nine targeted preflight tests include custom interface acceptance, unknown dependency rejection, incompatible version rejection and actual repository interface loading.
+
+### Offline-media registration reconciliation
+
+Resolved the previously recorded 226 strict preflight findings by appending existing, safe, catalog-listed `offline: true` media paths to 28 owning application manifests. Existing offline asset order was preserved; additions follow each manifest's existing media-reference order. Independent semantic diff audits confirmed that no other manifest fields changed, including permanent IDs, versions, scientific content, permission evidence, approval fields and presentation metadata.
+
+`node scripts/plan-offline-media-registration.mjs` produces a read-only reconciliation plan. It never edits files, rejects missing or unsafe offline media, ignores online-only assets and deduplicates paths. After reconciliation it reports zero pending additions. Strict content preflight rules remain unchanged and `npm run content:check:all` now passes for all 33 applications.
+
+The media files were already in the complete release bundle. A before/after build audit confirmed identical resource URL sets and unchanged media bytes. Only 28 manifest resources plus the generated registry changed bytes, producing a new verified release hash (`09053c9041f59a90` → `adea415dc4bca22a` for this isolated developer build). Application versions remain unchanged because this is a declaration correction with no content or interface implementation change; the service worker's release hash identifies the revised bundle. These local build hashes are not deployment or publication evidence.
+
+Tests cover planner immutability, deterministic append order, deduplication, per-app ownership, idempotence, unsafe/missing/unknown media rejection, CLI read-only behavior and strict repository-wide preflight. Build, 33-app/11-category validation and security scanning passed. Generated build reports are excluded from this change.
+
+Full isolated branch regression after reconciliation: 421 tests passed, zero failures. No merge, publication, deployment or protected-repository changes performed.

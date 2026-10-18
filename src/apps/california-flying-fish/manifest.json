@@ -16,7 +16,12 @@
     }
   ],
   "offline_assets": [
-    "apps/california-flying-fish/index.html"
+    "apps/california-flying-fish/index.html",
+    "shared/media/asset-768c33463b4de0e3--IMG_3380.jpeg",
+    "shared/media/asset-afa736f83a460b13--IMG_3381.jpeg",
+    "shared/media/asset-e679c304e357c5d1--IMG_3382.jpeg",
+    "shared/media/asset-c11690bd147b5db5--IMG_3383.jpeg",
+    "shared/media/asset-cd7b7398f2c9bfdf--california-flying-fish-hero.jpg"
   ],
   "media": [
     "asset-768c33463b4de0e3",

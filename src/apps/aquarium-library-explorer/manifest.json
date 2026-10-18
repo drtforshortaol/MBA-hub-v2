@@ -17,7 +17,8 @@
   ],
   "offline_assets": [
     "apps/aquarium-library-explorer/index.html",
-    "apps/aquarium-library-explorer/library-data.js"
+    "apps/aquarium-library-explorer/library-data.js",
+    "shared/media/asset-0bc6222372f0efdc--Organize-Aquarium-Books.png"
   ],
   "media": [
     "asset-0bc6222372f0efdc"

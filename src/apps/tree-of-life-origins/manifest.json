@@ -18,7 +18,8 @@
   "offline_assets": [
     "apps/tree-of-life-origins/app.js",
     "apps/tree-of-life-origins/index.html",
-    "apps/tree-of-life-origins/styles.css"
+    "apps/tree-of-life-origins/styles.css",
+    "shared/media/asset-aa9c4cbb67f1dbc2--icon-192.svg"
   ],
   "media": [
     "asset-aa9c4cbb67f1dbc2"

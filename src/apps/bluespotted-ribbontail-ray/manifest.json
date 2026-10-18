@@ -16,7 +16,12 @@
     }
   ],
   "offline_assets": [
-    "apps/bluespotted-ribbontail-ray/index.html"
+    "apps/bluespotted-ribbontail-ray/index.html",
+    "shared/media/asset-58caefb914af891a--ScreenHunter-10658.jpg",
+    "shared/media/asset-1daf222da5380986--IMG_3443.jpeg",
+    "shared/media/asset-af9d1b481c381dc7--IMG_3444.jpeg",
+    "shared/media/asset-4e686c83c7a2de1e--IMG_3445.jpeg",
+    "shared/media/asset-04c2c8b8e6e36a70--IMG_3446.jpeg"
   ],
   "media": [
     "asset-58caefb914af891a",
