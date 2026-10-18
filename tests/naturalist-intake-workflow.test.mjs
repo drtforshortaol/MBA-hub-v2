@@ -93,3 +93,24 @@ test('Naturalist draft preparation rejects tampered classified source while pres
   assert.equal(result.published,false);
  }
 });
+
+test('work queue blocks source tampering before draft preparation',()=>{
+ const intake=createNaturalistIntake('Sea otter feeding behavior.',[]);
+ assert.equal(intake.valid,true);
+ const approved=updateNaturalistDecision(intake,0,{scientific_status:'verified',editorial_status:'approved',proposed_action:'new-content'});
+ assert.equal(approved.valid,true);
+ assert.equal(naturalistWorkQueue(approved).items.length,1);
+ for(const field of ['text','source_block','extraction']){
+  const changed=structuredClone(approved);
+  if(field==='extraction')changed.classification.entries[0].extraction={tampered:true};
+  else changed.classification.entries[0][field]='Tampered source';
+  const queue=naturalistWorkQueue(changed);
+  assert.equal(queue.valid,true,field);
+  assert.equal(queue.items.length,0,field);
+  assert.equal(queue.blocked_items.length,1,field);
+  assert.ok(queue.blocked_items[0].block_reasons.includes('source-changed'),field);
+  const draft=previewNaturalistDrafts(changed,[]);
+  assert.equal(draft.prepared,false,field);
+  assert.equal(draft.published,false,field);
+ }
+});
