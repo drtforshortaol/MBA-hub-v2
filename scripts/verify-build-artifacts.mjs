@@ -79,7 +79,23 @@ export function verifyBuildArtifacts(directory, expectedEnvironment) {
    if (bytes.length !== item.bytes || digest(bytes) !== item.sha256) errors.push(`integrity mismatch: ${item.url}`);
   } catch { errors.push(`missing resource: ${item.url}`); }
  }
- for (const required of ['index.html','environment.json','registry.json','manifest.webmanifest','shared/media/catalog.json']) if (!listed.has(required)) errors.push(`missing critical resource: ${required}`);
+ for (const required of ['index.html','environment.json','registry.json','search-index.json','manifest.webmanifest','shared/media/catalog.json']) if (!listed.has(required)) errors.push(`missing critical resource: ${required}`);
+ try {
+  const search = read('search-index.json');
+  if (!Array.isArray(search) || !search.length) throw Error('invalid shape');
+  const apps = new Map((Array.isArray(registry.apps) ? registry.apps : []).filter(app => app && typeof app === 'object').map(app => [app.app_id,app]));
+  const searchable = new Set();
+  for (const entry of search) {
+   if (!entry || typeof entry !== 'object' || typeof entry.title !== 'string' || !entry.title.trim() || typeof entry.text !== 'string' || !entry.text.trim()) {
+    errors.push('invalid search index entry'); continue;
+   }
+   const app = apps.get(entry.app_id);
+   const target = typeof entry.url === 'string' ? entry.url.split(/[?#]/,1)[0] : undefined;
+   if (!app || !safePath(target) || target !== app.entry_point || !listed.has(target)) errors.push('search index target mismatch');
+   else searchable.add(entry.app_id);
+  }
+  for (const id of apps.keys()) if (!searchable.has(id)) errors.push(`application missing from search index: ${id}`);
+ } catch { errors.push('missing or invalid search index'); }
  let media;
  try { media = read('shared/media/catalog.json'); } catch { errors.push('missing or invalid media catalog'); }
  errors.push(...verifyRegistryCoverage(registry,media,listed));

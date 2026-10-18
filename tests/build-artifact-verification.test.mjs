@@ -17,7 +17,8 @@ function fixture(t) {
  write('icon.svg','<svg xmlns="http://www.w3.org/2000/svg"/>');
  write('registry.json',{schema_version:1,environment:'tester',version:'test',apps:[{app_id:'sample',entry_point:'index.html',offline_assets:['index.html'],media:[]}]});
  write('environment.json',{environment:'tester',version:'test',namespace:'mba-v2-tester',developer:false});
- const resources = ['environment.json','icon.svg','index.html','manifest.webmanifest','registry.json','shared/media/catalog.json'].map(url => { const bytes=fs.readFileSync(path.join(dir,url)); return {url,sha256:hash(bytes),bytes:bytes.length}; });
+ write('search-index.json',[{app_id:'sample',title:'Sample',text:'Sample',url:'index.html'}]);
+ const resources = ['environment.json','icon.svg','index.html','manifest.webmanifest','registry.json','search-index.json','shared/media/catalog.json'].map(url => { const bytes=fs.readFileSync(path.join(dir,url)); return {url,sha256:hash(bytes),bytes:bytes.length}; });
  const release={schema_version:1,environment:'tester',version:'test',resources,release:hash(JSON.stringify(resources)).slice(0,16)};
  write('release.json',release);
  write('sw.js',`const NAMESPACE='mba-v2-tester',RELEASE='${release.release}';`);
@@ -150,4 +151,38 @@ test('metadata and service worker symlinks fail before reading their targets',t=
  const errors=verifyBuildArtifacts(dir,'tester');
  assert(errors.includes('symbolic link: sw.js'));
  assert(errors.includes('missing service worker'));
+});
+
+test('search index requires valid local registered targets despite valid release hashes',t=>{
+ const data=fixture(t);
+ for (const change of [{app_id:'unknown'},{url:'https://other.example/index.html'},{url:'../index.html'},{url:'missing.html'},{url:'index.html/extra'},{url:null},{title:''},{text:null}]) {
+  data.write('search-index.json',[{app_id:'sample',title:'Sample',text:'Sample',url:'index.html',...change}]);
+  updateFixtureRelease(data);
+  const errors=verifyBuildArtifacts(data.dir,'tester');
+  assert(errors.some(error=>/search index/.test(error)),JSON.stringify(change));
+  assert(!errors.some(error=>error.startsWith('integrity mismatch:')));
+ }
+ for (const url of ['index.html#section','index.html?view=details#section']) {
+  data.write('search-index.json',[{app_id:'sample',title:'Sample',text:'Sample',url}]);
+  updateFixtureRelease(data);
+  assert.deepEqual(verifyBuildArtifacts(data.dir,'tester'),[]);
+ }
+});
+test('search index cannot omit registered apps or disappear from the offline release',t=>{
+ const data=fixture(t);
+ for (const search of [null,{},[],[null]]) {
+  data.write('search-index.json',search);
+  updateFixtureRelease(data);
+  assert(verifyBuildArtifacts(data.dir,'tester').some(error=>/search index/.test(error)));
+ }
+ data.write('registry.json',{schema_version:1,environment:'tester',version:'test',apps:[{app_id:'sample',entry_point:'index.html',offline_assets:['index.html'],media:[]},{app_id:'second',entry_point:'index.html',offline_assets:['index.html'],media:[]}]});
+ data.write('search-index.json',[{app_id:'sample',title:'Sample',text:'Sample',url:'index.html'}]);
+ updateFixtureRelease(data);
+ assert(verifyBuildArtifacts(data.dir,'tester').includes('application missing from search index: second'));
+ data.release.resources=data.release.resources.filter(item=>item.url!=='search-index.json');
+ fs.rmSync(path.join(data.dir,'search-index.json'));
+ updateFixtureRelease(data);
+ const errors=verifyBuildArtifacts(data.dir,'tester');
+ assert(errors.includes('missing critical resource: search-index.json'));
+ assert(errors.includes('missing or invalid search index'));
 });
