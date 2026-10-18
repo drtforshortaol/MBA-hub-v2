@@ -334,8 +334,19 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
       const replacementLabel=document.createElement('label');replacementLabel.textContent='Proposed replacement text (scientific verification required) for statement '+(item.index+1);
       const replacementInput=document.createElement('textarea');replacementInput.rows=4;replacementInput.maxLength=20000;replacementInput.style.width='100%';
       replacementInput.value=replacementDrafts.get(item.index)||'';
-      replacementInput.addEventListener('input',()=>{if(!isCurrentReview())return;replacementDrafts.set(item.index,replacementInput.value);});
-      replacementLabel.append(replacementInput);li.append(replacementLabel);
+      // Show exact source and proposed section text without applying any changes.
+      const comparison=document.createElement('details');
+      const comparisonHeading=document.createElement('summary');comparisonHeading.textContent='Preview existing section and proposed replacement';
+      const before=document.createElement('pre'),after=document.createElement('pre');
+      before.style.whiteSpace=after.style.whiteSpace='pre-wrap';
+      before.style.overflowWrap=after.style.overflowWrap='anywhere';
+      const target=reviewedTarget(entry);
+      before.textContent=target?'CURRENT · '+target.section.text:'Current destination unavailable or changed; regenerate review.';
+      const refreshPreview=()=>{after.textContent='PROPOSED · '+(replacementInput.value.trim()?replacementInput.value:'Enter replacement text to preview.');};
+      replacementInput.addEventListener('input',()=>{if(!isCurrentReview())return;replacementDrafts.set(item.index,replacementInput.value);refreshPreview();});
+      refreshPreview();
+      comparison.append(comparisonHeading,before,after);
+      replacementLabel.append(replacementInput,comparison);li.append(replacementLabel);
      }
      queueItems.append(li);
     }
