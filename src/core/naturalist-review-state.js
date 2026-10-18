@@ -80,6 +80,9 @@ export function reviewActionQueue(decisions,entries){
   const item={index,action:decision.proposed_action,entry,reviewer_notes:decision.reviewer_notes};
   // A review decision is not an override for a classifier safety flag.
   // Keep flagged actions visible, but never place them in the preparable queue.
+  // A review queue must never offer a changed source as actionable, even before draft preparation.
+  const sourceChanged=Object.hasOwn(entry??{},'reviewed_source_snapshot')&&
+   (typeof entry.reviewed_source_snapshot!=='string'||entry.reviewed_source_snapshot!==JSON.stringify({text:entry.text,source_block:entry.source_block,extraction:entry.extraction}));
   const duplicate=entry?.duplicate_of!=null||entries.some((other,j)=>j!==index&&other?.duplicate_of===index);
   // Conflicts are undirected safety relationships even when the classifier
   // records only one side of the pair. Never prepare the unflagged endpoint.
@@ -90,7 +93,7 @@ export function reviewActionQueue(decisions,entries){
    (Object.hasOwn(entry,'conflict_with')&&!Array.isArray(entry.conflict_with))||
    (Object.hasOwn(entry,'duplicate_of')&&entry.duplicate_of!==null&&(!Number.isInteger(entry.duplicate_of)||entry.duplicate_of<0||entry.duplicate_of>=entries.length||entry.duplicate_of===index))||
    (Array.isArray(entry.conflict_with)&&entry.conflict_with.some(i=>!Number.isInteger(i)||i<0||i>=entries.length||i===index));
-  if(duplicate||conflict||malformed)blocked_items.push({...item,block_reasons:[...(duplicate?['duplicate']:[]),...(conflict?['scientific-conflict']:[]),...(malformed?['invalid-classification']:[])]});
+  if(duplicate||conflict||malformed||sourceChanged)blocked_items.push({...item,block_reasons:[...(duplicate?['duplicate']:[]),...(conflict?['scientific-conflict']:[]),...(malformed?['invalid-classification']:[]),...(sourceChanged?['source-changed']:[])]});
   else items.push(item);
  });
  return {valid:true,reason:reviewRecoveryCheck(decisions,entries).reason,items,blocked_items,can_auto_publish:false};
