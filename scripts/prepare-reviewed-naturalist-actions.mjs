@@ -12,7 +12,10 @@ export function prepareReviewedNaturalistActions(classification,decisions,applic
   const blocked=entry.duplicate_of!=null||(Array.isArray(entry.conflict_with)&&entry.conflict_with.length>0);
   if(blocked)return {index,action,status:'blocked-review',reason:'duplicate or potential scientific conflict',reviewer_notes};
   if(action==='update-existing'&&entry.route?.action!=='update-existing')return {index,action,status:'routing-review',reason:'review action conflicts with classified destination',reviewer_notes};
-  if(action==='new-content')return {index,action,status:'placement-review',placement:entry.placement,reviewer_notes};
+  if(action==='new-content')return {index,action,status:'placement-review',placement:entry.placement,reviewer_notes,reason:entry.route?.action==='update-existing'?'review action differs from classified existing destination':'new content requires explicit placement review'};
+  // An existing-content approval must never bypass unresolved duplicate catalog IDs.
+  const ids=applications.filter(a=>a&&typeof a.app_id==='string').map(a=>a.app_id);
+  if(new Set(ids).size!==ids.length||applications.some(a=>a&&Array.isArray(a.sections)&&a.sections.some((s,i)=>s&&typeof s.id==='string'&&a.sections.findIndex(other=>other?.id===s.id)!==i)))return {index,action,status:'routing-review',reason:'ambiguous catalog identifiers',reviewer_notes};
   const replacement=replacements[index];
   if(typeof replacement!=='string'||!replacement.trim())return {index,action,status:'replacement-required',reviewer_notes};
   const route=entry.route;
