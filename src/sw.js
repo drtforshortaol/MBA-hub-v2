@@ -14,6 +14,14 @@ async function compatibleManifest(manifest,release,bindInventory=false){
 }
 // Safari media requests can seek within verified offline files. Never cache partial bodies.
 async function cachedResponse(response,request){
+ // Cached redirects retain their URL history. Safari rejects that history on navigation.
+ // This helper is called only after complete body hash/size verification.
+ if(response.redirected){
+  const headers=Object.fromEntries(response.headers),bytes=await response.arrayBuffer();
+  delete headers['content-encoding'];delete headers['transfer-encoding'];
+  headers['content-length']=String(bytes.byteLength);
+  response=new Response(bytes,{status:response.status,statusText:response.statusText,headers});
+ }
  const range=request.headers?.get('range');
  if(!range||request.headers?.get('if-range')||response.status!==200)return response;
  const match=/^bytes=(\d*)-(\d*)$/.exec(range.trim());
