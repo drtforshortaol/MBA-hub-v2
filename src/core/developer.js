@@ -430,7 +430,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     if(!isCurrentReview()||!validateDecisions()){intakeStatus.textContent='Current, valid review decisions required before summary export.';return;}
     try{
      const payload=exportNaturalistReviewQueue(packet.review_decisions,packet.entries,sourceFingerprint);
-     const blob=new Blob([JSON.stringify(payload,null,2)+'\\n'],{type:'application/json'});
+     const blob=new Blob([JSON.stringify(payload,null,2)+'\n'],{type:'application/json'});
      const url=URL.createObjectURL(blob),link=document.createElement('a');
      link.href=url;link.download='mba-naturalist-review-queue-summary.json';link.click();
      setTimeout(()=>URL.revokeObjectURL(url),1000);
