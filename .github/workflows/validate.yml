@@ -25,6 +25,10 @@ jobs:
           python3 -m scripts.validation.validate_evo_original_narratives
           python3 -m scripts.validation.validate_evo_description_reconciliation
           python3 -m unittest scripts.validation.test_evo_relationship_classes
+      - name: Scan reviewer bundle for security findings
+        run: npm run security:scan
+      - name: Verify reviewer artifact completeness and isolation
+        run: node scripts/verify-build-artifacts.mjs
       - name: Retain tester bundle for review
         uses: actions/upload-artifact@v4
         with:

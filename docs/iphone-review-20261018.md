@@ -4,10 +4,10 @@ Review only. This branch does not publish, deploy, merge, or grant release appro
 
 ## Included track heads
 
-- A: `3f4f2559a4dfb9d2d3eaf568f5157a948d862063`
-- B: `414d0077ab7448d91cdb64e725b243ca12428d57`
-- C: `fe8d059e3b3be43455f13a0a89349a4cb3c689c2`
-- D: `a6f864ddc0b95ffb6c9985bac1865cf33d883cfc`
+- A: `56af2efa398697fba5dd7715645b9689af3cce86`
+- B: `784fc99b9c55723f3f5e3d41a6c3c31ef951db5a`
+- C: `2e439d67cc282212bd5918dcf2bad4569a4531cb`
+- D: `a3cdc472e691cc362d878c904c33b213d1ca3634`
 
 Base: `966024670dc0e18cccdb091f45665ce9a9493b8f`.
 The artifact contains separate `developer/` and `tester/` bundles, a source commit ID and release checksums. Developer includes local Naturalist review controls; tester excludes privileged developer controls. Test both at separate URL paths. Do not copy either over V1 or the public tester.
@@ -33,3 +33,7 @@ Opening `index.html` from Files or a ZIP preview does not validate the PWA. No A
 
 Service workers require a secure context: https://www.w3.org/TR/service-workers/
 Local device results, update/recovery testing and required approvals remain outstanding until evidence is recorded.
+
+## Scoped physical evidence
+
+The user-reported iPhone passes in `iphone-private-preview-evidence-20261018.md` apply to integration revision `8cefb1d` and its private preview. This newer combined development batch has separate automated verification and has not been deployed or physically accepted. The existing private preview remains on the tested revision.

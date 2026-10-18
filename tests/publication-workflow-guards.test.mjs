@@ -17,3 +17,18 @@ test('validation workflow enforces artifact integrity after regression tests',()
  assert.match(workflow,/run: node scripts\/verify-build-artifacts\.mjs/);
  assert(workflow.indexOf('run: node scripts/verify-build-artifacts.mjs') > workflow.indexOf('run: npm test'));
 });
+
+
+test('foundation reviewer artifacts are retained only after regressions, security and artifact verification',()=>{
+ const workflow=fs.readFileSync('.github/workflows/validate.yml','utf8');
+ const build=workflow.indexOf('run: npm run build');
+ const tests=workflow.indexOf('run: npm test');
+ const scan=workflow.indexOf('run: npm run security:scan');
+ const verify=workflow.indexOf('run: node scripts/verify-build-artifacts.mjs');
+ const upload=workflow.indexOf('uses: actions/upload-artifact@');
+ assert(build >= 0 && tests > build && scan > tests && verify > scan && upload > verify,
+  'reviewer bundle upload must follow build, regression, security and integrity gates');
+ const steps=workflow.slice(workflow.indexOf('    steps:'));
+ assert.doesNotMatch(steps,/continue-on-error:\s*true|if:\s*\$\{\{\s*(?:always|failure)\(\)/,
+  'review artifact gates must fail closed');
+});

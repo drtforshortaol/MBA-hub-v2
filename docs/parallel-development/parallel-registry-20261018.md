@@ -58,3 +58,13 @@ When contextual Back restores a captured app view, the initial fragment is not r
 Nine regression tests cover nested panels, repeated mutations, delayed targets, subsequent fragment navigation, contextual restoration, malformed fragments, encoded/sense-data targets, reentrant rendering and contract wiring. Strict content preflight continues to pass all 33 applications. No manifests, scientific content, permanent IDs, approvals or deployment settings changed in this step.
 
 Verification: 430/430 isolated-branch automated tests passed, including offline worker regressions; build, 33-app/11-category validation and security scanning passed. Generated build reports are excluded. Physical-device interaction review remains separate; no deployment was performed.
+
+### Search navigation race
+
+Fixed an asynchronous Hub search defect: when the visitor leaves Search while its index request is pending, the old request previously resumed against the new page, attempted to access the removed query input and could replace the current Hub/help view with an error. Each route render now has a generation. Delayed search completions, failures and scroll restoration update only their active generation. Current HTTP search-index failures show a clear error and allow a subsequent retry. Initial rendering uses the same guarded error path as later navigation.
+
+Seven behavior regressions execute the actual Hub routing implementation with deferred fetches and verify return to categories, navigation to help, late request failure, overlapping search visits without duplicate input handlers, request failure/retry, multiword results and stale scroll callbacks. No scientific content, manifests, identifiers, approval gates, offline worker or deployment configuration changed.
+
+Search errors now include explicit Try again and Back to Hub controls, so recovery does not depend on a hash change. Malformed index payloads or records are rejected before caching and use the same recovery path. The retry regression invokes the actual recovery button handler.
+
+Validation: 437/437 isolated branch automated tests passed; strict content preflight passed all 33 apps; build, 33-app/11-category validation and security scanning passed. Generated build reports excluded. No publication or deployment performed.
