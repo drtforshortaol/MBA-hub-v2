@@ -114,3 +114,22 @@ test('work queue blocks source tampering before draft preparation',()=>{
   assert.equal(draft.published,false,field);
  }
 });
+
+test('multiple approved Naturalist statements cannot draft competing edits to one section',()=>{
+ const apps=[{app_id:'sea-otter',title:'Sea Otter',version:'1',sections:[{id:'feeding',title:'Feeding',text:'Original feeding information.'}]}];
+ const intake=createNaturalistIntake('Sea otter feeding patterns.\n\nSea otter feeding habitats.',apps);
+ assert.equal(intake.valid,true);
+ assert.equal(intake.classification.entries.length,2);
+ for(const entry of intake.classification.entries)assert.equal(entry.route.section_id,'feeding');
+ let reviewed=intake;
+ for(let index=0;index<2;index++)reviewed=updateNaturalistDecision(reviewed,index,{scientific_status:'verified',editorial_status:'approved',proposed_action:'update-existing'});
+ const queue=naturalistWorkQueue(reviewed);
+ assert.equal(queue.valid,true);
+ assert.equal(queue.items.length,0);
+ assert.equal(queue.blocked_items.length,2);
+ for(const item of queue.blocked_items)assert.ok(item.block_reasons.includes('competing-section-update'));
+ const preview=previewNaturalistDrafts(reviewed,apps,{0:'First replacement',1:'Second replacement'});
+ assert.equal(preview.prepared,false);
+ assert.equal(preview.published,false);
+ assert.equal(preview.items.filter(item=>item.status==='blocked-review').length,2);
+});
