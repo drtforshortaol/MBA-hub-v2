@@ -28,3 +28,11 @@ Fixed cross-application contextual Back. The shared app contract previously call
 App contexts require an explicit type and app-view marker, same-origin application paths inside the current hosting scope, a valid visit token and matching environment namespace. Hub-only capture restrictions remain intact. Unavailable session storage falls back safely to the main Hub.
 
 Validation: 412 automated tests passed (including eight new cross-app integration regressions); 33-app/11-category build and validation passed; credential/unsafe-DOM security scan passed. Offline resource hash and worker regression tests passed within the full suite. Physical-device review remains separate. No scientific content, canonical app identifiers, approvals, release gates or deployment settings changed.
+
+### Preflight interface consistency
+
+Content preflight now loads and forwards the same shared interface declarations as the build validator. Declared `evo-knowledge` dependencies no longer produce false invalid-dependency errors. Unknown dependencies and incompatible interface versions still fail validation.
+
+The strict per-app offline-media registration rule remains unchanged. `content:check:all` still exits with failure: 226 offline-media declaration findings across 28 of 33 applications. These findings concern media paths absent from app manifests' explicit `offline_assets` lists; the build currently includes the shared files in the verified release bundle. They require a separate registration-contract reconciliation and are not recorded as passed. No content or scientific approvals were changed.
+
+Verification after interface fix: 416 automated tests passed; 33-app/11-category validation and security scan passed. Nine targeted preflight tests include custom interface acceptance, unknown dependency rejection, incompatible version rejection and actual repository interface loading.
