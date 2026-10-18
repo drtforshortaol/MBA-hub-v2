@@ -321,7 +321,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     const queue=reviewActionQueue(packet.review_decisions,packet.entries);
     queueItems.replaceChildren();
     if(!queue.valid){queueStatus.textContent='Review decisions invalid.';return;}
-    queueStatus.textContent=queue.items.length+' preparable reviewed actions; '+(queue.blocked_items?.length??0)+' blocked duplicates or scientific conflicts. No publishing available.';
+    queueStatus.textContent=queue.items.length+' preparable reviewed actions; '+(queue.blocked_items?.length??0)+' blocked actions (duplicates, conflicts, source changes, or competing destinations). No publishing available.';
     for(const item of queue.blocked_items||[]){const li=document.createElement('li');li.textContent='BLOCKED statement '+(item.index+1)+' · '+item.block_reasons.join(', ')+' · '+(item.entry?.source_text||'').slice(0,120);queueItems.append(li);}
     for(const item of queue.items){
      const entry=packet.entries[item.index];
@@ -345,7 +345,8 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    checkDrafts.addEventListener('click',()=>{
     if(!isCurrentReview()||!validateDecisions()){draftFeedback.textContent='Regenerate the current review before checking drafts.';return;}
     const queue=reviewActionQueue(packet.review_decisions,packet.entries);
-    const outcomes=queue.items.map(item=>{
+    if(!queue.valid){draftFeedback.textContent='Invalid review decisions; no drafts checked.';return;}
+    const outcomes=[...queue.blocked_items.map(item=>'blocked statement '+(item.index+1)+': '+item.block_reasons.join(', ')),...queue.items.map(item=>{
      const entry=result.entries[item.index];
      if(entry.duplicate_of!=null||(entry.conflict_with||[]).length)return 'blocked';
      if(item.action!=='update-existing')return 'placement-review';
@@ -358,7 +359,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      draft.description=entry.text.slice(0,4000);
      draft.section_edits=[{id:section.id,title:section.title,caption:section.caption??'',text:replacement}];
      return validateDraft(draft,app).valid?'draft-valid':'draft-invalid';
-    });
+    })];
     draftFeedback.textContent=outcomes.length?outcomes.join(', ')+'; validation only, nothing saved or published.':'No reviewed actions to validate.';
    });
    reviewOutput.append(checkDrafts,draftFeedback);
@@ -402,7 +403,8 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      const blocked=entry.duplicate_of!=null||(entry.conflict_with||[]).length>0;
      return {index:item.index,action:item.action,source_text:entry.source_text,placement:entry.placement,reviewer_notes:item.reviewer_notes,duplicate_of:entry.duplicate_of,conflict_with:entry.conflict_with,preparation_status:blocked?'blocked-review':item.action==='new-content'?'placement-review':replacementDrafts.get(item.index)?.trim()?'draft-validation-required':'verified-replacement-required',replacement_text:!blocked&&item.action==='update-existing'?(replacementDrafts.get(item.index)||''):undefined};
     });
-    const payload={schema_version:1,kind:'mba-v2-naturalist-reviewed-action-packet',review_context_sha256:sourceFingerprint,original_source:source,actions,scientific_verification:'reviewer-recorded',requires_review:true,prepared:false,committed:false,published:false,can_auto_publish:false};
+    const blocked_actions=queue.blocked_items.map(item=>({index:item.index,action:item.action,source_text:item.entry?.source_text??'',reviewer_notes:item.reviewer_notes,preparation_status:'blocked-review',block_reasons:[...item.block_reasons]}));
+    const payload={schema_version:1,kind:'mba-v2-naturalist-reviewed-action-packet',review_context_sha256:sourceFingerprint,original_source:source,actions,blocked_actions,scientific_verification:'reviewer-recorded',requires_review:true,prepared:false,committed:false,published:false,can_auto_publish:false};
     const blob=new Blob([JSON.stringify(payload,null,2)+'\\n'],{type:'application/json'});
     const url=URL.createObjectURL(blob),link=document.createElement('a');
     link.href=url;link.download='mba-naturalist-reviewed-actions.json';link.click();
