@@ -15,7 +15,9 @@ test('Developer Mode validates drafts against canonical schema and blocks confli
  assert.match(developer,/Check replacement drafts/);
  assert.match(developer,/validateDraft\(draft,app\)/);
  assert.match(developer,/entry\.duplicate_of!=null/);
- assert.match(developer,/entry\.route\?\.section_id/);
+ assert.match(developer,/route\.section_id/);
+ assert.match(developer,/function reviewedTarget\(entry\)/);
+ assert.match(developer,/reviewed_section_snapshot!==JSON\.stringify\(section\)/);
  assert.match(developer,/validation only, nothing saved or published/);
 });
 
