@@ -16,12 +16,12 @@ export function prepareReviewedNaturalistActions(classification,decisions,applic
   const replacement=replacements[index];
   if(typeof replacement!=='string'||!replacement.trim())return {index,action,status:'replacement-required',reviewer_notes};
   const route=entry.route;
-  if(!route||route.action!=='update-existing'||typeof route.app_id!=='string'||typeof route.section_id!=='string')
+  if(!route||route.action!=='update-existing'||typeof route.app_id!=='string'||typeof route.section_id!=='string'||typeof entry.reviewed_section_snapshot!=='string'||!entry.reviewed_section_snapshot||!Object.hasOwn(entry,'reviewed_app_version'))
    return {index,action,status:'routing-review',reason:'classification lacks a specific existing section',reviewer_notes};
   // Reject a changed catalog target instead of preparing against stale approvals.
   const app=applications.find(a=>a?.app_id===route.app_id);
   const section=app?.sections?.find(s=>s?.id===route.section_id);
-  if(!app||!section||typeof section.text!=='string'||(Object.hasOwn(entry,'reviewed_app_version')&&entry.reviewed_app_version!==app.version)||(Object.hasOwn(entry,'reviewed_section_snapshot')&&entry.reviewed_section_snapshot!==JSON.stringify(section)))return {index,action,status:'routing-review',reason:'reviewed destination no longer exists or is not editable',reviewer_notes};
+  if(!app||!section||typeof section.text!=='string'||entry.reviewed_app_version!==(app.version??null)||entry.reviewed_section_snapshot!==JSON.stringify(section))return {index,action,status:'routing-review',reason:'reviewed destination no longer exists or is not editable',reviewer_notes};
   const result=prepareAutomaticUpdate(entry.text,applications,{replacementText:replacement});
   const matches=result.prepared===true&&result.app_id===route.app_id&&result.section_id===route.section_id&&result.request?.app_id===route.app_id&&result.request?.section_edits?.[0]?.id===route.section_id;
   return {index,action,status:matches?'draft-ready':'routing-review',result,reviewer_notes};

@@ -69,3 +69,17 @@ test('draft preparation rejects invalid replacement collections',()=>{
   assert.equal(result.published,false);
  }
 });
+
+
+test('approved update cannot draft from an unbound synthetic classification',()=>{
+ const app={app_id:'sea-otter',version:'1.0',sections:[{id:'feeding',title:'Feeding',text:'Existing feeding content'}]};
+ const entry={index:0,text:'Sea otter feeding behavior.',duplicate_of:null,conflict_with:[],route:{action:'update-existing',app_id:'sea-otter',section_id:'feeding'}};
+ const decisions=newReviewDecisions([entry]);
+ Object.assign(decisions[0],{scientific_status:'verified',editorial_status:'approved',proposed_action:'update-existing'});
+ for(const extra of [{},{reviewed_app_version:'1.0'},{reviewed_section_snapshot:JSON.stringify(app.sections[0])}]){
+  const result=prepareReviewedNaturalistActions({valid:true,entries:[{...entry,...extra}]},decisions,[app],{0:'Replacement'});
+  assert.equal(result.items[0].status,'routing-review');
+  assert.equal(result.prepared,false);
+  assert.equal(result.published,false);
+ }
+});
