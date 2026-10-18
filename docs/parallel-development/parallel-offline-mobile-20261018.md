@@ -53,3 +53,11 @@ This branch isolates work; it does not by itself start an autonomous development
 - Registration rejection is surfaced promptly, allowing existing lifecycle retry/error behavior to recover on a later event.
 - Validation: targeted channel regressions PASS 13/13; full suite PASS 424/424; build PASS; build validation PASS (33 apps, 11 categories); security scan PASS. Existing real-worker cache, redirect, integrity, and byte-range behavior tests pass in the full suite.
 - No deployment, device acceptance, or release/scientific approval changes. Physical storage-eviction and registration-loss recovery remain device review work.
+
+## Installed-app initialization recovery checkpoint
+
+- Offline initialization now attaches lifecycle listeners immediately and verifies the existing controlling worker independently of registration. An offline registration failure or indefinitely pending registration no longer blocks a verified installed-cache status.
+- Registration attempts are deduplicated while pending. Reconnection retries a failed registration, then subsequent reconnects use the returned registration's update check. Registration/update checks never activate a waiting worker or alter approvals.
+- Fresh installs still wait for worker readiness through the bounded request channel; successful registration schedules cache reverification. Initialization returns its lifecycle handle so callers can dispose listeners if needed.
+- Validation: three browser-environment behavior regressions exercise pending registration, offline registration rejection/reconnection, and fresh-install readiness. Full suite PASS 427/427; build PASS; validation PASS (33 apps, 11 categories); security scan PASS; diff check PASS.
+- Physical suspension/storage eviction and update/rollback acceptance remain outstanding; private preview unchanged.
