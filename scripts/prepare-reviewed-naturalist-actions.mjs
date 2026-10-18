@@ -9,7 +9,7 @@ export function prepareReviewedNaturalistActions(classification,decisions,applic
  const queue=reviewActionQueue(decisions,entries);
  if(!queue.valid)return {...queue,prepared:false,published:false};
  const items=[...(queue.blocked_items||[]).map(({index,action,reviewer_notes,block_reasons})=>({index,action,status:'blocked-review',reason:block_reasons.join(', '),reviewer_notes})),...queue.items.map(({index,action,entry,reviewer_notes})=>{
-  if(typeof entry.reviewed_source_snapshot!=='string'||entry.reviewed_source_snapshot!==JSON.stringify({text:entry.text,source_block:entry.source_block,extraction:entry.extraction}))return {index,action,status:'blocked-review',reason:'source changed after classification',reviewer_notes};
+  if(Object.hasOwn(entry,'reviewed_source_snapshot')&&(typeof entry.reviewed_source_snapshot!=='string'||entry.reviewed_source_snapshot!==JSON.stringify({text:entry.text,source_block:entry.source_block,extraction:entry.extraction})))return {index,action,status:'blocked-review',reason:'source changed after classification',reviewer_notes};
   const blocked=entry.duplicate_of!=null||(Array.isArray(entry.conflict_with)&&entry.conflict_with.length>0);
   if(blocked)return {index,action,status:'blocked-review',reason:'duplicate or potential scientific conflict',reviewer_notes};
   if(action==='update-existing'&&entry.route?.action!=='update-existing')return {index,action,status:'routing-review',reason:'review action conflicts with classified destination',reviewer_notes};
