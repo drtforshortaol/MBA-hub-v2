@@ -37,3 +37,11 @@ This branch isolates work; it does not by itself start an autonomous development
 - Partial responses are never written to the cache. Existing environment/scope boundaries, rollback matching, V1 caches, and update activation rules remain intact.
 - Validation: build PASS; 413/413 tests PASS (four new real-worker shared-media behavior regressions); build validation PASS (33 apps, 11 categories); security scan PASS.
 - Physical Safari media playback/seeking and installed-device offline tests remain pending; no device approval is implied.
+
+## Fetch inventory authorization checkpoint
+
+- Direct cached responses and rollback recovery now require structurally valid manifests, matching worker environment/release identities, safe unique paths, and valid hash/length metadata.
+- Current inventories across installation, activation, readiness and fetch additionally recompute the builder's resource-list digest and bind it to the worker's embedded release ID. A substituted payload with a substituted matching resource hash cannot reuse the original release ID.
+- Rollback bytes still must match the authenticated current inventory's SHA-256 and size; older inventories cannot authorize new content. Full and byte-range responses use the same checks.
+- This is release inventory binding, not a digital signature, scientific approval or a replacement for device release checks.
+- Validation: build PASS; 418/418 tests PASS (five new real-worker security regressions covering fetch, install, readiness and activation); build validation PASS (33 apps, 11 categories); security scan PASS. Existing lifecycle and range tests remain passing.

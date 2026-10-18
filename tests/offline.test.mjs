@@ -71,8 +71,8 @@ test('offline STATUS detects altered declared resource byte lengths',async()=>{
  await cache.put(releaseURL,new Response(JSON.stringify(altered)));
  let reply;
  await w.invoke('message',{source:{url:w.root+'index.html'},data:{type:'STATUS'},ports:[{postMessage(v){reply=v;}}]});
- assert.equal(reply.complete,false);
- assert.equal(reply.count,altered.resources.length-1);
+ assert.match(reply.error,/inventory integrity mismatch/);
+ assert.equal(reply.complete,undefined);
 });
 
 test('activation refuses incomplete current release without deleting prior V2 or V1 caches',async()=>{
@@ -461,4 +461,63 @@ test('range requests never expose corrupt current or incompatible rollback share
  const response=await w.invoke('fetch',{request:rangedRequest(url,'bytes=0-1')});assert.equal(response.status,206);
  assert.deepEqual(Buffer.from(await response.arrayBuffer()),fs.readFileSync('dist/tester/'+item.url).subarray(0,2));
  assert(w.stores.has('mba-shared-assets-v1'));
+});
+
+test('direct offline cache hits refuse release and environment mismatches',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');const item=sharedMedia(w.manifest),url=new URL(item.url,w.root).href;
+ const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1],metadata=new URL('release.json',w.root);
+ for(const changed of [{...w.manifest,release:'foreign-release'},{...w.manifest,environment:'developer'}]){
+  await current.put(metadata,new Response(JSON.stringify(changed)));
+  for(const request of [{method:'GET',url},rangedRequest(url,'bytes=0-1')])assert.equal((await w.invoke('fetch',{request})).status,503);
+ }
+ await current.put(metadata,new Response(JSON.stringify(w.manifest)));
+ assert.equal((await w.invoke('fetch',{request:{method:'GET',url}})).status,200);
+});
+test('offline hits and rollback recovery reject malformed bundle inventories',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');const item=sharedMedia(w.manifest),url=new URL(item.url,w.root).href;
+ const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1],metadata=new URL('release.json',w.root);
+ const mutations=[m=>m.resources.push({...m.resources[0]}),m=>m.resources.push(null),m=>m.resources.push({...item,url:'../escape.svg'}),m=>m.resources.push({...item,url:'shared/media/line\nbreak.svg'}),m=>m.resources.push({...item,url:'shared/media/bad.svg',bytes:-1}),m=>m.resources.push({...item,url:'shared/media/bad.svg',sha256:'invalid'})];
+ for(const change of mutations){
+  const altered=structuredClone(w.manifest);change(altered);await current.put(metadata,new Response(JSON.stringify(altered)));
+  assert.equal((await w.invoke('fetch',{request:{method:'GET',url}})).status,503,'invalid current inventory must never authorize a cache hit');
+ }
+ await current.put(metadata,new Response(JSON.stringify(w.manifest)));await current.put(url,new Response('corrupt'));
+ const prior=w.stores.get('mba-v2-tester:/v2/tester/:prior');
+ for(const change of mutations){
+  const altered={...structuredClone(w.manifest),release:'prior'};change(altered);await prior.put(metadata,new Response(JSON.stringify(altered)));
+  assert.equal((await w.invoke('fetch',{request:rangedRequest(url,'bytes=0-1')})).status,503,'invalid rollback inventory must never authorize recovery');
+ }
+ await prior.put(metadata,new Response(JSON.stringify({...w.manifest,release:'prior'})));
+ assert.equal((await w.invoke('fetch',{request:rangedRequest(url,'bytes=0-1')})).status,206);
+ assert(w.stores.has('mba-shared-assets-v1'));
+});
+
+test('offline fetch binds resource digests to the worker release inventory',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');const item=sharedMedia(w.manifest),url=new URL(item.url,w.root).href;
+ const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+ const body=Buffer.from('substituted payload'),digest=Buffer.from(await webcrypto.subtle.digest('SHA-256',body)).toString('hex');
+ const altered=structuredClone(w.manifest),entry=altered.resources.find(resource=>resource.url===item.url);entry.bytes=body.length;entry.sha256=digest;
+ await current.put(url,new Response(body));await current.put(new URL('release.json',w.root),new Response(JSON.stringify(altered)));
+ for(const request of [{method:'GET',url},rangedRequest(url,'bytes=0-1')])assert.equal((await w.invoke('fetch',{request})).status,503,'a matching payload and altered digest cannot reuse the original release ID');
+ assert(w.stores.has('mba-shared-assets-v1'));
+});
+
+
+test('install refuses substituted resource inventories retaining the original release ID',async()=>{
+ const w=await worker({prior:false,mutateManifest:manifest=>{manifest.resources[0].sha256='0'.repeat(64);}});
+ await assert.rejects(w.invoke('install'),/inventory integrity mismatch/);assert.equal(w.fetched.length,1);
+ assert(![...w.stores.keys()].some(key=>key.endsWith(w.manifest.release)));assert(w.stores.has('mba-shared-assets-v1'));
+});
+test('readiness and activation refuse substituted matching-body inventories',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');const item=sharedMedia(w.manifest),url=new URL(item.url,w.root).href;
+ const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1],body=Buffer.from('substituted payload');
+ const altered=structuredClone(w.manifest),entry=altered.resources.find(resource=>resource.url===item.url);
+ entry.bytes=body.length;entry.sha256=Buffer.from(await webcrypto.subtle.digest('SHA-256',body)).toString('hex');
+ await current.put(url,new Response(body));await current.put(new URL('release.json',w.root),new Response(JSON.stringify(altered)));
+ for(const type of ['STATUS','ACTIVATE_UPDATE']){
+  let reply;await w.invoke('message',{source:{url:w.root+'index.html'},data:{type},ports:[{postMessage(value){reply=value;}}]});
+  assert.match(reply.error,/inventory integrity mismatch/);assert.equal(reply.complete,undefined);assert.equal(w.skipped,false);
+ }
+ await assert.rejects(w.invoke('activate'),/inventory integrity mismatch/);
+ assert.equal(w.deletions.length,0);assert(w.stores.has('mba-shared-assets-v1'));
 });
