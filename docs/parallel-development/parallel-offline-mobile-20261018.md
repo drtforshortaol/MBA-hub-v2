@@ -45,3 +45,11 @@ This branch isolates work; it does not by itself start an autonomous development
 - Rollback bytes still must match the authenticated current inventory's SHA-256 and size; older inventories cannot authorize new content. Full and byte-range responses use the same checks.
 - This is release inventory binding, not a digital signature, scientific approval or a replacement for device release checks.
 - Validation: build PASS; 418/418 tests PASS (five new real-worker security regressions covering fetch, install, readiness and activation); build validation PASS (33 apps, 11 categories); security scan PASS. Existing lifecycle and range tests remain passing.
+
+## Bounded worker readiness checkpoint
+
+- Offline requests now use an existing controller immediately, even if `serviceWorker.ready` remains pending after registration loss or suspension.
+- A single 30-second deadline covers both registration readiness and the worker reply. A late registration cannot send an abandoned request, and reply timeout closes both message ports.
+- Registration rejection is surfaced promptly, allowing existing lifecycle retry/error behavior to recover on a later event.
+- Validation: targeted channel regressions PASS 13/13; full suite PASS 424/424; build PASS; build validation PASS (33 apps, 11 categories); security scan PASS. Existing real-worker cache, redirect, integrity, and byte-range behavior tests pass in the full suite.
+- No deployment, device acceptance, or release/scientific approval changes. Physical storage-eviction and registration-loss recovery remain device review work.
