@@ -48,3 +48,13 @@ The media files were already in the complete release bundle. A before/after buil
 Tests cover planner immutability, deterministic append order, deduplication, per-app ownership, idempotence, unsafe/missing/unknown media rejection, CLI read-only behavior and strict repository-wide preflight. Build, 33-app/11-category validation and security scanning passed. Generated build reports are excluded from this change.
 
 Full isolated branch regression after reconciliation: 421 tests passed, zero failures. No merge, publication, deployment or protected-repository changes performed.
+
+### Section navigation and contextual Back
+
+Fixed a shared app integration defect: every body mutation previously replayed the current section fragment, scrolling the visitor back to that section and reopening panels after they had been collapsed. A dedicated section navigator now resolves each fragment once, retries while a dynamically rendered target is absent, and responds to later fragment changes. It opens every enclosing details panel for nested targets and retains existing section-ID and sense-data deep-link support.
+
+When contextual Back restores a captured app view, the initial fragment is not replayed over the restored scroll/panel state. Malformed percent-encoded fragments are ignored safely, allowing the remainder of the app contract to initialize. The navigator marks a target resolved before triggering panel rendering, preventing reentrant mutation callbacks from scrolling twice.
+
+Nine regression tests cover nested panels, repeated mutations, delayed targets, subsequent fragment navigation, contextual restoration, malformed fragments, encoded/sense-data targets, reentrant rendering and contract wiring. Strict content preflight continues to pass all 33 applications. No manifests, scientific content, permanent IDs, approvals or deployment settings changed in this step.
+
+Verification: 430/430 isolated-branch automated tests passed, including offline worker regressions; build, 33-app/11-category validation and security scanning passed. Generated build reports are excluded. Physical-device interaction review remains separate; no deployment was performed.
