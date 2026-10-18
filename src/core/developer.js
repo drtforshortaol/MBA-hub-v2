@@ -1,4 +1,4 @@
-import {createNaturalistIntakePacket,readNaturalistIntakePacket} from './naturalist-intake.js';
+import {createNaturalistIntakePacket,readNaturalistIntakePacket,readNaturalistSource,saveNaturalistSource,discardNaturalistSource} from './naturalist-intake.js';
 import {naturalistChangeRequest} from './naturalist-change-request.js';
 import {exportNaturalistReviewQueue} from './naturalist-review-queue-export.js';
 import {verifyNaturalistReviewQueue} from './naturalist-review-queue-import.js';
@@ -44,7 +44,33 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
  // Invalidate generated decisions immediately when their source changes.
  intakeText.addEventListener('input',()=>{activeReviewGeneration++;reviewOutput.replaceChildren();delete reviewOutput.dataset.reviewFingerprint;intakeStatus.textContent='Source changed. Generate a new review packet before downloading.';});
  let activeReviewGeneration=0;
- let activeIntakeImport=0;
+ let activeIntakeImport=0,requireFreshIntakeReview=false;
+ const recoveryStatus=document.createElement('p');recoveryStatus.setAttribute('role','status');
+ const restoreSourceButton=document.createElement('button');restoreSourceButton.type='button';restoreSourceButton.className='button';restoreSourceButton.textContent='Restore saved source';
+ const discardSourceButton=document.createElement('button');discardSourceButton.type='button';discardSourceButton.className='button';discardSourceButton.textContent='Discard saved source';
+ let recoveredSource=null;
+ try{const recovered=readNaturalistSource(localStorage,env.namespace);if(recovered.valid)recoveredSource=recovered.source;}catch{/* device storage may be unavailable */}
+ const updateSourceRecovery=()=>{restoreSourceButton.disabled=recoveredSource===null||intakeText.value===recoveredSource;discardSourceButton.disabled=recoveredSource===null;};
+ recoveryStatus.textContent=recoveredSource===null?'Source notes are saved on this device as you type.':'Saved source available on this device. Restore it to begin a fresh review.';
+ updateSourceRecovery();
+ intake.insertBefore(recoveryStatus,intakeStatus);intake.insertBefore(restoreSourceButton,intakeStatus);intake.insertBefore(discardSourceButton,intakeStatus);
+ intakeText.addEventListener('input',()=>{
+  let saved=false;try{saved=saveNaturalistSource(localStorage,env.namespace,intakeText.value);}catch{/* storage may be blocked */}
+  if(saved){recoveredSource=intakeText.value.trim()?intakeText.value:null;recoveryStatus.textContent=recoveredSource===null?'Saved source cleared.':'Source saved on this device. Review approvals are separate.';}
+  else recoveryStatus.textContent='Source could not be saved on this device. Download the review intake to keep a copy.';
+  updateSourceRecovery();
+ });
+ restoreSourceButton.addEventListener('click',()=>{
+  if(recoveredSource===null)return;
+  requireFreshIntakeReview=true;intakeText.value=recoveredSource;intakeText.dispatchEvent(new Event('input'));
+  intakeStatus.textContent='Saved source restored. Generate a new packet and review every statement.';
+ });
+ discardSourceButton.addEventListener('click',()=>{
+  let discarded=false;try{discarded=discardNaturalistSource(localStorage,env.namespace);}catch{/* storage may be blocked */}
+  if(discarded){recoveredSource=null;recoveryStatus.textContent='Saved source discarded. Current notes remain available until you leave.';}
+  else recoveryStatus.textContent='Saved source could not be discarded on this device.';
+  updateSourceRecovery();
+ });
  const importIntakeLabel=document.createElement('label');importIntakeLabel.htmlFor='naturalist-intake-import';importIntakeLabel.textContent='Restore source from review intake JSON';
  const importIntakeFile=document.createElement('input');importIntakeFile.type='file';importIntakeFile.id='naturalist-intake-import';importIntakeFile.accept='.json,application/json';
  intake.insertBefore(importIntakeLabel,intakeStatus);intake.insertBefore(importIntakeFile,intakeStatus);
@@ -57,6 +83,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    // Never overwrite notes or a newer selected intake while file reading was pending.
    if(importGeneration!==activeIntakeImport||generation!==activeReviewGeneration||intakeText.value!==source)return;
    if(!restored.valid)throw new Error('Invalid intake source or review state.');
+   requireFreshIntakeReview=true;
    intakeText.value=restored.source;
    intakeText.dispatchEvent(new Event('input'));
    intakeStatus.textContent='Source restored. Generate a new review packet; scientific and editorial review remain required.';
@@ -93,7 +120,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    packet.review_context_sha256=sourceFingerprint;
    packet.review_decisions=newReviewDecisions(packet.entries);
    let saved=null;
-   try{saved=readReview(localStorage,reviewKey,sourceFingerprint,packet.entries);}catch{/* Browser storage can be disabled; packet remains downloadable. */}
+   if(!requireFreshIntakeReview){try{saved=readReview(localStorage,reviewKey,sourceFingerprint,packet.entries);}catch{/* Browser storage can be disabled; packet remains downloadable. */}}
    if(saved)packet.review_decisions=saved;
    function reviewDecisionSummary(){
     const progress=reviewRecoveryCheck(packet.review_decisions,packet.entries);
@@ -112,7 +139,9 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    const saveReview=()=>{
     if(!isCurrentReview()){intakeStatus.textContent='Review no longer current. Regenerate before saving.';return;}
     if(!validateDecisions()){intakeStatus.textContent='Review decisions invalid. Nothing saved.';return;}
-    intakeStatus.textContent=writeReview(localStorage,reviewKey,sourceFingerprint,packet.review_decisions,packet.entries)?'Review decisions saved on this device. Publication remains disabled.':'Local storage unavailable; download the review packet to retain decisions.';
+    const savedCurrentReview=writeReview(localStorage,reviewKey,sourceFingerprint,packet.review_decisions,packet.entries);
+    if(savedCurrentReview)requireFreshIntakeReview=false;
+    intakeStatus.textContent=savedCurrentReview?'Review decisions saved on this device. Publication remains disabled.':'Local storage unavailable; download the review packet to retain decisions.';
     if(typeof showQueue==='function')showQueue();
    };
    const navigation=document.createElement('div');

@@ -24,3 +24,24 @@ export function readNaturalistIntakePacket(packet){
  if(Object.keys(expected).some(key=>packet[key]!==expected[key]))return {valid:false,reason:'invalid-review-state',published:false};
  return {valid:true,source:expected.original_source,requires_review:true,published:false,can_auto_publish:false};
 }
+
+export function naturalistSourceStorageKey(namespace){
+ if(typeof namespace!=='string'||!/^mba-v2-[a-z0-9-]+$/.test(namespace))throw new TypeError('Invalid source storage namespace');
+ return namespace+':naturalist-source';
+}
+export function readNaturalistSource(storage,namespace){
+ try{return readNaturalistIntakePacket(JSON.parse(storage.getItem(naturalistSourceStorageKey(namespace))||'null'));}
+ catch{return {valid:false,reason:'source-unavailable',published:false};}
+}
+export function saveNaturalistSource(storage,namespace,source){
+ try{
+  const key=naturalistSourceStorageKey(namespace);
+  if(typeof source!=='string')return false;
+  if(!source.trim()){storage.removeItem(key);return storage.getItem(key)===null;}
+  const packet=createNaturalistIntakePacket(source);
+  storage.setItem(key,JSON.stringify(packet));
+  const restored=readNaturalistSource(storage,namespace);
+  return restored.valid&&restored.source===source;
+ }catch{return false;}
+}
+export function discardNaturalistSource(storage,namespace){return saveNaturalistSource(storage,namespace,'');}
