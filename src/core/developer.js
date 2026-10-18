@@ -55,7 +55,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    const result=classifyUpdateBatch(source,registry.apps);
    if(!result.valid){intakeStatus.textContent=(result.errors||['Invalid source']).join('; ');return;}
    if(generation!==activeReviewGeneration||intakeText.value!==source)return;
-   const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',original_source:source,review_summary:summarizeNaturalistReview(result.entries),conflict_signals:result.conflict_signals,entries:result.entries.map(entry=>({index:entry.index,duplicate_of:entry.duplicate_of,conflict_with:entry.conflict_with??[],source_text:entry.text,source_block:entry.source_block,extraction:entry.extraction,placement:entry.placement,review:entry.review,existing_content:entry.existing_content,review_required:true})),scientific_verification:'required',editorial_review:'required',requires_review:true,prepared:false,committed:false,published:false};
+   const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',original_source:source,review_summary:summarizeNaturalistReview(result.entries),conflict_signals:result.conflict_signals,entries:result.entries.map(entry=>({index:entry.index,duplicate_of:entry.duplicate_of,conflict_with:entry.conflict_with??[],source_text:entry.text,source_block:entry.source_block,extraction:entry.extraction,reviewed_source_snapshot:entry.reviewed_source_snapshot,route:entry.route,reviewed_app_version:entry.reviewed_app_version,reviewed_section_snapshot:entry.reviewed_section_snapshot,placement:entry.placement,review:entry.review,existing_content:entry.existing_content,review_required:true})),scientific_verification:'required',editorial_review:'required',requires_review:true,prepared:false,committed:false,published:false};
    // Review decisions are annotations only: never mutate canonical classifications.
    // Include the classification outcome in the review key: a registry or routing
    // change must not silently reattach decisions to different proposed targets.
@@ -342,7 +342,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      const section=app?.sections?.find(x=>x.id===entry.route?.section_id);
      const replacement=replacementDrafts.get(item.index);
      if(!replacement?.trim())return 'replacement-required';
-     if(entry.route?.action!=='update-existing'||!section||typeof section.text!=='string')return 'routing-review';
+     if(entry.route?.action!=='update-existing'||!section||typeof section.text!=='string'||entry.reviewed_app_version!==(app.version??null)||entry.reviewed_section_snapshot!==JSON.stringify(section))return 'routing-review';
      const draft=createDraft(app);
      draft.description=entry.text.slice(0,4000);
      draft.section_edits=[{id:section.id,title:section.title,caption:section.caption??'',text:replacement}];
@@ -358,6 +358,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     const queue=reviewActionQueue(packet.review_decisions,packet.entries);
     if(!queue.valid){intakeStatus.textContent='Invalid review queue.';return;}
     const drafts=[];
+    if(queue.blocked_items.length){intakeStatus.textContent='Export blocked: duplicate, conflict, or source-integrity review blockers remain.';return;}
     const pendingUpdates=queue.items.filter(item=>item.action==='update-existing');
     for(const item of queue.items){
      const entry=result.entries[item.index];
@@ -365,7 +366,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      const app=registry.apps.find(a=>a.app_id===entry.route?.app_id);
      const section=app?.sections?.find(x=>x.id===entry.route?.section_id);
      const replacement=replacementDrafts.get(item.index);
-     if(entry.route?.action!=='update-existing'||!section||typeof section.text!=='string'||!replacement?.trim())continue;
+     if(entry.route?.action!=='update-existing'||!section||typeof section.text!=='string'||entry.reviewed_app_version!==(app.version??null)||entry.reviewed_section_snapshot!==JSON.stringify(section)||!replacement?.trim())continue;
      const draft=createDraft(app);draft.description=entry.text.slice(0,4000);
      draft.section_edits=[{id:section.id,title:section.title,caption:section.caption??'',text:replacement}];
      const converted=naturalistChangeRequest(draft,app);
