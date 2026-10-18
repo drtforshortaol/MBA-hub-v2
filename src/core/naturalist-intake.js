@@ -8,3 +8,19 @@ export function normalizeNaturalistUpdate(input) {
   const categories = [...new Set((Array.isArray(input.categories) ? input.categories : []).filter(x => typeof x === 'string').map(x => x.trim()).filter(Boolean))];
   return Object.freeze({title, body, categories, status:'draft', scientificApproval:'pending', publishable:false});
 }
+
+// Source-only exchange: re-import never restores approvals or classifications.
+const INTAKE_FIELDS=new Set(['schema_version','kind','original_source','scientific_verification','editorial_review','approval_state','classified','committed','published']);
+export function createNaturalistIntakePacket(source){
+ if(typeof source!=='string'||!source.trim())throw new TypeError('Source notes are required');
+ if(source.length>60000)throw new RangeError('Source exceeds intake limit');
+ return {schema_version:1,kind:'mba-v2-naturalist-intake',original_source:source,scientific_verification:'required',editorial_review:'required',approval_state:'pending',classified:false,committed:false,published:false};
+}
+export function readNaturalistIntakePacket(packet){
+ if(!packet||typeof packet!=='object'||Array.isArray(packet)||Object.keys(packet).some(key=>!INTAKE_FIELDS.has(key)))
+  return {valid:false,reason:'invalid-intake',published:false};
+ let expected;
+ try{expected=createNaturalistIntakePacket(packet.original_source);}catch{return {valid:false,reason:'invalid-source',published:false};}
+ if(Object.keys(expected).some(key=>packet[key]!==expected[key]))return {valid:false,reason:'invalid-review-state',published:false};
+ return {valid:true,source:expected.original_source,requires_review:true,published:false,can_auto_publish:false};
+}

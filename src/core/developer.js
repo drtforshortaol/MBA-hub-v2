@@ -1,3 +1,4 @@
+import {createNaturalistIntakePacket,readNaturalistIntakePacket} from './naturalist-intake.js';
 import {naturalistChangeRequest} from './naturalist-change-request.js';
 import {exportNaturalistReviewQueue} from './naturalist-review-queue-export.js';
 import {verifyNaturalistReviewQueue} from './naturalist-review-queue-import.js';
@@ -26,7 +27,8 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
  intakeButton.addEventListener('click',()=>{
   const source=intakeText.value;
   if(!source.trim()){intakeStatus.textContent='Source notes are required.';return;}
-  const payload={schema_version:1,kind:'mba-v2-naturalist-intake',original_source:source,scientific_verification:'required',editorial_review:'required',approval_state:'pending',classified:false,committed:false,published:false};
+  let payload;
+  try{payload=createNaturalistIntakePacket(source);}catch(error){intakeStatus.textContent=error.message;return;}
   const blob=new Blob([JSON.stringify(payload,null,2)+'\n'],{type:'application/json'});
   const url=URL.createObjectURL(blob),link=document.createElement('a');
   link.href=url;link.download='mba-naturalist-intake.json';link.click();
@@ -42,6 +44,26 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
  // Invalidate generated decisions immediately when their source changes.
  intakeText.addEventListener('input',()=>{activeReviewGeneration++;reviewOutput.replaceChildren();delete reviewOutput.dataset.reviewFingerprint;intakeStatus.textContent='Source changed. Generate a new review packet before downloading.';});
  let activeReviewGeneration=0;
+ let activeIntakeImport=0;
+ const importIntakeLabel=document.createElement('label');importIntakeLabel.htmlFor='naturalist-intake-import';importIntakeLabel.textContent='Restore source from review intake JSON';
+ const importIntakeFile=document.createElement('input');importIntakeFile.type='file';importIntakeFile.id='naturalist-intake-import';importIntakeFile.accept='.json,application/json';
+ intake.insertBefore(importIntakeLabel,intakeStatus);intake.insertBefore(importIntakeFile,intakeStatus);
+ importIntakeFile.addEventListener('change',async()=>{
+  const importGeneration=++activeIntakeImport,generation=activeReviewGeneration,source=intakeText.value;
+  const file=importIntakeFile.files?.[0];if(!file)return;
+  try{
+   if(file.size>400000)throw new Error('Intake file exceeds the source packet limit.');
+   const restored=readNaturalistIntakePacket(JSON.parse(await file.text()));
+   // Never overwrite notes or a newer selected intake while file reading was pending.
+   if(importGeneration!==activeIntakeImport||generation!==activeReviewGeneration||intakeText.value!==source)return;
+   if(!restored.valid)throw new Error('Invalid intake source or review state.');
+   intakeText.value=restored.source;
+   intakeText.dispatchEvent(new Event('input'));
+   intakeStatus.textContent='Source restored. Generate a new review packet; scientific and editorial review remain required.';
+  }catch(error){
+   if(importGeneration===activeIntakeImport&&generation===activeReviewGeneration&&intakeText.value===source)intakeStatus.textContent=error.message;
+  }finally{if(importGeneration===activeIntakeImport)importIntakeFile.value='';}
+ });
  reviewButton.addEventListener('click',async()=>{
   const generation=++activeReviewGeneration;
   reviewOutput.replaceChildren();
