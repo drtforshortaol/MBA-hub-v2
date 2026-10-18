@@ -59,7 +59,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    // Review decisions are annotations only: never mutate canonical classifications.
    // Include the classification outcome in the review key: a registry or routing
    // change must not silently reattach decisions to different proposed targets.
-   const reviewIdentity=JSON.stringify({source,entries:packet.entries.map(e=>({text:e.source_text,placement:e.placement,review_flags:e.review.flags,conflict_with:e.conflict_with,duplicate_of:e.duplicate_of,existing_content:e.existing_content,route:result.entries[e.index]?.route,app_version:registry.apps.find(a=>a.app_id===result.entries[e.index]?.route?.app_id)?.version}))});
+   const reviewIdentity=JSON.stringify({source,entries:packet.entries.map(e=>({text:e.source_text,placement:e.placement,review_flags:e.review.flags,conflict_with:e.conflict_with,duplicate_of:e.duplicate_of,existing_content:e.existing_content,route:e.route,app_version:e.reviewed_app_version,section_snapshot:e.reviewed_section_snapshot,source_snapshot:e.reviewed_source_snapshot}))});
    const sourceFingerprint=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(reviewIdentity)).then(bytes=>Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join(''));
    if(generation!==activeReviewGeneration||intakeText.value!==source){intakeStatus.textContent='Source or review generation changed while classification was running. Generate again.';return;}
    const reviewKey=reviewStorageKey(env.namespace,sourceFingerprint);
