@@ -79,3 +79,14 @@ Session snapshot fields are normalized before replay: malformed collections beco
 Recovery used a clean Git clone with no copied untracked files. The local predecessor tree (`6afaf6dd0364b99db2833e770bad08dff502ede3`) exactly matched verified remote branch head `784fc99b9c55723f3f5e3d41a6c3c31ef951db5a`; only commit metadata differed. No AGENTS.md was present.
 
 Validation: 442/442 isolated Node tests passed, including five new ownership/recovery regressions and existing offline worker checks; build and 33-app/11-category validation passed; strict content preflight passed all 33 apps; security scan passed. Generated reports were excluded. No scientific content, IDs, approvals, deployment or preview changed. Physical review remains outstanding.
+
+
+### Complete contextual app view restoration
+
+Contextual Back now restores deliberately closed panels as well as open panels. Previously it only reopened saved panels, leaving panels that default to open visible even when the visitor had closed them before following an app link. Native details now match the saved open-index set; custom disclosure controls use their own click handlers only when their current expansion differs from the saved set. Input events run first, followed by panel restoration and scroll, so input-triggered rendering cannot leave default panels open.
+
+The shared app-view module also captures multiline textarea notes, keeps input/change event behavior, and excludes password, file, hidden and non-user action fields. Replay verifies the current element is an input, select or textarea and remains eligible, tolerating removed fields and IDs reused by unrelated elements.
+
+Seven behavior regressions cover open/closed native and custom panels, textarea capture, rendering event order, idempotent replay, removed/sensitive fields, reused nonform IDs, and a complete capture → cross-app visit → contextual Back → restored view round trip through namespaced session storage. No content, scientific approvals, IDs, deployment configuration or private preview changed.
+
+Validation on final code: 449/449 Node tests passed, build and 33-app/11-category validation passed, security scan passed, strict content preflight passed 33/33 apps. Generated reports excluded; physical-device testing remains separate.
