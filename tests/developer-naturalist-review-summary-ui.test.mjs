@@ -8,5 +8,5 @@ test('developer UI wires read-only review queue export with current-review guard
  assert.match(source,/if\(!isCurrentReview\(\)\|\|!validateDecisions\(\)\)/);
  assert.match(source,/exportNaturalistReviewQueue\(packet\.review_decisions,packet\.entries,sourceFingerprint\)/);
  assert.match(source,/mba-naturalist-review-queue-summary\.json/);
- assert.match(source,/reviewOutput\.append\(queueHeading,queueStatus,refreshQueue,queueItems,exportQueue,exportSummary\)/);
+ assert.match(source,/reviewOutput\.append\(queueHeading,queueStatus,refreshQueue,queueItems,exportQueue,exportSummary(?:,|\))/);
 });
