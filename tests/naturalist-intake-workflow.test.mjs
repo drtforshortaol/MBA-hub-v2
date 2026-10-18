@@ -24,3 +24,18 @@ test('workflow rejects invalid review edits and missing intake',()=>{
  assert.equal(previewNaturalistDrafts(null,[]).valid,false);
  assert.equal(createNaturalistIntake('',[]).valid,false);
 });
+
+
+test('reviewed Naturalist draft refuses a catalog version change after classification',()=>{
+ const apps=[{app_id:'sea-otter',title:'Sea Otter',version:'1.0',sections:[{id:'feeding',title:'Feeding',text:'Old feeding notes.'}]}];
+ const intake=createNaturalistIntake('Sea otter feeding behavior.',apps);
+ assert.equal(intake.valid,true);
+ assert.equal(intake.classification.entries[0].reviewed_app_version,'1.0');
+ const reviewed=updateNaturalistDecision(intake,0,{scientific_status:'verified',editorial_status:'approved',proposed_action:'update-existing'});
+ const changed=structuredClone(apps);changed[0].version='2.0';
+ const result=previewNaturalistDrafts(reviewed,changed,{0:'Reviewed replacement text.'});
+ assert.equal(result.valid,true);
+ assert.equal(result.items[0].status,'routing-review');
+ assert.equal(result.prepared,false);
+ assert.equal(result.published,false);
+});
