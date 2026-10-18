@@ -17,7 +17,7 @@ export function classifyUpdateBatch(input,applications){
   const route=suggestContentDestination(text,applications);
   const app=route.app_id&&Array.isArray(applications)?applications.find(a=>a.app_id===route.app_id):null;
   const reviewed_section=app?.sections?.find(s=>s?.id===route.section_id);
-  const reviewed_section_snapshot=reviewed_section?JSON.stringify({id:reviewed_section.id,title:reviewed_section.title??null,caption:reviewed_section.caption??null,text:reviewed_section.text??null}):null;
+  const reviewed_section_snapshot=reviewed_section?JSON.stringify(reviewed_section):null;
   const existing_content=app?assessExistingContent(text,app,{sectionId:route.section_id}):null;
   const placement=proposeUpdatePlacement(text,route,existing_content);
   const review=assessNaturalistReviewGates({route,placement,existing_content,extraction:extracted.entries[index].extraction});

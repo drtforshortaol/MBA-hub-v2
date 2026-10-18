@@ -56,3 +56,19 @@ test('Naturalist reviewed draft blocks silent edits to section text or metadata 
   assert.equal(result.published,false);
  }
 });
+
+
+test('Naturalist review snapshot also guards additional section metadata',()=>{
+ const apps=[{app_id:'sea-otter',title:'Sea Otter',version:'1.0',sections:[{id:'feeding',title:'Feeding',text:'Original feeding notes.',media:{alt:'Feeding photo'},tags:['feeding']}]}];
+ const intake=createNaturalistIntake('Sea otter feeding behavior.',apps);
+ assert.equal(intake.valid,true);
+ const reviewed=updateNaturalistDecision(intake,0,{scientific_status:'verified',editorial_status:'approved',proposed_action:'update-existing'});
+ for(const change of [section=>section.media.alt='Changed alt',section=>section.tags.push('new')]){
+  const changed=structuredClone(apps);
+  change(changed[0].sections[0]);
+  const preview=previewNaturalistDrafts(reviewed,changed,{0:'Replacement'});
+  assert.equal(preview.items[0].status,'routing-review');
+  assert.equal(preview.prepared,false);
+  assert.equal(preview.published,false);
+ }
+});
