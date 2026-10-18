@@ -9,13 +9,13 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-  pages: write
-  id-token: write
 concurrency:
   group: seahorse-preview-pages
   cancel-in-progress: true
 jobs:
   preview:
+    # Publication remains disabled until explicitly authorized.
+    if: ${{ false }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages

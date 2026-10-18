@@ -30,6 +30,8 @@ jobs:
         run: npm test
       - name: Verify built tester artifacts remain intact after regressions
         run: node --test tests/security-review.test.mjs
+      - name: Verify complete preview artifact integrity and isolation
+        run: node scripts/verify-build-artifacts.mjs
       - name: Run security scanner
         run: npm run security:scan
       - name: Check image and note assets
