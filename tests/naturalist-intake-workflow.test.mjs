@@ -39,3 +39,20 @@ test('reviewed Naturalist draft refuses a catalog version change after classific
  assert.equal(result.prepared,false);
  assert.equal(result.published,false);
 });
+
+
+test('Naturalist reviewed draft blocks silent edits to section text or metadata without version bump',()=>{
+ const apps=[{app_id:'sea-otter',title:'Sea Otter',version:'1.0',sections:[{id:'feeding',title:'Feeding',caption:'Original caption',text:'Original feeding notes.'}]}];
+ const intake=createNaturalistIntake('Sea otter feeding behavior.',apps);
+ assert.equal(intake.valid,true);
+ assert.equal(typeof intake.classification.entries[0].reviewed_section_snapshot,'string');
+ const reviewed=updateNaturalistDecision(intake,0,{scientific_status:'verified',editorial_status:'approved',proposed_action:'update-existing'});
+ for(const field of ['text','title','caption']){
+  const changed=structuredClone(apps);
+  changed[0].sections[0][field]+=' changed';
+  const result=previewNaturalistDrafts(reviewed,changed,{0:'Replacement'});
+  assert.equal(result.items[0].status,'routing-review',field);
+  assert.equal(result.prepared,false);
+  assert.equal(result.published,false);
+ }
+});
