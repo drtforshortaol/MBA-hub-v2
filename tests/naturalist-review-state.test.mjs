@@ -330,3 +330,15 @@ test('non-null malformed duplicate references are quarantined rather than silent
   assert.equal(queue.can_auto_publish,false);
  }
 });
+
+
+test('portable review recovery rejects tampered destination routing and section snapshots',()=>{
+ const entries=[{index:0,text:'Sea otter feeding',source_text:'Sea otter feeding',route:{action:'update-existing',app_id:'otter',section_id:'feeding'},reviewed_app_version:'1.0',reviewed_section_snapshot:'original-section-snapshot'}];
+ const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',review_context_sha256:'matching',review_decisions:newReviewDecisions(entries),entries:structuredClone(entries)};
+ assert.deepEqual(importReviewPacket(packet,'matching',entries),packet.review_decisions);
+ for(const field of ['route','reviewed_app_version','reviewed_section_snapshot','text']){
+  const modified=structuredClone(packet);
+  modified.entries[0][field]=field==='route'?{...modified.entries[0].route,section_id:'different'}:'tampered';
+  assert.equal(importReviewPacket(modified,'matching',entries),null,field);
+ }
+});
