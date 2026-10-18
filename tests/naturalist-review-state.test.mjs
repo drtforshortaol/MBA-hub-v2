@@ -305,3 +305,12 @@ test('local review recovery rejects ambiguous preparation and publication flags'
   assert.deepEqual(readReview(store,key,'hash',entries),decisions);
  }
 });
+
+test('review recovery fails closed for missing or malformed expected classification records',()=>{
+ const expected=[{index:0,source_text:'Kelp',duplicate_of:null,conflict_with:[]}];
+ const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',review_context_sha256:'hash',review_decisions:newReviewDecisions(expected),entries:structuredClone(expected)};
+ assert.deepEqual(importReviewPacket(packet,'hash',expected),packet.review_decisions);
+ for(const bad of [null,undefined,42,'bad',[],{index:1,source_text:'Kelp',duplicate_of:null,conflict_with:[]}]){
+  assert.equal(importReviewPacket(packet,'hash',[bad]),null);
+ }
+});
