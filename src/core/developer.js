@@ -110,7 +110,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    previous.addEventListener('click',()=>{if(isCurrentReview())showStatement(activeStatement-1);});
    next.addEventListener('click',()=>{if(isCurrentReview())showStatement(activeStatement+1);});
    const nextPending=document.createElement('button');nextPending.type='button';nextPending.className='button';nextPending.textContent='Next incomplete review';
-   const incomplete=index=>{const decision=packet.review_decisions[index];return decision.scientific_status!=='verified'||decision.editorial_status!=='approved';};
+   const incomplete=index=>{const decision=packet.review_decisions[index];return decision.scientific_status!=='verified'||decision.editorial_status!=='approved'||decision.proposed_action==='needs-review';};
    nextPending.addEventListener('click',()=>{
     if(!isCurrentReview())return;
     const count=statementCards.length;
@@ -118,7 +118,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      const index=(activeStatement+offset)%count;
      if(incomplete(index)){showStatement(index);statementCards[index]?.scrollIntoView({block:'nearest'});return;}
     }
-    intakeStatus.textContent='All statements have both reviews recorded. Publication remains disabled.';
+    intakeStatus.textContent='All statements have scientific, editorial, and action decisions recorded. Publication remains disabled.';
    });
    const nextFlagged=document.createElement('button');nextFlagged.type='button';nextFlagged.className='button';nextFlagged.textContent='Next flagged statement';
    nextFlagged.addEventListener('click',()=>{
@@ -248,7 +248,8 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     function updateProgress(){
      const scientific=decision.scientific_status==='verified';
      const editorial=decision.editorial_status==='approved';
-     progress.textContent=scientific&&editorial?'Both reviews recorded locally. Publication remains prohibited.':'Review incomplete — scientific and editorial decisions are required.';
+     const action=decision.proposed_action!=='needs-review';
+     progress.textContent=scientific&&editorial&&action?'Scientific, editorial, and action decisions recorded locally. Publication remains prohibited.':scientific&&editorial?'Choose a proposed action to complete this review. Publication remains prohibited.':'Review incomplete — scientific and editorial decisions are required.';
     }
     form.append(progress);
     updateProgress();
