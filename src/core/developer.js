@@ -303,6 +303,17 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    const queueStatus=document.createElement('p');queueStatus.setAttribute('role','status');
    const queueItems=document.createElement('ol');
    const replacementDrafts=new Map();
+   // Reject ambiguous IDs and stale review targets before building local drafts.
+   function reviewedTarget(entry){
+    const route=entry?.route;
+    if(route?.action!=='update-existing'||typeof route.app_id!=='string'||typeof route.section_id!=='string')return null;
+    if(registry.apps.filter(app=>app.app_id===route.app_id).length!==1)return null;
+    const app=registry.apps.find(app=>app.app_id===route.app_id);
+    if(!Array.isArray(app.sections)||app.sections.filter(section=>section.id===route.section_id).length!==1)return null;
+    const section=app.sections.find(section=>section.id===route.section_id);
+    if(typeof section.text!=='string'||entry.reviewed_app_version!==(app.version??null)||entry.reviewed_section_snapshot!==JSON.stringify(section))return null;
+    return {app,section};
+   }
    // Replacement drafts remain in-memory and are never persisted as approvals.
    const refreshQueue=document.createElement('button');refreshQueue.type='button';refreshQueue.className='button';refreshQueue.textContent='Refresh reviewed actions';
    function showQueue(){
@@ -338,11 +349,11 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      const entry=result.entries[item.index];
      if(entry.duplicate_of!=null||(entry.conflict_with||[]).length)return 'blocked';
      if(item.action!=='update-existing')return 'placement-review';
-     const app=registry.apps.find(a=>a.app_id===entry.route?.app_id);
-     const section=app?.sections?.find(x=>x.id===entry.route?.section_id);
+     const target=reviewedTarget(entry);
      const replacement=replacementDrafts.get(item.index);
      if(!replacement?.trim())return 'replacement-required';
-     if(entry.route?.action!=='update-existing'||!section||typeof section.text!=='string'||entry.reviewed_app_version!==(app.version??null)||entry.reviewed_section_snapshot!==JSON.stringify(section))return 'routing-review';
+     if(!target)return 'routing-review';
+     const {app,section}=target;
      const draft=createDraft(app);
      draft.description=entry.text.slice(0,4000);
      draft.section_edits=[{id:section.id,title:section.title,caption:section.caption??'',text:replacement}];
@@ -363,10 +374,10 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     for(const item of queue.items){
      const entry=result.entries[item.index];
      if(item.action!=='update-existing'||entry.duplicate_of!=null||(entry.conflict_with||[]).length)continue;
-     const app=registry.apps.find(a=>a.app_id===entry.route?.app_id);
-     const section=app?.sections?.find(x=>x.id===entry.route?.section_id);
+     const target=reviewedTarget(entry);
      const replacement=replacementDrafts.get(item.index);
-     if(entry.route?.action!=='update-existing'||!section||typeof section.text!=='string'||entry.reviewed_app_version!==(app.version??null)||entry.reviewed_section_snapshot!==JSON.stringify(section)||!replacement?.trim())continue;
+     if(!target||!replacement?.trim())continue;
+     const {app,section}=target;
      const draft=createDraft(app);draft.description=entry.text.slice(0,4000);
      draft.section_edits=[{id:section.id,title:section.title,caption:section.caption??'',text:replacement}];
      const converted=naturalistChangeRequest(draft,app);
