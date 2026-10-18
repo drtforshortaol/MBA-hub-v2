@@ -6,6 +6,40 @@ import {fileURLToPath} from 'node:url';
 const digest = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 const safePath = value => typeof value === 'string' && value.split('/').every(part => /^[A-Za-z0-9_.-]+$/.test(part) && part !== '.' && part !== '..');
 
+// Registry declarations must match what the offline release actually carries.
+export function verifyRegistryCoverage(registry, media, listed) {
+ const errors = [];
+ if (!Array.isArray(registry.apps) || !registry.apps.length) return ['missing registry applications'];
+ if (!media || media.schema_version !== 1 || !Array.isArray(media.assets)) return ['invalid media catalog'];
+ const assets = new Map();
+ for (const asset of media.assets) {
+  if (!asset || typeof asset.asset_id !== 'string' || !asset.asset_id || !safePath(asset.path) || typeof asset.offline !== 'boolean') { errors.push('invalid media declaration'); continue; }
+  if (assets.has(asset.asset_id)) errors.push(`duplicate media identifier: ${asset.asset_id}`);
+  assets.set(asset.asset_id,asset);
+ }
+ const ids = new Set();
+ for (const app of registry.apps) {
+  if (!app || typeof app.app_id !== 'string' || !app.app_id || !safePath(app.entry_point) || !Array.isArray(app.offline_assets) || !Array.isArray(app.media)) { errors.push('invalid registry application'); continue; }
+  if (ids.has(app.app_id)) errors.push(`duplicate application identifier: ${app.app_id}`);
+  ids.add(app.app_id);
+  const offline = new Set(app.offline_assets);
+  if (!offline.has(app.entry_point)) errors.push(`entry missing from app offline assets: ${app.app_id}`);
+  if (!listed.has(app.entry_point)) errors.push(`entry missing from release: ${app.app_id}`);
+  for (const resource of app.offline_assets) {
+   if (!safePath(resource) || !listed.has(resource)) errors.push(`app offline asset missing or unsafe: ${app.app_id}: ${String(resource)}`);
+  }
+  if (offline.size !== app.offline_assets.length) errors.push(`duplicate app offline asset: ${app.app_id}`);
+  for (const id of app.media) {
+   const asset = assets.get(id);
+   if (!asset) { errors.push(`unknown app media: ${app.app_id}: ${String(id)}`); continue; }
+   if (asset.offline) {
+    if (!listed.has(asset.path)) errors.push(`offline media missing from release: ${app.app_id}: ${id}`);
+   }
+  }
+ }
+ return errors;
+}
+
 // Verify the exact bytes that will be served; this does not grant release approval.
 export function verifyBuildArtifacts(directory, expectedEnvironment) {
  const errors = [];
@@ -19,6 +53,9 @@ export function verifyBuildArtifacts(directory, expectedEnvironment) {
   if (data?.environment !== expectedEnvironment) errors.push(`${name}: environment mismatch`);
  }
  if (environment.namespace !== `mba-v2-${expectedEnvironment}` || environment.developer !== (expectedEnvironment === 'developer')) errors.push('environment: privilege mismatch');
+ if (release.schema_version !== 1 || registry.schema_version !== 1) errors.push('invalid artifact schema');
+ if ([release,environment,registry].some(value => typeof value.version !== 'string' || !value.version.trim())) errors.push('missing artifact version');
+ if (typeof release.release !== 'string' || !/^[a-f0-9]{16}$/.test(release.release)) errors.push('invalid release identifier');
  if (release.version !== environment.version || release.version !== registry.version) errors.push('artifact version mismatch');
  if (!Array.isArray(release.resources) || !release.resources.length) return [...errors, 'missing release resources'];
  const listed = new Set();
@@ -38,6 +75,10 @@ export function verifyBuildArtifacts(directory, expectedEnvironment) {
    if (bytes.length !== item.bytes || digest(bytes) !== item.sha256) errors.push(`integrity mismatch: ${item.url}`);
   } catch { errors.push(`missing resource: ${item.url}`); }
  }
+ for (const required of ['index.html','environment.json','registry.json','manifest.webmanifest','shared/media/catalog.json']) if (!listed.has(required)) errors.push(`missing critical resource: ${required}`);
+ let media;
+ try { media = read('shared/media/catalog.json'); } catch { errors.push('missing or invalid media catalog'); }
+ errors.push(...verifyRegistryCoverage(registry,media,listed));
  const walk = (dir, prefix = '') => {
   for (const entry of fs.readdirSync(dir, {withFileTypes:true})) {
    const relative = prefix + entry.name;

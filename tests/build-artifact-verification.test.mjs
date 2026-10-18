@@ -4,17 +4,20 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import {verifyBuildArtifacts} from '../scripts/verify-build-artifacts.mjs';
+import {verifyBuildArtifacts,verifyRegistryCoverage} from '../scripts/verify-build-artifacts.mjs';
 const hash = value => crypto.createHash('sha256').update(value).digest('hex');
 function fixture(t) {
  const dir = fs.mkdtempSync(path.join(os.tmpdir(),'mba-artifact-'));
  t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
  const write = (name,data) => fs.writeFileSync(path.join(dir,name),typeof data === 'string' ? data : JSON.stringify(data));
  write('index.html','<title>preview</title>');
- write('registry.json',{environment:'tester',version:'test'});
+ fs.mkdirSync(path.join(dir,'shared/media'),{recursive:true});
+ write('shared/media/catalog.json',{schema_version:1,assets:[]});
+ write('manifest.webmanifest','{}');
+ write('registry.json',{schema_version:1,environment:'tester',version:'test',apps:[{app_id:'sample',entry_point:'index.html',offline_assets:['index.html'],media:[]}]});
  write('environment.json',{environment:'tester',version:'test',namespace:'mba-v2-tester',developer:false});
- const resources = fs.readdirSync(dir).sort().map(url => { const bytes=fs.readFileSync(path.join(dir,url)); return {url,sha256:hash(bytes),bytes:bytes.length}; });
- const release={environment:'tester',version:'test',resources,release:hash(JSON.stringify(resources)).slice(0,16)};
+ const resources = ['environment.json','index.html','manifest.webmanifest','registry.json','shared/media/catalog.json'].map(url => { const bytes=fs.readFileSync(path.join(dir,url)); return {url,sha256:hash(bytes),bytes:bytes.length}; });
+ const release={schema_version:1,environment:'tester',version:'test',resources,release:hash(JSON.stringify(resources)).slice(0,16)};
  write('release.json',release);
  write('sw.js',`const NAMESPACE='mba-v2-tester',RELEASE='${release.release}';`);
  return {dir,write,release};
@@ -63,4 +66,49 @@ test('tester rejects maintenance engines, secrets and symlinks',t=>{
  assert(errors.includes('developer artifact in tester: core/naturalist-engine/private.js'));
  assert(errors.includes('private artifact: .env'));
  assert(errors.includes('symbolic link: linked.html'));
+});
+
+const sampleApp = {app_id:'sample',entry_point:'apps/sample/index.html',offline_assets:['apps/sample/index.html','shared/media/image.svg'],media:['image']};
+const sampleMedia = {schema_version:1,assets:[{asset_id:'image',path:'shared/media/image.svg',offline:true}]};
+const covered = new Set(sampleApp.offline_assets);
+test('referenced offline media must be covered by the verified release',()=>{
+ assert.deepEqual(verifyRegistryCoverage({apps:[sampleApp]},sampleMedia,covered),[]);
+ const missing=verifyRegistryCoverage({apps:[{...sampleApp,offline_assets:[sampleApp.entry_point]}]},sampleMedia,covered);
+ assert.deepEqual(missing,[]); // Per-app duplicate registration is enforced by source preflight.
+ const absent=verifyRegistryCoverage({apps:[sampleApp]},sampleMedia,new Set([sampleApp.entry_point]));
+ assert(absent.includes('offline media missing from release: sample: image'));
+});
+test('missing application entries and unsafe offline paths fail independently',()=>{
+ const errors=verifyRegistryCoverage({apps:[{...sampleApp,offline_assets:['../outside']}]},sampleMedia,new Set());
+ assert(errors.includes('entry missing from app offline assets: sample'));
+ assert(errors.includes('entry missing from release: sample'));
+ assert(errors.includes('app offline asset missing or unsafe: sample: ../outside'));
+});
+test('missing malformed and duplicate registry declarations fail closed',()=>{
+ for (const registry of [{},{apps:[]},{apps:[null]}]) assert(verifyRegistryCoverage(registry,sampleMedia,covered).length);
+ assert(verifyRegistryCoverage({apps:[sampleApp]},null,covered).includes('invalid media catalog'));
+ assert(verifyRegistryCoverage({apps:[sampleApp,sampleApp]},sampleMedia,covered).includes('duplicate application identifier: sample'));
+ const unknown=verifyRegistryCoverage({apps:[{...sampleApp,media:['missing']}]},sampleMedia,covered);
+ assert(unknown.includes('unknown app media: sample: missing'));
+ assert(verifyRegistryCoverage({apps:[sampleApp]},{schema_version:1,assets:[{asset_id:'image',path:'../private',offline:true}]},covered).includes('invalid media declaration'));
+});
+test('missing metadata versions and schema cannot agree accidentally',t=>{
+ const {dir,write,release}=fixture(t);
+ delete release.version; delete release.schema_version;
+ write('release.json',release);
+ write('environment.json',{environment:'tester',namespace:'mba-v2-tester',developer:false});
+ write('registry.json',{environment:'tester',apps:[]});
+ const errors=verifyBuildArtifacts(dir,'tester');
+ assert(errors.includes('missing artifact version'));
+ assert(errors.includes('invalid artifact schema'));
+ assert(errors.includes('missing registry applications'));
+});
+test('critical startup resources cannot be omitted from a self-consistent release',t=>{
+ const {dir,write,release}=fixture(t);
+ release.resources=release.resources.filter(item=>item.url!=='manifest.webmanifest');
+ fs.rmSync(path.join(dir,'manifest.webmanifest'));
+ release.release=hash(JSON.stringify(release.resources)).slice(0,16);
+ write('release.json',release);
+ write('sw.js',`const NAMESPACE='mba-v2-tester',RELEASE='${release.release}';`);
+ assert(verifyBuildArtifacts(dir,'tester').includes('missing critical resource: manifest.webmanifest'));
 });

@@ -28,3 +28,10 @@ This branch isolates work; it does not by itself start an autonomous development
 - Disabled the previously active Seahorse Pages publication job and removed its write permissions. Regression guards keep it and the iPhone publication job unconditionally disabled.
 - Validation: 413/413 Node tests passed; manifest validation passed for 33 apps and 11 categories; security scan and independent artifact verification passed. Repeated build generated identical developer/tester release identifiers.
 - Device, scientific and owner release approvals remain unchanged. No merges, deployments or publishing performed.
+
+## Registry and media coverage checkpoint
+
+- Independent artifact verification now requires valid release/registry schemas, nonempty matching versions, a valid release identifier and critical startup resources.
+- Every registry application entry and declared offline resource must be present in the verified release. Referenced offline media must resolve to valid catalog metadata and release resources; malformed/duplicate declarations fail closed.
+- Per-app duplicate media registration remains source-preflight responsibility, preserving independently passing track CI until manifest work is integrated.
+- Validation: 418/418 Node tests passed, including five additional negative/coverage regressions. Build validation (33 apps, 11 categories), security scan and verification of both built environments passed. Existing 38 release blockers and approvals remain unchanged.
