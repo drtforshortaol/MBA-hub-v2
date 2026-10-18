@@ -14,6 +14,21 @@ function validDrafts(drafts,entries){
   seen.add(index);return true;
  });
 }
+export function createReplacementBackup(fingerprint,entries,drafts){
+ if(typeof fingerprint!=='string'||!/^[a-f0-9]{64}$/.test(fingerprint)||!validDrafts(drafts,entries))throw new TypeError('Invalid replacement draft backup');
+ const packet={schema_version:1,kind:'mba-v2-naturalist-replacement-drafts',review_context_sha256:fingerprint,drafts:drafts.map(([index,text])=>[index,text]),can_auto_publish:false};
+ if(new TextEncoder().encode(JSON.stringify(packet,null,2)+'\n').length>MAX_RECORD_LENGTH)throw new TypeError('Replacement backup exceeds recovery limit');
+ return packet;
+}
+export function readReplacementBackup(text,fingerprint,entries){
+ try{
+  if(typeof text!=='string'||text.length>MAX_RECORD_LENGTH)return {valid:false,drafts:[]};
+  const packet=JSON.parse(text);
+  const expected=createReplacementBackup(fingerprint,entries,packet?.drafts);
+  if(!packet||typeof packet!=='object'||Array.isArray(packet)||Object.keys(packet).length!==5||Object.keys(expected).some(key=>!Object.hasOwn(packet,key))||packet.schema_version!==expected.schema_version||packet.kind!==expected.kind||packet.review_context_sha256!==fingerprint||packet.can_auto_publish!==false)return {valid:false,drafts:[]};
+  return {valid:true,drafts:expected.drafts};
+ }catch{return {valid:false,drafts:[]};}
+}
 export function readReplacementDrafts(storage,namespace,fingerprint,entries){
  try{
   const raw=storage.getItem(storageKey(namespace,fingerprint));

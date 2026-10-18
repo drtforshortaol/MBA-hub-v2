@@ -1,4 +1,4 @@
-import {readReplacementDrafts,saveReplacementDrafts} from './naturalist-replacement-drafts.js';
+import {readReplacementDrafts,saveReplacementDrafts,createReplacementBackup,readReplacementBackup} from './naturalist-replacement-drafts.js';
 import {createNaturalistIntakePacket,readNaturalistIntakePacket,readNaturalistSource,saveNaturalistSource,discardNaturalistSource} from './naturalist-intake.js';
 import {naturalistChangeRequest} from './naturalist-change-request.js';
 import {exportNaturalistReviewQueue} from './naturalist-review-queue-export.js';
@@ -388,6 +388,34 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     return {app,section};
    }
    // Only text is recovered; classifications and approval decisions are never stored here.
+   const replacementDownload=document.createElement('button');replacementDownload.type='button';replacementDownload.className='button';replacementDownload.textContent='Download replacement text backup';
+   replacementDownload.addEventListener('click',()=>{
+    if(!isCurrentReview())return;
+    try{
+     const backup=createReplacementBackup(sourceFingerprint,packet.entries,[...replacementDrafts].filter(([,text])=>text.trim()));
+     const blob=new Blob([JSON.stringify(backup,null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');
+     link.href=url;link.download='mba-naturalist-replacement-text.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+     replacementRecoveryStatus.textContent='Replacement text backup downloaded. Review decisions are not included.';
+    }catch{replacementRecoveryStatus.textContent='Replacement backup invalid. Nothing downloaded.';}
+   });
+   const replacementRestoreLabel=document.createElement('label');replacementRestoreLabel.textContent='Restore replacement text backup (same classification, max 2 MB)';
+   const replacementRestore=document.createElement('input');replacementRestore.type='file';replacementRestore.accept='.json,application/json';replacementRestoreLabel.append(replacementRestore);
+   let activeReplacementImport=0;
+   replacementRestore.addEventListener('change',async()=>{
+    if(!isCurrentReview())return;
+    const request=++activeReplacementImport,snapshot=JSON.stringify([...replacementDrafts]),file=replacementRestore.files?.[0];
+    replacementRestore.value='';if(!file)return;
+    if(file.size>2000000){replacementRecoveryStatus.textContent='Replacement backup exceeds 2 MB limit.';return;}
+    try{
+     const restored=readReplacementBackup(await file.text(),sourceFingerprint,packet.entries);
+     if(request!==activeReplacementImport||!isCurrentReview())return;
+     if(JSON.stringify([...replacementDrafts])!==snapshot){replacementRecoveryStatus.textContent='Restore cancelled: replacement text changed while the file was opening. Current edits were kept.';return;}
+     if(!restored.valid){replacementRecoveryStatus.textContent='Replacement backup does not match this classification or contains invalid data. Current edits were kept.';return;}
+     for(const [index,text] of restored.drafts)replacementDrafts.set(index,text);
+     saveReplacements();showQueue();
+    }catch{if(request===activeReplacementImport&&isCurrentReview())replacementRecoveryStatus.textContent='Replacement backup could not be read. Current edits were kept.';}
+   });
+   reviewOutput.append(replacementDownload,replacementRestoreLabel);
    const refreshQueue=document.createElement('button');refreshQueue.type='button';refreshQueue.className='button';refreshQueue.textContent='Refresh reviewed actions';
    function showQueue(){
     if(!isCurrentReview()){queueStatus.textContent='Review is stale; regenerate classification.';queueItems.replaceChildren();return;}
