@@ -1,4 +1,15 @@
 import {exportNaturalistReviewQueue} from './naturalist-review-queue-export.js';
+// JSON object member order is not meaningful. Keep array order and the exact
+// schema while accepting packets reserialized by another JSON editor.
+function matchesSummary(actual,expected){
+ if(actual===expected)return true;
+ if(actual===null||expected===null||typeof actual!=='object'||typeof expected!=='object')return false;
+ if(Array.isArray(actual)!==Array.isArray(expected))return false;
+ if(Array.isArray(actual)&&actual.length!==expected.length)return false;
+ const keys=Object.keys(expected);
+ if(Object.keys(actual).length!==keys.length)return false;
+ return keys.every(key=>Object.hasOwn(actual,key)&&matchesSummary(actual[key],expected[key]));
+}
 export function verifyNaturalistReviewQueue(packet,decisions,entries,fingerprint){
  if(!packet||typeof packet!=='object'||Array.isArray(packet))return {valid:false,reason:'invalid-packet',can_auto_publish:false};
  if(typeof fingerprint!=='string'||!fingerprint.trim()||packet.review_context_sha256!==fingerprint)return {valid:false,reason:'context-mismatch',can_auto_publish:false};
@@ -6,6 +17,6 @@ export function verifyNaturalistReviewQueue(packet,decisions,entries,fingerprint
  if(['prepared','committed','published','can_auto_publish'].some(field=>!Object.hasOwn(packet,field)||packet[field]!==false))return {valid:false,reason:'unsafe-state',can_auto_publish:false};
  let expected;
  try{expected=exportNaturalistReviewQueue(decisions,entries,fingerprint);}catch{return {valid:false,reason:'invalid-review',can_auto_publish:false};}
- if(JSON.stringify(packet)!==JSON.stringify(expected))return {valid:false,reason:'summary-mismatch',can_auto_publish:false};
+ if(!matchesSummary(packet,expected))return {valid:false,reason:'summary-mismatch',can_auto_publish:false};
  return {valid:true,reason:'verified-read-only',ready:expected.summary.ready,blocked:expected.summary.blocked,can_auto_publish:false};
 }

@@ -20,3 +20,17 @@ test('rejects tampered summary, injected fields, and publication claims',()=>{
  assert.equal(verifyNaturalistReviewQueue({...packet,ready_items:[{index:0,action:'new-content'}]},decisions,entries,'context').reason,'summary-mismatch');
  assert.equal(verifyNaturalistReviewQueue(null,decisions,entries,'context').reason,'invalid-packet');
 });
+test('accepts reordered object members without relaxing exact summary verification',()=>{
+ const packet=exportNaturalistReviewQueue(decisions,entries,'context');
+ const reorder=value=>Array.isArray(value)?value.map(reorder):value&&typeof value==='object'?Object.fromEntries(Object.entries(value).reverse().map(([key,item])=>[key,reorder(item)])):value;
+ const reordered=JSON.parse(JSON.stringify(reorder(packet)));
+ assert.equal(verifyNaturalistReviewQueue(reordered,decisions,entries,'context').valid,true);
+ const moved=structuredClone(reordered);moved.blocked_items.reverse();
+ assert.equal(verifyNaturalistReviewQueue(moved,decisions,entries,'context').reason,'summary-mismatch');
+ const injected=structuredClone(reordered);injected.blocked_items[0].approved=true;
+ assert.equal(verifyNaturalistReviewQueue(injected,decisions,entries,'context').reason,'summary-mismatch');
+ const missing=structuredClone(reordered);delete missing.summary.review_state;
+ assert.equal(verifyNaturalistReviewQueue(missing,decisions,entries,'context').reason,'summary-mismatch');
+ const sparse=structuredClone(reordered);sparse.ready_items.length=3;
+ assert.equal(verifyNaturalistReviewQueue(sparse,decisions,entries,'context').reason,'summary-mismatch');
+});
