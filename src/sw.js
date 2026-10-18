@@ -1,6 +1,23 @@
 const NAMESPACE='__NAMESPACE__',RELEASE='__RELEASE__',ROOT=new URL('./',self.location.href),PREFIX=NAMESPACE+':'+ROOT.pathname+':',CACHE=PREFIX+RELEASE;
 const absolute=p=>new URL(p,ROOT).href;
 async function verified(response,item){if(!response||!response.ok)return false;const bytes=await response.clone().arrayBuffer();if(bytes.byteLength!==item.bytes)return false;return [...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(x=>x.toString(16).padStart(2,'0')).join('')===item.sha256;}
+// Safari media requests can seek within verified offline files. Never cache partial bodies.
+async function cachedResponse(response,request){
+ const range=request.headers?.get('range');
+ if(!range||request.headers?.get('if-range')||response.status!==200)return response;
+ const match=/^bytes=(\d*)-(\d*)$/.exec(range.trim());
+ // Unsupported or malformed ranges are ignored; the complete representation is valid.
+ if(!match||(!match[1]&&!match[2]))return response;
+ const first=match[1]?Number(match[1]):null,last=match[2]?Number(match[2]):null;
+ if((first!==null&&!Number.isSafeInteger(first))||(last!==null&&!Number.isSafeInteger(last))||(first!==null&&last!==null&&first>last))return response;
+ const bytes=await response.arrayBuffer(),total=bytes.byteLength;
+ const start=first===null?Math.max(0,total-last):first,end=first===null?total-1:Math.min(last??total-1,total-1);
+ if(!total||start>=total||(first===null&&last===0))return new Response(null,{status:416,headers:{'Content-Range':`bytes */${total}`,'Accept-Ranges':'bytes','Content-Length':'0'}});
+ const headers=Object.fromEntries(response.headers);
+ delete headers['content-encoding'];delete headers['transfer-encoding'];
+ headers['content-range']=`bytes ${start}-${end}/${total}`;headers['content-length']=String(end-start+1);headers['accept-ranges']='bytes';
+ return new Response(bytes.slice(start,end+1),{status:206,headers});
+}
 async function prepare(){
  const response=await fetch(absolute('release.json'),{cache:'no-store'});if(!response.ok)throw Error('Release manifest unavailable');const manifest=await response.clone().json();if(manifest.release!==RELEASE||manifest.environment!==NAMESPACE.slice('mba-v2-'.length))throw Error('Deployment changed during offline preparation (release or environment mismatch)');
  if(!Array.isArray(manifest.resources)||!manifest.resources.length)throw Error('Invalid release resources');
@@ -19,7 +36,7 @@ self.addEventListener('activate',event=>event.waitUntil((async()=>{
 })()));
 self.addEventListener('fetch',event=>{
  const url=new URL(event.request.url);if(event.request.method!=='GET'||url.origin!==ROOT.origin||!url.pathname.startsWith(ROOT.pathname))return;
- event.respondWith((async()=>{const cache=await caches.open(CACHE);url.search='';url.hash='';if(url.pathname.endsWith('/'))url.pathname+='index.html';const hit=await cache.match(url.href);if(hit){const manifestResponse=await cache.match(absolute('release.json'));if(manifestResponse){try{const manifest=await manifestResponse.json();const relative=url.pathname.slice(ROOT.pathname.length);const item=manifest.resources?.find(entry=>entry.url===relative);if(item&&await verified(hit,item))return hit;}catch{/* Invalid cache metadata must not authorize serving unverified assets. */}}}
+ event.respondWith((async()=>{const cache=await caches.open(CACHE);url.search='';url.hash='';if(url.pathname.endsWith('/'))url.pathname+='index.html';const hit=await cache.match(url.href);if(hit){const manifestResponse=await cache.match(absolute('release.json'));if(manifestResponse){try{const manifest=await manifestResponse.json();const relative=url.pathname.slice(ROOT.pathname.length);const item=manifest.resources?.find(entry=>entry.url===relative);if(item&&await verified(hit,item))return cachedResponse(hit,event.request);}catch{/* Invalid cache metadata must not authorize serving unverified assets. */}}}
  // Recover an identical verified asset from a previous compatible release if the current cache is corrupt.
  const currentManifest=await cache.match(absolute('release.json'));
  if(currentManifest){
@@ -39,7 +56,7 @@ self.addEventListener('fetch',event=>{
        const oldItem=oldManifest.resources?.find(entry=>entry.url===relative&&entry.sha256===item.sha256&&entry.bytes===item.bytes);
        if(!oldItem)continue;
        const candidate=await previous.match(url.href);
-       if(await verified(candidate,item))return candidate;
+       if(await verified(candidate,item))return cachedResponse(candidate,event.request);
       }catch{/* Ignore incompatible rollback cache. */}
      }
     }

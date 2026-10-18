@@ -29,3 +29,11 @@ This branch isolates work; it does not by itself start an autonomous development
 - Validation: build PASS; 409/409 automated tests PASS, including five new lifecycle behavior tests; build validation PASS (33 apps, 11 categories); security scan PASS.
 - New lifecycle module appears in generated tester release resources, preserving offline availability of its static import.
 - Physical iPhone suspension, storage eviction and airplane-mode checks remain manual device-review work. Automated checks do not satisfy device release gates.
+
+## Shared-media offline range checkpoint
+
+- The worker now serves single byte ranges from fully SHA-256/size-verified cached resources, including compatible verified rollback resources. This supports installed-app media consumers requesting partial reads.
+- Exact, open-ended and suffix ranges return 206 with byte bounds and lengths; unsatisfiable ranges return 416. Unsupported/malformed/multiple or conditional If-Range requests retain the complete verified response.
+- Partial responses are never written to the cache. Existing environment/scope boundaries, rollback matching, V1 caches, and update activation rules remain intact.
+- Validation: build PASS; 413/413 tests PASS (four new real-worker shared-media behavior regressions); build validation PASS (33 apps, 11 categories); security scan PASS.
+- Physical Safari media playback/seeking and installed-device offline tests remain pending; no device approval is implied.

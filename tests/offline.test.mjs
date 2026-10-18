@@ -419,3 +419,46 @@ test('service worker never intercepts resources outside its origin or URL scope'
   assert.equal(response,undefined,url+' must bypass offline interception');
  }
 });
+
+function sharedMedia(manifest){
+ const entry=manifest.resources.find(item=>item.url.startsWith('shared/media/')&&item.bytes>20);
+ assert(entry,'release must include a shared media resource');return entry;
+}
+function rangedRequest(url,range,extra={}){return {method:'GET',url,headers:new Headers({Range:range,...extra})};}
+test('offline shared media serves exact verified byte ranges with type and length preserved',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');const item=sharedMedia(w.manifest),url=new URL(item.url,w.root).href;
+ const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];
+ const original=fs.readFileSync('dist/tester/'+item.url);
+ await current.put(url,new Response(original,{headers:{'Content-Type':'image/svg+xml'}}));
+ for(const [range,start,end] of [['bytes=0-1',0,1],['bytes=3-8',3,8],['bytes=5-',5,item.bytes-1],['bytes=-4',item.bytes-4,item.bytes-1],['bytes=0-999999999',0,item.bytes-1]]){
+  const response=await w.invoke('fetch',{request:rangedRequest(url,range)});
+  assert.equal(response.status,206);assert.equal(response.headers.get('content-range'),`bytes ${start}-${end}/${item.bytes}`);
+  assert.equal(response.headers.get('content-length'),String(end-start+1));assert.equal(response.headers.get('accept-ranges'),'bytes');
+  assert.equal(response.headers.get('content-type'),'image/svg+xml');assert.deepEqual(Buffer.from(await response.arrayBuffer()),original.subarray(start,end+1));
+ }
+ assert.equal((await current.match(url)).status,200,'partial bodies must never replace the verified cached resource');
+});
+test('offline shared media returns 416 for unsatisfiable ranges',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');const item=sharedMedia(w.manifest),url=new URL(item.url,w.root).href;
+ for(const range of [`bytes=${item.bytes}-`,'bytes=-0']){
+  const response=await w.invoke('fetch',{request:rangedRequest(url,range)});
+  assert.equal(response.status,416);assert.equal(response.headers.get('content-range'),`bytes */${item.bytes}`);assert.equal((await response.arrayBuffer()).byteLength,0);
+ }
+});
+test('malformed, multiple and conditional ranges receive the full verified resource',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');const item=sharedMedia(w.manifest),url=new URL(item.url,w.root).href;
+ for(const range of ['bytes=9-2','bytes=-','bytes=0-1,4-5','items=0-1','bytes=9007199254740992-']){
+  const response=await w.invoke('fetch',{request:rangedRequest(url,range)});assert.equal(response.status,200);assert.equal((await response.arrayBuffer()).byteLength,item.bytes);
+ }
+ const response=await w.invoke('fetch',{request:rangedRequest(url,'bytes=0-1',{'If-Range':'"old-version"'})});assert.equal(response.status,200);
+});
+test('range requests never expose corrupt current or incompatible rollback shared media',async()=>{
+ const w=await worker({offline:true});await w.invoke('install');const item=sharedMedia(w.manifest),url=new URL(item.url,w.root).href;
+ const current=[...w.stores].find(([key])=>key.endsWith(w.manifest.release))[1];await current.put(url,new Response('corrupt'));
+ const prior=w.stores.get('mba-v2-tester:/v2/tester/:prior');await prior.put(new URL('release.json',w.root),new Response(JSON.stringify({...w.manifest,release:'prior',environment:'developer'})));
+ assert.equal((await w.invoke('fetch',{request:rangedRequest(url,'bytes=0-1')})).status,503);
+ await prior.put(new URL('release.json',w.root),new Response(JSON.stringify({...w.manifest,release:'prior'})));
+ const response=await w.invoke('fetch',{request:rangedRequest(url,'bytes=0-1')});assert.equal(response.status,206);
+ assert.deepEqual(Buffer.from(await response.arrayBuffer()),fs.readFileSync('dist/tester/'+item.url).subarray(0,2));
+ assert(w.stores.has('mba-shared-assets-v1'));
+});
