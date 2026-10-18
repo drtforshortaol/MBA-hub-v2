@@ -93,7 +93,7 @@ export function reviewActionQueue(decisions,entries){
   const destination=entry?.route;
   const competing=decision.proposed_action==='update-existing'&&destination?.action==='update-existing'&&
    typeof destination.app_id==='string'&&typeof destination.section_id==='string'&&
-   decisions.some((other,j)=>j!==index&&other.scientific_status==='verified'&&
+   decisions.some((other,j)=>j!==index&&other?.scientific_status==='verified'&&
     other.editorial_status==='approved'&&other.proposed_action==='update-existing'&&
     entries[j]?.route?.action==='update-existing'&&
     entries[j].route.app_id===destination.app_id&&entries[j].route.section_id===destination.section_id);
