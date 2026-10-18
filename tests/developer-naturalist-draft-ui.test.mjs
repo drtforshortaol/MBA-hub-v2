@@ -30,8 +30,10 @@ test('validated Naturalist proposals export without changing content',()=>{
 });
 
 test('review recovery fingerprint includes routing and target version',()=>{
- assert.match(developer,/route:result\.entries\[e\.index\]\?\.route/);
- assert.match(developer,/app_version:registry\.apps\.find/);
+ assert.match(developer,/route:e\.route/);
+ assert.match(developer,/app_version:e\.reviewed_app_version/);
+ assert.match(developer,/section_snapshot:e\.reviewed_section_snapshot/);
+ assert.match(developer,/source_snapshot:e\.reviewed_source_snapshot/);
  assert.match(developer,/reviewStorageKey\(env\.namespace,sourceFingerprint\)/);
 });
 
