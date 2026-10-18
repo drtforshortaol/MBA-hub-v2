@@ -314,3 +314,19 @@ test('review recovery fails closed for missing or malformed expected classificat
   assert.equal(importReviewPacket(packet,'hash',[bad]),null);
  }
 });
+
+
+test('non-null malformed duplicate references are quarantined rather than silently accepted',async()=>{
+ const {reviewActionQueue}=await import('../src/core/naturalist-review-state.js');
+ for(const invalid of [false,true,'',0.5,{},[],-1,2]){
+  const records=[{index:0,duplicate_of:invalid,conflict_with:[]}];
+  const decisions=newReviewDecisions(records);
+  decisions[0].scientific_status='verified';
+  decisions[0].editorial_status='approved';
+  decisions[0].proposed_action='update-existing';
+  const queue=reviewActionQueue(decisions,records);
+  assert.equal(queue.items.length,0,JSON.stringify(invalid));
+  assert.ok(queue.blocked_items[0].block_reasons.includes('invalid-classification'));
+  assert.equal(queue.can_auto_publish,false);
+ }
+});
