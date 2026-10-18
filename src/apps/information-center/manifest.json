@@ -19,7 +19,8 @@
     "apps/information-center/app.js",
     "apps/information-center/data.js",
     "apps/information-center/index.html",
-    "apps/information-center/styles.css"
+    "apps/information-center/styles.css",
+    "shared/media/asset-1e94c29588faf6ba--icon.svg"
   ],
   "media": [
     "asset-1e94c29588faf6ba"

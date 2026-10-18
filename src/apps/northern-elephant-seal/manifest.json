@@ -19,7 +19,19 @@
     "apps/northern-elephant-seal/app.js",
     "apps/northern-elephant-seal/data.js",
     "apps/northern-elephant-seal/index.html",
-    "apps/northern-elephant-seal/styles.css"
+    "apps/northern-elephant-seal/styles.css",
+    "shared/media/asset-0522db2debef2d1e--icon.svg",
+    "shared/media/asset-3895d93118cf6834--buoyancy_chart.jpg",
+    "shared/media/asset-c6185696aabf48e5--calendar.jpg",
+    "shared/media/asset-d8d7415dc63ff8f8--cons_basics.jpg",
+    "shared/media/asset-a632a1f72984e42f--cons_comeback.jpg",
+    "shared/media/asset-e13b365854bf974b--cons_success.jpg",
+    "shared/media/asset-9fa770d5f87c286a--diet_diagram.jpg",
+    "shared/media/asset-1a0051b4ea4be7ea--migration_map.jpg",
+    "shared/media/asset-125a4bbb92b0953b--rookery_scene.jpg",
+    "shared/media/asset-bc4d2d7822e21690--size_compare.jpg",
+    "shared/media/asset-43951da610ad3fd3--size_sketch.jpg",
+    "shared/media/asset-dded438de5077361--sleep_diagram.jpg"
   ],
   "media": [
     "asset-0522db2debef2d1e",

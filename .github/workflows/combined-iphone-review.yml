@@ -1,0 +1,36 @@
+name: Combined iPhone Review Build
+on:
+  push:
+    branches: [integration-iphone-review-20261018]
+permissions:
+  contents: read
+jobs:
+  review-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build and verify combined review
+        run: |
+          npm run validate
+          npm run build
+          npm run content:check:all
+          npm run security:scan
+          npm test
+          node --test tests/security-review.test.mjs
+          node scripts/verify-build-artifacts.mjs
+          python3 -m unittest discover -s scripts/validation -p 'test_evo_*.py'
+      - name: Package review provenance and instructions
+        run: |
+          cp docs/iphone-review-20261018.md dist/REVIEW.md
+          git rev-parse HEAD > dist/SOURCE-COMMIT.txt
+          sha256sum dist/developer/release.json dist/tester/release.json > dist/RELEASE-CHECKSUMS.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mba-v2-combined-iphone-review
+          path: dist/
+          if-no-files-found: error
+          retention-days: 30

@@ -16,7 +16,12 @@
     }
   ],
   "offline_assets": [
-    "apps/stargazer-species-guide/index.html"
+    "apps/stargazer-species-guide/index.html",
+    "shared/media/asset-4b41d3a89ec67f65--IMG_3450.jpeg",
+    "shared/media/asset-a6a0f1e28ae2bd1a--IMG_3439.jpeg",
+    "shared/media/asset-e27e2ab941b776a9--IMG_3440.jpeg",
+    "shared/media/asset-b5206667bf07f05b--IMG_3441.jpeg",
+    "shared/media/asset-b2920aa1dbefcb97--IMG_3442.jpeg"
   ],
   "media": [
     "asset-4b41d3a89ec67f65",
