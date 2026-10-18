@@ -13,10 +13,11 @@ function fixture(t) {
  write('index.html','<title>preview</title>');
  fs.mkdirSync(path.join(dir,'shared/media'),{recursive:true});
  write('shared/media/catalog.json',{schema_version:1,assets:[]});
- write('manifest.webmanifest','{}');
+ write('manifest.webmanifest',{id:'./',scope:'./',start_url:'./index.html',icons:[{src:'icon.svg'}]});
+ write('icon.svg','<svg xmlns="http://www.w3.org/2000/svg"/>');
  write('registry.json',{schema_version:1,environment:'tester',version:'test',apps:[{app_id:'sample',entry_point:'index.html',offline_assets:['index.html'],media:[]}]});
  write('environment.json',{environment:'tester',version:'test',namespace:'mba-v2-tester',developer:false});
- const resources = ['environment.json','index.html','manifest.webmanifest','registry.json','shared/media/catalog.json'].map(url => { const bytes=fs.readFileSync(path.join(dir,url)); return {url,sha256:hash(bytes),bytes:bytes.length}; });
+ const resources = ['environment.json','icon.svg','index.html','manifest.webmanifest','registry.json','shared/media/catalog.json'].map(url => { const bytes=fs.readFileSync(path.join(dir,url)); return {url,sha256:hash(bytes),bytes:bytes.length}; });
  const release={schema_version:1,environment:'tester',version:'test',resources,release:hash(JSON.stringify(resources)).slice(0,16)};
  write('release.json',release);
  write('sw.js',`const NAMESPACE='mba-v2-tester',RELEASE='${release.release}';`);
@@ -111,4 +112,42 @@ test('critical startup resources cannot be omitted from a self-consistent releas
  write('release.json',release);
  write('sw.js',`const NAMESPACE='mba-v2-tester',RELEASE='${release.release}';`);
  assert(verifyBuildArtifacts(dir,'tester').includes('missing critical resource: manifest.webmanifest'));
+});
+
+function updateFixtureRelease({dir,write,release}) {
+ release.resources = release.resources.map(item => { const bytes=fs.readFileSync(path.join(dir,item.url)); return {...item,bytes:bytes.length,sha256:hash(bytes)}; });
+ release.release=hash(JSON.stringify(release.resources)).slice(0,16);
+ write('release.json',release);
+ write('sw.js',`const NAMESPACE='mba-v2-tester',RELEASE='${release.release}';`);
+}
+test('PWA acceptance rejects external and out-of-scope startup despite valid release hashes',t=>{
+ const fixtureData=fixture(t);
+ for (const change of [{id:'https://other.example/'},{scope:'../'},{start_url:'https://other.example/'},{start_url:'./missing.html'}]) {
+  fixtureData.write('manifest.webmanifest',{id:'./',scope:'./',start_url:'./index.html',icons:[{src:'icon.svg'}],...change});
+  updateFixtureRelease(fixtureData);
+  const errors=verifyBuildArtifacts(fixtureData.dir,'tester');
+  assert(errors.includes('PWA startup scope mismatch'));
+  assert(!errors.some(error=>error.startsWith('integrity mismatch:')));
+ }
+});
+test('PWA acceptance requires bundled safe icons',t=>{
+ const fixtureData=fixture(t);
+ for (const icons of [[],null,[null],[{src:'../private.svg'}],[{src:'https://other.example/icon.svg'}],[{src:'missing.svg'}]]) {
+  fixtureData.write('manifest.webmanifest',{id:'./',scope:'./',start_url:'./index.html',icons});
+  updateFixtureRelease(fixtureData);
+  assert(verifyBuildArtifacts(fixtureData.dir,'tester').some(error=>/PWA icon/.test(error)));
+ }
+});
+test('metadata and service worker symlinks fail before reading their targets',t=>{
+ const {dir}=fixture(t);
+ fs.renameSync(path.join(dir,'environment.json'),path.join(dir,'environment-copy.json'));
+ fs.symlinkSync(path.join(dir,'environment-copy.json'),path.join(dir,'environment.json'));
+ assert.deepEqual(verifyBuildArtifacts(dir,'tester'),['missing or invalid artifact metadata']);
+ fs.rmSync(path.join(dir,'environment.json'));
+ fs.renameSync(path.join(dir,'environment-copy.json'),path.join(dir,'environment.json'));
+ fs.renameSync(path.join(dir,'sw.js'),path.join(dir,'worker-copy.js'));
+ fs.symlinkSync(path.join(dir,'worker-copy.js'),path.join(dir,'sw.js'));
+ const errors=verifyBuildArtifacts(dir,'tester');
+ assert(errors.includes('symbolic link: sw.js'));
+ assert(errors.includes('missing service worker'));
 });

@@ -35,3 +35,10 @@ This branch isolates work; it does not by itself start an autonomous development
 - Every registry application entry and declared offline resource must be present in the verified release. Referenced offline media must resolve to valid catalog metadata and release resources; malformed/duplicate declarations fail closed.
 - Per-app duplicate media registration remains source-preflight responsibility, preserving independently passing track CI until manifest work is integrated.
 - Validation: 418/418 Node tests passed, including five additional negative/coverage regressions. Build validation (33 apps, 11 categories), security scan and verification of both built environments passed. Existing 38 release blockers and approvals remain unchanged.
+
+## PWA install acceptance checkpoint
+
+- Found a semantic gap: a validly hashed webmanifest could point startup or scope outside the Hub, or reference icons unavailable offline. Independent artifact verification now requires the generated Hub root ID/scope/start URL and safe, release-covered icons.
+- Added valid-hash negative fixtures for external startup URLs, parent scope, missing startup targets, empty/malformed/external/missing icons, plus metadata/service-worker symlinks.
+- Metadata, worker and release resource reads now reject symbolic links and nonregular files before reading bytes.
+- Validation: 421/421 Node tests passed (14 artifact verifier tests); build validation passed for 33 apps/11 categories, security scan and both environment artifact checks passed. Existing 38 release blockers remain in effect; no deployment, merge or approval changes.

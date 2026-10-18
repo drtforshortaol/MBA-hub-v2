@@ -43,7 +43,17 @@ export function verifyRegistryCoverage(registry, media, listed) {
 // Verify the exact bytes that will be served; this does not grant release approval.
 export function verifyBuildArtifacts(directory, expectedEnvironment) {
  const errors = [];
- const read = name => JSON.parse(fs.readFileSync(path.join(directory, name), 'utf8'));
+ const readBytes = name => {
+  let current = directory;
+  for (const part of name.split('/')) {
+   current = path.join(current,part);
+   const stat = fs.lstatSync(current);
+   if (stat.isSymbolicLink()) throw Error('symbolic link');
+  }
+  if (!fs.statSync(current).isFile()) throw Error('not a regular file');
+  return fs.readFileSync(current);
+ };
+ const read = name => JSON.parse(readBytes(name).toString('utf8'));
  let release, environment, registry;
  try { release = read('release.json'); environment = read('environment.json'); registry = read('registry.json'); }
  catch { return ['missing or invalid artifact metadata']; }
@@ -65,13 +75,7 @@ export function verifyBuildArtifacts(directory, expectedEnvironment) {
   listed.add(item.url);
   if (!/^[a-f0-9]{64}$/.test(item.sha256) || !Number.isSafeInteger(item.bytes) || item.bytes < 0) { errors.push(`invalid integrity metadata: ${item.url}`); continue; }
   try {
-   const file = path.join(directory, item.url);
-   let current = directory;
-   for (const part of item.url.split('/')) {
-    current = path.join(current, part);
-    if (fs.lstatSync(current).isSymbolicLink()) throw Error('symbolic link');
-   }
-   const bytes = fs.readFileSync(file);
+   const bytes = readBytes(item.url);
    if (bytes.length !== item.bytes || digest(bytes) !== item.sha256) errors.push(`integrity mismatch: ${item.url}`);
   } catch { errors.push(`missing resource: ${item.url}`); }
  }
@@ -79,6 +83,15 @@ export function verifyBuildArtifacts(directory, expectedEnvironment) {
  let media;
  try { media = read('shared/media/catalog.json'); } catch { errors.push('missing or invalid media catalog'); }
  errors.push(...verifyRegistryCoverage(registry,media,listed));
+ try {
+  const manifest = read('manifest.webmanifest');
+  if (!manifest || typeof manifest !== 'object' || Array.isArray(manifest)) throw Error('invalid shape');
+  if (manifest.id !== './' || manifest.scope !== './' || manifest.start_url !== './index.html') errors.push('PWA startup scope mismatch');
+  if (!Array.isArray(manifest.icons) || !manifest.icons.length) errors.push('missing PWA icons');
+  else for (const icon of manifest.icons) {
+   if (!icon || !safePath(icon.src) || !listed.has(icon.src)) errors.push('PWA icon missing or unsafe');
+  }
+ } catch { errors.push('missing or invalid PWA manifest'); }
  const walk = (dir, prefix = '') => {
   for (const entry of fs.readdirSync(dir, {withFileTypes:true})) {
    const relative = prefix + entry.name;
@@ -92,7 +105,7 @@ export function verifyBuildArtifacts(directory, expectedEnvironment) {
  walk(directory);
  if (release.release !== digest(JSON.stringify(release.resources)).slice(0,16)) errors.push('release identifier mismatch');
  try {
-  const worker = fs.readFileSync(path.join(directory,'sw.js'),'utf8');
+  const worker = readBytes('sw.js').toString('utf8');
   if (!worker.includes(`NAMESPACE='mba-v2-${expectedEnvironment}'`) || !worker.includes(`RELEASE='${release.release}'`) || /__(?:NAMESPACE|RELEASE)__/.test(worker)) errors.push('service worker release binding mismatch');
  } catch { errors.push('missing service worker'); }
  return errors;
