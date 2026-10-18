@@ -48,3 +48,24 @@ test('unrelated approved Naturalist actions retain replacement and routing revie
  decisions[0].proposed_action='new-content';
  assert.equal(prepareReviewedNaturalistActions({valid:true,entries:isolated},decisions,[]).items[0].status,'placement-review');
 });
+
+
+test('approved update action cannot override a new-content classifier route',()=>{
+ const records=[{index:0,text:'Sea otter feeding',duplicate_of:null,conflict_with:[],route:{action:'review-placement'},placement:{proposal_type:'new-section'}}];
+ const decisions=newReviewDecisions(records);
+ Object.assign(decisions[0],{scientific_status:'verified',editorial_status:'approved',proposed_action:'update-existing'});
+ const result=prepareReviewedNaturalistActions({valid:true,entries:records},decisions,[],{0:'Replacement'});
+ assert.equal(result.items[0].status,'routing-review');
+ assert.equal(result.prepared,false);
+ assert.equal(result.published,false);
+});
+
+test('draft preparation rejects invalid replacement collections',()=>{
+ const records=[{index:0,text:'Sea otter feeding',duplicate_of:null,conflict_with:[]}];
+ const decisions=newReviewDecisions(records);
+ for(const replacements of [null,[],42,'replacement']){
+  const result=prepareReviewedNaturalistActions({valid:true,entries:records},decisions,[],replacements);
+  assert.equal(result.valid,false);
+  assert.equal(result.published,false);
+ }
+});
