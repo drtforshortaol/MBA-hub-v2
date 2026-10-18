@@ -405,7 +405,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     });
     const blocked_actions=queue.blocked_items.map(item=>({index:item.index,action:item.action,source_text:item.entry?.source_text??'',reviewer_notes:item.reviewer_notes,preparation_status:'blocked-review',block_reasons:[...item.block_reasons]}));
     const payload={schema_version:1,kind:'mba-v2-naturalist-reviewed-action-packet',review_context_sha256:sourceFingerprint,original_source:source,actions,blocked_actions,scientific_verification:'reviewer-recorded',requires_review:true,prepared:false,committed:false,published:false,can_auto_publish:false};
-    const blob=new Blob([JSON.stringify(payload,null,2)+'\\n'],{type:'application/json'});
+    const blob=new Blob([JSON.stringify(payload,null,2)+'\n'],{type:'application/json'});
     const url=URL.createObjectURL(blob),link=document.createElement('a');
     link.href=url;link.download='mba-naturalist-reviewed-actions.json';link.click();
     setTimeout(()=>URL.revokeObjectURL(url),1000);
