@@ -72,3 +72,11 @@ test('review navigation treats missing proposed action as incomplete',()=>{
  assert.match(developer,/Choose a proposed action to complete this review/);
  assert.match(developer,/All statements have scientific, editorial, and action decisions recorded/);
 });
+
+test('Developer Mode provides read-only live before-and-after section preview',()=>{
+ assert.match(developer,/Preview existing section and proposed replacement/);
+ assert.match(developer,/before\.textContent=target\?'CURRENT/);
+ assert.match(developer,/after\.textContent='PROPOSED/);
+ assert.match(developer,/replacementDrafts\.set\(item\.index,replacementInput\.value\);refreshPreview\(\)/);
+ assert.match(developer,/comparison\.append\(comparisonHeading,before,after\)/);
+});
