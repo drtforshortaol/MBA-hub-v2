@@ -88,12 +88,21 @@ export function reviewActionQueue(decisions,entries){
   // records only one side of the pair. Never prepare the unflagged endpoint.
   const conflict=Array.isArray(entry?.conflict_with)&&entry.conflict_with.length>0||
    entries.some((other,j)=>j!==index&&Array.isArray(other?.conflict_with)&&other.conflict_with.includes(index));
+  // Independently approved statements must not generate competing edits to the
+  // same destination section in a single export. Require explicit consolidation.
+  const destination=entry?.route;
+  const competing=decision.proposed_action==='update-existing'&&destination?.action==='update-existing'&&
+   typeof destination.app_id==='string'&&typeof destination.section_id==='string'&&
+   decisions.some((other,j)=>j!==index&&other.scientific_status==='verified'&&
+    other.editorial_status==='approved'&&other.proposed_action==='update-existing'&&
+    entries[j]?.route?.action==='update-existing'&&
+    entries[j].route.app_id===destination.app_id&&entries[j].route.section_id===destination.section_id);
   const malformed=entry==null||typeof entry!=='object'||Array.isArray(entry)||
    (Object.hasOwn(entry,'index')&&entry.index!==index)||
    (Object.hasOwn(entry,'conflict_with')&&!Array.isArray(entry.conflict_with))||
    (Object.hasOwn(entry,'duplicate_of')&&entry.duplicate_of!==null&&(!Number.isInteger(entry.duplicate_of)||entry.duplicate_of<0||entry.duplicate_of>=entries.length||entry.duplicate_of===index))||
    (Array.isArray(entry.conflict_with)&&entry.conflict_with.some(i=>!Number.isInteger(i)||i<0||i>=entries.length||i===index));
-  if(duplicate||conflict||malformed||sourceChanged)blocked_items.push({...item,block_reasons:[...(duplicate?['duplicate']:[]),...(conflict?['scientific-conflict']:[]),...(malformed?['invalid-classification']:[]),...(sourceChanged?['source-changed']:[])]});
+  if(duplicate||conflict||malformed||sourceChanged||competing)blocked_items.push({...item,block_reasons:[...(duplicate?['duplicate']:[]),...(conflict?['scientific-conflict']:[]),...(malformed?['invalid-classification']:[]),...(sourceChanged?['source-changed']:[]),...(competing?['competing-section-update']:[])]});
   else items.push(item);
  });
  return {valid:true,reason:reviewRecoveryCheck(decisions,entries).reason,items,blocked_items,can_auto_publish:false};
