@@ -1,4 +1,5 @@
 import {naturalistChangeRequest} from './naturalist-change-request.js';
+import {exportNaturalistReviewQueue} from './naturalist-review-queue-export.js';
 import {createDraft,loadDraft,saveDraft,validateDraft} from './content-drafts.js';
 import {request} from './worker-channel.js';
 import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket,reviewRecoveryCheck,reviewActionQueue} from './naturalist-review-state.js';
@@ -423,7 +424,19 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     setTimeout(()=>URL.revokeObjectURL(url),1000);
     intakeStatus.textContent='Reviewed action packet downloaded. No application content changed.';
    });
-   reviewOutput.append(queueHeading,queueStatus,refreshQueue,queueItems,exportQueue);
+   const exportSummary=document.createElement('button');exportSummary.type='button';exportSummary.className='button';exportSummary.textContent='Download review queue summary';
+   exportSummary.addEventListener('click',()=>{
+    if(!isCurrentReview()||!validateDecisions()){intakeStatus.textContent='Current, valid review decisions required before summary export.';return;}
+    try{
+     const payload=exportNaturalistReviewQueue(packet.review_decisions,packet.entries,sourceFingerprint);
+     const blob=new Blob([JSON.stringify(payload,null,2)+'\\n'],{type:'application/json'});
+     const url=URL.createObjectURL(blob),link=document.createElement('a');
+     link.href=url;link.download='mba-naturalist-review-queue-summary.json';link.click();
+     setTimeout(()=>URL.revokeObjectURL(url),1000);
+     intakeStatus.textContent='Read-only review queue summary downloaded. No application content changed.';
+    }catch{intakeStatus.textContent='Review queue summary invalid. Nothing downloaded.';}
+   });
+   reviewOutput.append(queueHeading,queueStatus,refreshQueue,queueItems,exportQueue,exportSummary);
    showQueue();
    intakeStatus.textContent='Review packet ready. Nothing approved, committed, or published.';
   }catch(error){if(generation===activeReviewGeneration)intakeStatus.textContent='Review generation unavailable: '+error.message;}
