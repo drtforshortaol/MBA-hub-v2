@@ -20,3 +20,11 @@ Avoid modifying files owned by other tracks. Cross-track shared files require in
 
 ## Execution
 This branch isolates work; it does not by itself start an autonomous development agent. Work must be invoked through an available execution session or GitHub workflow.
+
+## Implementation checkpoint — October 18, 2026
+
+Fixed cross-application contextual Back. The shared app contract previously called the Hub-only capture function from app pages; that call deliberately rejected the source, so no return snapshot was saved. A separate app capture interface now saves the originating page, query, fragment, scroll, expanded panels and inputs. Chained Hub → app → app visits retain both return levels.
+
+App contexts require an explicit type and app-view marker, same-origin application paths inside the current hosting scope, a valid visit token and matching environment namespace. Hub-only capture restrictions remain intact. Unavailable session storage falls back safely to the main Hub.
+
+Validation: 412 automated tests passed (including eight new cross-app integration regressions); 33-app/11-category build and validation passed; credential/unsafe-DOM security scan passed. Offline resource hash and worker regression tests passed within the full suite. Physical-device review remains separate. No scientific content, canonical app identifiers, approvals, release gates or deployment settings changed.
