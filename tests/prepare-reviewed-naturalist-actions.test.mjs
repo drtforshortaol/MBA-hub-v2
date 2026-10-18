@@ -35,14 +35,14 @@ test('draft requires a matching classified section route',()=>{
  assert.equal(r.prepared,false);
 });
 
-test('unrelated approved Naturalist actions retain replacement and routing review',()=>{
+test('unrouted approved Naturalist actions remain in routing review',()=>{
  const isolated=[{index:0,text:'Unrelated animal information',duplicate_of:null,conflict_with:[],placement:{proposal_type:'existing-section'}}];
  const decisions=newReviewDecisions(isolated);
  decisions[0].scientific_status='verified';
  decisions[0].editorial_status='approved';
  decisions[0].proposed_action='update-existing';
  const missing=prepareReviewedNaturalistActions({valid:true,entries:isolated},decisions,[]);
- assert.equal(missing.items[0].status,'replacement-required');
+ assert.equal(missing.items[0].status,'routing-review');
  const routed=prepareReviewedNaturalistActions({valid:true,entries:isolated},decisions,[],{0:'Replacement'});
  assert.equal(routed.items[0].status,'routing-review');
  decisions[0].proposed_action='new-content';
