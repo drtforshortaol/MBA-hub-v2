@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket,reviewRecoveryCheck} from '../src/core/naturalist-review-state.js';
+import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket,reviewRecoveryCheck,reviewActionQueue} from '../src/core/naturalist-review-state.js';
 const entries=[{index:0},{index:1}];
 function storage(){const data=new Map();return {getItem:k=>data.get(k)??null,setItem:(k,v)=>data.set(k,v),removeItem:k=>data.delete(k)};}
 test('new reviews default to pending and never grant publication',()=>{
@@ -341,4 +341,17 @@ test('portable review recovery rejects tampered destination routing and section 
   modified.entries[0][field]=field==='route'?{...modified.entries[0].route,section_id:'different'}:'tampered';
   assert.equal(importReviewPacket(modified,'matching',entries),null,field);
  }
+});
+
+
+test('competing Naturalist destinations reject malformed decision arrays without throwing',()=>{
+ const classified=[{index:0,route:{action:'update-existing',app_id:'a',section_id:'s'}},{index:1,route:{action:'update-existing',app_id:'a',section_id:'s'}}];
+ const approved=newReviewDecisions(classified);
+ approved[0]={...approved[0],scientific_status:'verified',editorial_status:'approved',proposed_action:'update-existing'};
+ approved[1]=null;
+ const queue=reviewActionQueue(approved,classified);
+ assert.equal(queue.valid,false);
+ assert.equal(queue.reason,'invalid-decisions');
+ assert.deepEqual(queue.items,[]);
+ assert.equal(queue.can_auto_publish,false);
 });
