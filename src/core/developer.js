@@ -1,3 +1,4 @@
+import {readReplacementDrafts,saveReplacementDrafts} from './naturalist-replacement-drafts.js';
 import {createNaturalistIntakePacket,readNaturalistIntakePacket,readNaturalistSource,saveNaturalistSource,discardNaturalistSource} from './naturalist-intake.js';
 import {naturalistChangeRequest} from './naturalist-change-request.js';
 import {exportNaturalistReviewQueue} from './naturalist-review-queue-export.js';
@@ -363,6 +364,18 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    const queueStatus=document.createElement('p');queueStatus.setAttribute('role','status');
    const queueItems=document.createElement('ol');
    const replacementDrafts=new Map();
+   const replacementRecoveryStatus=document.createElement('p');replacementRecoveryStatus.setAttribute('role','status');
+   try{
+    const recovered=readReplacementDrafts(localStorage,env.namespace,sourceFingerprint,packet.entries);
+    if(recovered.valid){for(const [index,text] of recovered.drafts)replacementDrafts.set(index,text);replacementRecoveryStatus.textContent=recovered.drafts.length?'Replacement text restored for this exact source and classification. Existing scientific/editorial review requirements still apply.':'Replacement text saves on this device as you type.';}
+    else replacementRecoveryStatus.textContent='Saved replacement text unavailable or invalid. Current edits remain usable; copy replacement text before leaving.';
+   }catch{replacementRecoveryStatus.textContent='Device storage unavailable. Current edits remain usable; copy replacement text before leaving.';}
+   function saveReplacements(){
+    const drafts=[...replacementDrafts].filter(([,text])=>text.trim());
+    let saved=false;try{saved=saveReplacementDrafts(localStorage,env.namespace,sourceFingerprint,packet.entries,drafts);}catch{/* storage may be blocked */}
+    replacementRecoveryStatus.textContent=saved?'Replacement text saved on this device. Review decisions and publication authority are unchanged.':'Replacement text could not be saved on this device. Keep this page open or copy replacement text before leaving.';
+   }
+   reviewOutput.append(replacementRecoveryStatus);
    // Reject ambiguous IDs and stale review targets before building local drafts.
    function reviewedTarget(entry){
     const route=entry?.route;
@@ -374,7 +387,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     if(typeof section.text!=='string'||entry.reviewed_app_version!==(app.version??null)||entry.reviewed_section_snapshot!==JSON.stringify(section))return null;
     return {app,section};
    }
-   // Replacement drafts remain in-memory and are never persisted as approvals.
+   // Only text is recovered; classifications and approval decisions are never stored here.
    const refreshQueue=document.createElement('button');refreshQueue.type='button';refreshQueue.className='button';refreshQueue.textContent='Refresh reviewed actions';
    function showQueue(){
     if(!isCurrentReview()){queueStatus.textContent='Review is stale; regenerate classification.';queueItems.replaceChildren();return;}
@@ -402,7 +415,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
       const target=reviewedTarget(entry);
       before.textContent=target?'CURRENT · '+target.section.text:'Current destination unavailable or changed; regenerate review.';
       const refreshPreview=()=>{after.textContent='PROPOSED · '+(replacementInput.value.trim()?replacementInput.value:'Enter replacement text to preview.');};
-      replacementInput.addEventListener('input',()=>{if(!isCurrentReview())return;replacementDrafts.set(item.index,replacementInput.value);refreshPreview();});
+      replacementInput.addEventListener('input',()=>{if(!isCurrentReview())return;replacementDrafts.set(item.index,replacementInput.value);refreshPreview();saveReplacements();});
       refreshPreview();
       comparison.append(comparisonHeading,before,after);
       replacementLabel.append(replacementInput,comparison);li.append(replacementLabel);
