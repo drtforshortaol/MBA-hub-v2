@@ -319,20 +319,26 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    const recoveryLabel=document.createElement('label');recoveryLabel.textContent='Restore decisions from a downloaded review packet (same classification only)';
    const recoveryInput=document.createElement('input');recoveryInput.type='file';recoveryInput.accept='.json,application/json';
    recoveryLabel.append(recoveryInput);
+   let activeDecisionImport=0;
    recoveryInput.addEventListener('change',async()=>{
     if(!isCurrentReview()||generation!==activeReviewGeneration)return;
+    const importGeneration=++activeDecisionImport;
+    const decisionSnapshot=JSON.stringify(packet.review_decisions);
     const file=recoveryInput.files?.[0];if(!file)return;
+    recoveryInput.value='';
     if(file.size>2000000){intakeStatus.textContent='Review packet exceeds 2 MB recovery limit.';return;}
     try{
      const imported=importReviewPacket(JSON.parse(await file.text()),sourceFingerprint,packet.entries);
-     if(!isCurrentReview()||generation!==activeReviewGeneration)return;
+     if(importGeneration!==activeDecisionImport||!isCurrentReview()||generation!==activeReviewGeneration)return;
+     if(JSON.stringify(packet.review_decisions)!==decisionSnapshot){intakeStatus.textContent='Recovery cancelled: review decisions changed while the file was opening. Your current decisions were kept.';return;}
      if(!imported){intakeStatus.textContent='Recovery rejected: packet does not match this classification or decisions are invalid.';return;}
      const saved=writeReview(localStorage,reviewKey,sourceFingerprint,imported,packet.entries);
      if(!saved){intakeStatus.textContent='Storage unavailable. Recovery not retained; keep your original downloaded packet.';return;}
+     requireFreshIntakeReview=false;
      reviewOutput.replaceChildren();delete reviewOutput.dataset.reviewFingerprint;
      intakeStatus.textContent='Decisions restored locally. Reloading review interface; nothing published.';
      reviewButton.click();
-    }catch{if(isCurrentReview())intakeStatus.textContent='Invalid recovery file. No decisions changed.';}
+    }catch{if(importGeneration===activeDecisionImport&&isCurrentReview()&&generation===activeReviewGeneration&&JSON.stringify(packet.review_decisions)===decisionSnapshot)intakeStatus.textContent='Invalid recovery file. No decisions changed.';}
    });
    reviewOutput.append(recoveryLabel);
    const clearButton=document.createElement('button');clearButton.type='button';clearButton.className='button';clearButton.textContent='Reset saved review decisions';
