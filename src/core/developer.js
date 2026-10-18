@@ -1,5 +1,6 @@
 import {naturalistChangeRequest} from './naturalist-change-request.js';
 import {exportNaturalistReviewQueue} from './naturalist-review-queue-export.js';
+import {verifyNaturalistReviewQueue} from './naturalist-review-queue-import.js';
 import {createDraft,loadDraft,saveDraft,validateDraft} from './content-drafts.js';
 import {request} from './worker-channel.js';
 import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket,reviewRecoveryCheck,reviewActionQueue} from './naturalist-review-state.js';
@@ -436,7 +437,23 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      intakeStatus.textContent='Read-only review queue summary downloaded. No application content changed.';
     }catch{intakeStatus.textContent='Review queue summary invalid. Nothing downloaded.';}
    });
-   reviewOutput.append(queueHeading,queueStatus,refreshQueue,queueItems,exportQueue,exportSummary);
+   const verifySummaryLabel=document.createElement('label');verifySummaryLabel.textContent='Verify downloaded review queue summary (JSON, max 1 MB)';
+   const verifySummaryInput=document.createElement('input');verifySummaryInput.type='file';verifySummaryInput.accept='.json,application/json';
+   const verifySummaryStatus=document.createElement('p');verifySummaryStatus.setAttribute('role','status');
+   verifySummaryInput.addEventListener('change',async()=>{
+    const file=verifySummaryInput.files?.[0];verifySummaryInput.value='';
+    if(!file)return;
+    if(!isCurrentReview()||!validateDecisions()){verifySummaryStatus.textContent='Current review required. Regenerate review first.';return;}
+    if(file.size>1024*1024){verifySummaryStatus.textContent='Summary exceeds the 1 MB limit.';return;}
+    try{
+     const payload=JSON.parse(await file.text());
+     if(!isCurrentReview()||!validateDecisions()){verifySummaryStatus.textContent='Review changed during verification. Regenerate review.';return;}
+     const result=verifyNaturalistReviewQueue(payload,packet.review_decisions,packet.entries,sourceFingerprint);
+     verifySummaryStatus.textContent=result.valid?'Verified read-only summary: '+result.ready+' ready; '+result.blocked+' blocked. No changes made.':'Summary rejected: '+result.reason+'. No changes made.';
+    }catch{verifySummaryStatus.textContent='Invalid JSON summary. No changes made.';}
+   });
+   verifySummaryLabel.append(verifySummaryInput);
+   reviewOutput.append(queueHeading,queueStatus,refreshQueue,queueItems,exportQueue,exportSummary,verifySummaryLabel,verifySummaryStatus);
    showQueue();
    intakeStatus.textContent='Review packet ready. Nothing approved, committed, or published.';
   }catch(error){if(generation===activeReviewGeneration)intakeStatus.textContent='Review generation unavailable: '+error.message;}
