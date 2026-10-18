@@ -18,6 +18,8 @@ jobs:
         run: npm run build
       - name: Verify contracts and offline isolation
         run: npm test
+      - name: Verify strict content and offline media registration
+        run: npm run content:check:all
       - name: Verify EVO classification evidence guards
         run: |
           python3 -m scripts.validation.validate_evo_relationship_classes
