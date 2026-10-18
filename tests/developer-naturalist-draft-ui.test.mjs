@@ -49,3 +49,11 @@ test('Naturalist export fails closed instead of silently omitting invalid update
  assert.match(developer,/Resolve all updates before exporting/);
  assert.match(developer,/scientific verification required/);
 });
+
+test('Developer Mode surfaces blocked review actions in draft checks and portable exports',()=>{
+ assert.match(developer,/queue\.blocked_items\.map\(item=>'blocked statement '/);
+ assert.match(developer,/const blocked_actions=queue\.blocked_items\.map/);
+ assert.match(developer,/actions,blocked_actions,scientific_verification/);
+ assert.match(developer,/preparation_status:'blocked-review'/);
+ assert.match(developer,/block_reasons:\[\.\.\.item\.block_reasons\]/);
+});
