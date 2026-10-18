@@ -1,0 +1,63 @@
+name: iPhone Preview Build
+
+on:
+  push:
+    branches:
+      - security-review-evo-foundation-20261014
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out development branch
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate source and content
+        run: |
+          npm run validate
+          npm run build
+          npm test
+          npm run security:scan
+      - name: Build current developer preview
+        run: npm run build
+      - name: Check developer-only preview files
+        run: |
+          test -f dist/developer/index.html
+          test -f dist/developer/core/developer.js
+          test -f dist/developer/manifest.webmanifest
+          test -f dist/developer/sw.js
+          node --input-type=module -e "import fs from 'node:fs'; const env=JSON.parse(fs.readFileSync('dist/developer/environment.json')); if(!env.developer || env.environment!=='developer') process.exit(1);"
+      - name: Package for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/developer/
+      - name: Upload installable web bundle for preview hosting
+        uses: actions/upload-artifact@v4
+        with:
+          name: mba-v2-iphone-preview
+          path: dist/developer/
+          if-no-files-found: error
+          retention-days: 14
+
+  deploy:
+    # Preview publication requires explicit authorization; build artifacts remain downloadable.
+    if: ${{ false }}
+    name: Deploy public iPhone preview
+    needs: preview
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish validated preview to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

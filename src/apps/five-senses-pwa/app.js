@@ -102,12 +102,26 @@
     `;
   }
 
+  function renderMarkup(target, markup) {
+    const parsed = new DOMParser().parseFromString(markup, "text/html");
+    parsed.querySelectorAll("script, iframe, object, embed").forEach((node) => node.remove());
+    parsed.querySelectorAll("*").forEach((node) => {
+      for (const attribute of [...node.attributes]) {
+        if (/^on/i.test(attribute.name) ||
+            (["href", "src", "xlink:href"].includes(attribute.name) && /^\\s*javascript:/i.test(attribute.value))) {
+          node.removeAttribute(attribute.name);
+        }
+      }
+    });
+    target.replaceChildren(...[...parsed.body.childNodes].map((node) => document.importNode(node, true)));
+  }
+
   function renderSenses() {
     if (!elements.senseList || !DATA || !Array.isArray(DATA.senses)) {
       return;
     }
 
-    elements.senseList.innerHTML = DATA.senses
+    renderMarkup(elements.senseList, DATA.senses
       .map((sense) => {
         return `
           <details
@@ -131,7 +145,7 @@
           </details>
         `;
       })
-      .join("");
+      .join(""));
   }
 
   function renderGuideSections() {
@@ -139,7 +153,7 @@
       return;
     }
 
-    elements.guideList.innerHTML = DATA.guideSections
+    renderMarkup(elements.guideList, DATA.guideSections
       .map((section) => {
         return `
           <details
@@ -162,7 +176,7 @@
           </details>
         `;
       })
-      .join("");
+      .join(""));
   }
 
   function renderReferences() {
@@ -170,9 +184,9 @@
       return;
     }
 
-    elements.referenceList.innerHTML = DATA.references
+    renderMarkup(elements.referenceList, DATA.references
       .map((reference) => `<li>${escapeHtml(reference)}</li>`)
-      .join("");
+      .join(""));
   }
 
   function getSearchableItems() {

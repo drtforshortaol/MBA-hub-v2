@@ -1,0 +1,506 @@
+{
+  "schemaVersion": "0.1-draft",
+  "status": "noncanonical-visual-hypotheses",
+  "note": "All endpoints are hypotheses reconstructed from proximity in the visual HTML layout. These DO NOT alter the original endpoint manifest, nor certify biological ancestry, timing, topology, or scientific truth. The summary pathways in the Master Map reuse conceptual elements and visual grouping; inspect individually before approval.",
+  "candidates": [
+    {
+      "transitionId": "TR-0100",
+      "sourceKey": "great-split",
+      "sourceConceptIds": [
+        "EV-0100"
+      ],
+      "targetConceptIds": [
+        "EV-0101",
+        "EV-0104"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "high",
+      "reviewNotes": "Visual positioning is insufficient to certify direct genealogy, timing, polyphyly, merge participants, or causal equivalence."
+    },
+    {
+      "transitionId": "TR-0101",
+      "sourceKey": "bacterial-diversification",
+      "sourceConceptIds": [
+        "EV-0101"
+      ],
+      "targetConceptIds": [
+        "EV-0102",
+        "EV-0103"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "high",
+      "reviewNotes": "Visual positioning is insufficient to certify direct genealogy, timing, polyphyly, merge participants, or causal equivalence."
+    },
+    {
+      "transitionId": "TR-0102",
+      "sourceKey": "archaeal-diversification",
+      "sourceConceptIds": [
+        "EV-0104"
+      ],
+      "targetConceptIds": [
+        "EV-0105",
+        "EV-0106"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "high",
+      "reviewNotes": "Visual positioning is insufficient to certify direct genealogy, timing, polyphyly, merge participants, or causal equivalence."
+    },
+    {
+      "transitionId": "TR-0103",
+      "sourceKey": "toward-host",
+      "sourceConceptIds": [
+        "EV-0106"
+      ],
+      "targetConceptIds": [
+        "EV-0107"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0104",
+      "sourceKey": "endosymbiosis",
+      "sourceConceptIds": [
+        "EV-0103",
+        "EV-0107"
+      ],
+      "targetConceptIds": [
+        "EV-0108"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "high",
+      "reviewNotes": "Visual positioning is insufficient to certify direct genealogy, timing, polyphyly, merge participants, or causal equivalence."
+    },
+    {
+      "transitionId": "TR-0105",
+      "sourceKey": "eukaryogenesis",
+      "sourceConceptIds": [
+        "EV-0108"
+      ],
+      "targetConceptIds": [
+        "EV-0109"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "high",
+      "reviewNotes": "Visual positioning is insufficient to certify direct genealogy, timing, polyphyly, merge participants, or causal equivalence."
+    },
+    {
+      "transitionId": "TR-0106",
+      "sourceKey": "toward-leca",
+      "sourceConceptIds": [
+        "EV-0109"
+      ],
+      "targetConceptIds": [
+        "EV-0110"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0107",
+      "sourceKey": "major-euk-div",
+      "sourceConceptIds": [
+        "EV-0110"
+      ],
+      "targetConceptIds": [
+        "EV-0111",
+        "EV-0112",
+        "EV-0115",
+        "EV-0119"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "high",
+      "reviewNotes": "Visual positioning is insufficient to certify direct genealogy, timing, polyphyly, merge participants, or causal equivalence."
+    },
+    {
+      "transitionId": "TR-0108",
+      "sourceKey": "opisthokont-select-transition",
+      "sourceConceptIds": [
+        "EV-0110"
+      ],
+      "targetConceptIds": [
+        "EV-0111",
+        "EV-0112"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "high",
+      "reviewNotes": "Visual positioning is insufficient to certify direct genealogy, timing, polyphyly, merge participants, or causal equivalence."
+    },
+    {
+      "transitionId": "TR-0109",
+      "sourceKey": "opisthokont-branch",
+      "sourceConceptIds": [
+        "EV-0112"
+      ],
+      "targetConceptIds": [
+        "EV-0113",
+        "EV-0114"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0110",
+      "sourceKey": "archaeplastida-select-transition",
+      "sourceConceptIds": [
+        "EV-0110"
+      ],
+      "targetConceptIds": [
+        "EV-0111",
+        "EV-0115"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "high",
+      "reviewNotes": "Visual positioning is insufficient to certify direct genealogy, timing, polyphyly, merge participants, or causal equivalence."
+    },
+    {
+      "transitionId": "TR-0111",
+      "sourceKey": "archaeplastida-summary-branch",
+      "sourceConceptIds": [
+        "EV-0115"
+      ],
+      "targetConceptIds": [
+        "EV-0116",
+        "EV-0117"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0112",
+      "sourceKey": "green-to-land-summary",
+      "sourceConceptIds": [
+        "EV-0117"
+      ],
+      "targetConceptIds": [
+        "EV-0118"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0113",
+      "sourceKey": "sar-select-transition",
+      "sourceConceptIds": [
+        "EV-0110"
+      ],
+      "targetConceptIds": [
+        "EV-0111",
+        "EV-0119"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "high",
+      "reviewNotes": "Visual positioning is insufficient to certify direct genealogy, timing, polyphyly, merge participants, or causal equivalence."
+    },
+    {
+      "transitionId": "TR-0114",
+      "sourceKey": "sar-branch",
+      "sourceConceptIds": [
+        "EV-0119"
+      ],
+      "targetConceptIds": [
+        "EV-0120"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0115",
+      "sourceKey": "brown-summary-transition",
+      "sourceConceptIds": [
+        "EV-0120"
+      ],
+      "targetConceptIds": [
+        "EV-0121"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0116",
+      "sourceKey": "cyano-branch",
+      "sourceConceptIds": [
+        "EV-0101"
+      ],
+      "targetConceptIds": [
+        "EV-0102",
+        "EV-0122"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0117",
+      "sourceKey": "oxygenic-photosynthesis",
+      "sourceConceptIds": [
+        "EV-0122"
+      ],
+      "targetConceptIds": [
+        "EV-0123"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0118",
+      "sourceKey": "cyano-continuation",
+      "sourceConceptIds": [
+        "EV-0123"
+      ],
+      "targetConceptIds": [
+        "EV-0124"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0119",
+      "sourceKey": "planetary-effect",
+      "sourceConceptIds": [
+        "EV-0123"
+      ],
+      "targetConceptIds": [
+        "EV-0125"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "high",
+      "reviewNotes": "Visual positioning is insufficient to certify direct genealogy, timing, polyphyly, merge participants, or causal equivalence."
+    },
+    {
+      "transitionId": "TR-0120",
+      "sourceKey": "primary-plastid-endo",
+      "sourceConceptIds": [
+        "EV-0126",
+        "EV-0127"
+      ],
+      "targetConceptIds": [
+        "EV-0128"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0121",
+      "sourceKey": "plastid-integration",
+      "sourceConceptIds": [
+        "EV-0128"
+      ],
+      "targetConceptIds": [
+        "EV-0129"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0122",
+      "sourceKey": "archaeplastida-diversification",
+      "sourceConceptIds": [
+        "EV-0129"
+      ],
+      "targetConceptIds": [
+        "EV-0130",
+        "EV-0132"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "high",
+      "reviewNotes": "Visual positioning is insufficient to certify direct genealogy, timing, polyphyly, merge participants, or causal equivalence."
+    },
+    {
+      "transitionId": "TR-0123",
+      "sourceKey": "red-lineage-transition",
+      "sourceConceptIds": [
+        "EV-0129"
+      ],
+      "targetConceptIds": [
+        "EV-0130"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0124",
+      "sourceKey": "red-seaweed-diversification",
+      "sourceConceptIds": [
+        "EV-0130"
+      ],
+      "targetConceptIds": [
+        "EV-0131"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0125",
+      "sourceKey": "green-diversification",
+      "sourceConceptIds": [
+        "EV-0132"
+      ],
+      "targetConceptIds": [
+        "EV-0133",
+        "EV-0134"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0126",
+      "sourceKey": "land-transition",
+      "sourceConceptIds": [
+        "EV-0134"
+      ],
+      "targetConceptIds": [
+        "EV-0135"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0127",
+      "sourceKey": "vascular-transition",
+      "sourceConceptIds": [
+        "EV-0135"
+      ],
+      "targetConceptIds": [
+        "EV-0136"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0128",
+      "sourceKey": "seed-transition",
+      "sourceConceptIds": [
+        "EV-0136"
+      ],
+      "targetConceptIds": [
+        "EV-0137"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0129",
+      "sourceKey": "flower-transition",
+      "sourceConceptIds": [
+        "EV-0137"
+      ],
+      "targetConceptIds": [
+        "EV-0138"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0130",
+      "sourceKey": "seagrass-transition",
+      "sourceConceptIds": [
+        "EV-0138"
+      ],
+      "targetConceptIds": [
+        "EV-0139"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0131",
+      "sourceKey": "eelgrass-transition",
+      "sourceConceptIds": [
+        "EV-0139"
+      ],
+      "targetConceptIds": [
+        "EV-0140"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0132",
+      "sourceKey": "stramenopile-branch",
+      "sourceConceptIds": [
+        "EV-0141"
+      ],
+      "targetConceptIds": [
+        "EV-0142",
+        "EV-0143"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "high",
+      "reviewNotes": "Visual positioning is insufficient to certify direct genealogy, timing, polyphyly, merge participants, or causal equivalence."
+    },
+    {
+      "transitionId": "TR-0133",
+      "sourceKey": "red-derived-plastid",
+      "sourceConceptIds": [
+        "EV-0143"
+      ],
+      "targetConceptIds": [
+        "EV-0144"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "high",
+      "reviewNotes": "Visual positioning is insufficient to certify direct genealogy, timing, polyphyly, merge participants, or causal equivalence."
+    },
+    {
+      "transitionId": "TR-0134",
+      "sourceKey": "brown-branch",
+      "sourceConceptIds": [
+        "EV-0144"
+      ],
+      "targetConceptIds": [
+        "EV-0145",
+        "EV-0146"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0135",
+      "sourceKey": "kelp-transition",
+      "sourceConceptIds": [
+        "EV-0146"
+      ],
+      "targetConceptIds": [
+        "EV-0147"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    },
+    {
+      "transitionId": "TR-0136",
+      "sourceKey": "giant-kelp-transition",
+      "sourceConceptIds": [
+        "EV-0147"
+      ],
+      "targetConceptIds": [
+        "EV-0148"
+      ],
+      "status": "visual-layout-hypothesis-only",
+      "reviewPriority": "normal",
+      "reviewNotes": "Adjacent visual objects suggest this route; source code has no canonical endpoint graph."
+    }
+  ]
+}
