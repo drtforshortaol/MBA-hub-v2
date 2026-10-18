@@ -65,3 +65,10 @@ test('reviewed action packet downloads contain valid JSON rather than escaped tr
  assert.ok(tail.includes("JSON.stringify(payload,null,2)+'\\n'"));
  assert.ok(!tail.includes("JSON.stringify(payload,null,2)+'\\\\n'"));
 });
+
+test('review navigation treats missing proposed action as incomplete',()=>{
+ assert.match(developer,/const incomplete=index=>\{const decision=packet\.review_decisions\[index\];return decision\.scientific_status!==/);
+ assert.match(developer,/decision\.proposed_action==='needs-review'/);
+ assert.match(developer,/Choose a proposed action to complete this review/);
+ assert.match(developer,/All statements have scientific, editorial, and action decisions recorded/);
+});
