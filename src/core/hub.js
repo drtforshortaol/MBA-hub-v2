@@ -1,3 +1,4 @@
+import {animalFilterLetter,bindAnimalFilter} from './animal-filter.js';
 import {searchHub} from './search.js';
 import {restoredHubState,captureVisit,visitContext} from './navigation.js';
 import {initializeOffline} from './offline.js';
@@ -15,12 +16,13 @@ state=restoredHubState(returned?.state||state,location.href);
 state.open=Array.isArray(state.open)?[...new Set(state.open.filter(id=>typeof id==='string'&&registry.categories.some(category=>category.id===id)))]:[];
 state.scroll=typeof state.scroll==='number'&&Number.isFinite(state.scroll)&&state.scroll>=0?state.scroll:0;
 state.query=typeof state.query==='string'?state.query:'';
+state.animalLetter=animalFilterLetter(state.animalLetter);
 state.searchCategory=registry.categories.some(category=>category.id===state.searchCategory)?state.searchCategory:'';
 if(arrival.searchParams.get('home')==='1'||returned){remember();arrival.searchParams.delete('home');arrival.searchParams.delete('restore');history.replaceState(null,'',arrival.pathname+arrival.search+arrival.hash);}
 document.addEventListener('click',event=>{const link=event.target.closest?.('a');if(!link||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey||link.target==='_blank')return;let url;try{url=new URL(link.href);}catch{return;}if(url.origin!==root.origin||!url.pathname.startsWith(root.pathname+'apps/'))return;state.scroll=scrollY;remember();try{link.href=captureVisit(url,root,location.href,state,sessionStorage,environment.namespace,crypto.randomUUID()).href;}catch{}});
 function categories(){view.replaceChildren(...registry.categories.map(c=>{const apps=registry.apps.filter(a=>a.category===c.id&&a.listed!==false).sort((a,b)=>a.title.localeCompare(b.title));const entries=node('div',{class:'entries'});if(c.id==='animals')entries.append(node('div',{class:'letters','aria-label':'Filter animals by first letter'},...Array.from('ABCDEFGHIJKLMNOPQRSTUVWXYZ',l=>node('button',{'aria-pressed':'false',text:l}))));if(!apps.length)entries.append(node('p',{class:'quiet',text:'No registered apps in this category.'}));for(const app of apps){entries.append(node('div',{class:'entry','data-letter':String(app.title||'').charAt(0).toUpperCase()},node('details',{},node('summary',{text:app.title}),node('p',{text:(app.source_repository?'Preserved V1 content':'New V2 content')+' · '+app.type+'.'})),node('a',{class:'open-app',href:safeHref(app.entry_point),text:'Open App'})));}return node('details',{class:'category','data-category':c.id,open:state.open?.includes(c.id)},node('summary',{},node('span',{'aria-hidden':'true',text:c.icon}),document.createTextNode(c.title+' '),node('span',{class:'count',text:'('+apps.length+')'})),entries);}));
  view.querySelectorAll('.category').forEach(d=>d.addEventListener('toggle',()=>{state.open=[...view.querySelectorAll('.category[open]')].map(x=>x.dataset.category);remember();}));
- view.querySelectorAll('.letters button').forEach(b=>b.addEventListener('click',()=>{const row=b.parentElement,letter=b.getAttribute('aria-pressed')==='true'?'':b.textContent;row.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(Boolean(letter)&&x.textContent===letter)));row.parentElement.querySelectorAll('.entry').forEach(x=>x.hidden=!!letter&&x.dataset.letter!==letter);}));
+ bindAnimalFilter(view,{letter:state.animalLetter,onChange:letter=>{state.animalLetter=letter;remember();}});
  requestAnimationFrame(()=>scrollTo(0,state.scroll||0));
 }
 let routeGeneration=0;

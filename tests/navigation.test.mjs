@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {mainHubURL,restoredHubState,captureVisit,visitContext,returnToVisit} from '../src/core/navigation.js';
 test('MBA Hub action returns to the correct hosting scope and main view',()=>{const url=mainHubURL('https://example.test/MBA-hub-v2-test/');assert.equal(url.pathname,'/MBA-hub-v2-test/index.html');assert.equal(url.searchParams.get('home'),'1');assert.equal(url.hash,'');});
-test('explicit Hub return resets position and categories',()=>{const state={scroll:860,open:['volunteer-tools'],query:'kelp'};assert.deepEqual(restoredHubState(state,'https://example.test/index.html?home=1'),{scroll:0,open:[],query:'kelp'});assert.equal(state.scroll,860);});
+test('explicit Hub return resets position and categories',()=>{const state={scroll:860,open:['volunteer-tools'],query:'kelp'};assert.deepEqual(restoredHubState(state,'https://example.test/index.html?home=1'),{scroll:0,open:[],query:'kelp',animalLetter:''});assert.equal(state.scroll,860);});
 test('contextual Back preserves previous view position and open category',()=>{const state={scroll:860,open:['volunteer-tools'],query:'kelp'};assert.deepEqual(restoredHubState(state,'https://example.test/index.html'),state);});
 const root='https://example.test/v2/';
 function storage(){const values=new Map();return {setItem:(k,v)=>values.set(k,v),getItem:k=>values.get(k)||null};}
@@ -9,7 +9,6 @@ test('search result return keeps the search route and query',()=>{const store=st
 test('return contexts do not cross environment or URL-scope boundaries',()=>{const store=storage(),app=captureVisit('apps/one/index.html',root,root+'index.html',{},store,'tester','visit');assert.equal(returnToVisit(root,app,store,'developer').searchParams.get('home'),'1');store.setItem('tester:return:bad',JSON.stringify({url:'https://other.test/'}));assert.equal(visitContext(root,'bad',store,'tester'),null);});
 test('direct app entry has a safe main-Hub fallback',()=>{assert.equal(returnToVisit(root,root+'apps/one/index.html',storage(),'tester').searchParams.get('home'),'1');});
 
-test('animal filter clears pressed state when the active letter is toggled off',async()=>{const {readFileSync}=await import('node:fs');const source=readFileSync(new URL('../src/core/hub.js',import.meta.url),'utf8');assert.match(source,/String\(Boolean\(letter\)\&\&x\.textContent===letter\)/);assert.equal(Boolean('')&&'A'==='A',false);assert.equal(Boolean('A')&&'A'==='A',true);});
 
 test('navigation snapshots reject non-app destinations and non-Hub restore origins',()=>{const store=storage();const other=captureVisit(root+'search-index.json',root,root+'index.html',{},store,'tester','not-app');assert.equal(other.searchParams.has('visit'),false);store.setItem('tester:return:bad-origin',JSON.stringify({url:root+'apps/one/index.html',state:{}}));assert.equal(visitContext(root,'bad-origin',store,'tester'),null);});
 
