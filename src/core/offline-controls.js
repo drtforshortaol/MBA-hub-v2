@@ -1,5 +1,6 @@
 /** Add a safe manual check beside the Hub's live offline status. */
 export function attachOfflineCheck(status,{verify,checkForUpdate,isOnline=()=>navigator.onLine!==false}){
+ if(typeof verify!=='function')throw new TypeError('Offline verification callback is required');
  const document=status?.ownerDocument;
  if(!document||!status.parentNode)return {stop(){}};
  const button=document.createElement('button');
