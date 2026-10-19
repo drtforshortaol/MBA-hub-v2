@@ -46,3 +46,13 @@ test('offline control continues checking after synchronous update discovery fail
  h.button.dispatchEvent(new Event('click'));await tick();
  assert.equal(checks,2);h.controls.stop();
 });
+
+test('stopping a pending manual verification prevents disposed-button state restoration',async()=>{
+ let resolve;
+ const h=harness({verify:()=>new Promise(done=>{resolve=done;}),isOnline:()=>false});
+ h.button.dispatchEvent(new Event('click'));await tick();
+ assert.equal(h.button.disabled,true);
+ h.controls.stop();assert.equal(h.button.removed,true);
+ resolve();await tick();
+ assert.equal(h.button.disabled,true,'disposed control must not be re-enabled after late verification');
+});
