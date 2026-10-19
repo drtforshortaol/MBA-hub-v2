@@ -33,3 +33,10 @@ test('HTTP acceptance treats inline HTML as navigable and attachment case-insens
  assert.deepEqual(deliveryErrors('index.html', new Headers({'content-type':'text/html','content-disposition':'inline'})), []);
  assert.ok(deliveryErrors('index.html', new Headers({'content-type':'text/html','content-disposition':'ATTACHMENT; filename="index.html"'})).some(e=>e.includes('attachment')));
 });
+
+test('HTTP acceptance rejects attachment delivery for script and stylesheet resources',()=>{
+ for(const [name,mime] of [['assets/main.js','text/javascript'],['assets/main.mjs','text/javascript'],['assets/main.css','text/css']]){
+  const errors=deliveryErrors(name,new Headers({'content-type':mime,'content-disposition':'attachment; filename="download"'}));
+  assert.ok(errors.some(error=>error.includes('Content-Disposition attachment')),name);
+ }
+});
