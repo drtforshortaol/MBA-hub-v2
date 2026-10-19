@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {mainHubURL,restoredHubState,captureVisit,visitContext,returnToVisit} from '../src/core/navigation.js';
 test('MBA Hub action returns to the correct hosting scope and main view',()=>{const url=mainHubURL('https://example.test/MBA-hub-v2-test/');assert.equal(url.pathname,'/MBA-hub-v2-test/index.html');assert.equal(url.searchParams.get('home'),'1');assert.equal(url.hash,'');});
-test('explicit Hub return resets position and categories',()=>{const state={scroll:860,open:['volunteer-tools'],query:'kelp'};assert.deepEqual(restoredHubState(state,'https://example.test/index.html?home=1'),{scroll:0,open:[],query:'kelp',animalLetter:''});assert.equal(state.scroll,860);});
+test('explicit Hub return resets position and categories',()=>{const state={scroll:860,categoryScroll:920,open:['volunteer-tools'],query:'kelp'};assert.deepEqual(restoredHubState(state,'https://example.test/index.html?home=1'),{scroll:0,categoryScroll:0,open:[],query:'kelp',animalLetter:''});assert.equal(state.scroll,860);});
 test('contextual Back preserves previous view position and open category',()=>{const state={scroll:860,open:['volunteer-tools'],query:'kelp'};assert.deepEqual(restoredHubState(state,'https://example.test/index.html'),state);});
 const root='https://example.test/v2/';
 function storage(){const values=new Map();return {setItem:(k,v)=>values.set(k,v),getItem:k=>values.get(k)||null};}
@@ -106,4 +106,13 @@ test('visit capture rejects encoded and backslash application paths',()=>{
  assert.equal(visitContext(root,'blocked-path',store,'tester'),null);
  const good=captureVisit(root+'apps/ray/index.html',root,root+'index.html',{},store,'tester','safe-path');
  assert.equal(good.searchParams.get('visit'),'safe-path');
+});
+
+
+test('category position restoration validates new snapshots and supports older saved visits',async()=>{
+ const {readFileSync}=await import('node:fs');const {runInNewContext}=await import('node:vm');
+ const line=readFileSync('src/core/hub.js','utf8').split('\n').find(line=>line.startsWith('state.categoryScroll='));
+ const normalize=runInNewContext('(state)=>{'+line+'return state.categoryScroll;}',{Number});
+ for(const invalid of [undefined,null,-1,Infinity,'420',{}])assert.equal(normalize({scroll:190,categoryScroll:invalid}),190);
+ assert.equal(normalize({scroll:190,categoryScroll:0}),0);assert.equal(normalize({scroll:190,categoryScroll:420}),420);
 });

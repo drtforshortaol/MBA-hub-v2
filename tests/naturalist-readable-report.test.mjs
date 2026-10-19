@@ -41,3 +41,19 @@ test('readable report rejects malformed replacement container and negative index
  const p=packet();
  for(const invalid of [null,{},'draft',[[ -1,'bad']],[[0,'valid'],['0','bad']]])assert.throws(()=>naturalistReadableReport(p,invalid),/Invalid replacement text/);
 });
+
+test('portable report includes full paragraph and captured destination evidence without altering annotations',()=>{
+ const p=packet(),entry=p.entries[0];
+ entry.source_block='  Paragraph context 日本語.\r\nSea otter claim. <literal>  ';
+ entry.reviewed_app_version='2.3.4';
+ entry.reviewed_section_snapshot=JSON.stringify({id:'diet',title:'Diet 日本語',text:'Current diet section.',caption:'  Caption\r\n<literal> '});
+ p.entries[1].source_block=p.entries[1].source_text;
+ const before=JSON.stringify(p),text=naturalistReadableReport(p);
+ assert(text.includes('ORIGINAL SOURCE PARAGRAPH — classification context\n'+entry.source_block));
+ assert.equal(text.split('ORIGINAL SOURCE PARAGRAPH — classification context').length-1,1);
+ assert(text.includes('Destination: sea-otter / diet\nCaptured app version: 2.3.4\nCaptured section title: Diet 日本語'));
+ assert(text.includes('Captured caption:\n  Caption\r\n<literal> '));
+ assert(text.includes('Captured app version: unavailable'));
+ assert(text.includes('Scientific status: pending'));assert(text.includes('Editorial status: pending'));
+ assert.equal(JSON.stringify(p),before);
+});
