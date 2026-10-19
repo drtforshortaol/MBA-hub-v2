@@ -29,3 +29,10 @@ test('ranking leaves source records unchanged and uses original order for ties',
  const before=JSON.stringify(records),input=[records[1],{...records[1],url:'apps/seahorse/index.html#other'}];
  assert.deepEqual(searchHub(input,'seahorse'),input);assert.equal(JSON.stringify(records),before);
 });
+
+test('compatibility Unicode forms match normalized titles and section text',()=>{
+ const entries=[{app_id:'guide',title:'Ｋｅｌｐ Guide',text:'The ﬁsh inhabit kelp forests.',url:'apps/guide/index.html'}];
+ assert.deepEqual(searchHub(entries,'kelp'),entries);
+ assert.deepEqual(searchHub(entries,'fish'),entries);
+ assert.deepEqual(searchHub(entries,'ＫＥＬＰ'),entries);
+});
