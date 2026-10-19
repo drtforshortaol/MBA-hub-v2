@@ -1,4 +1,5 @@
 // Naturalist review annotations: local-only, never publication authorization.
+import {matchesNaturalistSnapshot} from './naturalist-snapshot.js';
 export const REVIEW_SCHEMA=1;
 const SCIENCE=new Set(['pending','needs-revision','verified']);
 const EDITORIAL=new Set(['pending','needs-revision','approved']);
@@ -67,7 +68,7 @@ export function importReviewPacket(packet,fingerprint,entries){
    if(!actual||typeof actual!=='object'||Array.isArray(actual)||actual.index!==i||!expected||typeof expected!=='object'||Array.isArray(expected)||expected.index!==i)return null;
    for(const field of ['source_text','text','reviewed_source_snapshot','source_block','extraction','duplicate_of','conflict_with','placement','route','reviewed_app_version','reviewed_section_snapshot','review','existing_content','review_required']){
     if(Object.hasOwn(expected,field)!==Object.hasOwn(actual,field))return null;
-    if(JSON.stringify(actual[field]??null)!==JSON.stringify(expected[field]??null))return null;
+    if(!matchesNaturalistSnapshot(actual[field],expected[field]))return null;
    }
   }
  }

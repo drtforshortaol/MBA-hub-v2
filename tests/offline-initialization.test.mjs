@@ -6,7 +6,7 @@ function harness({register,ready=new Promise(()=>{}),controller=true}={}){
  const previous={navigator:globalThis.navigator,window:globalThis.window,document:globalThis.document};
  const window=new EventTarget(),document=new EventTarget(),serviceWorker=new EventTarget();
  document.visibilityState='visible';let requests=0;
- Object.assign(serviceWorker,{ready,register,controller:controller?{postMessage(message,ports){requests++;ports[0].postMessage({complete:true,count:360});}}:null});
+ Object.assign(serviceWorker,{ready,register,controller:controller?{postMessage(message,ports){requests++;ports[0].postMessage({complete:true,count:360,total:360});}}:null});
  for(const [name,value] of Object.entries({navigator:{serviceWorker},window,document}))Object.defineProperty(globalThis,name,{configurable:true,writable:true,value});
  return {window,document,serviceWorker,get requests(){return requests;},restore(){for(const [name,value] of Object.entries(previous)){if(value===undefined)delete globalThis[name];else Object.defineProperty(globalThis,name,{configurable:true,writable:true,value});}}};
 }
@@ -31,7 +31,7 @@ test('failed offline registration preserves verified readiness and retries on re
 });
 test('fresh registration verifies once ready resolves and retains resume recovery',async()=>{
  let release;const ready=new Promise(resolve=>{release=resolve;});
- const registration={active:{postMessage(message,ports){ports[0].postMessage({complete:true,count:360});}},update(){return Promise.resolve();}};
+ const registration={active:{postMessage(message,ports){ports[0].postMessage({complete:true,count:360,total:360});}},update(){return Promise.resolve();}};
  const h=harness({controller:false,ready,register(){release(registration);return Promise.resolve(registration);}});let lifecycle;
  try{
   const status={textContent:''};lifecycle=await initializeOffline(status);
@@ -43,7 +43,7 @@ test('Hub manual control rechecks actual worker status and safely discovers upda
  let updates=0,count=360;const h=harness({register:async()=>({update:async()=>{updates++;}})});let lifecycle;
  const button=new EventTarget();button.setAttribute=()=>{};button.remove=()=>{button.removed=true;};
  const status={textContent:'',id:'offline',parentNode:{},ownerDocument:{createElement:()=>button},after(){}};
- h.serviceWorker.controller.postMessage=(message,ports)=>ports[0].postMessage({complete:true,count});
+ h.serviceWorker.controller.postMessage=(message,ports)=>ports[0].postMessage({complete:true,count,total:count});
  try{
   lifecycle=await initializeOffline(status);assert.equal(status.textContent,'Ready offline · 360 files');
   count=361;button.dispatchEvent(new Event('click'));await lifecycle.verify();
@@ -61,8 +61,39 @@ test('stopping lifecycle cancels in-flight verification without late status upda
   assert.equal(status.textContent,'Checking offline files…');
   lifecycle.stop();await pending;
   assert.equal(status.textContent,'Checking offline files…','cancellation must not overwrite a disposed status');
-  reply.postMessage({complete:true,count:999});reply.close();await tick();
+  reply.postMessage({complete:true,count:999,total:999});reply.close();await tick();
   assert.equal(status.textContent,'Checking offline files…');
   await lifecycle.verify();assert.equal(status.textContent,'Checking offline files…');
+ }finally{lifecycle?.stop();h.restore();}
+});
+
+for(const [name,response] of [
+ ['truthy readiness flag',{complete:'yes',count:360,total:360}],
+ ['missing total',{complete:true,count:360}],
+ ['negative count',{complete:false,count:-1,total:360}],
+ ['fractional count',{complete:false,count:1.5,total:360}],
+ ['unsafe total',{complete:false,count:1,total:Number.MAX_SAFE_INTEGER+1}],
+ ['count above total',{complete:true,count:361,total:360}],
+ ['premature completion',{complete:true,count:359,total:360}],
+ ['inconsistent incomplete flag',{complete:false,count:360,total:360}],
+ ['empty inventory marked ready',{complete:true,count:0,total:0}]
+])test(`offline readiness rejects ${name} and recovers on later verification`,async()=>{
+ const h=harness({register:()=>new Promise(()=>{})});let lifecycle;
+ h.serviceWorker.controller.postMessage=(message,ports)=>ports[0].postMessage(response);
+ try{
+  const status={textContent:''};lifecycle=await initializeOffline(status);
+  assert.equal(status.textContent,'Offline status temporarily unavailable');
+  h.serviceWorker.controller.postMessage=(message,ports)=>ports[0].postMessage({complete:true,count:360,total:360});
+  await lifecycle.verify();assert.equal(status.textContent,'Ready offline · 360 files');
+ }finally{lifecycle?.stop();h.restore();}
+});
+for(const [name,response,label] of [
+ ['partial inventory',{complete:false,count:3,total:360},'Preparing offline · 3/360'],
+ ['missing manifest',{complete:false,count:0,total:0},'Preparing offline · 0/0']
+])test(`offline readiness preserves ${name} preparation state`,async()=>{
+ const h=harness({register:()=>new Promise(()=>{})});let lifecycle;
+ h.serviceWorker.controller.postMessage=(message,ports)=>ports[0].postMessage(response);
+ try{
+  const status={textContent:''};lifecycle=await initializeOffline(status);assert.equal(status.textContent,label);
  }finally{lifecycle?.stop();h.restore();}
 });

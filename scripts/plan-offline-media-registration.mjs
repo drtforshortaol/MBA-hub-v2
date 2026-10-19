@@ -4,8 +4,14 @@ import {fileURLToPath} from 'node:url';
 import {safeLocalPath} from './build.mjs';
 
 // Read-only planning: registered media supplies paths; caller owns any edits.
-export function planOfflineMediaRegistration({apps,media,exists}){
+export function planOfflineMediaRegistration(context={}){
+ const {apps,media,exists}=context??{};
  const catalog=new Map(),ambiguous=new Set(),errors=[],plans=[];
+ const result=()=>({valid:errors.length===0,writePerformed:false,apps:plans.length,additions:plans.reduce((sum,plan)=>sum+plan.additions.length,0),plans,errors});
+ if(!Array.isArray(apps))errors.push('registration input: apps must be an array');
+ if(!Array.isArray(media?.assets))errors.push('media catalog: assets must be an array');
+ if(typeof exists!=='function')errors.push('registration input: exists must be a function');
+ if(errors.length)return result();
  for(const asset of media.assets){
   if(!asset||typeof asset.asset_id!=='string'||!asset.asset_id.trim()){
    errors.push('media catalog: invalid asset ID');continue;
@@ -18,6 +24,13 @@ export function planOfflineMediaRegistration({apps,media,exists}){
   if(typeof asset.offline!=='boolean')errors.push(`media catalog: invalid offline intent ${asset.asset_id}`);
  }
  for(const app of apps){
+  if(!app||typeof app.app_id!=='string'||!app.app_id.trim()){
+   errors.push('registration input: invalid app ID');continue;
+  }
+  const appErrors=[];
+  if(!Array.isArray(app.media)||app.media.some(id=>typeof id!=='string'||!id.trim()))appErrors.push(`${app.app_id}: invalid media references`);
+  if(!Array.isArray(app.offline_assets)||app.offline_assets.some(asset=>!safeLocalPath(asset)))appErrors.push(`${app.app_id}: invalid offline asset paths`);
+  if(appErrors.length){errors.push(...appErrors);continue;}
   const registered=new Set(app.offline_assets),additions=[];
   for(const id of app.media){
    if(ambiguous.has(id))continue; // Never propose a path from a conflicting catalog record.
@@ -31,7 +44,7 @@ export function planOfflineMediaRegistration({apps,media,exists}){
   }
   if(additions.length)plans.push({app_id:app.app_id,additions});
  }
- return {valid:errors.length===0,writePerformed:false,apps:plans.length,additions:plans.reduce((sum,plan)=>sum+plan.additions.length,0),plans,errors};
+ return result();
 }
 
 if(process.argv[1]===fileURLToPath(import.meta.url)){

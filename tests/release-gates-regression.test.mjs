@@ -34,3 +34,15 @@ test('inherited V1 review is scoped to explicitly identified source content',()=
  const unsourced={...inherited,source_repository:undefined};
  assert(releaseErrors(approved,[unsourced],{assets:[]},inventory).includes('content review pending: species-ray'));
 });
+
+
+test('release approvals require explicit own boolean true values',()=>{
+ for(const gate of Object.keys(approved)){
+  for(const value of ['false','true',1,{},[],null,undefined]){
+   assert(releaseErrors({...approved,[gate]:value},[app],{assets:[]},inventory).includes('release gate: '+gate),gate+' must reject '+String(value));
+  }
+  const inherited=Object.assign(Object.create({[gate]:true}),approved);
+  delete inherited[gate];
+  assert(releaseErrors(inherited,[app],{assets:[]},inventory).includes('release gate: '+gate),gate+' must be explicitly recorded');
+ }
+});

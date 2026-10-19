@@ -119,3 +119,46 @@ test('malformed offline intent cannot silently omit media from a successful plan
   assert.deepEqual(context.media,before);
  }
 });
+
+
+test('malformed planner containers return diagnostics without filesystem access',()=>{
+ const valid=fixture();
+ for(const context of [undefined,null,{}, {...valid,apps:null},{...valid,apps:{}},{...valid,media:null},{...valid,media:{assets:'wrong'}},{...valid,exists:null}]){
+  const result=planOfflineMediaRegistration(context);
+  assert.equal(result.valid,false);
+  assert.equal(result.writePerformed,false);
+  assert.deepEqual(result.plans,[]);
+  assert.ok(result.errors.length>0);
+ }
+});
+
+test('invalid app declarations do not produce partial or character-by-character plans',()=>{
+ for(const app of [null,{app_id:' '},{app_id:'ray',media:'new-photo',offline_assets:[]},
+  {app_id:'ray',media:['new-photo',null],offline_assets:[]},
+  {app_id:'ray',media:['new-photo'],offline_assets:'apps/ray/index.html'},
+  {app_id:'ray',media:['new-photo'],offline_assets:['../outside.svg']},
+  {app_id:'ray',media:['new-photo'],offline_assets:[null]}]){
+  const context=fixture();context.apps=[app];
+  context.exists=()=>assert.fail('invalid app must not reach filesystem lookup');
+  const before=structuredClone(app);
+  const result=planOfflineMediaRegistration(context);
+  assert.equal(result.valid,false);
+  assert.deepEqual(result.plans,[]);
+  assert.equal(result.writePerformed,false);
+  assert.deepEqual(app,before);
+ }
+});
+
+test('unsafe catalog paths fail before filesystem access',()=>{
+ for(const path of ['../outside.svg','/outside.svg','shared/../outside.svg','shared//new.svg',
+  'https://example.test/new.svg','shared/media/new.svg?download','shared/media/%2e%2e/new.svg',
+  'shared\\media\\new.svg',null,42]){
+  const context=fixture();context.apps[0].media=['new-photo'];
+  context.media.assets[0].path=path;
+  context.exists=()=>assert.fail('unsafe path must not reach filesystem lookup');
+  const result=planOfflineMediaRegistration(context);
+  assert.equal(result.valid,false);
+  assert.equal(result.additions,0);
+  assert.deepEqual(result.errors,['ray: missing/unsafe offline media new-photo']);
+ }
+});

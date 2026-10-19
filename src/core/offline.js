@@ -18,6 +18,11 @@ export async function initializeOffline(status){
   if(status)status.textContent='Checking offline files…';
   const result=await request('STATUS',{signal:requests.signal});
   if(stopped)return;
+  // A stale or malformed worker reply must never advertise offline readiness.
+  const {complete,count,total}=result;
+  if(typeof complete!=='boolean'||!Number.isSafeInteger(count)||!Number.isSafeInteger(total)||
+   count<0||total<0||count>total||complete!==(total>0&&count===total))
+   throw Error('Invalid offline status response');
   if(status)status.textContent=result.complete?`Ready offline · ${result.count} files`:`Preparing offline · ${result.count}/${result.total}`;
  };
  const checkForUpdate=async()=>{if(registration)await registration.update();else await register();};

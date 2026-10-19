@@ -134,3 +134,18 @@ test('HTTP acceptance rejects invalid download budgets before network access',as
    await assert.rejects(verifyPreviewHttp('http://127.0.0.1:1/','tester',{[field]:value}),/Download budgets/);
  }
 });
+
+
+test('HTTP acceptance rejects a byte-perfect worker delivered with restrictive scope headers',async t=>{
+ const {url}=await server(t,(request,response)=>{
+  if(!request.url.endsWith('/sw.js'))return false;
+  response.setHeader('Content-Type','text/javascript');
+  response.setHeader('Service-Worker-Allowed','./private/');
+  response.end(fs.readFileSync(path.join(bundle,'sw.js')));return true;
+ });
+ const report=await verifyPreviewHttp(url,'tester');
+ assert.equal(report.passed,false);
+ assert(report.errors.includes('sw.js: Service-Worker-Allowed does not permit preview directory scope'));
+ assert(!report.errors.some(error=>error.includes('integrity mismatch')));
+ assert.equal(report.resources.verified,report.resources.expected);
+});
