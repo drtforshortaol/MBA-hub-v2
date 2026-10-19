@@ -20,6 +20,20 @@ export function deliveryErrors(name,headers){
  return errors;
 }
 
+// The application registers its root worker with the preview directory scope.
+// A restrictive server header can break registration despite byte-perfect artifacts.
+export function workerScopeErrors(headers,workerUrl,scopeUrl){
+ const allowed=headers.get('service-worker-allowed');
+ if(allowed===null)return [];
+ try{
+  const worker=new URL(workerUrl),scope=new URL(scopeUrl),maximum=new URL(allowed,worker);
+  if(maximum.origin!==worker.origin||scope.origin!==worker.origin||
+     /%2f|%5c/i.test(maximum.pathname)||!scope.pathname.startsWith(maximum.pathname))
+   return ['Service-Worker-Allowed does not permit preview directory scope'];
+  return [];
+ }catch{return ['invalid Service-Worker-Allowed scope URL'];}
+}
+
 // HTTP delivery evidence does not establish browser behavior or device approval.
 export async function verifyPreviewHttp(baseUrl,environment,{concurrency=6,timeoutMs=15000,totalTimeoutMs=120000,expectedRelease=null,maxResourceBytes=64*1024*1024,maxTotalBytes=256*1024*1024}={}) {
  const base=new URL(baseUrl);
@@ -42,6 +56,7 @@ export async function verifyPreviewHttp(baseUrl,environment,{concurrency=6,timeo
    const bytes=Buffer.concat(chunks,size);
    if(expected&&(bytes.length!==expected.bytes||sha256(bytes)!==expected.sha256))throw Error('integrity mismatch');
    const compatibility=deliveryErrors(name,response.headers);
+   if(name==='sw.js')compatibility.push(...workerScopeErrors(response.headers,new URL(name,base),base));
    const file=path.join(directory,name);fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,bytes);
    results.set(name,{passed:compatibility.length===0,bytes:bytes.length});
    report.errors.push(...compatibility.map(error=>`${name}: ${error}`));return bytes;

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {deliveryErrors} from '../scripts/verify-preview-http.mjs';
+import {deliveryErrors,workerScopeErrors} from '../scripts/verify-preview-http.mjs';
 
 test('HTTP acceptance accepts interoperable JavaScript and stylesheet MIME types', () => {
  for (const name of ['assets/main.js', 'assets/runtime.mjs']) {
@@ -38,5 +38,19 @@ test('HTTP acceptance rejects attachment delivery for script and stylesheet reso
  for(const [name,mime] of [['assets/main.js','text/javascript'],['assets/main.mjs','text/javascript'],['assets/main.css','text/css']]){
   const errors=deliveryErrors(name,new Headers({'content-type':mime,'content-disposition':'attachment; filename="download"'}));
   assert.ok(errors.some(error=>error.includes('Content-Disposition attachment')),name);
+ }
+});
+
+
+test('worker scope acceptance permits default, equal and broader directory scopes',()=>{
+ for(const value of [null,'./','/','/review/','https://preview.example/review/']){
+  const headers=new Headers(value===null?{}:{'service-worker-allowed':value});
+  assert.deepEqual(workerScopeErrors(headers,'https://preview.example/review/sw.js','https://preview.example/review/'),[],String(value));
+ }
+});
+
+test('worker scope acceptance rejects restrictive, external and escaped separator scopes',()=>{
+ for(const value of ['/review/private/','/other/','https://other.example/','/review%2f','/review%5c','http://[']){
+  assert.equal(workerScopeErrors(new Headers({'service-worker-allowed':value}),'https://preview.example/review/sw.js','https://preview.example/review/').length,1,value);
  }
 });
