@@ -16,6 +16,19 @@ function fixture(){
  const routes=runInNewContext(routeSource+'\n({route,renderRoute});',context);
  return {...routes,context,view,requests,frames,inputs,input:()=>currentInput,results:()=>currentResults,category:()=>currentCategory};
 }
+function clickRoute(f,destination,{scroll=0,hash=''}={}){
+ const callback=source.split('\n').find(line=>line.startsWith("document.addEventListener('click'"));
+ let click;
+ f.context.document.addEventListener=(type,listener)=>{assert.equal(type,'click');click=listener;};
+ Object.assign(f.context,{URL,root:new URL('https://example.test/v2/'),scrollY:scroll,
+  environment:{namespace:'tester'},sessionStorage:{},crypto:{randomUUID:()=> 'visit'},
+  captureVisit(url,root,origin,state){f.captured=structuredClone(state);return url;}});
+ Object.assign(f.context.location,{href:'https://example.test/v2/index.html'+hash,pathname:'/v2/index.html',hash});
+ runInNewContext(callback,f.context);
+ const link={href:new URL(destination,f.context.location.href).href,target:''};
+ click({target:{closest:()=>link},button:0,defaultPrevented:false});
+ return link;
+}
 const response=data=>({ok:true,json:async()=>data});
 const entries=[{title:'Ray habitat',text:'ray habitat',url:'apps/ray/index.html#habitat'}];
 
@@ -124,4 +137,35 @@ test('abandoned contextual search arrival cannot transfer restoration to a newer
  assert.equal(f.input().focused,true);assert.equal(f.frames.length,0);
  f.requests[0].resolve(response(entries));await abandoned;
  assert.equal(f.frames.length,0);assert.equal(f.context.scrolls,0);
+});
+
+
+test('category route links capture current position before native hash navigation resets scrolling',async()=>{
+ for(const destination of ['help','history','search']){
+  const f=fixture();f.context.location.hash='';await f.renderRoute();f.frames.shift()();
+  clickRoute(f,'#'+destination,{scroll:615});
+  assert.equal(f.context.state.categoryScroll,615);
+  f.context.scrollY=0;f.context.location.hash='#'+destination;
+  const next=f.renderRoute();if(destination==='search')f.requests[0].resolve(response(entries));await next;
+  f.context.location.hash='';await f.renderRoute();
+  const restored=[];f.context.scrollTo=(x,y)=>restored.push(y);f.frames.at(-1)();
+  assert.deepEqual(restored,[615]);
+ }
+});
+
+test('Search app visits preserve their own position without replacing saved category position',async()=>{
+ const f=fixture();clickRoute(f,'#search',{scroll:520});
+ clickRoute(f,'apps/ray/index.html#habitat',{scroll:260,hash:'#search'});
+ assert.equal(f.captured.scroll,260);assert.equal(f.captured.categoryScroll,520);
+ f.context.state=f.captured;f.context.returned={state:f.captured};
+ const returned=f.renderRoute();f.requests[0].resolve(response(entries));await returned;
+ const restored=[];f.context.scrollTo=(x,y)=>restored.push(y);f.frames.at(-1)();
+ assert.deepEqual(restored,[260],'contextual Back first restores Search position');
+ f.context.location.hash='';await f.renderRoute();f.frames.at(-1)();
+ assert.deepEqual(restored,[260,520],'Back to Hub restores independent category position');
+});
+
+test('direct category app visits capture the latest category position in each visit snapshot',()=>{
+ const f=fixture();clickRoute(f,'apps/ray/index.html',{scroll:740});
+ assert.equal(f.captured.scroll,740);assert.equal(f.captured.categoryScroll,740);
 });
