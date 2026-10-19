@@ -36,3 +36,10 @@ test('compatibility Unicode forms match normalized titles and section text',()=>
  assert.deepEqual(searchHub(entries,'fish'),entries);
  assert.deepEqual(searchHub(entries,'ＫＥＬＰ'),entries);
 });
+
+test('Unicode compatibility normalization also applies to category-restricted searches',()=>{
+ const entries=[{app_id:'guide',title:'Ｓｅａｈｏｒｓｅ',text:'ﬁsh shelter',url:'apps/guide/index.html'}];
+ const categories=[{app_id:'guide',category:'guides'}];
+ assert.deepEqual(searchHub(entries,'fish',{category:'guides',apps:categories}),entries);
+ assert.deepEqual(searchHub(entries,'seahorse',{category:'animals',apps:categories}),[]);
+});
