@@ -31,3 +31,30 @@ test('offline navigation acceptance detects a worker that silently returns Hub f
  assert.equal(report.passed,false);
  assert(report.apps.some(app=>app.errors.some(error=>error.includes('incorrect entry bytes'))));
 });
+
+
+test('every app and search route recovers exact bytes when all current entries are corrupted',async()=>{
+ for(const environment of ['developer','tester']){
+  const report=await verifyOfflineNavigation(`dist/${environment}`,environment,{recoverFromPrior:true});
+  assert.equal(report.scenario,'corrupted-entry-recovery');
+  assert.equal(report.passed,true,JSON.stringify(report));
+  assert.equal(report.offlineNetworkAttempts,0);
+  assert.equal(report.apps.length,JSON.parse(fs.readFileSync(`dist/${environment}/registry.json`)).apps.length);
+  assert(report.apps.every(app=>app.verified===app.expected));
+ }
+});
+
+test('recovery evidence fails when a worker loses compatible rollback lookup',async t=>{
+ const directory=fs.mkdtempSync(path.join(os.tmpdir(),'mba-offline-recovery-'));
+ t.after(()=>fs.rmSync(directory,{recursive:true,force:true}));
+ fs.cpSync('dist/tester',directory,{recursive:true});
+ const worker=fs.readFileSync(path.join(directory,'sw.js'),'utf8');
+ const lookup='const candidate=await previous.match(url.href);';
+ assert(worker.includes(lookup));
+ fs.writeFileSync(path.join(directory,'sw.js'),worker.replace(lookup,'const candidate=null;'));
+ const report=await verifyOfflineNavigation(directory,'tester',{recoverFromPrior:true});
+ assert.equal(report.passed,false);
+ assert.equal(report.apps.length,JSON.parse(fs.readFileSync(path.join(directory,'registry.json'))).apps.length);
+ assert(report.apps.every(app=>app.verified===0));
+ assert(report.offlineNetworkAttempts>0);
+});
