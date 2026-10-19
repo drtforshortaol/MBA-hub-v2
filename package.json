@@ -8,6 +8,7 @@
     "test": "node --test tests/*.test.mjs",
     "validate": "node scripts/build.mjs --check",
     "serve": "python3 -m http.server 8080 --directory dist/developer",
+    "verify:preview:http": "node scripts/verify-preview-http.mjs",
     "security:scan": "node scripts/security-scan.mjs",
     "content:check": "node scripts/content-preflight.mjs --app",
     "content:check:all": "node scripts/content-preflight.mjs --all",
