@@ -14,7 +14,11 @@ export function readNaturalistReviewPosition(storage,namespace,fingerprint,count
 export function saveNaturalistReviewPosition(storage,namespace,fingerprint,index,count){
  try{
   if(!Number.isInteger(count)||count<1||!Number.isInteger(index)||index<0||index>=count)return false;
-  storage.setItem(positionKey(namespace,fingerprint),JSON.stringify({schema_version:1,index,count}));
-  return readNaturalistReviewPosition(storage,namespace,fingerprint,count)===index;
+  const key=positionKey(namespace,fingerprint);
+  const record=JSON.stringify({schema_version:1,index,count});
+  storage.setItem(key,record);
+  // Reading falls back to zero for absent/invalid records. That fallback is
+  // navigation convenience, never proof that saving the first card succeeded.
+  return storage.getItem(key)===record;
  }catch{return false;}
 }

@@ -49,3 +49,16 @@ test('actual statement navigation resumes and saves the displayed card without a
  assert.equal(readNaturalistReviewPosition(storage,namespace,fingerprint,3),0);
  assert.equal(JSON.stringify(packet),original);
 });
+
+test('saving the first statement verifies persistence instead of accepting the read fallback',()=>{
+ for(const value of [null,'{bad',JSON.stringify({schema_version:1,index:0,count:99}),JSON.stringify({schema_version:1,index:0,count:4,approved:true})]){
+  const ignored={getItem:()=>value,setItem(){}};
+  assert.equal(readNaturalistReviewPosition(ignored,namespace,fingerprint,4),0);
+  assert.equal(saveNaturalistReviewPosition(ignored,namespace,fingerprint,0,4),false);
+ }
+ const storage=memory();
+ assert.equal(saveNaturalistReviewPosition(storage,namespace,fingerprint,0,4),true);
+ assert.equal(saveNaturalistReviewPosition(storage,namespace,fingerprint,3,4),true);
+ assert.equal(saveNaturalistReviewPosition(storage,namespace,fingerprint,0,4),true);
+ assert.equal(readNaturalistReviewPosition(storage,namespace,fingerprint,4),0);
+});
