@@ -42,7 +42,7 @@ jobs:
           path: verification/http/*.json
           if-no-files-found: warn
           retention-days: 30
-      - name: Verify all registered app and search routes offline
+      - name: Verify all registered offline routes and corrupted-entry recovery
         run: node scripts/verify-offline-navigation.mjs --report-dir verification/offline
       - name: Retain simulated offline navigation evidence
         if: ${{ always() }}

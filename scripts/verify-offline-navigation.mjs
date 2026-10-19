@@ -6,11 +6,11 @@ import {fileURLToPath} from 'node:url';
 
 // Real built worker and bundle bytes, simulated CacheStorage and lifecycle events.
 // This evidence does not establish browser rendering or physical-device approval.
-export async function verifyOfflineNavigation(directory,environment){
+export async function verifyOfflineNavigation(directory,environment,{recoverFromPrior=false}={}){
  const root=new URL(`https://offline.example/review/${environment}/`);
  const read=name=>fs.readFileSync(path.join(directory,name));
  const release=JSON.parse(read('release.json')),registry=JSON.parse(read('registry.json')),search=JSON.parse(read('search-index.json'));
- const report={schema_version:1,scope:'Simulated worker routing and byte integrity only; no DOM/rendering, native service-worker lifecycle or device approval',environment,release:release.release,passed:false,apps:[],errors:[],offlineNetworkAttempts:0,appEntryPoints:new Set(registry.apps.map(app=>app.entry_point)).size,searchTargets:0,navigationTargets:0};
+ const report={schema_version:1,scope:'Simulated worker routing and byte integrity only; no DOM/rendering, native service-worker lifecycle or device approval',environment,scenario:recoverFromPrior?'corrupted-entry-recovery':'prepared-navigation',release:release.release,passed:false,apps:[],errors:[],offlineNetworkAttempts:0,appEntryPoints:new Set(registry.apps.map(app=>app.entry_point)).size,searchTargets:0,navigationTargets:0};
  const handlers={},stores=new Map();let offline=false;
  const caches={async keys(){return [...stores.keys()];},async delete(key){return stores.delete(key);},async open(key){
   if(!stores.has(key)){
@@ -31,7 +31,30 @@ export async function verifyOfflineNavigation(directory,environment){
  try{
   if(release.environment!==environment||registry.environment!==environment)throw Error('Artifact environment mismatch');
   vm.runInNewContext(read('sw.js').toString('utf8'),{self,caches,fetch,Response,URL,crypto:webcrypto},{timeout:1000});
-  await invoke('install');await invoke('activate');offline=true;
+  await invoke('install');await invoke('activate');
+  if(recoverFromPrior){
+   const prefix=`mba-v2-${environment}:${root.pathname}:`;
+   const current=await caches.open(prefix+release.release);
+   const priorManifest=structuredClone(release);
+   const icon=priorManifest.resources.find(item=>item.url==='icon.svg');
+   if(!icon)throw Error('Rollback fixture requires a bundled icon');
+   const priorIcon=Buffer.from('<svg xmlns="http://www.w3.org/2000/svg"><title>Prior acceptance release</title></svg>');
+   icon.bytes=priorIcon.length;icon.sha256=crypto.createHash('sha256').update(priorIcon).digest('hex');
+   priorManifest.release=crypto.createHash('sha256').update(JSON.stringify(priorManifest.resources)).digest('hex').slice(0,16);
+   const prior=await caches.open(prefix+priorManifest.release);
+   // Seed a complete compatible rollback bundle, then damage all current app entries.
+   for(const item of release.resources){
+    const url=new URL(item.url,root).href;
+    const response=await current.match(url);
+    if(!response)throw Error(`Prepared asset missing: ${item.url}`);
+    await prior.put(url,response);
+   }
+   await prior.put(new URL('icon.svg',root).href,new Response(priorIcon));
+   await prior.put(new URL('release.json',root).href,new Response(JSON.stringify(priorManifest)));
+   for(const entry of new Set(registry.apps.map(app=>app.entry_point)))
+    await current.put(new URL(entry,root).href,new Response('Damaged current application entry'));
+  }
+  offline=true;
   for(const app of registry.apps){
    const searchTargets=new Set(search.filter(entry=>entry.app_id===app.app_id).map(entry=>entry.url));
    const targets=new Set([app.entry_point,...searchTargets]);
@@ -58,10 +81,10 @@ export async function verifyOfflineNavigation(directory,environment){
 if(process.argv[1]===fileURLToPath(import.meta.url)){
  const args=process.argv.slice(2);
  if(args.length!==0&&(args.length!==2||args[0]!=='--report-dir'||!args[1]))throw Error('Usage: node scripts/verify-offline-navigation.mjs [--report-dir PATH]');
- for(const environment of ['developer','tester']){
-  const report=await verifyOfflineNavigation(`dist/${environment}`,environment);
-  if(args[1]){fs.mkdirSync(args[1],{recursive:true});fs.writeFileSync(path.join(args[1],`${environment}-offline-navigation.json`),JSON.stringify(report,null,2)+'\n');}
-  console.log(`${environment}: ${report.passed?'PASS':'FAIL'} ${report.apps.reduce((n,app)=>n+app.verified,0)}/${report.apps.reduce((n,app)=>n+app.expected,0)} offline navigation targets (${report.appEntryPoints} app entry URLs; ${report.searchTargets} search targets); release ${report.release}`);
+ for(const environment of ['developer','tester'])for(const recoverFromPrior of [false,true]){
+  const report=await verifyOfflineNavigation(`dist/${environment}`,environment,{recoverFromPrior});
+  if(args[1]){fs.mkdirSync(args[1],{recursive:true});fs.writeFileSync(path.join(args[1],`${environment}-${recoverFromPrior?'offline-recovery':'offline-navigation'}.json`),JSON.stringify(report,null,2)+'\n');}
+  console.log(`${environment} ${report.scenario}: ${report.passed?'PASS':'FAIL'} ${report.apps.reduce((n,app)=>n+app.verified,0)}/${report.apps.reduce((n,app)=>n+app.expected,0)} offline navigation targets (${report.appEntryPoints} app entry URLs; ${report.searchTargets} search targets); release ${report.release}`);
   if(!report.passed){console.error(JSON.stringify(report));process.exitCode=1;}
  }
 }
