@@ -81,3 +81,8 @@ test('HTTP acceptance can pin expected release and refuse stale complete bundle 
  const passed=await verifyPreviewHttp(url,'tester',{expectedRelease:release});assert.equal(passed.passed,true,JSON.stringify(passed.errors));assert.equal(passed.expectedRelease,release);
  await assert.rejects(verifyPreviewHttp(url,'tester',{expectedRelease:'untrusted'}),/Expected release/);
 });
+
+test('HTTP header validation rejects attached JavaScript while permitting inline resources',()=>{
+ assert(deliveryErrors('core/hub.js',new Headers({'content-type':'text/javascript','content-disposition':'attachment; filename=hub.js'})).some(error=>error.includes('attachment')));
+ assert.deepEqual(deliveryErrors('core/hub.js',new Headers({'content-type':'text/javascript','content-disposition':'inline'})),[]);
+});
