@@ -90,3 +90,7 @@ The shared app-view module also captures multiline textarea notes, keeps input/c
 Seven behavior regressions cover open/closed native and custom panels, textarea capture, rendering event order, idempotent replay, removed/sensitive fields, reused nonform IDs, and a complete capture → cross-app visit → contextual Back → restored view round trip through namespaced session storage. No content, scientific approvals, IDs, deployment configuration or private preview changed.
 
 Validation on final code: 449/449 Node tests passed, build and 33-app/11-category validation passed, security scan passed, strict content preflight passed 33/33 apps. Generated reports excluded; physical-device testing remains separate.
+### Disclosure coverage follow-up
+
+Inspection found 13 Applied Water Science / Life Support disclosure buttons without `aria-controls`. App snapshots now preserve these through existing stable card/control IDs while retaining previous `aria-controls` keys. Controls lacking a stable owner are ignored. Three additional behavior regressions cover owner IDs, standalone IDs, unidentified controls and independent sibling states. App-view module tests passed 10/10; combined verification is recorded separately. No scientific content or permanent identifiers changed.
+

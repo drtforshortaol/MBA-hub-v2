@@ -7,7 +7,7 @@ function fixture(){
  const inputs=[['query','search','kelp'],['notes','textarea','My notes'],['station','select-one','ocean'],['secret','password','private'],['upload','file',''],['token','hidden','sensitive']].map(([id,type,value])=>({id,type,value,tagName:type==='textarea'?'TEXTAREA':type==='select-one'?'SELECT':'INPUT',checked:false,dispatchEvent:event=>events.push([id,event.type])}));
  const details=[{open:true},{open:false},{open:true}];
  const controls=[['overview','true'],['facts','false']].map(([id,value])=>({id,value,clicks:0,getAttribute(name){return name==='aria-controls'?this.id:this.value;},click(){this.clicks++;this.value=this.value==='true'?'false':'true';}}));
- const document={getElementById:id=>inputs.find(input=>input.id===id),querySelectorAll(selector){if(selector==='details')return details;if(selector==='[aria-controls][aria-expanded="true"]')return controls.filter(control=>control.value==='true');if(selector==='[aria-controls][aria-expanded]')return controls;return inputs;}};
+ const document={getElementById:id=>inputs.find(input=>input.id===id),querySelectorAll(selector){if(selector==='details')return details;if(selector==='[aria-expanded="true"]')return controls.filter(control=>control.value==='true');if(selector==='[aria-expanded]')return controls;return inputs;}};
  const options={Event:class{constructor(type){this.type=type;}},scrollTo:(x,y)=>scrolls.push([x,y])};
  return {document,details,controls,inputs,events,scrolls,options};
 }
@@ -67,4 +67,40 @@ test('reused field IDs on nonform elements cannot receive saved values or synthe
  f.inputs[0].tagName='ARTICLE';f.inputs[0].value='unchanged';
  restoreAppView(f.document,saved,f.options);
  assert.equal(f.inputs[0].value,'unchanged');assert.equal(f.events.some(([id])=>id==='query'),false);
+});
+
+
+test('custom app cards without aria-controls restore through their stable owner IDs',()=>{
+ const f=fixture();
+ for(const [index,control] of f.controls.entries()){
+  control.id='';
+  control.getAttribute=function(name){return name==='aria-expanded'?this.value:null;};
+  const owner={id:index?'habitat':'overview',querySelectorAll:()=>[control]};
+  control.closest=()=>owner;
+ }
+ const saved=captureAppView(f.document,50);
+ assert.deepEqual(saved.expanded,[JSON.stringify(['owner','overview',0])]);
+ f.controls[0].value='false';f.controls[1].value='true';
+ restoreAppView(f.document,saved,f.options);
+ assert.deepEqual(f.controls.map(control=>control.value),['true','false']);
+});
+test('identified controls without aria-controls have separate keys; unidentified disclosures are left alone',()=>{
+ const f=fixture();
+ f.controls[0].getAttribute=function(name){return name==='aria-expanded'?this.value:null;};
+ f.controls[1].getAttribute=function(name){return name==='aria-expanded'?this.value:null;};
+ f.controls[1].id='';f.controls[1].closest=()=>null;
+ const saved=captureAppView(f.document,0);
+ assert.deepEqual(saved.expanded,[JSON.stringify(['control','overview'])]);
+ f.controls[0].value='false';f.controls[1].value='true';
+ restoreAppView(f.document,saved,f.options);
+ assert.deepEqual(f.controls.map(control=>control.value),['true','true']);
+});
+
+test('multiple disclosures in one identified owner keep independent panel state',()=>{
+ const f=fixture(),owner={id:'guide',querySelectorAll:()=>f.controls};
+ for(const control of f.controls){control.id='';control.closest=()=>owner;control.getAttribute=function(name){return name==='aria-expanded'?this.value:null;};}
+ const saved=captureAppView(f.document,0);f.controls[0].value='false';f.controls[1].value='true';
+ restoreAppView(f.document,saved,f.options);
+ assert.deepEqual(f.controls.map(control=>control.value),['true','false']);
+ assert.deepEqual(saved.expanded,[JSON.stringify(['owner','guide',0])]);
 });
