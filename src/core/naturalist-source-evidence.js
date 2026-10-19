@@ -1,3 +1,4 @@
+import {renderNaturalistSectionEvidence} from './naturalist-section-evidence.js';
 // Read-only source evidence belongs beside review controls, outside diagnostics.
 export function renderNaturalistSourceEvidence(document,entry){
  const evidence=document.createElement('section');
@@ -13,5 +14,7 @@ export function renderNaturalistSourceEvidence(document,entry){
   paragraph.style.whiteSpace='pre-wrap';paragraph.style.overflowWrap='anywhere';
   context.append(label,paragraph);evidence.append(context);
  }
+ const section=renderNaturalistSectionEvidence(document,entry);
+ if(section)evidence.append(section);
  return evidence;
 }

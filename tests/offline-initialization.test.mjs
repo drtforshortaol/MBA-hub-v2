@@ -89,7 +89,7 @@ for(const [name,response] of [
 });
 for(const [name,response,label] of [
  ['partial inventory',{complete:false,count:3,total:360},'Preparing offline · 3/360'],
- ['missing manifest',{complete:false,count:0,total:0},'Preparing offline · 0/0']
+ ['missing manifest',{complete:false,count:0,total:0},'Offline readiness unknown · use online and see Install & Help']
 ])test(`offline readiness preserves ${name} preparation state`,async()=>{
  const h=harness({register:()=>new Promise(()=>{})});let lifecycle;
  h.serviceWorker.controller.postMessage=(message,ports)=>ports[0].postMessage(response);

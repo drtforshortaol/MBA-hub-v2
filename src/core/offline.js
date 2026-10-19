@@ -26,6 +26,7 @@ export async function initializeOffline(status){
   if(typeof complete!=='boolean'||!Number.isSafeInteger(count)||!Number.isSafeInteger(total)||
    count<0||total<0||count>total||complete!==(total>0&&count===total))
    throw Error('Invalid offline status response');
+  if(total===0){if(status)status.textContent='Offline readiness unknown · use online and see Install & Help';return;}
   if(status)status.textContent=result.complete?`Ready offline · ${result.count} files`:`Preparing offline · ${result.count}/${result.total}`;
  };
  const checkForUpdate=async()=>{if(registration)await registration.update();else await register();};

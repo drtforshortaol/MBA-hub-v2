@@ -90,7 +90,8 @@ test('missing current manifest never promotes rollback or network bytes into a p
  const w=await recoveryWorker();await w.rollback();w.current.files.delete(w.root+'release.json');
  assert.equal(await (await w.fetch()).text(),w.body);
  assert.equal(w.current.files.size,0);
- assert.equal((await w.status()).complete,false);
+ const status=await w.status();assert.equal(status.complete,false);assert.equal(status.count,0);assert.equal(status.total,0);
+ assert.equal(w.current.files.size,0,'read-only status must not synthesize a manifest');
 });
 
 test('rollback range recovery stores full verified representation rather than partial response',async()=>{

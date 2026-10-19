@@ -62,3 +62,13 @@ test('verified waiting update retains explicit activation and fallback reopen be
  await h.advance(2000);await h.done;
  assert.equal(h.navigations.length,1);assert.ok(h.ports.every(port=>port.closed));assert.equal(h.timers.size,0);
 });
+
+
+test('missing offline setup stops before release fetch and preserves tester capabilities',async()=>{
+ let fetches=0;const commands=[];
+ const h=recoveryPage({register:async()=>({...registration(),active:{postMessage(message,ports){commands.push(message.type);ports[0].postMessage({complete:false,count:0,total:0,release:'current'});}}}),fetch:async()=>{fetches++;throw Error('must not fetch');}});
+ await h.done;
+ assert.equal(fetches,0);assert.deepEqual(commands,['STATUS']);assert.deepEqual(h.navigations,[]);
+ assert.match(h.status.textContent,/cannot rebuild/);assert.match(h.status.textContent,/Use the Hub online/);assert.match(h.status.textContent,/do not clear data or reinstall/);
+ assert.ok(h.ports.every(port=>port.closed));assert.equal(h.timers.size,0);
+});

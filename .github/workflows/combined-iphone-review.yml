@@ -36,11 +36,15 @@ jobs:
           tester_release=$(node -p "require('./dist/tester/release.json').release")
           npm run verify:preview:http -- --url http://127.0.0.1:8127/developer/ --environment developer --expected-release "$developer_release" --report dist/developer-http-report.json
           npm run verify:preview:http -- --url http://127.0.0.1:8127/tester/ --environment tester --expected-release "$tester_release" --report dist/tester-http-report.json
+      - name: Verify simulated offline navigation and corrupted-entry recovery
+        run: node scripts/verify-offline-navigation.mjs --report-dir dist/offline-reports
       - name: Package review provenance and instructions
         run: |
           cp docs/iphone-review-20261018.md dist/REVIEW.md
           git rev-parse HEAD > dist/SOURCE-COMMIT.txt
           sha256sum dist/developer/release.json dist/tester/release.json > dist/RELEASE-CHECKSUMS.txt
+      - name: Bind retained reports to generated releases and checkout
+        run: node scripts/verify-review-evidence.mjs dist "$GITHUB_SHA"
       - uses: actions/upload-artifact@v4
         with:
           name: mba-v2-combined-iphone-review
