@@ -102,3 +102,26 @@ test('returning to categories invalidates old frames and restores the latest pos
  f.frames[0]();assert.deepEqual(positions,[]);
  f.frames[1]();assert.deepEqual(positions,[[0,420]]);
 });
+
+
+test('contextual search arrival restores once and later explicit search visits focus normally',async()=>{
+ const f=fixture();f.context.returned={state:{query:'ray',scroll:190}};
+ const pending=f.renderRoute();f.requests[0].resolve(response(entries));await pending;
+ assert.equal(f.frames.length,1);assert.equal(f.input().focused,false);
+ f.frames[0]();assert.equal(f.context.scrolls,1);
+ f.context.location.hash='#help';await f.renderRoute();
+ f.context.location.hash='#search';await f.renderRoute();
+ assert.equal(f.input().focused,true,'a later explicit Search visit must receive normal input focus');
+ assert.equal(f.frames.length,1,'the original app-return position must not be replayed');
+ assert.equal(f.input().value,'ray','the saved query remains available');
+});
+
+test('abandoned contextual search arrival cannot transfer restoration to a newer search visit',async()=>{
+ const f=fixture();f.context.returned={state:{query:'ray',scroll:190}};
+ const abandoned=f.renderRoute();f.context.location.hash='#help';await f.renderRoute();
+ f.context.location.hash='#search';const current=f.renderRoute();
+ f.requests[1].resolve(response(entries));await current;
+ assert.equal(f.input().focused,true);assert.equal(f.frames.length,0);
+ f.requests[0].resolve(response(entries));await abandoned;
+ assert.equal(f.frames.length,0);assert.equal(f.context.scrolls,0);
+});
