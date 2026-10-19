@@ -1,8 +1,8 @@
 /** Add a safe manual check beside the Hub's live offline status. */
 export function attachOfflineCheck(status,{verify,checkForUpdate,isOnline=()=>navigator.onLine!==false}){
- if(typeof verify!=='function')throw new TypeError('Offline verification callback is required');
  const document=status?.ownerDocument;
  if(!document||!status.parentNode)return {stop(){}};
+ if(typeof verify!=='function')throw new TypeError('Offline verification callback is required');
  const button=document.createElement('button');
  button.type='button';button.className='open-app';button.textContent='Check offline files';
  if(status.id)button.setAttribute('aria-controls',status.id);
