@@ -8,6 +8,7 @@ import {createDraft,loadDraft,saveDraft,validateDraft} from './content-drafts.js
 import {request} from './worker-channel.js';
 import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket,reviewRecoveryCheck,reviewActionQueue} from './naturalist-review-state.js';
 import {renderNaturalistSourceEvidence} from './naturalist-source-evidence.js';
+import {readNaturalistReviewPosition,saveNaturalistReviewPosition} from './naturalist-review-position.js';
 const env=await fetch('environment.json').then(r=>r.json());if(!env.developer)throw Error('Developer module prohibited in this environment');
 const panel=document.querySelector('#developer'),title=document.querySelector('#title');let taps=0,last=0;
 title.addEventListener('click',()=>{if(Date.now()-last>2200)taps=0;last=Date.now();if(++taps===5){taps=0;panel.hidden=!panel.hidden;if(!panel.hidden)render();}});
@@ -162,6 +163,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     previous.disabled=activeStatement===0;next.disabled=activeStatement===statementCards.length-1;
     position.textContent=' Statement '+(activeStatement+1)+' of '+statementCards.length+' ';
     if(jumpToStatement)jumpToStatement.value=String(activeStatement);
+    try{saveNaturalistReviewPosition(localStorage,env.namespace,sourceFingerprint,activeStatement,statementCards.length);}catch{/* Navigation works without device storage. */}
    }
    previous.addEventListener('click',()=>{if(isCurrentReview())showStatement(activeStatement-1);});
    next.addEventListener('click',()=>{if(isCurrentReview())showStatement(activeStatement+1);});
@@ -318,7 +320,13 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     technical.append(technicalSummary,details);
     item.append(label,renderNaturalistSourceEvidence(document,entry),body,flags,related,technical,warning,form);reviewOutput.append(item);statementCards.push(item);
    }
-   if(statementCards.length>1){reviewOutput.insertBefore(navigation,statementCards[0]);showStatement(0);}
+   if(statementCards.length>1){
+    reviewOutput.insertBefore(navigation,statementCards[0]);
+    let restoredPosition=0;
+    try{restoredPosition=readNaturalistReviewPosition(localStorage,env.namespace,sourceFingerprint,statementCards.length);}catch{/* Start at the first statement when storage is unavailable. */}
+    showStatement(restoredPosition);
+    navigation.setAttribute('aria-description','Your statement position resumes on this device when storage is available. Review decisions remain separate.');
+   }
    const recoveryLabel=document.createElement('label');recoveryLabel.textContent='Restore decisions from a downloaded review packet (same classification only)';
    const recoveryInput=document.createElement('input');recoveryInput.type='file';recoveryInput.accept='.json,application/json';
    recoveryLabel.append(recoveryInput);
