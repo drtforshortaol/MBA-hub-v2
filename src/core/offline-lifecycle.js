@@ -16,7 +16,7 @@ export function observeOfflineLifecycle({window, document, serviceWorker, refres
  // A back/forward-cache restore may retain a request whose worker channel was
  // suspended. Release it before verifying the resumed page's actual cache.
  const pageshow = event => { if (event.persisted) interrupt(); resume(); };
- const online = () => { void verify(); Promise.resolve().then(checkForUpdate).catch(() => {}); };
+ const online = () => { void verify(); Promise.resolve().then(() => { if (!stopped) return checkForUpdate(); }).catch(() => {}); };
  // A replaced controller cannot finish an outstanding request reliably. Release
  // that request before queuing verification against the new controlling worker.
  const controllerchange = () => { interrupt(); if (!stopped) void verify(); };

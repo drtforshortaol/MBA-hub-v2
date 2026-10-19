@@ -16,7 +16,7 @@ export function attachOfflineCheck(status,{verify,checkForUpdate,isOnline=()=>na
   // A status probe must never strand the button or skip local verification.
   let online=false;
   try{online=Boolean(isOnline());}catch{/* still verify local cache */}
-  if(online&&typeof checkForUpdate==='function')void Promise.resolve().then(checkForUpdate).catch(()=>{});
+  if(online&&typeof checkForUpdate==='function')void Promise.resolve().then(()=>{if(!stopped)return checkForUpdate();}).catch(()=>{});
   try{await verify();}finally{
    running=false;
    if(!stopped){button.disabled=false;button.textContent='Check offline files';}
