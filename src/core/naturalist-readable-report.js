@@ -4,6 +4,8 @@ import {validateReviewDecisions,reviewActionQueue,reviewProgress} from './natura
 export function naturalistReadableReport(packet,replacements=[]){
  if(!packet||packet.kind!=='mba-v2-naturalist-review-packet'||typeof packet.original_source!=='string'||typeof packet.review_context_sha256!=='string'||!/^[a-f0-9]{64}$/.test(packet.review_context_sha256)||!validateReviewDecisions(packet.review_decisions,packet.entries))throw new TypeError('Invalid Naturalist review report');
  if(!Array.isArray(replacements))throw new TypeError('Invalid replacement text');
+ // Avoid ambiguous, excessively large plain-text review exports.
+ if(packet.original_source.length>1000000)throw new TypeError('Naturalist source exceeds report limit');
  const proposals=new Map();
  for(const pair of replacements){
   if(!Array.isArray(pair)||pair.length!==2)throw new TypeError('Invalid replacement text');
