@@ -54,3 +54,8 @@ test('worker reply timeout releases both ports and ignores a late reply',async t
   assert.equal(h.port.closed,true);assert.equal(h.port2.closed,true);assert.equal(lateReply(),null);
  }finally{t.mock.timers.reset();h.restore();}
 });
+
+test('worker response with non-string error is safely surfaced and closes ports',async()=>{
+ const h=harness(p=>queueMicrotask(()=>p.onmessage({data:{error:{code:'unavailable'}}})));
+ try{await assert.rejects(request('STATUS'));assert.equal(h.port.closed,true);assert.equal(h.port2.closed,true);}finally{h.restore();}
+});
