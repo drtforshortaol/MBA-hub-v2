@@ -1,4 +1,5 @@
 import {readReplacementDrafts,saveReplacementDrafts,createReplacementBackup,readReplacementBackup} from './naturalist-replacement-drafts.js';
+import {naturalistReadableReport} from './naturalist-readable-report.js';
 import {createNaturalistIntakePacket,readNaturalistIntakePacket,readNaturalistSource,saveNaturalistSource,discardNaturalistSource} from './naturalist-intake.js';
 import {naturalistChangeRequest} from './naturalist-change-request.js';
 import {exportNaturalistReviewQueue} from './naturalist-review-queue-export.js';
@@ -416,6 +417,17 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     }catch{if(request===activeReplacementImport&&isCurrentReview())replacementRecoveryStatus.textContent='Replacement backup could not be read. Current edits were kept.';}
    });
    reviewOutput.append(replacementDownload,replacementRestoreLabel);
+   const readableReport=document.createElement('button');readableReport.type='button';readableReport.className='button';readableReport.textContent='Download readable review report';
+   readableReport.addEventListener('click',()=>{
+    if(!isCurrentReview()){intakeStatus.textContent='Review no longer current. Generate again before downloading a report.';return;}
+    try{
+     const text=naturalistReadableReport(packet,[...replacementDrafts]);
+     const blob=new Blob([text],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');
+     link.href=url;link.download='mba-naturalist-review-report.txt';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+     intakeStatus.textContent='Readable draft report downloaded, including pending decisions and proposal text. Nothing published.';
+    }catch{intakeStatus.textContent='Review report invalid. Current work was kept; nothing downloaded.';}
+   });
+   reviewOutput.append(readableReport);
    const refreshQueue=document.createElement('button');refreshQueue.type='button';refreshQueue.className='button';refreshQueue.textContent='Refresh reviewed actions';
    function showQueue(){
     if(!isCurrentReview()){queueStatus.textContent='Review is stale; regenerate classification.';queueItems.replaceChildren();return;}
