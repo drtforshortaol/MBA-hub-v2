@@ -83,3 +83,11 @@ This branch isolates work; it does not by itself start an autonomous development
 - Valid partial inventories and the worker's missing-manifest 0/0 preparation response retain their existing behavior. A later valid STATUS reply recovers readiness without reinitialization or cache deletion.
 - Eleven new real-MessageChannel regressions cover malformed replies with successful recovery and valid preparation states. Targeted channel/initialization/control/lifecycle suite PASS 47/47; sequential build then full branch Node suite PASS 453/453; build validation (33 apps/11 categories), security scan, and diff check PASS.
 - No worker namespaces, service-worker activation, Safari transport behavior, scientific content, deployment, preview, or device-approval gates changed.
+
+## October 19 worker-handover recovery checkpoint
+
+- Controller handover now interrupts verification against the obsolete worker and immediately queues verification using the replacement. Installed apps no longer wait up to the old request's 30-second deadline after a controller change.
+- Each verification owns a fresh abort controller, so cancellation releases the old ports without disabling future manual, lifecycle, or initialization checks. Expected handover cancellation does not flash a misleading failure status.
+- Controller changes reverify even while the document is hidden, preventing a retained readiness label for the previous controller when the app next becomes visible. Normal visibility/page-show throttling remains intact.
+- Three new real-MessageChannel behavior tests exercise handover during a stalled check, handover while hidden, and handover during the first initialization check. Targeted offline suite PASS 50/50; sequential build then full branch Node suite PASS 456/456; build validation (33 apps/11 categories), security scan, and diff check PASS.
+- No cache namespace, message protocol, worker activation, Safari response handling, scientific content, approvals, deployment, or preview changes.
