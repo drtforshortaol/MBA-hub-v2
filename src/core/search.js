@@ -1,6 +1,6 @@
 // Rank existing registered content without changing scientific text or identifiers.
 export function searchHub(index,query,{category='',apps=[]}={}){
- const phrase=String(query).trim().toLocaleLowerCase(),terms=phrase.split(/\s+/).filter(Boolean);
+ const phrase=String(query).normalize('NFKC').trim().toLocaleLowerCase(),terms=phrase.split(/\s+/).filter(Boolean);
  if(!terms.length)return [];
  const categories=new Map(apps.map(app=>[app.app_id,app.category]));
  return index.flatMap((entry,position)=>{
