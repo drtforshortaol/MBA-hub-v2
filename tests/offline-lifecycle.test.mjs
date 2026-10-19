@@ -35,3 +35,11 @@ test('stopping lifecycle removes listeners and cancels queued verification',asyn
  h.window.dispatchEvent(new Event('online'));h.document.dispatchEvent(new Event('visibilitychange'));await h.lifecycle.verify();await tick();
  assert.equal(count,1);assert.equal(h.updates,0);
 });
+
+test('stopping immediately after reconnect cancels deferred update discovery',async()=>{
+ let checks=0;const h=harness(async()=>{checks++;});
+ h.window.dispatchEvent(new Event('online'));
+ h.lifecycle.stop();await tick();
+ assert.equal(checks,1,'verification already begun before disposal');
+ assert.equal(h.updates,0,'disposed lifecycle must not begin a queued update request');
+});

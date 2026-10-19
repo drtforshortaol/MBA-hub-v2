@@ -62,3 +62,13 @@ test('manual check ignores clicks after controls are stopped',async()=>{
  h.controls.stop();h.button.dispatchEvent(new Event('click'));await tick();
  assert.equal(checks,0);
 });
+
+test('stopping immediately after a manual check cancels deferred update discovery',async()=>{
+ let checks=0,updates=0;
+ const h=harness({verify:async()=>{checks++;},checkForUpdate:()=>{updates++;},isOnline:()=>true});
+ h.button.dispatchEvent(new Event('click'));
+ h.controls.stop();await tick();
+ assert.equal(checks,1,'local verification already begun before disposal');
+ assert.equal(updates,0,'removed control must not begin a queued update request');
+ assert.equal(h.button.removed,true);
+});

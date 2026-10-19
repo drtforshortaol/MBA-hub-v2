@@ -10,7 +10,7 @@ function fixture(t){
  fs.mkdirSync(path.join(dir,'offline-reports'));fs.writeFileSync(path.join(dir,'SOURCE-COMMIT.txt'),commit+'\n');
  for(const environment of ['developer','tester']){
   fs.mkdirSync(path.join(dir,environment));const release=environment==='developer'?'1'.repeat(16):'2'.repeat(16);
-  fs.writeFileSync(path.join(dir,environment,'release.json'),JSON.stringify({environment,release}));
+  fs.writeFileSync(path.join(dir,environment,'release.json'),JSON.stringify({environment,release,resources:[{url:'apps/one/index.html'},{url:'apps/two.html'},{url:'registry.json'}]}));
   fs.writeFileSync(path.join(dir,environment,'registry.json'),JSON.stringify({environment,apps:[{app_id:'one',entry_point:'apps/one/index.html'},{app_id:'two',entry_point:'apps/two.html'}]}));
   fs.writeFileSync(path.join(dir,environment,'search-index.json'),JSON.stringify([{app_id:'one',url:'apps/one/index.html#section'}]));
   const base={passed:true,environment,release,errors:[]};
@@ -57,4 +57,15 @@ for(const mutation of ['missing app','duplicate app','unknown app','wrong target
  if(mutation==='contradictory errors')report.apps[0].errors=['target failed'];
  fs.writeFileSync(file,JSON.stringify(report));
  assert(verifyReviewEvidence(dir,commit).some(error=>error.includes('incomplete offline scenario')));
+});
+
+for(const environment of ['developer','tester'])test(`review evidence rejects self-consistent truncated HTTP coverage for ${environment}`,t=>{
+ const dir=fixture(t),file=path.join(dir,`${environment}-http-report.json`),report=JSON.parse(fs.readFileSync(file));
+ report.resources={expected:1,verified:1};fs.writeFileSync(file,JSON.stringify(report));
+ assert(verifyReviewEvidence(dir,commit).some(error=>error===`${environment}-http-report.json: incomplete HTTP evidence`));
+});
+for(const resources of [undefined,null,{},[]])test(`review evidence rejects absent generated resource inventory ${JSON.stringify(resources)}`,t=>{
+ const dir=fixture(t),file=path.join(dir,'developer/release.json'),release=JSON.parse(fs.readFileSync(file));
+ release.resources=resources;fs.writeFileSync(file,JSON.stringify(release));
+ assert(verifyReviewEvidence(dir,commit).some(error=>error==='developer: invalid generated release'));
 });

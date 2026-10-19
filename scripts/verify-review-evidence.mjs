@@ -18,12 +18,12 @@ export function verifyReviewEvidence(directory,expectedCommit){
     if(app.entry_point.endsWith('/index.html'))targets.add(app.entry_point.slice(0,-'index.html'.length));
     return [app.app_id,targets.size];
    }));
-   if(release.environment!==environment||!/^[a-f0-9]{16}$/.test(release.release))errors.push(`${environment}: invalid generated release`);
+   if(release.environment!==environment||!/^[a-f0-9]{16}$/.test(release.release)||!Array.isArray(release.resources)||!release.resources.length)errors.push(`${environment}: invalid generated release`);
    for(const [file,scenario] of [[`${environment}-http-report.json`,null],[`offline-reports/${environment}-offline-navigation.json`,'prepared-navigation'],[`offline-reports/${environment}-offline-recovery.json`,'corrupted-entry-recovery']]){
     const report=read(file);
     if(report.passed!==true||report.environment!==environment||report.release!==release.release||!Array.isArray(report.errors)||report.errors.length)errors.push(`${file}: failed or stale release evidence`);
     if(scenario&&(report.scenario!==scenario||report.offlineNetworkAttempts!==0||!Array.isArray(report.apps)||report.apps.length!==expectedApps.size||new Set(report.apps.map(app=>app?.app_id)).size!==expectedApps.size||!report.apps.every(app=>app&&app.passed===true&&Number.isSafeInteger(app.expected)&&Number.isSafeInteger(app.verified)&&app.verified===app.expected&&app.expected===expectedApps.get(app.app_id)&&Array.isArray(app.errors)&&app.errors.length===0)))errors.push(`${file}: incomplete offline scenario`);
-    if(!scenario&&(report.expectedRelease!==release.release||!Number.isSafeInteger(report.resources?.expected)||report.resources.expected<=0||!Number.isSafeInteger(report.resources?.verified)||report.resources.verified!==report.resources.expected))errors.push(`${file}: incomplete HTTP evidence`);
+    if(!scenario&&(report.expectedRelease!==release.release||!Number.isSafeInteger(report.resources?.expected)||report.resources.expected<=0||report.resources.expected!==release.resources?.length||!Number.isSafeInteger(report.resources?.verified)||report.resources.verified!==report.resources.expected))errors.push(`${file}: incomplete HTTP evidence`);
    }
   }
  }catch(error){errors.push(error.message);}
