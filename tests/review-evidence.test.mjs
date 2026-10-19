@@ -11,9 +11,11 @@ function fixture(t){
  for(const environment of ['developer','tester']){
   fs.mkdirSync(path.join(dir,environment));const release=environment==='developer'?'1'.repeat(16):'2'.repeat(16);
   fs.writeFileSync(path.join(dir,environment,'release.json'),JSON.stringify({environment,release}));
+  fs.writeFileSync(path.join(dir,environment,'registry.json'),JSON.stringify({environment,apps:[{app_id:'one',entry_point:'apps/one/index.html'},{app_id:'two',entry_point:'apps/two.html'}]}));
+  fs.writeFileSync(path.join(dir,environment,'search-index.json'),JSON.stringify([{app_id:'one',url:'apps/one/index.html#section'}]));
   const base={passed:true,environment,release,errors:[]};
   fs.writeFileSync(path.join(dir,`${environment}-http-report.json`),JSON.stringify({...base,expectedRelease:release,resources:{expected:3,verified:3}}));
-  for(const [name,scenario] of [['navigation','prepared-navigation'],['recovery','corrupted-entry-recovery']])fs.writeFileSync(path.join(dir,`offline-reports/${environment}-offline-${name}.json`),JSON.stringify({...base,scenario,offlineNetworkAttempts:0,apps:[{passed:true,expected:3,verified:3}]}));
+  for(const [name,scenario] of [['navigation','prepared-navigation'],['recovery','corrupted-entry-recovery']])fs.writeFileSync(path.join(dir,`offline-reports/${environment}-offline-${name}.json`),JSON.stringify({...base,scenario,offlineNetworkAttempts:0,apps:[{app_id:'one',passed:true,expected:3,verified:3,errors:[]},{app_id:'two',passed:true,expected:1,verified:1,errors:[]}]}));
  }
  return dir;
 }
@@ -41,4 +43,18 @@ for(const resources of [undefined,{}, {expected:3}, {verified:3}, {expected:'3',
  const dir=fixture(t),file=path.join(dir,'developer-http-report.json'),report=JSON.parse(fs.readFileSync(file));
  report.resources=resources;fs.writeFileSync(file,JSON.stringify(report));
  assert(verifyReviewEvidence(dir,commit).some(error=>error.includes('incomplete HTTP evidence')));
+});
+
+for(const mutation of ['missing app','duplicate app','unknown app','wrong target count','string count','fractional count','unsafe count','contradictory errors'])test(`review evidence rejects offline coverage ${mutation}`,t=>{
+ const dir=fixture(t),file=path.join(dir,'offline-reports/tester-offline-recovery.json'),report=JSON.parse(fs.readFileSync(file));
+ if(mutation==='missing app')report.apps.pop();
+ if(mutation==='duplicate app')report.apps[1]={...report.apps[0]};
+ if(mutation==='unknown app')report.apps[1].app_id='unregistered';
+ if(mutation==='wrong target count')report.apps[0].expected=report.apps[0].verified=2;
+ if(mutation==='string count')report.apps[0].expected=report.apps[0].verified='3';
+ if(mutation==='fractional count')report.apps[0].expected=report.apps[0].verified=1.5;
+ if(mutation==='unsafe count')report.apps[0].expected=report.apps[0].verified=Number.MAX_SAFE_INTEGER+1;
+ if(mutation==='contradictory errors')report.apps[0].errors=['target failed'];
+ fs.writeFileSync(file,JSON.stringify(report));
+ assert(verifyReviewEvidence(dir,commit).some(error=>error.includes('incomplete offline scenario')));
 });

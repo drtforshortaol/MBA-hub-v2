@@ -41,3 +41,19 @@ test('both queue sections render direct review links through existing statement 
  assert.match(queueCode,/queue\.blocked_items/);
  assert.match(queueCode,/queue\.items/);
 });
+
+test('queue navigation focuses the opened statement summary before scrolling',()=>{
+ const events=[];
+ const summary={focus:options=>events.push(['focus',options])};
+ const card={querySelector:selector=>{assert.equal(selector,'summary');return summary;},scrollIntoView:options=>events.push(['scroll',options])};
+ const link=renderNaturalistReviewLink(document,0,{isCurrentReview:()=>true,showStatement:index=>events.push(['show',index]),statementCards:[card]});
+ link.listeners.click();
+ assert.deepEqual(events,[['show',0],['focus',{preventScroll:true}],['scroll',{block:'nearest'}]]);
+});
+test('queue navigation remains usable when a card has no summary focus target',()=>{
+ let shown=false,scrolled=false;
+ const card={querySelector:()=>null,scrollIntoView:()=>{scrolled=true;}};
+ const link=renderNaturalistReviewLink(document,0,{isCurrentReview:()=>true,showStatement:()=>{shown=true;},statementCards:[card]});
+ assert.doesNotThrow(()=>link.listeners.click());
+ assert.equal(shown,true);assert.equal(scrolled,true);
+});

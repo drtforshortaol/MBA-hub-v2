@@ -6,7 +6,11 @@ export function renderNaturalistReviewLink(document,index,{isCurrentReview,showS
  button.addEventListener('click',()=>{
   if(!isCurrentReview()||!Number.isInteger(index)||index<0||index>=statementCards.length)return;
   showStatement(index);
-  statementCards[index].scrollIntoView({block:'nearest'});
+  const card=statementCards[index];
+  // Move keyboard/screen-reader context with the visual jump. The summary is
+  // already a native focus target; do not add a tab stop to the whole card.
+  card.querySelector?.('summary')?.focus({preventScroll:true});
+  card.scrollIntoView({block:'nearest'});
  });
  return button;
 }

@@ -139,3 +139,22 @@ test('controller handover recovers initialization blocked on its first verificat
   lifecycle=await pending;assert.equal(status.textContent,'Ready offline · 361 files');
  }finally{oldPort?.close();lifecycle?.stop();h.restore();}
 });
+
+test('back-forward cache restore interrupts a suspended check and ignores its late reply',async()=>{
+ const h=harness({register:()=>new Promise(()=>{})});let lifecycle,oldPort;
+ try{
+  const status={textContent:''};lifecycle=await initializeOffline(status);
+  h.serviceWorker.controller.postMessage=(message,ports)=>{oldPort=ports[0];};
+  const pending=lifecycle.verify();
+  assert.equal(status.textContent,'Checking offline files…');
+  let resumedRequests=0;
+  h.serviceWorker.controller.postMessage=(message,ports)=>{resumedRequests++;ports[0].postMessage({complete:false,count:7,total:360});};
+  const restored=new Event('pageshow');Object.defineProperty(restored,'persisted',{value:true});
+  h.window.dispatchEvent(restored);await pending;
+  assert.equal(resumedRequests,1);
+  assert.equal(status.textContent,'Preparing offline · 7/360');
+  oldPort.postMessage({complete:true,count:360,total:360});oldPort.close();await tick();
+  assert.equal(status.textContent,'Preparing offline · 7/360','suspended readiness cannot overwrite the resumed check');
+  lifecycle.stop();h.window.dispatchEvent(restored);await tick();assert.equal(resumedRequests,1);
+ }finally{oldPort?.close();lifecycle?.stop();h.restore();}
+});
