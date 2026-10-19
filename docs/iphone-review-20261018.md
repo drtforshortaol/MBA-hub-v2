@@ -4,12 +4,12 @@ Review only. This branch does not publish, deploy, merge, or grant release appro
 
 ## Included track heads
 
-- A: `d762e1da417b1e0913370047632ccc58e48b3e72`
-- B: `f0afebca0ae3b02cc4f27270a7e7db56af3f7b22`
-- C: `552ed57221ffbf49cf4676524d953c82dad5fcf8`
-- D: `5b7723d8207269a7cc9babe50012ae516b3acffe`
+- A: `d57fa15a37a986c941079247fdb1df1d67225420`
+- B: `20f3ae290df0fc079a3794ee80e337c26b8daaff`
+- C: `1593f83bd606753ec46d07e83dc95f8cc77fdb9c`
+- D: `418bbfed28fb9a3c5f757079b078352d50ea8f69`
 
-Latest development checkpoint: `parallel-development/combined-next-batch-20261018.md`.
+Latest development checkpoint: `parallel-development/combined-feature-batch-20261018.md`.
 
 Base: `966024670dc0e18cccdb091f45665ce9a9493b8f`.
 The artifact contains separate `developer/` and `tester/` bundles, a source commit ID and release checksums. Developer includes local Naturalist review controls; tester excludes privileged developer controls. Test both at separate URL paths. Do not copy either over V1 or the public tester.
