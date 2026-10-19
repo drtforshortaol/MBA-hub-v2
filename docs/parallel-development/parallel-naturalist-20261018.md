@@ -69,3 +69,10 @@ Verification: recovered a clean checkout and verified exact remote tree 5450b588
 Review validation now visits every array position and requires owned decision and classification records. Sparse arrays previously passed `Array.every` because holes were skipped; partial approvals could therefore be reported as valid recovery or an incomplete action queue. Missing or inherited records now fail closed before storage writes, portable annotation recovery, or queue preparation. Complete pending and approved arrays retain existing behavior; publication authority remains false.
 
 Verification: build and validation passed for 33 applications/11 categories; security scan and diff checks passed; Naturalist-related Node tests passed 144/144, including two new regressions exercising recovery, persistence, classification gaps, prototype-inherited records, and read-only queues. An initial test invocation before generating dist had three missing-build failures; building and rerunning resolved all three. No scientific content, permanent identifiers, deployment, protected repository, or approval policy changed.
+
+
+## Portable annotation JSON recovery — October 19, 2026
+
+Portable review decision recovery now accepts semantically unchanged nested classification objects after a JSON editor reorders their members. Recovery and read-only queue verification share one structural comparator. Exact source whitespace, array order, field presence and types, destination routing, and opaque reviewed section/source snapshot strings remain mandatory; scientific/editorial and publication gates are unchanged.
+
+Verification: built before testing; Naturalist suites passed 145/145 and full isolated Track A Node suite passed 435/435. Final build and validation passed for 33 applications/11 categories; security scan and diff checks passed. The new recovery regression confirms reordered JSON retains annotations and rejects nine altered classification/provenance cases. No content, protected branches, deployment, or preview changed.

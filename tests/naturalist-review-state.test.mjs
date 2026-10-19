@@ -3,6 +3,32 @@ import assert from 'node:assert/strict';
 import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket,reviewRecoveryCheck,reviewActionQueue} from '../src/core/naturalist-review-state.js';
 const entries=[{index:0},{index:1}];
 function storage(){const data=new Map();return {getItem:k=>data.get(k)??null,setItem:(k,v)=>data.set(k,v),removeItem:k=>data.delete(k)};}
+test('portable decision recovery accepts reordered JSON objects while keeping classification exact',()=>{
+ const classified=[{index:0,text:'  Kelp source\r\n',source_block:'  Original block  ',extraction:{method:'paragraph',offsets:[3,7]},placement:{target_app_id:'kelp',details:{section:'growth',label:'Growth'}},route:{action:'update-existing',app_id:'kelp',section_id:'growth'},review:{flags:['source-review','editorial-review']},reviewed_section_snapshot:'{"title":"Growth","body":"Original"}'}];
+ const decisions=newReviewDecisions(classified);
+ Object.assign(decisions[0],{scientific_status:'verified',editorial_status:'approved',proposed_action:'update-existing',reviewer_notes:'Source reviewed'});
+ const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',review_context_sha256:'context',review_decisions:decisions,entries:classified,published:false,can_auto_publish:false};
+ const reorder=value=>Array.isArray(value)?value.map(reorder):value&&typeof value==='object'?Object.fromEntries(Object.entries(value).reverse().map(([key,item])=>[key,reorder(item)])):value;
+ const serialized=JSON.parse(JSON.stringify(reorder(packet)));
+ assert.deepEqual(importReviewPacket(serialized,'context',classified),decisions);
+ const alterations=[
+  entry=>{entry.route.section_id='other';},
+  entry=>{entry.placement.details.approved=true;},
+  entry=>{delete entry.extraction.method;},
+  entry=>{entry.extraction.offsets.reverse();},
+  entry=>{entry.review.flags.reverse();},
+  entry=>{entry.text=entry.text.trim();},
+  entry=>{entry.source_block=entry.source_block.trim();},
+  entry=>{entry.reviewed_section_snapshot='{"body":"Original","title":"Growth"}';},
+  entry=>{entry.placement.details=null;}
+ ];
+ for(const alter of alterations){
+  const changed=structuredClone(serialized);alter(changed.entries[0]);
+  assert.equal(importReviewPacket(changed,'context',classified),null);
+ }
+ assert.equal(serialized.published,false);
+ assert.equal(serialized.can_auto_publish,false);
+});
 test('incomplete approval arrays fail closed across recovery, queues and storage',()=>{
  const approved=newReviewDecisions(entries);
  approved.forEach(d=>Object.assign(d,{scientific_status:'verified',editorial_status:'approved',proposed_action:'new-content'}));
