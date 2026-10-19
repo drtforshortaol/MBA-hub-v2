@@ -32,6 +32,16 @@ jobs:
         run: node --test tests/security-review.test.mjs
       - name: Verify complete preview artifact integrity and isolation
         run: node scripts/verify-build-artifacts.mjs
+      - name: Verify actual developer and tester bundles over local HTTP
+        run: node scripts/verify-local-http.mjs --report-dir verification/http
+      - name: Retain local HTTP acceptance evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: mba-v2-local-http-evidence
+          path: verification/http/*.json
+          if-no-files-found: warn
+          retention-days: 30
       - name: Run security scanner
         run: npm run security:scan
       - name: Check image and note assets
