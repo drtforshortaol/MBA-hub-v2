@@ -39,6 +39,8 @@
   }else{
    const active=registration.active;if(!active)throw Error('Offline installation is not ready yet. Please try again while online.');
    const result=await wait(command(active,'STATUS'));
+   const {complete,count,total,release}=result;
+   if(typeof complete!=='boolean'||!Number.isSafeInteger(count)||!Number.isSafeInteger(total)||count<0||total<0||count>total||complete!==(total>0&&count===total)||typeof release!=='string'||!release.trim())throw Error('Offline readiness could not be verified. Please retry while online; your existing website data has not been cleared.');
    if(result.complete===false&&result.count===0&&result.total===0)throw Error('Offline setup is missing. This refresh cannot rebuild it. Use the Hub online and report this message through Install & Help. Keep your existing website data; do not clear data or reinstall.');
    const liveResponse=await wait(fetch(new URL('release.json',root),{cache:'no-store'}));
    if(!liveResponse.ok)throw Error('The current release could not be checked. Please try again online.');

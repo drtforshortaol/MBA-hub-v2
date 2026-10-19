@@ -15,7 +15,7 @@ function recoveryPage({register,fetch=async()=>({ok:true,json:async()=>({release
   async advance(ms){now+=ms;for(const [id,timer]of [...timers])if(timer.at<=now){timers.delete(id);timer.fn();}await tick();}
  };
 }
-const active={postMessage(message,ports){assert.equal(message.type,'STATUS');ports[0].postMessage({complete:true,release:'current'});}};
+const active={postMessage(message,ports){assert.equal(message.type,'STATUS');ports[0].postMessage({complete:true,count:360,total:360,release:'current'});}};
 const registration=()=>({update:async()=>{},active,installing:null,waiting:null});
 
 test('recovery registration timeout is actionable and late resolution cannot activate or navigate',async()=>{
@@ -70,5 +70,24 @@ test('missing offline setup stops before release fetch and preserves tester capa
  await h.done;
  assert.equal(fetches,0);assert.deepEqual(commands,['STATUS']);assert.deepEqual(h.navigations,[]);
  assert.match(h.status.textContent,/cannot rebuild/);assert.match(h.status.textContent,/Use the Hub online/);assert.match(h.status.textContent,/do not clear data or reinstall/);
+ assert.ok(h.ports.every(port=>port.closed));assert.equal(h.timers.size,0);
+});
+
+for(const [name,status] of [
+ ['truthy completion',{complete:'yes',count:360,total:360,release:'current'}],
+ ['missing counts',{complete:true,release:'current'}],
+ ['premature completion',{complete:true,count:359,total:360,release:'current'}],
+ ['inconsistent incomplete flag',{complete:false,count:360,total:360,release:'current'}],
+ ['empty inventory marked ready',{complete:true,count:0,total:0,release:'current'}],
+ ['negative counts',{complete:false,count:-1,total:360,release:'current'}],
+ ['unsafe counts',{complete:true,count:Number.MAX_SAFE_INTEGER+1,total:Number.MAX_SAFE_INTEGER+1,release:'current'}],
+ ['missing release',{complete:true,count:360,total:360}],
+ ['blank release',{complete:true,count:360,total:360,release:'  '}]
+])test(`refresh rejects ${name} before fetching or navigating`,async()=>{
+ let fetches=0;const commands=[];
+ const h=recoveryPage({register:async()=>({...registration(),active:{postMessage(message,ports){commands.push(message.type);ports[0].postMessage(status);}}}),fetch:async()=>{fetches++;throw Error('must not fetch');}});
+ await h.done;
+ assert.equal(fetches,0);assert.deepEqual(commands,['STATUS']);assert.deepEqual(h.navigations,[]);
+ assert.match(h.status.textContent,/readiness could not be verified/);
  assert.ok(h.ports.every(port=>port.closed));assert.equal(h.timers.size,0);
 });
