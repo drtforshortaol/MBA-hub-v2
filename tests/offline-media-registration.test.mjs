@@ -59,3 +59,20 @@ test('media planner CLI is read-only and repository reconciliation is complete',
  assert.equal(result.additions,0);
  assert.deepEqual(hashes(),before);
 });
+
+
+test('media registration planner rejects duplicate and malformed catalog IDs without writes',()=>{
+ for(const assets of [
+  [{asset_id:'new-photo',path:'shared/media/new.svg',offline:true},{asset_id:'new-photo',path:'shared/media/other.svg',offline:true}],
+  [{asset_id:'',path:'shared/media/new.svg',offline:true}],
+  [null]
+ ]){
+  const context=fixture();context.media.assets=assets;
+  const before=structuredClone(context.media);
+  const result=planOfflineMediaRegistration(context);
+  assert.equal(result.valid,false);
+  assert.equal(result.writePerformed,false);
+  assert.ok(result.errors.some(error=>error.startsWith('media catalog:')));
+  assert.deepEqual(context.media,before);
+ }
+});
