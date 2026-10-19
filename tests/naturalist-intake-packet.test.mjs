@@ -49,3 +49,10 @@ test('restored source runs canonical classification with fresh pending decisions
  assert.ok(fresh.decisions.every(d=>d.scientific_status==='pending'&&d.editorial_status==='pending'));
  assert.equal(fresh.progress.can_auto_publish,false);
 });
+
+test('intake packets reject prototype-shaped authority fields and preserve whitespace',()=>{
+ const packet=createNaturalistIntakePacket('  source\r\n  ');
+ assert.equal(readNaturalistIntakePacket({...packet,constructor:'forged'}).valid,false);
+ assert.equal(readNaturalistIntakePacket({...packet,__extra:'forged'}).valid,false);
+ assert.equal(readNaturalistIntakePacket(packet).source,'  source\r\n  ');
+});

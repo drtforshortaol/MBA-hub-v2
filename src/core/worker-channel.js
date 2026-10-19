@@ -1,5 +1,5 @@
 // A request owns one deadline, including registration readiness, and releases its ports.
-export function request(type){
+export function request(type,{signal}={}){
  return new Promise((resolve,reject)=>{
   let channel;
   let settled=false;
@@ -7,6 +7,7 @@ export function request(type){
    if(settled)return;
    settled=true;
    clearTimeout(timer);
+   signal?.removeEventListener('abort',abort);
    if(channel){
     channel.port1.onmessage=null;
     channel.port1.onmessageerror=null;
@@ -15,7 +16,10 @@ export function request(type){
    }
    if(error)reject(error);else resolve(data);
   };
+  const abort=()=>finish(new DOMException('Offline worker request cancelled','AbortError'));
   const timer=setTimeout(()=>finish(Error('Offline worker timed out')),30000);
+  if(signal?.aborted)return abort();
+  signal?.addEventListener('abort',abort,{once:true});
   const send=worker=>{
    if(settled)return;
    if(!worker)return finish(Error('No active offline worker'));

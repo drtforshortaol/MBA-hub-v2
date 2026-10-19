@@ -51,3 +51,18 @@ test('Hub manual control rechecks actual worker status and safely discovers upda
   lifecycle.stop();assert.equal(button.removed,true);
  }finally{lifecycle?.stop();h.restore();}
 });
+
+test('stopping lifecycle cancels in-flight verification without late status updates',async()=>{
+ const h=harness({register:()=>new Promise(()=>{})});let lifecycle,reply;
+ try{
+  const status={textContent:''};lifecycle=await initializeOffline(status);
+  h.serviceWorker.controller.postMessage=(message,ports)=>{reply=ports[0];};
+  const pending=lifecycle.verify();
+  assert.equal(status.textContent,'Checking offline files…');
+  lifecycle.stop();await pending;
+  assert.equal(status.textContent,'Checking offline files…','cancellation must not overwrite a disposed status');
+  reply.postMessage({complete:true,count:999});reply.close();await tick();
+  assert.equal(status.textContent,'Checking offline files…');
+  await lifecycle.verify();assert.equal(status.textContent,'Checking offline files…');
+ }finally{lifecycle?.stop();h.restore();}
+});

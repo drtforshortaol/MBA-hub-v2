@@ -8,7 +8,13 @@ export function newReviewDecisions(entries){
 }
 export function validateReviewDecisions(decisions,entries){
  if(!Array.isArray(entries)||!Array.isArray(decisions)||decisions.length!==entries.length)return false;
- return decisions.every((d,i)=>d&&typeof d==='object'&&!Array.isArray(d)&&Object.keys(d).every(k=>['index','scientific_status','editorial_status','proposed_action','reviewer_notes'].includes(k))&&d.index===i&&SCIENCE.has(d.scientific_status)&&EDITORIAL.has(d.editorial_status)&&ACTIONS.has(d.proposed_action)&&typeof d.reviewer_notes==='string'&&d.reviewer_notes.length<=4000);
+ // Visit every position explicitly: Array.every skips holes and can otherwise
+ // accept an incomplete set of approvals or missing classification records.
+ return Array.from({length:entries.length},(_,i)=>i).every(i=>{
+  if(!Object.hasOwn(entries,i)||!Object.hasOwn(decisions,i))return false;
+  const d=decisions[i];
+  return d&&typeof d==='object'&&!Array.isArray(d)&&Object.keys(d).every(k=>['index','scientific_status','editorial_status','proposed_action','reviewer_notes'].includes(k))&&d.index===i&&SCIENCE.has(d.scientific_status)&&EDITORIAL.has(d.editorial_status)&&ACTIONS.has(d.proposed_action)&&typeof d.reviewer_notes==='string'&&d.reviewer_notes.length<=4000;
+ });
 }
 export function reviewProgress(decisions){
  if(!Array.isArray(decisions))return {completed:0,total:0,revisions:0,can_auto_publish:false};

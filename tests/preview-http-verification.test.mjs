@@ -91,3 +91,46 @@ test('HTTP delivery rejects attached CSS and permits inline stylesheet delivery'
  assert(deliveryErrors('core/hub.css',new Headers({'content-type':'text/css','content-disposition':'attachment'})).some(error=>error.includes('attachment')));
  assert.deepEqual(deliveryErrors('core/hub.css',new Headers({'content-type':'text/css','content-disposition':'inline'})),[]);
 });
+
+
+test('HTTP acceptance refuses oversized resource declarations before fetching resources',async t=>{
+ const {url,requests}=await server(t,(request,response)=>{
+  response.end(JSON.stringify({schema_version:1,environment:'tester',release:'a'.repeat(16),resources:[
+   {url:'first.js',bytes:1,sha256:'a'.repeat(64)},
+   {url:'oversized.js',bytes:65,sha256:'a'.repeat(64)}
+  ]}));return true;
+ });
+ const report=await verifyPreviewHttp(url,'tester',{maxResourceBytes:64,maxTotalBytes:128});
+ assert.equal(report.passed,false);
+ assert.deepEqual(requests,['/review/release.json']);
+ assert.deepEqual(report.errors,['release.json: resource exceeds download budget: oversized.js']);
+});
+
+test('HTTP acceptance bounds cumulative declarations using overflow-safe arithmetic',async t=>{
+ const {url,requests}=await server(t,(request,response)=>{
+  response.end(JSON.stringify({schema_version:1,environment:'tester',release:'a'.repeat(16),resources:[
+   {url:'first.js',bytes:Number.MAX_SAFE_INTEGER-1,sha256:'a'.repeat(64)},
+   {url:'second.js',bytes:2,sha256:'a'.repeat(64)}
+  ]}));return true;
+ });
+ const report=await verifyPreviewHttp(url,'tester',{maxResourceBytes:Number.MAX_SAFE_INTEGER,maxTotalBytes:Number.MAX_SAFE_INTEGER});
+ assert.equal(report.passed,false);
+ assert.deepEqual(requests,['/review/release.json']);
+ assert.deepEqual(report.errors,['release.json: resources exceed total download budget']);
+});
+
+test('HTTP acceptance accepts exact configured resource and total budget boundaries',async t=>{
+ const {url}=await server(t),release=JSON.parse(fs.readFileSync(path.join(bundle,'release.json')));
+ const report=await verifyPreviewHttp(url,'tester',{
+  maxResourceBytes:Math.max(...release.resources.map(resource=>resource.bytes)),
+  maxTotalBytes:release.resources.reduce((sum,resource)=>sum+resource.bytes,0)
+ });
+ assert.equal(report.passed,true,JSON.stringify(report.errors));
+});
+
+test('HTTP acceptance rejects invalid download budgets before network access',async()=>{
+ for(const field of ['maxResourceBytes','maxTotalBytes']){
+  for(const value of [0,-1,1.5,Infinity,NaN,Number.MAX_SAFE_INTEGER+1,'64'])
+   await assert.rejects(verifyPreviewHttp('http://127.0.0.1:1/','tester',{[field]:value}),/Download budgets/);
+ }
+});
