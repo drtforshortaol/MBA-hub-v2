@@ -76,3 +76,12 @@ test('media registration planner rejects duplicate and malformed catalog IDs wit
   assert.deepEqual(context.media,before);
  }
 });
+
+test('duplicate catalog IDs never silently choose a conflicting media path',()=>{
+ const context=fixture();
+ context.media.assets.push({asset_id:'new-photo',path:'shared/media/other.svg',offline:true});
+ const plan=planOfflineMediaRegistration(context);
+ assert.equal(plan.valid,false);
+ assert.ok(plan.errors.some(error=>error.includes('duplicate asset ID new-photo')));
+ assert.equal(plan.writePerformed,false);
+});
