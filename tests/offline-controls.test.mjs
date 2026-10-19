@@ -56,3 +56,9 @@ test('stopping a pending manual verification prevents disposed-button state rest
  resolve();await tick();
  assert.equal(h.button.disabled,true,'disposed control must not be re-enabled after late verification');
 });
+
+test('manual check ignores clicks after controls are stopped',async()=>{
+ let checks=0;const h=harness({verify:async()=>{checks++;},isOnline:()=>false});
+ h.controls.stop();h.button.dispatchEvent(new Event('click'));await tick();
+ assert.equal(checks,0);
+});
