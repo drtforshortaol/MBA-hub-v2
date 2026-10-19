@@ -12,10 +12,19 @@ export function createSectionNavigator({document,location,escape,skipInitial=fal
   if(!target)return false;
   // Mark before opening panels: their rendering can produce more mutations.
   resolved=true;
-  for(let current=target;current;current=current.parentElement){
+  const ancestors=[];
+  for(let current=target;current;current=current.parentElement)ancestors.push(current);
+  const controls=[...document.querySelectorAll('[aria-controls][aria-expanded]')];
+  // Custom accordions often keep their trigger beside the hidden panel.
+  // Replay only an explicit ARIA relationship, from outer panels inward.
+  for(const current of ancestors.reverse()){
    if(current.tagName==='DETAILS')current.open=true;
+   if(current.id)for(const control of controls){
+    if(control.getAttribute('aria-expanded')==='false'&&control.getAttribute('aria-controls').split(/\s+/).includes(current.id))control.click();
+   }
   }
-  target.querySelector('[aria-expanded=false]')?.click();
+  if(target.getAttribute?.('aria-expanded')==='false')target.click();
+  else target.querySelector('[aria-expanded=false]')?.click();
   target.scrollIntoView({block:'start'});
   return true;
  };
