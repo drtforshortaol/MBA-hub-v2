@@ -16,7 +16,7 @@ export function deliveryErrors(name,headers){
  if(!allowed)return [];
  const errors=[],mime=(headers.get('content-type')||'').split(';',1)[0].trim().toLowerCase();
  if(!allowed.has(mime))errors.push(`incompatible Content-Type: ${mime||'missing'}`);
- if(extension==='.html'&&(headers.get('content-disposition')||'').split(';',1)[0].trim().toLowerCase()==='attachment')errors.push('Content-Disposition attachment prevents HTML navigation');
+ if((headers.get('content-disposition')||'').split(';',1)[0].trim().toLowerCase()==='attachment')errors.push('Content-Disposition attachment prevents browser resource loading');
  return errors;
 }
 
