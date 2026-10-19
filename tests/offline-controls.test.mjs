@@ -27,3 +27,13 @@ test('stalled update discovery does not hold the manual check and disposal remov
 test('pages without a status element do not gain a check control',()=>{
  assert.doesNotThrow(()=>attachOfflineCheck(undefined,{}).stop());
 });
+
+test('a throwing connectivity probe never strands manual offline verification',async()=>{
+ let checks=0,updates=0;
+ const h=harness({verify:async()=>{checks++;},checkForUpdate:()=>{updates++;},isOnline:()=>{throw Error('network state unavailable');}});
+ h.button.dispatchEvent(new Event('click'));await tick();
+ assert.equal(checks,1);assert.equal(updates,0);assert.equal(h.button.disabled,false);
+ h.button.dispatchEvent(new Event('click'));await tick();
+ assert.equal(checks,2);assert.equal(h.button.textContent,'Check offline files');
+ h.controls.stop();
+});
