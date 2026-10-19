@@ -39,3 +39,15 @@ test('fresh registration verifies once ready resolves and retains resume recover
   status.textContent='stale';h.window.dispatchEvent(new Event('pageshow'));await lifecycle.verify();assert.equal(status.textContent,'Ready offline · 360 files');
  }finally{lifecycle?.stop();h.restore();}
 });
+test('Hub manual control rechecks actual worker status and safely discovers updates',async()=>{
+ let updates=0,count=360;const h=harness({register:async()=>({update:async()=>{updates++;}})});let lifecycle;
+ const button=new EventTarget();button.setAttribute=()=>{};button.remove=()=>{button.removed=true;};
+ const status={textContent:'',id:'offline',parentNode:{},ownerDocument:{createElement:()=>button},after(){}};
+ h.serviceWorker.controller.postMessage=(message,ports)=>ports[0].postMessage({complete:true,count});
+ try{
+  lifecycle=await initializeOffline(status);assert.equal(status.textContent,'Ready offline · 360 files');
+  count=361;button.dispatchEvent(new Event('click'));await lifecycle.verify();
+  assert.equal(status.textContent,'Ready offline · 361 files');assert.equal(updates,1);
+  lifecycle.stop();assert.equal(button.removed,true);
+ }finally{lifecycle?.stop();h.restore();}
+});

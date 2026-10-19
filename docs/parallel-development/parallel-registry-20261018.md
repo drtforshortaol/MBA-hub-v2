@@ -94,3 +94,14 @@ Validation on final code: 449/449 Node tests passed, build and 33-app/11-categor
 
 Inspection found 13 Applied Water Science / Life Support disclosure buttons without `aria-controls`. App snapshots now preserve these through existing stable card/control IDs while retaining previous `aria-controls` keys. Controls lacking a stable owner are ignored. Three additional behavior regressions cover owner IDs, standalone IDs, unidentified controls and independent sibling states. App-view module tests passed 10/10; combined verification is recorded separately. No scientific content or permanent identifiers changed.
 
+
+
+### Ranked Hub search and category filtering
+
+Hub search now ranks exact app titles ahead of title phrases, title-term matches, body phrases and remaining content matches. Terms match across the existing result title and content together, fixing guide queries such as a species name plus a habitat term that occur in different fields. Equal-ranked results preserve index order and section deep links. Existing scientific text and the generated index format are unchanged.
+
+A labeled category selector filters by canonical application ownership in the current registry. Its selection travels with the existing saved query and contextual Back snapshot; returning to Search retains both. Unknown restored categories reset to All categories. Results use a polite live region, and existing safe-link validation, retry behavior and asynchronous route guards remain in place.
+
+Six search-helper regressions cover title/body ranking, mixed-field terms, category ownership, whitespace/case, no matches, stable ties and source immutability. Two route regressions cover category changes/route return and displayed rank order/live-region behavior. Clean recovery first reproduced remote B tree `f3ee9a91c825a3ea7a296a94187dcc94bc440ac4` exactly, avoiding unrelated integration source in this branch.
+
+Final isolated validation: 460/460 Node tests passed, build passed, 33-app/11-category validation passed, security scan passed and strict content preflight passed 33/33 apps. An earlier mixed-tree run was discarded after removing integration-only untracked files; final validation used the exact B baseline plus these feature files. Generated build reports excluded. No deployment or approval changes.

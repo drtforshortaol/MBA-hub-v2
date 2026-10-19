@@ -1,5 +1,6 @@
 import {observeOfflineLifecycle} from './offline-lifecycle.js';
 import {request} from './worker-channel.js';
+import {attachOfflineCheck} from './offline-controls.js';
 export async function initializeOffline(status){
  if(!('serviceWorker' in navigator)){if(status)status.textContent='Offline storage unavailable';return;}
  const serviceWorker=navigator.serviceWorker;
@@ -19,6 +20,9 @@ export async function initializeOffline(status){
  const checkForUpdate=async()=>{if(registration)await registration.update();else await register();};
  const lifecycle=observeOfflineLifecycle({window,document,serviceWorker,refresh:updateStatus,checkForUpdate,
   onError:()=>{if(status)status.textContent='Offline status temporarily unavailable';}});
+ const controls=attachOfflineCheck(status,{verify:lifecycle.verify,checkForUpdate});
+ const stop=lifecycle.stop;
+ lifecycle.stop=()=>{controls.stop();stop();};
  // Registration may fail offline or stall during an update. The controlling worker
  // can still verify its installed cache; recovery listeners must already exist.
  void register().then(()=>lifecycle.verify()).catch(()=>{});

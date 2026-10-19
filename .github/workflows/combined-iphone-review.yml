@@ -32,8 +32,10 @@ jobs:
             curl --fail --silent --output /dev/null http://127.0.0.1:8127/developer/release.json && break
             sleep 0.25
           done
-          npm run verify:preview:http -- --url http://127.0.0.1:8127/developer/ --environment developer --report dist/developer-http-report.json
-          npm run verify:preview:http -- --url http://127.0.0.1:8127/tester/ --environment tester --report dist/tester-http-report.json
+          developer_release=$(node -p "require('./dist/developer/release.json').release")
+          tester_release=$(node -p "require('./dist/tester/release.json').release")
+          npm run verify:preview:http -- --url http://127.0.0.1:8127/developer/ --environment developer --expected-release "$developer_release" --report dist/developer-http-report.json
+          npm run verify:preview:http -- --url http://127.0.0.1:8127/tester/ --environment tester --expected-release "$tester_release" --report dist/tester-http-report.json
       - name: Package review provenance and instructions
         run: |
           cp docs/iphone-review-20261018.md dist/REVIEW.md

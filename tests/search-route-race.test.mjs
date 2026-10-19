@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {searchHub} from '../src/core/search.js';
 import {runInNewContext} from 'node:vm';
 
 const source=fs.readFileSync('src/core/hub.js','utf8');
@@ -8,12 +9,12 @@ const routeSource=source.slice(source.indexOf('let routeGeneration='),source.ind
 function deferred(){let resolve,reject;const promise=new Promise((yes,no)=>{resolve=yes;reject=no;});return {promise,resolve,reject};}
 function fixture(){
  const requests=[],frames=[],inputs=[];
- let currentInput=null,currentResults=null;
- const view={children:[],textContent:'',replaceChildren(...children){this.children=children;this.textContent='';currentInput=children.find(child=>child.props?.id==='query')||null;currentResults=children.find(child=>child.props?.id==='results')||null;}};
+ let currentInput=null,currentResults=null,currentCategory=null;
+ const view={children:[],textContent:'',replaceChildren(...children){this.children=children;this.textContent='';currentInput=children.find(child=>child.props?.id==='query')||null;currentResults=children.find(child=>child.props?.id==='results')||null;currentCategory=children.find(child=>child.props?.id==='search-category')||null;}};
  const node=(tag,props={},...children)=>({tag,props,children,value:'',listeners:[],focused:false,addEventListener(type,listener){this.listeners.push({type,listener});},focus(){this.focused=true;},replaceChildren(...items){this.children=items;}});
- const context={view,node,location:{hash:'#search'},document:{querySelector(selector){if(selector==='#query'){if(currentInput&&!inputs.includes(currentInput))inputs.push(currentInput);return currentInput;}if(selector==='#results')return currentResults;return null;},createTextNode:text=>({text})},fetch(){const request=deferred();requests.push(request);return request.promise;},state:{query:'ray',scroll:190},returned:null,index:undefined,remember(){},safeHref:value=>value,requestAnimationFrame:callback=>frames.push(callback),scrollTo(){context.scrolls++;},scrolls:0,categories(){view.replaceChildren(node('h1',{text:'Categories'}));}};
+ const context={view,node,searchHub,registry:{categories:[{id:'animals',title:'Animals'},{id:'guides',title:'Guides'}],apps:[{app_id:'ray',category:'animals'},{app_id:'guide',category:'guides'}]},location:{hash:'#search'},document:{querySelector(selector){if(selector==='#query'){if(currentInput&&!inputs.includes(currentInput))inputs.push(currentInput);return currentInput;}if(selector==='#results')return currentResults;if(selector==='#search-category')return currentCategory;return null;},createTextNode:text=>({text})},fetch(){const request=deferred();requests.push(request);return request.promise;},state:{query:'ray',scroll:190},returned:null,index:undefined,remember(){},safeHref:value=>value,requestAnimationFrame:callback=>frames.push(callback),scrollTo(){context.scrolls++;},scrolls:0,categories(){view.replaceChildren(node('h1',{text:'Categories'}));}};
  const routes=runInNewContext(routeSource+'\n({route,renderRoute});',context);
- return {...routes,context,view,requests,frames,inputs,input:()=>currentInput,results:()=>currentResults};
+ return {...routes,context,view,requests,frames,inputs,input:()=>currentInput,results:()=>currentResults,category:()=>currentCategory};
 }
 const response=data=>({ok:true,json:async()=>data});
 const entries=[{title:'Ray habitat',text:'ray habitat',url:'apps/ray/index.html#habitat'}];
@@ -66,4 +67,23 @@ test('malformed search index records render recoverable errors and are not cache
   const retry=f.view.children[2].listeners[0].listener();f.requests[1].resolve(response(entries));await retry;
   assert.equal(f.input().listeners.length,1);
  }
+});
+
+test('category selection filters guide results and survives route return with the query',async()=>{
+ const f=fixture(),pending=f.renderRoute();
+ const data=[{app_id:'ray',title:'Ray',text:'ray',url:'apps/ray/index.html'},{app_id:'guide',title:'Ray guide',text:'ray',url:'apps/guide/index.html'}];
+ f.requests[0].resolve(response(data));await pending;
+ f.category().value='guides';f.category().listeners[0].listener();
+ assert.equal(f.context.state.searchCategory,'guides');assert.equal(f.context.state.query,'ray');
+ assert.equal(f.results().children.length,1);assert.equal(f.results().children[0].props.href,'apps/guide/index.html');
+ f.context.location.hash='#help';await f.renderRoute();f.context.location.hash='#search';await f.renderRoute();
+ assert.equal(f.input().value,'ray');assert.equal(f.category().value,'guides');
+ assert.equal(f.results().children.length,1);
+ f.category().value='';f.category().listeners[0].listener();assert.equal(f.results().children.length,2);
+});
+test('search displays app-title matches before body matches and announces results politely',async()=>{
+ const f=fixture(),pending=f.renderRoute();
+ f.requests[0].resolve(response([{title:'Guide',text:'ray',url:'apps/guide/index.html'},...entries,{title:'Ray',text:'ray',url:'apps/ray/index.html'}]));await pending;
+ assert.equal(f.results().children[0].props.href,'apps/ray/index.html');
+ assert.equal(f.results().props['aria-live'],'polite');
 });
