@@ -9,6 +9,7 @@ import {request} from './worker-channel.js';
 import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket,reviewRecoveryCheck,reviewActionQueue} from './naturalist-review-state.js';
 import {renderNaturalistSourceEvidence} from './naturalist-source-evidence.js';
 import {readNaturalistReviewPosition,saveNaturalistReviewPosition} from './naturalist-review-position.js';
+import {renderNaturalistReviewLink} from './naturalist-review-link.js';
 const env=await fetch('environment.json').then(r=>r.json());if(!env.developer)throw Error('Developer module prohibited in this environment');
 const panel=document.querySelector('#developer'),title=document.querySelector('#title');let taps=0,last=0;
 title.addEventListener('click',()=>{if(Date.now()-last>2200)taps=0;last=Date.now();if(++taps===5){taps=0;panel.hidden=!panel.hidden;if(!panel.hidden)render();}});
@@ -444,13 +445,14 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     queueItems.replaceChildren();
     if(!queue.valid){queueStatus.textContent='Review decisions invalid.';return;}
     queueStatus.textContent=queue.items.length+' preparable reviewed actions; '+(queue.blocked_items?.length??0)+' blocked actions (duplicates, conflicts, source changes, or competing destinations). No publishing available.';
-    for(const item of queue.blocked_items||[]){const li=document.createElement('li');li.textContent='BLOCKED statement '+(item.index+1)+' · '+item.block_reasons.join(', ')+' · '+(item.entry?.source_text||'').slice(0,120);queueItems.append(li);}
+    for(const item of queue.blocked_items||[]){const li=document.createElement('li');li.textContent='BLOCKED statement '+(item.index+1)+' · '+item.block_reasons.join(', ')+' · '+(item.entry?.source_text||'').slice(0,120);li.append(renderNaturalistReviewLink(document,item.index,{isCurrentReview,showStatement,statementCards}));queueItems.append(li);}
     for(const item of queue.items){
      const entry=packet.entries[item.index];
      const blocked=entry.duplicate_of!=null||(entry.conflict_with||[]).length>0;
      const li=document.createElement('li');
      const target=entry.placement?.target_app_id||'unresolved';
      li.textContent='Statement '+(item.index+1)+' · '+item.action+' · '+target+' · '+(blocked?'BLOCKED: duplicate or potential scientific conflict':item.action==='new-content'?'Placement review required':'Draft preparation requires verified replacement text')+' · '+entry.source_text.slice(0,120);
+     li.append(renderNaturalistReviewLink(document,item.index,{isCurrentReview,showStatement,statementCards}));
      if(!blocked&&item.action==='update-existing'){
       const replacementLabel=document.createElement('label');replacementLabel.textContent='Proposed replacement text (scientific verification required) for statement '+(item.index+1);
       const replacementInput=document.createElement('textarea');replacementInput.rows=4;replacementInput.maxLength=20000;replacementInput.style.width='100%';
