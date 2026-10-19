@@ -22,3 +22,17 @@ test('actual report button downloads current in-progress text and refuses stale 
  assert.equal(links[0].download,'mba-naturalist-review-report.txt');assert.equal(blobs[0].type,'text/plain;charset=utf-8');assert((await blobs[0].text()).includes('Current unfinished proposal'));assert.equal(p.review_decisions[0].scientific_status,'pending');
  context.isCurrentReview=()=>false;context.download.click();assert.equal(blobs.length,1);assert.match(context.intakeStatus.textContent,/no longer current/);
 });
+
+test('readable report enforces source and replacement boundaries without changing review state',()=>{
+ const p=packet(),original=p.original_source,decisions=JSON.stringify(p.review_decisions);
+ p.original_source='x'.repeat(1000001);
+ assert.throws(()=>naturalistReadableReport(p),/source exceeds report limit/);
+ p.original_source='x'.repeat(1000000);
+ assert.doesNotThrow(()=>naturalistReadableReport(p));
+ p.original_source=original;
+ assert.throws(()=>naturalistReadableReport(p,[[0,'x'.repeat(20001)]]),/Invalid replacement text/);
+ assert.throws(()=>naturalistReadableReport(p,[[0,42]]),/Invalid replacement text/);
+ assert.throws(()=>naturalistReadableReport(p,[[0,'first'],[0,'second']]),/Invalid replacement text/);
+ assert.throws(()=>naturalistReadableReport(p,[[Number.NaN,'bad']]),/Invalid replacement text/);
+ assert.equal(JSON.stringify(p.review_decisions),decisions);
+});
