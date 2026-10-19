@@ -21,7 +21,7 @@ export function deliveryErrors(name,headers){
 }
 
 // HTTP delivery evidence does not establish browser behavior or device approval.
-export async function verifyPreviewHttp(baseUrl,environment,{concurrency=6,timeoutMs=15000,totalTimeoutMs=120000,expectedRelease=null}={}) {
+export async function verifyPreviewHttp(baseUrl,environment,{concurrency=6,timeoutMs=15000,totalTimeoutMs=120000,expectedRelease=null,maxResourceBytes=64*1024*1024,maxTotalBytes=256*1024*1024}={}) {
  const base=new URL(baseUrl);
  if(!['http:','https:'].includes(base.protocol)||base.username||base.password||base.search||base.hash)throw Error('Expected an HTTP(S) directory URL without credentials, query or fragment');
  if(!base.pathname.endsWith('/'))base.pathname+='/';
@@ -29,6 +29,7 @@ export async function verifyPreviewHttp(baseUrl,environment,{concurrency=6,timeo
  if(!Number.isInteger(concurrency)||concurrency<1||concurrency>16)throw Error('Concurrency must be between 1 and 16');
  if(![timeoutMs,totalTimeoutMs].every(value=>Number.isSafeInteger(value)&&value>0&&value<=600000))throw Error('Timeouts must be positive milliseconds up to 600000');
  if(expectedRelease!==null&&(typeof expectedRelease!=='string'||!/^[a-f0-9]{16}$/.test(expectedRelease)))throw Error('Expected release must be a 16-character lowercase hexadecimal identifier');
+ if(![maxResourceBytes,maxTotalBytes].every(value=>Number.isSafeInteger(value)&&value>0))throw Error('Download budgets must be positive safe-integer byte counts');
  const deadline=AbortSignal.timeout(totalTimeoutMs);
  const report={schema_version:1,scope:'HTTP delivery headers, byte integrity and artifact semantics only; no browser, physical-device, scientific, editorial or release approval',url:base.href,environment,release:null,expectedRelease,passed:false,resources:{expected:0,verified:0,bytes:0},apps:[],errors:[]};
  const directory=fs.mkdtempSync(path.join(os.tmpdir(),'mba-http-audit-')),results=new Map();
@@ -52,10 +53,13 @@ export async function verifyPreviewHttp(baseUrl,environment,{concurrency=6,timeo
   if(!release||release.schema_version!==1||release.environment!==environment||!/^[a-f0-9]{16}$/.test(release.release)||!Array.isArray(release.resources)||!release.resources.length){report.errors.push('release.json: invalid release metadata');return report;}
   report.release=release.release;
   if(expectedRelease!==null&&release.release!==expectedRelease){report.errors.push(`release.json: expected release ${expectedRelease}, received ${release.release}`);return report;}
-  const names=new Set();
+  const names=new Set();let declaredBytes=0;
   for(const resource of release.resources){
    if(!resource||!safePath(resource.url)||['release.json','sw.js'].includes(resource.url)||names.has(resource.url)||!Number.isSafeInteger(resource.bytes)||resource.bytes<0||!/^[a-f0-9]{64}$/.test(resource.sha256)){report.errors.push('release.json: unsafe or invalid resource declaration');return report;}
-   names.add(resource.url);
+   // Validate the entire manifest before starting resource downloads. Metadata is untrusted.
+   if(resource.bytes>maxResourceBytes){report.errors.push(`release.json: resource exceeds download budget: ${resource.url}`);return report;}
+   if(resource.bytes>maxTotalBytes-declaredBytes){report.errors.push('release.json: resources exceed total download budget');return report;}
+   declaredBytes+=resource.bytes;names.add(resource.url);
   }
   report.resources.expected=release.resources.length;let next=0;
   await Promise.all(Array.from({length:Math.min(concurrency,release.resources.length)},async()=>{while(next<release.resources.length){const resource=release.resources[next++];await download(resource.url,resource);}}));
