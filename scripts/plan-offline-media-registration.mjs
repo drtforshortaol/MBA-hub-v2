@@ -5,19 +5,22 @@ import {safeLocalPath} from './build.mjs';
 
 // Read-only planning: registered media supplies paths; caller owns any edits.
 export function planOfflineMediaRegistration({apps,media,exists}){
- const catalog=new Map(),errors=[],plans=[];
+ const catalog=new Map(),ambiguous=new Set(),errors=[],plans=[];
  for(const asset of media.assets){
   if(!asset||typeof asset.asset_id!=='string'||!asset.asset_id.trim()){
    errors.push('media catalog: invalid asset ID');continue;
   }
-  if(catalog.has(asset.asset_id)){
-   errors.push(`media catalog: duplicate asset ID ${asset.asset_id}`);continue;
+  if(catalog.has(asset.asset_id)||ambiguous.has(asset.asset_id)){
+   errors.push(`media catalog: duplicate asset ID ${asset.asset_id}`);
+   ambiguous.add(asset.asset_id);catalog.delete(asset.asset_id);continue;
   }
   catalog.set(asset.asset_id,asset);
+  if(typeof asset.offline!=='boolean')errors.push(`media catalog: invalid offline intent ${asset.asset_id}`);
  }
  for(const app of apps){
   const registered=new Set(app.offline_assets),additions=[];
   for(const id of app.media){
+   if(ambiguous.has(id))continue; // Never propose a path from a conflicting catalog record.
    const asset=catalog.get(id);
    if(!asset){errors.push(`${app.app_id}: unknown media ${id}`);continue;}
    if(asset.offline!==true)continue;

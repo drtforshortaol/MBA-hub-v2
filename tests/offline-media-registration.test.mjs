@@ -85,3 +85,37 @@ test('duplicate catalog IDs never silently choose a conflicting media path',()=>
  assert.ok(plan.errors.some(error=>error.includes('duplicate asset ID new-photo')));
  assert.equal(plan.writePerformed,false);
 });
+
+
+test('conflicting offline media never yields an actionable addition in either catalog order',()=>{
+ for(const reverse of [false,true]){
+  const context=fixture();
+  context.apps[0].media=['new-photo'];
+  context.media.assets=[
+   {asset_id:'new-photo',path:'shared/media/new.svg',offline:true},
+   {asset_id:'new-photo',path:'shared/media/other.svg',offline:true},
+   {asset_id:'new-photo',path:'shared/media/third.svg',offline:true}
+  ];
+  if(reverse)context.media.assets.reverse();
+  context.exists=()=>assert.fail('ambiguous media must not reach filesystem lookup');
+  const result=planOfflineMediaRegistration(context);
+  assert.equal(result.valid,false);
+  assert.equal(result.additions,0);
+  assert.deepEqual(result.plans,[]);
+  assert.equal(result.errors.filter(error=>error.includes('duplicate asset ID')).length,2);
+ }
+});
+
+test('malformed offline intent cannot silently omit media from a successful plan',()=>{
+ for(const offline of [undefined,null,'true','false',0,1,{},[]]){
+  const context=fixture();
+  context.media.assets[0].offline=offline;
+  const before=structuredClone(context.media);
+  const result=planOfflineMediaRegistration(context);
+  assert.equal(result.valid,false);
+  assert.ok(result.errors.includes('media catalog: invalid offline intent new-photo'));
+  assert.equal(result.additions,0);
+  assert.equal(result.writePerformed,false);
+  assert.deepEqual(context.media,before);
+ }
+});
