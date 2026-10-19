@@ -11,7 +11,11 @@ export function attachOfflineCheck(status,{verify,checkForUpdate,isOnline=()=>na
   running=true;button.disabled=true;button.textContent='Checking offline files…';
   // Update discovery may stall offline. It must not block cache verification or
   // activate a waiting worker, clear storage, or prevent a later manual check.
-  if(isOnline())void Promise.resolve().then(checkForUpdate).catch(()=>{});
+  // Network-status providers can fail (for example during WebView teardown).
+  // A status probe must never strand the button or skip local verification.
+  let online=false;
+  try{online=Boolean(isOnline());}catch{/* still verify local cache */}
+  if(online&&typeof checkForUpdate==='function')void Promise.resolve().then(checkForUpdate).catch(()=>{});
   try{await verify();}finally{
    running=false;
    if(!stopped){button.disabled=false;button.textContent='Check offline files';}
