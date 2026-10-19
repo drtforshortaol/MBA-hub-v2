@@ -42,6 +42,16 @@ jobs:
           path: verification/http/*.json
           if-no-files-found: warn
           retention-days: 30
+      - name: Verify all registered app and search routes offline
+        run: node scripts/verify-offline-navigation.mjs --report-dir verification/offline
+      - name: Retain simulated offline navigation evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: mba-v2-offline-navigation-evidence
+          path: verification/offline/*.json
+          if-no-files-found: warn
+          retention-days: 30
       - name: Run security scanner
         run: npm run security:scan
       - name: Check image and note assets
