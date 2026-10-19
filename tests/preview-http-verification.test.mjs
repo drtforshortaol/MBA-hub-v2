@@ -86,3 +86,8 @@ test('HTTP header validation rejects attached JavaScript while permitting inline
  assert(deliveryErrors('core/hub.js',new Headers({'content-type':'text/javascript','content-disposition':'attachment; filename=hub.js'})).some(error=>error.includes('attachment')));
  assert.deepEqual(deliveryErrors('core/hub.js',new Headers({'content-type':'text/javascript','content-disposition':'inline'})),[]);
 });
+
+test('HTTP delivery rejects attached CSS and permits inline stylesheet delivery',()=>{
+ assert(deliveryErrors('core/hub.css',new Headers({'content-type':'text/css','content-disposition':'attachment'})).some(error=>error.includes('attachment')));
+ assert.deepEqual(deliveryErrors('core/hub.css',new Headers({'content-type':'text/css','content-disposition':'inline'})),[]);
+});
