@@ -61,3 +61,11 @@ This branch isolates work; it does not by itself start an autonomous development
 - Fresh installs still wait for worker readiness through the bounded request channel; successful registration schedules cache reverification. Initialization returns its lifecycle handle so callers can dispose listeners if needed.
 - Validation: three browser-environment behavior regressions exercise pending registration, offline registration rejection/reconnection, and fresh-install readiness. Full suite PASS 427/427; build PASS; validation PASS (33 apps, 11 categories); security scan PASS; diff check PASS.
 - Physical suspension/storage eviction and update/rollback acceptance remain outstanding; private preview unchanged.
+
+## Manual offline verification checkpoint
+
+- The Hub status now has a keyboard-accessible, touch-sized **Check offline files** button. Users can retry verification after a transient failure or before going offline without closing and reopening the app.
+- Manual checks reuse the lifecycle's serialized, bounded STATUS verification. Repeated taps coalesce, the button displays checking feedback, and failure restores retry availability.
+- When connected, a check also retries registration or discovers updates without waiting for that network operation to finish. Offline checks do not request update discovery. No cache deletion, namespace changes, activation command, scientific approval, or device acceptance changes are introduced.
+- The control is removed with lifecycle disposal; app pages without the Hub status do not receive an extra button.
+- Five new behavior cases cover manual checks, tap coalescing, failure recovery, stalled update discovery, lifecycle disposal, absent status, and actual initialization-to-worker response wiring. Full Node suite PASS 432/432; targeted controls/initialization tests PASS 8/8; build, build validation (33 apps/11 categories), security scan and diff checks PASS. New control module is in the generated tester release inventory. Physical layout/device acceptance remains pending.
