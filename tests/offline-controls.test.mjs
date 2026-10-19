@@ -37,3 +37,12 @@ test('a throwing connectivity probe never strands manual offline verification',a
  assert.equal(checks,2);assert.equal(h.button.textContent,'Check offline files');
  h.controls.stop();
 });
+
+test('offline control continues checking after synchronous update discovery failure',async()=>{
+ let checks=0,updates=0;
+ const h=harness({verify:()=>{checks++;return Promise.resolve();},checkForUpdate:()=>{updates++;throw Error('network discovery failed');},isOnline:()=>true});
+ h.button.dispatchEvent(new Event('click'));await tick();
+ assert.equal(checks,1);assert.equal(updates,1);assert.equal(h.button.disabled,false);
+ h.button.dispatchEvent(new Event('click'));await tick();
+ assert.equal(checks,2);h.controls.stop();
+});
