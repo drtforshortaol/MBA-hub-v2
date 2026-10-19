@@ -97,3 +97,45 @@ for(const [name,response,label] of [
   const status={textContent:''};lifecycle=await initializeOffline(status);assert.equal(status.textContent,label);
  }finally{lifecycle?.stop();h.restore();}
 });
+
+test('worker handover interrupts a stalled old worker and immediately verifies replacement',async()=>{
+ const h=harness({register:()=>new Promise(()=>{})});let lifecycle,oldPort;
+ try{
+  const status={textContent:''};lifecycle=await initializeOffline(status);
+  h.serviceWorker.controller.postMessage=(message,ports)=>{oldPort=ports[0];};
+  const pending=lifecycle.verify();
+  assert.equal(status.textContent,'Checking offline files…');
+  let replacementRequests=0;
+  h.serviceWorker.controller={postMessage(message,ports){replacementRequests++;ports[0].postMessage({complete:true,count:361,total:361});}};
+  h.serviceWorker.dispatchEvent(new Event('controllerchange'));
+  await pending;
+  assert.equal(replacementRequests,1);
+  assert.equal(status.textContent,'Ready offline · 361 files');
+  oldPort.postMessage({complete:true,count:1,total:1});oldPort.close();await tick();
+  assert.equal(status.textContent,'Ready offline · 361 files','obsolete worker cannot overwrite replacement readiness');
+  await lifecycle.verify();assert.equal(replacementRequests,2,'new requests remain usable after cancellation');
+ }finally{lifecycle?.stop();h.restore();}
+});
+
+test('hidden installed app verifies a replacement controller before its next foreground event',async()=>{
+ const h=harness({register:()=>new Promise(()=>{})});let lifecycle;
+ try{
+  const status={textContent:''};lifecycle=await initializeOffline(status);
+  h.document.visibilityState='hidden';
+  h.serviceWorker.controller={postMessage(message,ports){ports[0].postMessage({complete:false,count:3,total:361});}};
+  h.serviceWorker.dispatchEvent(new Event('controllerchange'));await lifecycle.verify();
+  assert.equal(status.textContent,'Preparing offline · 3/361');
+ }finally{lifecycle?.stop();h.restore();}
+});
+
+test('controller handover recovers initialization blocked on its first verification',async()=>{
+ const h=harness({register:()=>new Promise(()=>{})});let lifecycle,oldPort;
+ h.serviceWorker.controller.postMessage=(message,ports)=>{oldPort=ports[0];};
+ try{
+  const status={textContent:''};const pending=initializeOffline(status);
+  assert.equal(status.textContent,'Checking offline files…');
+  h.serviceWorker.controller={postMessage(message,ports){ports[0].postMessage({complete:true,count:361,total:361});}};
+  h.serviceWorker.dispatchEvent(new Event('controllerchange'));
+  lifecycle=await pending;assert.equal(status.textContent,'Ready offline · 361 files');
+ }finally{oldPort?.close();lifecycle?.stop();h.restore();}
+});

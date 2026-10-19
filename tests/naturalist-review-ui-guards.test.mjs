@@ -36,7 +36,7 @@ test('scientific conflict links navigate to related statements without editing d
  assert.match(code,/relatedIndex>=packet\.entries\.length/);
  assert.match(code,/showStatement\(relatedIndex\)/);
  assert.match(code,/statementCards\[relatedIndex\]\?\.scrollIntoView/);
- assert.match(code,/item\.append\(label,body,flags,related,technical,warning,form\)/);
+ assert.match(code,/item\.append\(label,renderNaturalistSourceEvidence\(document,entry\),body,flags,related,technical,warning,form\)/);
 });
 
 test('mobile reviewer can advance to incomplete statements without granting publication',()=>{

@@ -1,5 +1,5 @@
 /** Refresh offline verification after an installed app resumes or connectivity changes. */
-export function observeOfflineLifecycle({window, document, serviceWorker, refresh, checkForUpdate, onError}) {
+export function observeOfflineLifecycle({window, document, serviceWorker, refresh, checkForUpdate, onError, interrupt = () => {}}) {
  let running = null, queued = false, stopped = false;
  const verify = () => {
   if (stopped) return Promise.resolve();
@@ -14,8 +14,11 @@ export function observeOfflineLifecycle({window, document, serviceWorker, refres
  };
  const resume = () => { if (document.visibilityState !== 'hidden') void verify(); };
  const online = () => { void verify(); Promise.resolve().then(checkForUpdate).catch(() => {}); };
+ // A replaced controller cannot finish an outstanding request reliably. Release
+ // that request before queuing verification against the new controlling worker.
+ const controllerchange = () => { interrupt(); if (!stopped) void verify(); };
  const listeners = [[window, 'pageshow', resume], [document, 'visibilitychange', resume],
-  [window, 'online', online], [window, 'offline', resume], [serviceWorker, 'controllerchange', resume]];
+  [window, 'online', online], [window, 'offline', resume], [serviceWorker, 'controllerchange', controllerchange]];
  for (const [target, event, handler] of listeners) target.addEventListener(event, handler);
  return {verify, stop() { stopped = true; queued = false; for (const [target, event, handler] of listeners) target.removeEventListener(event, handler); }};
 }

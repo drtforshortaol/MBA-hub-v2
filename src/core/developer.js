@@ -7,6 +7,7 @@ import {verifyNaturalistReviewQueue} from './naturalist-review-queue-import.js';
 import {createDraft,loadDraft,saveDraft,validateDraft} from './content-drafts.js';
 import {request} from './worker-channel.js';
 import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket,reviewRecoveryCheck,reviewActionQueue} from './naturalist-review-state.js';
+import {renderNaturalistSourceEvidence} from './naturalist-source-evidence.js';
 const env=await fetch('environment.json').then(r=>r.json());if(!env.developer)throw Error('Developer module prohibited in this environment');
 const panel=document.querySelector('#developer'),title=document.querySelector('#title');let taps=0,last=0;
 title.addEventListener('click',()=>{if(Date.now()-last>2200)taps=0;last=Date.now();if(++taps===5){taps=0;panel.hidden=!panel.hidden;if(!panel.hidden)render();}});
@@ -315,7 +316,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     const technical=document.createElement('details');
     const technicalSummary=document.createElement('summary');technicalSummary.textContent='Technical classification details (rarely needed)';
     technical.append(technicalSummary,details);
-    item.append(label,body,flags,related,technical,warning,form);reviewOutput.append(item);statementCards.push(item);
+    item.append(label,renderNaturalistSourceEvidence(document,entry),body,flags,related,technical,warning,form);reviewOutput.append(item);statementCards.push(item);
    }
    if(statementCards.length>1){reviewOutput.insertBefore(navigation,statementCards[0]);showStatement(0);}
    const recoveryLabel=document.createElement('label');recoveryLabel.textContent='Restore decisions from a downloaded review packet (same classification only)';

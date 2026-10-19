@@ -76,3 +76,10 @@ Verification: build and validation passed for 33 applications/11 categories; sec
 Portable review decision recovery now accepts semantically unchanged nested classification objects after a JSON editor reorders their members. Recovery and read-only queue verification share one structural comparator. Exact source whitespace, array order, field presence and types, destination routing, and opaque reviewed section/source snapshot strings remain mandatory; scientific/editorial and publication gates are unchanged.
 
 Verification: built before testing; Naturalist suites passed 145/145 and full isolated Track A Node suite passed 435/435. Final build and validation passed for 33 applications/11 categories; security scan and diff checks passed. The new recovery regression confirms reordered JSON retains annotations and rejects nine altered classification/provenance cases. No content, protected branches, deployment, or preview changed.
+
+
+## Readable statement evidence beside review controls — October 19, 2026
+
+Naturalist review cards now display each complete source statement directly above routing and approval controls. Previously the card summary truncated statements to 130 characters and complete wording was buried in technical details. A separate original-source paragraph disclosure supplies surrounding context when it differs from the statement. Line breaks, whitespace, Unicode and literal source markup are preserved using text content; repeated context is omitted. The renderer is read-only and changes no scientific/editorial decision or source data.
+
+Verification: build before tests; full isolated Track A suite passed 438/438, including three new rendering/wiring tests. Build and validation passed for 33 applications/11 categories; security scan and diff checks passed. An initial full run found one static assertion tied to the former card child list; updated for the new evidence element and reran successfully. Physical iPhone layout review remains pending; no preview, deployment or protected branch changed.
