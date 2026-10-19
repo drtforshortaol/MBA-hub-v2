@@ -7,16 +7,30 @@ import {verifyBuildArtifacts} from './verify-build-artifacts.mjs';
 const safePath=value=>typeof value==='string'&&value.split('/').every(part=>/^[A-Za-z0-9_.-]+$/.test(part)&&part!=='.'&&part!=='..');
 const sha256=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 
+const javascriptTypes=new Set(['application/ecmascript','application/javascript','application/x-ecmascript','application/x-javascript','text/ecmascript','text/javascript','text/javascript1.0','text/javascript1.1','text/javascript1.2','text/javascript1.3','text/javascript1.4','text/javascript1.5','text/jscript','text/livescript','text/x-ecmascript','text/x-javascript']);
+
+// Validate browser-interpreted resources; JSON fetched as data does not require a MIME gate.
+export function deliveryErrors(name,headers){
+ const extension=path.posix.extname(name).toLowerCase();
+ const allowed=['.js','.mjs'].includes(extension)?javascriptTypes:extension==='.css'?new Set(['text/css']):extension==='.html'?new Set(['text/html']):null;
+ if(!allowed)return [];
+ const errors=[],mime=(headers.get('content-type')||'').split(';',1)[0].trim().toLowerCase();
+ if(!allowed.has(mime))errors.push(`incompatible Content-Type: ${mime||'missing'}`);
+ if(extension==='.html'&&(headers.get('content-disposition')||'').split(';',1)[0].trim().toLowerCase()==='attachment')errors.push('Content-Disposition attachment prevents HTML navigation');
+ return errors;
+}
+
 // HTTP delivery evidence does not establish browser behavior or device approval.
-export async function verifyPreviewHttp(baseUrl,environment,{concurrency=6,timeoutMs=15000,totalTimeoutMs=120000}={}) {
+export async function verifyPreviewHttp(baseUrl,environment,{concurrency=6,timeoutMs=15000,totalTimeoutMs=120000,expectedRelease=null}={}) {
  const base=new URL(baseUrl);
  if(!['http:','https:'].includes(base.protocol)||base.username||base.password||base.search||base.hash)throw Error('Expected an HTTP(S) directory URL without credentials, query or fragment');
  if(!base.pathname.endsWith('/'))base.pathname+='/';
  if(!['developer','tester'].includes(environment))throw Error('Expected developer or tester environment');
  if(!Number.isInteger(concurrency)||concurrency<1||concurrency>16)throw Error('Concurrency must be between 1 and 16');
  if(![timeoutMs,totalTimeoutMs].every(value=>Number.isSafeInteger(value)&&value>0&&value<=600000))throw Error('Timeouts must be positive milliseconds up to 600000');
+ if(expectedRelease!==null&&(typeof expectedRelease!=='string'||!/^[a-f0-9]{16}$/.test(expectedRelease)))throw Error('Expected release must be a 16-character lowercase hexadecimal identifier');
  const deadline=AbortSignal.timeout(totalTimeoutMs);
- const report={schema_version:1,scope:'HTTP byte delivery and artifact semantics only; no browser, physical-device, scientific, editorial or release approval',url:base.href,environment,release:null,passed:false,resources:{expected:0,verified:0,bytes:0},apps:[],errors:[]};
+ const report={schema_version:1,scope:'HTTP delivery headers, byte integrity and artifact semantics only; no browser, physical-device, scientific, editorial or release approval',url:base.href,environment,release:null,expectedRelease,passed:false,resources:{expected:0,verified:0,bytes:0},apps:[],errors:[]};
  const directory=fs.mkdtempSync(path.join(os.tmpdir(),'mba-http-audit-')),results=new Map();
  async function download(name,expected) {
   try {
@@ -26,15 +40,19 @@ export async function verifyPreviewHttp(baseUrl,environment,{concurrency=6,timeo
    for await(const chunk of response.body){size+=chunk.length;if(size>limit)throw Error('response exceeds expected size limit');chunks.push(chunk);}
    const bytes=Buffer.concat(chunks,size);
    if(expected&&(bytes.length!==expected.bytes||sha256(bytes)!==expected.sha256))throw Error('integrity mismatch');
+   const compatibility=deliveryErrors(name,response.headers);
    const file=path.join(directory,name);fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,bytes);
-   results.set(name,{passed:true,bytes:bytes.length});return bytes;
+   results.set(name,{passed:compatibility.length===0,bytes:bytes.length});
+   report.errors.push(...compatibility.map(error=>`${name}: ${error}`));return bytes;
   }catch(error){results.set(name,{passed:false});report.errors.push(`${name}: ${error.message}`);return null;}
  }
  try {
   const releaseBytes=await download('release.json');if(!releaseBytes)return report;
   let release;try{release=JSON.parse(releaseBytes);}catch{report.errors.push('release.json: invalid JSON');return report;}
   if(!release||release.schema_version!==1||release.environment!==environment||!/^[a-f0-9]{16}$/.test(release.release)||!Array.isArray(release.resources)||!release.resources.length){report.errors.push('release.json: invalid release metadata');return report;}
-  report.release=release.release;const names=new Set();
+  report.release=release.release;
+  if(expectedRelease!==null&&release.release!==expectedRelease){report.errors.push(`release.json: expected release ${expectedRelease}, received ${release.release}`);return report;}
+  const names=new Set();
   for(const resource of release.resources){
    if(!resource||!safePath(resource.url)||['release.json','sw.js'].includes(resource.url)||names.has(resource.url)||!Number.isSafeInteger(resource.bytes)||resource.bytes<0||!/^[a-f0-9]{64}$/.test(resource.sha256)){report.errors.push('release.json: unsafe or invalid resource declaration');return report;}
    names.add(resource.url);
@@ -60,8 +78,8 @@ export async function verifyPreviewHttp(baseUrl,environment,{concurrency=6,timeo
 }
 if(process.argv[1]===fileURLToPath(import.meta.url)){
  const args=process.argv.slice(2),options={};
- for(let index=0;index<args.length;index+=2){if(!['--url','--environment','--report'].includes(args[index])||!args[index+1])throw Error('Usage: node scripts/verify-preview-http.mjs --url URL --environment tester|developer [--report PATH]');options[args[index]]=args[index+1];}
+ for(let index=0;index<args.length;index+=2){if(!['--url','--environment','--report','--expected-release'].includes(args[index])||!args[index+1])throw Error('Usage: node scripts/verify-preview-http.mjs --url URL --environment tester|developer [--report PATH] [--expected-release ID]');options[args[index]]=args[index+1];}
  if(!options['--url']||!options['--environment'])throw Error('Provide --url and --environment');
- const report=await verifyPreviewHttp(options['--url'],options['--environment']),json=JSON.stringify(report,null,2)+'\n';
+ const report=await verifyPreviewHttp(options['--url'],options['--environment'],{expectedRelease:options['--expected-release']??null}),json=JSON.stringify(report,null,2)+'\n';
  if(options['--report'])fs.writeFileSync(options['--report'],json);process.stdout.write(json);if(!report.passed)process.exitCode=1;
 }
