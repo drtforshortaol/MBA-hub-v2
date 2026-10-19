@@ -5,8 +5,16 @@ import {safeLocalPath} from './build.mjs';
 
 // Read-only planning: registered media supplies paths; caller owns any edits.
 export function planOfflineMediaRegistration({apps,media,exists}){
- const catalog=new Map(media.assets.map(asset=>[asset.asset_id,asset]));
- const errors=[],plans=[];
+ const catalog=new Map(),errors=[],plans=[];
+ for(const asset of media.assets){
+  if(!asset||typeof asset.asset_id!=='string'||!asset.asset_id.trim()){
+   errors.push('media catalog: invalid asset ID');continue;
+  }
+  if(catalog.has(asset.asset_id)){
+   errors.push(`media catalog: duplicate asset ID ${asset.asset_id}`);continue;
+  }
+  catalog.set(asset.asset_id,asset);
+ }
  for(const app of apps){
   const registered=new Set(app.offline_assets),additions=[];
   for(const id of app.media){
