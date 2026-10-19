@@ -69,3 +69,10 @@ This branch isolates work; it does not by itself start an autonomous development
 - When connected, a check also retries registration or discovers updates without waiting for that network operation to finish. Offline checks do not request update discovery. No cache deletion, namespace changes, activation command, scientific approval, or device acceptance changes are introduced.
 - The control is removed with lifecycle disposal; app pages without the Hub status do not receive an extra button.
 - Five new behavior cases cover manual checks, tap coalescing, failure recovery, stalled update discovery, lifecycle disposal, absent status, and actual initialization-to-worker response wiring. Full Node suite PASS 432/432; targeted controls/initialization tests PASS 8/8; build, build validation (33 apps/11 categories), security scan and diff checks PASS. New control module is in the generated tester release inventory. Physical layout/device acceptance remains pending.
+
+## October 19 interrupted verification checkpoint
+
+- Worker requests accept an optional AbortSignal. Cancellation before readiness prevents late sends; cancellation after dispatch immediately closes both MessageChannel ports, clears the shared deadline, and removes the abort listener. Existing callers retain the same bounded request behavior.
+- Stopping an initialized offline lifecycle now cancels outstanding verification and prevents both late worker replies and cancellation errors from changing its disposed status element. This changes no caches, service-worker activation rules, canonical identifiers, scientific content, or Safari transport behavior.
+- Five new regressions cover pre-cancellation, cancellation during registration, cancellation after dispatch, listener cleanup, and lifecycle disposal with a real MessageChannel late reply. Targeted channel/initialization/control/lifecycle tests PASS 36/36; full branch Node suite PASS 442/442 after sequential build. Build, build validation (33 apps/11 categories), security scan, and diff checks PASS.
+- Physical iPhone/Safari suspension and device acceptance remain pending. No deployment or preview update performed.

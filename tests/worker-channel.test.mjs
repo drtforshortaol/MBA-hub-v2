@@ -59,3 +59,42 @@ test('worker response with non-string error is safely surfaced and closes ports'
  const h=harness(p=>queueMicrotask(()=>p.onmessage({data:{error:{code:'unavailable'}}})));
  try{await assert.rejects(request('STATUS'));assert.equal(h.port.closed,true);assert.equal(h.port2.closed,true);}finally{h.restore();}
 });
+
+test('pre-cancelled worker request never waits for readiness or sends',async()=>{
+ let sends=0;const h=harness(()=>sends++),controller=new AbortController();
+ try{
+  controller.abort();
+  await assert.rejects(request('STATUS',{signal:controller.signal}),{name:'AbortError'});
+  assert.equal(sends,0);assert.equal(h.port.closed,false);
+ }finally{h.restore();}
+});
+test('cancellation during registration prevents a late worker send',async()=>{
+ const h=harness(),controller=new AbortController();let ready,sends=0;
+ try{
+  navigator.serviceWorker.ready=new Promise(resolve=>{ready=resolve;});
+  const pending=request('STATUS',{signal:controller.signal});
+  controller.abort();await assert.rejects(pending,{name:'AbortError'});
+  ready({active:{postMessage(){sends++;}}});await Promise.resolve();
+  assert.equal(sends,0);
+ }finally{h.restore();}
+});
+test('cancellation after send releases ports and ignores captured late reply',async()=>{
+ let reply;const h=harness(port=>{reply=port.onmessage;}),controller=new AbortController();
+ try{
+  const pending=request('STATUS',{signal:controller.signal});await Promise.resolve();
+  controller.abort();await assert.rejects(pending,{name:'AbortError'});
+  assert.equal(h.port.closed,true);assert.equal(h.port2.closed,true);
+  assert.equal(h.port.onmessage,null);assert.equal(h.port.onmessageerror,null);
+  assert.doesNotThrow(()=>reply({data:{complete:true}}));
+ }finally{h.restore();}
+});
+test('successful reply removes cancellation listener',async()=>{
+ const h=harness(port=>queueMicrotask(()=>port.onmessage({data:{complete:true}})));
+ const controller=new AbortController();let removals=0;
+ const remove=controller.signal.removeEventListener.bind(controller.signal);
+ controller.signal.removeEventListener=(...args)=>{removals++;return remove(...args);};
+ try{
+  assert.equal((await request('STATUS',{signal:controller.signal})).complete,true);
+  assert.equal(removals,1);controller.abort();assert.equal(removals,1);
+ }finally{h.restore();}
+});
