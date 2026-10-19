@@ -43,3 +43,8 @@ test('Unicode compatibility normalization also applies to category-restricted se
  assert.deepEqual(searchHub(entries,'fish',{category:'guides',apps:categories}),entries);
  assert.deepEqual(searchHub(entries,'seahorse',{category:'animals',apps:categories}),[]);
 });
+
+test('category-restricted search retains stable record ordering among equal-ranked Unicode matches',()=>{
+ const entries=[{app_id:'guide',title:'Ｋｅｌｐ notes',text:'',url:'apps/guide/index.html#a'},{app_id:'guide',title:'Kelp notes',text:'',url:'apps/guide/index.html#b'}];
+ assert.deepEqual(searchHub(entries,'kelp',{category:'guides',apps}),entries);
+});
