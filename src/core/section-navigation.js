@@ -1,10 +1,10 @@
 // Resolve a fragment once, retrying only while a dynamic target is unavailable.
 export function createSectionNavigator({document,location,escape,skipInitial=false}){
  let previous=location.hash,resolved=skipInitial;
- return function navigateSection(){
+ return function navigateSection({revisit=false}={}){
   const fragment=location.hash;
   if(fragment!==previous){previous=fragment;resolved=false;}
-  if(resolved)return false;
+  if(resolved&&!revisit)return false;
   let id;
   try{id=decodeURIComponent(fragment.slice(1));}catch{resolved=true;return false;}
   if(!id){resolved=true;return false;}
@@ -19,4 +19,16 @@ export function createSectionNavigator({document,location,escape,skipInitial=fal
   target.scrollIntoView({block:'start'});
   return true;
  };
+}
+
+
+// Reselecting the current fragment does not emit hashchange in the browser.
+// Honor that explicit navigation without replaying it on unrelated DOM mutations.
+export function revisitSectionLink(event,location,navigate){
+ const link=event.target.closest?.('a[href]');
+ if(!link||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey||link.hasAttribute('download')||(link.target&&link.target!=='_self'))return false;
+ const current=new URL(location.href),target=new URL(link.href,current);
+ if(!target.hash||target.hash!==current.hash||target.origin!==current.origin||target.pathname!==current.pathname||target.search!==current.search)return false;
+ if(!navigate({revisit:true}))return false;
+ event.preventDefault();return true;
 }

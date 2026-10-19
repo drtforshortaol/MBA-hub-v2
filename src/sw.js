@@ -1,5 +1,8 @@
 const NAMESPACE='__NAMESPACE__',RELEASE='__RELEASE__',ROOT=new URL('./',self.location.href),PREFIX=NAMESPACE+':'+ROOT.pathname+':',CACHE=PREFIX+RELEASE;
 const absolute=p=>new URL(p,ROOT).href;
+// Recovery only writes bytes already authenticated against the current inventory.
+// Quota/eviction failures must not prevent serving a verified recovered response.
+async function restoreVerified(cache,url,response){try{await cache.put(url,response.clone());}catch{/* Remain usable if storage is unavailable. */}}
 async function verified(response,item){if(!response||!response.ok)return false;const bytes=await response.clone().arrayBuffer();if(bytes.byteLength!==item.bytes)return false;return [...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(x=>x.toString(16).padStart(2,'0')).join('')===item.sha256;}
 // Fetch authorization requires a compatible, structurally valid bundle inventory.
 async function compatibleManifest(manifest,release,bindInventory=false){
@@ -58,6 +61,7 @@ self.addEventListener('fetch',event=>{
  const url=new URL(event.request.url);if(event.request.method!=='GET'||url.origin!==ROOT.origin||!url.pathname.startsWith(ROOT.pathname))return;
  event.respondWith((async()=>{const cache=await caches.open(CACHE);url.search='';url.hash='';if(url.pathname.endsWith('/'))url.pathname+='index.html';const hit=await cache.match(url.href);if(hit){const manifestResponse=await cache.match(absolute('release.json'));if(manifestResponse){try{const manifest=await manifestResponse.json();const relative=url.pathname.slice(ROOT.pathname.length);const item=manifest.resources?.find(entry=>entry.url===relative);if(await compatibleManifest(manifest,RELEASE,true)&&item&&await verified(hit,item))return cachedResponse(hit,event.request);}catch{/* Invalid cache metadata must not authorize serving unverified assets. */}}}
  // Recover an identical verified asset from a previous compatible release if the current cache is corrupt.
+ let recoverableItem=null;
  const currentManifest=await cache.match(absolute('release.json'));
  if(currentManifest){
   try{
@@ -65,6 +69,7 @@ self.addEventListener('fetch',event=>{
    if(await compatibleManifest(manifest,RELEASE,true)){
     const relative=url.pathname.slice(ROOT.pathname.length);
     const item=manifest.resources?.find(entry=>entry.url===relative);
+    recoverableItem=item||null;
     if(item&&typeof item.sha256==='string'&&/^[a-f0-9]{64}$/.test(item.sha256)&&Number.isSafeInteger(item.bytes)&&item.bytes>=0){
      for(const key of await caches.keys()){
       if(!key.startsWith(PREFIX)||key===CACHE)continue;
@@ -76,7 +81,7 @@ self.addEventListener('fetch',event=>{
        const oldItem=oldManifest.resources?.find(entry=>entry.url===relative&&entry.sha256===item.sha256&&entry.bytes===item.bytes);
        if(!oldItem)continue;
        const candidate=await previous.match(url.href);
-       if(await verified(candidate,item))return cachedResponse(candidate,event.request);
+       if(await verified(candidate,item)){await restoreVerified(cache,url.href,candidate);return cachedResponse(candidate,event.request);}
       }catch{/* Ignore incompatible rollback cache. */}
      }
     }
@@ -84,7 +89,13 @@ self.addEventListener('fetch',event=>{
   }catch{/* A corrupt manifest cannot authorize fallback content. */}
  }
  // Unknown destinations are never silently replaced with the Hub.
- try{return await fetch(event.request);}catch{return new Response('This resource is not prepared offline.',{status:503,headers:{'Content-Type':'text/plain'}});}})());
+ try{const response=await fetch(event.request);
+  // Never persist partial responses or network bytes without current release authority.
+  if(recoverableItem&&response.status===200&&!event.request.headers?.get('range')&&await verified(response,recoverableItem)){
+   await restoreVerified(cache,url.href,response);return cachedResponse(response,event.request);
+  }
+  return response;
+ }catch{return new Response('This resource is not prepared offline.',{status:503,headers:{'Content-Type':'text/plain'}});}})());
 });
 self.addEventListener('message',event=>{
  let clientURL=null;try{if(event.source?.url)clientURL=new URL(event.source.url);}catch{return;}if(!clientURL||clientURL.origin!==ROOT.origin||!clientURL.pathname.startsWith(ROOT.pathname))return;
