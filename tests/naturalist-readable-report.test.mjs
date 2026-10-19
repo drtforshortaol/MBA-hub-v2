@@ -36,3 +36,8 @@ test('readable report enforces source and replacement boundaries without changin
  assert.throws(()=>naturalistReadableReport(p,[[Number.NaN,'bad']]),/Invalid replacement text/);
  assert.equal(JSON.stringify(p.review_decisions),decisions);
 });
+
+test('readable report rejects malformed replacement container and negative indexes',()=>{
+ const p=packet();
+ for(const invalid of [null,{},'draft',[[ -1,'bad']],[[0,'valid'],['0','bad']]])assert.throws(()=>naturalistReadableReport(p,invalid),/Invalid replacement text/);
+});
