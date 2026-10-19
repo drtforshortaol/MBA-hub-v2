@@ -3,6 +3,46 @@ import assert from 'node:assert/strict';
 import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket,reviewRecoveryCheck,reviewActionQueue} from '../src/core/naturalist-review-state.js';
 const entries=[{index:0},{index:1}];
 function storage(){const data=new Map();return {getItem:k=>data.get(k)??null,setItem:(k,v)=>data.set(k,v),removeItem:k=>data.delete(k)};}
+test('incomplete approval arrays fail closed across recovery, queues and storage',()=>{
+ const approved=newReviewDecisions(entries);
+ approved.forEach(d=>Object.assign(d,{scientific_status:'verified',editorial_status:'approved',proposed_action:'new-content'}));
+ for(const missingIndex of [0,1]){
+  const incomplete=approved.slice();
+  delete incomplete[missingIndex];
+  const store=storage();let writes=0;
+  const guarded={getItem:store.getItem,setItem(...args){writes++;store.setItem(...args);}};
+  assert.equal(validateReviewDecisions(incomplete,entries),false);
+  assert.equal(reviewRecoveryCheck(incomplete,entries).valid,false);
+  const queue=reviewActionQueue(incomplete,entries);
+  assert.equal(queue.valid,false);
+  assert.deepEqual(queue.items,[]);
+  assert.equal(queue.can_auto_publish,false);
+  assert.equal(writeReview(guarded,'key','hash',incomplete,entries),false);
+  assert.equal(writes,0);
+  const packet={schema_version:1,kind:'mba-v2-naturalist-review-packet',review_context_sha256:'hash',review_decisions:incomplete};
+  assert.equal(importReviewPacket(packet,'hash',entries),null);
+  // JSON serializes holes as null; malformed recovered data stays rejected.
+  store.setItem('key',JSON.stringify(packet));
+  assert.equal(readReview(store,'key','hash',entries),null);
+ }
+ assert.equal(validateReviewDecisions(approved,entries),true);
+ assert.equal(reviewActionQueue(approved,entries).items.length,2);
+});
+
+test('missing classification positions cannot recover otherwise complete approvals',()=>{
+ const decisions=newReviewDecisions(entries);
+ for(const missingIndex of [0,1]){
+  const incomplete=entries.slice();delete incomplete[missingIndex];
+  assert.equal(validateReviewDecisions(decisions,incomplete),false);
+  assert.equal(reviewActionQueue(decisions,incomplete).valid,false);
+  // An inherited array item is not an owned classification or decision record.
+  Object.setPrototypeOf(incomplete,Object.assign(Object.create(Array.prototype),{[missingIndex]:entries[missingIndex]}));
+  assert.equal(validateReviewDecisions(decisions,incomplete),false);
+ }
+ const inherited=decisions.slice();delete inherited[0];
+ Object.setPrototypeOf(inherited,Object.assign(Object.create(Array.prototype),{0:decisions[0]}));
+ assert.equal(validateReviewDecisions(inherited,entries),false);
+});
 test('new reviews default to pending and never grant publication',()=>{
  const decisions=newReviewDecisions(entries);
  assert.equal(validateReviewDecisions(decisions,entries),true);
