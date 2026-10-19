@@ -48,3 +48,32 @@ test('category-restricted search retains stable record ordering among equal-rank
  const entries=[{app_id:'guide',title:'Ｋｅｌｐ notes',text:'',url:'apps/guide/index.html#a'},{app_id:'guide',title:'Kelp notes',text:'',url:'apps/guide/index.html#b'}];
  assert.deepEqual(searchHub(entries,'kelp',{category:'guides',apps}),entries);
 });
+
+
+test('guide searches accept ordinary keyboard spellings of punctuation and accents',()=>{
+ const entries=[
+  {app_id:'pseudo',title:'Pseudo-nitzschia',text:'Marine diatoms',url:'apps/pseudo/index.html'},
+  {app_id:'rose',title:'Hopkins’ Rose Nudibranch',text:'Rocky intertidal',url:'apps/rose/index.html'},
+  {app_id:'guide',title:'El Niño observations',text:'Café discussion',url:'apps/guide/index.html#notes'}
+ ];
+ const before=structuredClone(entries);
+ for(const query of ['pseudo nitzschia','pseudo-nitzschia','pseudo–nitzschia'])assert.deepEqual(searchHub(entries,query),[entries[0]]);
+ for(const query of ['hopkins rose',"Hopkins' Rose",'Hopkins‘ Rose'])assert.deepEqual(searchHub(entries,query),[entries[1]]);
+ for(const query of ['el nino','el niño','EL NIÑO','cafe'])assert.deepEqual(searchHub(entries,query),[entries[2]]);
+ assert.deepEqual(entries,before,'display text, identifiers and deep links remain unchanged');
+});
+
+test('normalized title matches preserve ranking, category scope, and original tie order',()=>{
+ const entries=[
+  {app_id:'notes',title:'Field notes',text:'Pseudo–nitzschia sightings',url:'apps/notes/index.html#diatoms'},
+  {app_id:'pseudo',title:'Pseudo-nitzschia · Habitat',text:'',url:'apps/pseudo/index.html#habitat'},
+  {app_id:'pseudo',title:'Pseudo-nitzschia',text:'',url:'apps/pseudo/index.html'},
+  {app_id:'guide',title:'Pseudo nitzschia',text:'',url:'apps/guide/index.html'}
+ ];
+ const apps=[{app_id:'pseudo',category:'animals'},{app_id:'guide',category:'guides'},{app_id:'notes',category:'guides'}];
+ assert.deepEqual(searchHub(entries,'pseudo nitzschia'),[entries[2],entries[3],entries[1],entries[0]]);
+ assert.deepEqual(searchHub(entries,'pseudo–nitzschia',{category:'animals',apps}),[entries[2],entries[1]]);
+ assert.deepEqual(searchHub(entries,'pseudo-nitzschia',{category:'guides',apps}),[entries[3],entries[0]]);
+ assert.deepEqual(searchHub(entries,' — ’ - '),[]);
+ assert.deepEqual(searchHub(entries,'pseudo nitzschia missing'),[]);
+});

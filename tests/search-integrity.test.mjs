@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import {searchHub} from '../src/core/search.js';
 
 const environments=['developer','tester'];
 function manifestFiles(){return fs.readdirSync('src/apps',{withFileTypes:true}).filter(d=>d.isDirectory()).map(d=>JSON.parse(fs.readFileSync(path.join('src/apps',d.name,'manifest.json'),'utf8')));}
@@ -23,4 +24,19 @@ for(const environment of environments){
 test('all app manifests are represented in both environment registries',()=>{
  const ids=new Set(manifestFiles().map(a=>a.app_id));
  for(const environment of environments){const registry=JSON.parse(fs.readFileSync('dist/'+environment+'/registry.json','utf8'));assert.deepEqual(new Set(registry.apps.map(a=>a.app_id)),ids);}
+});
+
+
+test('bundled Hub search finds registered species with punctuation-free names',()=>{
+ for(const environment of environments){
+  const index=JSON.parse(fs.readFileSync('dist/'+environment+'/search-index.json','utf8'));
+  const registry=JSON.parse(fs.readFileSync('dist/'+environment+'/registry.json','utf8'));
+  for(const [query,id] of [['pseudo nitzschia','pseudo-nitzschia'],['hopkins rose nudibranch','hopkins-rose-nudibranch']]){
+   const app=registry.apps.find(app=>app.app_id===id);
+   assert.ok(app);
+   const results=searchHub(index,query);
+   assert.equal(results[0]?.app_id,id,environment+': species title must rank first');
+   assert.equal(results[0]?.url,app.entry_point,environment+': retain canonical destination');
+  }
+ }
 });
