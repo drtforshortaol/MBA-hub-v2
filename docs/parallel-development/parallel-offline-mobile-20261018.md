@@ -76,3 +76,10 @@ This branch isolates work; it does not by itself start an autonomous development
 - Stopping an initialized offline lifecycle now cancels outstanding verification and prevents both late worker replies and cancellation errors from changing its disposed status element. This changes no caches, service-worker activation rules, canonical identifiers, scientific content, or Safari transport behavior.
 - Five new regressions cover pre-cancellation, cancellation during registration, cancellation after dispatch, listener cleanup, and lifecycle disposal with a real MessageChannel late reply. Targeted channel/initialization/control/lifecycle tests PASS 36/36; full branch Node suite PASS 442/442 after sequential build. Build, build validation (33 apps/11 categories), security scan, and diff checks PASS.
 - Physical iPhone/Safari suspension and device acceptance remain pending. No deployment or preview update performed.
+
+## October 19 readiness protocol checkpoint
+
+- The Hub now validates the complete/count/total STATUS contract before displaying offline readiness. Truthy non-booleans, absent or unsafe counts, impossible bounds, and completion flags inconsistent with the verified inventory fail closed to the existing retryable unavailable state.
+- Valid partial inventories and the worker's missing-manifest 0/0 preparation response retain their existing behavior. A later valid STATUS reply recovers readiness without reinitialization or cache deletion.
+- Eleven new real-MessageChannel regressions cover malformed replies with successful recovery and valid preparation states. Targeted channel/initialization/control/lifecycle suite PASS 47/47; sequential build then full branch Node suite PASS 453/453; build validation (33 apps/11 categories), security scan, and diff check PASS.
+- No worker namespaces, service-worker activation, Safari transport behavior, scientific content, deployment, preview, or device-approval gates changed.
