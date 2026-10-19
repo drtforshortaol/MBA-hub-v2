@@ -5,7 +5,7 @@ export function searchHub(index,query,{category='',apps=[]}={}){
  const categories=new Map(apps.map(app=>[app.app_id,app.category]));
  return index.flatMap((entry,position)=>{
   if(category&&categories.get(entry.app_id)!==category)return [];
-  const title=entry.title.toLocaleLowerCase(),text=entry.text.toLocaleLowerCase(),combined=title+' '+text;
+  const title=entry.title.normalize('NFKC').toLocaleLowerCase(),text=entry.text.normalize('NFKC').toLocaleLowerCase(),combined=title+' '+text;
   if(!terms.every(term=>combined.includes(term)))return [];
   const rank=title===phrase?0:title.includes(phrase)?1:terms.every(term=>title.includes(term))?2:text.includes(phrase)?3:4;
   return [{entry,rank,position}];
