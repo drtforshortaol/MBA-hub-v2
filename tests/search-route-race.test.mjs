@@ -169,3 +169,34 @@ test('direct category app visits capture the latest category position in each vi
  const f=fixture();clickRoute(f,'apps/ray/index.html',{scroll:740});
  assert.equal(f.captured.scroll,740);assert.equal(f.captured.categoryScroll,740);
 });
+
+
+test('Search retains typing and category changes made before a delayed index finishes loading',async()=>{
+ const f=fixture(),pending=f.renderRoute();
+ assert.equal(f.input().value,'ray','saved query is visible while loading');
+ f.input().value='kelp';f.input().listeners[0].listener();
+ f.category().value='guides';f.category().listeners[0].listener();
+ assert.equal(f.context.state.query,'kelp');assert.equal(f.context.state.searchCategory,'guides');
+ assert.equal(f.results().children.length,0,'loading must not announce false empty results');
+ f.requests[0].resolve(response([
+  {app_id:'ray',title:'Kelp ray',text:'kelp',url:'apps/ray/index.html'},
+  {app_id:'guide',title:'Kelp guide',text:'kelp',url:'apps/guide/index.html'}
+ ]));await pending;
+ assert.equal(f.input().value,'kelp');assert.equal(f.category().value,'guides');
+ assert.equal(f.results().children.length,1);assert.equal(f.results().children[0].props.href,'apps/guide/index.html');
+});
+test('Search retry preserves a query entered before a failed index request',async()=>{
+ const f=fixture(),pending=f.renderRoute();f.input().value='kelp';f.input().listeners[0].listener();
+ f.requests[0].reject(Error('network unavailable'));await pending;
+ const retry=f.view.children[2].listeners[0].listener();
+ assert.equal(f.input().value,'kelp');f.requests[1].resolve(response([{title:'Kelp',text:'kelp',url:'apps/guide/index.html'}]));await retry;
+ assert.equal(f.input().value,'kelp');assert.equal(f.results().children[0].props.href,'apps/guide/index.html');
+});
+test('detached loading Search controls cannot overwrite a later route query',async()=>{
+ const f=fixture(),pending=f.renderRoute(),abandoned=f.input();
+ f.context.location.hash='#help';await f.renderRoute();
+ f.context.state.query='later query';abandoned.value='stale query';abandoned.listeners[0].listener();
+ assert.equal(f.context.state.query,'later query');
+ f.requests[0].resolve(response(entries));await pending;
+ assert.equal(f.view.children[1].props.text,'Install & Help');assert.equal(f.context.state.query,'later query');
+});
