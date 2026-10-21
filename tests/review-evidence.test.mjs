@@ -16,7 +16,7 @@ function fixture(t){
   fs.writeFileSync(path.join(dir,environment,'search-index.json'),JSON.stringify([{app_id:'one',url:'apps/one/index.html#section'}]));
   const base={passed:true,environment,release,errors:[]};
   fs.writeFileSync(path.join(dir,`${environment}-http-report.json`),JSON.stringify({...base,expectedRelease:release,resources:{expected:3,verified:3}}));
-  for(const {file,name:scenario} of OFFLINE_SCENARIOS)fs.writeFileSync(path.join(dir,`offline-reports/${environment}-${file}.json`),JSON.stringify({...base,scenario,...(scenario.includes('inventory')?{recovery:{initialComplete:false,initialCount:0,initialTotal:0,interrupted:scenario==='interrupted-inventory-recovery',complete:true,count:3,total:3,retainedDataPreserved:true,cacheDeletions:0,activations:0}}:{}),resources:{expected:3,verified:3,errors:[]},offlineNetworkAttempts:0,apps:[{app_id:'one',passed:true,expected:3,verified:3,errors:[]},{app_id:'two',passed:true,expected:1,verified:1,errors:[]}]}));
+  for(const {file,name:scenario,options} of OFFLINE_SCENARIOS)fs.writeFileSync(path.join(dir,`offline-reports/${environment}-${file}.json`),JSON.stringify({...base,scenario,...(options.refreshPage?{refreshPage:{commands:['STATUS','RECOVER_OFFLINE'],navigations:1,channelsClosed:true,timersCleared:true}}:{}),...(scenario.includes('inventory')?{recovery:{...(options.corruptInventory?{initialErrorCode:'OFFLINE_INVENTORY_INVALID'}:{initialComplete:false,initialCount:0,initialTotal:0}),interrupted:scenario==='interrupted-inventory-recovery',complete:true,count:3,total:3,retainedDataPreserved:true,cacheDeletions:0,activations:0}}:{}),resources:{expected:3,verified:3,errors:[]},offlineNetworkAttempts:0,apps:[{app_id:'one',passed:true,expected:3,verified:3,errors:[]},{app_id:'two',passed:true,expected:1,verified:1,errors:[]}]}));
  }
  return dir;
 }
@@ -91,4 +91,14 @@ for(const mutation of ['missing','partial','not interrupted','deleted data','act
  if(mutation==='activated')report.recovery.activations=1;
  if(mutation==='missing report')fs.unlinkSync(file);else fs.writeFileSync(file,JSON.stringify(report));
  assert(verifyReviewEvidence(dir,commit).length);
+});
+
+for(const mutation of ['missing page','wrong commands','not navigated','leaked channel','wrong code'])test(`review evidence rejects generated refresh recovery ${mutation}`,t=>{
+ const dir=fixture(t),file=path.join(dir,'offline-reports/tester-corrupt-json-recovery.json'),report=JSON.parse(fs.readFileSync(file));
+ if(mutation==='missing page')delete report.refreshPage;
+ if(mutation==='wrong commands')report.refreshPage.commands=['STATUS'];
+ if(mutation==='not navigated')report.refreshPage.navigations=0;
+ if(mutation==='leaked channel')report.refreshPage.channelsClosed=false;
+ if(mutation==='wrong code')report.recovery.initialErrorCode='ARBITRARY_ERROR';
+ fs.writeFileSync(file,JSON.stringify(report));assert(verifyReviewEvidence(dir,commit).length);
 });

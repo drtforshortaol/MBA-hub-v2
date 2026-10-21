@@ -1,3 +1,4 @@
+import {renderNaturalistReferencedEvidence} from './naturalist-referenced-evidence.js';
 import {readReplacementDrafts,saveReplacementDrafts,createReplacementBackup,readReplacementBackup} from './naturalist-replacement-drafts.js';
 import {naturalistReadableReport} from './naturalist-readable-report.js';
 import {createNaturalistIntakePacket,readNaturalistIntakePacket,readNaturalistSource,saveNaturalistSource,discardNaturalistSource} from './naturalist-intake.js';
@@ -289,6 +290,8 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      }
      related.append(comparison);
     }
+    const referencedEvidence=renderNaturalistReferencedEvidence(document,entry,packet.entries,{isCurrentReview,showStatement,statementCards});
+    if(referencedEvidence)related.append(referencedEvidence);
     const warning=document.createElement('p');warning.className='quiet';
     warning.textContent='Pending scientific verification and editorial approval. This packet cannot publish updates.';
     const decision=packet.review_decisions[entry.index];

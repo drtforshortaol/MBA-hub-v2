@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import {verifyOfflineNavigation} from '../scripts/verify-offline-navigation.mjs';
 
 test('actual generated workers serve every app entry, directory and search deep link offline',async()=>{
@@ -99,4 +100,33 @@ test('whole inventory acceptance rejects a worker that cannot recover from refre
  fs.writeFileSync(file,worker.replace("type==='RECOVER_OFFLINE'","type==='DISABLED_RECOVERY'"));
  const report=await verifyOfflineNavigation(directory,'tester',{recoverInventory:true});
  assert.equal(report.passed,false);assert(report.errors.some(error=>error.includes('readiness mismatch')));
+});
+
+for(const corruptInventory of [null,'json','forged'])test(`generated refresh page recovers generated inventory (corruption=${corruptInventory})`,async()=>{
+ for(const environment of ['developer','tester']){
+  const report=await verifyOfflineNavigation(`dist/${environment}`,environment,{recoverInventory:true,refreshPage:true,corruptInventory});
+  assert.equal(report.passed,true,JSON.stringify(report));
+  assert.deepEqual(report.refreshPage.commands,['STATUS','RECOVER_OFFLINE']);
+  assert.equal(report.refreshPage.navigations,1);
+  assert.equal(report.refreshPage.channelsClosed,true);
+  assert.equal(report.refreshPage.timersCleared,true);
+ }
+});
+test('generated acceptance detects refresh page that never invokes worker recovery',async t=>{
+ const directory=fs.mkdtempSync(path.join(os.tmpdir(),'mba-refresh-orchestration-'));
+ t.after(()=>fs.rmSync(directory,{recursive:true,force:true}));fs.cpSync('dist/tester',directory,{recursive:true});
+ const file=path.join(directory,'refresh.html'),page=fs.readFileSync(file,'utf8');
+ assert(page.includes("command(active,'RECOVER_OFFLINE')"));
+ fs.writeFileSync(file,page.replaceAll("command(active,'RECOVER_OFFLINE')","command(active,'STATUS')"));
+ // Rebind the fixture's inventory so install succeeds: this regression tests
+ // page orchestration, separately from the worker's resource hash rejection.
+ const releaseFile=path.join(directory,'release.json'),release=JSON.parse(fs.readFileSync(releaseFile));
+ const oldRelease=release.release,bytes=fs.readFileSync(file),item=release.resources.find(item=>item.url==='refresh.html');
+ item.bytes=bytes.length;item.sha256=crypto.createHash('sha256').update(bytes).digest('hex');
+ release.release=crypto.createHash('sha256').update(JSON.stringify(release.resources)).digest('hex').slice(0,16);
+ fs.writeFileSync(releaseFile,JSON.stringify(release));
+ const workerFile=path.join(directory,'sw.js');
+ fs.writeFileSync(workerFile,fs.readFileSync(workerFile,'utf8').replace(`RELEASE='${oldRelease}'`,`RELEASE='${release.release}'`));
+ const report=await verifyOfflineNavigation(directory,'tester',{recoverInventory:true,refreshPage:true});
+ assert.equal(report.passed,false);assert(report.errors.some(error=>error.includes('orchestration')));
 });

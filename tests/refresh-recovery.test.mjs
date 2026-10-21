@@ -115,3 +115,24 @@ test('corrupt inventory status remains a safe actionable diagnostic without auto
  await h.done;assert.deepEqual(commands,['STATUS']);assert.deepEqual(h.navigations,[]);
  assert.match(h.status.textContent,/integrity mismatch/);assert.match(h.status.textContent,/do not clear data or reinstall/);assert.match(h.status.textContent,/Install & Help/);
 });
+
+test('typed corrupt metadata triggers explicit recovery with full readiness and live release verification',async()=>{
+ const commands=[];const h=recoveryPage({register:async()=>({...registration(),active:{postMessage(message,ports){commands.push(message.type);ports[0].postMessage(message.type==='STATUS'?{error:'Invalid cached release manifest',code:'OFFLINE_INVENTORY_INVALID'}:{complete:true,count:1,total:1,release:'current'});}}})});
+ await h.done;assert.deepEqual(commands,['STATUS','RECOVER_OFFLINE']);assert.equal(h.navigations.length,1);assert.ok(h.ports.every(port=>port.closed));
+});
+
+for(const code of [undefined,'OTHER_ERROR',true])test(`unrecognized STATUS error code ${code} cannot trigger restoration`,async()=>{
+ const commands=[];const h=recoveryPage({register:async()=>({...registration(),active:{postMessage(message,ports){commands.push(message.type);ports[0].postMessage({error:'Invalid cached release manifest',code});}}})});
+ await h.done;assert.deepEqual(commands,['STATUS']);assert.deepEqual(h.navigations,[]);
+});
+
+test('typed corrupt metadata recovery failure preserves diagnostics and prevents navigation',async()=>{
+ const commands=[];const h=recoveryPage({register:async()=>({...registration(),active:{postMessage(message,ports){commands.push(message.type);ports[0].postMessage(message.type==='STATUS'?{error:'Invalid cached release manifest',code:'OFFLINE_INVENTORY_INVALID'}:{error:'Deployment changed during offline preparation'});}}})});
+ await h.done;assert.deepEqual(commands,['STATUS','RECOVER_OFFLINE']);assert.deepEqual(h.navigations,[]);assert.match(h.status.textContent,/Deployment changed/);assert.match(h.status.textContent,/do not clear data/);
+});
+
+
+test('typed metadata recovery attempts reconstruction only once if it remains incomplete',async()=>{
+ const commands=[];const h=recoveryPage({register:async()=>({...registration(),active:{postMessage(message,ports){commands.push(message.type);ports[0].postMessage(message.type==='STATUS'?{error:'invalid inventory',code:'OFFLINE_INVENTORY_INVALID'}:{complete:false,count:1,total:2,release:'current'});}}})});
+ await h.done;assert.deepEqual(commands,['STATUS','RECOVER_OFFLINE']);assert.deepEqual(h.navigations,[]);assert.match(h.status.textContent,/not complete/);
+});
