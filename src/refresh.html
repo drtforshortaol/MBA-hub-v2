@@ -38,17 +38,21 @@
    await wait(new Promise(resolve=>{const timer=setTimeout(resolve,2000);cleanups.add(()=>clearTimeout(timer));}));reopen();
   }else{
    const active=registration.active;if(!active)throw Error('Offline installation is not ready yet. Please try again while online.');
-   const result=await wait(command(active,'STATUS'));
-   const {complete,count,total,release}=result;
-   if(typeof complete!=='boolean'||!Number.isSafeInteger(count)||!Number.isSafeInteger(total)||count<0||total<0||count>total||complete!==(total>0&&count===total)||typeof release!=='string'||!release.trim())throw Error('Offline readiness could not be verified. Please retry while online; your existing website data has not been cleared.');
-   if(result.complete===false&&result.count===0&&result.total===0)throw Error('Offline setup is missing. This refresh cannot rebuild it. Use the Hub online and report this message through Install & Help. Keep your existing website data; do not clear data or reinstall.');
+   let result=await wait(command(active,'STATUS'));
+   function validate(result){const {complete,count,total,release}=result;
+   if(typeof complete!=='boolean'||!Number.isSafeInteger(count)||!Number.isSafeInteger(total)||count<0||total<0||count>total||complete!==(total>0&&count===total)||typeof release!=='string'||!release.trim())throw Error('Offline readiness could not be verified. Please retry while online; your existing website data has not been cleared.');}
+   validate(result);
+   if(!result.complete){
+    status.textContent='Restoring and verifying this release’s offline files…';
+    result=await wait(command(active,'RECOVER_OFFLINE'));validate(result);
+   }
    const liveResponse=await wait(fetch(new URL('release.json',root),{cache:'no-store'}));
    if(!liveResponse.ok)throw Error('The current release could not be checked. Please try again online.');
    const live=await wait(liveResponse.json());
    if(result.release!==live.release)throw Error('The latest update is still preparing. Please reopen this refresh link in a moment.');
    if(!result.complete)throw Error('Offline files are not complete yet. Please revisit while online.');reopen();
   }
- }catch(e){if(!returned)status.textContent=e.message;}
+ }catch(e){if(!returned)status.textContent=e.message+' Keep your existing website data; do not clear data or reinstall. If this continues, report the message through Install & Help.';}
  finally{finished=true;clearTimeout(deadlineTimer);for(const cleanup of cleanups)cleanup();}
 })();
 </script></body></html>
