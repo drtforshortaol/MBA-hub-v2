@@ -23,6 +23,7 @@ export function verifyReviewEvidence(directory,expectedCommit){
     const report=read(file);
     if(report.passed!==true||report.environment!==environment||report.release!==release.release||!Array.isArray(report.errors)||report.errors.length)errors.push(`${file}: failed or stale release evidence`);
     if(scenario&&(report.scenario!==scenario||report.offlineNetworkAttempts!==0||!Array.isArray(report.apps)||report.apps.length!==expectedApps.size||new Set(report.apps.map(app=>app?.app_id)).size!==expectedApps.size||!report.apps.every(app=>app&&app.passed===true&&Number.isSafeInteger(app.expected)&&Number.isSafeInteger(app.verified)&&app.verified===app.expected&&app.expected===expectedApps.get(app.app_id)&&Array.isArray(app.errors)&&app.errors.length===0)))errors.push(`${file}: incomplete offline scenario`);
+    if(scenario&&(!Number.isSafeInteger(report.resources?.expected)||report.resources.expected!==release.resources?.length||report.resources.expected<=0||!Number.isSafeInteger(report.resources?.verified)||report.resources.verified!==report.resources.expected||!Array.isArray(report.resources?.errors)||report.resources.errors.length))errors.push(`${file}: incomplete offline resource evidence`);
     if(!scenario&&(report.expectedRelease!==release.release||!Number.isSafeInteger(report.resources?.expected)||report.resources.expected<=0||report.resources.expected!==release.resources?.length||!Number.isSafeInteger(report.resources?.verified)||report.resources.verified!==report.resources.expected))errors.push(`${file}: incomplete HTTP evidence`);
    }
   }

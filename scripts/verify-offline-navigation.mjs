@@ -10,7 +10,7 @@ export async function verifyOfflineNavigation(directory,environment,{recoverFrom
  const root=new URL(`https://offline.example/review/${environment}/`);
  const read=name=>fs.readFileSync(path.join(directory,name));
  const release=JSON.parse(read('release.json')),registry=JSON.parse(read('registry.json')),search=JSON.parse(read('search-index.json'));
- const report={schema_version:1,scope:'Simulated worker routing and byte integrity only; no DOM/rendering, native service-worker lifecycle or device approval',environment,scenario:recoverFromPrior?'corrupted-entry-recovery':'prepared-navigation',release:release.release,passed:false,apps:[],errors:[],offlineNetworkAttempts:0,appEntryPoints:new Set(registry.apps.map(app=>app.entry_point)).size,searchTargets:0,navigationTargets:0};
+ const report={schema_version:1,scope:'Simulated worker routing and byte integrity only; no DOM/rendering, native service-worker lifecycle or device approval',environment,scenario:recoverFromPrior?'corrupted-entry-recovery':'prepared-navigation',release:release.release,passed:false,resources:{expected:release.resources.length,verified:0,errors:[]},apps:[],errors:[],offlineNetworkAttempts:0,appEntryPoints:new Set(registry.apps.map(app=>app.entry_point)).size,searchTargets:0,navigationTargets:0};
  const handlers={},stores=new Map();let offline=false;
  const caches={async keys(){return [...stores.keys()];},async delete(key){return stores.delete(key);},async open(key){
   if(!stores.has(key)){
@@ -73,10 +73,21 @@ export async function verifyOfflineNavigation(directory,environment,{recoverFrom
    }
    result.passed=result.errors.length===0;report.apps.push(result);
   }
+  // Navigation alone does not establish that images, scripts and styles survive offline.
+  // Check every declared resource against the same release's exact bytes.
+  for(const item of release.resources){
+   try{
+    const response=await invoke('fetch',{request:{method:'GET',url:new URL(item.url,root).href}});
+    if(!response||response.status!==200)throw Error(`HTTP ${response?.status??'not intercepted'}`);
+    const bytes=Buffer.from(await response.arrayBuffer());
+    if(bytes.length!==item.bytes||crypto.createHash('sha256').update(bytes).digest('hex')!==item.sha256)throw Error('Resource returned incorrect bytes');
+    report.resources.verified++;
+   }catch(error){report.resources.errors.push(`${item.url}: ${error.message}`);}
+  }
   if(!report.apps.length)report.errors.push('No applications verified');
   if(report.offlineNetworkAttempts)report.errors.push(`Offline navigation attempted network ${report.offlineNetworkAttempts} times`);
  }catch(error){report.errors.push(error.message);}
- report.passed=report.errors.length===0&&report.apps.length>0&&report.apps.every(app=>app.passed);return report;
+ report.passed=report.errors.length===0&&report.apps.length>0&&report.apps.every(app=>app.passed)&&report.resources.verified===report.resources.expected&&report.resources.errors.length===0;return report;
 }
 if(process.argv[1]===fileURLToPath(import.meta.url)){
  const args=process.argv.slice(2);
@@ -84,7 +95,7 @@ if(process.argv[1]===fileURLToPath(import.meta.url)){
  for(const environment of ['developer','tester'])for(const recoverFromPrior of [false,true]){
   const report=await verifyOfflineNavigation(`dist/${environment}`,environment,{recoverFromPrior});
   if(args[1]){fs.mkdirSync(args[1],{recursive:true});fs.writeFileSync(path.join(args[1],`${environment}-${recoverFromPrior?'offline-recovery':'offline-navigation'}.json`),JSON.stringify(report,null,2)+'\n');}
-  console.log(`${environment} ${report.scenario}: ${report.passed?'PASS':'FAIL'} ${report.apps.reduce((n,app)=>n+app.verified,0)}/${report.apps.reduce((n,app)=>n+app.expected,0)} offline navigation targets (${report.appEntryPoints} app entry URLs; ${report.searchTargets} search targets); release ${report.release}`);
+  console.log(`${environment} ${report.scenario}: ${report.passed?'PASS':'FAIL'} ${report.apps.reduce((n,app)=>n+app.verified,0)}/${report.apps.reduce((n,app)=>n+app.expected,0)} offline navigation targets; ${report.resources.verified}/${report.resources.expected} offline resources (${report.appEntryPoints} app entry URLs; ${report.searchTargets} search targets); release ${report.release}`);
   if(!report.passed){console.error(JSON.stringify(report));process.exitCode=1;}
  }
 }

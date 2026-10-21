@@ -15,7 +15,7 @@ function fixture(t){
   fs.writeFileSync(path.join(dir,environment,'search-index.json'),JSON.stringify([{app_id:'one',url:'apps/one/index.html#section'}]));
   const base={passed:true,environment,release,errors:[]};
   fs.writeFileSync(path.join(dir,`${environment}-http-report.json`),JSON.stringify({...base,expectedRelease:release,resources:{expected:3,verified:3}}));
-  for(const [name,scenario] of [['navigation','prepared-navigation'],['recovery','corrupted-entry-recovery']])fs.writeFileSync(path.join(dir,`offline-reports/${environment}-offline-${name}.json`),JSON.stringify({...base,scenario,offlineNetworkAttempts:0,apps:[{app_id:'one',passed:true,expected:3,verified:3,errors:[]},{app_id:'two',passed:true,expected:1,verified:1,errors:[]}]}));
+  for(const [name,scenario] of [['navigation','prepared-navigation'],['recovery','corrupted-entry-recovery']])fs.writeFileSync(path.join(dir,`offline-reports/${environment}-offline-${name}.json`),JSON.stringify({...base,scenario,resources:{expected:3,verified:3,errors:[]},offlineNetworkAttempts:0,apps:[{app_id:'one',passed:true,expected:3,verified:3,errors:[]},{app_id:'two',passed:true,expected:1,verified:1,errors:[]}]}));
  }
  return dir;
 }
@@ -68,4 +68,15 @@ for(const resources of [undefined,null,{},[]])test(`review evidence rejects abse
  const dir=fixture(t),file=path.join(dir,'developer/release.json'),release=JSON.parse(fs.readFileSync(file));
  release.resources=resources;fs.writeFileSync(file,JSON.stringify(release));
  assert(verifyReviewEvidence(dir,commit).some(error=>error==='developer: invalid generated release'));
+});
+
+for(const mutation of ['missing','truncated','failed','errors','string count'])test(`review evidence rejects offline resource coverage ${mutation}`,t=>{
+ const dir=fixture(t),file=path.join(dir,'offline-reports/tester-offline-navigation.json'),report=JSON.parse(fs.readFileSync(file));
+ if(mutation==='missing')delete report.resources;
+ if(mutation==='truncated')report.resources.expected=report.resources.verified=1;
+ if(mutation==='failed')report.resources.verified=2;
+ if(mutation==='errors')report.resources.errors=['icon.svg: incorrect bytes'];
+ if(mutation==='string count')report.resources.expected=report.resources.verified='3';
+ fs.writeFileSync(file,JSON.stringify(report));
+ assert(verifyReviewEvidence(dir,commit).some(error=>error.includes('incomplete offline resource evidence')));
 });

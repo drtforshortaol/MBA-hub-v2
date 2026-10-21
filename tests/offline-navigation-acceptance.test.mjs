@@ -13,6 +13,8 @@ test('actual generated workers serve every app entry, directory and search deep 
   assert.deepEqual(report.apps.map(app=>app.app_id),registry.apps.map(app=>app.app_id));
   assert(report.apps.every(app=>app.verified===app.expected&&app.expected>=2));
   assert.equal(report.offlineNetworkAttempts,0);
+  assert.equal(report.resources.verified,report.resources.expected);
+  assert.deepEqual(report.resources.errors,[]);
   assert.equal(report.appEntryPoints,new Set(registry.apps.map(app=>app.entry_point)).size);
   assert.equal(report.navigationTargets,report.apps.reduce((sum,app)=>sum+app.expected,0));
   assert.equal(report.searchTargets,report.apps.reduce((sum,app)=>sum+app.searchTargets,0));
@@ -39,6 +41,8 @@ test('every app and search route recovers exact bytes when all current entries a
   assert.equal(report.scenario,'corrupted-entry-recovery');
   assert.equal(report.passed,true,JSON.stringify(report));
   assert.equal(report.offlineNetworkAttempts,0);
+  assert.equal(report.resources.verified,report.resources.expected);
+  assert.deepEqual(report.resources.errors,[]);
   assert.equal(report.apps.length,JSON.parse(fs.readFileSync(`dist/${environment}/registry.json`)).apps.length);
   assert(report.apps.every(app=>app.verified===app.expected));
  }
@@ -57,4 +61,21 @@ test('recovery evidence fails when a worker loses compatible rollback lookup',as
  assert.equal(report.apps.length,JSON.parse(fs.readFileSync(path.join(directory,'registry.json'))).apps.length);
  assert(report.apps.every(app=>app.verified===0));
  assert(report.offlineNetworkAttempts>0);
+});
+
+// A worker may route every HTML page correctly while dropping media. This must
+// fail acceptance even though every app/navigation target still succeeds.
+test('offline acceptance detects missing non-navigation resources',async t=>{
+ const directory=fs.mkdtempSync(path.join(os.tmpdir(),'mba-offline-resource-'));
+ t.after(()=>fs.rmSync(directory,{recursive:true,force:true}));
+ fs.cpSync('dist/tester',directory,{recursive:true});
+ const file=path.join(directory,'sw.js'),worker=fs.readFileSync(file,'utf8');
+ const needle="event.respondWith((async()=>{";
+ assert(worker.includes(needle));
+ fs.writeFileSync(file,worker.replace(needle,needle+"if(url.pathname.endsWith('/icon.svg'))return new Response('Missing icon',{status:503});"));
+ const report=await verifyOfflineNavigation(directory,'tester');
+ assert.equal(report.passed,false);
+ assert(report.apps.every(app=>app.passed));
+ assert(report.resources.errors.some(error=>error.startsWith('icon.svg:')));
+ assert(report.resources.verified<report.resources.expected);
 });
