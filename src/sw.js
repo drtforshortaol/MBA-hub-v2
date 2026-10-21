@@ -40,6 +40,13 @@ async function cachedResponse(response,request){
  headers['content-range']=`bytes ${start}-${end}/${total}`;headers['content-length']=String(end-start+1);headers['accept-ranges']='bytes';
  return new Response(bytes.slice(start,end+1),{status:206,headers});
 }
+// Multiple explicit refresh tabs may request the same bundle concurrently.
+// Share only in-flight work; failures release the slot so a later retry can resume.
+let preparing=null;
+function prepareShared(){
+ if(!preparing)preparing=prepare().finally(()=>{preparing=null;});
+ return preparing;
+}
 async function prepare(){
  const response=await fetch(absolute('release.json'),{cache:'no-store'});if(!response.ok)throw Error('Release manifest unavailable');const manifest=await response.clone().json();if(manifest.release!==RELEASE||manifest.environment!==NAMESPACE.slice('mba-v2-'.length))throw Error('Deployment changed during offline preparation (release or environment mismatch)');
  if(!Array.isArray(manifest.resources)||!manifest.resources.length)throw Error('Invalid release resources');
@@ -51,7 +58,7 @@ async function prepare(){
  for(const item of manifest.resources){let resource=await cache.match(absolute(item.url));if(!await verified(resource,item)){resource=null;for(const old of previous){const candidate=await (await caches.open(old)).match(absolute(item.url));if(await verified(candidate,item)){resource=candidate;break;}}if(!resource)resource=await fetch(absolute(item.url),{cache:'no-store'});if(!await verified(resource,item))throw Error('Asset verification failed: '+item.url);await cache.put(absolute(item.url),resource);}}
  await cache.put(absolute('release.json'),response);return manifest;
 }
-self.addEventListener('install',event=>event.waitUntil((async()=>{try{await prepare();}catch(error){await caches.delete(CACHE);throw error;}})()));
+self.addEventListener('install',event=>event.waitUntil((async()=>{try{await prepareShared();}catch(error){await caches.delete(CACHE);throw error;}})()));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{
  // Keep this and one prior compatible bundle. Touch only this environment and URL scope.
  const current=await caches.open(CACHE),manifestResponse=await current.match(absolute('release.json'));if(!manifestResponse)throw Error('Prepared release missing');const manifest=await manifestResponse.json();if(manifest.release!==RELEASE||manifest.environment!==NAMESPACE.slice('mba-v2-'.length)||!Array.isArray(manifest.resources)||!manifest.resources.length)throw Error('Prepared release invalid');const paths=new Set();for(const item of manifest.resources){if(typeof item.url!=='string'||!item.url||item.url.startsWith('/')||item.url.split('/').some(p=>!p||p==='.'||p==='..')||/[?#%\\\\]/.test(item.url)||!(/^[a-f0-9]{64}$/.test(item.sha256))||!Number.isSafeInteger(item.bytes)||item.bytes<0||paths.has(item.url))throw Error('Prepared release invalid');paths.add(item.url);}if(!await compatibleManifest(manifest,RELEASE,true))throw Error('Prepared release inventory integrity mismatch');for(const item of manifest.resources){if(!await verified(await current.match(absolute(item.url)),item))throw Error('Prepared release incomplete');}
@@ -100,10 +107,10 @@ self.addEventListener('fetch',event=>{
 self.addEventListener('message',event=>{
  let clientURL=null;try{if(event.source?.url)clientURL=new URL(event.source.url);}catch{return;}if(!clientURL||clientURL.origin!==ROOT.origin||!clientURL.pathname.startsWith(ROOT.pathname))return;
  event.waitUntil((async()=>{try{
- const type=event.data?.type;if(type==='REPAIR'){if(!NAMESPACE.endsWith('-developer'))throw Error('Read-only environment');await prepare();}
+ const type=event.data?.type;if(type==='REPAIR'){if(!NAMESPACE.endsWith('-developer'))throw Error('Read-only environment');await prepareShared();}
  // Explicit refresh can refill only this worker's authenticated release; it neither
  // deletes caches nor activates a worker, and does not grant general REPAIR access.
- else if(type==='RECOVER_OFFLINE'){if(clientURL.pathname!==new URL('refresh.html',ROOT).pathname)throw Error('Recovery requires the refresh page');await prepare();}
+ else if(type==='RECOVER_OFFLINE'){if(clientURL.pathname!==new URL('refresh.html',ROOT).pathname)throw Error('Recovery requires the refresh page');await prepareShared();}
  else if(type!=='STATUS'&&type!=='ACTIVATE_UPDATE')throw Error('Unsupported command');
  const cache=await caches.open(CACHE),response=await cache.match(absolute('release.json'));if(!response){event.ports[0]?.postMessage({complete:false,count:0,total:0,release:RELEASE});return;}
  const invalidInventory=message=>Object.assign(Error(message),{code:'OFFLINE_INVENTORY_INVALID'});

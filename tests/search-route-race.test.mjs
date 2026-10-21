@@ -200,3 +200,28 @@ test('detached loading Search controls cannot overwrite a later route query',asy
  f.requests[0].resolve(response(entries));await pending;
  assert.equal(f.view.children[1].props.text,'Install & Help');assert.equal(f.context.state.query,'later query');
 });
+
+
+test('delayed Search completion does not refocus query after the user changes category',async()=>{
+ const f=fixture(),pending=f.renderRoute();
+ f.category().value='guides';f.category().listeners[0].listener();
+ f.requests[0].resolve(response([{app_id:'guide',title:'Ray guide',text:'ray',url:'apps/guide/index.html'}]));await pending;
+ assert.equal(f.input().focused,false,'completion must not move focus from a category the user selected');
+ assert.equal(f.category().value,'guides');assert.equal(f.results().children[0].props.href,'apps/guide/index.html');
+});
+test('editing a contextual Search before loading completes cancels the old scroll restoration',async()=>{
+ const f=fixture();f.context.returned={state:{query:'ray',scroll:190}};
+ const pending=f.renderRoute();f.input().value='kelp';f.input().listeners[0].listener();
+ f.requests[0].resolve(response([{title:'Kelp',text:'kelp',url:'apps/guide/index.html'}]));await pending;
+ assert.equal(f.frames.length,0,'old app-return scroll must not override an explicit new query');
+ assert.equal(f.context.scrolls,0);assert.equal(f.input().value,'kelp');
+ assert.equal(f.results().children[0].props.href,'apps/guide/index.html');
+});
+test('editing Search after restoration is queued cancels its stale scroll frame',async()=>{
+ const f=fixture();f.context.returned={state:{query:'ray',scroll:190}};
+ const pending=f.renderRoute();f.requests[0].resolve(response(entries));await pending;
+ assert.equal(f.frames.length,1,'untouched contextual arrival still queues restoration');
+ f.input().value='ray missing';f.input().listeners[0].listener();f.frames[0]();
+ assert.equal(f.context.scrolls,0);assert.equal(f.context.state.query,'ray missing');
+ assert.equal(f.results().children[0].props.text,'No matching results in the current Hub collection.');
+});

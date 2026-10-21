@@ -190,3 +190,46 @@ test('runtime verification errors are not classified as recoverable metadata fai
  const w=await recoveryWorker({crypto:{subtle:{digest:async()=>{throw Error('crypto unavailable');}}}});
  const status=await w.status();assert.match(status.error,/crypto unavailable/);assert.equal(status.code,undefined);
 });
+
+
+const tick=()=>new Promise(resolve=>setImmediate(resolve));
+test('concurrent explicit refreshes share one preparation and independently receive verified status',async()=>{
+ const w=await recoveryWorker();w.current.files.clear();let releaseFetches=0,assetFetches=0,release;
+ const blocked=new Promise(resolve=>{release=resolve;});
+ w.network(async request=>{
+  if(String(request).endsWith('release.json')){releaseFetches++;await blocked;return new Response(JSON.stringify(w.manifest));}
+  assetFetches++;return new Response(w.body);
+ });
+ const first=w.command('RECOVER_OFFLINE'),second=w.command('RECOVER_OFFLINE');await tick();
+ assert.equal(releaseFetches,1);release();const replies=await Promise.all([first,second]);
+ assert.ok(replies.every(reply=>reply.complete===true));assert.equal(assetFetches,1);
+ // Finished work is not retained as a stale success: recheck deployment next time.
+ await w.command('RECOVER_OFFLINE');assert.equal(releaseFetches,2);assert.equal(assetFetches,1);
+ w.network(async()=>new Response(JSON.stringify({...w.manifest,release:'changed'})));
+ assert.match((await w.command('RECOVER_OFFLINE')).error,/Deployment changed/);
+});
+
+test('shared interrupted preparation rejects every caller and allows a clean retry',async()=>{
+ const w=await recoveryWorker();w.current.files.clear();let assetFetches=0,rejectDownload,entered;
+ const downloading=new Promise(resolve=>{entered=resolve;});
+ const interrupted=new Promise((resolve,reject)=>{rejectDownload=reject;});
+ w.network(async request=>{
+  if(String(request).endsWith('release.json'))return new Response(JSON.stringify(w.manifest));
+  assetFetches++;entered();return interrupted;
+ });
+ const first=w.command('RECOVER_OFFLINE'),second=w.command('RECOVER_OFFLINE');
+ await downloading;assert.equal(assetFetches,1);rejectDownload(Error('interrupted shared download'));
+ assert.ok((await Promise.all([first,second])).every(reply=>/interrupted shared download/.test(reply.error)));
+ assert.equal((await w.status()).complete,false);
+ w.network(async request=>new Response(String(request).endsWith('release.json')?JSON.stringify(w.manifest):w.body));
+ assert.equal((await w.command('RECOVER_OFFLINE')).complete,true);
+});
+
+test('in-flight authorized recovery does not allow other pages or tester REPAIR to join',async()=>{
+ const w=await recoveryWorker();let release;const blocked=new Promise(resolve=>{release=resolve;});
+ w.network(async request=>{await blocked;return new Response(String(request).endsWith('release.json')?JSON.stringify(w.manifest):w.body);});
+ const recovery=w.command('RECOVER_OFFLINE');await tick();
+ assert.match((await w.command('RECOVER_OFFLINE','index.html')).error,/refresh page/);
+ assert.match((await w.command('REPAIR')).error,/Read-only/);
+ release();assert.equal((await recovery).complete,true);
+});
