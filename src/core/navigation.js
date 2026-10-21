@@ -43,3 +43,12 @@ export function appRestoreState(root,current,storage,namespace){
    inputs:Array.isArray(state.inputs)?state.inputs.filter(value=>value&&typeof value.id==='string'&&typeof value.value==='string').map(value=>({id:value.id,value:value.value,checked:value.checked===true})):[]};
  }catch{return null;}
 }
+
+// Browser reloads and address-bar departures bypass link capture. Preserve the
+// visible position at pagehide without replacing the separate category position
+// while Search, Help or History is displayed.
+export function captureHubPosition(state,current,position){
+ if(!Number.isFinite(position)||position<0)return state;
+ const route=new URL(current).hash.slice(1);
+ return {...state,scroll:position,...(!['search','help','history'].includes(route)?{categoryScroll:position}:{})};
+}
