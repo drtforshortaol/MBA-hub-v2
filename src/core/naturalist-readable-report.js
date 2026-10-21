@@ -1,3 +1,4 @@
+import {capturedNaturalistSection} from './naturalist-section-evidence.js';
 import {validateReviewDecisions,reviewActionQueue,reviewProgress} from './naturalist-review-state.js';
 
 // A human-readable snapshot, never an import packet or publication authority.
@@ -19,7 +20,9 @@ export function naturalistReadableReport(packet,replacements=[]){
   if(!entry||entry.index!==index||typeof entry.source_text!=='string')throw new TypeError('Invalid statement');
   const decision=packet.review_decisions[index],blocked=queue.blocked_items.find(item=>item.index===index),queued=queue.items.some(item=>item.index===index);
   let existing='No editable section snapshot recorded.',capturedTitle='unavailable',capturedCaption=null;
-  try{const section=JSON.parse(entry.reviewed_section_snapshot);if(typeof section?.text==='string'){existing=section.text;if(typeof section.title==='string')capturedTitle=section.title;if(typeof section.caption==='string')capturedCaption=section.caption;}}catch{/* unresolved placement has no section snapshot */}
+  const section=capturedNaturalistSection(entry);
+  if(section){existing=section.text;if(typeof section.title==='string')capturedTitle=section.title;if(typeof section.caption==='string')capturedCaption=section.caption;}
+  else if(entry.route?.action==='update-existing')existing='Existing section evidence is missing or does not match this destination. Regenerate the classification before approving this update.';
   const context=typeof entry.source_block==='string'&&entry.source_block!==entry.source_text?['ORIGINAL SOURCE PARAGRAPH — classification context',entry.source_block]:[];
   lines.push('STATEMENT '+(index+1),entry.source_text,...context,'Destination: '+(entry.route?.app_id||'unresolved')+' / '+(entry.route?.section_id||'unresolved'),'Captured app version: '+(entry.reviewed_app_version??'unavailable'),'Captured section title: '+capturedTitle,'Review flags: '+(entry.review?.flags?.join(', ')||'none detected; human review still required'),'Duplicate of: '+(Number.isInteger(entry.duplicate_of)?'statement '+(entry.duplicate_of+1):'none recorded'),'Potential conflict statements: '+((entry.conflict_with||[]).map(i=>i+1).join(', ')||'none recorded'),'Scientific status: '+decision.scientific_status,'Editorial status: '+decision.editorial_status,'Proposed action: '+decision.proposed_action,'Action queue: '+(blocked?'BLOCKED — '+blocked.block_reasons.join(', '):queued?'queued for draft validation':decision.proposed_action==='no-change'?'no change requested':'not queued; review incomplete'),'Reviewer notes:',decision.reviewer_notes||'(none)','CURRENT SECTION — classification snapshot',existing,...(capturedCaption===null?[]:['Captured caption:',capturedCaption]),'PROPOSED REPLACEMENT — unverified draft',proposals.get(index)?.trim()?proposals.get(index):'(no replacement text entered)','');
  });

@@ -1,3 +1,12 @@
+// Read captured evidence only when it belongs to the recorded destination.
+// This verifies snapshot shape, never scientific accuracy or review authority.
+export function capturedNaturalistSection(entry){
+ let section;
+ try{section=JSON.parse(entry.reviewed_section_snapshot);}catch{return null;}
+ if(!section||Array.isArray(section)||typeof section!=='object'||section.id!==entry.route?.section_id||typeof section.text!=='string'||typeof entry.route?.app_id!=='string'||!entry.route.app_id||entry.reviewed_app_version==null)return null;
+ return section;
+}
+
 // Classification evidence is read-only; it never supplies review authority.
 export function renderNaturalistSectionEvidence(document,entry){
  if(entry.route?.action!=='update-existing')return null;
@@ -7,9 +16,8 @@ export function renderNaturalistSectionEvidence(document,entry){
  add('h5','Existing section — captured at classification');
  add('p','Destination: '+(entry.route.app_id||'unresolved')+' / '+(entry.route.section_id||'unresolved'));
  add('p','Captured app version: '+(entry.reviewed_app_version??'unavailable'));
- let section;
- try{section=JSON.parse(entry.reviewed_section_snapshot);}catch{/* Missing evidence requires fresh classification. */}
- if(!section||Array.isArray(section)||typeof section!=='object'||section.id!==entry.route.section_id||typeof section.text!=='string'||typeof entry.route.app_id!=='string'||!entry.route.app_id||entry.reviewed_app_version==null){
+ const section=capturedNaturalistSection(entry);
+ if(!section){
   add('p','Existing section evidence is missing or does not match this destination. Regenerate the classification before approving this update.');
   return evidence;
  }
