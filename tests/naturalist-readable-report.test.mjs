@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import {naturalistReadableReport} from '../src/core/naturalist-readable-report.js';
 import {newReviewDecisions} from '../src/core/naturalist-review-state.js';
-function packet(){const entries=[{index:0,source_text:'Sea otter claim.',route:{action:'update-existing',app_id:'sea-otter',section_id:'diet'},review:{flags:[]},reviewed_section_snapshot:JSON.stringify({id:'diet',text:'Current diet section.'})},{index:1,source_text:'Conflicting claim.',conflict_with:[0],review:{flags:['scientific-conflict']}}];return {kind:'mba-v2-naturalist-review-packet',original_source:'  日本語 🦦\r\nOriginal notes.  ',review_context_sha256:'a'.repeat(64),entries,review_decisions:newReviewDecisions(entries)};}
+function packet(){const entries=[{index:0,source_text:'Sea otter claim.',route:{action:'update-existing',app_id:'sea-otter',section_id:'diet'},review:{flags:[]},reviewed_app_version:'1.0',reviewed_section_snapshot:JSON.stringify({id:'diet',text:'Current diet section.'})},{index:1,source_text:'Conflicting claim.',conflict_with:[0],review:{flags:['scientific-conflict']}}];return {kind:'mba-v2-naturalist-review-packet',original_source:'  日本語 🦦\r\nOriginal notes.  ',review_context_sha256:'a'.repeat(64),entries,review_decisions:newReviewDecisions(entries)};}
 test('readable report preserves source and pending draft without approving it',()=>{
  const p=packet(),before=JSON.stringify(p),proposal='  Proposed diet 日本語\r\n ';const text=naturalistReadableReport(p,[[0,proposal]]);
  assert(text.includes(p.original_source));assert(text.includes(proposal));assert(text.includes(p.review_context_sha256));assert(text.includes('Scientific status: pending'));assert(text.includes('Editorial status: pending'));assert(text.includes('CURRENT SECTION — classification snapshot\nCurrent diet section.'));assert(text.includes('PROPOSED REPLACEMENT — unverified draft'));assert(text.includes('Potential conflict statements: 1'));assert(text.includes('not publication authorization'));assert.equal(JSON.stringify(p),before);
@@ -56,4 +56,23 @@ test('portable report includes full paragraph and captured destination evidence 
  assert(text.includes('Captured app version: unavailable'));
  assert(text.includes('Scientific status: pending'));assert(text.includes('Editorial status: pending'));
  assert.equal(JSON.stringify(p),before);
+});
+
+
+test('portable report never presents mismatched or incomplete section evidence as destination wording',()=>{
+ for(const mutate of [
+  entry=>entry.reviewed_section_snapshot=JSON.stringify({id:'other',title:'Wrong title',text:'Wrong section',caption:'Wrong caption'}),
+  entry=>delete entry.reviewed_app_version,
+  entry=>delete entry.route.app_id,
+  entry=>entry.reviewed_section_snapshot='null',
+  entry=>entry.reviewed_section_snapshot='not JSON'
+ ]){
+  const p=packet();mutate(p.entries[0]);const before=JSON.stringify(p),report=naturalistReadableReport(p);
+  assert(report.includes('Regenerate the classification before approving this update.'));
+  assert(report.includes('Captured section title: unavailable'));
+  assert(!report.includes('Wrong section'));assert(!report.includes('Wrong title'));assert(!report.includes('Wrong caption'));
+  assert(!report.includes('CURRENT SECTION — classification snapshot\nCurrent diet section.'));
+  assert(report.includes(p.original_source));assert(report.includes('Scientific status: pending'));
+  assert.equal(JSON.stringify(p),before);
+ }
 });

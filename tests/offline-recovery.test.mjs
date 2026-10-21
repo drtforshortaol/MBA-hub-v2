@@ -20,7 +20,8 @@ async function recoveryWorker(){
  async function invoke(type,event){let result;handlers[type]({...event,waitUntil(p){result=p;},respondWith(p){result=p;}});return result;}
  return {root,body,item,manifest,current,stores,currentKey,
   network(fn){network=fn;},failPuts(){putsFail=true;},
-  async status(){let reply;await invoke('message',{source:{url:root+'index.html'},data:{type:'STATUS'},ports:[{postMessage(value){reply=value;}}]});return reply;},
+  async command(type,path='refresh.html'){let reply;await invoke('message',{source:{url:root+path},data:{type},ports:[{postMessage(value){reply=value;}}]});return reply;},
+  async status(){return this.command('STATUS','index.html');},
   fetch({path=item.url,headers={}}={}){return invoke('fetch',{request:{url:root+path,method:'GET',headers:new Headers(headers)}});},
   async rollback(){const old=make();await old.put(root+'release.json',new Response(JSON.stringify({...manifest,release:'prior'})));await old.put(root+item.url,new Response(body));stores.set('mba-v2-tester:/v2/tester/:prior',old);return old;}
  };
@@ -101,4 +102,48 @@ test('rollback range recovery stores full verified representation rather than pa
  const stored=await w.current.match(w.root+w.item.url);
  assert.equal(stored.status,200);assert.equal(await stored.text(),w.body);
  assert.equal((await w.status()).complete,true);
+});
+
+
+test('explicit same-release refresh reconstructs missing inventory without deleting unrelated data',async()=>{
+ const w=await recoveryWorker();w.current.files.clear();const unrelated=w.stores.get('mba-shared-assets-v1');
+ await unrelated.put('https://example.test/keep',new Response('keep'));
+ w.network(async request=>new Response(String(request).endsWith('release.json')?JSON.stringify(w.manifest):w.body));
+ const result=await w.command('RECOVER_OFFLINE');assert.equal(result.complete,true);assert.equal(result.count,1);
+ assert.equal(await (await unrelated.match('https://example.test/keep')).text(),'keep');
+ w.network(async()=>{throw Error('offline');});assert.equal(await (await w.fetch()).text(),w.body);
+});
+
+test('recovery is refresh-only and tester REPAIR stays prohibited',async()=>{
+ const w=await recoveryWorker();let fetches=0;w.network(async()=>{fetches++;throw Error('unexpected');});
+ assert.match((await w.command('RECOVER_OFFLINE','index.html')).error,/refresh page/);
+ assert.match((await w.command('REPAIR')).error,/Read-only/);assert.equal(fetches,0);
+});
+
+test('interrupted full recovery preserves existing data and is retryable',async()=>{
+ const w=await recoveryWorker();w.current.files.clear();
+ w.network(async request=>{if(String(request).endsWith('release.json'))return new Response(JSON.stringify(w.manifest));throw Error('interrupted');});
+ assert.match((await w.command('RECOVER_OFFLINE')).error,/interrupted/);assert.equal((await w.status()).complete,false);
+ w.network(async request=>new Response(String(request).endsWith('release.json')?JSON.stringify(w.manifest):w.body));
+ assert.equal((await w.command('RECOVER_OFFLINE')).complete,true);
+});
+
+test('full recovery rejects changed release and forged inventory without replacing metadata',async()=>{
+ for(const mutation of [manifest=>({...manifest,release:'changed'}),manifest=>({...manifest,resources:[{...manifest.resources[0],bytes:1}]})]){
+  const w=await recoveryWorker(),before=await (await w.current.match(w.root+'release.json')).text();
+  w.network(async()=>new Response(JSON.stringify(mutation(w.manifest))));
+  assert.ok((await w.command('RECOVER_OFFLINE')).error);
+  assert.equal(await (await w.current.match(w.root+'release.json')).text(),before);
+ }
+});
+
+test('offline and quota failures cannot claim full recovery or delete retained data',async()=>{
+ for(const quota of [false,true]){
+  const w=await recoveryWorker();await w.current.put(w.root+w.item.url,new Response(w.body));
+  const before=await (await w.current.match(w.root+w.item.url)).text();
+  if(quota){w.failPuts();w.network(async request=>new Response(String(request).endsWith('release.json')?JSON.stringify(w.manifest):w.body));}
+  else w.network(async()=>{throw Error('offline');});
+  assert.ok((await w.command('RECOVER_OFFLINE')).error);
+  assert.equal(await (await w.current.match(w.root+w.item.url)).text(),before);
+ }
 });

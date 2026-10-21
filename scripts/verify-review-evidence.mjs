@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {OFFLINE_SCENARIOS} from './verify-offline-navigation.mjs';
 
 // These reports establish simulated/HTTP evidence only, never device or release approval.
 export function verifyReviewEvidence(directory,expectedCommit){
@@ -19,10 +20,12 @@ export function verifyReviewEvidence(directory,expectedCommit){
     return [app.app_id,targets.size];
    }));
    if(release.environment!==environment||!/^[a-f0-9]{16}$/.test(release.release)||!Array.isArray(release.resources)||!release.resources.length)errors.push(`${environment}: invalid generated release`);
-   for(const [file,scenario] of [[`${environment}-http-report.json`,null],[`offline-reports/${environment}-offline-navigation.json`,'prepared-navigation'],[`offline-reports/${environment}-offline-recovery.json`,'corrupted-entry-recovery']]){
+   for(const [file,scenario] of [[`${environment}-http-report.json`,null],...OFFLINE_SCENARIOS.map(s=>[`offline-reports/${environment}-${s.file}.json`,s.name])]){
     const report=read(file);
     if(report.passed!==true||report.environment!==environment||report.release!==release.release||!Array.isArray(report.errors)||report.errors.length)errors.push(`${file}: failed or stale release evidence`);
     if(scenario&&(report.scenario!==scenario||report.offlineNetworkAttempts!==0||!Array.isArray(report.apps)||report.apps.length!==expectedApps.size||new Set(report.apps.map(app=>app?.app_id)).size!==expectedApps.size||!report.apps.every(app=>app&&app.passed===true&&Number.isSafeInteger(app.expected)&&Number.isSafeInteger(app.verified)&&app.verified===app.expected&&app.expected===expectedApps.get(app.app_id)&&Array.isArray(app.errors)&&app.errors.length===0)))errors.push(`${file}: incomplete offline scenario`);
+    if(scenario&&(!Number.isSafeInteger(report.resources?.expected)||report.resources.expected!==release.resources?.length||report.resources.expected<=0||!Number.isSafeInteger(report.resources?.verified)||report.resources.verified!==report.resources.expected||!Array.isArray(report.resources?.errors)||report.resources.errors.length))errors.push(`${file}: incomplete offline resource evidence`);
+    if(scenario?.includes('inventory')&&(!report.recovery||report.recovery.initialComplete!==false||report.recovery.initialCount!==0||report.recovery.initialTotal!==0||report.recovery.interrupted!==(scenario==='interrupted-inventory-recovery')||report.recovery.complete!==true||report.recovery.count!==release.resources.length||report.recovery.total!==release.resources.length||report.recovery.retainedDataPreserved!==true||report.recovery.cacheDeletions!==0||report.recovery.activations!==0))errors.push(`${file}: incomplete inventory recovery evidence`);
     if(!scenario&&(report.expectedRelease!==release.release||!Number.isSafeInteger(report.resources?.expected)||report.resources.expected<=0||report.resources.expected!==release.resources?.length||!Number.isSafeInteger(report.resources?.verified)||report.resources.verified!==report.resources.expected))errors.push(`${file}: incomplete HTTP evidence`);
    }
   }

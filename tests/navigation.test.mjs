@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {mainHubURL,restoredHubState,captureVisit,visitContext,returnToVisit} from '../src/core/navigation.js';
+import test from 'node:test';import assert from 'node:assert/strict';import {mainHubURL,restoredHubState,captureVisit,visitContext,returnToVisit,captureHubPosition} from '../src/core/navigation.js';
 test('MBA Hub action returns to the correct hosting scope and main view',()=>{const url=mainHubURL('https://example.test/MBA-hub-v2-test/');assert.equal(url.pathname,'/MBA-hub-v2-test/index.html');assert.equal(url.searchParams.get('home'),'1');assert.equal(url.hash,'');});
 test('explicit Hub return resets position and categories',()=>{const state={scroll:860,categoryScroll:920,open:['volunteer-tools'],query:'kelp'};assert.deepEqual(restoredHubState(state,'https://example.test/index.html?home=1'),{scroll:0,categoryScroll:0,open:[],query:'kelp',animalLetter:''});assert.equal(state.scroll,860);});
 test('contextual Back preserves previous view position and open category',()=>{const state={scroll:860,open:['volunteer-tools'],query:'kelp'};assert.deepEqual(restoredHubState(state,'https://example.test/index.html'),state);});
@@ -115,4 +115,36 @@ test('category position restoration validates new snapshots and supports older s
  const normalize=runInNewContext('(state)=>{'+line+'return state.categoryScroll;}',{Number});
  for(const invalid of [undefined,null,-1,Infinity,'420',{}])assert.equal(normalize({scroll:190,categoryScroll:invalid}),190);
  assert.equal(normalize({scroll:190,categoryScroll:0}),0);assert.equal(normalize({scroll:190,categoryScroll:420}),420);
+});
+
+
+test('reload or browser departure records the current category position without a link click',()=>{
+ const original={open:['animals'],query:'ray',scroll:10,categoryScroll:20};
+ const captured=captureHubPosition(original,root+'index.html',860);
+ assert.deepEqual(captured,{open:['animals'],query:'ray',scroll:860,categoryScroll:860});
+ assert.equal(original.categoryScroll,20,'capturing must not mutate earlier visit snapshots');
+ const store=storage();store.setItem('tester:navigation',JSON.stringify(captured));
+ const reloaded=restoredHubState(JSON.parse(store.getItem('tester:navigation')),root+'index.html');
+ assert.equal(reloaded.categoryScroll,860);assert.deepEqual(reloaded.open,['animals']);
+});
+test('departing Search Help or History does not replace the category return position',()=>{
+ for(const route of ['search','help','history']){
+  const captured=captureHubPosition({scroll:10,categoryScroll:860,query:'ray'},root+'index.html#'+route,120);
+  assert.equal(captured.scroll,120);assert.equal(captured.categoryScroll,860);assert.equal(captured.query,'ray');
+ }
+ for(const invalid of [NaN,Infinity,-1,undefined,'320']){
+  const original={scroll:10,categoryScroll:860};assert.equal(captureHubPosition(original,root+'index.html',invalid),original);
+ }
+ assert.equal(captureHubPosition({categoryScroll:860},root+'index.html',0).categoryScroll,0);
+});
+test('Hub pagehide persists current position even when browser controls bypass link handling',async()=>{
+ const {readFileSync}=await import('node:fs');const {runInNewContext}=await import('node:vm');
+ const line=readFileSync('src/core/hub.js','utf8').split('\n').find(line=>line.startsWith("window.addEventListener('pagehide'"));
+ assert(line,'pagehide position capture must be wired');let handler,saved;
+ const context={window:{addEventListener(event,callback){assert.equal(event,'pagehide');handler=callback;}},
+  captureHubPosition,state:{scroll:10,categoryScroll:20,open:['animals']},location:{href:root+'index.html'},scrollY:740,
+  remember(){saved=JSON.parse(JSON.stringify(context.state));}};
+ runInNewContext(line,context);handler();assert.equal(saved.categoryScroll,740);assert.equal(saved.scroll,740);
+ context.location.href=root+'index.html#search';context.scrollY=180;handler();
+ assert.equal(saved.scroll,180);assert.equal(saved.categoryScroll,740);assert.deepEqual(saved.open,['animals']);
 });

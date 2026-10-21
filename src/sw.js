@@ -101,6 +101,9 @@ self.addEventListener('message',event=>{
  let clientURL=null;try{if(event.source?.url)clientURL=new URL(event.source.url);}catch{return;}if(!clientURL||clientURL.origin!==ROOT.origin||!clientURL.pathname.startsWith(ROOT.pathname))return;
  event.waitUntil((async()=>{try{
  const type=event.data?.type;if(type==='REPAIR'){if(!NAMESPACE.endsWith('-developer'))throw Error('Read-only environment');await prepare();}
+ // Explicit refresh can refill only this worker's authenticated release; it neither
+ // deletes caches nor activates a worker, and does not grant general REPAIR access.
+ else if(type==='RECOVER_OFFLINE'){if(clientURL.pathname!==new URL('refresh.html',ROOT).pathname)throw Error('Recovery requires the refresh page');await prepare();}
  else if(type!=='STATUS'&&type!=='ACTIVATE_UPDATE')throw Error('Unsupported command');
  const cache=await caches.open(CACHE),response=await cache.match(absolute('release.json'));if(!response){event.ports[0]?.postMessage({complete:false,count:0,total:0,release:RELEASE});return;}
  const manifest=await response.json();if(manifest.release!==RELEASE||manifest.environment!==NAMESPACE.slice('mba-v2-'.length)||!Array.isArray(manifest.resources)||!manifest.resources.length)throw Error('Invalid cached release manifest');const seen=new Set();for(const item of manifest.resources){if(typeof item.url!=='string'||!item.url||item.url.startsWith('/')||item.url.split('/').some(p=>!p||p==='.'||p==='..')||/[?#%\\\\]/.test(item.url)||!(/^[a-f0-9]{64}$/.test(item.sha256))||!Number.isSafeInteger(item.bytes)||item.bytes<0||seen.has(item.url))throw Error('Invalid cached release manifest');seen.add(item.url);}if(!await compatibleManifest(manifest,RELEASE,true))throw Error('Cached release inventory integrity mismatch');let count=0;for(const item of manifest.resources){if(await verified(await cache.match(absolute(item.url)),item))count++;}

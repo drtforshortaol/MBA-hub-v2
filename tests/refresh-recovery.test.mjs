@@ -64,13 +64,18 @@ test('verified waiting update retains explicit activation and fallback reopen be
 });
 
 
-test('missing offline setup stops before release fetch and preserves tester capabilities',async()=>{
- let fetches=0;const commands=[];
- const h=recoveryPage({register:async()=>({...registration(),active:{postMessage(message,ports){commands.push(message.type);ports[0].postMessage({complete:false,count:0,total:0,release:'current'});}}}),fetch:async()=>{fetches++;throw Error('must not fetch');}});
- await h.done;
- assert.equal(fetches,0);assert.deepEqual(commands,['STATUS']);assert.deepEqual(h.navigations,[]);
- assert.match(h.status.textContent,/cannot rebuild/);assert.match(h.status.textContent,/Use the Hub online/);assert.match(h.status.textContent,/do not clear data or reinstall/);
- assert.ok(h.ports.every(port=>port.closed));assert.equal(h.timers.size,0);
+test('missing or partial offline setup explicitly restores the same release before reopening',async()=>{
+ for(const initial of [{complete:false,count:0,total:0,release:'current'},{complete:false,count:1,total:360,release:'current'}]){
+  const commands=[];
+  const h=recoveryPage({register:async()=>({...registration(),active:{postMessage(message,ports){commands.push(message.type);ports[0].postMessage(message.type==='STATUS'?initial:{complete:true,count:360,total:360,release:'current'});}}})});
+  await h.done;assert.deepEqual(commands,['STATUS','RECOVER_OFFLINE']);assert.equal(h.navigations.length,1);
+  assert.ok(h.ports.every(port=>port.closed));assert.equal(h.timers.size,0);
+ }
+});
+
+test('failed restoration keeps the page open and never activates or clears data',async()=>{
+ const commands=[];const h=recoveryPage({register:async()=>({...registration(),active:{postMessage(message,ports){commands.push(message.type);ports[0].postMessage(message.type==='STATUS'?{complete:false,count:0,total:0,release:'current'}:{error:'Release manifest unavailable'});}}})});
+ await h.done;assert.deepEqual(commands,['STATUS','RECOVER_OFFLINE']);assert.deepEqual(h.navigations,[]);assert.match(h.status.textContent,/manifest unavailable/);
 });
 
 for(const [name,status] of [
@@ -90,4 +95,23 @@ for(const [name,status] of [
  assert.equal(fetches,0);assert.deepEqual(commands,['STATUS']);assert.deepEqual(h.navigations,[]);
  assert.match(h.status.textContent,/readiness could not be verified/);
  assert.ok(h.ports.every(port=>port.closed));assert.equal(h.timers.size,0);
+});
+
+test('refresh rejects incomplete or malformed recovery results before reopening',async()=>{
+ for(const recovered of [{complete:false,count:1,total:2,release:'current'},{complete:true,count:1,total:2,release:'current'}]){
+  const h=recoveryPage({register:async()=>({...registration(),active:{postMessage(message,ports){ports[0].postMessage(message.type==='STATUS'?{complete:false,count:0,total:0,release:'current'}:recovered);}}})});
+  await h.done;assert.deepEqual(h.navigations,[]);assert.match(h.status.textContent,/not complete|could not be verified/);
+ }
+});
+
+test('refresh never reopens when restored worker release differs from the live deployment',async()=>{
+ const h=recoveryPage({register:async()=>({...registration(),active:{postMessage(message,ports){ports[0].postMessage(message.type==='STATUS'?{complete:false,count:0,total:0,release:'current'}:{complete:true,count:1,total:1,release:'current'});}}}),fetch:async()=>({ok:true,json:async()=>({release:'newer'})})});
+ await h.done;assert.deepEqual(h.navigations,[]);assert.match(h.status.textContent,/still preparing/);
+});
+
+
+test('corrupt inventory status remains a safe actionable diagnostic without automatic recovery',async()=>{
+ const commands=[];const h=recoveryPage({register:async()=>({...registration(),active:{postMessage(message,ports){commands.push(message.type);ports[0].postMessage({error:'Cached release inventory integrity mismatch'});}}})});
+ await h.done;assert.deepEqual(commands,['STATUS']);assert.deepEqual(h.navigations,[]);
+ assert.match(h.status.textContent,/integrity mismatch/);assert.match(h.status.textContent,/do not clear data or reinstall/);assert.match(h.status.textContent,/Install & Help/);
 });
