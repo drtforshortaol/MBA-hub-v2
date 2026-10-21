@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import {createHash,webcrypto} from 'node:crypto';
 
 const hash=value=>createHash('sha256').update(value).digest('hex');
-async function recoveryWorker(){
+async function recoveryWorker({crypto=webcrypto}={}){
  const root='https://example.test/v2/tester/',body='verified recovery bytes';
  const item={url:'apps/guide/index.html',bytes:Buffer.byteLength(body),sha256:hash(body)};
  const resources=[item],release=hash(JSON.stringify(resources)).slice(0,16);
@@ -16,7 +16,7 @@ async function recoveryWorker(){
  await current.put(root+'release.json',new Response(JSON.stringify(manifest)));
  const self={location:{href:root+'sw.js'},addEventListener(type,handler){handlers[type]=handler;}};
  const caches={async open(key){if(!stores.has(key))stores.set(key,make());return stores.get(key);},async keys(){return [...stores.keys()];}};
- vm.runInNewContext(fs.readFileSync('src/sw.js','utf8').replaceAll('__NAMESPACE__','mba-v2-tester').replaceAll('__RELEASE__',release),{self,caches,fetch:request=>network(request),Response,URL,crypto:webcrypto});
+ vm.runInNewContext(fs.readFileSync('src/sw.js','utf8').replaceAll('__NAMESPACE__','mba-v2-tester').replaceAll('__RELEASE__',release),{self,caches,fetch:request=>network(request),Response,URL,crypto});
  async function invoke(type,event){let result;handlers[type]({...event,waitUntil(p){result=p;},respondWith(p){result=p;}});return result;}
  return {root,body,item,manifest,current,stores,currentKey,
   network(fn){network=fn;},failPuts(){putsFail=true;},
@@ -146,4 +146,47 @@ test('offline and quota failures cannot claim full recovery or delete retained d
   assert.ok((await w.command('RECOVER_OFFLINE')).error);
   assert.equal(await (await w.current.match(w.root+w.item.url)).text(),before);
  }
+});
+
+test('corrupt cached metadata is typed by STATUS and explicitly recoverable against live release authority',async()=>{
+ for(const metadata of ['null','[]','7','{broken',JSON.stringify({}),JSON.stringify({release:'wrong',environment:'tester',resources:[]}),JSON.stringify({release:'wrong',environment:'developer',resources:[null]})]){
+  const w=await recoveryWorker();await w.current.put(w.root+'release.json',new Response(metadata));
+  const status=await w.status();assert.equal(status.code,'OFFLINE_INVENTORY_INVALID');assert.ok(status.error);
+  w.network(async request=>new Response(String(request).endsWith('release.json')?JSON.stringify(w.manifest):w.body));
+  assert.equal((await w.command('RECOVER_OFFLINE')).complete,true);
+  assert.equal((await w.status()).complete,true);
+ }
+});
+
+test('tampered inventory digest is typed but cannot authorize stale or forged live restoration',async()=>{
+ const w=await recoveryWorker(),forged={...w.manifest,resources:[{...w.item,bytes:1}]};
+ await w.current.put(w.root+'release.json',new Response(JSON.stringify(forged)));
+ assert.equal((await w.status()).code,'OFFLINE_INVENTORY_INVALID');
+ for(const live of [forged,{...w.manifest,release:'newer'}]){
+  w.network(async()=>new Response(JSON.stringify(live)));assert.ok((await w.command('RECOVER_OFFLINE')).error);
+  assert.equal(await (await w.current.match(w.root+'release.json')).text(),JSON.stringify(forged));
+ }
+});
+
+test('offline or interrupted corrupt inventory recovery preserves metadata and existing verified files',async()=>{
+ for(const offline of [false,true]){
+  const w=await recoveryWorker();await w.current.put(w.root+'release.json',new Response('malformed'));
+  w.network(async request=>{if(!offline&&String(request).endsWith('release.json'))return new Response(JSON.stringify(w.manifest));throw Error(offline?'offline':'interrupted');});
+  assert.ok((await w.command('RECOVER_OFFLINE')).error);
+  assert.equal(await (await w.current.match(w.root+'release.json')).text(),'malformed');
+  w.network(async request=>new Response(String(request).endsWith('release.json')?JSON.stringify(w.manifest):w.body));
+  assert.equal((await w.command('RECOVER_OFFLINE')).complete,true);
+ }
+});
+
+
+test('null resource entries are typed as invalid inventory rather than runtime failures',async()=>{
+ const w=await recoveryWorker();await w.current.put(w.root+'release.json',new Response(JSON.stringify({...w.manifest,resources:[null]})));
+ assert.equal((await w.status()).code,'OFFLINE_INVENTORY_INVALID');
+});
+
+
+test('runtime verification errors are not classified as recoverable metadata failures',async()=>{
+ const w=await recoveryWorker({crypto:{subtle:{digest:async()=>{throw Error('crypto unavailable');}}}});
+ const status=await w.status();assert.match(status.error,/crypto unavailable/);assert.equal(status.code,undefined);
 });
