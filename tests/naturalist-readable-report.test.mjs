@@ -76,3 +76,28 @@ test('portable report never presents mismatched or incomplete section evidence a
   assert.equal(JSON.stringify(p),before);
  }
 });
+
+test('portable worklist includes pending, revision, flagged originals and blockers without changing decisions',()=>{
+ const p=packet();p.entries.push({index:2,source_text:'Duplicate source.',duplicate_of:0,review:{flags:[]}});
+ p.review_decisions=newReviewDecisions(p.entries);
+ Object.assign(p.review_decisions[0],{scientific_status:'verified',editorial_status:'approved',proposed_action:'new-content'});
+ Object.assign(p.review_decisions[1],{scientific_status:'needs-revision',editorial_status:'approved',proposed_action:'no-change'});
+ const before=JSON.stringify(p),report=naturalistReadableReport(p);
+ const worklist=report.split('REVIEW WORKLIST')[1].split('ORIGINAL SOURCE')[0];
+ assert(worklist.includes('Statement 1: classifier or relationship comparison required; blocked: duplicate, scientific-conflict'));
+ assert(worklist.includes('Statement 2: scientific needs-revision; classifier or relationship comparison required'));
+ assert(worklist.includes('Statement 3: scientific pending; editorial pending; action needs-review; classifier or relationship comparison required'));
+ const original=report.split('STATEMENT 1\n')[1].split('STATEMENT 2\n')[0];
+ assert(original.includes('Referenced by: statement 2 (potential conflict); statement 3 (possible duplicate)'));
+ assert.equal(JSON.stringify(p),before);
+ assert(report.includes('not publication authorization'));
+});
+
+test('complete unflagged report worklist preserves separate draft and publication gates',()=>{
+ const p=packet();delete p.entries[1].conflict_with;p.entries[1].review.flags=[];
+ p.review_decisions.forEach(d=>Object.assign(d,{scientific_status:'verified',editorial_status:'approved',proposed_action:'no-change'}));
+ const before=JSON.stringify(p),report=naturalistReadableReport(p);
+ assert(report.includes('No incomplete, flagged or blocked statements. Draft validation and publication authorization remain separate.'));
+ assert.equal(report.match(/Referenced by: none recorded/g).length,2);
+ assert.equal(JSON.stringify(p),before);
+});
