@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {verifyReviewEvidence} from '../scripts/verify-review-evidence.mjs';
+import {OFFLINE_SCENARIOS} from '../scripts/verify-offline-navigation.mjs';
 const commit='a'.repeat(40);
 function fixture(t){
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'mba-evidence-'));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
@@ -15,7 +16,7 @@ function fixture(t){
   fs.writeFileSync(path.join(dir,environment,'search-index.json'),JSON.stringify([{app_id:'one',url:'apps/one/index.html#section'}]));
   const base={passed:true,environment,release,errors:[]};
   fs.writeFileSync(path.join(dir,`${environment}-http-report.json`),JSON.stringify({...base,expectedRelease:release,resources:{expected:3,verified:3}}));
-  for(const [name,scenario] of [['navigation','prepared-navigation'],['recovery','corrupted-entry-recovery']])fs.writeFileSync(path.join(dir,`offline-reports/${environment}-offline-${name}.json`),JSON.stringify({...base,scenario,resources:{expected:3,verified:3,errors:[]},offlineNetworkAttempts:0,apps:[{app_id:'one',passed:true,expected:3,verified:3,errors:[]},{app_id:'two',passed:true,expected:1,verified:1,errors:[]}]}));
+  for(const {file,name:scenario} of OFFLINE_SCENARIOS)fs.writeFileSync(path.join(dir,`offline-reports/${environment}-${file}.json`),JSON.stringify({...base,scenario,...(scenario.includes('inventory')?{recovery:{initialComplete:false,initialCount:0,initialTotal:0,interrupted:scenario==='interrupted-inventory-recovery',complete:true,count:3,total:3,retainedDataPreserved:true,cacheDeletions:0,activations:0}}:{}),resources:{expected:3,verified:3,errors:[]},offlineNetworkAttempts:0,apps:[{app_id:'one',passed:true,expected:3,verified:3,errors:[]},{app_id:'two',passed:true,expected:1,verified:1,errors:[]}]}));
  }
  return dir;
 }
@@ -79,4 +80,15 @@ for(const mutation of ['missing','truncated','failed','errors','string count'])t
  if(mutation==='string count')report.resources.expected=report.resources.verified='3';
  fs.writeFileSync(file,JSON.stringify(report));
  assert(verifyReviewEvidence(dir,commit).some(error=>error.includes('incomplete offline resource evidence')));
+});
+
+for(const mutation of ['missing','partial','not interrupted','deleted data','activated','missing report'])test(`review evidence rejects inventory restoration ${mutation}`,t=>{
+ const dir=fixture(t),file=path.join(dir,'offline-reports/tester-interrupted-recovery.json'),report=JSON.parse(fs.readFileSync(file));
+ if(mutation==='missing')delete report.recovery;
+ if(mutation==='partial')report.recovery.count=2;
+ if(mutation==='not interrupted')report.recovery.interrupted=false;
+ if(mutation==='deleted data')report.recovery.retainedDataPreserved=false;
+ if(mutation==='activated')report.recovery.activations=1;
+ if(mutation==='missing report')fs.unlinkSync(file);else fs.writeFileSync(file,JSON.stringify(report));
+ assert(verifyReviewEvidence(dir,commit).length);
 });

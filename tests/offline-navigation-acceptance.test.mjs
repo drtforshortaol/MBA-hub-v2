@@ -79,3 +79,24 @@ test('offline acceptance detects missing non-navigation resources',async t=>{
  assert(report.resources.errors.some(error=>error.startsWith('icon.svg:')));
  assert(report.resources.verified<report.resources.expected);
 });
+
+for(const interruptRecovery of [false,true])test(`whole generated inventory recovery works before offline navigation (interrupted=${interruptRecovery})`,async()=>{
+ for(const environment of ['developer','tester']){
+  const report=await verifyOfflineNavigation(`dist/${environment}`,environment,{recoverInventory:true,interruptRecovery});
+  assert.equal(report.passed,true,JSON.stringify(report));
+  assert.equal(report.recovery.interrupted,interruptRecovery);
+  assert.equal(report.recovery.retainedDataPreserved,true);
+  assert.equal(report.recovery.count,report.resources.expected);
+  assert.equal(report.resources.verified,report.resources.expected);
+  assert.equal(report.offlineNetworkAttempts,0);
+ }
+});
+test('whole inventory acceptance rejects a worker that cannot recover from refresh',async t=>{
+ const directory=fs.mkdtempSync(path.join(os.tmpdir(),'mba-inventory-recovery-'));
+ t.after(()=>fs.rmSync(directory,{recursive:true,force:true}));fs.cpSync('dist/tester',directory,{recursive:true});
+ const file=path.join(directory,'sw.js'),worker=fs.readFileSync(file,'utf8');
+ assert(worker.includes("type==='RECOVER_OFFLINE'"));
+ fs.writeFileSync(file,worker.replace("type==='RECOVER_OFFLINE'","type==='DISABLED_RECOVERY'"));
+ const report=await verifyOfflineNavigation(directory,'tester',{recoverInventory:true});
+ assert.equal(report.passed,false);assert(report.errors.some(error=>error.includes('readiness mismatch')));
+});
