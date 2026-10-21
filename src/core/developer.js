@@ -1,3 +1,4 @@
+import {hasNaturalistRelationshipFlag} from './naturalist-review-triage.js';
 import {renderNaturalistReferencedEvidence} from './naturalist-referenced-evidence.js';
 import {readReplacementDrafts,saveReplacementDrafts,createReplacementBackup,readReplacementBackup} from './naturalist-replacement-drafts.js';
 import {naturalistReadableReport} from './naturalist-readable-report.js';
@@ -187,7 +188,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     for(let offset=1;offset<=count;offset++){
      const index=(activeStatement+offset)%count;
      const entry=packet.entries[index];
-     if(entry.review.flags.length||entry.duplicate_of!==null&&entry.duplicate_of!==undefined){
+     if(entry.review.flags.length||hasNaturalistRelationshipFlag(packet.entries,index)){
       showStatement(index);statementCards[index]?.scrollIntoView({block:'nearest'});return;
      }
     }
