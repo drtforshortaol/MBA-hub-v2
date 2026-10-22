@@ -7,6 +7,7 @@ import {safeLocalPath} from './build.mjs';
 export function planOfflineMediaRegistration(context={}){
  const {apps,media,exists}=context??{};
  const catalog=new Map(),ambiguous=new Set(),errors=[],plans=[];
+ const dense=(values,valid)=>Array.isArray(values)&&Array.from({length:values.length},(_,index)=>Object.hasOwn(values,index)&&valid(values[index])).every(Boolean);
  const result=()=>({valid:errors.length===0,writePerformed:false,apps:plans.length,additions:plans.reduce((sum,plan)=>sum+plan.additions.length,0),plans,errors});
  if(!Array.isArray(apps))errors.push('registration input: apps must be an array');
  if(!Array.isArray(media?.assets))errors.push('media catalog: assets must be an array');
@@ -23,13 +24,20 @@ export function planOfflineMediaRegistration(context={}){
   catalog.set(asset.asset_id,asset);
   if(typeof asset.offline!=='boolean')errors.push(`media catalog: invalid offline intent ${asset.asset_id}`);
  }
+ const appIDs=new Set(),ambiguousApps=new Set();
+ for(const app of apps){
+  if(typeof app?.app_id!=='string'||!app.app_id.trim())continue;
+  if(appIDs.has(app.app_id)){errors.push(`registration input: duplicate app ID ${app.app_id}`);ambiguousApps.add(app.app_id);}
+  appIDs.add(app.app_id);
+ }
  for(const app of apps){
   if(!app||typeof app.app_id!=='string'||!app.app_id.trim()){
    errors.push('registration input: invalid app ID');continue;
   }
+  if(ambiguousApps.has(app.app_id))continue; // No manifest can be selected unambiguously.
   const appErrors=[];
-  if(!Array.isArray(app.media)||app.media.some(id=>typeof id!=='string'||!id.trim()))appErrors.push(`${app.app_id}: invalid media references`);
-  if(!Array.isArray(app.offline_assets)||app.offline_assets.some(asset=>!safeLocalPath(asset)))appErrors.push(`${app.app_id}: invalid offline asset paths`);
+  if(!dense(app.media,id=>typeof id==='string'&&!!id.trim()))appErrors.push(`${app.app_id}: invalid media references`);
+  if(!dense(app.offline_assets,safeLocalPath))appErrors.push(`${app.app_id}: invalid offline asset paths`);
   if(appErrors.length){errors.push(...appErrors);continue;}
   const registered=new Set(app.offline_assets),additions=[];
   for(const id of app.media){

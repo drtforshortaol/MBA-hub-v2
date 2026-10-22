@@ -162,3 +162,28 @@ test('unsafe catalog paths fail before filesystem access',()=>{
   assert.deepEqual(result.errors,['ray: missing/unsafe offline media new-photo']);
  }
 });
+
+
+test('duplicate app IDs never produce ambiguous manifest additions',()=>{
+ for(const reverse of [false,true]){
+  const context=fixture();context.apps.push({...context.apps[0],offline_assets:[]});
+  if(reverse)context.apps.reverse();
+  context.exists=()=>assert.fail('ambiguous app must not reach filesystem lookup');
+  const before=structuredClone(context.apps),result=planOfflineMediaRegistration(context);
+  assert.equal(result.valid,false);assert.deepEqual(result.plans,[]);
+  assert.deepEqual(result.errors,['registration input: duplicate app ID ray']);
+  assert.equal(result.writePerformed,false);assert.deepEqual(context.apps,before);
+ }
+});
+
+test('sparse or inherited manifest arrays cannot masquerade as complete declarations',()=>{
+ for(const field of ['media','offline_assets'])for(const inherited of [false,true]){
+  const context=fixture(),values=context.apps[0][field].slice(),original=values[0];delete values[0];
+  if(inherited)Object.setPrototypeOf(values,Object.assign(Object.create(Array.prototype),{0:original}));
+  context.apps[0][field]=values;
+  context.exists=()=>assert.fail('incomplete arrays must not reach filesystem lookup');
+  const result=planOfflineMediaRegistration(context);
+  assert.equal(result.valid,false);assert.deepEqual(result.plans,[]);
+  assert.equal(result.writePerformed,false);assert.equal(result.errors.length,1);
+ }
+});

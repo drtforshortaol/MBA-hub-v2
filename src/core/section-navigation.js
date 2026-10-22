@@ -25,6 +25,14 @@ export function createSectionNavigator({document,location,escape,skipInitial=fal
   }
   if(target.getAttribute?.('aria-expanded')==='false')target.click();
   else target.querySelector('[aria-expanded=false]')?.click();
+  // Keep keyboard and assistive-technology reading position with the revealed
+  // section. Native summaries retain their normal keyboard behavior; headings
+  // and other section containers gain only programmatic focus, not a Tab stop.
+  const focusTarget=target.tagName==='DETAILS'?target.querySelector('summary')||target:target;
+  if(typeof focusTarget.focus==='function'){
+   if(focusTarget.tabIndex<0&&!focusTarget.hasAttribute('tabindex'))focusTarget.setAttribute('tabindex','-1');
+   focusTarget.focus({preventScroll:true});
+  }
   target.scrollIntoView({block:'start'});
   return true;
  };

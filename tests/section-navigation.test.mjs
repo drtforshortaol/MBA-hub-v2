@@ -143,3 +143,26 @@ test('Interpretation Principles hidden panels reveal through the existing applic
  const navigate=createSectionNavigator({document,location:{hash:'#example-heading'},escape:value=>value});
  assert.equal(navigate(),true);assert.equal(control.expanded,'true');assert.equal(scrolls,1);
 });
+
+test('section focus follows panel expansion and precedes the single intentional scroll',()=>{
+ const f=fixture(),events=[],attributes=new Map();
+ Object.assign(f.target,{tabIndex:-1,hasAttribute:name=>attributes.has(name),setAttribute:(name,value)=>attributes.set(name,value),focus(options){assert.equal(f.inner.open,true);assert.equal(f.outer.open,true);assert.deepEqual(options,{preventScroll:true});events.push('focus');assert.equal(f.navigate(),false);},scrollIntoView(){events.push('scroll');}});
+ assert.equal(f.navigate(),true);
+ assert.deepEqual(events,['focus','scroll']);assert.equal(attributes.get('tabindex'),'-1');
+ assert.equal(f.navigate(),false);assert.deepEqual(events,['focus','scroll']);
+});
+test('details deep links focus their native summary without changing its Tab behavior',()=>{
+ const f=fixture();let summaryFocus=0,targetFocus=0;
+ const summary={tabIndex:0,focus(options){assert.deepEqual(options,{preventScroll:true});summaryFocus++;},setAttribute(){assert.fail('native summary must not acquire a tabindex override');}};
+ f.target.tagName='DETAILS';f.target.querySelector=selector=>selector==='summary'?summary:null;f.target.focus=()=>targetFocus++;
+ assert.equal(f.navigate(),true);assert.equal(summaryFocus,1);assert.equal(targetFocus,0);assert.equal(f.scrolls(),1);
+});
+test('explicit section tabindex and contextual Back focus remain untouched',()=>{
+ for(const tabIndex of [-1,0,2]){
+  const f=fixture();let focused=0;
+  Object.assign(f.target,{tabIndex,hasAttribute:name=>name==='tabindex',setAttribute(){assert.fail('explicit tabindex must be preserved');},focus(){focused++;}});
+  assert.equal(f.navigate(),true);assert.equal(focused,1);
+ }
+ const f=fixture('#habitat',true);f.target.focus=()=>assert.fail('Back restoration must not steal focus');
+ assert.equal(f.navigate(),false);
+});

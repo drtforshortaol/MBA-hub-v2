@@ -18,6 +18,7 @@ jobs:
           npm run validate
           npm run build
           npm run content:check:all
+          node scripts/plan-offline-media-registration.mjs
           npm run security:scan
           npm test
           node --test tests/security-review.test.mjs
