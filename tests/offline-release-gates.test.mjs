@@ -33,11 +33,11 @@ test('release gate remains blocked for unreviewed development applications',()=>
  assert(errors.includes('content review pending: ray'));
 });
 
-test('inherited V1 approval applies only to explicitly marked applications',()=>{
+test('a manually marked inherited source label cannot bypass missing fidelity evidence',()=>{
  const platform={migrationComplete:true,ownerApproved:true,pilotPassed:true,deviceOfflinePassed:true,rollbackDevicePassed:true,privacyReviewed:true};
  const apps=[{app_id:'legacy',status:'development',source_repository:'legacy-repo',publication_review:'inherited-v1-approved'},{app_id:'new',status:'development'}];
  const errors=releaseErrors(platform,apps,{assets:[]},{apps:[{id:'legacy'},{id:'new'}]});
- assert(!errors.includes('content review pending: legacy'));
+ assert(errors.includes('content review pending: legacy'));
  assert(errors.includes('content review pending: new'));
 });
 
