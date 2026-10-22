@@ -2,6 +2,8 @@
 
 ## Current status — alpha.7, completion and acceptance review
 
+Follow-up: [three static V1 migrations reconciled](docs/INHERITED_STATIC_RECONCILIATION_20261022.md) using complete source/code/media and search-text evidence. No new scientific, image or device approval is granted; the changed tester metadata requires a newly identified acceptance candidate.
+
 Latest: [verified October 22 acceptance candidate](docs/ACCEPTANCE_CANDIDATE_20261022.md) and [completion batch](docs/COMPLETION_BATCH_20261022.md). Current catalog registration is complete for supported local references, with nine explicit pending image-rights reviews; use the newly identified combined candidate for future acceptance.
 
 [Current completion instructions](docs/COMPLETION_INSTRUCTIONS_20261021.md) supersede stale work priorities. The declared-media planner is clean, but [independent referenced-media coverage](docs/LOCAL_MEDIA_COVERAGE_20261021.md) identified nine catalog gaps; pending registration records preserve their unresolved permission reviews. Evidence-bound inherited metadata now distinguishes unchanged V1 authority from unresolved current-app fidelity. A new combined candidate is required for the changed tester metadata.
@@ -12,7 +14,7 @@ The current integration contains 33 applications (26 listed, seven supporting/un
 
 Start with the [completion audit](docs/COMPLETION_AUDIT_20261021.md) and [fixed-build acceptance checklist](docs/FIXED_BUILD_ACCEPTANCE_20261021.md). The fixed Batch 13 candidate is source `96a9303ef54f0d0fc6cccb8ef0da2fed9f8609de`, with [successful hosted CI and downloadable artifact](https://github.com/drtforshortaol/MBA-hub-v2/actions/runs/39717669206). Its combined Node 788/788, EVO 35/35 and application preflight 33/33 passed. These are dated evidence, not a promise about later checkouts; inspect the matching build's verification results.
 
-The 47 current release blockers comprise 32 inherited-approval reconciliation records, one new seahorse app review, nine pending image-permission records and five operational gates. New October content within migrated apps remains separately scoped for review. [Existing V1 approval](docs/GUIDE_CONTENT_RESTORED.md) carries forward for unchanged migrated content; do not ask for identical content/photos/guide details to be approved again. Verify content fidelity and review new or materially altered content separately. The read-only readiness report distinguishes these tasks without granting approvals.
+The 44 current release blockers comprise 29 inherited-approval reconciliation records, one new seahorse app review, nine pending image-permission records and five operational gates. New October content within migrated apps remains separately scoped for review. [Existing V1 approval](docs/GUIDE_CONTENT_RESTORED.md) carries forward for unchanged migrated content; do not ask for identical content/photos/guide details to be approved again. Verify content fidelity and review new or materially altered content separately. The read-only readiness report distinguishes these tasks without granting approvals.
 
 Current-build physical iPhone acceptance, full-collection interactions/media, update/rollback, reviewer pilot and final operational records remain outstanding. Android/Windows installation, growth/performance capacity and placement of six empty categories/seven supporting apps remain unverified or unresolved. No percentage or release date is certified.
 

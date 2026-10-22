@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generatedAt": "2026-10-22T15:37:53.937Z",
+  "generatedAt": "2026-10-22T22:37:22.143Z",
   "platformVersion": "2.0.0-alpha.7",
   "stage": "migration-review",
   "apps": 33,
@@ -18,15 +18,12 @@
     "content review pending: aquarium-library-explorer",
     "content review pending: big-bellied-seahorse",
     "content review pending: bluespotted-ribbontail-ray",
-    "content review pending: california-flying-fish",
     "content review pending: california-sheephead",
     "content review pending: evolution-timeline",
     "content review pending: five-senses-pwa",
-    "content review pending: flamboyant-cuttlefish",
     "content review pending: gooseneck-barnacle",
     "content review pending: gray-whale",
     "content review pending: gray-whale-skeleton-exhibit",
-    "content review pending: green-falsejingle",
     "content review pending: hopkins-rose-nudibranch",
     "content review pending: inaturalist-citizen-science",
     "content review pending: information-center",
@@ -58,7 +55,7 @@
     "media permission review: asset-93c15fb934aba9e6"
   ],
   "publicationReview": {
-    "inheritedV1Content": 0,
+    "inheritedV1Content": 3,
     "scope": "Inherited V1 content only; do not confuse with production approval"
   },
   "deviceQA": {
