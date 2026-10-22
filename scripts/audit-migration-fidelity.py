@@ -55,6 +55,12 @@ def prose(data):
     return ' '.join(parser.parts)
 
 
+def replace_quoted_url(text, url, marker):
+    # Replace a complete quoted URL, never a substring inside prose/comments.
+    pattern = re.compile(r"([\"'])" + re.escape(url) + r"\1")
+    return pattern.sub(lambda match: match.group(1) + marker + match.group(1), text)
+
+
 def media_normalized_data(source, current, folder, repo, commit, media):
     """Normalize only quoted image URLs whose pinned bytes are independently read.
 
@@ -75,15 +81,18 @@ def media_normalized_data(source, current, folder, repo, commit, media):
             continue
         sha = digest(pinned)
         marker = 'PINNED-MEDIA-SHA256:' + sha
-        before = before.replace(token, marker)
         mapped = []
         for asset in media:
             local_path = ROOT / 'src' / asset['path']
             relative_url = posixpath.relpath(asset['path'], 'apps/' + Path(folder).name)
-            if relative_url in after and digest(local_path.read_bytes()) == sha:
-                after = after.replace(relative_url, marker)
+            if relative_url not in after:
+                continue
+            normalized = replace_quoted_url(after, relative_url, marker)
+            if normalized != after and digest(local_path.read_bytes()) == sha:
+                after = normalized
                 mapped.append(asset['path'])
         if mapped:
+            before = replace_quoted_url(before, token, marker)
             replacements.append({'source_url': token, 'source_path': path, 'sha256': sha, 'current_paths': mapped})
     return {'equal_after_only_image_url_normalization': before == after,
             'pinned_normalized_sha256': digest(before.encode()),

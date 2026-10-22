@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "assets": [
     {
       "asset_id": "five-senses-header",
@@ -4055,6 +4055,186 @@
       "source_path": "IMG_3475.jpeg",
       "uses": [],
       "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
+    },
+    {
+      "asset_id": "asset-1bd100105f88c83a",
+      "path": "apps/IMG_4207.jpeg",
+      "owner": "media-library",
+      "alt": "Ancient murrelets",
+      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
+      "permission": "review-required",
+      "offline": true,
+      "sha256": "1bd100105f88c83aadb9272fccacd1c023e417799d1b7dc79684e7f321bafb6e",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4207.jpeg",
+      "uses": [
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "src/apps/IMG_4207.jpeg"
+        }
+      ],
+      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+    },
+    {
+      "asset_id": "asset-95daa2493750e82f",
+      "path": "apps/IMG_4208.jpeg",
+      "owner": "media-library",
+      "alt": "Rhinoceros auklets",
+      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
+      "permission": "review-required",
+      "offline": true,
+      "sha256": "95daa2493750e82f0444679b1c567d66af4e5212ab9d864eca3f2ddb8e475f1d",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4208.jpeg",
+      "uses": [
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "src/apps/IMG_4208.jpeg"
+        }
+      ],
+      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+    },
+    {
+      "asset_id": "asset-47f9bbb193878eec",
+      "path": "apps/IMG_4209.jpeg",
+      "owner": "media-library",
+      "alt": "Fork-tailed storm-petrel near Wharf 2",
+      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
+      "permission": "review-required",
+      "offline": true,
+      "sha256": "47f9bbb193878eeced59326418949849427489f0167e33a7e063be9d091f643b",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4209.jpeg",
+      "uses": [
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "src/apps/IMG_4209.jpeg"
+        }
+      ],
+      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+    },
+    {
+      "asset_id": "asset-50646c3fe1d0c359",
+      "path": "apps/IMG_4210.jpeg",
+      "owner": "media-library",
+      "alt": "Moon jelly ephyra anatomy",
+      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
+      "permission": "review-required",
+      "offline": true,
+      "sha256": "50646c3fe1d0c359860229e041767429fc21a382cd16d75bd165fd5f7a3cef52",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4210.jpeg",
+      "uses": [
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "src/apps/IMG_4210.jpeg"
+        }
+      ],
+      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+    },
+    {
+      "asset_id": "asset-486b6cdb96375dfb",
+      "path": "apps/IMG_4212.jpeg",
+      "owner": "media-library",
+      "alt": "Source-provided seahorse educational illustration 4212",
+      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
+      "permission": "review-required",
+      "offline": true,
+      "sha256": "486b6cdb96375dfb0c5fa97a8d9538ff81384cc4360d8884875cb71eb16b6e53",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4212.jpeg",
+      "uses": [
+        {
+          "app_id": "big-bellied-seahorse",
+          "source_path": "src/apps/IMG_4212.jpeg"
+        }
+      ],
+      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+    },
+    {
+      "asset_id": "asset-2913dc8df835400c",
+      "path": "apps/IMG_4213.jpeg",
+      "owner": "media-library",
+      "alt": "Source-provided seahorse educational illustration 4213",
+      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
+      "permission": "review-required",
+      "offline": true,
+      "sha256": "2913dc8df835400ca429d1626e1aebbbdbe358f313db4e6f9b26d88629230889",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4213.jpeg",
+      "uses": [
+        {
+          "app_id": "big-bellied-seahorse",
+          "source_path": "src/apps/IMG_4213.jpeg"
+        }
+      ],
+      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+    },
+    {
+      "asset_id": "asset-e62b39cc07a542c4",
+      "path": "apps/IMG_4214.jpeg",
+      "owner": "media-library",
+      "alt": "Source-provided seahorse educational illustration 4214",
+      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
+      "permission": "review-required",
+      "offline": true,
+      "sha256": "e62b39cc07a542c4def4dd10a7a5f17cdf7dddb235fd81af7c20b564089c1fea",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4214.jpeg",
+      "uses": [
+        {
+          "app_id": "big-bellied-seahorse",
+          "source_path": "src/apps/IMG_4214.jpeg"
+        }
+      ],
+      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+    },
+    {
+      "asset_id": "asset-54f52bac7bc827bc",
+      "path": "apps/IMG_4215.jpeg",
+      "owner": "media-library",
+      "alt": "Source-provided seahorse educational illustration 4215",
+      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
+      "permission": "review-required",
+      "offline": true,
+      "sha256": "54f52bac7bc827bc49ca4d0d5e3fd121988d61fc9dd75aa65bdca2cbbcd8ce4a",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4215.jpeg",
+      "uses": [
+        {
+          "app_id": "big-bellied-seahorse",
+          "source_path": "src/apps/IMG_4215.jpeg"
+        }
+      ],
+      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+    },
+    {
+      "asset_id": "asset-93c15fb934aba9e6",
+      "path": "apps/IMG_4216.jpeg",
+      "owner": "media-library",
+      "alt": "Source-provided seahorse educational illustration 4216",
+      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
+      "permission": "review-required",
+      "offline": true,
+      "sha256": "93c15fb934aba9e67b2cc30cc9732565460cea8d395ba408f37d0a8982d4a19c",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4216.jpeg",
+      "uses": [
+        {
+          "app_id": "big-bellied-seahorse",
+          "source_path": "src/apps/IMG_4216.jpeg"
+        }
+      ],
+      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
     }
   ]
 }

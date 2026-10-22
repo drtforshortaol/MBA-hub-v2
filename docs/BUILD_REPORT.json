@@ -1,46 +1,111 @@
 {
+  "schema_version": 2,
+  "generatedAt": "2026-10-22T15:37:53.937Z",
   "platformVersion": "2.0.0-alpha.7",
-  "apps": 32,
+  "stage": "migration-review",
+  "apps": 33,
   "categories": 11,
+  "buildValidation": "passed",
+  "automatedTests": "run separately by CI",
+  "releaseEligible": false,
   "releaseBlocked": [
     "release gate: ownerApproved",
     "release gate: pilotPassed",
     "release gate: deviceOfflinePassed",
     "release gate: rollbackDevicePassed",
     "release gate: privacyReviewed",
-    "unapproved: applied-water-science-life-support",
-    "unapproved: aquarium-library-explorer",
-    "unapproved: bluespotted-ribbontail-ray",
-    "unapproved: california-flying-fish",
-    "unapproved: california-sheephead",
-    "unapproved: evolution-timeline",
-    "unapproved: five-senses-pwa",
-    "unapproved: flamboyant-cuttlefish",
-    "unapproved: gooseneck-barnacle",
-    "unapproved: gray-whale",
-    "unapproved: gray-whale-skeleton-exhibit",
-    "unapproved: green-falsejingle",
-    "unapproved: hopkins-rose-nudibranch",
-    "unapproved: inaturalist-citizen-science",
-    "unapproved: information-center",
-    "unapproved: interpretation-principles",
-    "unapproved: kelp-forest",
-    "unapproved: mba-leadership",
-    "unapproved: mmc-narrations",
-    "unapproved: naturalist-field-notes",
-    "unapproved: northern-elephant-seal",
-    "unapproved: open-sea",
-    "unapproved: pacific-white-sided-dolphin",
-    "unapproved: pseudo-nitzschia",
-    "unapproved: sea-slugs-nudibranchs",
-    "unapproved: sperm-whale",
-    "unapproved: stargazer-species-guide",
-    "unapproved: tree-of-life-origins",
-    "unapproved: whale-associated-organisms",
-    "unapproved: whale-parasites-associates",
-    "unapproved: wildfires-ocean-health",
-    "unapproved: wildlife-rescue"
+    "content review pending: applied-water-science-life-support",
+    "content review pending: aquarium-library-explorer",
+    "content review pending: big-bellied-seahorse",
+    "content review pending: bluespotted-ribbontail-ray",
+    "content review pending: california-flying-fish",
+    "content review pending: california-sheephead",
+    "content review pending: evolution-timeline",
+    "content review pending: five-senses-pwa",
+    "content review pending: flamboyant-cuttlefish",
+    "content review pending: gooseneck-barnacle",
+    "content review pending: gray-whale",
+    "content review pending: gray-whale-skeleton-exhibit",
+    "content review pending: green-falsejingle",
+    "content review pending: hopkins-rose-nudibranch",
+    "content review pending: inaturalist-citizen-science",
+    "content review pending: information-center",
+    "content review pending: interpretation-principles",
+    "content review pending: kelp-forest",
+    "content review pending: mba-leadership",
+    "content review pending: mmc-narrations",
+    "content review pending: naturalist-field-notes",
+    "content review pending: northern-elephant-seal",
+    "content review pending: open-sea",
+    "content review pending: pacific-white-sided-dolphin",
+    "content review pending: pseudo-nitzschia",
+    "content review pending: sea-slugs-nudibranchs",
+    "content review pending: sperm-whale",
+    "content review pending: stargazer-species-guide",
+    "content review pending: tree-of-life-origins",
+    "content review pending: whale-associated-organisms",
+    "content review pending: whale-parasites-associates",
+    "content review pending: wildfires-ocean-health",
+    "content review pending: wildlife-rescue",
+    "media permission review: asset-1bd100105f88c83a",
+    "media permission review: asset-95daa2493750e82f",
+    "media permission review: asset-47f9bbb193878eec",
+    "media permission review: asset-50646c3fe1d0c359",
+    "media permission review: asset-486b6cdb96375dfb",
+    "media permission review: asset-2913dc8df835400c",
+    "media permission review: asset-e62b39cc07a542c4",
+    "media permission review: asset-54f52bac7bc827bc",
+    "media permission review: asset-93c15fb934aba9e6"
   ],
-  "browserQA": "not performed",
-  "deviceQA": "pending for migrated collection"
+  "publicationReview": {
+    "inheritedV1Content": 0,
+    "scope": "Inherited V1 content only; do not confuse with production approval"
+  },
+  "deviceQA": {
+    "status": "verified",
+    "detail": "Owner tested selected apps, navigation, offline mode, update, rollback, and QR code display.",
+    "scope": "iPhone, representative application flows"
+  },
+  "qaEvidence": {
+    "v1_content_approval": {
+      "status": "verified",
+      "detail": "Owner authorized inherited V1 content and media for V2 tester on 2026-10-12; public-review.json records zero withheld applications.",
+      "scope": "existing V1-migrated content only"
+    },
+    "ios_device_qa": {
+      "status": "verified",
+      "detail": "Owner tested selected apps, navigation, offline mode, update, rollback, and QR code display.",
+      "scope": "iPhone, representative application flows"
+    },
+    "tap_to_call": {
+      "status": "verified",
+      "detail": "Owner confirmed Information Center tap-to-call functions on iPhone."
+    },
+    "tester_deploy": {
+      "status": "verified",
+      "detail": "GitHub Pages tester workflow 38471402857 succeeded."
+    },
+    "pilot_other_guides": {
+      "status": "not_verified",
+      "detail": "No separate small-group pilot result recorded."
+    },
+    "android_install": {
+      "status": "not_verified",
+      "detail": "Not yet physically tested."
+    },
+    "windows_install": {
+      "status": "not_verified",
+      "detail": "Not yet physically tested."
+    },
+    "production_release": {
+      "status": "not_verified",
+      "detail": "Remaining release gates and broader verification incomplete."
+    }
+  },
+  "qaEvidenceRecordedOn": "2026-10-13",
+  "explicitOutstanding": [
+    "Pilot with additional guides not recorded",
+    "Android and Windows physical device tests not recorded",
+    "Comprehensive dynamic app/media and 100-200 app performance validation pending"
+  ]
 }

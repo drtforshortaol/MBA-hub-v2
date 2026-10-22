@@ -15,8 +15,8 @@ const actions={
 };
 
 // A read-only view of existing gates. This never writes approvals or publishes.
-export function assessReleaseReadiness({platform,apps,media,inventory,qaEvidence,migrationProvenance=null,technicalErrors=null,expectedCommit=null}){
- const blocked=releaseErrors(platform,apps,media,inventory);
+export function assessReleaseReadiness({platform,apps,media,inventory,qaEvidence,migrationProvenance=null,inheritanceEvidence=null,sourceRoot=path.join(root,'src'),technicalErrors=null,expectedCommit=null}){
+ const blocked=releaseErrors(platform,apps,media,inventory,{provenance:migrationProvenance,evidence:inheritanceEvidence,sourceRoot});
  const blockers=blocked.map(reason=>{
   const [kind,id]=reason.split(': ');
   const app=apps.find(app=>app.app_id===id);
@@ -51,7 +51,7 @@ export function assessRepositoryReadiness({evidenceDirectory=null,expectedCommit
  if(expectedCommit!==null&&!/^[a-f0-9]{40}$/.test(expectedCommit))throw Error('Expected checkout commit must be 40 lowercase hexadecimal characters');
  const read=name=>JSON.parse(fs.readFileSync(path.join(root,name),'utf8'));
  const apps=fs.readdirSync(path.join(root,'src/apps'),{withFileTypes:true}).filter(entry=>entry.isDirectory()).map(entry=>read(`src/apps/${entry.name}/manifest.json`)).sort((a,b)=>a.app_id.localeCompare(b.app_id));
- return assessReleaseReadiness({platform:read('config/platform.json'),apps,media:read('src/shared/media/catalog.json'),inventory:read('config/v1-inventory.json'),qaEvidence:read('config/qa-evidence.json'),migrationProvenance:read('config/migration-provenance.json'),
+ return assessReleaseReadiness({platform:read('config/platform.json'),apps,media:read('src/shared/media/catalog.json'),inventory:read('config/v1-inventory.json'),qaEvidence:read('config/qa-evidence.json'),migrationProvenance:read('config/migration-provenance.json'),inheritanceEvidence:fs.existsSync(path.join(root,'config/inherited-v1-fidelity.json'))?read('config/inherited-v1-fidelity.json'):null,sourceRoot:path.join(root,'src'),
   technicalErrors:evidenceDirectory===null?null:verifyReviewEvidence(path.resolve(evidenceDirectory),expectedCommit),expectedCommit});
 }
 

@@ -1,0 +1,73 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {auditLocalMediaCoverage,extractMediaReferences,resolveLocalMedia} from '../scripts/audit-local-media-coverage.mjs';
+
+const app={app_id:'fish',media:['photo'],offline_assets:['shared/media/fish.jpg']};
+const asset={asset_id:'photo',path:'shared/media/fish.jpg',permission:'owner-approved-v1',permission_evidence:'Recorded V1 owner authorization'};
+const audit=(html,changes={})=>auditLocalMediaCoverage({apps:[app],media:{assets:[asset]},files:[{path:'apps/fish/index.html',text:html}],exists:()=>true,...changes});
+
+test('cataloged media requires app registration, offline coverage and recorded permission evidence',()=>{
+ assert.equal(audit('<img src="../../shared/media/fish.jpg">').complete,true);
+ const r=audit('<img src="../../shared/media/fish.jpg">',{apps:[{...app,media:[],offline_assets:[]}],media:{assets:[{...asset,permission:'review-required',permission_evidence:''}]}});
+ assert.deepEqual(r.resources[0].issues,['not-in-app-media','permission-evidence-missing','not-in-app-offline-assets']);
+ assert.equal(r.writePerformed,false);
+});
+test('uncataloged offline image produces registration and permission findings without moving it',()=>{
+ const apps=[{...app,offline_assets:['apps/new.jpg']}],r=audit('<img src="../new.jpg"><img src="../new.jpg">',{apps});
+ assert.equal(r.summary.uncataloged_resources,1);
+ assert.deepEqual(r.resources[0].issues,['not-in-media-catalog','permission-evidence-missing']);
+ assert.equal(r.resources[0].path,'apps/new.jpg');
+ assert.equal(r.resources[0].references.length,1);
+ assert.equal(r.complete,false);
+});
+test('relative paths, suffixes and percent encoding normalize; escapes fail before existence callbacks',()=>{
+ assert.deepEqual(resolveLocalMedia('apps/fish/index.html','../../shared/media/fish.jpg?v=1#details'),{path:'shared/media/fish.jpg'});
+ assert.deepEqual(resolveLocalMedia('apps/fish/index.html','../%6eew.jpg'),{path:'apps/new.jpg'});
+ let calls=0;
+ const r=audit('<img src="../../../../etc/photo.jpg"><img src="..%5cphoto.jpg"><img src="%zz.jpg">',{exists:()=>{calls++;return true;}});
+ assert.equal(calls,0);assert.equal(r.errors.length,3);assert.equal(r.complete,false);
+});
+test('literal scanner ignores comments, prose URLs, external/data resources and interpolated templates',()=>{
+ const js='// src: "fake.jpg"\n/* image: "fake2.jpg" */ const a={detail:"Hero image file: fake3.jpg.",src:"../../shared/media/fish.jpg"}; const b={image:`${folder}/dynamic.jpg`};';
+ assert.deepEqual(extractMediaReferences('apps/fish/data.js',js),[{url:'../../shared/media/fish.jpg',kind:'script-media-property'}]);
+ assert.equal(audit('<img src="https://example.test/image.jpg"><img src="data:image/svg+xml,a"><!-- <img src="fake.jpg"> -->').summary.local_resources,0);
+ const refs=extractMediaReferences('apps/fish/index.html','<img alt="example src=\'fake.jpg\'" src="../../shared/media/fish.jpg">');
+ assert.equal(refs.length,1);assert.equal(refs[0].url,'../../shared/media/fish.jpg');
+});
+test('source/srcset, video posters and CSS URLs are audited with shared paths deduplicated',()=>{
+ const r=audit('<video poster="../../shared/media/fish.jpg"><source src="clip.mp4"></video><img srcset="../../shared/media/fish.jpg 1x, other.webp 2x"><style>.hero{background:url("../../shared/media/fish.jpg")}</style>');
+ assert.equal(r.resources.length,3);
+ assert.equal(r.resources.find(x=>x.path==='shared/media/fish.jpg').references.length,3);
+ assert.ok(r.resources.some(x=>x.path==='apps/fish/clip.mp4'));
+ assert.ok(r.resources.some(x=>x.path==='apps/fish/other.webp'));
+});
+test('missing files and denied or unknown permission labels remain findings',()=>{
+ for(const permission of ['denied','pending','mystery']){
+  const r=audit('<img src="../../shared/media/fish.jpg">',{exists:()=>false,media:{assets:[{...asset,permission}]}});
+  assert.deepEqual(r.resources[0].issues,['missing-local-file','permission-evidence-missing']);
+ }
+});
+test('platform shell icon exemption is explicit and unsafe catalog/source paths fail closed',()=>{
+ const r=audit('<img src="../../icon.svg">');assert.equal(r.resources.length,0);assert.equal(r.platform_exemptions.length,1);
+ assert.throws(()=>audit('',{media:{assets:[{...asset,path:'../outside.jpg'}]}}),/Invalid/);
+ assert.throws(()=>audit('',{files:[{path:'../outside.html',text:''}]}),/Unsafe/);
+ assert.throws(()=>audit('',{media:{assets:[asset,asset]}}),/duplicate/);
+});
+test('ambiguous ownership cannot silently hide one app declaration',()=>{
+ assert.throws(()=>audit('',{apps:[app,app]}),/duplicate app/);
+});
+test('approved path aliases cannot mask unapproved records selected by the app',()=>{
+ const pending={...asset,permission:'review-required',permission_evidence:''};
+ const approvedAlias={...asset,asset_id:'approved-alias'};
+ for(const media of [{assets:[pending,approvedAlias]},{assets:[approvedAlias,pending]}]){
+  const unapproved=audit('<img src="../../shared/media/fish.jpg">',{media});
+  assert.deepEqual(unapproved.resources[0].issues,['permission-evidence-missing']);
+  assert.equal(unapproved.complete,false);
+  const both=audit('<img src="../../shared/media/fish.jpg">',{media,apps:[{...app,media:['photo','approved-alias']}]});
+  assert.deepEqual(both.resources[0].issues,['permission-evidence-missing']);
+  const approved=audit('<img src="../../shared/media/fish.jpg">',{media,apps:[{...app,media:['approved-alias']}]});
+  assert.equal(approved.complete,true);
+ }
+ const undeclared=audit('<img src="../../shared/media/fish.jpg">',{apps:[{...app,media:[]}]});
+ assert.deepEqual(undeclared.resources[0].issues,['not-in-app-media','permission-evidence-missing']);
+});

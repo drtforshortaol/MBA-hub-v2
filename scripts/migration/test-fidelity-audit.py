@@ -20,6 +20,36 @@ class FidelityTests(unittest.TestCase):
         self.assertEqual(audit.prose(b'<p hidden>A &amp;  B</p><script>new claim</script><style>x</style>'), 'A & B')
         self.assertNotEqual(audit.prose(b'<p>32 days</p>'), audit.prose(b'<p>33 days</p>'))
 
+    def test_image_url_normalization_preserves_prose_numbers_and_binary_identity(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp) / 'v2'
+            repo = Path(temp) / 'source'
+            (repo / 'apps/kelp-forest/images').mkdir(parents=True)
+            (repo / 'apps/kelp-forest/images/hero.jpg').write_bytes(b'pinned image')
+            subprocess.run(['git', 'init', str(repo)], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            subprocess.run(['git', '-C', str(repo), 'add', '.'], check=True)
+            subprocess.run(['git', '-C', str(repo), '-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.invalid', 'commit', '-m', 'pinned'], check=True, stdout=subprocess.DEVNULL)
+            commit = audit.git(repo, 'rev-parse', 'HEAD').decode().strip()
+            (root / 'src/shared/media').mkdir(parents=True)
+            image = root / 'src/shared/media/hero.jpg'
+            image.write_bytes(b'pinned image')
+            media = [{'path': 'shared/media/hero.jpg'}]
+            source = b'window.DATA={src:"images/hero.jpg",detail:"Hero image file: images/hero.jpg.",count:32}; // images/hero.jpg remains documented'
+            current = source.replace(b'src:"images/hero.jpg"', b'src:"../../shared/media/hero.jpg"')
+            def compare(value):
+                with patch.object(audit, 'ROOT', root):
+                    return audit.media_normalized_data(source, value, 'apps/kelp-forest/', repo, commit, media)
+            result = compare(current)
+            self.assertTrue(result['equal_after_only_image_url_normalization'])
+            self.assertEqual(result['pinned_normalized_sha256'], result['current_normalized_sha256'])
+            self.assertEqual(len(result['image_url_mappings']), 1)
+            # URL normalization must not hide alterations in a prose field or numerical claim.
+            self.assertFalse(compare(current.replace(b'Hero image file:', b'New scientific claim:'))['equal_after_only_image_url_normalization'])
+            self.assertFalse(compare(current.replace(b'count:32', b'count:33'))['equal_after_only_image_url_normalization'])
+            self.assertFalse(compare(current.replace(b'// images/hero.jpg remains documented', b'// images/other.jpg remains documented'))['equal_after_only_image_url_normalization'])
+            image.write_bytes(b'altered image')
+            self.assertFalse(compare(current)['equal_after_only_image_url_normalization'])
+
     def test_reads_pinned_commit_even_when_head_and_worktree_change(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp) / 'v2'

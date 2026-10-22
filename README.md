@@ -2,13 +2,17 @@
 
 ## Current status — alpha.7, completion and acceptance review
 
+Latest: [October 22 completion batch](docs/COMPLETION_BATCH_20261022.md). Current catalog registration is complete for supported local references, with nine explicit pending image-rights reviews; use the newly identified combined candidate for future acceptance.
+
+[Current completion instructions](docs/COMPLETION_INSTRUCTIONS_20261021.md) supersede stale work priorities. The declared-media planner is clean, but [independent referenced-media coverage](docs/LOCAL_MEDIA_COVERAGE_20261021.md) identified nine catalog gaps; pending registration records preserve their unresolved permission reviews. Evidence-bound inherited metadata now distinguishes unchanged V1 authority from unresolved current-app fidelity. A new combined candidate is required for the changed tester metadata.
+
 New finding: the Information Center phone renderer required a runtime fix. See [completion progress and replacement candidate](docs/COMPLETION_PROGRESS_20261021.md). The older fixed artifact below remains historical; it is not the final acceptance candidate after this fix.
 
-The current integration contains 33 applications (26 listed, seven supporting/unlisted), 11 categories and 203 catalog media assets. All 25 V1 inventory apps are present. The recorded core Naturalist, navigation/search, offline/recovery and evidence/security workstreams are implemented; full-release acceptance remains incomplete.
+The current integration contains 33 applications (26 listed, seven supporting/unlisted), 11 categories and 212 catalog media assets. All 25 V1 inventory apps are present. The recorded core Naturalist, navigation/search, offline/recovery and evidence/security workstreams are implemented; full-release acceptance remains incomplete.
 
 Start with the [completion audit](docs/COMPLETION_AUDIT_20261021.md) and [fixed-build acceptance checklist](docs/FIXED_BUILD_ACCEPTANCE_20261021.md). The fixed Batch 13 candidate is source `96a9303ef54f0d0fc6cccb8ef0da2fed9f8609de`, with [successful hosted CI and downloadable artifact](https://github.com/drtforshortaol/MBA-hub-v2/actions/runs/39717669206). Its combined Node 788/788, EVO 35/35 and application preflight 33/33 passed. These are dated evidence, not a promise about later checkouts; inspect the matching build's verification results.
 
-The 38 current release blockers comprise 32 inherited-approval reconciliation records, one new seahorse content review and five operational gates. [Existing V1 approval](docs/GUIDE_CONTENT_RESTORED.md) carries forward for unchanged migrated content; do not ask for identical content/photos/guide details to be approved again. Verify content fidelity and review new or materially altered content separately. The read-only readiness report distinguishes these tasks without granting approvals.
+The 47 current release blockers comprise 32 inherited-approval reconciliation records, one new seahorse app review, nine pending image-permission records and five operational gates. New October content within migrated apps remains separately scoped for review. [Existing V1 approval](docs/GUIDE_CONTENT_RESTORED.md) carries forward for unchanged migrated content; do not ask for identical content/photos/guide details to be approved again. Verify content fidelity and review new or materially altered content separately. The read-only readiness report distinguishes these tasks without granting approvals.
 
 Current-build physical iPhone acceptance, full-collection interactions/media, update/rollback, reviewer pilot and final operational records remain outstanding. Android/Windows installation, growth/performance capacity and placement of six empty categories/seven supporting apps remain unverified or unresolved. No percentage or release date is certified.
 

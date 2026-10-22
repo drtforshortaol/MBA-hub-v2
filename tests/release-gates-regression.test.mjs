@@ -28,9 +28,9 @@ test('release gate rejects unresolved media permissions',()=>{
  assert(failures.includes('media permission review: photo-1'));
 });
 
-test('inherited V1 review is scoped to explicitly identified source content',()=>{
+test('source inherited approval labels require byte-bound reviewed evidence',()=>{
  const inherited={...app,status:'development',source_repository:'MBA-hub',publication_review:'inherited-v1-approved'};
- assert.deepEqual(releaseErrors(approved,[inherited],{assets:[]},inventory),[]);
+ assert(releaseErrors(approved,[inherited],{assets:[]},inventory).includes('content review pending: species-ray'));
  const unsourced={...inherited,source_repository:undefined};
  assert(releaseErrors(approved,[unsourced],{assets:[]},inventory).includes('content review pending: species-ray'));
 });

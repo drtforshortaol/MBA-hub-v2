@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "Pinned source byte and static-text evidence; no scientific/editorial/device approval",
-  "audited_source_commit": "09cc984edb93c7c3fecdda2b9a8656ea5e323387",
+  "audited_source_commit": "7c4d780d6dcd291a8aab91fc5b0bff48bf6546d2",
   "source_commits": {
     "MBA-hub": "5c219508d23255080f6b050cefa8092905447d81",
     "aquarium-shift-library-": "9438060bd836c46245e4af45c280e4bb37b0ab94",
@@ -2839,8 +2839,8 @@
           "current_sha256": "f0b6a0b50027b0fa127d9305ca00ddf2b04ef6027528db926c3d64dee1846d88",
           "status": "changed",
           "content_data_comparison": {
-            "equal_after_only_image_url_normalization": false,
-            "pinned_normalized_sha256": "69944d7f57178030e2f46255b2715bc506f50634b830dcd2507f0cfe0ab70f23",
+            "equal_after_only_image_url_normalization": true,
+            "pinned_normalized_sha256": "b53844b465ef298c48ac4f93ff2ea1cf8f3b3a03c43154a175a3ba4f9f9b85c1",
             "current_normalized_sha256": "b53844b465ef298c48ac4f93ff2ea1cf8f3b3a03c43154a175a3ba4f9f9b85c1",
             "image_url_mappings": [
               {
