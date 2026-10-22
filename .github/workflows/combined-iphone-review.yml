@@ -42,6 +42,10 @@ jobs:
       - name: Package review provenance and instructions
         run: |
           cp docs/iphone-review-20261018.md dist/REVIEW.md
+          cp docs/COMPLETION_AUDIT_20261021.md dist/COMPLETION_AUDIT_20261021.md
+          cp docs/FIXED_BUILD_ACCEPTANCE_20261021.md dist/FIXED_BUILD_ACCEPTANCE_20261021.md
+          mkdir -p dist/verification
+          cp docs/verification/completion-ci-20261021.json dist/verification/
           git rev-parse HEAD > dist/SOURCE-COMMIT.txt
           sha256sum dist/developer/release.json dist/tester/release.json > dist/RELEASE-CHECKSUMS.txt
       - name: Bind retained reports to generated releases and checkout

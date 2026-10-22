@@ -15,17 +15,29 @@ const actions={
 };
 
 // A read-only view of existing gates. This never writes approvals or publishes.
-export function assessReleaseReadiness({platform,apps,media,inventory,qaEvidence,technicalErrors=null,expectedCommit=null}){
+export function assessReleaseReadiness({platform,apps,media,inventory,qaEvidence,migrationProvenance=null,technicalErrors=null,expectedCommit=null}){
  const blocked=releaseErrors(platform,apps,media,inventory);
  const blockers=blocked.map(reason=>{
   const [kind,id]=reason.split(': ');
-  const action=kind==='release gate'?actions[id]:kind==='unmigrated'?'Migrate and validate this application.':kind==='content review pending'?'Obtain the required scientific/editorial content review.':'Resolve the recorded media permission review.';
-  return {reason,source:kind==='release gate'?'config/platform.json':kind==='unmigrated'?'config/v1-inventory.json':kind==='content review pending'?`src/apps/${id}/manifest.json`:'src/shared/media/catalog.json',action};
+  const app=apps.find(app=>app.app_id===id);
+  const records=Array.isArray(migrationProvenance?.apps)?migrationProvenance.apps.filter(record=>record?.app_id===id):[];
+  // Matching provenance identifies a reconciliation candidate, never proves
+  // unchanged content or grants an inherited scientific/publication approval.
+  const inheritedCandidate=kind==='content review pending'&&records.length===1&&
+   typeof app?.source_repository==='string'&&!!app.source_repository&&/^[a-f0-9]{40}$/.test(app.source_commit||'')&&
+   records[0].source_repository===app.source_repository&&records[0].source_commit===app.source_commit;
+  const category=kind==='content review pending'?(inheritedCandidate?'inherited-approval-reconciliation':'content-review-required'):kind==='release gate'?'operational-gate':kind==='unmigrated'?'migration-required':'media-review-required';
+  const action=kind==='release gate'?actions[id]:kind==='unmigrated'?'Migrate and validate this application.':kind==='content review pending'?(inheritedCandidate?'Verify unchanged content against pinned migration provenance, then reconcile the existing inherited V1 approval record. Review new or materially altered content separately.':'Obtain the required scientific/editorial content review; inherited approval is not established by matching migration provenance.'):'Resolve the recorded media permission review.';
+  return {reason,category,source:kind==='release gate'?'config/platform.json':kind==='unmigrated'?'config/v1-inventory.json':kind==='content review pending'?`src/apps/${id}/manifest.json`:'src/shared/media/catalog.json',action};
  });
  return {
   schema_version:1,scope:'Existing release gates and recorded evidence only; no approval, publication or deployment',
   platformVersion:platform.version,stage:platform.releaseStage,apps:apps.length,
   releaseEligible:blocked.length===0,blockers,
+  approvalReconciliation:{authorizationSource:'docs/GUIDE_CONTENT_RESTORED.md',provenanceSource:'config/migration-provenance.json',
+   inheritedCandidates:blockers.filter(item=>item.category==='inherited-approval-reconciliation').length,
+   contentReviewsRequired:blockers.filter(item=>item.category==='content-review-required').length,
+   scope:'Read-only triage. Matching source provenance does not establish content fidelity, resolve a blocker or grant approval.'},
   recordedQA:{source:'config/qa-evidence.json',recordedOn:qaEvidence.recorded_on,
    pending:Object.entries(qaEvidence.evidence).filter(([,entry])=>entry.status!=='verified').map(([id,entry])=>({id,...entry})),
    scope:'Historical records; representative iPhone acceptance does not establish full release acceptance.'},
@@ -39,7 +51,7 @@ export function assessRepositoryReadiness({evidenceDirectory=null,expectedCommit
  if(expectedCommit!==null&&!/^[a-f0-9]{40}$/.test(expectedCommit))throw Error('Expected checkout commit must be 40 lowercase hexadecimal characters');
  const read=name=>JSON.parse(fs.readFileSync(path.join(root,name),'utf8'));
  const apps=fs.readdirSync(path.join(root,'src/apps'),{withFileTypes:true}).filter(entry=>entry.isDirectory()).map(entry=>read(`src/apps/${entry.name}/manifest.json`)).sort((a,b)=>a.app_id.localeCompare(b.app_id));
- return assessReleaseReadiness({platform:read('config/platform.json'),apps,media:read('src/shared/media/catalog.json'),inventory:read('config/v1-inventory.json'),qaEvidence:read('config/qa-evidence.json'),
+ return assessReleaseReadiness({platform:read('config/platform.json'),apps,media:read('src/shared/media/catalog.json'),inventory:read('config/v1-inventory.json'),qaEvidence:read('config/qa-evidence.json'),migrationProvenance:read('config/migration-provenance.json'),
   technicalErrors:evidenceDirectory===null?null:verifyReviewEvidence(path.resolve(evidenceDirectory),expectedCommit),expectedCommit});
 }
 

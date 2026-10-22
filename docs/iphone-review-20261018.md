@@ -2,6 +2,8 @@
 
 Review only. This branch does not publish, deploy, merge, or grant release approval.
 
+For the fixed Batch 13 source/artifact and current acceptance procedures, see `COMPLETION_AUDIT_20261021.md` and `FIXED_BUILD_ACCEPTANCE_20261021.md`. The historical instructions below are not current device results.
+
 ## Current review provenance
 
 The commit in the artifact's `SOURCE-COMMIT.txt` and its release checksums identify the build being reviewed. The track heads below are the original October 18 snapshot, not the latest development heads. Consult `docs/verification/coordinated-batch10-20261021.md` and `docs/verification/coordinated-batch11-20261021.md` in the matching source checkout for subsequent verification. Never apply prior device or CI results to a newer artifact automatically.

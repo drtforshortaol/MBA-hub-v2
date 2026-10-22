@@ -1,3 +1,5 @@
+> Historical record. For current completion status see [completion audit](COMPLETION_AUDIT_20261021.md). Earlier alpha.6 privacy/filtering findings are superseded by [inherited V1 approval](GUIDE_CONTENT_RESTORED.md); this document does not establish current-build acceptance.
+
 # Alpha.6 public tester
 
 The owner authorized a public tester and confirmed on October 12, 2026 that all image permissions were already granted in V1. All 203 catalog assets record that approval.
