@@ -107,9 +107,10 @@ test('inline comparison presents original evidence without changing review decis
  assert.match(code,/aria-label','Statement comparison/);
  assert.match(code,/new Set\(candidates\)/);
  assert.match(code,/candidate>=packet\.entries\.length/);
- assert.match(code,/Current: '\+entry\.source_text/);
- assert.match(code,/Compare: '\+other\.source_text/);
- assert.match(code,/Other proposed placement:/);
+ const renderer=fs.readFileSync(path.join(root,'src/core/naturalist-comparison-evidence.js'),'utf8');
+ assert.match(renderer,/Current: '\+entry\.source_text/);
+ assert.match(renderer,/Compare: '\+other\.source_text/);
+ assert.match(renderer,/Other proposed placement:/);
  assert.match(code,/related\.append\(comparison\)/);
 });
 

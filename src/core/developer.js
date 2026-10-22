@@ -1,3 +1,4 @@
+import {renderNaturalistComparisonEvidence} from './naturalist-comparison-evidence.js';
 import {hasNaturalistRelationshipFlag} from './naturalist-review-triage.js';
 import {renderNaturalistReferencedEvidence} from './naturalist-referenced-evidence.js';
 import {readReplacementDrafts,saveReplacementDrafts,createReplacementBackup,readReplacementBackup} from './naturalist-replacement-drafts.js';
@@ -282,12 +283,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      for(const candidate of new Set(candidates)){
       if(!Number.isInteger(candidate)||candidate<0||candidate>=packet.entries.length||candidate===entry.index)continue;
       const other=packet.entries[candidate];
-      const row=document.createElement('div');
-      const heading=document.createElement('strong');heading.textContent='Statement '+(candidate+1)+(candidate===entry.duplicate_of?' — possible duplicate':' — potential conflict');
-      const original=document.createElement('p');original.textContent='Current: '+entry.source_text;
-      const counterpart=document.createElement('p');counterpart.textContent='Compare: '+other.source_text;
-      const context=document.createElement('p');context.textContent='Other proposed placement: '+(other.placement.target_app_id||'unresolved')+' / '+(other.placement.target_section_id||'unresolved');
-      row.append(heading,original,counterpart,context);comparison.append(row);
+      comparison.append(renderNaturalistComparisonEvidence(document,entry,other,candidate,{isCurrentReview,showStatement,statementCards}));
      }
      related.append(comparison);
     }
