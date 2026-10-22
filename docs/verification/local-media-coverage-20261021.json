@@ -1,0 +1,3632 @@
+{
+  "schema_version": 1,
+  "scope": "Read-only literal media coverage; no permission, content or release approval",
+  "writePerformed": false,
+  "complete": false,
+  "summary": {
+    "apps": 33,
+    "source_files": 83,
+    "local_resources": 235,
+    "resources_with_findings": 9,
+    "uncataloged_resources": 9
+  },
+  "resources": [
+    {
+      "app_id": "applied-water-science-life-support",
+      "path": "shared/media/asset-4df490b298fa93f0--icon.svg",
+      "catalog_ids": [
+        "asset-4df490b298fa93f0"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/applied-water-science-life-support/index.html",
+          "reference": "../../shared/media/asset-4df490b298fa93f0--icon.svg",
+          "kind": "html-href"
+        }
+      ]
+    },
+    {
+      "app_id": "applied-water-science-life-support",
+      "path": "shared/media/asset-ed3359c28ab8bf19--pigging-biofouling.jpg",
+      "catalog_ids": [
+        "asset-ed3359c28ab8bf19"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/applied-water-science-life-support/index.html",
+          "reference": "../../shared/media/asset-ed3359c28ab8bf19--pigging-biofouling.jpg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "aquarium-library-explorer",
+      "path": "shared/media/asset-0bc6222372f0efdc--Organize-Aquarium-Books.png",
+      "catalog_ids": [
+        "asset-0bc6222372f0efdc"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/aquarium-library-explorer/index.html",
+          "reference": "../../shared/media/asset-0bc6222372f0efdc--Organize-Aquarium-Books.png",
+          "kind": "html-href"
+        }
+      ]
+    },
+    {
+      "app_id": "big-bellied-seahorse",
+      "path": "apps/IMG_4212.jpeg",
+      "catalog_ids": [],
+      "issues": [
+        "not-in-media-catalog",
+        "permission-evidence-missing"
+      ],
+      "references": [
+        {
+          "source": "apps/big-bellied-seahorse/index.html",
+          "reference": "../IMG_4212.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "big-bellied-seahorse",
+      "path": "apps/IMG_4213.jpeg",
+      "catalog_ids": [],
+      "issues": [
+        "not-in-media-catalog",
+        "permission-evidence-missing"
+      ],
+      "references": [
+        {
+          "source": "apps/big-bellied-seahorse/index.html",
+          "reference": "../IMG_4213.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "big-bellied-seahorse",
+      "path": "apps/IMG_4214.jpeg",
+      "catalog_ids": [],
+      "issues": [
+        "not-in-media-catalog",
+        "permission-evidence-missing"
+      ],
+      "references": [
+        {
+          "source": "apps/big-bellied-seahorse/index.html",
+          "reference": "../IMG_4214.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "big-bellied-seahorse",
+      "path": "apps/IMG_4215.jpeg",
+      "catalog_ids": [],
+      "issues": [
+        "not-in-media-catalog",
+        "permission-evidence-missing"
+      ],
+      "references": [
+        {
+          "source": "apps/big-bellied-seahorse/index.html",
+          "reference": "../IMG_4215.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "big-bellied-seahorse",
+      "path": "apps/IMG_4216.jpeg",
+      "catalog_ids": [],
+      "issues": [
+        "not-in-media-catalog",
+        "permission-evidence-missing"
+      ],
+      "references": [
+        {
+          "source": "apps/big-bellied-seahorse/index.html",
+          "reference": "../IMG_4216.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "bluespotted-ribbontail-ray",
+      "path": "shared/media/asset-04c2c8b8e6e36a70--IMG_3446.jpeg",
+      "catalog_ids": [
+        "asset-04c2c8b8e6e36a70"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/bluespotted-ribbontail-ray/index.html",
+          "reference": "../../shared/media/asset-04c2c8b8e6e36a70--IMG_3446.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "bluespotted-ribbontail-ray",
+      "path": "shared/media/asset-1daf222da5380986--IMG_3443.jpeg",
+      "catalog_ids": [
+        "asset-1daf222da5380986"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/bluespotted-ribbontail-ray/index.html",
+          "reference": "../../shared/media/asset-1daf222da5380986--IMG_3443.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "bluespotted-ribbontail-ray",
+      "path": "shared/media/asset-4e686c83c7a2de1e--IMG_3445.jpeg",
+      "catalog_ids": [
+        "asset-4e686c83c7a2de1e"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/bluespotted-ribbontail-ray/index.html",
+          "reference": "../../shared/media/asset-4e686c83c7a2de1e--IMG_3445.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "bluespotted-ribbontail-ray",
+      "path": "shared/media/asset-58caefb914af891a--ScreenHunter-10658.jpg",
+      "catalog_ids": [
+        "asset-58caefb914af891a"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/bluespotted-ribbontail-ray/index.html",
+          "reference": "../../shared/media/asset-58caefb914af891a--ScreenHunter-10658.jpg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "bluespotted-ribbontail-ray",
+      "path": "shared/media/asset-af9d1b481c381dc7--IMG_3444.jpeg",
+      "catalog_ids": [
+        "asset-af9d1b481c381dc7"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/bluespotted-ribbontail-ray/index.html",
+          "reference": "../../shared/media/asset-af9d1b481c381dc7--IMG_3444.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "california-flying-fish",
+      "path": "shared/media/asset-768c33463b4de0e3--IMG_3380.jpeg",
+      "catalog_ids": [
+        "asset-768c33463b4de0e3"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/california-flying-fish/index.html",
+          "reference": "../../shared/media/asset-768c33463b4de0e3--IMG_3380.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "california-flying-fish",
+      "path": "shared/media/asset-afa736f83a460b13--IMG_3381.jpeg",
+      "catalog_ids": [
+        "asset-afa736f83a460b13"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/california-flying-fish/index.html",
+          "reference": "../../shared/media/asset-afa736f83a460b13--IMG_3381.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "california-flying-fish",
+      "path": "shared/media/asset-c11690bd147b5db5--IMG_3383.jpeg",
+      "catalog_ids": [
+        "asset-c11690bd147b5db5"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/california-flying-fish/index.html",
+          "reference": "../../shared/media/asset-c11690bd147b5db5--IMG_3383.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "california-flying-fish",
+      "path": "shared/media/asset-cd7b7398f2c9bfdf--california-flying-fish-hero.jpg",
+      "catalog_ids": [
+        "asset-cd7b7398f2c9bfdf"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/california-flying-fish/index.html",
+          "reference": "../../shared/media/asset-cd7b7398f2c9bfdf--california-flying-fish-hero.jpg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "california-flying-fish",
+      "path": "shared/media/asset-e679c304e357c5d1--IMG_3382.jpeg",
+      "catalog_ids": [
+        "asset-e679c304e357c5d1"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/california-flying-fish/index.html",
+          "reference": "../../shared/media/asset-e679c304e357c5d1--IMG_3382.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "california-sheephead",
+      "path": "shared/media/asset-05fc671c0b53bef7--IMG_3594.jpeg",
+      "catalog_ids": [
+        "asset-05fc671c0b53bef7"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/california-sheephead/index.html",
+          "reference": "../../shared/media/asset-05fc671c0b53bef7--IMG_3594.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "california-sheephead",
+      "path": "shared/media/asset-0ddc6e6b4b55ea55--IMG_2883.jpeg",
+      "catalog_ids": [
+        "asset-0ddc6e6b4b55ea55"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/california-sheephead/index.html",
+          "reference": "../../shared/media/asset-0ddc6e6b4b55ea55--IMG_2883.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "evolution-timeline",
+      "path": "shared/media/asset-7020f164e3928edc--icon-192.png",
+      "catalog_ids": [
+        "asset-7020f164e3928edc"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/evolution-timeline/index.html",
+          "reference": "../../shared/media/asset-7020f164e3928edc--icon-192.png",
+          "kind": "html-href"
+        }
+      ]
+    },
+    {
+      "app_id": "five-senses-pwa",
+      "path": "shared/media/asset-3b65e654f48dae5f--icon.svg",
+      "catalog_ids": [
+        "asset-3b65e654f48dae5f"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/five-senses-pwa/index.html",
+          "reference": "../../shared/media/asset-3b65e654f48dae5f--icon.svg",
+          "kind": "html-href"
+        }
+      ]
+    },
+    {
+      "app_id": "five-senses-pwa",
+      "path": "shared/media/five-senses-header.svg",
+      "catalog_ids": [
+        "five-senses-header"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/five-senses-pwa/index.html",
+          "reference": "../../shared/media/five-senses-header.svg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "flamboyant-cuttlefish",
+      "path": "shared/media/asset-4ad1b63ad37d50de--IMG_2197.jpeg",
+      "catalog_ids": [
+        "asset-4ad1b63ad37d50de"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/flamboyant-cuttlefish/index.html",
+          "reference": "../../shared/media/asset-4ad1b63ad37d50de--IMG_2197.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "flamboyant-cuttlefish",
+      "path": "shared/media/asset-77f28e714fde41ed--IMG_2291.jpeg",
+      "catalog_ids": [
+        "asset-77f28e714fde41ed"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/flamboyant-cuttlefish/index.html",
+          "reference": "../../shared/media/asset-77f28e714fde41ed--IMG_2291.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "flamboyant-cuttlefish",
+      "path": "shared/media/asset-ad1fe862fb75620f--IMG_2198.jpeg",
+      "catalog_ids": [
+        "asset-ad1fe862fb75620f"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/flamboyant-cuttlefish/index.html",
+          "reference": "../../shared/media/asset-ad1fe862fb75620f--IMG_2198.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gooseneck-barnacle",
+      "path": "shared/media/asset-240372707379e853--IMG_2489.jpeg",
+      "catalog_ids": [
+        "asset-240372707379e853"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gooseneck-barnacle/index.html",
+          "reference": "../../shared/media/asset-240372707379e853--IMG_2489.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gooseneck-barnacle",
+      "path": "shared/media/asset-2abba7e42847f4a7--IMG_2493.jpeg",
+      "catalog_ids": [
+        "asset-2abba7e42847f4a7"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gooseneck-barnacle/index.html",
+          "reference": "../../shared/media/asset-2abba7e42847f4a7--IMG_2493.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gooseneck-barnacle",
+      "path": "shared/media/asset-328e69410ff6d027--IMG_2491.jpeg",
+      "catalog_ids": [
+        "asset-328e69410ff6d027"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gooseneck-barnacle/index.html",
+          "reference": "../../shared/media/asset-328e69410ff6d027--IMG_2491.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gooseneck-barnacle",
+      "path": "shared/media/asset-4ba4d87b5678a0c8--IMG_2496.jpeg",
+      "catalog_ids": [
+        "asset-4ba4d87b5678a0c8"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gooseneck-barnacle/index.html",
+          "reference": "../../shared/media/asset-4ba4d87b5678a0c8--IMG_2496.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gooseneck-barnacle",
+      "path": "shared/media/asset-6940746379bdd044--IMG_2490.jpeg",
+      "catalog_ids": [
+        "asset-6940746379bdd044"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gooseneck-barnacle/index.html",
+          "reference": "../../shared/media/asset-6940746379bdd044--IMG_2490.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gooseneck-barnacle",
+      "path": "shared/media/asset-9e3c4419134f3e95--IMG_2492.jpeg",
+      "catalog_ids": [
+        "asset-9e3c4419134f3e95"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gooseneck-barnacle/index.html",
+          "reference": "../../shared/media/asset-9e3c4419134f3e95--IMG_2492.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale-skeleton-exhibit",
+      "path": "shared/media/asset-29f85ad9d9ef593f--IMG_3475.jpeg",
+      "catalog_ids": [
+        "asset-29f85ad9d9ef593f"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gray-whale-skeleton-exhibit/index.html",
+          "reference": "../../shared/media/asset-29f85ad9d9ef593f--IMG_3475.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale",
+      "path": "shared/media/asset-007bf887266bfa71--IMG_3540.jpeg",
+      "catalog_ids": [
+        "asset-007bf887266bfa71"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-007bf887266bfa71--IMG_3540.jpeg",
+          "kind": "html-href"
+        },
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-007bf887266bfa71--IMG_3540.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale",
+      "path": "shared/media/asset-0723eb2fca2615b0--IMG_3527.jpeg",
+      "catalog_ids": [
+        "asset-0723eb2fca2615b0"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-0723eb2fca2615b0--IMG_3527.jpeg?v=2",
+          "kind": "html-src"
+        },
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-0723eb2fca2615b0--IMG_3527.jpeg",
+          "kind": "css-url"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale",
+      "path": "shared/media/asset-29f85ad9d9ef593f--IMG_3475.jpeg",
+      "catalog_ids": [
+        "asset-29f85ad9d9ef593f"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-29f85ad9d9ef593f--IMG_3475.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale",
+      "path": "shared/media/asset-2daaa1e0d8612506--IMG_3533.jpeg",
+      "catalog_ids": [
+        "asset-2daaa1e0d8612506"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-2daaa1e0d8612506--IMG_3533.jpeg",
+          "kind": "html-href"
+        },
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-2daaa1e0d8612506--IMG_3533.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale",
+      "path": "shared/media/asset-39bdbafd26672e9d--IMG_3529.jpeg",
+      "catalog_ids": [
+        "asset-39bdbafd26672e9d"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-39bdbafd26672e9d--IMG_3529.jpeg",
+          "kind": "html-href"
+        },
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-39bdbafd26672e9d--IMG_3529.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale",
+      "path": "shared/media/asset-47d33e98d003d66e--IMG_3520.jpeg",
+      "catalog_ids": [
+        "asset-47d33e98d003d66e"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-47d33e98d003d66e--IMG_3520.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale",
+      "path": "shared/media/asset-6d2f0c12e888b454--IMG_3535.jpeg",
+      "catalog_ids": [
+        "asset-6d2f0c12e888b454"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-6d2f0c12e888b454--IMG_3535.jpeg",
+          "kind": "html-href"
+        },
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-6d2f0c12e888b454--IMG_3535.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale",
+      "path": "shared/media/asset-8d35b32acc8ef4e4--IMG_3536.jpeg",
+      "catalog_ids": [
+        "asset-8d35b32acc8ef4e4"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-8d35b32acc8ef4e4--IMG_3536.jpeg",
+          "kind": "html-href"
+        },
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-8d35b32acc8ef4e4--IMG_3536.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale",
+      "path": "shared/media/asset-9af5aa3882b2f4fe--IMG_3539.jpeg",
+      "catalog_ids": [
+        "asset-9af5aa3882b2f4fe"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-9af5aa3882b2f4fe--IMG_3539.jpeg",
+          "kind": "html-href"
+        },
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-9af5aa3882b2f4fe--IMG_3539.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale",
+      "path": "shared/media/asset-b11c558cc1916c03--IMG_3538.jpeg",
+      "catalog_ids": [
+        "asset-b11c558cc1916c03"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-b11c558cc1916c03--IMG_3538.jpeg",
+          "kind": "html-href"
+        },
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-b11c558cc1916c03--IMG_3538.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale",
+      "path": "shared/media/asset-c19e56bb82b1ed88--IMG_3531.jpeg",
+      "catalog_ids": [
+        "asset-c19e56bb82b1ed88"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-c19e56bb82b1ed88--IMG_3531.jpeg",
+          "kind": "html-href"
+        },
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-c19e56bb82b1ed88--IMG_3531.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale",
+      "path": "shared/media/asset-c49e1ad2ede6d927--IMG_3534.jpeg",
+      "catalog_ids": [
+        "asset-c49e1ad2ede6d927"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-c49e1ad2ede6d927--IMG_3534.jpeg",
+          "kind": "html-href"
+        },
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-c49e1ad2ede6d927--IMG_3534.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale",
+      "path": "shared/media/asset-d9f462d362090d02--IMG_3532.jpeg",
+      "catalog_ids": [
+        "asset-d9f462d362090d02"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-d9f462d362090d02--IMG_3532.jpeg",
+          "kind": "html-href"
+        },
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-d9f462d362090d02--IMG_3532.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale",
+      "path": "shared/media/asset-ea111dd21c705418--IMG_3530.jpeg",
+      "catalog_ids": [
+        "asset-ea111dd21c705418"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-ea111dd21c705418--IMG_3530.jpeg",
+          "kind": "html-href"
+        },
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-ea111dd21c705418--IMG_3530.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale",
+      "path": "shared/media/asset-fdf70c3654d8b77c--IMG_3537.jpeg",
+      "catalog_ids": [
+        "asset-fdf70c3654d8b77c"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-fdf70c3654d8b77c--IMG_3537.jpeg",
+          "kind": "html-href"
+        },
+        {
+          "source": "apps/gray-whale/index.html",
+          "reference": "../../shared/media/asset-fdf70c3654d8b77c--IMG_3537.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "green-falsejingle",
+      "path": "shared/media/asset-1412182fcc3f4d9a--IMG_2785.jpeg",
+      "catalog_ids": [
+        "asset-1412182fcc3f4d9a"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/green-falsejingle/index.html",
+          "reference": "../../shared/media/asset-1412182fcc3f4d9a--IMG_2785.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "green-falsejingle",
+      "path": "shared/media/asset-3f24669c2980c4f8--IMG_2777.jpeg",
+      "catalog_ids": [
+        "asset-3f24669c2980c4f8"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/green-falsejingle/index.html",
+          "reference": "../../shared/media/asset-3f24669c2980c4f8--IMG_2777.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "green-falsejingle",
+      "path": "shared/media/asset-a8b81b143d1657a3--IMG_2778.jpeg",
+      "catalog_ids": [
+        "asset-a8b81b143d1657a3"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/green-falsejingle/index.html",
+          "reference": "../../shared/media/asset-a8b81b143d1657a3--IMG_2778.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "green-falsejingle",
+      "path": "shared/media/asset-cf9a0bdb53d3f4fe--IMG_2781.jpeg",
+      "catalog_ids": [
+        "asset-cf9a0bdb53d3f4fe"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/green-falsejingle/index.html",
+          "reference": "../../shared/media/asset-cf9a0bdb53d3f4fe--IMG_2781.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "green-falsejingle",
+      "path": "shared/media/asset-d8ac0e89299a0aa6--IMG_2780.jpeg",
+      "catalog_ids": [
+        "asset-d8ac0e89299a0aa6"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/green-falsejingle/index.html",
+          "reference": "../../shared/media/asset-d8ac0e89299a0aa6--IMG_2780.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "green-falsejingle",
+      "path": "shared/media/asset-ddd34d36cd9e0c88--IMG_2779.jpeg",
+      "catalog_ids": [
+        "asset-ddd34d36cd9e0c88"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/green-falsejingle/index.html",
+          "reference": "../../shared/media/asset-ddd34d36cd9e0c88--IMG_2779.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "hopkins-rose-nudibranch",
+      "path": "shared/media/asset-2716d888f851c96f--IMG_3469.jpeg",
+      "catalog_ids": [
+        "asset-2716d888f851c96f"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/hopkins-rose-nudibranch/index.html",
+          "reference": "../../shared/media/asset-2716d888f851c96f--IMG_3469.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "hopkins-rose-nudibranch",
+      "path": "shared/media/asset-2a1a981e1a8e0bc5--IMG_3467.jpeg",
+      "catalog_ids": [
+        "asset-2a1a981e1a8e0bc5"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/hopkins-rose-nudibranch/index.html",
+          "reference": "../../shared/media/asset-2a1a981e1a8e0bc5--IMG_3467.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "hopkins-rose-nudibranch",
+      "path": "shared/media/asset-3fd33c52e769a694--IMG_3470.jpeg",
+      "catalog_ids": [
+        "asset-3fd33c52e769a694"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/hopkins-rose-nudibranch/index.html",
+          "reference": "../../shared/media/asset-3fd33c52e769a694--IMG_3470.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "hopkins-rose-nudibranch",
+      "path": "shared/media/asset-538d5993b59b2206--IMG_3465.jpeg",
+      "catalog_ids": [
+        "asset-538d5993b59b2206"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/hopkins-rose-nudibranch/index.html",
+          "reference": "../../shared/media/asset-538d5993b59b2206--IMG_3465.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "hopkins-rose-nudibranch",
+      "path": "shared/media/asset-717b2911c7edcb80--IMG_3466.jpeg",
+      "catalog_ids": [
+        "asset-717b2911c7edcb80"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/hopkins-rose-nudibranch/index.html",
+          "reference": "../../shared/media/asset-717b2911c7edcb80--IMG_3466.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "hopkins-rose-nudibranch",
+      "path": "shared/media/asset-7ddf650d12a6e651--IMG_3471.jpeg",
+      "catalog_ids": [
+        "asset-7ddf650d12a6e651"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/hopkins-rose-nudibranch/index.html",
+          "reference": "../../shared/media/asset-7ddf650d12a6e651--IMG_3471.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "hopkins-rose-nudibranch",
+      "path": "shared/media/asset-8cb346af7e0cfb48--ScreenHunter-10648.jpg",
+      "catalog_ids": [
+        "asset-8cb346af7e0cfb48"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/hopkins-rose-nudibranch/index.html",
+          "reference": "../../shared/media/asset-8cb346af7e0cfb48--ScreenHunter-10648.jpg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "hopkins-rose-nudibranch",
+      "path": "shared/media/asset-cd38f502a51bf6bd--IMG_3468.jpeg",
+      "catalog_ids": [
+        "asset-cd38f502a51bf6bd"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/hopkins-rose-nudibranch/index.html",
+          "reference": "../../shared/media/asset-cd38f502a51bf6bd--IMG_3468.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "information-center",
+      "path": "shared/media/asset-1e94c29588faf6ba--icon.svg",
+      "catalog_ids": [
+        "asset-1e94c29588faf6ba"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/information-center/index.html",
+          "reference": "../../shared/media/asset-1e94c29588faf6ba--icon.svg",
+          "kind": "html-href"
+        }
+      ]
+    },
+    {
+      "app_id": "interpretation-principles",
+      "path": "shared/media/asset-fee04d46bc10c3d2--icon.svg",
+      "catalog_ids": [
+        "asset-fee04d46bc10c3d2"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/interpretation-principles/index.html",
+          "reference": "../../shared/media/asset-fee04d46bc10c3d2--icon.svg",
+          "kind": "html-href"
+        }
+      ]
+    },
+    {
+      "app_id": "kelp-forest",
+      "path": "shared/media/asset-3805cae5eba70cef--kelp-forest-hero.jpg",
+      "catalog_ids": [
+        "asset-3805cae5eba70cef"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/kelp-forest/data.js",
+          "reference": "../../shared/media/asset-3805cae5eba70cef--kelp-forest-hero.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "kelp-forest",
+      "path": "shared/media/asset-5a78a8d75c9a6174--icon.svg",
+      "catalog_ids": [
+        "asset-5a78a8d75c9a6174"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/kelp-forest/index.html",
+          "reference": "../../shared/media/asset-5a78a8d75c9a6174--icon.svg",
+          "kind": "html-href"
+        }
+      ]
+    },
+    {
+      "app_id": "mba-leadership",
+      "path": "shared/media/asset-439853e26e3085c7--jenny-gray.jpg",
+      "catalog_ids": [
+        "asset-439853e26e3085c7"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/mba-leadership/data.js",
+          "reference": "../../shared/media/asset-439853e26e3085c7--jenny-gray.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "mba-leadership",
+      "path": "shared/media/asset-c153bd064cb66624--lauren-cole.jpg",
+      "catalog_ids": [
+        "asset-c153bd064cb66624"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/mba-leadership/data.js",
+          "reference": "../../shared/media/asset-c153bd064cb66624--lauren-cole.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "mmc-narrations",
+      "path": "shared/media/asset-f40aca52c0606336--icon.svg",
+      "catalog_ids": [
+        "asset-f40aca52c0606336"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/mmc-narrations/index.html",
+          "reference": "../../shared/media/asset-f40aca52c0606336--icon.svg",
+          "kind": "html-href"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "apps/IMG_4207.jpeg",
+      "catalog_ids": [],
+      "issues": [
+        "not-in-media-catalog",
+        "permission-evidence-missing"
+      ],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/october-2026-note.js",
+          "reference": "../IMG_4207.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "apps/IMG_4208.jpeg",
+      "catalog_ids": [],
+      "issues": [
+        "not-in-media-catalog",
+        "permission-evidence-missing"
+      ],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/october-2026-note.js",
+          "reference": "../IMG_4208.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "apps/IMG_4209.jpeg",
+      "catalog_ids": [],
+      "issues": [
+        "not-in-media-catalog",
+        "permission-evidence-missing"
+      ],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/october-2026-note.js",
+          "reference": "../IMG_4209.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "apps/IMG_4210.jpeg",
+      "catalog_ids": [],
+      "issues": [
+        "not-in-media-catalog",
+        "permission-evidence-missing"
+      ],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/october-2026-note.js",
+          "reference": "../IMG_4210.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-00cca4d1893f2370--IMG_3379.jpeg",
+      "catalog_ids": [
+        "asset-00cca4d1893f2370"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-00cca4d1893f2370--IMG_3379.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-04c2c8b8e6e36a70--IMG_3446.jpeg",
+      "catalog_ids": [
+        "asset-04c2c8b8e6e36a70"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-04c2c8b8e6e36a70--IMG_3446.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-05332b7e8a82d46d--IMG_2873.jpeg",
+      "catalog_ids": [
+        "asset-05332b7e8a82d46d"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-05332b7e8a82d46d--IMG_2873.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-07e9859dce7506c6--IMG_3507.jpeg",
+      "catalog_ids": [
+        "asset-07e9859dce7506c6"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-07e9859dce7506c6--IMG_3507.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-0c3ad11dc596bfa3--IMG_3515.jpeg",
+      "catalog_ids": [
+        "asset-0c3ad11dc596bfa3"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-0c3ad11dc596bfa3--IMG_3515.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-0cba57ea7e48e08d--IMG_3436.jpeg",
+      "catalog_ids": [
+        "asset-0cba57ea7e48e08d"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-0cba57ea7e48e08d--IMG_3436.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-0cc3efb40d46bc0d--IMG_2352.jpeg",
+      "catalog_ids": [
+        "asset-0cc3efb40d46bc0d"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-0cc3efb40d46bc0d--IMG_2352.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-0ddc6e6b4b55ea55--IMG_2883.jpeg",
+      "catalog_ids": [
+        "asset-0ddc6e6b4b55ea55"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-0ddc6e6b4b55ea55--IMG_2883.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-1154cf3cd4637129--IMG_3355.jpeg",
+      "catalog_ids": [
+        "asset-1154cf3cd4637129"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-1154cf3cd4637129--IMG_3355.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-11daee627f87910c--IMG_3360.jpeg",
+      "catalog_ids": [
+        "asset-11daee627f87910c"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-11daee627f87910c--IMG_3360.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-125a4bbb92b0953b--rookery_scene.jpg",
+      "catalog_ids": [
+        "asset-125a4bbb92b0953b"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-125a4bbb92b0953b--rookery_scene.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-18794e74477d7c0e--IMG_3399.jpeg",
+      "catalog_ids": [
+        "asset-18794e74477d7c0e"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-18794e74477d7c0e--IMG_3399.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-1a0051b4ea4be7ea--migration_map.jpg",
+      "catalog_ids": [
+        "asset-1a0051b4ea4be7ea"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-1a0051b4ea4be7ea--migration_map.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-1daf222da5380986--IMG_3443.jpeg",
+      "catalog_ids": [
+        "asset-1daf222da5380986"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-1daf222da5380986--IMG_3443.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-2244802faeca1c2e--IMG_3334.jpeg",
+      "catalog_ids": [
+        "asset-2244802faeca1c2e"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-2244802faeca1c2e--IMG_3334.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-2716d888f851c96f--IMG_3469.jpeg",
+      "catalog_ids": [
+        "asset-2716d888f851c96f"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-2716d888f851c96f--IMG_3469.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-276522d542fa9f2f--IMG_3331.jpeg",
+      "catalog_ids": [
+        "asset-276522d542fa9f2f"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-276522d542fa9f2f--IMG_3331.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-29f85ad9d9ef593f--IMG_3475.jpeg",
+      "catalog_ids": [
+        "asset-29f85ad9d9ef593f"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/steve-webster-gray-whale.html",
+          "reference": "../../shared/media/asset-29f85ad9d9ef593f--IMG_3475.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-2a1a981e1a8e0bc5--IMG_3467.jpeg",
+      "catalog_ids": [
+        "asset-2a1a981e1a8e0bc5"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-2a1a981e1a8e0bc5--IMG_3467.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-2c5a4f34f857290c--IMG_2869.jpeg",
+      "catalog_ids": [
+        "asset-2c5a4f34f857290c"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-2c5a4f34f857290c--IMG_2869.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-312b492bbd93cf7f--IMG_3357.jpeg",
+      "catalog_ids": [
+        "asset-312b492bbd93cf7f"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-312b492bbd93cf7f--IMG_3357.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-345be463837369de--IMG_3517.jpeg",
+      "catalog_ids": [
+        "asset-345be463837369de"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-345be463837369de--IMG_3517.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-3895d93118cf6834--buoyancy_chart.jpg",
+      "catalog_ids": [
+        "asset-3895d93118cf6834"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-3895d93118cf6834--buoyancy_chart.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-3fd33c52e769a694--IMG_3470.jpeg",
+      "catalog_ids": [
+        "asset-3fd33c52e769a694"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-3fd33c52e769a694--IMG_3470.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-43951da610ad3fd3--size_sketch.jpg",
+      "catalog_ids": [
+        "asset-43951da610ad3fd3"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-43951da610ad3fd3--size_sketch.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-47d33e98d003d66e--IMG_3520.jpeg",
+      "catalog_ids": [
+        "asset-47d33e98d003d66e"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-47d33e98d003d66e--IMG_3520.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-48b0779c4998c64f--IMG_3516.jpeg",
+      "catalog_ids": [
+        "asset-48b0779c4998c64f"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-48b0779c4998c64f--IMG_3516.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-4d7635af67d3f236--IMG_2874.jpeg",
+      "catalog_ids": [
+        "asset-4d7635af67d3f236"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-4d7635af67d3f236--IMG_2874.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-4e686c83c7a2de1e--IMG_3445.jpeg",
+      "catalog_ids": [
+        "asset-4e686c83c7a2de1e"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-4e686c83c7a2de1e--IMG_3445.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-51cf45f51cb910c0--IMG_3433.jpeg",
+      "catalog_ids": [
+        "asset-51cf45f51cb910c0"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-51cf45f51cb910c0--IMG_3433.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-538d5993b59b2206--IMG_3465.jpeg",
+      "catalog_ids": [
+        "asset-538d5993b59b2206"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-538d5993b59b2206--IMG_3465.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-54b172586520e9bd--IMG_3394.jpeg",
+      "catalog_ids": [
+        "asset-54b172586520e9bd"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-54b172586520e9bd--IMG_3394.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-57ba856b9eed6807--IMG_2360.jpeg",
+      "catalog_ids": [
+        "asset-57ba856b9eed6807"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-57ba856b9eed6807--IMG_2360.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-5afe045acf5fb1f9--IMG_2885.jpeg",
+      "catalog_ids": [
+        "asset-5afe045acf5fb1f9"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-5afe045acf5fb1f9--IMG_2885.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-717aac5f1a01e9a4--IMG_2871.jpeg",
+      "catalog_ids": [
+        "asset-717aac5f1a01e9a4"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-717aac5f1a01e9a4--IMG_2871.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-717b2911c7edcb80--IMG_3466.jpeg",
+      "catalog_ids": [
+        "asset-717b2911c7edcb80"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-717b2911c7edcb80--IMG_3466.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-732320e8868e04e9--IMG_3356.jpeg",
+      "catalog_ids": [
+        "asset-732320e8868e04e9"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-732320e8868e04e9--IMG_3356.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-73ee72c7a88882ba--IMG_3434.jpeg",
+      "catalog_ids": [
+        "asset-73ee72c7a88882ba"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-73ee72c7a88882ba--IMG_3434.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-768c33463b4de0e3--IMG_3380.jpeg",
+      "catalog_ids": [
+        "asset-768c33463b4de0e3"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-768c33463b4de0e3--IMG_3380.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-7be108d4e4678453--IMG_2867.jpeg",
+      "catalog_ids": [
+        "asset-7be108d4e4678453"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-7be108d4e4678453--IMG_2867.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-7d047bea07617472--IMG_2774.jpeg",
+      "catalog_ids": [
+        "asset-7d047bea07617472"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-7d047bea07617472--IMG_2774.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-7ddf650d12a6e651--IMG_3471.jpeg",
+      "catalog_ids": [
+        "asset-7ddf650d12a6e651"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-7ddf650d12a6e651--IMG_3471.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-80b0c96b94623a37--IMG_2877.jpeg",
+      "catalog_ids": [
+        "asset-80b0c96b94623a37"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-80b0c96b94623a37--IMG_2877.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-80f9762446c0fc02--IMG_3398.jpeg",
+      "catalog_ids": [
+        "asset-80f9762446c0fc02"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-80f9762446c0fc02--IMG_3398.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-81892438cc2e6a55--IMG_3508.jpeg",
+      "catalog_ids": [
+        "asset-81892438cc2e6a55"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-81892438cc2e6a55--IMG_3508.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-818de3a0d026f0a9--IMG_3326.jpeg",
+      "catalog_ids": [
+        "asset-818de3a0d026f0a9"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-818de3a0d026f0a9--IMG_3326.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-8940026ea5ec69fa--IMG_3395.jpeg",
+      "catalog_ids": [
+        "asset-8940026ea5ec69fa"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-8940026ea5ec69fa--IMG_3395.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-8b71e68d81b525dc--IMG_3435.jpeg",
+      "catalog_ids": [
+        "asset-8b71e68d81b525dc"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-8b71e68d81b525dc--IMG_3435.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-9110c28e0898a79e--IMG_3519.jpeg",
+      "catalog_ids": [
+        "asset-9110c28e0898a79e"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-9110c28e0898a79e--IMG_3519.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-91d6ffad34058a9a--IMG_2776.jpeg",
+      "catalog_ids": [
+        "asset-91d6ffad34058a9a"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-91d6ffad34058a9a--IMG_2776.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-9229c64cb1782826--IMG_3323.jpeg",
+      "catalog_ids": [
+        "asset-9229c64cb1782826"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-9229c64cb1782826--IMG_3323.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-922d38f86c89f73d--IMG_3505.jpeg",
+      "catalog_ids": [
+        "asset-922d38f86c89f73d"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-922d38f86c89f73d--IMG_3505.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-9667261b6fee5730--IMG_3511.jpeg",
+      "catalog_ids": [
+        "asset-9667261b6fee5730"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-9667261b6fee5730--IMG_3511.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-98329025e63f551d--IMG_3401.jpeg",
+      "catalog_ids": [
+        "asset-98329025e63f551d"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-98329025e63f551d--IMG_3401.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-9aa5f388b2c0a9ca--IMG_3336.jpeg",
+      "catalog_ids": [
+        "asset-9aa5f388b2c0a9ca"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-9aa5f388b2c0a9ca--IMG_3336.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-9b0525aa1c37954a--IMG_2355.jpeg",
+      "catalog_ids": [
+        "asset-9b0525aa1c37954a"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-9b0525aa1c37954a--IMG_2355.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-9b844bb19245cc28--IMG_2870.jpeg",
+      "catalog_ids": [
+        "asset-9b844bb19245cc28"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-9b844bb19245cc28--IMG_2870.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-9d32c2f766326d0e--IMG_3361.jpeg",
+      "catalog_ids": [
+        "asset-9d32c2f766326d0e"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-9d32c2f766326d0e--IMG_3361.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-9f572f692467181d--IMG_3325.jpeg",
+      "catalog_ids": [
+        "asset-9f572f692467181d"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-9f572f692467181d--IMG_3325.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-9fa770d5f87c286a--diet_diagram.jpg",
+      "catalog_ids": [
+        "asset-9fa770d5f87c286a"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-9fa770d5f87c286a--diet_diagram.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-a4398df911d06d3f--IMG_3321.jpeg",
+      "catalog_ids": [
+        "asset-a4398df911d06d3f"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-a4398df911d06d3f--IMG_3321.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-a4d85e828d55cded--IMG_2347.jpeg",
+      "catalog_ids": [
+        "asset-a4d85e828d55cded"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-a4d85e828d55cded--IMG_2347.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-a547e5af9334e5b1--IMG_3506.jpeg",
+      "catalog_ids": [
+        "asset-a547e5af9334e5b1"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-a547e5af9334e5b1--IMG_3506.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-a5b81ee6dc73e406--IMG_3363.jpeg",
+      "catalog_ids": [
+        "asset-a5b81ee6dc73e406"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-a5b81ee6dc73e406--IMG_3363.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-a632a1f72984e42f--cons_comeback.jpg",
+      "catalog_ids": [
+        "asset-a632a1f72984e42f"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-a632a1f72984e42f--cons_comeback.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-a682abf588d51b0d--IMG_3518.jpeg",
+      "catalog_ids": [
+        "asset-a682abf588d51b0d"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-a682abf588d51b0d--IMG_3518.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-a6a0f1e28ae2bd1a--IMG_3439.jpeg",
+      "catalog_ids": [
+        "asset-a6a0f1e28ae2bd1a"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-a6a0f1e28ae2bd1a--IMG_3439.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-a7a46c98b37498ca--IMG_2359.jpeg",
+      "catalog_ids": [
+        "asset-a7a46c98b37498ca"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-a7a46c98b37498ca--IMG_2359.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-ada016e625c82729--IMG_3358.jpeg",
+      "catalog_ids": [
+        "asset-ada016e625c82729"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-ada016e625c82729--IMG_3358.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-ae77a87f437ebb70--IMG_3333.jpeg",
+      "catalog_ids": [
+        "asset-ae77a87f437ebb70"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-ae77a87f437ebb70--IMG_3333.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-af9d1b481c381dc7--IMG_3444.jpeg",
+      "catalog_ids": [
+        "asset-af9d1b481c381dc7"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-af9d1b481c381dc7--IMG_3444.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-afa736f83a460b13--IMG_3381.jpeg",
+      "catalog_ids": [
+        "asset-afa736f83a460b13"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-afa736f83a460b13--IMG_3381.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-b1db1b549a2c88c2--IMG_2878.jpeg",
+      "catalog_ids": [
+        "asset-b1db1b549a2c88c2"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-b1db1b549a2c88c2--IMG_2878.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-b205c0a01d209fae--IMG_3432.jpeg",
+      "catalog_ids": [
+        "asset-b205c0a01d209fae"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-b205c0a01d209fae--IMG_3432.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-b27788d55542f1cc--IMG_2773.jpeg",
+      "catalog_ids": [
+        "asset-b27788d55542f1cc"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-b27788d55542f1cc--IMG_2773.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-b2920aa1dbefcb97--IMG_3442.jpeg",
+      "catalog_ids": [
+        "asset-b2920aa1dbefcb97"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-b2920aa1dbefcb97--IMG_3442.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-b44f5c60088e266e--IMG_3328.jpeg",
+      "catalog_ids": [
+        "asset-b44f5c60088e266e"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-b44f5c60088e266e--IMG_3328.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-b5206667bf07f05b--IMG_3441.jpeg",
+      "catalog_ids": [
+        "asset-b5206667bf07f05b"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-b5206667bf07f05b--IMG_3441.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-b741e9d8704a02e7--IMG_2876.jpeg",
+      "catalog_ids": [
+        "asset-b741e9d8704a02e7"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-b741e9d8704a02e7--IMG_2876.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-b74a2689500db075--IMG_2349.jpeg",
+      "catalog_ids": [
+        "asset-b74a2689500db075"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-b74a2689500db075--IMG_2349.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-b91a9436ec4665fa--IMG_3327.jpeg",
+      "catalog_ids": [
+        "asset-b91a9436ec4665fa"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-b91a9436ec4665fa--IMG_3327.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-ba81c2492733aa1b--IMG_3359.jpeg",
+      "catalog_ids": [
+        "asset-ba81c2492733aa1b"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-ba81c2492733aa1b--IMG_3359.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-bb0bd8d9c4cf87c9--IMG_3329.jpeg",
+      "catalog_ids": [
+        "asset-bb0bd8d9c4cf87c9"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-bb0bd8d9c4cf87c9--IMG_3329.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-bbd4d6a226d73e44--IMG_2884.jpeg",
+      "catalog_ids": [
+        "asset-bbd4d6a226d73e44"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-bbd4d6a226d73e44--IMG_2884.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-bc4d2d7822e21690--size_compare.jpg",
+      "catalog_ids": [
+        "asset-bc4d2d7822e21690"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-bc4d2d7822e21690--size_compare.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-bc73e2ecfad3750f--IMG_3362.jpeg",
+      "catalog_ids": [
+        "asset-bc73e2ecfad3750f"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-bc73e2ecfad3750f--IMG_3362.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-bffd82626effa542--IMG_3513.jpeg",
+      "catalog_ids": [
+        "asset-bffd82626effa542"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-bffd82626effa542--IMG_3513.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-c11690bd147b5db5--IMG_3383.jpeg",
+      "catalog_ids": [
+        "asset-c11690bd147b5db5"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-c11690bd147b5db5--IMG_3383.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-c57d8cb4bb8dc7bd--IMG_3400.jpeg",
+      "catalog_ids": [
+        "asset-c57d8cb4bb8dc7bd"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-c57d8cb4bb8dc7bd--IMG_3400.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-c6185696aabf48e5--calendar.jpg",
+      "catalog_ids": [
+        "asset-c6185696aabf48e5"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-c6185696aabf48e5--calendar.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-c6c418300e5375d9--IMG_2353.jpeg",
+      "catalog_ids": [
+        "asset-c6c418300e5375d9"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-c6c418300e5375d9--IMG_2353.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-c7ed2418445f414d--IMG_3332.jpeg",
+      "catalog_ids": [
+        "asset-c7ed2418445f414d"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-c7ed2418445f414d--IMG_3332.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-c9581b267211cbcb--IMG_3393.jpeg",
+      "catalog_ids": [
+        "asset-c9581b267211cbcb"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-c9581b267211cbcb--IMG_3393.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-caa579c4403475c0--IMG_2354.jpeg",
+      "catalog_ids": [
+        "asset-caa579c4403475c0"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-caa579c4403475c0--IMG_2354.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-cce4063a62b3e108--IMG_3330.jpeg",
+      "catalog_ids": [
+        "asset-cce4063a62b3e108"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-cce4063a62b3e108--IMG_3330.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-cd38f502a51bf6bd--IMG_3468.jpeg",
+      "catalog_ids": [
+        "asset-cd38f502a51bf6bd"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-cd38f502a51bf6bd--IMG_3468.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-d34f2070f7948422--IMG_3431.jpeg",
+      "catalog_ids": [
+        "asset-d34f2070f7948422"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-d34f2070f7948422--IMG_3431.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-d8d7415dc63ff8f8--cons_basics.jpg",
+      "catalog_ids": [
+        "asset-d8d7415dc63ff8f8"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-d8d7415dc63ff8f8--cons_basics.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-d9b0176a49c0bd0e--IMG_3335.jpeg",
+      "catalog_ids": [
+        "asset-d9b0176a49c0bd0e"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-d9b0176a49c0bd0e--IMG_3335.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-dbfeba5da571feb6--IMG_3509.jpeg",
+      "catalog_ids": [
+        "asset-dbfeba5da571feb6"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-dbfeba5da571feb6--IMG_3509.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-dded438de5077361--sleep_diagram.jpg",
+      "catalog_ids": [
+        "asset-dded438de5077361"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-dded438de5077361--sleep_diagram.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-dfd821c14f7227eb--IMG_2886.jpeg",
+      "catalog_ids": [
+        "asset-dfd821c14f7227eb"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-dfd821c14f7227eb--IMG_2886.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-e13b365854bf974b--cons_success.jpg",
+      "catalog_ids": [
+        "asset-e13b365854bf974b"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-e13b365854bf974b--cons_success.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-e27e2ab941b776a9--IMG_3440.jpeg",
+      "catalog_ids": [
+        "asset-e27e2ab941b776a9"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-e27e2ab941b776a9--IMG_3440.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-e424da94f452ee09--IMG_3438.jpeg",
+      "catalog_ids": [
+        "asset-e424da94f452ee09"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-e424da94f452ee09--IMG_3438.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-e679c304e357c5d1--IMG_3382.jpeg",
+      "catalog_ids": [
+        "asset-e679c304e357c5d1"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-e679c304e357c5d1--IMG_3382.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-e69c83a579df2ebb--IMG_3402.jpeg",
+      "catalog_ids": [
+        "asset-e69c83a579df2ebb"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-e69c83a579df2ebb--IMG_3402.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-e8dcc0bd89672b84--IMG_2348.jpeg",
+      "catalog_ids": [
+        "asset-e8dcc0bd89672b84"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-e8dcc0bd89672b84--IMG_2348.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-e9e0af345fc4b30e--IMG_2882.jpeg",
+      "catalog_ids": [
+        "asset-e9e0af345fc4b30e"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-e9e0af345fc4b30e--IMG_2882.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-eae131e12565427c--IMG_2345.jpeg",
+      "catalog_ids": [
+        "asset-eae131e12565427c"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-eae131e12565427c--IMG_2345.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-eae8123213eff35a--IMG_3396.jpeg",
+      "catalog_ids": [
+        "asset-eae8123213eff35a"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-eae8123213eff35a--IMG_3396.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-edd9d5ec2d0bbd07--IMG_3392.jpeg",
+      "catalog_ids": [
+        "asset-edd9d5ec2d0bbd07"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-edd9d5ec2d0bbd07--IMG_3392.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-f194f7d134beec45--IMG_3510.jpeg",
+      "catalog_ids": [
+        "asset-f194f7d134beec45"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-f194f7d134beec45--IMG_3510.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-f63a876a5501a7df--IMG_2868.jpeg",
+      "catalog_ids": [
+        "asset-f63a876a5501a7df"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-f63a876a5501a7df--IMG_2868.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-f754918d4841d773--IMG_2346.jpeg",
+      "catalog_ids": [
+        "asset-f754918d4841d773"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-f754918d4841d773--IMG_2346.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-f78cedfed1d74f6b--IMG_3397.jpeg",
+      "catalog_ids": [
+        "asset-f78cedfed1d74f6b"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-f78cedfed1d74f6b--IMG_3397.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-f913f6c6c932177d--IMG_3437.jpeg",
+      "catalog_ids": [
+        "asset-f913f6c6c932177d"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-f913f6c6c932177d--IMG_3437.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-f962da252f20ff0b--IMG_2775.jpeg",
+      "catalog_ids": [
+        "asset-f962da252f20ff0b"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-f962da252f20ff0b--IMG_2775.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "path": "shared/media/asset-fbed2a5036b96a43--IMG_3512.jpeg",
+      "catalog_ids": [
+        "asset-fbed2a5036b96a43"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/naturalist-field-notes/data.js",
+          "reference": "../../shared/media/asset-fbed2a5036b96a43--IMG_3512.jpeg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "path": "shared/media/asset-0522db2debef2d1e--icon.svg",
+      "catalog_ids": [
+        "asset-0522db2debef2d1e"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/northern-elephant-seal/index.html",
+          "reference": "../../shared/media/asset-0522db2debef2d1e--icon.svg",
+          "kind": "html-href"
+        }
+      ]
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "path": "shared/media/asset-125a4bbb92b0953b--rookery_scene.jpg",
+      "catalog_ids": [
+        "asset-125a4bbb92b0953b"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/northern-elephant-seal/data.js",
+          "reference": "../../shared/media/asset-125a4bbb92b0953b--rookery_scene.jpg",
+          "kind": "script-media-property"
+        },
+        {
+          "source": "apps/northern-elephant-seal/index.html",
+          "reference": "../../shared/media/asset-125a4bbb92b0953b--rookery_scene.jpg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "path": "shared/media/asset-1a0051b4ea4be7ea--migration_map.jpg",
+      "catalog_ids": [
+        "asset-1a0051b4ea4be7ea"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/northern-elephant-seal/data.js",
+          "reference": "../../shared/media/asset-1a0051b4ea4be7ea--migration_map.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "path": "shared/media/asset-3895d93118cf6834--buoyancy_chart.jpg",
+      "catalog_ids": [
+        "asset-3895d93118cf6834"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/northern-elephant-seal/data.js",
+          "reference": "../../shared/media/asset-3895d93118cf6834--buoyancy_chart.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "path": "shared/media/asset-43951da610ad3fd3--size_sketch.jpg",
+      "catalog_ids": [
+        "asset-43951da610ad3fd3"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/northern-elephant-seal/data.js",
+          "reference": "../../shared/media/asset-43951da610ad3fd3--size_sketch.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "path": "shared/media/asset-9fa770d5f87c286a--diet_diagram.jpg",
+      "catalog_ids": [
+        "asset-9fa770d5f87c286a"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/northern-elephant-seal/data.js",
+          "reference": "../../shared/media/asset-9fa770d5f87c286a--diet_diagram.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "path": "shared/media/asset-a632a1f72984e42f--cons_comeback.jpg",
+      "catalog_ids": [
+        "asset-a632a1f72984e42f"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/northern-elephant-seal/data.js",
+          "reference": "../../shared/media/asset-a632a1f72984e42f--cons_comeback.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "path": "shared/media/asset-bc4d2d7822e21690--size_compare.jpg",
+      "catalog_ids": [
+        "asset-bc4d2d7822e21690"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/northern-elephant-seal/data.js",
+          "reference": "../../shared/media/asset-bc4d2d7822e21690--size_compare.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "path": "shared/media/asset-c6185696aabf48e5--calendar.jpg",
+      "catalog_ids": [
+        "asset-c6185696aabf48e5"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/northern-elephant-seal/data.js",
+          "reference": "../../shared/media/asset-c6185696aabf48e5--calendar.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "path": "shared/media/asset-d8d7415dc63ff8f8--cons_basics.jpg",
+      "catalog_ids": [
+        "asset-d8d7415dc63ff8f8"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/northern-elephant-seal/data.js",
+          "reference": "../../shared/media/asset-d8d7415dc63ff8f8--cons_basics.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "path": "shared/media/asset-dded438de5077361--sleep_diagram.jpg",
+      "catalog_ids": [
+        "asset-dded438de5077361"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/northern-elephant-seal/data.js",
+          "reference": "../../shared/media/asset-dded438de5077361--sleep_diagram.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "path": "shared/media/asset-e13b365854bf974b--cons_success.jpg",
+      "catalog_ids": [
+        "asset-e13b365854bf974b"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/northern-elephant-seal/data.js",
+          "reference": "../../shared/media/asset-e13b365854bf974b--cons_success.jpg",
+          "kind": "script-media-property"
+        }
+      ]
+    },
+    {
+      "app_id": "open-sea",
+      "path": "shared/media/asset-214710e10f5121d5--ScreenHunter-10670.jpg",
+      "catalog_ids": [
+        "asset-214710e10f5121d5"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/open-sea/index.html",
+          "reference": "../../shared/media/asset-214710e10f5121d5--ScreenHunter-10670.jpg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "pacific-white-sided-dolphin",
+      "path": "shared/media/asset-07e9859dce7506c6--IMG_3507.jpeg",
+      "catalog_ids": [
+        "asset-07e9859dce7506c6"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/pacific-white-sided-dolphin/index.html",
+          "reference": "../../shared/media/asset-07e9859dce7506c6--IMG_3507.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "pacific-white-sided-dolphin",
+      "path": "shared/media/asset-81892438cc2e6a55--IMG_3508.jpeg",
+      "catalog_ids": [
+        "asset-81892438cc2e6a55"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/pacific-white-sided-dolphin/index.html",
+          "reference": "../../shared/media/asset-81892438cc2e6a55--IMG_3508.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "pacific-white-sided-dolphin",
+      "path": "shared/media/asset-922d38f86c89f73d--IMG_3505.jpeg",
+      "catalog_ids": [
+        "asset-922d38f86c89f73d"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/pacific-white-sided-dolphin/index.html",
+          "reference": "../../shared/media/asset-922d38f86c89f73d--IMG_3505.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "pacific-white-sided-dolphin",
+      "path": "shared/media/asset-a547e5af9334e5b1--IMG_3506.jpeg",
+      "catalog_ids": [
+        "asset-a547e5af9334e5b1"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/pacific-white-sided-dolphin/index.html",
+          "reference": "../../shared/media/asset-a547e5af9334e5b1--IMG_3506.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "pacific-white-sided-dolphin",
+      "path": "shared/media/asset-dbfeba5da571feb6--IMG_3509.jpeg",
+      "catalog_ids": [
+        "asset-dbfeba5da571feb6"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/pacific-white-sided-dolphin/index.html",
+          "reference": "../../shared/media/asset-dbfeba5da571feb6--IMG_3509.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "pseudo-nitzschia",
+      "path": "shared/media/asset-312b492bbd93cf7f--IMG_3357.jpeg",
+      "catalog_ids": [
+        "asset-312b492bbd93cf7f"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/pseudo-nitzschia/index.html",
+          "reference": "../../shared/media/asset-312b492bbd93cf7f--IMG_3357.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "pseudo-nitzschia",
+      "path": "shared/media/asset-3406e524b14b7757--ScreenHunter-10643.jpg",
+      "catalog_ids": [
+        "asset-3406e524b14b7757"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/pseudo-nitzschia/index.html",
+          "reference": "../../shared/media/asset-3406e524b14b7757--ScreenHunter-10643.jpg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "pseudo-nitzschia",
+      "path": "shared/media/asset-ada016e625c82729--IMG_3358.jpeg",
+      "catalog_ids": [
+        "asset-ada016e625c82729"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/pseudo-nitzschia/index.html",
+          "reference": "../../shared/media/asset-ada016e625c82729--IMG_3358.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "pseudo-nitzschia",
+      "path": "shared/media/asset-ba81c2492733aa1b--IMG_3359.jpeg",
+      "catalog_ids": [
+        "asset-ba81c2492733aa1b"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/pseudo-nitzschia/index.html",
+          "reference": "../../shared/media/asset-ba81c2492733aa1b--IMG_3359.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "sperm-whale",
+      "path": "shared/media/asset-0c3ad11dc596bfa3--IMG_3515.jpeg",
+      "catalog_ids": [
+        "asset-0c3ad11dc596bfa3"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/sperm-whale/index.html",
+          "reference": "../../shared/media/asset-0c3ad11dc596bfa3--IMG_3515.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "sperm-whale",
+      "path": "shared/media/asset-345be463837369de--IMG_3517.jpeg",
+      "catalog_ids": [
+        "asset-345be463837369de"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/sperm-whale/index.html",
+          "reference": "../../shared/media/asset-345be463837369de--IMG_3517.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "sperm-whale",
+      "path": "shared/media/asset-48b0779c4998c64f--IMG_3516.jpeg",
+      "catalog_ids": [
+        "asset-48b0779c4998c64f"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/sperm-whale/index.html",
+          "reference": "../../shared/media/asset-48b0779c4998c64f--IMG_3516.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "sperm-whale",
+      "path": "shared/media/asset-a682abf588d51b0d--IMG_3518.jpeg",
+      "catalog_ids": [
+        "asset-a682abf588d51b0d"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/sperm-whale/index.html",
+          "reference": "../../shared/media/asset-a682abf588d51b0d--IMG_3518.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "stargazer-species-guide",
+      "path": "shared/media/asset-4b41d3a89ec67f65--IMG_3450.jpeg",
+      "catalog_ids": [
+        "asset-4b41d3a89ec67f65"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/stargazer-species-guide/index.html",
+          "reference": "../../shared/media/asset-4b41d3a89ec67f65--IMG_3450.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "stargazer-species-guide",
+      "path": "shared/media/asset-a6a0f1e28ae2bd1a--IMG_3439.jpeg",
+      "catalog_ids": [
+        "asset-a6a0f1e28ae2bd1a"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/stargazer-species-guide/index.html",
+          "reference": "../../shared/media/asset-a6a0f1e28ae2bd1a--IMG_3439.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "stargazer-species-guide",
+      "path": "shared/media/asset-b2920aa1dbefcb97--IMG_3442.jpeg",
+      "catalog_ids": [
+        "asset-b2920aa1dbefcb97"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/stargazer-species-guide/index.html",
+          "reference": "../../shared/media/asset-b2920aa1dbefcb97--IMG_3442.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "stargazer-species-guide",
+      "path": "shared/media/asset-b5206667bf07f05b--IMG_3441.jpeg",
+      "catalog_ids": [
+        "asset-b5206667bf07f05b"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/stargazer-species-guide/index.html",
+          "reference": "../../shared/media/asset-b5206667bf07f05b--IMG_3441.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "stargazer-species-guide",
+      "path": "shared/media/asset-e27e2ab941b776a9--IMG_3440.jpeg",
+      "catalog_ids": [
+        "asset-e27e2ab941b776a9"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/stargazer-species-guide/index.html",
+          "reference": "../../shared/media/asset-e27e2ab941b776a9--IMG_3440.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "tree-of-life-origins",
+      "path": "shared/media/asset-aa9c4cbb67f1dbc2--icon-192.svg",
+      "catalog_ids": [
+        "asset-aa9c4cbb67f1dbc2"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/tree-of-life-origins/index.html",
+          "reference": "../../shared/media/asset-aa9c4cbb67f1dbc2--icon-192.svg",
+          "kind": "html-href"
+        }
+      ]
+    },
+    {
+      "app_id": "whale-associated-organisms",
+      "path": "shared/media/asset-18794e74477d7c0e--IMG_3399.jpeg",
+      "catalog_ids": [
+        "asset-18794e74477d7c0e"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/whale-associated-organisms/index.html",
+          "reference": "../../shared/media/asset-18794e74477d7c0e--IMG_3399.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "whale-associated-organisms",
+      "path": "shared/media/asset-54b172586520e9bd--IMG_3394.jpeg",
+      "catalog_ids": [
+        "asset-54b172586520e9bd"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/whale-associated-organisms/index.html",
+          "reference": "../../shared/media/asset-54b172586520e9bd--IMG_3394.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "whale-associated-organisms",
+      "path": "shared/media/asset-80f9762446c0fc02--IMG_3398.jpeg",
+      "catalog_ids": [
+        "asset-80f9762446c0fc02"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/whale-associated-organisms/index.html",
+          "reference": "../../shared/media/asset-80f9762446c0fc02--IMG_3398.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "whale-associated-organisms",
+      "path": "shared/media/asset-8940026ea5ec69fa--IMG_3395.jpeg",
+      "catalog_ids": [
+        "asset-8940026ea5ec69fa"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/whale-associated-organisms/index.html",
+          "reference": "../../shared/media/asset-8940026ea5ec69fa--IMG_3395.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "whale-associated-organisms",
+      "path": "shared/media/asset-c9581b267211cbcb--IMG_3393.jpeg",
+      "catalog_ids": [
+        "asset-c9581b267211cbcb"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/whale-associated-organisms/index.html",
+          "reference": "../../shared/media/asset-c9581b267211cbcb--IMG_3393.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "whale-associated-organisms",
+      "path": "shared/media/asset-eae8123213eff35a--IMG_3396.jpeg",
+      "catalog_ids": [
+        "asset-eae8123213eff35a"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/whale-associated-organisms/index.html",
+          "reference": "../../shared/media/asset-eae8123213eff35a--IMG_3396.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "whale-associated-organisms",
+      "path": "shared/media/asset-edd9d5ec2d0bbd07--IMG_3392.jpeg",
+      "catalog_ids": [
+        "asset-edd9d5ec2d0bbd07"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/whale-associated-organisms/index.html",
+          "reference": "../../shared/media/asset-edd9d5ec2d0bbd07--IMG_3392.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "whale-associated-organisms",
+      "path": "shared/media/asset-f78cedfed1d74f6b--IMG_3397.jpeg",
+      "catalog_ids": [
+        "asset-f78cedfed1d74f6b"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/whale-associated-organisms/index.html",
+          "reference": "../../shared/media/asset-f78cedfed1d74f6b--IMG_3397.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "wildfires-ocean-health",
+      "path": "shared/media/asset-2d0fb775dfa440e2--IMG_2499.jpeg",
+      "catalog_ids": [
+        "asset-2d0fb775dfa440e2"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/wildfires-ocean-health/index.html",
+          "reference": "../../shared/media/asset-2d0fb775dfa440e2--IMG_2499.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "wildfires-ocean-health",
+      "path": "shared/media/asset-2f53072d7bea2b19--IMG_2729.jpeg",
+      "catalog_ids": [
+        "asset-2f53072d7bea2b19"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/wildfires-ocean-health/index.html",
+          "reference": "../../shared/media/asset-2f53072d7bea2b19--IMG_2729.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    },
+    {
+      "app_id": "wildfires-ocean-health",
+      "path": "shared/media/asset-73243e04da0b39f1--IMG_2501.jpeg",
+      "catalog_ids": [
+        "asset-73243e04da0b39f1"
+      ],
+      "issues": [],
+      "references": [
+        {
+          "source": "apps/wildfires-ocean-health/index.html",
+          "reference": "../../shared/media/asset-73243e04da0b39f1--IMG_2501.jpeg",
+          "kind": "html-src"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "platform_exemptions": [
+    {
+      "app_id": "mba-leadership",
+      "path": "icon.svg",
+      "scope": "platform-shell asset; not application content permission evidence"
+    }
+  ],
+  "limitations": [
+    "Static HTML media attributes, CSS url() and literal JS/JSON media properties only.",
+    "Computed/escaped URLs, dynamic templates, imported shared scripts, JS string markup and runtime network/media behavior are not certified.",
+    "Permission labels require recorded evidence but are not independently adjudicated; attribution is not permission."
+  ]
+}
