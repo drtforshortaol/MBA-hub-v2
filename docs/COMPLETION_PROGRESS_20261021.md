@@ -1,5 +1,7 @@
 # Completion progress and replacement candidate — October 21, 2026
 
+Follow-up: [verified replacement artifact and final Kelp Forest clarification](REPLACEMENT_CANDIDATE_20261021.md). Its exact source/digest supersede the historical candidate identity.
+
 Actual acceptance work uncovered a runtime defect, so the previous fixed artifact is now a historical baseline. No deployment or release occurred. All approval flags remain unchanged; PRs #2–#5 were confirmed open/draft.
 
 ## Fixed defect and new candidate identity
