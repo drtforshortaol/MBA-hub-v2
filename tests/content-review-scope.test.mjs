@@ -42,14 +42,14 @@ test('unsafe or duplicated evidence paths are rejected', () => {
   input.fidelity.apps[0].files.push({ local_path: 'src/apps/notes/../escape' });
   assert.throws(() => assessContentReviewScope(input), /Unsafe or duplicate fidelity path/);
 });
-test('current collection exposes October additions and nine unregistered new-media uses', async () => {
+test('current collection keeps October additions and nine new-media rights reviews explicit', async () => {
   const report = await auditContentReviewScope(fileURLToPath(new URL('..', import.meta.url)));
   assert.deepEqual(report.errors, []);
   const notes = report.apps.find(a => a.app_id === 'naturalist-field-notes');
   for (const name of ['october-2026-note.js', 'october-2026-08-14.html']) {
     assert.equal(notes.files.find(f => f.path.endsWith(name)).classification, 'local-addition-review');
   }
-  assert.equal(notes.offline_media.filter(m => !m.catalog_registered).length, 4);
-  assert.equal(report.apps.find(a => a.app_id === 'big-bellied-seahorse').offline_media.filter(m => !m.catalog_registered).length, 5);
-  assert.equal(report.summary.unregistered_media_uses, 9);
+  assert.equal(notes.offline_media.filter(m => m.permission_review_pending).length, 4);
+  assert.equal(report.apps.find(a => a.app_id === 'big-bellied-seahorse').offline_media.filter(m => m.permission_review_pending).length, 5);
+  assert.equal(report.summary.media_rights_review_uses, 9);
 });

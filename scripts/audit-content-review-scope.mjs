@@ -52,8 +52,10 @@ export function assessContentReviewScope({ provenance, fidelity, manifests, file
       const bytes = files.get(`src/${path}`);
       if (!bytes) errors.push(`${aid}: missing offline media ${path}`);
       const registered = catalog.assets.filter(asset => asset.path === path);
+      const rightsPending = registered.length !== 1 || !['owner-approved-v1', 'approved', 'licensed', 'public-domain'].includes(registered[0]?.permission);
       return { path, sha256: bytes ? sha256(bytes) : null, catalog_registered: registered.length === 1,
-        classification: registered.length === 1 ? 'catalog-record-not-new-permission' : 'unregistered-media-rights-review', inherited_approval_asserted: false };
+        permission_states: registered.map(asset => asset.permission), permission_review_pending: rightsPending,
+        classification: registered.length !== 1 ? 'unregistered-media-rights-review' : rightsPending ? 'registered-media-rights-review' : 'catalog-record-not-new-permission', inherited_approval_asserted: false };
     });
     apps.push({ app_id: aid, inherited_provenance_candidate: inheritedCandidate,
       whole_app_inherited_approval_asserted: false, files: scopes, offline_media: media });
@@ -64,6 +66,7 @@ export function assessContentReviewScope({ provenance, fidelity, manifests, file
     summary: { apps: apps.length, local_additions: apps.flatMap(a => a.files).filter(f => f.classification === 'local-addition-review').length,
       new_app_files: apps.flatMap(a => a.files).filter(f => f.classification === 'new-app-content-review').length,
       unregistered_media_uses: apps.flatMap(a => a.offline_media).filter(m => !m.catalog_registered).length,
+      media_rights_review_uses: apps.flatMap(a => a.offline_media).filter(m => m.permission_review_pending).length,
       approval_flags_changed: false },
     limitations: ['All classifications are evidence/review scope, not approval.',
       'Matching app provenance never covers local additions or changed claims.',
