@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "scope": "Existing unchanged V1 content only; technical/device/release acceptance separate",
+  "apps": [
+    {
+      "app_id": "california-flying-fish",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#california-flying-fish",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
+      "content_sha256": "28facd1e4cd348a0068462bb55a20a941755723b7b00dc211a80c912c70af806"
+    },
+    {
+      "app_id": "green-falsejingle",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#green-falsejingle",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
+      "content_sha256": "0158e18a5b99d0b24ba72de736a271f6b050727195fdcba1714c844c1f4ebff7"
+    },
+    {
+      "app_id": "flamboyant-cuttlefish",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#flamboyant-cuttlefish",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
+      "content_sha256": "9aeaa4240b03210850692a2ae84f1ded519073b272470acbb80bad537867a06a"
+    }
+  ]
+}
