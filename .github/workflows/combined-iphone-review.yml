@@ -43,6 +43,8 @@ jobs:
         run: |
           cp docs/iphone-review-20261018.md dist/REVIEW.md
           cp docs/COMPLETION_AUDIT_20261021.md dist/COMPLETION_AUDIT_20261021.md
+          cp docs/COMPLETION_PROGRESS_20261021.md dist/COMPLETION_PROGRESS_20261021.md
+          cp docs/FIXED_BUILD_PILOT_RECORD_20261021.md dist/FIXED_BUILD_PILOT_RECORD_20261021.md
           cp docs/FIXED_BUILD_ACCEPTANCE_20261021.md dist/FIXED_BUILD_ACCEPTANCE_20261021.md
           mkdir -p dist/verification
           cp docs/verification/completion-ci-20261021.json dist/verification/

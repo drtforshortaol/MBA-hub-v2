@@ -2,6 +2,8 @@
 
 ## Current status — alpha.7, completion and acceptance review
 
+New finding: the Information Center phone renderer required a runtime fix. See [completion progress and replacement candidate](docs/COMPLETION_PROGRESS_20261021.md). The older fixed artifact below remains historical; it is not the final acceptance candidate after this fix.
+
 The current integration contains 33 applications (26 listed, seven supporting/unlisted), 11 categories and 203 catalog media assets. All 25 V1 inventory apps are present. The recorded core Naturalist, navigation/search, offline/recovery and evidence/security workstreams are implemented; full-release acceptance remains incomplete.
 
 Start with the [completion audit](docs/COMPLETION_AUDIT_20261021.md) and [fixed-build acceptance checklist](docs/FIXED_BUILD_ACCEPTANCE_20261021.md). The fixed Batch 13 candidate is source `96a9303ef54f0d0fc6cccb8ef0da2fed9f8609de`, with [successful hosted CI and downloadable artifact](https://github.com/drtforshortaol/MBA-hub-v2/actions/runs/39717669206). Its combined Node 788/788, EVO 35/35 and application preflight 33/33 passed. These are dated evidence, not a promise about later checkouts; inspect the matching build's verification results.
