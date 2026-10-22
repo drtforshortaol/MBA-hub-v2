@@ -2,9 +2,9 @@
 
 ## Current status — alpha.7, completion and acceptance review
 
-Follow-up: [three static V1 migrations reconciled](docs/INHERITED_STATIC_RECONCILIATION_20261022.md) using complete source/code/media and search-text evidence. No new scientific, image or device approval is granted; the changed tester metadata requires a newly identified acceptance candidate.
+Follow-up: [three static V1 migrations reconciled](docs/INHERITED_STATIC_RECONCILIATION_20261022.md) using complete source/code/media and search-text evidence. No new scientific, image or device approval is granted; the exact replacement artifact is identified in the current candidate record.
 
-Latest: [verified October 22 acceptance candidate](docs/ACCEPTANCE_CANDIDATE_20261022.md) and [completion batch](docs/COMPLETION_BATCH_20261022.md). Current catalog registration is complete for supported local references, with nine explicit pending image-rights reviews; use the newly identified combined candidate for future acceptance.
+Latest: [verified reconciled acceptance candidate](docs/ACCEPTANCE_RECONCILED_20261022.md) and [completion batch](docs/COMPLETION_BATCH_20261022.md). Current catalog registration is complete for supported local references, with nine explicit pending image-rights reviews; use the newly identified combined candidate for future acceptance.
 
 [Current completion instructions](docs/COMPLETION_INSTRUCTIONS_20261021.md) supersede stale work priorities. The declared-media planner is clean, but [independent referenced-media coverage](docs/LOCAL_MEDIA_COVERAGE_20261021.md) identified nine catalog gaps; pending registration records preserve their unresolved permission reviews. Evidence-bound inherited metadata now distinguishes unchanged V1 authority from unresolved current-app fidelity. A new combined candidate is required for the changed tester metadata.
 
