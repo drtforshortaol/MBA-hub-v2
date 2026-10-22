@@ -8,7 +8,7 @@
     "source_files": 83,
     "local_resources": 235,
     "resources_with_findings": 9,
-    "uncataloged_resources": 9
+    "uncataloged_resources": 0
   },
   "resources": [
     {
@@ -59,9 +59,10 @@
     {
       "app_id": "big-bellied-seahorse",
       "path": "apps/IMG_4212.jpeg",
-      "catalog_ids": [],
+      "catalog_ids": [
+        "asset-486b6cdb96375dfb"
+      ],
       "issues": [
-        "not-in-media-catalog",
         "permission-evidence-missing"
       ],
       "references": [
@@ -75,9 +76,10 @@
     {
       "app_id": "big-bellied-seahorse",
       "path": "apps/IMG_4213.jpeg",
-      "catalog_ids": [],
+      "catalog_ids": [
+        "asset-2913dc8df835400c"
+      ],
       "issues": [
-        "not-in-media-catalog",
         "permission-evidence-missing"
       ],
       "references": [
@@ -91,9 +93,10 @@
     {
       "app_id": "big-bellied-seahorse",
       "path": "apps/IMG_4214.jpeg",
-      "catalog_ids": [],
+      "catalog_ids": [
+        "asset-e62b39cc07a542c4"
+      ],
       "issues": [
-        "not-in-media-catalog",
         "permission-evidence-missing"
       ],
       "references": [
@@ -107,9 +110,10 @@
     {
       "app_id": "big-bellied-seahorse",
       "path": "apps/IMG_4215.jpeg",
-      "catalog_ids": [],
+      "catalog_ids": [
+        "asset-54f52bac7bc827bc"
+      ],
       "issues": [
-        "not-in-media-catalog",
         "permission-evidence-missing"
       ],
       "references": [
@@ -123,9 +127,10 @@
     {
       "app_id": "big-bellied-seahorse",
       "path": "apps/IMG_4216.jpeg",
-      "catalog_ids": [],
+      "catalog_ids": [
+        "asset-93c15fb934aba9e6"
+      ],
       "issues": [
-        "not-in-media-catalog",
         "permission-evidence-missing"
       ],
       "references": [
@@ -1119,9 +1124,10 @@
     {
       "app_id": "naturalist-field-notes",
       "path": "apps/IMG_4207.jpeg",
-      "catalog_ids": [],
+      "catalog_ids": [
+        "asset-1bd100105f88c83a"
+      ],
       "issues": [
-        "not-in-media-catalog",
         "permission-evidence-missing"
       ],
       "references": [
@@ -1135,9 +1141,10 @@
     {
       "app_id": "naturalist-field-notes",
       "path": "apps/IMG_4208.jpeg",
-      "catalog_ids": [],
+      "catalog_ids": [
+        "asset-95daa2493750e82f"
+      ],
       "issues": [
-        "not-in-media-catalog",
         "permission-evidence-missing"
       ],
       "references": [
@@ -1151,9 +1158,10 @@
     {
       "app_id": "naturalist-field-notes",
       "path": "apps/IMG_4209.jpeg",
-      "catalog_ids": [],
+      "catalog_ids": [
+        "asset-47f9bbb193878eec"
+      ],
       "issues": [
-        "not-in-media-catalog",
         "permission-evidence-missing"
       ],
       "references": [
@@ -1167,9 +1175,10 @@
     {
       "app_id": "naturalist-field-notes",
       "path": "apps/IMG_4210.jpeg",
-      "catalog_ids": [],
+      "catalog_ids": [
+        "asset-50646c3fe1d0c359"
+      ],
       "issues": [
-        "not-in-media-catalog",
         "permission-evidence-missing"
       ],
       "references": [

@@ -1,5 +1,7 @@
 # Local media coverage audit — October 21, 2026
 
+Follow-up: [pending October registration](PENDING_OCTOBER_MEDIA_REGISTRATION_20261021.md) resolves the nine catalog gaps while retaining all nine permission findings. The retained report now reflects that registration; the original discovery counts below remain historical.
+
 The existing offline registration planner is correct within its declared scope: every catalog media ID already declared by an app has its required offline path. Its zero-addition result does not establish that every displayed local resource has a catalog record or permission evidence.
 
 The new read-only `node scripts/audit-local-media-coverage.mjs` scans app-owned HTML, CSS and literal JS/JSON media properties independently of `manifest.media`. It resolves relative paths safely, groups repeated app/resource references, and compares existence, catalog membership, app media IDs, offline declarations and recorded permission evidence. It does not create IDs, move/copy files, alter content, grant image rights or modify approvals. Findings cause exit status 1; malformed input causes exit status 2. The original planner's behavior remains unchanged.
