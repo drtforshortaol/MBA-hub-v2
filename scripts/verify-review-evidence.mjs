@@ -12,8 +12,15 @@ export function verifyReviewEvidence(directory,expectedCommit){
   if(fs.readFileSync(path.join(directory,'SOURCE-COMMIT.txt'),'utf8').trim()!==expectedCommit)errors.push('Checkout provenance mismatch');
   for(const environment of ['developer','tester']){
    const release=read(`${environment}/release.json`);
-   const registry=read(`${environment}/registry.json`),search=read(`${environment}/search-index.json`);
+   const registry=read(`${environment}/registry.json`),search=read(`${environment}/search-index.json`),media=read(`${environment}/shared/media/catalog.json`);
    if(registry.environment!==environment||!Array.isArray(registry.apps)||!registry.apps.length||!Array.isArray(search))throw Error(`${environment}: invalid generated coverage metadata`);
+   if(!Array.isArray(media?.assets))throw Error(`${environment}: invalid generated media metadata`);
+   const catalog=new Map(media.assets.map(asset=>[asset.asset_id,asset]));
+   const expectedHttpApps=new Map(registry.apps.map(app=>{
+    const assets=app.media.map(id=>catalog.get(id));
+    if(assets.some(asset=>!asset))throw Error(`${environment}: unresolved generated app media`);
+    return [app.app_id,{entry:app.entry_point,offline:app.offline_assets.length,media:assets.length,offlineMedia:assets.filter(asset=>asset.offline).length,resources:new Set([app.entry_point,...app.offline_assets,...assets.filter(asset=>asset.offline).map(asset=>asset.path)]).size}];
+   }));
    const expectedApps=new Map(registry.apps.map(app=>{
     const targets=new Set([app.entry_point,...search.filter(entry=>entry.app_id===app.app_id).map(entry=>entry.url)]);
     if(app.entry_point.endsWith('/index.html'))targets.add(app.entry_point.slice(0,-'index.html'.length));
@@ -27,6 +34,10 @@ export function verifyReviewEvidence(directory,expectedCommit){
     if(scenario&&(!Number.isSafeInteger(report.resources?.expected)||report.resources.expected!==release.resources?.length||report.resources.expected<=0||!Number.isSafeInteger(report.resources?.verified)||report.resources.verified!==report.resources.expected||!Array.isArray(report.resources?.errors)||report.resources.errors.length))errors.push(`${file}: incomplete offline resource evidence`);
     if(scenario?.includes('inventory')&&(!report.recovery||((scenario.startsWith('corrupt-')||scenario.startsWith('forged-'))?report.recovery.initialErrorCode!=='OFFLINE_INVENTORY_INVALID':(report.recovery.initialComplete!==false||report.recovery.initialCount!==0||report.recovery.initialTotal!==0))||report.recovery.interrupted!==(scenario==='interrupted-inventory-recovery')||report.recovery.complete!==true||report.recovery.count!==release.resources.length||report.recovery.total!==release.resources.length||report.recovery.retainedDataPreserved!==true||report.recovery.cacheDeletions!==0||report.recovery.activations!==0))errors.push(`${file}: incomplete inventory recovery evidence`);
     if(OFFLINE_SCENARIOS.find(s=>s.name===scenario)?.options.refreshPage&&(!report.refreshPage||!Array.isArray(report.refreshPage.commands)||report.refreshPage.commands.join(',')!=='STATUS,RECOVER_OFFLINE'||report.refreshPage.navigations!==1||report.refreshPage.channelsClosed!==true||report.refreshPage.timersCleared!==true))errors.push(`${file}: incomplete refresh page recovery evidence`);
+    if(!scenario&&(!Array.isArray(report.apps)||report.apps.length!==expectedHttpApps.size||new Set(report.apps.map(app=>app?.app_id)).size!==expectedHttpApps.size||!report.apps.every(app=>{
+     const expected=expectedHttpApps.get(app?.app_id);
+     return expected&&app.passed===true&&app.entry_point===expected.entry&&app.declaredOfflineResources===expected.offline&&app.declaredMedia===expected.media&&app.offlineMedia===expected.offlineMedia&&app.verifiedResources===expected.resources&&Array.isArray(app.missingResources)&&app.missingResources.length===0;
+    })))errors.push(`${file}: incomplete HTTP application coverage`);
     if(!scenario&&(report.expectedRelease!==release.release||!Number.isSafeInteger(report.resources?.expected)||report.resources.expected<=0||report.resources.expected!==release.resources?.length||!Number.isSafeInteger(report.resources?.verified)||report.resources.verified!==report.resources.expected))errors.push(`${file}: incomplete HTTP evidence`);
    }
   }

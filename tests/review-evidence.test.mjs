@@ -12,10 +12,13 @@ function fixture(t){
  for(const environment of ['developer','tester']){
   fs.mkdirSync(path.join(dir,environment));const release=environment==='developer'?'1'.repeat(16):'2'.repeat(16);
   fs.writeFileSync(path.join(dir,environment,'release.json'),JSON.stringify({environment,release,resources:[{url:'apps/one/index.html'},{url:'apps/two.html'},{url:'registry.json'}]}));
-  fs.writeFileSync(path.join(dir,environment,'registry.json'),JSON.stringify({environment,apps:[{app_id:'one',entry_point:'apps/one/index.html'},{app_id:'two',entry_point:'apps/two.html'}]}));
+  fs.writeFileSync(path.join(dir,environment,'registry.json'),JSON.stringify({environment,apps:[{app_id:'one',entry_point:'apps/one/index.html',offline_assets:['apps/one/index.html'],media:[]},{app_id:'two',entry_point:'apps/two.html',offline_assets:['apps/two.html'],media:[]}]}));
   fs.writeFileSync(path.join(dir,environment,'search-index.json'),JSON.stringify([{app_id:'one',url:'apps/one/index.html#section'}]));
+  fs.mkdirSync(path.join(dir,environment,'shared/media'),{recursive:true});
+  fs.writeFileSync(path.join(dir,environment,'shared/media/catalog.json'),JSON.stringify({assets:[]}));
+  const httpApps=[['one','apps/one/index.html'],['two','apps/two.html']].map(([app_id,entry_point])=>({app_id,entry_point,declaredOfflineResources:1,declaredMedia:0,offlineMedia:0,verifiedResources:1,missingResources:[],passed:true}));
   const base={passed:true,environment,release,errors:[]};
-  fs.writeFileSync(path.join(dir,`${environment}-http-report.json`),JSON.stringify({...base,expectedRelease:release,resources:{expected:3,verified:3}}));
+  fs.writeFileSync(path.join(dir,`${environment}-http-report.json`),JSON.stringify({...base,expectedRelease:release,apps:httpApps,resources:{expected:3,verified:3}}));
   for(const {file,name:scenario,options} of OFFLINE_SCENARIOS)fs.writeFileSync(path.join(dir,`offline-reports/${environment}-${file}.json`),JSON.stringify({...base,scenario,...(options.refreshPage?{refreshPage:{commands:['STATUS','RECOVER_OFFLINE'],navigations:1,channelsClosed:true,timersCleared:true}}:{}),...(scenario.includes('inventory')?{recovery:{...(options.corruptInventory?{initialErrorCode:'OFFLINE_INVENTORY_INVALID'}:{initialComplete:false,initialCount:0,initialTotal:0}),interrupted:scenario==='interrupted-inventory-recovery',complete:true,count:3,total:3,retainedDataPreserved:true,cacheDeletions:0,activations:0}}:{}),resources:{expected:3,verified:3,errors:[]},offlineNetworkAttempts:0,apps:[{app_id:'one',passed:true,expected:3,verified:3,errors:[]},{app_id:'two',passed:true,expected:1,verified:1,errors:[]}]}));
  }
  return dir;
@@ -36,7 +39,7 @@ test('review evidence rejects wrong checkout and missing report',t=>{
 test('combined workflow retains evidence only after offline and provenance gates',()=>{
  const workflow=fs.readFileSync('.github/workflows/combined-iphone-review.yml','utf8');
  assert.match(workflow,/contents: read/);assert.doesNotMatch(workflow,/deploy-pages|contents: write|continue-on-error|always\(\)/);
- for(const token of ['npm run build','npm test','verify-build-artifacts.mjs','verify:preview:http','verify-offline-navigation.mjs --report-dir dist/offline-reports','git rev-parse HEAD > dist/SOURCE-COMMIT.txt','verify-review-evidence.mjs dist "$GITHUB_SHA"','actions/upload-artifact@v4'])assert(workflow.includes(token),token);
+ for(const token of ['npm run build','node scripts/plan-offline-media-registration.mjs','npm test','verify-build-artifacts.mjs','verify:preview:http','verify-offline-navigation.mjs --report-dir dist/offline-reports','git rev-parse HEAD > dist/SOURCE-COMMIT.txt','verify-review-evidence.mjs dist "$GITHUB_SHA"','actions/upload-artifact@v4'])assert(workflow.includes(token),token);
  assert(workflow.indexOf('verify-review-evidence.mjs')>workflow.indexOf('SOURCE-COMMIT.txt'));assert(workflow.indexOf('actions/upload-artifact@')>workflow.indexOf('verify-review-evidence.mjs'));
 });
 
@@ -101,4 +104,32 @@ for(const mutation of ['missing page','wrong commands','not navigated','leaked c
  if(mutation==='leaked channel')report.refreshPage.channelsClosed=false;
  if(mutation==='wrong code')report.recovery.initialErrorCode='ARBITRARY_ERROR';
  fs.writeFileSync(file,JSON.stringify(report));assert(verifyReviewEvidence(dir,commit).length);
+});
+
+for(const mutation of ['missing','truncated','duplicate','unknown','failed','wrong entry','missing media','wrong resources','string count','contradictory errors'])test(`review evidence rejects HTTP application coverage ${mutation}`,t=>{
+ const dir=fixture(t),file=path.join(dir,'developer-http-report.json'),report=JSON.parse(fs.readFileSync(file));
+ if(mutation==='missing')delete report.apps;
+ if(mutation==='truncated')report.apps.pop();
+ if(mutation==='duplicate')report.apps[1]={...report.apps[0]};
+ if(mutation==='unknown')report.apps[0].app_id='unregistered';
+ if(mutation==='failed')report.apps[0].passed=false;
+ if(mutation==='wrong entry')report.apps[0].entry_point='apps/elsewhere.html';
+ if(mutation==='missing media')report.apps[0].declaredMedia=1;
+ if(mutation==='wrong resources')report.apps[0].verifiedResources=2;
+ if(mutation==='string count')report.apps[0].verifiedResources='1';
+ if(mutation==='contradictory errors')report.apps[0].missingResources=['apps/one/index.html'];
+ fs.writeFileSync(file,JSON.stringify(report));
+ assert(verifyReviewEvidence(dir,commit).some(error=>error.includes('incomplete HTTP application coverage')));
+});
+
+test('HTTP evidence binds shared offline media coverage while preserving separate online media intent',t=>{
+ const dir=fixture(t),registryFile=path.join(dir,'developer/registry.json'),registry=JSON.parse(fs.readFileSync(registryFile));
+ registry.apps[0].media=['local','remote'];
+ fs.writeFileSync(registryFile,JSON.stringify(registry));
+ fs.writeFileSync(path.join(dir,'developer/shared/media/catalog.json'),JSON.stringify({assets:[{asset_id:'local',path:'registry.json',offline:true},{asset_id:'remote',path:'online.jpg',offline:false}]}));
+ const file=path.join(dir,'developer-http-report.json'),report=JSON.parse(fs.readFileSync(file));
+ Object.assign(report.apps[0],{declaredMedia:2,offlineMedia:1,verifiedResources:2});fs.writeFileSync(file,JSON.stringify(report));
+ assert.deepEqual(verifyReviewEvidence(dir,commit),[]);
+ report.apps[0].verifiedResources=1;fs.writeFileSync(file,JSON.stringify(report));
+ assert(verifyReviewEvidence(dir,commit).some(error=>error.includes('incomplete HTTP application coverage')));
 });
