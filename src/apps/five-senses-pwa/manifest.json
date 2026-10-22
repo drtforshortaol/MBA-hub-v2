@@ -20,7 +20,9 @@
     "apps/five-senses-pwa/apps.js",
     "apps/five-senses-pwa/data.js",
     "apps/five-senses-pwa/index.html",
-    "apps/five-senses-pwa/styles.css"
+    "apps/five-senses-pwa/styles.css",
+    "shared/media/five-senses-header.svg",
+    "shared/media/asset-3b65e654f48dae5f--icon.svg"
   ],
   "media": [
     "five-senses-header",

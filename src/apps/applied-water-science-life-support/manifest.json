@@ -18,7 +18,9 @@
   "offline_assets": [
     "apps/applied-water-science-life-support/app.js",
     "apps/applied-water-science-life-support/index.html",
-    "apps/applied-water-science-life-support/styles.css"
+    "apps/applied-water-science-life-support/styles.css",
+    "shared/media/asset-4df490b298fa93f0--icon.svg",
+    "shared/media/asset-ed3359c28ab8bf19--pigging-biofouling.jpg"
   ],
   "media": [
     "asset-4df490b298fa93f0",
