@@ -24,6 +24,8 @@ jobs:
           node --test tests/security-review.test.mjs
           node scripts/verify-build-artifacts.mjs
           python3 -m unittest discover -s scripts/validation -p 'test_evo_*.py'
+          python3 scripts/migration/test-fidelity-audit.py
+          python3 -m unittest discover -s scripts/validation -p test_acceptance_record.py
       - name: Verify served developer and tester releases over HTTP
         run: |
           python3 -m http.server 8127 --bind 127.0.0.1 --directory dist > /tmp/mba-review-http.log 2>&1 &
