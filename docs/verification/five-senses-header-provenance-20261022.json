@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "scope": "Exact pinned-byte provenance mapping only; no new permission, scientific or device approval",
+  "asset": {
+    "asset_id": "five-senses-header",
+    "path": "shared/media/five-senses-header.svg",
+    "source_repository": "drtforshortaol/MBA-hub",
+    "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+    "source_path": "apps/five-senses-pwa/images/header-five-senses-mba.svg",
+    "sha256": "25a12b38f3e3cad43fd05b260176f45aed17f5d894ffa1fb57f16b049595be6a"
+  },
+  "exact_pinned_bytes": true,
+  "permission_unchanged": "owner-approved-v1"
+}
