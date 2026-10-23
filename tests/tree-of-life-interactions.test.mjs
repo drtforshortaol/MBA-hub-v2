@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
+import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 
 const source = readFileSync(new URL('../src/apps/tree-of-life-origins/app.js', import.meta.url), 'utf8');
@@ -66,4 +67,12 @@ test('collapse closes nested disclosures and missing load targets are harmless',
   f.ids.collapseAll.handlers.click();
   assert.equal(f.outer.open, false); assert.equal(f.inner.open, false);
   assert.equal(f.hero.scrolled.behavior, 'smooth');
+});
+
+// Retrieved read-only from MBA-hub 5c219508d23255080f6b050cefa8092905447d81,
+// apps/tree-of-life-origins/icons/icon-192.svg; binds the entire original asset.
+test('inherited Tree of Life icon retains exact pinned V1 bytes', () => {
+  const bytes = readFileSync(new URL('../src/shared/media/asset-aa9c4cbb67f1dbc2--icon-192.svg', import.meta.url));
+  const blob = createHash('sha1').update('blob ' + bytes.length + String.fromCharCode(0)).update(bytes).digest('hex');
+  assert.equal(blob, '02fccc74094d216c1d353cffc533a30e7170d236');
 });
