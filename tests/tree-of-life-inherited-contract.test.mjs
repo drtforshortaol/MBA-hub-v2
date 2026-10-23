@@ -55,7 +55,7 @@ test('Tree of Life search and expand/collapse controls remain wired', () => {
   assert.ok(script.includes('$$("details").forEach(d=>d.open=false)'), 'collapse behavior missing');
 });
 
-test('Tree of Life executable and stylesheet match pinned V1 except isolated Hub worker migration', () => {
+test('Tree of Life executable and stylesheet match pinned V1 except documented worker and search-navigation fixes', () => {
   // Read-only MBA-hub commit 5c219508d23255080f6b050cefa8092905447d81.
   // A Git blob hash binds the complete upstream bytes without network access in CI.
   const gitBlobSha = bytes => createHash('sha1')
@@ -64,7 +64,12 @@ test('Tree of Life executable and stylesheet match pinned V1 except isolated Hub
   const disabledWorker = 'if(false)window.addEventListener("load",()=>Promise.resolve({update:async()=>{},installing:null,waiting:null,active:null}));';
   const originalWorker = 'if("serviceWorker"in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js"));';
   assert.equal(script.split(disabledWorker).length, 2, 'worker migration must occur exactly once');
-  const restoredSource = script.replace(disabledWorker, originalWorker);
+  // Technical migration: navigation to an explicitly filtered-out destination
+  // clears the active search before opening/scrolling. Visible targets retain it.
+  const originalTarget = 'function openTarget(target){if(!target)return;let parent=target;while(parent){if(parent.tagName==="DETAILS")parent.open=true;parent=parent.parentElement}target.scrollIntoView({behavior:"smooth",block:"start"})}';
+  const fixedTarget = 'function openTarget(target){if(!target)return;let parent=target;while(parent){if(parent.classList.contains("hidden-by-search")){searchInput.value="";runSearch();break}parent=parent.parentElement}parent=target;while(parent){if(parent.tagName==="DETAILS")parent.open=true;parent=parent.parentElement}target.scrollIntoView({behavior:"smooth",block:"start"})}';
+  assert.equal(script.split(fixedTarget).length, 2, 'search-navigation fix must occur exactly once');
+  const restoredSource = script.replace(disabledWorker, originalWorker).replace(fixedTarget, originalTarget);
   assert.equal(gitBlobSha(restoredSource), '8593db513cf65a44ec00cc8af2375cfa40810abe',
     'unreviewed executable change relative to pinned V1');
   const css = readFileSync(new URL('styles.css', app));
