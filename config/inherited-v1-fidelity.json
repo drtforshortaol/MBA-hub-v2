@@ -265,6 +265,39 @@
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
       "content_sha256": "c07d1b4588850e521e44cf9e9893a308e55fc18118cf33383da1eedf8a4ecad2"
+    },
+    {
+      "app_id": "five-senses-pwa",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
+      "content_sha256": "efe3839f8961cf8bb2bcdfc01a9567cbbb90774f8c3511d054b2e910f094f408"
+    },
+    {
+      "app_id": "kelp-forest",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
+      "content_sha256": "5db0fdaa9b508a1a017480b092bea1f2488e778623377a642051152babf68376"
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
+      "content_sha256": "e28109fb60a25dd4b13f74e2863e55f84b26f7a04149dea9b4de1ed043678533"
     }
   ]
 }

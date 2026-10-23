@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generatedAt": "2026-10-23T12:46:09.487Z",
+  "generatedAt": "2026-10-23T13:12:53.419Z",
   "platformVersion": "2.0.0-alpha.7",
   "stage": "migration-review",
   "apps": 33,
@@ -16,10 +16,7 @@
     "release gate: privacyReviewed",
     "content review pending: big-bellied-seahorse",
     "content review pending: evolution-timeline",
-    "content review pending: five-senses-pwa",
-    "content review pending: kelp-forest",
     "content review pending: naturalist-field-notes",
-    "content review pending: northern-elephant-seal",
     "content review pending: open-sea",
     "content review pending: tree-of-life-origins",
     "content review pending: whale-parasites-associates",
@@ -34,7 +31,7 @@
     "media permission review: asset-93c15fb934aba9e6"
   ],
   "publicationReview": {
-    "inheritedV1Content": 24,
+    "inheritedV1Content": 27,
     "scope": "Inherited V1 content only; do not confuse with production approval"
   },
   "deviceQA": {
