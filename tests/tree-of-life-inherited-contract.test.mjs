@@ -153,7 +153,11 @@ test('Tree of Life media references resolve locally and are registered for offli
   const asset = readFileSync(new URL(assetPath, app), 'utf8');
   assert.ok(asset.includes('<svg '), 'SVG opening tag missing');
   assert.ok(asset.includes('</svg>'), 'SVG closing tag missing');
-  assert.equal(manifest.offline_assets.length, 3, 'unexpected offline inventory change');
+  const allowedOffline = new Set(['apps/tree-of-life-origins/app.js', 'apps/tree-of-life-origins/index.html', 'apps/tree-of-life-origins/styles.css', 'shared/media/' + mediaId + '--icon-192.svg']);
+  for (const path of manifest.offline_assets) {
+    assert.ok(allowedOffline.has(path), 'unexpected offline asset: ' + path);
+    assert.ok(readFileSync(new URL('../src/' + path, import.meta.url)).length > 0);
+  }
   for (const relative of ['app.js', 'index.html', 'styles.css']) {
     assert.ok(manifest.offline_assets.includes('apps/tree-of-life-origins/' + relative),
       'missing offline app asset: ' + relative);
