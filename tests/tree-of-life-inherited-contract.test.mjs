@@ -100,7 +100,7 @@ test('Tree of Life V2 anchor additions preserve original authored markup', () =>
     .update('blob ' + Buffer.byteLength(bytes) + String.fromCharCode(0))
     .update(bytes).digest('hex');
   let restored = html
-    .replace('<link rel="icon"', '<link rel="manifest" href="manifest.webmanifest">\\n<link rel="icon"')
+    .replace('<link rel="icon"', '<link rel="manifest" href="manifest.webmanifest">\n<link rel="icon"')
     .replaceAll('../../shared/media/asset-aa9c4cbb67f1dbc2--icon-192.svg', 'icons/icon-192.svg')
     .replace('<style>[data-v2-maintenance-hidden="true"]{display:none!important}</style></head>', '</head>')
     .replace('<button id="installButton" class="install-button" hidden="hidden" data-v2-maintenance-hidden="true" aria-hidden="true" disabled>', '<button id="installButton" class="install-button" hidden>')
