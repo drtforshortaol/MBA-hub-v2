@@ -1,0 +1,9 @@
+# Verified recovered acceptance candidate — October 22, 2026
+
+The exact combined CI artifact for source b373575903d7b8c24192b849460bc4c5274fa649 was independently downloaded and verified with scripts/prepare-acceptance-record.py. Successful CI: https://github.com/drtforshortaol/MBA-hub-v2/actions/runs/39897448964. Artifact ID 12476962860, mba-v2-combined-iphone-review; 128061161 bytes. ZIP SHA-256 d17409c9dde9d290718427ad4aef94a8a7bf97c4b58c9e27053d922ab3b8d95a.
+
+Developer release 7203ab7cd8aca8db contains 383 resources; tester 2db25a4965d83e3a contains 374. The verifier checked supplied ZIP bytes, size/digest, source marker, workflow source/success, extracted artifact integrity and retained HTTP/offline evidence. All 14 simulated offline scenarios pass 507 targets each with zero offline network attempts. Source baseline Node 821/821, EVO 35/35 and preflight 33/33 pass.
+
+verification/candidate-acceptance-recovered-20261022.json is a fresh owner plus three-reviewer record covering 33 apps and 17 checks. Every physical/reviewer status remains NOT TESTED; all five operational gates remain PENDING. No human identity, feedback or device PASS is invented. This artifact includes the five restored app fixes, not the lost additional 15-app reconciliation or Library/Information Center indexing. Current readiness retains 44 blockers. See RECOVERED_COMPLETION_BATCH_20261022.md.
+
+No HTTPS acceptance location was provisioned or deployed. No existing preview/tester URL is represented as this build. Trusted HTTPS current-build physical install, media/layout, navigation/Back, offline restart, update and whole-bundle rollback remain necessary. Any later runtime change requires a newly identified candidate. This record adds no scientific approval, image rights, hosting authority, merge or release authorization.
