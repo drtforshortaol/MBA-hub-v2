@@ -1,6 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {auditLocalMediaCoverage,extractMediaReferences,resolveLocalMedia} from '../scripts/audit-local-media-coverage.mjs';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import {auditRepositoryMedia,auditLocalMediaCoverage,extractMediaReferences,resolveLocalMedia} from '../scripts/audit-local-media-coverage.mjs';
 
 const app={app_id:'fish',media:['photo'],offline_assets:['shared/media/fish.jpg']};
 const asset={asset_id:'photo',path:'shared/media/fish.jpg',permission:'owner-approved-v1',permission_evidence:'Recorded V1 owner authorization'};
@@ -70,4 +73,39 @@ test('approved path aliases cannot mask unapproved records selected by the app',
  }
  const undeclared=audit('<img src="../../shared/media/fish.jpg">',{apps:[{...app,media:[]}]});
  assert.deepEqual(undeclared.resources[0].issues,['not-in-app-media','permission-evidence-missing']);
+});
+
+test('malformed app declarations fail even when no source file references media',()=>{
+ const sparse=[];sparse.length=1;
+ for(const changes of [{media:null},{offline_assets:null},{media:sparse},{offline_assets:sparse},{media:['photo','photo']},{offline_assets:['../outside.jpg']},{offline_assets:['shared/media/fish.jpg','shared/media/fish.jpg']}]){
+  assert.throws(()=>audit('',{apps:[{...app,...changes}],files:[]}),/Malformed app declarations/);
+ }
+});
+function repositoryFixture(t){
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'mba-media-audit-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
+ const write=(name,value)=>{const target=path.join(root,name);fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,value);};
+ write('src/apps/fish/manifest.json',JSON.stringify(app));write('src/apps/fish/index.html','<img src="../../shared/media/fish.jpg">');
+ write('src/shared/media/catalog.json',JSON.stringify({assets:[asset]}));write('src/shared/media/fish.jpg','image bytes');
+ return root;
+}
+test('repository audit checks regular file existence without changing source bytes',t=>{
+ const root=repositoryFixture(t),catalog=fs.readFileSync(path.join(root,'src/shared/media/catalog.json'));
+ assert.equal(auditRepositoryMedia(root).complete,true);
+ fs.unlinkSync(path.join(root,'src/shared/media/fish.jpg'));
+ assert.deepEqual(auditRepositoryMedia(root).resources[0].issues,['missing-local-file']);
+ assert.deepEqual(fs.readFileSync(path.join(root,'src/shared/media/catalog.json')),catalog);
+});
+test('repository audit rejects symlinked media ancestors and catalog before reading them',t=>{
+ for(const relative of ['src/shared/media','src/shared/media/catalog.json']){
+  const root=repositoryFixture(t),target=path.join(root,relative),saved=path.join(root,'outside');
+  fs.renameSync(target,saved);fs.symlinkSync(saved,target,fs.statSync(saved).isDirectory()?'dir':'file');
+  assert.throws(()=>auditRepositoryMedia(root),/Symlink prohibited in media audit/);
+ }
+});
+test('repository audit rejects symlinked source roots, app directories and manifests',t=>{
+ for(const relative of ['src','src/apps','src/apps/fish','src/apps/fish/manifest.json']){
+  const root=repositoryFixture(t),target=path.join(root,relative),saved=path.join(root,'outside');
+  fs.renameSync(target,saved);fs.symlinkSync(saved,target,fs.statSync(saved).isDirectory()?'dir':'file');
+  assert.throws(()=>auditRepositoryMedia(root),/Symlink prohibited in media audit/);
+ }
 });
