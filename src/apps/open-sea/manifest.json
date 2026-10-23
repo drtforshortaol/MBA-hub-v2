@@ -31,8 +31,8 @@
   "sections": [
     {
       "id": "Open-Sea-Overview-Key-Influences",
-      "title": "\ud83c\udf0a Open Sea Overview & Key Influences",
-      "text": "\ud83c\udf0a Open Sea Overview & Key Influences Welcome to the Open Sea \n    \n\n \n  The open sea is the largest ecosystem on Earth. It is vast and variable\n  and includes ocean waters away from coastal limits and above the\n  seafloor. The word  pelagic  refers to the open seas or oceans.\n \n\n \n  Coastal and seabed habitats are associated with tangible geological\n  surfaces. The open sea is different because it is primarily defined by\n  intangible conditions that cannot be touched but strongly shape the\n  organisms living there.\n \n\n \n   Rocky Shores \n   Sandy Shores \n   Piers & Jetties \n   Shale Rock \n   Elkhorn Slough \n   Into the Deep \n   Kelp Forest \n   Monterey Bay Habitat \n \n Primary Open-Sea Influences \n    \n\n \n  The training notes identify temperature, light and color, pressure,\n  oxygen, salinity, nutrients, currents, sound, marine debris, and animal\n  deception or camouflage as important open-sea topics.\n \n\n \n  The source document provides detailed material for the dropdowns below.\n  Marine debris was listed as a future topic but did not include supporting\n  details, so no unverified debris section has been added.",
+      "title": "🌊 Open Sea Overview & Key Influences",
+      "text": "🌊 Open Sea Overview & Key Influences Welcome to the Open Sea \n    \n\n \n  The open sea is the largest ecosystem on Earth. It is vast and variable\n  and includes ocean waters away from coastal limits and above the\n  seafloor. The word  pelagic  refers to the open seas or oceans.\n \n\n \n  Coastal and seabed habitats are associated with tangible geological\n  surfaces. The open sea is different because it is primarily defined by\n  intangible conditions that cannot be touched but strongly shape the\n  organisms living there.\n \n\n \n   Rocky Shores \n   Sandy Shores \n   Piers & Jetties \n   Shale Rock \n   Elkhorn Slough \n   Into the Deep \n   Kelp Forest \n   Monterey Bay Habitat \n \n Primary Open-Sea Influences \n    \n\n \n  The training notes identify temperature, light and color, pressure,\n  oxygen, salinity, nutrients, currents, sound, marine debris, and animal\n  deception or camouflage as important open-sea topics.\n \n\n \n  The source document provides detailed material for the dropdowns below.\n  Marine debris was listed as a future topic but did not include supporting\n  details, so no unverified debris section has been added.",
       "aliases": []
     },
     {
@@ -50,7 +50,79 @@
     {
       "id": "References-and-source-notes",
       "title": "References and source notes",
-      "text": "References and source notes \n\n \n   \n     Primary content source:  User-provided document,\n    \u201czoom - open seas.docx.\u201d\n   \n\n   \n     Original app source:  User-provided Open Sea HTML\n    exhibit reference.\n   \n\n   \n    Numerical values and physiology statements are presented as volunteer\n    training notes. They should be checked against current\n    Aquarium-approved materials before formal publication or public use.\n   \n\n   \n    No external photographs or third-party image assets are used in this\n    version. Emoji are used as interface markers.",
+      "text": "References and source notes \n\n \n   \n     Primary content source:  User-provided document,\n    “zoom - open seas.docx.”\n   \n\n   \n     Original app source:  User-provided Open Sea HTML\n    exhibit reference.\n   \n\n   \n    Numerical values and physiology statements are presented as volunteer\n    training notes. They should be checked against current\n    Aquarium-approved materials before formal publication or public use.\n   \n\n   \n    No external photographs or third-party image assets are used in this\n    version. Emoji are used as interface markers.",
+      "aliases": []
+    },
+    {
+      "id": "card-temperature",
+      "title": "Temperature",
+      "text": "Temperature Mixed surface water, thermocline, and deep cold Physical Factor Adaptation 0–100 m: mixed layer 100–600 m: thermocline Below 600 m: 2–3°C Surface to About 100 Meters Wind keeps the upper water column well mixed, so temperature is fairly consistent within this layer. Atmospheric heat exchange makes it warmer in summer and colder in winter. Seasonal temperature changes can alter the community of organisms. This upper column is where most open-sea animals reside. About 100 to 600 Meters — Thermocline The thermocline is isolated from direct atmospheric influence. Temperature becomes progressively colder with depth. It forms a transitional layer separating warmer, more buoyant surface water from colder deep water. Below 600 Meters Temperature remains consistently near 2–3°C, just above freezing. Countercurrent Heat Exchange Tuna, billfish, and some sharks use countercurrent heat exchange to remain warmer than surrounding water. This can support increased metabolism and more efficient physiological processing.",
+      "aliases": []
+    },
+    {
+      "id": "card-light",
+      "title": "Light & Color",
+      "text": "Light & Color Filtering, absorption, scattering, and photosynthesis Physical Factor Adaptation Visible-Light Wavelengths Red and orange are longer wavelengths. Yellow and green are middle wavelengths. Blue and violet are shorter wavelengths. Shorter visible wavelengths carry more energy than longer visible wavelengths. Filtering With Depth As a general rule in clear water, longer wavelengths are filtered out first through absorption by water molecules. Red light is largely filtered out by about 50 meters. Blue light can potentially reach about 200 meters, near the lower limit of the euphotic zone where photosynthesis can occur. Clearer water permits blue and green wavelengths to penetrate more deeply. Phytoplankton and Ocean Color Phytoplankton contain chlorophyll that absorbs blue and red light and scatters green light. Their abundance, together with dissolved and suspended material, helps influence apparent ocean color. Particulate and organic debris can affect both long and short wavelengths. In less-clear water, useful light may become limited within the first 50 meters or less. Phytoplankton generally inhabit the upper sunlit layer, where available light energy may become a major limiting factor. Countershading Dark coloring above and light coloring below helps an animal blend with dark water when viewed from above and surface light when viewed from below.",
+      "aliases": []
+    },
+    {
+      "id": "card-pressure",
+      "title": "Pressure",
+      "text": "Pressure One additional atmosphere about every 10 meters Physical Factor Adaptation +1 atm per 10.06 m Free dive: 200 m+ Sperm whale: ~2,100 m Depth and Human Diving Pressure increases by approximately one atmosphere every 10.06 meters. Human free-diving records extend beyond 200 meters. The source notes list human scuba dives beyond 300 meters and cite 190 feet or 58 meters as a recreational safety reference. The notes state that decompression illness can occur after dives as shallow as about 10 meters under some conditions. Sperm whales can dive to roughly 7,000 feet or 2,100 meters. Training Caution Diving limits depend on training, equipment, gas mixtures, time, ascent rate, and individual conditions. This app is not a diving safety guide. Adaptations to Pressure and Diving Long breath-holding: some whales exceed two hours; the source notes also list harbor seals at approximately two hours. Compressible lungs: found in whales, harbor seals, and elephant seals. Lowered heart rate: the notes describe rates as low as four beats per minute in some diving whales and seals. Reduced movement: gliding downward saves energy compared with continuous swimming. Reduced metabolic activity: blood flow and organ activity can be prioritized during dives. Pressure-tolerant buoyancy structures: some fishes have specialized swim bladders or lack large gas-filled spaces. TMAO: trimethylamine N-oxide helps protect proteins from pressure-related distortion. TMAO can break down into TMA, associated with the odor of decaying fish. Reduced nitrogen uptake: lung compression and altered gas exchange help diving mammals limit nitrogen absorption at depth. Pressure Tolerance in Ocean Animals Different fishes have different pressure tolerances. The source notes estimate that only about two percent of fishes live below the photic zone. Squid, krill, jellies, and specialized fishes inhabit depths between approximately 200 and 1,000 meters.",
+      "aliases": []
+    },
+    {
+      "id": "card-oxygen",
+      "title": "Oxygen",
+      "text": "Oxygen Ocean deserts and the oxygen minimum zone Physical Factor Adaptation Global Oxygen Production The source notes state that photosynthetic ocean algae contribute more than half of the world's oxygen production. Why the Open Ocean Can Resemble a Desert Warmer water generally holds less dissolved oxygen. Low-oxygen ocean regions may expand as climate conditions change. Coastal upwelling does not occur uniformly throughout the open sea, so many open-ocean regions have limited nutrient supplies. Phytoplankton may compete for scarce nitrate, phosphate, and iron. Oxygen Minimum Zone — About 200 to 1,500 Meters The training notes identify an oxygen minimum zone between approximately 200 and 1,500 meters. This depth range overlaps the thermocline, where direct atmospheric mixing is greatly reduced. Aerobic bacteria consuming sinking dead organic matter use dissolved oxygen. Photosynthesis produces oxygen in upper waters but is not available below the sunlit zone. Low-Oxygen Adaptations Gills with large surface areas Blood systems capable of extracting a high percentage of oxygen Blood pigments that bind oxygen efficiently Reduced metabolism or activity Deep-Water Oxygen Renewal Thermohaline circulation introduces oxygen to deeper water when cold, dense surface water sinks. That water carries dissolved gases, particles, and heat into deeper ocean layers.",
+      "aliases": []
+    },
+    {
+      "id": "card-salinity",
+      "title": "Salinity & Density",
+      "text": "Salinity & Density 33–37 grams of salt per kilogram Physical Factor Circulation Typical range: 33–37 g/kg Seawater commonly contains about 33 to 37 grams of dissolved salts per kilogram of seawater. Warm water is generally less dense because its molecules are more spread out. Cold water is generally denser than warm water. Rainfall dilutes seawater, making it fresher and usually less dense. Evaporation concentrates salts, making seawater saltier and usually denser. Marine animals must regulate their internal balance of water and dissolved salts. Salinity and density are especially important in controlling deep-water currents.",
+      "aliases": []
+    },
+    {
+      "id": "card-nutrients",
+      "title": "Nutrients",
+      "text": "Nutrients Limited nitrate, phosphate, and iron Physical Factor A major open-sea limitation is the availability of nutrients needed to support phytoplankton production. Phosphates Nitrates Iron in some ocean regions Currents can transport nutrients from productive coastal regions into the open ocean, although much open-ocean water remains nutrient-poor.",
+      "aliases": []
+    },
+    {
+      "id": "card-thermohaline",
+      "title": "Thermohaline Circulation",
+      "text": "Thermohaline Circulation Temperature, salinity, density, and deep oxygen Physical Factor Circulation Thermohaline circulation is large-scale ocean circulation influenced by temperature and salinity. “Thermo” refers to temperature, and “haline” refers to salt. Cold and Salty Water Is Dense Cold water is denser than warm water, while salty water is denser than fresher water. Cold, salty surface water is therefore especially likely to sink. Near polar regions, sea-ice formation excludes much of the salt from the ice. The remaining water becomes saltier and denser. This process is called brine rejection . Deep-Ocean Ventilation Surface water receives oxygen through contact with the atmosphere, photosynthesis, wind, and wave mixing. When cold, oxygen-rich surface water sinks, it carries dissolved oxygen into the deep ocean. Deep currents then distribute that oxygen through ocean basins. Why Deep Oxygen Matters Supports deep-sea animals and microorganisms Supports decomposition of organic material Supports nutrient cycling Supports seafloor ecosystems Influences chemical processes in bottom sediments If organisms consume oxygen faster than circulation replaces it, bottom water may become hypoxic or anoxic. Fresh Surface Water Can Act as a Lid Rainfall, river water, or melting ice can freshen surface water. Even when it is cold, fresher water may remain too buoyant to sink, reducing mixing and deep-water oxygen renewal. The Basic Chain Cooling + increasing salinity → increasing density → sinking → deep circulation → oxygen delivered downward. Surface freshening → stronger layering → less sinking and mixing → reduced deep-ocean oxygen renewal.",
+      "aliases": []
+    },
+    {
+      "id": "card-currents",
+      "title": "Currents",
+      "text": "Currents Drifters compared with active swimmers Physical Factor Adaptation Currents help distinguish two broad groups of open-sea animals: drifters and swimmers. Drifters Cannot consistently swim against the current Usually have relatively low energy demands Many capture food by trapping it instead of actively pursuing it Jellies are a familiar example Swimmers Swim actively or continuously Actively search for or pursue food Some must continue moving to push water across their gills, a method often called ram ventilation",
+      "aliases": []
+    },
+    {
+      "id": "card-sound",
+      "title": "Sound",
+      "text": "Sound Approximately five times faster in water Physical Factor Adaptation About 5× faster than in air Sound travels approximately five times faster in water than in air. This makes sound especially useful in dark or low-visibility marine environments. Whale Uses of Sound Communicate over long distances Sense surroundings Locate food through echolocation or sonar-like sensing Navigate and avoid obstacles",
+      "aliases": []
+    },
+    {
+      "id": "card-schooling",
+      "title": "Protection in Numbers",
+      "text": "Protection in Numbers Schooling, confusion, and cooperative hunting Adaptation Behavior A tightly grouped school may appear like one larger animal. Movement within the group makes it harder for a predator to focus on one fish. Groups may work together to locate, surround, or capture larger prey.",
+      "aliases": []
+    },
+    {
+      "id": "card-vertical-migration",
+      "title": "Vertical Migration",
+      "text": "Vertical Migration Daily movements of up to 1,000 meters Adaptation Behavior Up to ~1,000 m daily Up to ~100 atm change Some ocean species migrate vertically through as much as 1,000 meters of the water column each day. This movement can expose them to a pressure change of approximately 100 atmospheres without obvious ill effects. Many remain deeper during daylight to reduce predation risk, then move toward the surface at night to feed.",
+      "aliases": []
+    },
+    {
+      "id": "card-bioluminescence",
+      "title": "Bioluminescence",
+      "text": "Bioluminescence Defense, camouflage, hunting, and deception Adaptation Deception Defensive Uses Confuse predators Startle or delay attackers Match light from above so predators looking upward cannot easily see the animal, a strategy called counter-illumination Offensive Uses Lure prey Search for prey Illuminate nearby objects Dragonfish Red Light Some dragonfishes produce red light. Many deep-sea animals cannot see red wavelengths, allowing the dragonfish to illuminate prey without being easily detected.",
       "aliases": []
     }
   ],

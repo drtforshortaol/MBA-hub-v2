@@ -56,6 +56,11 @@ jobs:
           mkdir -p dist/verification
           cp docs/verification/completion-ci-20261021.json dist/verification/
           cp config/inherited-v1-fidelity.json dist/verification/inherited-v1-fidelity.json
+          cp docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md dist/
+          cp docs/OPEN_SEA_SEARCH_20261022.md dist/
+          cp docs/HTTPS_ACCEPTANCE_PROPOSAL_20261022.md dist/
+          cp docs/CONTINUATION_VERIFIED_20261022.md dist/
+          cp docs/verification/inherited-fifteen-content-20261022.json dist/verification/
           cp docs/verification/inherited-static-content-20261022.json dist/verification/
           git rev-parse HEAD > dist/SOURCE-COMMIT.txt
           sha256sum dist/developer/release.json dist/tester/release.json > dist/RELEASE-CHECKSUMS.txt

@@ -34,6 +34,171 @@
       "reviewed_on": "2026-10-22",
       "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
       "content_sha256": "9aeaa4240b03210850692a2ae84f1ded519073b272470acbb80bad537867a06a"
+    },
+    {
+      "app_id": "bluespotted-ribbontail-ray",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "a6ddc9987ddf5c35453e17a7d26c884afb51319fad78aaffc17e38f11a6dae3c"
+    },
+    {
+      "app_id": "california-sheephead",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "978ae240d30f91f21951d89453f00f2488b26ff0e62b5912b701a9a077c2a209"
+    },
+    {
+      "app_id": "gray-whale",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "15fbc14a3bca8517f2c3d85bc58ef110d9b15befb1cac3f412c03ccdcf67b043"
+    },
+    {
+      "app_id": "gray-whale-skeleton-exhibit",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "9050bafefc1d8499016699d877c94d18cc1f15ee28c192540ecabd9b4b59590f"
+    },
+    {
+      "app_id": "hopkins-rose-nudibranch",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "31297544977aeab653a249ba71fffc4493256f435b2694bb7d25295da1db68de"
+    },
+    {
+      "app_id": "inaturalist-citizen-science",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "a0fed6fa783853fefcc7c726d73df54b82707e7338cdfce6fa7088461ee8acd0"
+    },
+    {
+      "app_id": "pacific-white-sided-dolphin",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "b86ee5e0b66e37b5ca9248473551d027a6fcc3dbfa2b1f4de30f8f4721c177b3"
+    },
+    {
+      "app_id": "pseudo-nitzschia",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "026c323a17530fea74244386e8578024684600adbc38f5afbd2ae066cc9ec6d4"
+    },
+    {
+      "app_id": "sea-slugs-nudibranchs",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "d30ed61f9a21ed6c950a2cfb293671ae801029eecf47dffee399cd239771dbb8"
+    },
+    {
+      "app_id": "sperm-whale",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "15b447324ffdadacf8d62dfceb689a0c12e2b4bf67a17383fc4ebc6291017196"
+    },
+    {
+      "app_id": "stargazer-species-guide",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "6336b0292b711e1cc54939bed0aa0012b8fa78d95ad69547f99aa79f53748b19"
+    },
+    {
+      "app_id": "whale-associated-organisms",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "8dea8a40f312900d78559667a1deff4f1a392dc8f7b7151817d44483f2d723a0"
+    },
+    {
+      "app_id": "wildfires-ocean-health",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "efcfe6a27b85b699c4830f674467f9c2899ec74255f8a3c97aca1c2afe27db80"
+    },
+    {
+      "app_id": "wildlife-rescue",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "10cbc87be71047d79d55565489ab74ca0d36b47699f94292bf69dca1000e9b6b"
+    },
+    {
+      "app_id": "gooseneck-barnacle",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "eb7ce777c30245b83b2f9b839ac24b76e80374a907ff5a399acdc03ce231a336"
     }
   ]
 }
