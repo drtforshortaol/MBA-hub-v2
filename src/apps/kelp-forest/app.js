@@ -80,7 +80,7 @@ function safeUrl(value) {
 }
 
 function addParagraphs(parent, value) {
-  String(value ?? '').split(/\\n\\s*\\n/).filter(Boolean)
+  String(value ?? '').split(/\n\s*\n/).filter(Boolean)
     .forEach(part => node('p', '', parent, part));
 }
 

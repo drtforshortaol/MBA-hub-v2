@@ -31,7 +31,7 @@
     {
       "id": "referencesTitle",
       "title": "References and Source Notes",
-      "text": "References and Source Notes",
+      "text": "References and Source Notes Content source: User-provided MMC Narrations.tsx file imported into data.js on 2026-06-29. App standards: Built to the App Building Core Categories protocol for hub-compatible dropdown PWAs. Image note: Current header visual is an inline CSS/SVG-style visual block, not an external photo. Replace or supplement with a sourced image in images/ when available.",
       "aliases": []
     },
     {

@@ -108,7 +108,7 @@
     parsed.querySelectorAll("*").forEach((node) => {
       for (const attribute of [...node.attributes]) {
         if (/^on/i.test(attribute.name) ||
-            (["href", "src", "xlink:href"].includes(attribute.name) && /^\\s*javascript:/i.test(attribute.value))) {
+            (["href", "src", "xlink:href"].includes(attribute.name) && /^\s*javascript:/i.test(attribute.value))) {
           node.removeAttribute(attribute.name);
         }
       }
