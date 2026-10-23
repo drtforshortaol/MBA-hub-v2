@@ -19,6 +19,7 @@ jobs:
           npm run build
           npm run content:check:all
           node scripts/plan-offline-media-registration.mjs
+          node scripts/verify-media-registration.mjs --report dist/media-registration-report.json
           npm run security:scan
           npm test
           node --test tests/security-review.test.mjs

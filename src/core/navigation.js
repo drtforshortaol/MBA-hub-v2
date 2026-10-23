@@ -37,7 +37,7 @@ export function appRestoreState(root,current,storage,namespace){
   for(const candidate of [url,source]){candidate.searchParams.delete('restore');candidate.searchParams.delete('home');}
   if(url.href!==source.href)return null;
   const state=context.state;
-  return {appView:true,scroll:Number.isFinite(state.scroll)&&state.scroll>=0?state.scroll:0,
+  return {appView:true,...(Array.isArray(state.modes)?{modes:[...new Set(state.modes.filter(value=>typeof value==='string'&&value&&value.length<=100))]}:{}),scroll:Number.isFinite(state.scroll)&&state.scroll>=0?state.scroll:0,
    details:Array.isArray(state.details)?[...new Set(state.details.filter(value=>Number.isSafeInteger(value)&&value>=0))]:[],
    expanded:Array.isArray(state.expanded)?[...new Set(state.expanded.filter(value=>typeof value==='string'&&value))]:[],
    inputs:Array.isArray(state.inputs)?state.inputs.filter(value=>value&&typeof value.id==='string'&&typeof value.value==='string').map(value=>({id:value.id,value:value.value,checked:value.checked===true})):[]};

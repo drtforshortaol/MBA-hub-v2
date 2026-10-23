@@ -44,6 +44,41 @@ test('source/srcset, video posters and CSS URLs are audited with shared paths de
  assert.ok(r.resources.some(x=>x.path==='apps/fish/clip.mp4'));
  assert.ok(r.resources.some(x=>x.path==='apps/fish/other.webp'));
 });
+test('data and external srcset candidates cannot hide later local registration findings',()=>{
+ for(const first of ['data:image/png;base64,aGVsbG8= 1x','https://example.test/remote.jpg 1x','data:image/svg+xml,%3Csvg,%3E 1x']){
+  const r=audit('<img srcset="'+first+', unregistered.webp 2x">');
+  assert.equal(r.resources.length,1);
+  assert.equal(r.resources[0].path,'apps/fish/unregistered.webp');
+  assert.deepEqual(r.resources[0].issues,['not-in-media-catalog','permission-evidence-missing','not-in-app-offline-assets']);
+  assert.equal(r.complete,false);
+ }
+});
+test('srcset preserves URL commas, ASCII whitespace and trailing candidate delimiters',()=>{
+ const refs=extractMediaReferences('apps/fish/index.html','<img srcset="  ../photo,large.jpg 1x,\n../small.webp,\t../third.png 3x, ">');
+ assert.deepEqual(refs,[
+  {url:'../photo,large.jpg',kind:'html-srcset'},
+  {url:'../small.webp',kind:'html-srcset'},
+  {url:'../third.png',kind:'html-srcset'}
+ ]);
+ const r=audit('<img srcset="../../shared/media/fish.jpg 1x, ../photo,large.jpg 2x">');
+ assert.deepEqual(r.resources.map(x=>x.path),['shared/media/fish.jpg']);
+ // The platform intentionally prohibits comma paths. Preserve the complete URL
+ // so it produces an explicit path error rather than a partial invented URL.
+ assert.equal(r.errors.length,1);
+ assert.equal(r.errors[0].reference,'../photo,large.jpg');
+ assert.equal(r.errors[0].reason,'unsafe-media-path');
+ assert.equal(r.complete,false);
+});
+test('responsive image preloads audit every imagesrcset candidate and retain pending permissions',()=>{
+ const r=audit('<link rel="preload" as="image" imagesrcset="data:image/png;base64,AA== 1x, ../../shared/media/fish.jpg 2x">',{
+  media:{assets:[{...asset,permission:'review-required',permission_evidence:''}]}
+ });
+ assert.equal(r.resources.length,1);
+ assert.deepEqual(r.resources[0].issues,['permission-evidence-missing']);
+ assert.equal(r.resources[0].references[0].kind,'html-imagesrcset');
+ assert.equal(r.complete,false);
+ assert.equal(r.writePerformed,false);
+});
 test('missing files and denied or unknown permission labels remain findings',()=>{
  for(const permission of ['denied','pending','mystery']){
   const r=audit('<img src="../../shared/media/fish.jpg">',{exists:()=>false,media:{assets:[{...asset,permission}]}});

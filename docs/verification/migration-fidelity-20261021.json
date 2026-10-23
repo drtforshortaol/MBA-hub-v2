@@ -4380,12 +4380,12 @@
             "@@ -5,8 +5,9 @@",
             " Species",
             " Guide",
-            " ←",
+            " \u2190",
             "-Return",
             "-to",
             "+MBA",
             "+Hub",
-            "+·",
+            "+\u00b7",
             " Naturalist",
             " Field",
             " Notes"
@@ -4431,8 +4431,9 @@
           "source_path": "apps/tree-of-life-origins/app.js",
           "local_path": "src/apps/tree-of-life-origins/app.js",
           "pinned_sha256": "a9d09dbcd64f11034701c67028198f6dc5eeae0f542e70a25b4580da7a3f844a",
-          "current_sha256": "e0c35fb2da9f710fe742541bcdd83cc2835cdea8bda2ad66fcf7dc6cc9146208",
-          "status": "changed"
+          "current_sha256": "9e204d1a8cdcfb3329c6fd7a6f4daf31886f295c580c2191c2855a66279a98cc",
+          "status": "changed",
+          "technical_diff_note": "Navigation clears an active search only when its target or an ancestor is hidden-by-search; original disclosure opening and scrolling are preserved. Whole-JS regression reverses this exact technical fix and worker migration to verify the original pinned V1 blob. No scientific or editorial approval supplied."
         },
         {
           "source_path": "apps/tree-of-life-origins/hub-registry-entry.js",
@@ -4513,8 +4514,9 @@
           "source_path": "apps/whale-parasites-associates/app.js",
           "local_path": "src/apps/whale-parasites-associates/app.js",
           "pinned_sha256": "b8d535e35a682d8ce99d4cff2d7cd70c771257ba21c3f9f833afdbda917d6fc4",
-          "current_sha256": "d069c8f85db80697d8f649ab4ce429ee3d4fd03b64a75351c699874531811d5f",
-          "status": "changed"
+          "current_sha256": "c0cc74c03308172c688f340dd27639af50fc1e2dbbbb57fb962902fb37ca5811",
+          "status": "changed",
+          "technical_diff_note": "2026-10-23: Jump selection now recomputes the actual visible-card count after revealing a filtered-out card; search/filter state, original open/scroll/reset behavior, all authored data and styles are preserved. Bounded interaction tests cover seven cards/five filters; complete renderer fidelity and all approvals remain pending."
         },
         {
           "source_path": "apps/whale-parasites-associates/data.js",

@@ -8,6 +8,30 @@ const recordedPermissionStates=new Set(['owner-approved-v1','approved','licensed
 const mediaKey=/(?:\b(?:src|image|img|poster|audio|video|url)\s*[:=]\s*|["'](?:src|image|img|poster|audio|video|url)["']\s*:\s*)$/i;
 const decodeHTML=s=>s.replace(/&amp;/g,'&').replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number(n))).replace(/&#x([\da-f]+);/gi,(_,n)=>String.fromCodePoint(parseInt(n,16)));
 
+// Follow srcset's URL/descriptor boundaries rather than splitting every comma:
+// data URLs and ordinary URL filenames can themselves contain commas. Keep all
+// literal candidates for the audit; resolveLocalMedia ignores external/data URLs
+// individually, so one such candidate cannot hide a later local resource.
+function srcsetURLs(value){
+ const urls=[];let i=0;
+ const space=c=>/[\t\n\f\r ]/.test(c);
+ while(i<value.length){
+  while(i<value.length&&(space(value[i])||value[i]===','))i++;
+  const start=i;while(i<value.length&&!space(value[i]))i++;
+  let url=value.slice(start,i);if(!url)break;
+  if(url.endsWith(',')){urls.push(url.replace(/,+$/,''));continue;}
+  urls.push(url);
+  // Parenthesized descriptor text may contain commas. It is never evaluated.
+  let depth=0;
+  for(;i<value.length;i++){
+   if(value[i]==='(')depth++;
+   else if(value[i]===')'&&depth)depth--;
+   else if(value[i]===','&&!depth){i++;break;}
+  }
+ }
+ return urls;
+}
+
 // A bounded literal scanner: skip comments, never execute JavaScript or templates.
 function scriptReferences(text){
  const result=[];
@@ -31,10 +55,10 @@ export function extractMediaReferences(file,text){
   const markup=clean.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi,'');
   for(const tag of markup.matchAll(/<(img|audio|video|source|a|link)\b(?:[^>"']|"[^"]*"|'[^']*')*>/gi)){
    for(const attr of tag[0].matchAll(/\s([\w:-]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/gi)){
-    if(!['src','poster','href','srcset'].includes(attr[1].toLowerCase()))continue;
+    if(!['src','poster','href','srcset','imagesrcset'].includes(attr[1].toLowerCase()))continue;
     const value=decodeHTML(attr[2]??attr[3]??attr[4]);
-    if(attr[1].toLowerCase()==='srcset'){
-     if(!value.trim().startsWith('data:'))for(const entry of value.split(','))refs.push({url:entry.trim().split(/\s+/)[0],kind:'html-srcset'});
+    if(['srcset','imagesrcset'].includes(attr[1].toLowerCase())){
+     for(const url of srcsetURLs(value))refs.push({url,kind:'html-'+attr[1].toLowerCase()});
     }else refs.push({url:value,kind:'html-'+attr[1].toLowerCase()});
    }
   }
