@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "Pinned source byte and static-text evidence; no scientific/editorial/device approval",
-  "audited_source_commit": "d0a11ce5447e125cab515215688d9f4d0719c5d3",
+  "audited_source_commit": "26790d35cfa27dbfadbe0ec39c171979134b9945",
   "source_commits": {
     "MBA-hub": "5c219508d23255080f6b050cefa8092905447d81",
     "aquarium-shift-library-": "9438060bd836c46245e4af45c280e4bb37b0ab94",
@@ -4273,7 +4273,7 @@
           "source_path": "apps/open-sea/manifest.json",
           "local_path": "src/apps/open-sea/manifest.json",
           "pinned_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-          "current_sha256": "afddbb25c39b9890f3b67b6b0e8bdba1919de602c3f9f68e312c446f301b26b2",
+          "current_sha256": "c2d6b95f4693370192c4df480c25effe7386967271a6ccc72baed6b157cf3667",
           "status": "changed"
         },
         {
