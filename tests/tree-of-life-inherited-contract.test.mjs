@@ -71,3 +71,23 @@ test('Tree of Life executable and stylesheet match pinned V1 except isolated Hub
   assert.equal(gitBlobSha(css), 'af0f8ea2fbfa3987f365f202a32bea231f59798f',
     'unreviewed stylesheet change relative to pinned V1');
 });
+
+test('Tree of Life inherited static text, sections and headings remain byte-bound', () => {
+  // The complete HTML is separately reviewed; these checks prevent content
+  // truncation without interpreting or newly approving scientific claims.
+  const headings = [...html.matchAll(/<summary>/g)];
+  const chapters = [...html.matchAll(/class="major-dropdown searchable"/g)];
+  const subchapters = [...html.matchAll(/class="sub-dropdown"/g)];
+  assert.equal(chapters.length, 10, 'inherited major chapters changed');
+  assert.equal(subchapters.length, 37, 'inherited subchapter structure changed');
+  assert.ok(headings.length >= 47, 'inherited disclosure headings missing');
+  for (const phrase of [
+    'How did chemistry become life',
+    'The Origin of Life Flowchart',
+    'HORGASM: seven characteristics',
+    'Scientific Cautions',
+    'Tree of Life Origins · MBA Hub · Version 2.0.0'
+  ]) {
+    assert.ok(html.includes(phrase), 'inherited section text missing: ' + phrase);
+  }
+});
