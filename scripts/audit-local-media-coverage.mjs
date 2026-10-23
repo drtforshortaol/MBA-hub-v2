@@ -64,11 +64,19 @@ export function auditLocalMediaCoverage({apps,media,files,exists,platformAssets=
   ids.add(asset.asset_id);if(!paths.has(asset.path))paths.set(asset.path,[]);paths.get(asset.path).push(asset);
  }
  const owners=new Map();
- for(const app of apps){if(!app||typeof app.app_id!=='string'||!safeLocalPath(app.app_id)||app.app_id.includes('/')||owners.has(app.app_id))throw Error('Invalid or duplicate app ID');owners.set(app.app_id,app);}
+ for(const app of apps){
+  if(!app||typeof app.app_id!=='string'||!safeLocalPath(app.app_id)||app.app_id.includes('/')||owners.has(app.app_id))throw Error('Invalid or duplicate app ID');
+  // Validate even apps with no scanned references; sparse or malformed arrays
+  // must not turn missing declarations into a successful empty audit.
+  for(const [key,valid] of [['media',value=>typeof value==='string'&&!!value.trim()],['offline_assets',safeLocalPath]]){
+   const values=app[key];
+   if(!Array.isArray(values)||Object.keys(values).length!==values.length||!values.every(valid)||new Set(values).size!==values.length)throw Error('Malformed app declarations: '+app.app_id);
+  }
+  owners.set(app.app_id,app);
+ }
  for(const file of files){
   if(!file||!safeLocalPath(file.path)||typeof file.text!=='string')throw Error('Unsafe media audit source');
   const app=owners.get(file.path.split('/')[1]);if(!app||!file.path.startsWith('apps/'+app.app_id+'/'))continue;
-  if(!Array.isArray(app.media)||!Array.isArray(app.offline_assets))throw Error('Malformed app declarations: '+app.app_id);
   for(const ref of extractMediaReferences(file.path,file.text)){
    const resolved=resolveLocalMedia(file.path,ref.url);if(resolved.ignored)continue;
    if(resolved.error){errors.push({app_id:app.app_id,source:file.path,reference:ref.url,reason:resolved.error});continue;}
@@ -96,13 +104,38 @@ export function auditLocalMediaCoverage({apps,media,files,exists,platformAssets=
 }
 export function auditRepositoryMedia(root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..')){
  const source=path.join(root,'src'),files=[],apps=[];
- function walk(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){
-  const p=path.join(dir,entry.name);if(entry.isSymbolicLink())throw Error('Symlink prohibited in media audit: '+p);
-  if(entry.isDirectory())walk(p);else if(/\.(?:html?|m?js|json|css)$/i.test(entry.name)&&entry.name!=='manifest.json')files.push({path:path.relative(source,p).split(path.sep).join('/'),text:fs.readFileSync(p,'utf8')});
- }}
- for(const d of fs.readdirSync(path.join(source,'apps'),{withFileTypes:true}).filter(d=>d.isDirectory()))apps.push(JSON.parse(fs.readFileSync(path.join(source,'apps',d.name,'manifest.json'),'utf8')));
- walk(path.join(source,'apps'));
- return auditLocalMediaCoverage({apps,media:JSON.parse(fs.readFileSync(path.join(source,'shared/media/catalog.json'),'utf8')),files,exists:p=>{const target=path.join(source,p);return fs.existsSync(target)&&fs.lstatSync(target).isFile()&&!fs.lstatSync(target).isSymbolicLink();}});
+ // lstat each component before reading or descending. Checking only the final
+ // file would follow a shared/media or app-directory symlink outside src.
+ function statWithinSource(relative){
+  if(!safeLocalPath(relative))throw Error('Unsafe media audit path: '+relative);
+  let target=source;
+  for(const part of ['',...relative.split('/')]){
+   if(part)target=path.join(target,part);
+   let stat;try{stat=fs.lstatSync(target);}catch(error){if(error.code==='ENOENT'||error.code==='ENOTDIR')return null;throw error;}
+   if(stat.isSymbolicLink())throw Error('Symlink prohibited in media audit: '+target);
+   if(target!==path.join(source,relative)&&!stat.isDirectory())return null;
+  }
+  return fs.lstatSync(target);
+ }
+ function readSource(relative){
+  if(!statWithinSource(relative)?.isFile())throw Error('Missing regular media audit source: '+relative);
+  return fs.readFileSync(path.join(source,relative),'utf8');
+ }
+ function walk(relative){
+  if(!statWithinSource(relative)?.isDirectory())throw Error('Missing media audit directory: '+relative);
+  for(const entry of fs.readdirSync(path.join(source,relative),{withFileTypes:true})){
+   const name=relative+'/'+entry.name,stat=statWithinSource(name);
+   if(stat?.isDirectory())walk(name);
+   else if(stat?.isFile()&&/\.(?:html?|m?js|json|css)$/i.test(entry.name)&&entry.name!=='manifest.json')files.push({path:name,text:readSource(name)});
+  }
+ }
+ if(!statWithinSource('apps')?.isDirectory())throw Error('Missing media audit directory: apps');
+ for(const d of fs.readdirSync(path.join(source,'apps'),{withFileTypes:true})){
+  const relative='apps/'+d.name,stat=statWithinSource(relative);
+  if(stat?.isDirectory())apps.push(JSON.parse(readSource(relative+'/manifest.json')));
+ }
+ walk('apps');
+ return auditLocalMediaCoverage({apps,media:JSON.parse(readSource('shared/media/catalog.json')),files,exists:p=>statWithinSource(p)?.isFile()===true});
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  try{if(process.argv.length!==2)throw Error('Usage: node scripts/audit-local-media-coverage.mjs');const report=auditRepositoryMedia();console.log(JSON.stringify(report,null,2));if(!report.complete)process.exitCode=1;}catch(e){console.error(e.message);process.exitCode=2;}

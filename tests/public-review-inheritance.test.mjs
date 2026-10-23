@@ -78,3 +78,34 @@ test('publication and readiness gates use the same byte-bound inheritance decisi
  f.app.publication_review='inherited-v1-approved';
  assert(releaseErrors(platform,[f.app],input.media,input.inventory,f).includes('content review pending: guide'));
 });
+
+test('identical bytes behind app, shared-file or parent symlinks cannot retain inherited approval',t=>{
+ for(const resource of ['apps/guide/index.html','apps/guide','apps','shared/knowledge.json','shared/media/catalog.json','shared/media','shared','']){
+  const f=fixture(t),target=path.join(f.sourceRoot,resource),saved=path.join(f.root,'original-resource');
+  const directory=fs.statSync(target).isDirectory();
+  fs.renameSync(target,saved);fs.symlinkSync(saved,target,directory?'dir':'file');
+  assert.equal(inheritedApprovalSupported(f.app,f),false,resource||'source root');
+  assert.throws(()=>inheritedContentDigest(f.app,f),/symlink|source root/,resource||'source root');
+ }
+});
+
+test('referenced media with identical bytes behind a symlink is rejected',t=>{
+ const f=fixture(t);f.app.media=['central-image'];
+ const target=path.join(f.sourceRoot,'shared/media/image.svg');
+ fs.writeFileSync(target,'<svg>approved</svg>');
+ fs.writeFileSync(path.join(f.sourceRoot,'shared/media/catalog.json'),JSON.stringify({assets:[{asset_id:'central-image',path:'shared/media/image.svg'}]}));
+ f.evidence.apps[0].content_sha256=inheritedContentDigest(f.app,f);
+ assert.equal(inheritedApprovalSupported(f.app,f),true);
+ const saved=path.join(f.root,'original-image.svg');fs.renameSync(target,saved);fs.symlinkSync(saved,target);
+ assert.equal(inheritedApprovalSupported(f.app,f),false);
+});
+
+test('malformed provenance and evidence containers fail closed without throwing',t=>{
+ for(const malformed of [null,{},'not-an-array',[null],[false],[[]],Array(1)]){
+  const f=fixture(t);f.provenance.apps=malformed;
+  assert.equal(inheritedApprovalSupported(f.app,f),false);
+  const g=fixture(t);g.evidence.apps=malformed;
+  assert.equal(inheritedApprovalSupported(g.app,g),false);
+ }
+ const f=fixture(t);assert.equal(inheritedApprovalSupported(null,f),false);
+});

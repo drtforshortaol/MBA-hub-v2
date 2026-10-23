@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generatedAt": "2026-10-23T13:12:53.419Z",
+  "generatedAt": "2026-10-23T13:28:29.654Z",
   "platformVersion": "2.0.0-alpha.7",
   "stage": "migration-review",
   "apps": 33,
@@ -17,7 +17,6 @@
     "content review pending: big-bellied-seahorse",
     "content review pending: evolution-timeline",
     "content review pending: naturalist-field-notes",
-    "content review pending: open-sea",
     "content review pending: tree-of-life-origins",
     "content review pending: whale-parasites-associates",
     "media permission review: asset-1bd100105f88c83a",
@@ -31,7 +30,7 @@
     "media permission review: asset-93c15fb934aba9e6"
   ],
   "publicationReview": {
-    "inheritedV1Content": 27,
+    "inheritedV1Content": 28,
     "scope": "Inherited V1 content only; do not confuse with production approval"
   },
   "deviceQA": {

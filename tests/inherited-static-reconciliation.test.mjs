@@ -4,9 +4,9 @@ import fs from 'node:fs';
 import {inheritedApprovalSupported} from '../scripts/public-review.mjs';
 import {assessRepositoryReadiness} from '../scripts/assess-release-readiness.mjs';
 const read=file=>JSON.parse(fs.readFileSync(file,'utf8'));
-test('twenty-seven reviewed migrations reconcile existing content without changing source or release/device authority',()=>{
+test('twenty-eight reviewed migrations reconcile existing content without changing source or release/device authority',()=>{
  const evidence=read('config/inherited-v1-fidelity.json'),provenance=read('config/migration-provenance.json');
- const expected=['california-flying-fish','flamboyant-cuttlefish','green-falsejingle', 'bluespotted-ribbontail-ray','california-sheephead','gray-whale','gray-whale-skeleton-exhibit','hopkins-rose-nudibranch','inaturalist-citizen-science','pacific-white-sided-dolphin','pseudo-nitzschia','sea-slugs-nudibranchs','sperm-whale','stargazer-species-guide','whale-associated-organisms','wildfires-ocean-health','wildlife-rescue','gooseneck-barnacle','applied-water-science-life-support','interpretation-principles','mba-leadership','information-center','aquarium-library-explorer','mmc-narrations','five-senses-pwa','kelp-forest','northern-elephant-seal'].sort();
+ const expected=['california-flying-fish','flamboyant-cuttlefish','green-falsejingle', 'bluespotted-ribbontail-ray','california-sheephead','gray-whale','gray-whale-skeleton-exhibit','hopkins-rose-nudibranch','inaturalist-citizen-science','pacific-white-sided-dolphin','pseudo-nitzschia','sea-slugs-nudibranchs','sperm-whale','stargazer-species-guide','whale-associated-organisms','wildfires-ocean-health','wildlife-rescue','gooseneck-barnacle','applied-water-science-life-support','interpretation-principles','mba-leadership','information-center','aquarium-library-explorer','mmc-narrations','five-senses-pwa','kelp-forest','northern-elephant-seal','open-sea'].sort();
  assert.deepEqual(evidence.apps.map(app=>app.app_id).sort(),expected);
  for(const app_id of expected){
   const app=read(`src/apps/${app_id}/manifest.json`);
@@ -21,7 +21,7 @@ test('twenty-seven reviewed migrations reconcile existing content without changi
  assert.equal(report.blockers.filter(item=>item.reason.startsWith('media permission review:')).length,9);
  assert(report.blockers.some(item=>item.reason==='content review pending: big-bellied-seahorse'));
  assert(report.blockers.some(item=>item.reason==='content review pending: naturalist-field-notes'));
- assert.equal(report.approvalReconciliation.inheritedCandidates,5);
- assert.equal(report.blockers.length,20);
+ assert.equal(report.approvalReconciliation.inheritedCandidates,4);
+ assert.equal(report.blockers.length,19);
  assert.equal(report.releaseEligible,false);
 });

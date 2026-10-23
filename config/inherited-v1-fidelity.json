@@ -298,6 +298,17 @@
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
       "content_sha256": "e28109fb60a25dd4b13f74e2863e55f84b26f7a04149dea9b4de1ed043678533"
+    },
+    {
+      "app_id": "open-sea",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/OPEN_SEA_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current files, inline code, markup, styles, links, interactions, search and media review; portable full twelve-card body/SVG/metadata renderer and click-state reproduction with independent parsed trees; no new scientific approval",
+      "content_sha256": "0948cc5974fe1b86c4c98dcf4c8353e116c0c91c8faa6f2d082c46ee85811005"
     }
   ]
 }

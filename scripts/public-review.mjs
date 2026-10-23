@@ -14,16 +14,25 @@ const readOptional=file=>fs.existsSync(file)?JSON.parse(fs.readFileSync(file,'ut
 // A digest binds reviewed evidence to bytes; calculating it does not grant approval.
 // Include the manifest, app directory, offline dependencies and shared content.
 export function inheritedContentDigest(app,{sourceRoot='src'}={}){
- const names=new Set(['shared/media/catalog.json','shared/knowledge.json']);
+ const names=new Set();
+ const base=path.resolve(sourceRoot);
+ const baseStat=fs.lstatSync(base);
+ if(baseStat.isSymbolicLink()||!baseStat.isDirectory())throw Error('Unsupported inherited-content source root');
  const add=name=>{
-  if(typeof name!=='string'||path.isAbsolute(name)||name.split(/[\\/]/).some(part=>part==='..'||part==='')||name.includes('\\'))throw Error('Unsafe inherited-content path');
-  const target=path.join(sourceRoot,name),stat=fs.lstatSync(target);
-  if(stat.isSymbolicLink())throw Error('Inherited-content symlink is unsupported');
+  if(typeof name!=='string'||path.isAbsolute(name)||name.split(/[\\/]/).some(part=>part==='..'||part==='.'||part==='')||name.includes('\\'))throw Error('Unsafe inherited-content path');
+  // Checking only the final file follows symlinked parents. Validate each
+  // component, including the two shared files that every digest always binds.
+  let target=base,stat;
+  for(const part of name.split('/')){
+   target=path.join(target,part);stat=fs.lstatSync(target);
+   if(stat.isSymbolicLink())throw Error('Inherited-content symlink is unsupported');
+  }
   if(stat.isDirectory())for(const child of fs.readdirSync(target))add(`${name}/${child}`);
   else if(stat.isFile())names.add(name);
   else throw Error('Unsupported inherited-content resource');
  };
  if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(app.app_id))throw Error('Unsafe inherited-content app ID');
+ add('shared/media/catalog.json');add('shared/knowledge.json');
  add(`apps/${app.app_id}`);
  for(const name of app.offline_assets||[])add(name);
  const catalog=JSON.parse(fs.readFileSync(path.join(sourceRoot,'shared/media/catalog.json'),'utf8'));
@@ -40,8 +49,9 @@ export function inheritedContentDigest(app,{sourceRoot='src'}={}){
 }
 
 export function inheritedApprovalSupported(app,{provenance,evidence,sourceRoot='src'}={}){
- if(!app.source_repository||!app.source_commit||evidence?.schema_version!==1||!Array.isArray(evidence.apps))return false;
- const origins=provenance?.apps?.filter(row=>row.app_id===app.app_id)||[];
+ const rows=value=>Array.isArray(value)&&Array.from(value).every(row=>row&&typeof row==='object'&&!Array.isArray(row));
+ if(!app||!app.source_repository||!app.source_commit||evidence?.schema_version!==1||!rows(evidence.apps)||!rows(provenance?.apps))return false;
+ const origins=provenance.apps.filter(row=>row.app_id===app.app_id);
  const records=evidence.apps.filter(row=>row.app_id===app.app_id);
  if(origins.length!==1||records.length!==1)return false;
  const origin=origins[0],record=records[0];
