@@ -2,6 +2,8 @@
 
 ## Current status — alpha.7, completion and acceptance review
 
+Latest runtime: [all 18 Information Center sections restored to global search](docs/INFORMATION_CENTER_SEARCH_20261022.md), verified with 825 passing Node tests. The earlier recovered artifact below is historical after this change; a new matching CI artifact is required for physical acceptance.
+
 Latest: [recovered rendering, URL-guard and search-target fixes](docs/RECOVERED_COMPLETION_BATCH_20261022.md). The [exact recovered acceptance artifact](docs/ACCEPTANCE_RECOVERED_20261022.md) is independently verified; physical review remains NOT TESTED. The previous artifact below is historical; unpushed reconciliation and indexing work lost during workspace maintenance is explicitly pending reconstruction.
 
 Follow-up: [three static V1 migrations reconciled](docs/INHERITED_STATIC_RECONCILIATION_20261022.md) using complete source/code/media and search-text evidence. No new scientific, image or device approval is granted; the exact replacement artifact is identified in the current candidate record.
