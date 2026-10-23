@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "Pinned source byte and static-text evidence; no scientific/editorial/device approval",
-  "audited_source_commit": "7c4d780d6dcd291a8aab91fc5b0bff48bf6546d2",
+  "audited_source_commit": "c5f21038e99c312f70bae479a0119a7e04edee86",
   "source_commits": {
     "MBA-hub": "5c219508d23255080f6b050cefa8092905447d81",
     "aquarium-shift-library-": "9438060bd836c46245e4af45c280e4bb37b0ab94",
@@ -2453,7 +2453,7 @@
           "source_path": "apps/five-senses-pwa/app.js",
           "local_path": "src/apps/five-senses-pwa/app.js",
           "pinned_sha256": "93354781794d775885590e119eb42eb34babdc28f22b1373d942b20b49e9b6c7",
-          "current_sha256": "b8780b3a27754bd4cd215328f4016391829e32040f0107f42a6020b7a7afa5c7",
+          "current_sha256": "ff2477d75b25c6ca4a22457b1166702dbbec91359690a241c72dfcf3a24f44dd",
           "status": "changed"
         },
         {
@@ -2829,7 +2829,7 @@
           "source_path": "apps/kelp-forest/app.js",
           "local_path": "src/apps/kelp-forest/app.js",
           "pinned_sha256": "a5c3f72711bd3fedb1135d199a3d997f41193257d236c1747287059325a33cb8",
-          "current_sha256": "0821a32e221f5e895f79779bd2cb8f961a3b773a4c7088db46c08fdc12db35d7",
+          "current_sha256": "fc02c6117b3002bdd4f407c2d88f965e31929af92de987829214d89d11f70fbe",
           "status": "changed"
         },
         {
@@ -2864,7 +2864,7 @@
           "source_path": "apps/kelp-forest/index.html",
           "local_path": "src/apps/kelp-forest/index.html",
           "pinned_sha256": "66bc710da1e33de2afe32564abcb90acd7c51ca791d3d3a0b929b508ba473afc",
-          "current_sha256": "94acff7203487782c3b58bfb2cb8f69d5af4d7993d78be85d4601332f370a815",
+          "current_sha256": "a5ed0ecc5de1d4bdb9b44b780ce74ac1a54d4ab187b7eb12f6a59b9326ef1d04",
           "status": "changed",
           "static_text_equal": true,
           "pinned_static_text_sha256": "a8a7a69f8e54680f7104f4272d1f3f5d0bf74ce86eb19c701bc454ecc106f99f",
@@ -3025,7 +3025,7 @@
           "source_path": "apps/mmc-narrations/manifest.json",
           "local_path": "src/apps/mmc-narrations/manifest.json",
           "pinned_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-          "current_sha256": "41b0d71fd65e9b4bfc1d040424805cd41ca3e02c7e632469ff0832a22fbfd29b",
+          "current_sha256": "a5312fc15eea14e12e0ccf6dc831b3dbe20469318f49eedc0fc9b364b6956262",
           "status": "changed"
         },
         {
@@ -4186,7 +4186,7 @@
           "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/index.html",
           "local_path": "src/apps/northern-elephant-seal/index.html",
           "pinned_sha256": "0bb11875b6965d2206751c8e0ea1de814b41fa664466ebb5e4ab3fe356178f6c",
-          "current_sha256": "6fb60e6f9f524ee34a9fc816c869f9be27e6d31370bf593f4a8dc6c986b6303b",
+          "current_sha256": "dae17d2e7b2bb0d483ea07c162f7e52129d9c53b5d4626cd7ac707b51f71e78a",
           "status": "changed",
           "static_text_equal": true,
           "pinned_static_text_sha256": "113320ecb8ebfc80b6afca92735aba24ba5a97345a71c3cace3c151aa68a8e0b",
@@ -4253,7 +4253,7 @@
           "source_path": "apps/open-sea/index.html",
           "local_path": "src/apps/open-sea/index.html",
           "pinned_sha256": "62b247861eaf4cf4ecdff38d339f442389bc6a18a5b90044682e36104d2c2669",
-          "current_sha256": "72898eb78c0ab5e2f089c46d6a62d09b6566ab0c185ddb25cb2e7a4ccb37b4e6",
+          "current_sha256": "217e9b3187dba518f58bfbe45adad87ee58fc119c1c3ae5cb4214500a8979872",
           "status": "changed",
           "static_text_equal": true,
           "pinned_static_text_sha256": "6039df0182746d707c0227f5a4c94dd668a84644030b51c470a3acf6a059b035",

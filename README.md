@@ -2,6 +2,8 @@
 
 ## Current status — alpha.7, completion and acceptance review
 
+Latest: [recovered rendering, URL-guard and search-target fixes](docs/RECOVERED_COMPLETION_BATCH_20261022.md). These runtime changes require a new verified acceptance artifact. The previous artifact below is historical; unpushed reconciliation and indexing work lost during workspace maintenance is explicitly pending reconstruction.
+
 Follow-up: [three static V1 migrations reconciled](docs/INHERITED_STATIC_RECONCILIATION_20261022.md) using complete source/code/media and search-text evidence. No new scientific, image or device approval is granted; the exact replacement artifact is identified in the current candidate record.
 
 Latest: [verified reconciled acceptance candidate](docs/ACCEPTANCE_RECONCILED_20261022.md) and [completion batch](docs/COMPLETION_BATCH_20261022.md). Current catalog registration is complete for supported local references, with nine explicit pending image-rights reviews; use the newly identified combined candidate for future acceptance.

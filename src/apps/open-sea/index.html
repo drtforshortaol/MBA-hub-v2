@@ -1377,7 +1377,7 @@ function buildCard(item) {
   for (const [className, value] of [["card-title", item.title], ["card-subtitle", item.subtitle]]) {
     const span = document.createElement("span");
     span.className = className;
-    span.textContent = value;
+    span.textContent = String(value).replaceAll("&amp;", "&");
     titleWrap.appendChild(span);
   }
   const tags = document.createElement("span");
@@ -1421,7 +1421,7 @@ function buildCard(item) {
     }
     const element = document.createElement(source.tagName.toLowerCase());
     if (source.classList.length && (source.tagName === "DIV" || source.tagName === "SPAN")) {
-      const classes = [...source.classList].filter(name => allowedClasses.has(name));
+      const classes = [...source.classList].filter(name => (allowedClasses.has(name) || (name === "training-note" && source.tagName === "DIV")));
       if (classes.length) element.className = classes.join(" ");
     }
     for (const child of source.childNodes) element.appendChild(safeNode(child));
