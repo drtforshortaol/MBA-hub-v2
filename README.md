@@ -2,7 +2,7 @@
 
 ## Current status — alpha.7, completion and acceptance review
 
-Latest October 23 batch: [Five Senses, Kelp Forest and Northern Elephant Seal reconciled](docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md) with complete byte binding and portable 18-container reproduction. Twenty-seven inherited records are supported; 20 blockers remain. Source review flags, nine image-permission reviews and five operational gates remain unchanged. A new matching CI artifact is required for this changed tester runtime; physical acceptance remains NOT TESTED. Earlier entries below are historical.
+Latest October 23 batch: [Five Senses, Kelp Forest and Northern Elephant Seal reconciled](docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md) with complete byte binding and portable 18-container reproduction. Twenty-seven inherited records are supported; 20 blockers remain. Source review flags, nine image-permission reviews and five operational gates remain unchanged. The [matching successful CI artifact is independently verified](docs/ACCEPTANCE_REFERENCE_THREE_20261023.md); physical acceptance remains NOT TESTED. Earlier entries below are historical.
 
 Current October 23 batch: [six more inherited apps reconciled](docs/INHERITED_SIX_RECONCILIATION_20261023.md) using fresh pinned/current full-scope evidence. Twenty-four inherited records are supported; 23 blockers remain (eight inherited reviews, Seahorse, nine image permissions, five operational gates). Source approval flags remain unchanged. The [matching successful CI artifact is independently verified](docs/ACCEPTANCE_SIX_RECONCILED_20261023.md); physical acceptance remains NOT TESTED. Older status entries below are historical.
 

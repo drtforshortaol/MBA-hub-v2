@@ -239,5 +239,13 @@
   "supported_inherited_records": 27,
   "remaining_blockers": 20,
   "physical_acceptance": "NOT TESTED",
-  "exact_ci_artifact": "Pending independent verification for new source commit"
+  "exact_ci_artifact": {
+    "run_id": 39959760585,
+    "artifact_id": 12505205102,
+    "zip_size_bytes": 128167875,
+    "zip_sha256": "7a97c6be7fc91351678d8917ca9544521cbb3e009c3514cb90cbd7a1c7491b60",
+    "independently_verified": true
+  },
+  "runtime_source_commit": "7f351ba5aefe43ba4c468c303869fcfe4333dae1",
+  "local_checkout_release_evidence_binding": "PASS"
 }
