@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "Pinned source byte and static-text evidence; no scientific/editorial/device approval",
-  "audited_source_commit": "a26defe662eb779eec830f7ddcf20ae2a134e2be",
+  "audited_source_commit": "d0a11ce5447e125cab515215688d9f4d0719c5d3",
   "source_commits": {
     "MBA-hub": "5c219508d23255080f6b050cefa8092905447d81",
     "aquarium-shift-library-": "9438060bd836c46245e4af45c280e4bb37b0ab94",
@@ -2298,11 +2298,21 @@
           "source_path": "index.html",
           "local_path": "src/apps/aquarium-library-explorer/index.html",
           "pinned_sha256": "cdc6f7e541cc0b73bbec1d2b224078908973d00f8fbfefe14a733fc59beb8374",
-          "current_sha256": "86168cb10a8505c5bcf4da9f5f6b0ba572f498c213d90976813382801cfb7eee",
+          "current_sha256": "763447eba9155035b3d8ad1a0d12ddf51da915ad6b5d8491e9671d76d83f4b93",
           "status": "changed",
-          "static_text_equal": true,
+          "static_text_equal": false,
+          "static_text_diff": [
+            "--- pinned",
+            "+++ current",
+            "@@ -17,3 +17,5 @@",
+            " Category",
+            " All",
+            " categories",
+            "+All",
+            "+holdings"
+          ],
           "pinned_static_text_sha256": "8ce241a1439c91673b478cf42900ede6d648a1ef7654abeccb887502a5b71be0",
-          "current_static_text_sha256": "8ce241a1439c91673b478cf42900ede6d648a1ef7654abeccb887502a5b71be0"
+          "current_static_text_sha256": "2a005cf55a7f7b3053bdf0a56b6c47077cae68fd3b2697517b529c57d7439c27"
         },
         {
           "source_path": "library-data.js",
@@ -4620,8 +4630,8 @@
     "media_exact_pinned_bytes": 202,
     "media_differences": 0,
     "media_incomplete_provenance": 1,
-    "html_static_text_equal": 33,
-    "html_static_text_changed": 1,
+    "html_static_text_equal": 32,
+    "html_static_text_changed": 2,
     "approval_flags_changed": false
   }
 }
