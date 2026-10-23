@@ -139,3 +139,25 @@ test('Tree of Life V2 anchor additions preserve original authored markup', () =>
   assert.equal(gitBlobSha(restored), '74380569842a3aa3c64c3d27b30566b831008bcf',
     'Tree of Life inherited HTML changed outside reviewed anchor and Hub migration scope');
 });
+
+test('Tree of Life media references resolve locally and are registered for offline use', () => {
+  const mediaId = 'asset-aa9c4cbb67f1dbc2';
+  const assetPath = '../../shared/media/' + mediaId + '--icon-192.svg';
+  assert.deepEqual(manifest.media, [mediaId], 'unexpected media inventory change');
+  const referenced = [...html.matchAll(/(?:src|href)="([^"]+)"/g)]
+    .map(match => match[1])
+    .filter(value => value.startsWith('../../shared/media/'));
+  assert.ok(referenced.length >= 2, 'inherited icon media references missing');
+  assert.deepEqual(new Set(referenced), new Set([assetPath]),
+    'HTML refers to unreviewed media assets');
+  const asset = readFileSync(new URL(assetPath, app), 'utf8');
+  assert.match(asset, /<svg\\b/);
+  assert.match(asset, /<\\/svg>/);
+  assert.equal(manifest.offline_assets.length, 3, 'unexpected offline inventory change');
+  for (const relative of ['app.js', 'index.html', 'styles.css']) {
+    assert.ok(manifest.offline_assets.includes('apps/tree-of-life-origins/' + relative),
+      'missing offline app asset: ' + relative);
+    assert.ok(readFileSync(new URL(relative, app)).length > 0,
+      'empty or missing offline app asset: ' + relative);
+  }
+});
