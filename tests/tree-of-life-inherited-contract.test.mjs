@@ -106,12 +106,36 @@ test('Tree of Life V2 anchor additions preserve original authored markup', () =>
     .replace('<button id="installButton" class="install-button" hidden="hidden" data-v2-maintenance-hidden="true" aria-hidden="true" disabled>', '<button id="installButton" class="install-button" hidden>')
     .replace('<p id="offlineStatus" data-v2-maintenance-hidden="true" hidden="hidden" aria-hidden="true">', '<p id="offlineStatus">')
     .replace('<script type="module" src="../../core/app-contract.js"></script></body>', '</body>');
-  const stableAnchors = new Set(manifest.sections.map(section => section.id));
+  const reviewedAddedAnchors = new Set([
+    "How-did-chemistry-become-life-and-how-did-life-become-everything-we-see-today",
+    "HORGASM-seven-characteristics",
+    "Are-viruses-alive",
+    "Formation-of-the-Early-Earth",
+    "The-Earliest-Evidence-of-Life",
+    "Possible-Greenland-evidence",
+    "Stronger-microbial-evidence",
+    "Life-Was-Microbial",
+    "Why-Earth-could-support-long-term-evolution",
+    "Likely-present",
+    "Not-yet-present-as-eukaryotic-organelles",
+    "Cyanobacteria-Changed-the-Planet",
+    "Why-oxygen-was-initially-a-pollutant",
+    "Why-oxygen-did-not-accumulate-immediately",
+    "The-Great-Oxidation-Event",
+    "Oxygen-levels-rose-in-stages",
+    "Why-oxygen-became-an-opportunity",
+    "Why-mitochondria-matter",
+    "All-plants-have-mitochondria",
+    "Red-algae",
+    "Evolution-is-a-tree-not-a-ladder",
+    "Plants-and-animals-are-separate-branches",
+    "What-the-common-ancestor-tells-us",
+    "Taxonomic-rank-versus-evolutionary-divergence",
+    "REFERENCE-Scientific-Cautions-Guide-level"
+]);
+  assert.equal(reviewedAddedAnchors.size, 25);
   restored = restored.replace(/\\s+id="([^"]+)"/g, (attribute, id) =>
-    stableAnchors.has(id) && ![
-      'overview','chapter-0','chapter-1','chapter-2','chapter-3','chapter-4',
-      'chapter-5','chapter-6','chapter-7'
-    ].includes(id) ? '' : attribute);
+    reviewedAddedAnchors.has(id) ? '' : attribute);
   assert.equal(gitBlobSha(restored), '74380569842a3aa3c64c3d27b30566b831008bcf',
     'Tree of Life inherited HTML changed outside reviewed anchor and Hub migration scope');
 });
