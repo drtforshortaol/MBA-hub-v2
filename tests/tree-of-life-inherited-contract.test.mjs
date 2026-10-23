@@ -152,7 +152,7 @@ test('Tree of Life media references resolve locally and are registered for offli
     'HTML refers to unreviewed media assets');
   const asset = readFileSync(new URL(assetPath, app), 'utf8');
   assert.match(asset, /<svg\\b/);
-  assert.match(asset, /<\\/svg>/);
+  assert.ok(asset.includes('</svg>'), 'SVG closing tag missing');
   assert.equal(manifest.offline_assets.length, 3, 'unexpected offline inventory change');
   for (const relative of ['app.js', 'index.html', 'styles.css']) {
     assert.ok(manifest.offline_assets.includes('apps/tree-of-life-origins/' + relative),
