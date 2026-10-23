@@ -60,6 +60,9 @@ jobs:
           cp docs/OPEN_SEA_SEARCH_20261022.md dist/
           cp docs/HTTPS_ACCEPTANCE_PROPOSAL_20261022.md dist/
           cp docs/CONTINUATION_VERIFIED_20261022.md dist/
+          cp docs/FINAL_SEARCH_BATCH_20261022.md dist/
+          cp docs/WATER_SCIENCE_SEARCH_20261022.md dist/
+          cp docs/DYNAMIC_REFERENCE_SEARCH_20261022.md dist/
           cp docs/verification/inherited-fifteen-content-20261022.json dist/verification/
           cp docs/verification/inherited-static-content-20261022.json dist/verification/
           git rev-parse HEAD > dist/SOURCE-COMMIT.txt

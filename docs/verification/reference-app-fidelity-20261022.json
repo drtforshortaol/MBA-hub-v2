@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "scope": "Engineering reviewed unchanged V1 authored content; no physical browser or new science/image approval",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "complete_html_checks": [
+    {
+      "app_id": "applied-water-science-life-support",
+      "complete_normalized_html_equal": true,
+      "pinned_html_sha256": "773ad3fd3aceca50884b50d054652d7b79a22855fa004cab9a388c0384f724e5",
+      "current_html_sha256": "5785c3a28affdfe6df9d28e546e07fe7b8789238276048102bb26bb54cdfa659",
+      "leadership_empty_install_icon_replaced_by_hub_icon": false
+    },
+    {
+      "app_id": "interpretation-principles",
+      "complete_normalized_html_equal": true,
+      "pinned_html_sha256": "e4649d2736635305288328ce67410de3aa5afac509d806954ea103b5dc7885f3",
+      "current_html_sha256": "f716bae0a5816082011e6f1dab7445bfa49ffed08fbc938976116f7cd6d2c084",
+      "leadership_empty_install_icon_replaced_by_hub_icon": false
+    },
+    {
+      "app_id": "mba-leadership",
+      "complete_normalized_html_equal": true,
+      "pinned_html_sha256": "9ad94e18456c91e227e84ae48d67aecf0b75d6a245210b661e6a3641f84780c2",
+      "current_html_sha256": "67b04bc75554b6563d6eaaf8d4b8e404f20e356a50822278a06881cd2650e6c8",
+      "leadership_empty_install_icon_replaced_by_hub_icon": true
+    }
+  ],
+  "reviewed_file_hash_pairs": [
+    {
+      "source_path": "apps/applied-water-science-life-support/app.js",
+      "local_path": "src/apps/applied-water-science-life-support/app.js",
+      "pinned_sha256": "62951c89e02aa13d2fa4314db35c1d618c98591b8d17cd0feb4eca550487bd12",
+      "current_sha256": "bc3dd55ca9596858c880256af684e27597e5f2fc2eae6439c5c19daf9e53911c"
+    },
+    {
+      "source_path": "apps/applied-water-science-life-support/index.html",
+      "local_path": "src/apps/applied-water-science-life-support/index.html",
+      "pinned_sha256": "773ad3fd3aceca50884b50d054652d7b79a22855fa004cab9a388c0384f724e5",
+      "current_sha256": "5785c3a28affdfe6df9d28e546e07fe7b8789238276048102bb26bb54cdfa659"
+    },
+    {
+      "source_path": "apps/applied-water-science-life-support/styles.css",
+      "local_path": "src/apps/applied-water-science-life-support/styles.css",
+      "pinned_sha256": "6a593b220d0e41c793d4cb8c4903aad9f37e1d1c8d8038bdbff5adbdf17549cd",
+      "current_sha256": "6a593b220d0e41c793d4cb8c4903aad9f37e1d1c8d8038bdbff5adbdf17549cd"
+    },
+    {
+      "source_path": "apps/applied-water-science-life-support/sw.js",
+      "local_path": "src/apps/applied-water-science-life-support/sw.js",
+      "pinned_sha256": "82684222761fa9ceb04839539fe89476bbec773f0c5a635d1018a871fae043fc",
+      "current_sha256": null
+    },
+    {
+      "source_path": "apps/interpretation-principles/app.js",
+      "local_path": "src/apps/interpretation-principles/app.js",
+      "pinned_sha256": "d75a342b85adf88cea5a2c94d09268ab18b32a97e275cb09e969f9a09fac04d6",
+      "current_sha256": "2afe5b7ddf958146954db722b687a521cfdeba1e35ed764ba2c20a18a55d0328"
+    },
+    {
+      "source_path": "apps/interpretation-principles/data.js",
+      "local_path": "src/apps/interpretation-principles/data.js",
+      "pinned_sha256": "0d598a17421ab55921db5e93afb4afb520c900e1eeeb77fe14454c411a0386c8",
+      "current_sha256": "0d598a17421ab55921db5e93afb4afb520c900e1eeeb77fe14454c411a0386c8"
+    },
+    {
+      "source_path": "apps/interpretation-principles/index.html",
+      "local_path": "src/apps/interpretation-principles/index.html",
+      "pinned_sha256": "e4649d2736635305288328ce67410de3aa5afac509d806954ea103b5dc7885f3",
+      "current_sha256": "f716bae0a5816082011e6f1dab7445bfa49ffed08fbc938976116f7cd6d2c084"
+    },
+    {
+      "source_path": "apps/interpretation-principles/styles.css",
+      "local_path": "src/apps/interpretation-principles/styles.css",
+      "pinned_sha256": "c054bd6973fc4d1afc57d86b4c613ab9c7c351be040597326b24e6ba2008a8d9",
+      "current_sha256": "c054bd6973fc4d1afc57d86b4c613ab9c7c351be040597326b24e6ba2008a8d9"
+    },
+    {
+      "source_path": "apps/interpretation-principles/sw.js",
+      "local_path": "src/apps/interpretation-principles/sw.js",
+      "pinned_sha256": "10d5be4176e8d8f0d5aee78985d9063acad69fabae2b9787e469983b6f479234",
+      "current_sha256": null
+    },
+    {
+      "source_path": "apps/mba-leadership/app.js",
+      "local_path": "src/apps/mba-leadership/app.js",
+      "pinned_sha256": "cc52a658fc9bd39e650b34a4c60d8a55423c1795ef294449527c2b0cd73b2210",
+      "current_sha256": "e6485a4de16fc3c2bc69c3b143d00f7cfdd7aaa532dc33959ac51413586c7ef8"
+    },
+    {
+      "source_path": "apps/mba-leadership/apps.js",
+      "local_path": "src/apps/mba-leadership/apps.js",
+      "pinned_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "apps/mba-leadership/data.js",
+      "local_path": "src/apps/mba-leadership/data.js",
+      "pinned_sha256": "2dc3b825d69d50b27ce2e9231487dcf0635c2f53ed84d588265ecd77f653cfa2",
+      "current_sha256": "2643b20c17eea744696c402710c9cba3ade60bbaa8117e47d944ba472a707a4b"
+    },
+    {
+      "source_path": "apps/mba-leadership/index.html",
+      "local_path": "src/apps/mba-leadership/index.html",
+      "pinned_sha256": "9ad94e18456c91e227e84ae48d67aecf0b75d6a245210b661e6a3641f84780c2",
+      "current_sha256": "67b04bc75554b6563d6eaaf8d4b8e404f20e356a50822278a06881cd2650e6c8"
+    },
+    {
+      "source_path": "apps/mba-leadership/styles.css",
+      "local_path": "src/apps/mba-leadership/styles.css",
+      "pinned_sha256": "bfa259a27ab92ecded650ac0820e675870584e1c4941bf8ab40f999b0164c031",
+      "current_sha256": "bfa259a27ab92ecded650ac0820e675870584e1c4941bf8ab40f999b0164c031"
+    },
+    {
+      "source_path": "apps/mba-leadership/sw.js",
+      "local_path": "src/apps/mba-leadership/sw.js",
+      "pinned_sha256": "e35d068b6b2581fb19baec524cde5ce4f3c603d0e750fdc9e4cbd8463f142fc4",
+      "current_sha256": null
+    }
+  ],
+  "dynamic_render_checks": [
+    {
+      "app_id": "interpretation-principles",
+      "all_authored_records_render_equal": true,
+      "normalized_sha256": "95a2b990fef807d83c2f1cd44fda0506ce004829cc2cd4bf02146e1a5b0fe20a"
+    },
+    {
+      "app_id": "mba-leadership",
+      "all_authored_records_render_equal": true,
+      "normalized_sha256": "1eb73ca6102e6735ece263b69c098d2be2f3c34dead5eaecc6e48d1cdb86a05e"
+    }
+  ],
+  "water_source_derived_card_ids": [
+    "overview",
+    "water-source",
+    "volumes",
+    "flow",
+    "life-support",
+    "biofouling",
+    "pigging",
+    "upwelling",
+    "chemistry",
+    "maintenance",
+    "discharge",
+    "visitor-questions",
+    "talking-points"
+  ],
+  "limitations": [
+    "Lightweight VM DOM harness is not a browser; physical layout, accessibility and device offline acceptance remain pending.",
+    "Original standalone workers/manifests are replaced by Hub infrastructure; source manifest approval flags remain separately preserved."
+  ]
+}

@@ -2,6 +2,8 @@
 
 ## Current status — alpha.7, completion and acceptance review
 
+Latest follow-up: [Water Science search](docs/WATER_SCIENCE_SEARCH_20261022.md) now includes all 13 original cards; [Five Senses and Elephant Seal search](docs/DYNAMIC_REFERENCE_SEARCH_20261022.md) includes the omitted reference notes and Diet explanation. These changes require a newly matched acceptance artifact. Earlier candidate IDs remain historical.
+
 Latest: [fifteen inherited migrations reconciled](docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md), with 142 sections and 68 image uses verified, and [all twelve Open Sea dynamic cards indexed](docs/OPEN_SEA_SEARCH_20261022.md). Current release blockers: 29 (14 inherited reviews, Seahorse, nine image permissions, five operational gates). Earlier 44-blocker counts below are historical. A new matching CI artifact is required; physical acceptance remains NOT TESTED. [Trusted HTTPS acceptance proposal](docs/HTTPS_ACCEPTANCE_PROPOSAL_20261022.md) is prepared only; no hosting is authorized.
 
 Latest runtime: [17 Library Wishlist search routes and Back state restored](docs/LIBRARY_WISHLIST_SEARCH_20261022.md). Combined verification passes 829 Node tests; the [matching acceptance artifact](docs/ACCEPTANCE_SEARCH_RESTORED_20261022.md) is independently verified. Physical acceptance remains NOT TESTED.

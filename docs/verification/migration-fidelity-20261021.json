@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "Pinned source byte and static-text evidence; no scientific/editorial/device approval",
-  "audited_source_commit": "2acca4bc41071df2671e233d11559f84c800045f",
+  "audited_source_commit": "1161cd1f01a0a7f65d1f0bcd1a81e11be7ea0dbc",
   "source_commits": {
     "MBA-hub": "5c219508d23255080f6b050cefa8092905447d81",
     "aquarium-shift-library-": "9438060bd836c46245e4af45c280e4bb37b0ab94",
@@ -2270,7 +2270,7 @@
           "source_path": "apps/applied-water-science-life-support/manifest.json",
           "local_path": "src/apps/applied-water-science-life-support/manifest.json",
           "pinned_sha256": "254a18260f47d013290117596c7c0c3f7325dd1454103e013b6be65bab7884b7",
-          "current_sha256": "2dcfa9a0119383be0ee8d3a9f95fd4c3f0f5f8a5495cc0c4c6ba6ee2a0b36372",
+          "current_sha256": "d593e80164e8e2affd0b6d7b428d56620fef44b78b6637a1be460e64a17d6c8a",
           "status": "changed"
         },
         {
@@ -2502,7 +2502,7 @@
           "source_path": "apps/five-senses-pwa/manifest.json",
           "local_path": "src/apps/five-senses-pwa/manifest.json",
           "pinned_sha256": "d508da2908a426aa64d9c7608286a8e577fcb046e14b3b00f2395a9ed2d2434e",
-          "current_sha256": "865392324e22c646b0c1815290e1dbdc1680d7b2026f9b8f64629fafa13d122a",
+          "current_sha256": "4618a8baf6dda4f7fe87ac39e176db3ef65966f8bff59e7d7c13ef33a7bfc4d5",
           "status": "changed"
         },
         {
@@ -4208,7 +4208,7 @@
           "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/manifest.json",
           "local_path": "src/apps/northern-elephant-seal/manifest.json",
           "pinned_sha256": "0b7c2c7e54bd016cc9eadac23bfc6490a23c704b3d3c7be3bacb43a279b70e98",
-          "current_sha256": "46291b55cd244863ad974c495b8a93a5afde39f7c0e987038b88a7173869d88c",
+          "current_sha256": "251f1eee63136e6ebd2be93fa06b6848e3ecba38cc53e2294f166f88087f9634",
           "status": "changed"
         },
         {
