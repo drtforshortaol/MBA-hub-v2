@@ -54,6 +54,15 @@ function buildJumpMenu() {
     card.dataset.hidden = "false";
     card.open = true;
 
+    // A jump can reveal a card outside the active search/filter. Report the
+    // actual visible inventory without mislabelling that exception as a match.
+    const resultCount = document.getElementById("resultCount");
+    if (resultCount) {
+      const count = Array.from(document.querySelectorAll(".card"))
+        .filter((entry) => entry.dataset.hidden === "false").length;
+      resultCount.textContent = `${count} entr${count === 1 ? "y" : "ies"} shown.`;
+    }
+
     setTimeout(() => {
       card.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 75);
