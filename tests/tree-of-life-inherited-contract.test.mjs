@@ -91,3 +91,27 @@ test('Tree of Life inherited static text, sections and headings remain byte-boun
     assert.ok(html.includes(phrase), 'inherited section text missing: ' + phrase);
   }
 });
+
+test('Tree of Life V2 anchor additions preserve original authored markup', () => {
+  // Source baseline: MBA-hub 5c219508d23255080f6b050cefa8092905447d81,
+  // apps/tree-of-life-origins/index.html. The baseline is content-only:
+  // original HTML gained 25 stable anchors and V2 maintenance integration.
+  const gitBlobSha = bytes => createHash('sha1')
+    .update('blob ' + Buffer.byteLength(bytes) + String.fromCharCode(0))
+    .update(bytes).digest('hex');
+  let restored = html
+    .replace('<link rel="icon"', '<link rel="manifest" href="manifest.webmanifest">\\n<link rel="icon"')
+    .replaceAll('../../shared/media/asset-aa9c4cbb67f1dbc2--icon-192.svg', 'icons/icon-192.svg')
+    .replace('<style>[data-v2-maintenance-hidden="true"]{display:none!important}</style></head>', '</head>')
+    .replace('<button id="installButton" class="install-button" hidden="hidden" data-v2-maintenance-hidden="true" aria-hidden="true" disabled>', '<button id="installButton" class="install-button" hidden>')
+    .replace('<p id="offlineStatus" data-v2-maintenance-hidden="true" hidden="hidden" aria-hidden="true">', '<p id="offlineStatus">')
+    .replace('<script type="module" src="../../core/app-contract.js"></script></body>', '</body>');
+  const stableAnchors = new Set(manifest.sections.map(section => section.id));
+  restored = restored.replace(/\\s+id="([^"]+)"/g, (attribute, id) =>
+    stableAnchors.has(id) && ![
+      'overview','chapter-0','chapter-1','chapter-2','chapter-3','chapter-4',
+      'chapter-5','chapter-6','chapter-7'
+    ].includes(id) ? '' : attribute);
+  assert.equal(gitBlobSha(restored), '74380569842a3aa3c64c3d27b30566b831008bcf',
+    'Tree of Life inherited HTML changed outside reviewed anchor and Hub migration scope');
+});
