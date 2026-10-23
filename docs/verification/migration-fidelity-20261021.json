@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "Pinned source byte and static-text evidence; no scientific/editorial/device approval",
-  "audited_source_commit": "e8316f146973b63ddc163c28beb6dd6925151ee6",
+  "audited_source_commit": "a26defe662eb779eec830f7ddcf20ae2a134e2be",
   "source_commits": {
     "MBA-hub": "5c219508d23255080f6b050cefa8092905447d81",
     "aquarium-shift-library-": "9438060bd836c46245e4af45c280e4bb37b0ab94",
@@ -2714,7 +2714,7 @@
           "source_path": "apps/information-center/app.js",
           "local_path": "src/apps/information-center/app.js",
           "pinned_sha256": "ccb7ba3616261a47b991079673729d9ef7e4f361da2dc53cda65ea5a6902023e",
-          "current_sha256": "8ff0bdc4b72770aea38dbc2f19ce4dea7720cdcfa8a3b68d91d5d5df8a4d76fd",
+          "current_sha256": "a17fdc8fc37fe3cafb77e22ee675b0d5e5cd6eca58c1c2011549751a4780ccef",
           "status": "changed"
         },
         {
