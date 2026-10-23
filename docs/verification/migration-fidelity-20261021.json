@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "Pinned source byte and static-text evidence; no scientific/editorial/device approval",
-  "audited_source_commit": "dc7dfb7d3dc339d94defe1f4c156ad0162884413",
+  "audited_source_commit": "bbc1dce528b188e53fec158c782837d8b9945032",
   "source_commits": {
     "MBA-hub": "5c219508d23255080f6b050cefa8092905447d81",
     "aquarium-shift-library-": "9438060bd836c46245e4af45c280e4bb37b0ab94",
@@ -11,11 +11,13 @@
     {
       "asset_id": "five-senses-header",
       "path": "shared/media/five-senses-header.svg",
-      "source_repository": null,
-      "source_commit": null,
-      "source_path": null,
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "source_path": "apps/five-senses-pwa/images/header-five-senses-mba.svg",
       "current_sha256": "25a12b38f3e3cad43fd05b260176f45aed17f5d894ffa1fb57f16b049595be6a",
-      "status": "source-provenance-incomplete"
+      "pinned_sha256": "25a12b38f3e3cad43fd05b260176f45aed17f5d894ffa1fb57f16b049595be6a",
+      "status": "exact-pinned-bytes",
+      "recorded_digest_matches": true
     },
     {
       "asset_id": "asset-3c14753fc4275150",
@@ -4627,9 +4629,9 @@
   "summary": {
     "apps": 32,
     "media": 203,
-    "media_exact_pinned_bytes": 202,
+    "media_exact_pinned_bytes": 203,
     "media_differences": 0,
-    "media_incomplete_provenance": 1,
+    "media_incomplete_provenance": 0,
     "html_static_text_equal": 32,
     "html_static_text_changed": 2,
     "approval_flags_changed": false
