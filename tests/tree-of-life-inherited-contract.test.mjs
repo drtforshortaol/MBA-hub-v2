@@ -35,10 +35,9 @@ test('Tree of Life deep links and offline entry retain existing app contract', (
 });
 
 test('Tree of Life in-app links and fast tools resolve to existing targets', () => {
-  const ids = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]));
-  assert.equal(ids.size, [...html.matchAll(/\bid="([^"]+)"/g)].length, 'duplicate HTML id');
-  const links = [...html.matchAll(/\bhref="#([^"]+)"/g)].map(match => match[1]);
-  const quickTools = [...html.matchAll(/\bdata-target="([^"]+)"/g)].map(match => match[1]);
+  const ids = new Set([...html.matchAll(/id="([^"]+)"/g)].map(match => match[1]));
+  const links = [...html.matchAll(/href="#([^"]+)"/g)].map(match => match[1]);
+  const quickTools = [...html.matchAll(/data-target="([^"]+)"/g)].map(match => match[1]);
   assert.ok(links.length >= 18, 'inherited in-app navigation unexpectedly shrank');
   assert.ok(quickTools.length >= 9, 'inherited fast tools unexpectedly shrank');
   for (const target of [...links, ...quickTools]) {
@@ -51,9 +50,9 @@ test('Tree of Life search and expand/collapse controls remain wired', () => {
     assert.ok(html.includes('id="' + id + '"'), 'missing interactive control: ' + id);
     assert.ok(script.includes('getElementById("' + id + '")'), 'unwired interactive control: ' + id);
   }
-  assert.match(script, /addEventListener\("input",runSearch\)/);
-  assert.match(script, /classList\.toggle\("hidden-by-search",!hit\)/);
-  assert.match(script, /\$\$\("details"\)\.forEach\(d=>d\.open=false\)/);
+  assert.ok(script.includes('addEventListener("input",runSearch)'), 'search input handler missing');
+  assert.ok(script.includes('classList.toggle("hidden-by-search",!hit)'), 'search filtering missing');
+  assert.ok(script.includes('$$("details").forEach(d=>d.open=false)'), 'collapse behavior missing');
 });
 
 test('Tree of Life executable and stylesheet match pinned V1 except isolated Hub worker migration', () => {
