@@ -2,7 +2,7 @@
 
 ## Current status — alpha.7, completion and acceptance review
 
-Latest runtime: [17 Library Wishlist search routes and Back state restored](docs/LIBRARY_WISHLIST_SEARCH_20261022.md). Combined verification passes 829 Node tests; fixed-build acceptance needs the matching new CI artifact.
+Latest runtime: [17 Library Wishlist search routes and Back state restored](docs/LIBRARY_WISHLIST_SEARCH_20261022.md). Combined verification passes 829 Node tests; the [matching acceptance artifact](docs/ACCEPTANCE_SEARCH_RESTORED_20261022.md) is independently verified. Physical acceptance remains NOT TESTED.
 
 Latest runtime: [all 18 Information Center sections restored to global search](docs/INFORMATION_CENTER_SEARCH_20261022.md), verified with 825 passing Node tests. The earlier recovered artifact below is historical after this change; a new matching CI artifact is required for physical acceptance.
 
