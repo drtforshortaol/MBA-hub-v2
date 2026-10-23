@@ -1,0 +1,13 @@
+# Six-app reconciliation acceptance candidate — October 23, 2026
+
+Runtime source `1480417616caecef571e66f753196074338aaf51`, tree `12bba5d5646fee6ee1cc137fb6d2ec71ac4e84fc`. Combined CI https://github.com/drtforshortaol/MBA-hub-v2/actions/runs/39956038286 completed successfully. Artifact `12502362884`, `mba-v2-combined-iphone-review`, 128167622 bytes, ZIP SHA-256 `ca543458f2fa851ea743c27693d9e1d52e569d0b796dde17c06fd57afbf78170`. Developer release `e02837b6f3bb023c`; tester release `ddec5240589469ad`.
+
+Downloaded original ZIP independently passed prepare-acceptance-record.py: exact size/SHA-256, successful workflow/artifact/source binding, source marker, safe extraction, all developer/tester resource bytes and retained HTTP/offline evidence. The fresh record docs/verification/candidate-acceptance-six-reconciled-20261023.json contains 33 apps, 17 checks and owner plus three reviewers, all NOT TESTED; all five gates are PENDING. Local summary: docs/verification/six-app-local-verification-20261023.json.
+
+Six inherited-content reconciliations are saved; twenty-four total records are supported. Fresh full-scope pinned-source checks and review-helper file/manifest binding are documented in INHERITED_SIX_RECONCILIATION_20261023.md. Source review/science/media flags are unchanged. There are 23 release blockers: eight inherited reconciliations, Seahorse, nine October image permissions and five operational gates. New October Field Notes content remains separately scoped.
+
+Fresh local combined verification: Node839/839, EVO35/35, preflight33/33, HTTP383/383 developer and374/374 tester, fourteen offline/recovery scenarios with550/550 targets each and zero offline network attempts. Build/schema/security/artifact integrity PASS. Static fidelity baseline/adversarial12/12, fidelity-audit3/3 and acceptance-record3/3 PASS. The successful CI repeats combined build, tests, preflight, security, artifact, HTTP/offline and evidence-binding checks.
+
+Draft PRs #2–#5 remain draft/unmerged at their handoff heads. Integration was updated with an expected-head non-force operation; remote tree equals the tested local tree. No protected/upstream repository, hosted preview, deployment, publication or release changed. Physical device/offline/rollback, owner plus three-reviewer pilot and final privacy remain unverified; Android/Windows, accessibility, performance/storage, taxonomy and supporting placements remain outstanding.
+
+Exact next task: finish full pinned/current byte and renderer reproduction for Five Senses, Kelp Forest and Northern Elephant Seal using retained evidence, then add only evidence-supported inherited records. Keep scientific/image and physical/release gates separate. Trusted-HTTPS acceptance proposal remains prepared only.

@@ -39,3 +39,5 @@ Node 839/839 PASS, zero failed/skipped; EVO 35/35 PASS; application preflight 33
 Local HTTP byte verification: developer 383/383, tester 374/374 PASS. Fourteen simulated offline/navigation/recovery scenarios PASS, each 550/550 targets and complete resources, with zero offline network attempts. Runtime releases: developer e02837b6f3bb023c; tester ddec5240589469ad. These checks do not establish physical acceptance. A matching successful CI artifact remains required.
 
 Exact next task: bind a new successful combined CI artifact and fresh physical NOT TESTED record, then complete full-byte/pinned render reproduction for Five Senses, Kelp and Elephant Seal using the retained evidence before their reconciliation. Preserve all new-content, image, physical/privacy and release gates.
+
+Subsequent exact-artifact verification is saved in ACCEPTANCE_SIX_RECONCILED_20261023.md; the matching 1480417 artifact is independently verified and its physical record remains NOT TESTED.

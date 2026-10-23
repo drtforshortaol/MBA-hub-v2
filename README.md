@@ -2,7 +2,7 @@
 
 ## Current status — alpha.7, completion and acceptance review
 
-Current October 23 batch: [six more inherited apps reconciled](docs/INHERITED_SIX_RECONCILIATION_20261023.md) using fresh pinned/current full-scope evidence. Twenty-four inherited records are supported; 23 blockers remain (eight inherited reviews, Seahorse, nine image permissions, five operational gates). Source approval flags remain unchanged. A new matching CI artifact is required after the tester metadata change; physical acceptance remains NOT TESTED. Older status entries below are historical.
+Current October 23 batch: [six more inherited apps reconciled](docs/INHERITED_SIX_RECONCILIATION_20261023.md) using fresh pinned/current full-scope evidence. Twenty-four inherited records are supported; 23 blockers remain (eight inherited reviews, Seahorse, nine image permissions, five operational gates). Source approval flags remain unchanged. The [matching successful CI artifact is independently verified](docs/ACCEPTANCE_SIX_RECONCILED_20261023.md); physical acceptance remains NOT TESTED. Older status entries below are historical.
 
 Latest follow-up: [Water Science search](docs/WATER_SCIENCE_SEARCH_20261022.md) now includes all 13 original cards; [Five Senses and Elephant Seal search](docs/DYNAMIC_REFERENCE_SEARCH_20261022.md) includes the omitted reference notes and Diet explanation. These changes require a newly matched acceptance artifact. Earlier candidate IDs remain historical.
 
