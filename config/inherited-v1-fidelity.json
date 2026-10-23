@@ -199,6 +199,72 @@
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
       "content_sha256": "eb7ce777c30245b83b2f9b839ac24b76e80374a907ff5a399acdc03ce231a336"
+    },
+    {
+      "app_id": "applied-water-science-life-support",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
+      "content_sha256": "5e8ae712f481f34d43784efba599d1de9cb11d83ed069c34d95a08feb4fe2512"
+    },
+    {
+      "app_id": "interpretation-principles",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
+      "content_sha256": "9437b4221af43d704a6618b589b22f768ec931f908469264c44e4e87dccb5607"
+    },
+    {
+      "app_id": "mba-leadership",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
+      "content_sha256": "44b16dd914a3cd11127c33ebf8a4349d91eef37ad9be2319096f6f5caad7d325"
+    },
+    {
+      "app_id": "information-center",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
+      "content_sha256": "1cae2a1108c63f4ad01b959948078ae39f2081590d977599dec4c742265a232a"
+    },
+    {
+      "app_id": "aquarium-library-explorer",
+      "source_repository": "drtforshortaol/aquarium-shift-library-",
+      "source_commit": "9438060bd836c46245e4af45c280e4bb37b0ab94",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
+      "content_sha256": "f2aafaeb0a2e21d9020e9d022517a3e76e0162042f3c6281c995cb947cd5fc26"
+    },
+    {
+      "app_id": "mmc-narrations",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
+      "content_sha256": "c07d1b4588850e521e44cf9e9893a308e55fc18118cf33383da1eedf8a4ecad2"
     }
   ]
 }

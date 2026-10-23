@@ -2,6 +2,8 @@
 
 ## Current status — alpha.7, completion and acceptance review
 
+Current October 23 batch: [six more inherited apps reconciled](docs/INHERITED_SIX_RECONCILIATION_20261023.md) using fresh pinned/current full-scope evidence. Twenty-four inherited records are supported; 23 blockers remain (eight inherited reviews, Seahorse, nine image permissions, five operational gates). Source approval flags remain unchanged. A new matching CI artifact is required after the tester metadata change; physical acceptance remains NOT TESTED. Older status entries below are historical.
+
 Latest follow-up: [Water Science search](docs/WATER_SCIENCE_SEARCH_20261022.md) now includes all 13 original cards; [Five Senses and Elephant Seal search](docs/DYNAMIC_REFERENCE_SEARCH_20261022.md) includes the omitted reference notes and Diet explanation. These changes require a newly matched acceptance artifact. Earlier candidate IDs remain historical.
 
 Latest: [fifteen inherited migrations reconciled](docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md), with 142 sections and 68 image uses verified, and [all twelve Open Sea dynamic cards indexed](docs/OPEN_SEA_SEARCH_20261022.md). Current release blockers: 29 (14 inherited reviews, Seahorse, nine image permissions, five operational gates). Earlier 44-blocker counts below are historical. A new matching CI artifact is required; physical acceptance remains NOT TESTED. [Trusted HTTPS acceptance proposal](docs/HTTPS_ACCEPTANCE_PROPOSAL_20261022.md) is prepared only; no hosting is authorized.

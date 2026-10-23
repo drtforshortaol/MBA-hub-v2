@@ -8,6 +8,22 @@ args=parser.parse_args()
 root=Path(__file__).resolve().parents[2];repo=args.sources_dir/'MBA-hub'
 if not repo.exists():repo=args.sources_dir/'fidelity-MBA-hub'
 commit='5c219508d23255080f6b050cefa8092905447d81';out=[]
+# Explicit reviewed app-local inventories reject added files as well as changed bytes.
+# Manifest metadata is part of the review boundary, independently of executable pairs.
+reviewed_inventories={
+ 'applied-water-science-life-support': (['app.js','index.html','manifest.json','styles.css'],'d593e80164e8e2affd0b6d7b428d56620fef44b78b6637a1be460e64a17d6c8a'),
+ 'interpretation-principles': (['app.js','data.js','index.html','manifest.json','styles.css'],'660fa9a1ca1619bcac964214e4d49a44e8f2108998edb0c143ab728603ea181a'),
+ 'mba-leadership': (['app.js','apps.js','data.js','index.html','manifest.json','styles.css'],'e48a0ea8422bc45c7efb81c72af4ea914c2843010c4cd32d45ff7a9a2be835de')
+}
+current_file_inventories=[]
+for app,(names,manifest_digest) in reviewed_inventories.items():
+ directory=root/'src/apps'/app
+ paths=list(directory.rglob('*'))
+ assert not any(p.is_symlink() for p in paths),app+': unreviewed symlink'
+ actual=sorted(p.relative_to(directory).as_posix() for p in paths if p.is_file())
+ assert actual==names,app+': app-local file inventory differs from reviewed scope'
+ assert hashlib.sha256((directory/'manifest.json').read_bytes()).hexdigest()==manifest_digest,app+': unreviewed manifest'
+ current_file_inventories.append({'app_id':app,'files':[{'path':'src/apps/'+app+'/'+name,'sha256':hashlib.sha256((directory/name).read_bytes()).hexdigest()} for name in names]})
 for app in ['applied-water-science-life-support','interpretation-principles','mba-leadership']:
  path='apps/'+app+'/index.html';s=subprocess.check_output(['git','-C',repo,'show',commit+':'+path]);c=(root/'src'/path).read_bytes();sd=html.fromstring(s);cd=html.fromstring(c);sourceids={x.get('id') for x in sd.xpath('//*[@id]')}
  for e in sd.xpath('//link[@rel="manifest"]'):e.getparent().remove(e)
@@ -75,4 +91,4 @@ for card in d.xpath('//article[contains(concat(" ",normalize-space(@class)," "),
  assert section['title']==title and section['text']==text,section['id']
  card_checks.append(section['id'])
 assert len(card_checks)==13
-print(json.dumps({'schema_version':1,'scope':'Engineering reviewed unchanged V1 authored content; no physical browser or new science/image approval','source_commit':commit,'complete_html_checks':out,'reviewed_file_hash_pairs':expected,'dynamic_render_checks':render_checks,'water_source_derived_card_ids':card_checks,'limitations':['Lightweight VM DOM harness is not a browser; physical layout, accessibility and device offline acceptance remain pending.','Original standalone workers/manifests are replaced by Hub infrastructure; source manifest approval flags remain separately preserved.']},indent=2))
+print(json.dumps({'schema_version':1,'scope':'Engineering reviewed unchanged V1 authored content; no physical browser or new science/image approval','source_commit':commit,'complete_html_checks':out,'reviewed_file_hash_pairs':expected,'current_file_inventories':current_file_inventories,'dynamic_render_checks':render_checks,'water_source_derived_card_ids':card_checks,'limitations':['Lightweight VM DOM harness is not a browser; physical layout, accessibility and device offline acceptance remain pending.','Original standalone workers/manifests are replaced by Hub infrastructure; source manifest approval flags remain separately preserved.']},indent=2))

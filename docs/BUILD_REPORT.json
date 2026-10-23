@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generatedAt": "2026-10-23T05:06:09.044Z",
+  "generatedAt": "2026-10-23T12:46:09.487Z",
   "platformVersion": "2.0.0-alpha.7",
   "stage": "migration-review",
   "apps": 33,
@@ -14,16 +14,10 @@
     "release gate: deviceOfflinePassed",
     "release gate: rollbackDevicePassed",
     "release gate: privacyReviewed",
-    "content review pending: applied-water-science-life-support",
-    "content review pending: aquarium-library-explorer",
     "content review pending: big-bellied-seahorse",
     "content review pending: evolution-timeline",
     "content review pending: five-senses-pwa",
-    "content review pending: information-center",
-    "content review pending: interpretation-principles",
     "content review pending: kelp-forest",
-    "content review pending: mba-leadership",
-    "content review pending: mmc-narrations",
     "content review pending: naturalist-field-notes",
     "content review pending: northern-elephant-seal",
     "content review pending: open-sea",
@@ -40,7 +34,7 @@
     "media permission review: asset-93c15fb934aba9e6"
   ],
   "publicationReview": {
-    "inheritedV1Content": 18,
+    "inheritedV1Content": 24,
     "scope": "Inherited V1 content only; do not confuse with production approval"
   },
   "deviceQA": {
