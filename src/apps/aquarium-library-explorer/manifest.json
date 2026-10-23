@@ -37,7 +37,7 @@
     {
       "id": "Book-of-North-American-Birds",
       "title": "Book of North American Birds",
-      "text": "Book of North American Birds Audubon Society MJ Extensive field guide of North America\u2019s bird species  Birds",
+      "text": "Book of North American Birds Audubon Society MJ Extensive field guide of North America’s bird species  Birds",
       "aliases": [
         "Birds"
       ]
@@ -62,7 +62,7 @@
     {
       "id": "Half-Mile-Down",
       "title": "Half Mile Down",
-      "text": "Half Mile Down W. Beebe Marilyn Stories from the 1930\u2019s by William Beebe of his exploration of the sea with some pictures & illustrations  General Natural History",
+      "text": "Half Mile Down W. Beebe Marilyn Stories from the 1930’s by William Beebe of his exploration of the sea with some pictures & illustrations  General Natural History",
       "aliases": [
         "General Natural History"
       ]
@@ -134,8 +134,8 @@
     },
     {
       "id": "Swampwalker-s-Journal",
-      "title": "Swampwalker\u2019s Journal",
-      "text": "Swampwalker\u2019s Journal D. M. Carroll MJ Exploring wetland habitats & the species that live in them  General Natural History",
+      "title": "Swampwalker’s Journal",
+      "text": "Swampwalker’s Journal D. M. Carroll MJ Exploring wetland habitats & the species that live in them  General Natural History",
       "aliases": [
         "General Natural History"
       ]
@@ -286,7 +286,7 @@
     {
       "id": "Monterey-Bay",
       "title": "Monterey Bay",
-      "text": "Monterey Bay L. Hatton Sallie A fictional story following characters during Steinbeck\u2019s Cannery Row  Monterey Bay",
+      "text": "Monterey Bay L. Hatton Sallie A fictional story following characters during Steinbeck’s Cannery Row  Monterey Bay",
       "aliases": [
         "Monterey Bay"
       ]
@@ -525,7 +525,7 @@
     {
       "id": "Brilliant-Abyss",
       "title": "Brilliant Abyss",
-      "text": "Brilliant Abyss H. Scales MJ Stories of the author\u2019s time as a deep-sea researcher as well as her opinions on the impacts of deep-sea mining & sustainable fisheries  Fish & Sharks Deep Sea & Open Ocean Conservation & Human Impact",
+      "text": "Brilliant Abyss H. Scales MJ Stories of the author’s time as a deep-sea researcher as well as her opinions on the impacts of deep-sea mining & sustainable fisheries  Fish & Sharks Deep Sea & Open Ocean Conservation & Human Impact",
       "aliases": [
         "Fish & Sharks",
         "Deep Sea & Open Ocean",
@@ -586,7 +586,7 @@
     {
       "id": "In-the-Shadow-of-the-Cypress",
       "title": "In the Shadow of the Cypress",
-      "text": "In the Shadow of the Cypress T. Steinbeck Sallie A fictional story about the Chinese community of 1940\u2019s Monterey  Monterey Bay",
+      "text": "In the Shadow of the Cypress T. Steinbeck Sallie A fictional story about the Chinese community of 1940’s Monterey  Monterey Bay",
       "aliases": [
         "Monterey Bay"
       ]
@@ -594,7 +594,7 @@
     {
       "id": "The-Book-of-Eels",
       "title": "The Book of Eels",
-      "text": "The Book of Eels P. Svensson Marilyn A series of stories that explore eel natural history & the relationships they\u2019ve had with humans throughout history  Fish & Sharks",
+      "text": "The Book of Eels P. Svensson Marilyn A series of stories that explore eel natural history & the relationships they’ve had with humans throughout history  Fish & Sharks",
       "aliases": [
         "Fish & Sharks"
       ]
@@ -619,7 +619,7 @@
     {
       "id": "The-Walking-Whales-From-Land-to-Water-in-Eight-Million-Years",
       "title": "The Walking Whales: From Land to Water in Eight Million Years",
-      "text": "The Walking Whales: From Land to Water in Eight Million Years H. Thewissen MJ A paleontologist\u2019s journey to studying whale fossils & modern whales to see how they evolved from the land into the ocean  Marine Mammals Evolution & Adaptations",
+      "text": "The Walking Whales: From Land to Water in Eight Million Years H. Thewissen MJ A paleontologist’s journey to studying whale fossils & modern whales to see how they evolved from the land into the ocean  Marine Mammals Evolution & Adaptations",
       "aliases": [
         "Marine Mammals",
         "Evolution & Adaptations"
@@ -637,7 +637,7 @@
     {
       "id": "Monterey-s-Waterfront",
       "title": "Monterey's Waterfront",
-      "text": "Monterey's Waterfront T. Thomas & D. Copeland MJ A pictorial history of Monterey up until the 1950\u2019s  Monterey Bay",
+      "text": "Monterey's Waterfront T. Thomas & D. Copeland MJ A pictorial history of Monterey up until the 1950’s  Monterey Bay",
       "aliases": [
         "Monterey Bay"
       ]
@@ -662,7 +662,7 @@
     {
       "id": "Restless-Creatures",
       "title": "Restless Creatures",
-      "text": "Restless Creatures M. Wilkinson Marilyn An exploration of the 4 billion year history of \u201cmovement\u201d, namely the evolution of life  Evolution & Adaptations",
+      "text": "Restless Creatures M. Wilkinson Marilyn An exploration of the 4 billion year history of “movement”, namely the evolution of life  Evolution & Adaptations",
       "aliases": [
         "Evolution & Adaptations"
       ]
@@ -681,7 +681,12 @@
       "text": "The Biology and Ecology of Giant Kelp Forests David R. Schiel & Michael S. Foster  Wishlist item  Kelp & Seaweed",
       "aliases": [
         "Kelp & Seaweed"
-      ]
+      ],
+      "query": {
+        "view": "wishlist",
+        "section": "The-Biology-and-Ecology-of-Giant-Kelp-Forests",
+        "book": "The Biology and Ecology of Giant Kelp Forests"
+      }
     },
     {
       "id": "Shark-Biology-and-Conservation-Essentials-for-Educators-Students-and-Enthusiasts",
@@ -690,7 +695,12 @@
       "aliases": [
         "Fish & Sharks",
         "Conservation & Human Impact"
-      ]
+      ],
+      "query": {
+        "view": "wishlist",
+        "section": "Shark-Biology-and-Conservation-Essentials-for-Educators-Students-and-Enthusiasts",
+        "book": "Shark Biology and Conservation: Essentials for Educators, Students, and Enthusiasts"
+      }
     },
     {
       "id": "Abalone-The-Remarkable-History-and-Uncertain-Future-of-California-s-Iconic-Shellfish",
@@ -699,7 +709,12 @@
       "aliases": [
         "Fish & Sharks",
         "Mollusks & Invertebrates"
-      ]
+      ],
+      "query": {
+        "view": "wishlist",
+        "section": "Abalone-The-Remarkable-History-and-Uncertain-Future-of-California-s-Iconic-Shellfish",
+        "book": "Abalone: The Remarkable History and Uncertain Future of California's Iconic Shellfish"
+      }
     },
     {
       "id": "Sea-Change-A-Message-of-the-Oceans",
@@ -707,7 +722,12 @@
       "text": "Sea Change: A Message of the Oceans Sylvia Earle  Wishlist item  Wishlist",
       "aliases": [
         "Wishlist"
-      ]
+      ],
+      "query": {
+        "view": "wishlist",
+        "section": "Sea-Change-A-Message-of-the-Oceans",
+        "book": "Sea Change: A Message of the Oceans"
+      }
     },
     {
       "id": "The-World-Is-Blue-How-Our-Fate-and-the-Ocean-s-Are-One",
@@ -715,7 +735,12 @@
       "text": "The World Is Blue: How Our Fate and the Ocean's Are One Sylvia A. Earle  Wishlist item  Wishlist",
       "aliases": [
         "Wishlist"
-      ]
+      ],
+      "query": {
+        "view": "wishlist",
+        "section": "The-World-Is-Blue-How-Our-Fate-and-the-Ocean-s-Are-One",
+        "book": "The World Is Blue: How Our Fate and the Ocean's Are One"
+      }
     },
     {
       "id": "Blue-Hope-Exploring-and-Caring-for-Earth-s-Magnificent-Ocean",
@@ -723,7 +748,12 @@
       "text": "Blue Hope: Exploring and Caring for Earth's Magnificent Ocean Sylvia A. Earle  Wishlist item  Wishlist",
       "aliases": [
         "Wishlist"
-      ]
+      ],
+      "query": {
+        "view": "wishlist",
+        "section": "Blue-Hope-Exploring-and-Caring-for-Earth-s-Magnificent-Ocean",
+        "book": "Blue Hope: Exploring and Caring for Earth's Magnificent Ocean"
+      }
     },
     {
       "id": "Forest-of-the-Sea-The-Remarkable-Life-and-Imperiled-Future-of-Kelp",
@@ -732,7 +762,12 @@
       "aliases": [
         "Kelp & Seaweed",
         "Conservation & Human Impact"
-      ]
+      ],
+      "query": {
+        "view": "wishlist",
+        "section": "Forest-of-the-Sea-The-Remarkable-Life-and-Imperiled-Future-of-Kelp",
+        "book": "Forest of the Sea: The Remarkable Life and Imperiled Future of Kelp"
+      }
     },
     {
       "id": "The-Shorebirds-of-North-America-A-Natural-History-and-Photographic-Celebration",
@@ -740,7 +775,12 @@
       "text": "The Shorebirds of North America: A Natural History and Photographic Celebration Pete Dunne & Kevin T. Karlson  Wishlist item  Birds",
       "aliases": [
         "Birds"
-      ]
+      ],
+      "query": {
+        "view": "wishlist",
+        "section": "The-Shorebirds-of-North-America-A-Natural-History-and-Photographic-Celebration",
+        "book": "The Shorebirds of North America: A Natural History and Photographic Celebration"
+      }
     },
     {
       "id": "Shell-Day-A-Story-of-24-Hours-and-24-Molluscan-Lives",
@@ -748,7 +788,12 @@
       "text": "Shell Day: A Story of 24 Hours and 24 Molluscan Lives Helen Scales  Wishlist item  Mollusks & Invertebrates",
       "aliases": [
         "Mollusks & Invertebrates"
-      ]
+      ],
+      "query": {
+        "view": "wishlist",
+        "section": "Shell-Day-A-Story-of-24-Hours-and-24-Molluscan-Lives",
+        "book": "Shell Day: A Story of 24 Hours and 24 Molluscan Lives"
+      }
     },
     {
       "id": "Humpback-Highway-Diving-into-the-mysterious-world-of-whales",
@@ -756,7 +801,12 @@
       "text": "Humpback Highway: Diving into the mysterious world of whales Vanessa Pirotta  Wishlist item  Marine Mammals",
       "aliases": [
         "Marine Mammals"
-      ]
+      ],
+      "query": {
+        "view": "wishlist",
+        "section": "Humpback-Highway-Diving-into-the-mysterious-world-of-whales",
+        "book": "Humpback Highway: Diving into the mysterious world of whales"
+      }
     },
     {
       "id": "Other-Minds-The-Octopus-the-Sea-and-the-Deep-Origins-of-Consciousness",
@@ -764,7 +814,12 @@
       "text": "Other Minds: The Octopus, the Sea, and the Deep Origins of Consciousness Peter Godfrey-Smith  Wishlist item  Cephalopods",
       "aliases": [
         "Cephalopods"
-      ]
+      ],
+      "query": {
+        "view": "wishlist",
+        "section": "Other-Minds-The-Octopus-the-Sea-and-the-Deep-Origins-of-Consciousness",
+        "book": "Other Minds: The Octopus, the Sea, and the Deep Origins of Consciousness"
+      }
     },
     {
       "id": "Metazoa-Animal-Minds-and-the-Birth-of-Consciousness",
@@ -772,7 +827,12 @@
       "text": "Metazoa: Animal Minds and the Birth of Consciousness Peter Godfrey-Smith  Wishlist item  Wishlist",
       "aliases": [
         "Wishlist"
-      ]
+      ],
+      "query": {
+        "view": "wishlist",
+        "section": "Metazoa-Animal-Minds-and-the-Birth-of-Consciousness",
+        "book": "Metazoa: Animal Minds and the Birth of Consciousness"
+      }
     },
     {
       "id": "Octopus-The-Ocean-s-Intelligent-Invertebrate",
@@ -780,7 +840,12 @@
       "text": "Octopus: The Ocean's Intelligent Invertebrate Jennifer A. Mather, Roland C. Anderson, & James B. Wood  Wishlist item  Cephalopods",
       "aliases": [
         "Cephalopods"
-      ]
+      ],
+      "query": {
+        "view": "wishlist",
+        "section": "Octopus-The-Ocean-s-Intelligent-Invertebrate",
+        "book": "Octopus: The Ocean's Intelligent Invertebrate"
+      }
     },
     {
       "id": "The-Blue-Machine-How-the-Ocean-Works",
@@ -788,7 +853,12 @@
       "text": "The Blue Machine: How the Ocean Works Helen Czerski  Wishlist item  Wishlist",
       "aliases": [
         "Wishlist"
-      ]
+      ],
+      "query": {
+        "view": "wishlist",
+        "section": "The-Blue-Machine-How-the-Ocean-Works",
+        "book": "The Blue Machine: How the Ocean Works"
+      }
     },
     {
       "id": "Life-Between-the-Tides",
@@ -796,7 +866,12 @@
       "text": "Life Between the Tides Adam Nicolson  Wishlist item  Tidepools & Rocky Shore",
       "aliases": [
         "Tidepools & Rocky Shore"
-      ]
+      ],
+      "query": {
+        "view": "wishlist",
+        "section": "Life-Between-the-Tides",
+        "book": "Life Between the Tides"
+      }
     },
     {
       "id": "The-Reef-A-Passionate-History-The-Great-Barrier-Reef-from-Captain-Cook-to-Climate-Change",
@@ -805,7 +880,12 @@
       "aliases": [
         "Tidepools & Rocky Shore",
         "Conservation & Human Impact"
-      ]
+      ],
+      "query": {
+        "view": "wishlist",
+        "section": "The-Reef-A-Passionate-History-The-Great-Barrier-Reef-from-Captain-Cook-to-Climate-Change",
+        "book": "The Reef: A Passionate History: The Great Barrier Reef from Captain Cook to Climate Change"
+      }
     },
     {
       "id": "Poking-the-Squid-What-We-Can-Learn-from-Animal-Sex",
@@ -813,7 +893,12 @@
       "text": "Poking the Squid: What We Can Learn from Animal Sex Perrin Roosevelt Ireland  Wishlist item  Cephalopods",
       "aliases": [
         "Cephalopods"
-      ]
+      ],
+      "query": {
+        "view": "wishlist",
+        "section": "Poking-the-Squid-What-We-Can-Learn-from-Animal-Sex",
+        "book": "Poking the Squid: What We Can Learn from Animal Sex"
+      }
     }
   ],
   "source_version": "1.0",
