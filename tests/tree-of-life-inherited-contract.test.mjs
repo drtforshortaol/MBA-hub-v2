@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -53,4 +54,21 @@ test('Tree of Life search and expand/collapse controls remain wired', () => {
   assert.match(script, /addEventListener\\("input",runSearch\\)/);
   assert.match(script, /classList\\.toggle\\("hidden-by-search",!hit\\)/);
   assert.match(script, /\\$\\$\\("details"\\)\\.forEach\\(d=>d\\.open=false\\)/);
+});
+
+test('Tree of Life executable and stylesheet match pinned V1 except isolated Hub worker migration', () => {
+  // Read-only MBA-hub commit 5c219508d23255080f6b050cefa8092905447d81.
+  // A Git blob hash binds the complete upstream bytes without network access in CI.
+  const gitBlobSha = bytes => createHash('sha1')
+    .update('blob ' + Buffer.byteLength(bytes) + '\\0')
+    .update(bytes).digest('hex');
+  const disabledWorker = 'if(false)window.addEventListener("load",()=>Promise.resolve({update:async()=>{},installing:null,waiting:null,active:null}));';
+  const originalWorker = 'if("serviceWorker"in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js"));';
+  assert.equal(script.split(disabledWorker).length, 2, 'worker migration must occur exactly once');
+  const restoredSource = script.replace(disabledWorker, originalWorker);
+  assert.equal(gitBlobSha(restoredSource), '8593db513cf65a44ec00cc8af2375cfa40810abe',
+    'unreviewed executable change relative to pinned V1');
+  const css = readFileSync(new URL('styles.css', app));
+  assert.equal(gitBlobSha(css), 'af0f8ea2fbfa3987f365f202a32bea231f59798f',
+    'unreviewed stylesheet change relative to pinned V1');
 });
