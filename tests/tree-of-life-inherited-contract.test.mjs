@@ -134,7 +134,7 @@ test('Tree of Life V2 anchor additions preserve original authored markup', () =>
     "REFERENCE-Scientific-Cautions-Guide-level"
 ]);
   assert.equal(reviewedAddedAnchors.size, 25);
-  restored = restored.replace(/\\s+id="([^"]+)"/g, (attribute, id) =>
+  restored = restored.replace(/\s+id="([^"]+)"/g, (attribute, id) =>
     reviewedAddedAnchors.has(id) ? '' : attribute);
   assert.equal(gitBlobSha(restored), '74380569842a3aa3c64c3d27b30566b831008bcf',
     'Tree of Life inherited HTML changed outside reviewed anchor and Hub migration scope');
