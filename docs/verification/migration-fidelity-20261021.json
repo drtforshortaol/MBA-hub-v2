@@ -3068,9 +3068,9 @@
           "source_path": "apps/naturalist-field-notes/app.js",
           "local_path": "src/apps/naturalist-field-notes/app.js",
           "pinned_sha256": "9c615b5cbd105df4c38a69d5a8da316962aef62bac97822f58b2e2d4639903c2",
-          "current_sha256": "412c28db578382ca785b4476fb6f59ec217e9671870dea4206040cc000b51eff",
+          "current_sha256": "c871238eeb6f808a034eb5123517df4720b4a8dd6f560177c25c2df4303065a2",
           "status": "changed",
-          "technical_diff_note": "Retains URL validation correction; adds an app-owned contextual-Back restore hook after input replay to preserve the URL-selected published note before panel/scroll restoration. Scientific/October content, data, styles, images and approval scope unchanged."
+          "technical_diff_note": "Retains URL validation correction; adds an app-owned contextual-Back restore hook after input replay to preserve the URL-selected published note before panel/scroll restoration. Scientific/October content, data, styles, images and approval scope unchanged. Current runtime byte revision reviewed in integration branch; original-content fidelity and approval scope remain separately bounded."
         },
         {
           "source_path": "apps/naturalist-field-notes/data.js",
@@ -4382,12 +4382,12 @@
             "@@ -5,8 +5,9 @@",
             " Species",
             " Guide",
-            " \u2190",
+            " ←",
             "-Return",
             "-to",
             "+MBA",
             "+Hub",
-            "+\u00b7",
+            "+·",
             " Naturalist",
             " Field",
             " Notes"
