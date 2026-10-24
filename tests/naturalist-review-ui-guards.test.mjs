@@ -36,7 +36,7 @@ test('scientific conflict links navigate to related statements without editing d
  assert.match(code,/relatedIndex>=packet\.entries\.length/);
  assert.match(code,/showStatement\(relatedIndex\)/);
  assert.match(code,/statementCards\[relatedIndex\]\?\.scrollIntoView/);
- assert.match(code,/item\.append\(label,body,flags,related,technical,warning,form\)/);
+ assert.match(code,/item\.append\(label,renderNaturalistSourceEvidence\(document,entry\),body,flags,related,technical,warning,form\)/);
 });
 
 test('mobile reviewer can advance to incomplete statements without granting publication',()=>{
@@ -107,9 +107,10 @@ test('inline comparison presents original evidence without changing review decis
  assert.match(code,/aria-label','Statement comparison/);
  assert.match(code,/new Set\(candidates\)/);
  assert.match(code,/candidate>=packet\.entries\.length/);
- assert.match(code,/Current: '\+entry\.source_text/);
- assert.match(code,/Compare: '\+other\.source_text/);
- assert.match(code,/Other proposed placement:/);
+ const renderer=fs.readFileSync(path.join(root,'src/core/naturalist-comparison-evidence.js'),'utf8');
+ assert.match(renderer,/Current: '\+entry\.source_text/);
+ assert.match(renderer,/Compare: '\+other\.source_text/);
+ assert.match(renderer,/Other proposed placement:/);
  assert.match(code,/related\.append\(comparison\)/);
 });
 
@@ -136,7 +137,7 @@ test('successful recovery automatically reloads persisted review without publish
  assert.match(code,/if\(!saved\)\{intakeStatus\.textContent='Storage unavailable/);
  assert.match(code,/Decisions restored locally\. Reloading review interface/);
  assert.match(code,/reviewButton\.click\(\)/);
- assert.match(code,/if\(!isCurrentReview\(\)\|\|generation!==activeReviewGeneration\)return;\s*if\(!imported\)/);
+ assert.match(code,/if\(importGeneration!==activeDecisionImport\|\|!isCurrentReview\(\)\|\|generation!==activeReviewGeneration\)return/);
 });
 
 test('direct statement picker stays synchronized with previous, next and flagged navigation',()=>{
@@ -152,7 +153,7 @@ test('direct statement picker stays synchronized with previous, next and flagged
 test('asynchronous recovery and reset reject superseded generation',()=>{
  const code=fs.readFileSync(path.join(root,'src/core/developer.js'),'utf8');
  assert.match(code,/recoveryInput\.addEventListener\('change',async\(\)=>\{\s*if\(!isCurrentReview\(\)\|\|generation!==activeReviewGeneration\)return/);
- assert.match(code,/if\(!isCurrentReview\(\)\|\|generation!==activeReviewGeneration\)return;\s*if\(!imported\)/);
+ assert.match(code,/if\(importGeneration!==activeDecisionImport\|\|!isCurrentReview\(\)\|\|generation!==activeReviewGeneration\)return/);
  assert.match(code,/if\(!isCurrentReview\(\)\|\|generation!==activeReviewGeneration\)\{intakeStatus\.textContent='Review no longer current\. Regenerate before resetting/);
 });
 

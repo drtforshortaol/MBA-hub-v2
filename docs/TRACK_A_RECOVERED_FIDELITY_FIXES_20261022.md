@@ -1,0 +1,5 @@
+# Track A recovered app fixes — October 22, 2026
+
+Incremental update to draft PR #2 from e8316f146973b63ddc163c28beb6dd6925151ee6. Restores Kelp's three Story paragraphs and whole-app anchor, Northern Elephant Seal's aggregate anchor, Open Sea's safe ampersand display and DIV-only training-note class, Five Senses' javascript-URL whitespace guard, and exact existing MMC reference search text. IDs, datasets, media bytes and approval flags are preserved.
+
+Includes the read-only pinned-source fidelity auditor and its three regression tests as explicit dependencies so current-file evidence can be regenerated on this branch. This branch's own regenerated evidence is retained; combined integration evidence is not substituted. Full Node suite 472/472 PASS; Python fidelity 3/3, validation, security and focused real-data regressions PASS. The branch retains its own review/gating state; these checks do not assert integrated release readiness or physical-device acceptance. No merge, publication, deployment or release.

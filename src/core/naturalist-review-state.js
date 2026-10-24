@@ -1,4 +1,5 @@
 // Naturalist review annotations: local-only, never publication authorization.
+import {matchesNaturalistSnapshot} from './naturalist-snapshot.js';
 export const REVIEW_SCHEMA=1;
 const SCIENCE=new Set(['pending','needs-revision','verified']);
 const EDITORIAL=new Set(['pending','needs-revision','approved']);
@@ -8,7 +9,13 @@ export function newReviewDecisions(entries){
 }
 export function validateReviewDecisions(decisions,entries){
  if(!Array.isArray(entries)||!Array.isArray(decisions)||decisions.length!==entries.length)return false;
- return decisions.every((d,i)=>d&&typeof d==='object'&&!Array.isArray(d)&&Object.keys(d).every(k=>['index','scientific_status','editorial_status','proposed_action','reviewer_notes'].includes(k))&&d.index===i&&SCIENCE.has(d.scientific_status)&&EDITORIAL.has(d.editorial_status)&&ACTIONS.has(d.proposed_action)&&typeof d.reviewer_notes==='string'&&d.reviewer_notes.length<=4000);
+ // Visit every position explicitly: Array.every skips holes and can otherwise
+ // accept an incomplete set of approvals or missing classification records.
+ return Array.from({length:entries.length},(_,i)=>i).every(i=>{
+  if(!Object.hasOwn(entries,i)||!Object.hasOwn(decisions,i))return false;
+  const d=decisions[i];
+  return d&&typeof d==='object'&&!Array.isArray(d)&&Object.keys(d).every(k=>['index','scientific_status','editorial_status','proposed_action','reviewer_notes'].includes(k))&&d.index===i&&SCIENCE.has(d.scientific_status)&&EDITORIAL.has(d.editorial_status)&&ACTIONS.has(d.proposed_action)&&typeof d.reviewer_notes==='string'&&d.reviewer_notes.length<=4000;
+ });
 }
 export function reviewProgress(decisions){
  if(!Array.isArray(decisions))return {completed:0,total:0,revisions:0,can_auto_publish:false};
@@ -61,7 +68,7 @@ export function importReviewPacket(packet,fingerprint,entries){
    if(!actual||typeof actual!=='object'||Array.isArray(actual)||actual.index!==i||!expected||typeof expected!=='object'||Array.isArray(expected)||expected.index!==i)return null;
    for(const field of ['source_text','text','reviewed_source_snapshot','source_block','extraction','duplicate_of','conflict_with','placement','route','reviewed_app_version','reviewed_section_snapshot','review','existing_content','review_required']){
     if(Object.hasOwn(expected,field)!==Object.hasOwn(actual,field))return null;
-    if(JSON.stringify(actual[field]??null)!==JSON.stringify(expected[field]??null))return null;
+    if(!matchesNaturalistSnapshot(actual[field],expected[field]))return null;
    }
   }
  }

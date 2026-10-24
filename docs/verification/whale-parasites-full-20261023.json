@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "app_id": "whale-parasites-associates",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "source_inventory": {
+    "CHANGELOG.txt": "17c5f8fed9a711035c8ba3471d8282887a6ebc82",
+    "README.md": "6db029f5464fd033f4c7773dfa915770172a7b38",
+    "app.js": "a20c2538c6a4e9408e49f169eda7dd55b29b17d7",
+    "data.js": "f968c77b3078dedca488be29c18e46b84f14a836",
+    "how to use this app-template.txt": "bf03f7b7ada65bda3ca34d26f0f9b4481e70f746",
+    "images/icon.svg": "787228959e1379c022cf0f7a3edebe29492a97a9",
+    "index.html": "32a4d50e8c639c166feee8586b389195e2b98e46",
+    "manifest.json": "08690f3c9ca1b5a5d92a45b8f025b3c76942dda6",
+    "styles.css": "2046b07abb042861d84eca2511c768da293b96b5",
+    "sw.js": "c655fedb6e8f6644cdaf22a961ad4d9d9fa867a9"
+  },
+  "current_inventory": {
+    "app.js": "b5d2622f00886b96d72288a7312c460ca473b3f8d8043f215e13e9cf3716d8c9",
+    "data.js": "eba6c75c2e079c0b04df1634b324489113f2ee8e790a0f23d2a0ab3accfa2954",
+    "index.html": "f04e8ed22ac8f63aee8b248fcafb506b0a58cb30b1f5deb203cdbd0b69c89ed5",
+    "manifest.json": "8b49ff2f0d44dd893094ed1e95590eadf111d971958f375be87241afe2fdef77",
+    "styles.css": "334352605e15c2a06101069a7663860cfe8842398846eab55c69c41d6a7d6383"
+  },
+  "current_byte_guard": true,
+  "complete_static_document": true,
+  "complete_stylesheet": true,
+  "complete_dataset": true,
+  "rendered_cards": 7,
+  "rendered_filters": 5,
+  "filter_search_combinations": 585,
+  "jump_targets": 7,
+  "manifest_destinations": 9,
+  "offline_app_assets": 4,
+  "navigation": {
+    "complete": true,
+    "resolved_cards": 7,
+    "shared_navigator_sha256": "4543850ab43b9864e76b1cca189e9f96e5d49e6e04f88e4a75cfa2b0b9f514c6",
+    "controls_preserved": true,
+    "focus_scroll_verified": true,
+    "one_shot_verified": true
+  },
+  "exclusions": [
+    "Legacy standalone maintenance/worker and manifest/icon are replaced by Hub ownership.",
+    "Removed original external Google font requests; native typography/layout not certified.",
+    "No original photo/media is referenced by current app; standalone SVG icon remains inventoried in pinned source.",
+    "Related-topic source call is optional; no loaded legacy related renderer is claimed."
+  ],
+  "approval_granted": false,
+  "limitations": [
+    "Engineering reproduction uses lxml and bounded event/DOM behavior, not native browser layout or lifecycle.",
+    "Scientific/editorial, media-rights, physical device/privacy and deployment approval remain separate."
+  ]
+}

@@ -1,9 +1,18 @@
+import {renderNaturalistComparisonEvidence} from './naturalist-comparison-evidence.js';
+import {hasNaturalistRelationshipFlag} from './naturalist-review-triage.js';
+import {renderNaturalistReferencedEvidence} from './naturalist-referenced-evidence.js';
+import {readReplacementDrafts,saveReplacementDrafts,createReplacementBackup,readReplacementBackup} from './naturalist-replacement-drafts.js';
+import {naturalistReadableReport} from './naturalist-readable-report.js';
+import {createNaturalistIntakePacket,readNaturalistIntakePacket,readNaturalistSource,saveNaturalistSource,discardNaturalistSource} from './naturalist-intake.js';
 import {naturalistChangeRequest} from './naturalist-change-request.js';
 import {exportNaturalistReviewQueue} from './naturalist-review-queue-export.js';
 import {verifyNaturalistReviewQueue} from './naturalist-review-queue-import.js';
 import {createDraft,loadDraft,saveDraft,validateDraft} from './content-drafts.js';
 import {request} from './worker-channel.js';
 import {newReviewDecisions,validateReviewDecisions,reviewProgress,reviewStorageKey,readReview,writeReview,importReviewPacket,reviewRecoveryCheck,reviewActionQueue} from './naturalist-review-state.js';
+import {renderNaturalistSourceEvidence} from './naturalist-source-evidence.js';
+import {readNaturalistReviewPosition,saveNaturalistReviewPosition} from './naturalist-review-position.js';
+import {renderNaturalistReviewLink} from './naturalist-review-link.js';
 const env=await fetch('environment.json').then(r=>r.json());if(!env.developer)throw Error('Developer module prohibited in this environment');
 const panel=document.querySelector('#developer'),title=document.querySelector('#title');let taps=0,last=0;
 title.addEventListener('click',()=>{if(Date.now()-last>2200)taps=0;last=Date.now();if(++taps===5){taps=0;panel.hidden=!panel.hidden;if(!panel.hidden)render();}});
@@ -26,7 +35,8 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
  intakeButton.addEventListener('click',()=>{
   const source=intakeText.value;
   if(!source.trim()){intakeStatus.textContent='Source notes are required.';return;}
-  const payload={schema_version:1,kind:'mba-v2-naturalist-intake',original_source:source,scientific_verification:'required',editorial_review:'required',approval_state:'pending',classified:false,committed:false,published:false};
+  let payload;
+  try{payload=createNaturalistIntakePacket(source);}catch(error){intakeStatus.textContent=error.message;return;}
   const blob=new Blob([JSON.stringify(payload,null,2)+'\n'],{type:'application/json'});
   const url=URL.createObjectURL(blob),link=document.createElement('a');
   link.href=url;link.download='mba-naturalist-intake.json';link.click();
@@ -42,6 +52,53 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
  // Invalidate generated decisions immediately when their source changes.
  intakeText.addEventListener('input',()=>{activeReviewGeneration++;reviewOutput.replaceChildren();delete reviewOutput.dataset.reviewFingerprint;intakeStatus.textContent='Source changed. Generate a new review packet before downloading.';});
  let activeReviewGeneration=0;
+ let activeIntakeImport=0,requireFreshIntakeReview=false;
+ const recoveryStatus=document.createElement('p');recoveryStatus.setAttribute('role','status');
+ const restoreSourceButton=document.createElement('button');restoreSourceButton.type='button';restoreSourceButton.className='button';restoreSourceButton.textContent='Restore saved source';
+ const discardSourceButton=document.createElement('button');discardSourceButton.type='button';discardSourceButton.className='button';discardSourceButton.textContent='Discard saved source';
+ let recoveredSource=null;
+ try{const recovered=readNaturalistSource(localStorage,env.namespace);if(recovered.valid)recoveredSource=recovered.source;}catch{/* device storage may be unavailable */}
+ const updateSourceRecovery=()=>{restoreSourceButton.disabled=recoveredSource===null||intakeText.value===recoveredSource;discardSourceButton.disabled=recoveredSource===null;};
+ recoveryStatus.textContent=recoveredSource===null?'Source notes are saved on this device as you type.':'Saved source available on this device. Restore it to begin a fresh review.';
+ updateSourceRecovery();
+ intake.insertBefore(recoveryStatus,intakeStatus);intake.insertBefore(restoreSourceButton,intakeStatus);intake.insertBefore(discardSourceButton,intakeStatus);
+ intakeText.addEventListener('input',()=>{
+  let saved=false;try{saved=saveNaturalistSource(localStorage,env.namespace,intakeText.value);}catch{/* storage may be blocked */}
+  if(saved){recoveredSource=intakeText.value.trim()?intakeText.value:null;recoveryStatus.textContent=recoveredSource===null?'Saved source cleared.':'Source saved on this device. Review approvals are separate.';}
+  else recoveryStatus.textContent='Source could not be saved on this device. Download the review intake to keep a copy.';
+  updateSourceRecovery();
+ });
+ restoreSourceButton.addEventListener('click',()=>{
+  if(recoveredSource===null)return;
+  requireFreshIntakeReview=true;intakeText.value=recoveredSource;intakeText.dispatchEvent(new Event('input'));
+  intakeStatus.textContent='Saved source restored. Generate a new packet and review every statement.';
+ });
+ discardSourceButton.addEventListener('click',()=>{
+  let discarded=false;try{discarded=discardNaturalistSource(localStorage,env.namespace);}catch{/* storage may be blocked */}
+  if(discarded){recoveredSource=null;recoveryStatus.textContent='Saved source discarded. Current notes remain available until you leave.';}
+  else recoveryStatus.textContent='Saved source could not be discarded on this device.';
+  updateSourceRecovery();
+ });
+ const importIntakeLabel=document.createElement('label');importIntakeLabel.htmlFor='naturalist-intake-import';importIntakeLabel.textContent='Restore source from review intake JSON';
+ const importIntakeFile=document.createElement('input');importIntakeFile.type='file';importIntakeFile.id='naturalist-intake-import';importIntakeFile.accept='.json,application/json';
+ intake.insertBefore(importIntakeLabel,intakeStatus);intake.insertBefore(importIntakeFile,intakeStatus);
+ importIntakeFile.addEventListener('change',async()=>{
+  const importGeneration=++activeIntakeImport,generation=activeReviewGeneration,source=intakeText.value;
+  const file=importIntakeFile.files?.[0];if(!file)return;
+  try{
+   if(file.size>400000)throw new Error('Intake file exceeds the source packet limit.');
+   const restored=readNaturalistIntakePacket(JSON.parse(await file.text()));
+   // Never overwrite notes or a newer selected intake while file reading was pending.
+   if(importGeneration!==activeIntakeImport||generation!==activeReviewGeneration||intakeText.value!==source)return;
+   if(!restored.valid)throw new Error('Invalid intake source or review state.');
+   requireFreshIntakeReview=true;
+   intakeText.value=restored.source;
+   intakeText.dispatchEvent(new Event('input'));
+   intakeStatus.textContent='Source restored. Generate a new review packet; scientific and editorial review remain required.';
+  }catch(error){
+   if(importGeneration===activeIntakeImport&&generation===activeReviewGeneration&&intakeText.value===source)intakeStatus.textContent=error.message;
+  }finally{if(importGeneration===activeIntakeImport)importIntakeFile.value='';}
+ });
  reviewButton.addEventListener('click',async()=>{
   const generation=++activeReviewGeneration;
   reviewOutput.replaceChildren();
@@ -71,7 +128,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    packet.review_context_sha256=sourceFingerprint;
    packet.review_decisions=newReviewDecisions(packet.entries);
    let saved=null;
-   try{saved=readReview(localStorage,reviewKey,sourceFingerprint,packet.entries);}catch{/* Browser storage can be disabled; packet remains downloadable. */}
+   if(!requireFreshIntakeReview){try{saved=readReview(localStorage,reviewKey,sourceFingerprint,packet.entries);}catch{/* Browser storage can be disabled; packet remains downloadable. */}}
    if(saved)packet.review_decisions=saved;
    function reviewDecisionSummary(){
     const progress=reviewRecoveryCheck(packet.review_decisions,packet.entries);
@@ -90,7 +147,9 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    const saveReview=()=>{
     if(!isCurrentReview()){intakeStatus.textContent='Review no longer current. Regenerate before saving.';return;}
     if(!validateDecisions()){intakeStatus.textContent='Review decisions invalid. Nothing saved.';return;}
-    intakeStatus.textContent=writeReview(localStorage,reviewKey,sourceFingerprint,packet.review_decisions,packet.entries)?'Review decisions saved on this device. Publication remains disabled.':'Local storage unavailable; download the review packet to retain decisions.';
+    const savedCurrentReview=writeReview(localStorage,reviewKey,sourceFingerprint,packet.review_decisions,packet.entries);
+    if(savedCurrentReview)requireFreshIntakeReview=false;
+    intakeStatus.textContent=savedCurrentReview?'Review decisions saved on this device. Publication remains disabled.':'Local storage unavailable; download the review packet to retain decisions.';
     if(typeof showQueue==='function')showQueue();
    };
    const navigation=document.createElement('div');
@@ -108,6 +167,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     previous.disabled=activeStatement===0;next.disabled=activeStatement===statementCards.length-1;
     position.textContent=' Statement '+(activeStatement+1)+' of '+statementCards.length+' ';
     if(jumpToStatement)jumpToStatement.value=String(activeStatement);
+    try{saveNaturalistReviewPosition(localStorage,env.namespace,sourceFingerprint,activeStatement,statementCards.length);}catch{/* Navigation works without device storage. */}
    }
    previous.addEventListener('click',()=>{if(isCurrentReview())showStatement(activeStatement-1);});
    next.addEventListener('click',()=>{if(isCurrentReview())showStatement(activeStatement+1);});
@@ -129,7 +189,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     for(let offset=1;offset<=count;offset++){
      const index=(activeStatement+offset)%count;
      const entry=packet.entries[index];
-     if(entry.review.flags.length||entry.duplicate_of!==null&&entry.duplicate_of!==undefined){
+     if(entry.review.flags.length||hasNaturalistRelationshipFlag(packet.entries,index)){
       showStatement(index);statementCards[index]?.scrollIntoView({block:'nearest'});return;
      }
     }
@@ -223,15 +283,12 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
      for(const candidate of new Set(candidates)){
       if(!Number.isInteger(candidate)||candidate<0||candidate>=packet.entries.length||candidate===entry.index)continue;
       const other=packet.entries[candidate];
-      const row=document.createElement('div');
-      const heading=document.createElement('strong');heading.textContent='Statement '+(candidate+1)+(candidate===entry.duplicate_of?' — possible duplicate':' — potential conflict');
-      const original=document.createElement('p');original.textContent='Current: '+entry.source_text;
-      const counterpart=document.createElement('p');counterpart.textContent='Compare: '+other.source_text;
-      const context=document.createElement('p');context.textContent='Other proposed placement: '+(other.placement.target_app_id||'unresolved')+' / '+(other.placement.target_section_id||'unresolved');
-      row.append(heading,original,counterpart,context);comparison.append(row);
+      comparison.append(renderNaturalistComparisonEvidence(document,entry,other,candidate,{isCurrentReview,showStatement,statementCards}));
      }
      related.append(comparison);
     }
+    const referencedEvidence=renderNaturalistReferencedEvidence(document,entry,packet.entries,{isCurrentReview,showStatement,statementCards});
+    if(referencedEvidence)related.append(referencedEvidence);
     const warning=document.createElement('p');warning.className='quiet';
     warning.textContent='Pending scientific verification and editorial approval. This packet cannot publish updates.';
     const decision=packet.review_decisions[entry.index];
@@ -262,26 +319,38 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     const technical=document.createElement('details');
     const technicalSummary=document.createElement('summary');technicalSummary.textContent='Technical classification details (rarely needed)';
     technical.append(technicalSummary,details);
-    item.append(label,body,flags,related,technical,warning,form);reviewOutput.append(item);statementCards.push(item);
+    item.append(label,renderNaturalistSourceEvidence(document,entry),body,flags,related,technical,warning,form);reviewOutput.append(item);statementCards.push(item);
    }
-   if(statementCards.length>1){reviewOutput.insertBefore(navigation,statementCards[0]);showStatement(0);}
+   if(statementCards.length>1){
+    reviewOutput.insertBefore(navigation,statementCards[0]);
+    let restoredPosition=0;
+    try{restoredPosition=readNaturalistReviewPosition(localStorage,env.namespace,sourceFingerprint,statementCards.length);}catch{/* Start at the first statement when storage is unavailable. */}
+    showStatement(restoredPosition);
+    navigation.setAttribute('aria-description','Your statement position resumes on this device when storage is available. Review decisions remain separate.');
+   }
    const recoveryLabel=document.createElement('label');recoveryLabel.textContent='Restore decisions from a downloaded review packet (same classification only)';
    const recoveryInput=document.createElement('input');recoveryInput.type='file';recoveryInput.accept='.json,application/json';
    recoveryLabel.append(recoveryInput);
+   let activeDecisionImport=0;
    recoveryInput.addEventListener('change',async()=>{
     if(!isCurrentReview()||generation!==activeReviewGeneration)return;
+    const importGeneration=++activeDecisionImport;
+    const decisionSnapshot=JSON.stringify(packet.review_decisions);
     const file=recoveryInput.files?.[0];if(!file)return;
+    recoveryInput.value='';
     if(file.size>2000000){intakeStatus.textContent='Review packet exceeds 2 MB recovery limit.';return;}
     try{
      const imported=importReviewPacket(JSON.parse(await file.text()),sourceFingerprint,packet.entries);
-     if(!isCurrentReview()||generation!==activeReviewGeneration)return;
+     if(importGeneration!==activeDecisionImport||!isCurrentReview()||generation!==activeReviewGeneration)return;
+     if(JSON.stringify(packet.review_decisions)!==decisionSnapshot){intakeStatus.textContent='Recovery cancelled: review decisions changed while the file was opening. Your current decisions were kept.';return;}
      if(!imported){intakeStatus.textContent='Recovery rejected: packet does not match this classification or decisions are invalid.';return;}
      const saved=writeReview(localStorage,reviewKey,sourceFingerprint,imported,packet.entries);
      if(!saved){intakeStatus.textContent='Storage unavailable. Recovery not retained; keep your original downloaded packet.';return;}
+     requireFreshIntakeReview=false;
      reviewOutput.replaceChildren();delete reviewOutput.dataset.reviewFingerprint;
      intakeStatus.textContent='Decisions restored locally. Reloading review interface; nothing published.';
      reviewButton.click();
-    }catch{if(isCurrentReview())intakeStatus.textContent='Invalid recovery file. No decisions changed.';}
+    }catch{if(importGeneration===activeDecisionImport&&isCurrentReview()&&generation===activeReviewGeneration&&JSON.stringify(packet.review_decisions)===decisionSnapshot)intakeStatus.textContent='Invalid recovery file. No decisions changed.';}
    });
    reviewOutput.append(recoveryLabel);
    const clearButton=document.createElement('button');clearButton.type='button';clearButton.className='button';clearButton.textContent='Reset saved review decisions';
@@ -306,6 +375,18 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
    const queueStatus=document.createElement('p');queueStatus.setAttribute('role','status');
    const queueItems=document.createElement('ol');
    const replacementDrafts=new Map();
+   const replacementRecoveryStatus=document.createElement('p');replacementRecoveryStatus.setAttribute('role','status');
+   try{
+    const recovered=readReplacementDrafts(localStorage,env.namespace,sourceFingerprint,packet.entries);
+    if(recovered.valid){for(const [index,text] of recovered.drafts)replacementDrafts.set(index,text);replacementRecoveryStatus.textContent=recovered.drafts.length?'Replacement text restored for this exact source and classification. Existing scientific/editorial review requirements still apply.':'Replacement text saves on this device as you type.';}
+    else replacementRecoveryStatus.textContent='Saved replacement text unavailable or invalid. Current edits remain usable; copy replacement text before leaving.';
+   }catch{replacementRecoveryStatus.textContent='Device storage unavailable. Current edits remain usable; copy replacement text before leaving.';}
+   function saveReplacements(){
+    const drafts=[...replacementDrafts].filter(([,text])=>text.trim());
+    let saved=false;try{saved=saveReplacementDrafts(localStorage,env.namespace,sourceFingerprint,packet.entries,drafts);}catch{/* storage may be blocked */}
+    replacementRecoveryStatus.textContent=saved?'Replacement text saved on this device. Review decisions and publication authority are unchanged.':'Replacement text could not be saved on this device. Keep this page open or copy replacement text before leaving.';
+   }
+   reviewOutput.append(replacementRecoveryStatus);
    // Reject ambiguous IDs and stale review targets before building local drafts.
    function reviewedTarget(entry){
     const route=entry?.route;
@@ -317,7 +398,46 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     if(typeof section.text!=='string'||entry.reviewed_app_version!==(app.version??null)||entry.reviewed_section_snapshot!==JSON.stringify(section))return null;
     return {app,section};
    }
-   // Replacement drafts remain in-memory and are never persisted as approvals.
+   // Only text is recovered; classifications and approval decisions are never stored here.
+   const replacementDownload=document.createElement('button');replacementDownload.type='button';replacementDownload.className='button';replacementDownload.textContent='Download replacement text backup';
+   replacementDownload.addEventListener('click',()=>{
+    if(!isCurrentReview())return;
+    try{
+     const backup=createReplacementBackup(sourceFingerprint,packet.entries,[...replacementDrafts].filter(([,text])=>text.trim()));
+     const blob=new Blob([JSON.stringify(backup,null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');
+     link.href=url;link.download='mba-naturalist-replacement-text.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+     replacementRecoveryStatus.textContent='Replacement text backup downloaded. Review decisions are not included.';
+    }catch{replacementRecoveryStatus.textContent='Replacement backup invalid. Nothing downloaded.';}
+   });
+   const replacementRestoreLabel=document.createElement('label');replacementRestoreLabel.textContent='Restore replacement text backup (same classification, max 2 MB)';
+   const replacementRestore=document.createElement('input');replacementRestore.type='file';replacementRestore.accept='.json,application/json';replacementRestoreLabel.append(replacementRestore);
+   let activeReplacementImport=0;
+   replacementRestore.addEventListener('change',async()=>{
+    if(!isCurrentReview())return;
+    const request=++activeReplacementImport,snapshot=JSON.stringify([...replacementDrafts]),file=replacementRestore.files?.[0];
+    replacementRestore.value='';if(!file)return;
+    if(file.size>2000000){replacementRecoveryStatus.textContent='Replacement backup exceeds 2 MB limit.';return;}
+    try{
+     const restored=readReplacementBackup(await file.text(),sourceFingerprint,packet.entries);
+     if(request!==activeReplacementImport||!isCurrentReview())return;
+     if(JSON.stringify([...replacementDrafts])!==snapshot){replacementRecoveryStatus.textContent='Restore cancelled: replacement text changed while the file was opening. Current edits were kept.';return;}
+     if(!restored.valid){replacementRecoveryStatus.textContent='Replacement backup does not match this classification or contains invalid data. Current edits were kept.';return;}
+     for(const [index,text] of restored.drafts)replacementDrafts.set(index,text);
+     saveReplacements();showQueue();
+    }catch{if(request===activeReplacementImport&&isCurrentReview())replacementRecoveryStatus.textContent='Replacement backup could not be read. Current edits were kept.';}
+   });
+   reviewOutput.append(replacementDownload,replacementRestoreLabel);
+   const readableReport=document.createElement('button');readableReport.type='button';readableReport.className='button';readableReport.textContent='Download readable review report';
+   readableReport.addEventListener('click',()=>{
+    if(!isCurrentReview()){intakeStatus.textContent='Review no longer current. Generate again before downloading a report.';return;}
+    try{
+     const text=naturalistReadableReport(packet,[...replacementDrafts]);
+     const blob=new Blob([text],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');
+     link.href=url;link.download='mba-naturalist-review-report.txt';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+     intakeStatus.textContent='Readable draft report downloaded, including pending decisions and proposal text. Nothing published.';
+    }catch{intakeStatus.textContent='Review report invalid. Current work was kept; nothing downloaded.';}
+   });
+   reviewOutput.append(readableReport);
    const refreshQueue=document.createElement('button');refreshQueue.type='button';refreshQueue.className='button';refreshQueue.textContent='Refresh reviewed actions';
    function showQueue(){
     if(!isCurrentReview()){queueStatus.textContent='Review is stale; regenerate classification.';queueItems.replaceChildren();return;}
@@ -325,13 +445,14 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
     queueItems.replaceChildren();
     if(!queue.valid){queueStatus.textContent='Review decisions invalid.';return;}
     queueStatus.textContent=queue.items.length+' preparable reviewed actions; '+(queue.blocked_items?.length??0)+' blocked actions (duplicates, conflicts, source changes, or competing destinations). No publishing available.';
-    for(const item of queue.blocked_items||[]){const li=document.createElement('li');li.textContent='BLOCKED statement '+(item.index+1)+' · '+item.block_reasons.join(', ')+' · '+(item.entry?.source_text||'').slice(0,120);queueItems.append(li);}
+    for(const item of queue.blocked_items||[]){const li=document.createElement('li');li.textContent='BLOCKED statement '+(item.index+1)+' · '+item.block_reasons.join(', ')+' · '+(item.entry?.source_text||'').slice(0,120);li.append(renderNaturalistReviewLink(document,item.index,{isCurrentReview,showStatement,statementCards}));queueItems.append(li);}
     for(const item of queue.items){
      const entry=packet.entries[item.index];
      const blocked=entry.duplicate_of!=null||(entry.conflict_with||[]).length>0;
      const li=document.createElement('li');
      const target=entry.placement?.target_app_id||'unresolved';
      li.textContent='Statement '+(item.index+1)+' · '+item.action+' · '+target+' · '+(blocked?'BLOCKED: duplicate or potential scientific conflict':item.action==='new-content'?'Placement review required':'Draft preparation requires verified replacement text')+' · '+entry.source_text.slice(0,120);
+     li.append(renderNaturalistReviewLink(document,item.index,{isCurrentReview,showStatement,statementCards}));
      if(!blocked&&item.action==='update-existing'){
       const replacementLabel=document.createElement('label');replacementLabel.textContent='Proposed replacement text (scientific verification required) for statement '+(item.index+1);
       const replacementInput=document.createElement('textarea');replacementInput.rows=4;replacementInput.maxLength=20000;replacementInput.style.width='100%';
@@ -345,7 +466,7 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
       const target=reviewedTarget(entry);
       before.textContent=target?'CURRENT · '+target.section.text:'Current destination unavailable or changed; regenerate review.';
       const refreshPreview=()=>{after.textContent='PROPOSED · '+(replacementInput.value.trim()?replacementInput.value:'Enter replacement text to preview.');};
-      replacementInput.addEventListener('input',()=>{if(!isCurrentReview())return;replacementDrafts.set(item.index,replacementInput.value);refreshPreview();});
+      replacementInput.addEventListener('input',()=>{if(!isCurrentReview())return;replacementDrafts.set(item.index,replacementInput.value);refreshPreview();saveReplacements();});
       refreshPreview();
       comparison.append(comparisonHeading,before,after);
       replacementLabel.append(replacementInput,comparison);li.append(replacementLabel);
