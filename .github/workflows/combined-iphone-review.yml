@@ -20,6 +20,7 @@ jobs:
           npm run content:check:all
           node scripts/plan-offline-media-registration.mjs
           node scripts/verify-media-registration.mjs --report dist/media-registration-report.json
+          node scripts/migration/review-tree-of-life-fidelity.mjs > dist/tree-of-life-current-fidelity.json
           npm run security:scan
           npm test
           node --test tests/security-review.test.mjs
@@ -51,6 +52,7 @@ jobs:
           cp docs/COMPLETION_INSTRUCTIONS_20261021.md dist/COMPLETION_INSTRUCTIONS_20261021.md
           cp docs/COMPLETION_BATCH_20261022.md dist/COMPLETION_BATCH_20261022.md
           cp docs/FOUR_TRACK_IMPLEMENTATION_20261023.md dist/FOUR_TRACK_IMPLEMENTATION_20261023.md
+          cp docs/SHARED_NAVIGATION_RECONCILIATION_20261023.md dist/SHARED_NAVIGATION_RECONCILIATION_20261023.md
           cp docs/PENDING_OCTOBER_MEDIA_REGISTRATION_20261021.md dist/PENDING_OCTOBER_MEDIA_REGISTRATION_20261021.md
           cp docs/ACCEPTANCE_RECORD_PREPARATION_20261021.md dist/ACCEPTANCE_RECORD_PREPARATION_20261021.md
           cp docs/INHERITED_STATIC_RECONCILIATION_20261022.md dist/INHERITED_STATIC_RECONCILIATION_20261022.md
@@ -58,6 +60,7 @@ jobs:
           mkdir -p dist/verification
           cp docs/verification/completion-ci-20261021.json dist/verification/
           cp config/inherited-v1-fidelity.json dist/verification/inherited-v1-fidelity.json
+          cp docs/verification/tree-of-life-full-source-20261023.json dist/verification/
           cp docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md dist/
           cp docs/OPEN_SEA_SEARCH_20261022.md dist/
           cp docs/HTTPS_ACCEPTANCE_PROPOSAL_20261022.md dist/

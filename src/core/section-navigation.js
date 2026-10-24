@@ -12,6 +12,14 @@ export function createSectionNavigator({document,location,escape,skipInitial=fal
   if(!target)return false;
   // Mark before opening panels: their rendering can produce more mutations.
   resolved=true;
+  // Filters and view selection belong to each app. Give their synchronous
+  // handlers the actual target before inspecting disclosure ancestry or moving
+  // focus. Use this document's realm and mark resolved first to prevent replay
+  // when the app's reveal handler causes DOM mutations.
+  const RevealEvent=document.defaultView?.CustomEvent;
+  if(typeof RevealEvent==='function'&&typeof target.dispatchEvent==='function'){
+   target.dispatchEvent(new RevealEvent('mba:reveal-section',{bubbles:true,detail:{id}}));
+  }
   const ancestors=[];
   for(let current=target;current;current=current.parentElement)ancestors.push(current);
   const controls=[...document.querySelectorAll('[aria-controls][aria-expanded]')];

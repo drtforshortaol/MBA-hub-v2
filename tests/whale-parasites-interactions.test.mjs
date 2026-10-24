@@ -49,7 +49,9 @@ function fixture() {
   const records = JSON.parse(vm.runInContext('JSON.stringify(PARASITES)', context));
   const filters = JSON.parse(vm.runInContext('JSON.stringify(FILTERS)', context));
   listeners.DOMContentLoaded();
-  return { ids, cards, tabs, records, filters };
+  return { ids, cards, tabs, records, filters,
+    reveal(id, target = ids[id]) { listeners['mba:reveal-section']?.({ detail: { id }, target }); }
+  };
 }
 const shown = f => f.cards.filter(c => c.dataset.hidden === 'false');
 
@@ -114,4 +116,39 @@ test('successive jumps count every revealed card until a search/filter recompute
   f.tabs.find(t => t.dataset.filter === 'all').handlers.click();
   assert.equal(shown(f).length, 0);
   assert.equal(f.ids.resultCount.textContent, '0 matching entries shown.');
+});
+
+
+test('shared section navigation reveals each excluded parasite without clearing active controls', () => {
+  for (const id of fixture().records.map(record => record.id)) {
+    const f = fixture();
+    const filter = f.tabs.find(tab => tab.dataset.filter === 'specific');
+    filter.handlers.click();
+    f.ids.searchInput.value = 'not-a-real-result'; f.ids.searchInput.handlers.input();
+    assert.equal(shown(f).length, 0);
+    f.reveal(id);
+    assert.deepEqual(shown(f).map(card => card.id), [id]);
+    assert.equal(f.ids[id].open, true);
+    assert.equal(f.ids.resultCount.textContent, '1 entry shown.');
+    assert.equal(f.ids.searchInput.value, 'not-a-real-result');
+    assert.equal(filter['aria-pressed'], 'true');
+    assert.equal(f.ids[id].scrolled, undefined, 'shared navigator owns focus and scrolling');
+    f.ids.searchInput.handlers.input();
+    assert.equal(shown(f).length, 0, 'a deliberate filter/search update recomputes visibility');
+  }
+});
+
+test('section reveal is limited to the resolved authored card and is idempotent', () => {
+  const f = fixture();
+  f.ids.searchInput.value = 'not-a-real-result'; f.ids.searchInput.handlers.input();
+  const id = f.records[0].id;
+  f.reveal(id, f.ids.searchInput);
+  f.reveal('References', f.ids[id]);
+  f.reveal('missing');
+  f.reveal(undefined);
+  assert.equal(shown(f).length, 0);
+  assert.equal(f.ids.resultCount.textContent, '0 matching entries shown.');
+  f.reveal(id); f.reveal(id);
+  assert.equal(shown(f).length, 1);
+  assert.equal(f.ids.resultCount.textContent, '1 entry shown.');
 });

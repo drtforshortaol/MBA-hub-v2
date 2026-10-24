@@ -69,7 +69,9 @@ test('Tree of Life executable and stylesheet match pinned V1 except documented w
   const originalTarget = 'function openTarget(target){if(!target)return;let parent=target;while(parent){if(parent.tagName==="DETAILS")parent.open=true;parent=parent.parentElement}target.scrollIntoView({behavior:"smooth",block:"start"})}';
   const fixedTarget = 'function openTarget(target){if(!target)return;let parent=target;while(parent){if(parent.classList.contains("hidden-by-search")){searchInput.value="";runSearch();break}parent=parent.parentElement}parent=target;while(parent){if(parent.tagName==="DETAILS")parent.open=true;parent=parent.parentElement}target.scrollIntoView({behavior:"smooth",block:"start"})}';
   assert.equal(script.split(fixedTarget).length, 2, 'search-navigation fix must occur exactly once');
-  const restoredSource = script.replace(disabledWorker, originalWorker).replace(fixedTarget, originalTarget);
+  const sharedReveal = 'document.addEventListener("mba:reveal-section",event=>{if(event.detail?.id!==event.target?.id)return;for(let parent=event.target;parent;parent=parent.parentElement){if(parent.classList?.contains("hidden-by-search")){searchInput.value="";runSearch();break}}});\n';
+  assert.equal(script.split(sharedReveal).length, 2, 'shared reveal adapter must occur exactly once');
+  const restoredSource = script.replace(disabledWorker, originalWorker).replace(fixedTarget, originalTarget).replace(sharedReveal, '');
   assert.equal(gitBlobSha(restoredSource), '8593db513cf65a44ec00cc8af2375cfa40810abe',
     'unreviewed executable change relative to pinned V1');
   const css = readFileSync(new URL('styles.css', app));

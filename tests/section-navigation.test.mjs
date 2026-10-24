@@ -166,3 +166,59 @@ test('explicit section tabindex and contextual Back focus remain untouched',()=>
  const f=fixture('#habitat',true);f.target.focus=()=>assert.fail('Back restoration must not steal focus');
  assert.equal(f.navigate(),false);
 });
+
+// App-specific filters remain app-owned. The shared navigator offers a bubbling
+// synchronous notification before it attempts to open/focus the resolved node.
+function filteredSection({hash='#habitat',skipInitial=false}={}){
+ const f=fixture(hash,skipInitial),events=[];
+ class RevealEvent{
+  constructor(type,{bubbles=false,cancelable=false,detail}={}){Object.assign(this,{type,bubbles,cancelable,detail});}
+ }
+ const handlers=new Map();
+ f.document.defaultView={CustomEvent:RevealEvent};
+ f.document.addEventListener=(type,handler)=>handlers.set(type,handler);
+ f.target.hidden=true;
+ f.target.dispatchEvent=event=>{
+  assert.ok(event instanceof RevealEvent,'use the target document event realm');
+  event.target=f.target;events.push('dispatch');
+  if(event.bubbles)handlers.get(event.type)?.(event);
+  return true;
+ };
+ return {...f,events};
+}
+test('filtered deep-link targets notify their owning app before opening, focusing and scrolling',()=>{
+ const f=filteredSection(),attributes=new Map();
+ f.document.addEventListener('mba:reveal-section',event=>{
+  assert.equal(event.target,f.target);assert.deepEqual(event.detail,{id:'habitat'});
+  assert.equal(event.cancelable,false);assert.equal(f.inner.open,false);assert.equal(f.outer.open,false);
+  assert.equal(f.navigate(),false,'filter mutations must not recursively replay navigation');
+  f.target.hidden=false;f.events.push('reveal');
+ });
+ Object.assign(f.target,{tabIndex:-1,hasAttribute:name=>attributes.has(name),setAttribute:(name,value)=>attributes.set(name,value),focus(){assert.equal(this.hidden,false);assert.equal(f.inner.open,true);assert.equal(f.outer.open,true);f.events.push('focus');},scrollIntoView(){assert.equal(this.hidden,false,'a filtered target must be visible before scroll');f.events.push('scroll');}});
+ assert.equal(f.navigate(),true);
+ assert.deepEqual(f.events,['dispatch','reveal','focus','scroll']);
+ assert.equal(f.navigate(),false);assert.deepEqual(f.events,['dispatch','reveal','focus','scroll']);
+});
+test('reveal handlers can synchronously attach the target to a newly revealed disclosure',()=>{
+ const f=filteredSection(),newParent={tagName:'DETAILS',open:false,parentElement:null};
+ f.document.addEventListener('mba:reveal-section',()=>{f.target.hidden=false;f.target.parentElement=newParent;});
+ f.target.scrollIntoView=()=>{assert.equal(f.target.hidden,false);assert.equal(newParent.open,true);};
+ assert.equal(f.navigate(),true);assert.equal(f.inner.open,false,'collect ancestors after the app reveal notification');
+});
+test('Back and body mutations preserve filters until explicit section revisit or new hash',()=>{
+ const f=filteredSection({skipInitial:true});let reveals=0;
+ f.document.addEventListener('mba:reveal-section',()=>{reveals++;f.target.hidden=false;});
+ assert.equal(f.navigate(),false);assert.equal(reveals,0);assert.equal(f.target.hidden,true);
+ assert.equal(f.navigate({revisit:true}),true);assert.equal(reveals,1);
+ f.target.hidden=true;assert.equal(f.navigate(),false);assert.equal(reveals,1);assert.equal(f.target.hidden,true);
+ assert.equal(f.navigate({revisit:true}),true);assert.equal(reveals,2);assert.equal(f.target.hidden,false);
+ f.location.hash='#habitat%20';f.document.getElementById=id=>id==='habitat '?f.target:null;
+ assert.equal(f.navigate(),true);assert.equal(reveals,3);
+});
+test('unresolved, empty and malformed fragments never emit an app reveal notification',()=>{
+ for(const hash of ['','#missing','#%E0%A4%A']){
+  const f=filteredSection({hash});let reveals=0;
+  f.document.addEventListener('mba:reveal-section',()=>{reveals++;});
+  assert.equal(f.navigate(),false);assert.equal(reveals,0);assert.deepEqual(f.events,[]);
+ }
+});

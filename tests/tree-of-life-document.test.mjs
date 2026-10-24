@@ -59,13 +59,13 @@ function documentFixture(hash = '') {
   const links = nodes.filter(node => node.tagName === 'A' && node.attrs.href?.startsWith('#'));
   const buttons = nodes.filter(node => node.tagName === 'BUTTON' && node.attrs['data-target'] && node.parentElement.classList.contains('fast-tools'));
   const lists = { '.searchable': searchable, details, 'a[href^="#"]': links, '.fast-tools button[data-target]': buttons };
-  const windowHandlers = {}, history = { replaceState(...args) { this.args = args; } };
-  const document = { getElementById(id) { return ids.get(id) || null; },
+  const windowHandlers = {}, documentHandlers = {}, history = { replaceState(...args) { this.args = args; } };
+  const document = { addEventListener(name, handler) { documentHandlers[name] = handler; }, getElementById(id) { return ids.get(id) || null; },
     querySelectorAll(selector) { assert.ok(Object.hasOwn(lists, selector), 'unsupported selector: ' + selector); return lists[selector]; },
     querySelector(selector) { assert.equal(selector, '.hero-card'); return nodes.find(node => node.classList.contains('hero-card')); }
   };
   vm.runInNewContext(source, { document, history, location: { hash }, navigator: { onLine: true }, window: { addEventListener(name, handler) { windowHandlers[name] = handler; } } }, { timeout: 3000 });
-  return { nodes, ids, searchable, details, links, buttons, windowHandlers, history };
+  return { nodes, ids, searchable, details, links, buttons, windowHandlers, documentHandlers, history };
 }
 
 function assertRevealed(node) {
