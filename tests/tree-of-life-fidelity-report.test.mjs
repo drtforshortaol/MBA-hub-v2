@@ -31,6 +31,8 @@ test('Tree full-scope report binds complete current manifest, source identity an
   assert.equal(report.current_inventory.length, 4);
   assert.equal(report.normalized_source.length, 3);
   assert.equal(report.manifest.sections, 53);
+  assert.equal(report.manifest.source_derived_sections.count, 53);
+  assert.equal(report.manifest.source_derived_sections.complete_equal, true);
   assert.equal(report.media.bytes, 536);
 });
 

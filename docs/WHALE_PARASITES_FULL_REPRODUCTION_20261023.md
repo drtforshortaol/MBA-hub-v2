@@ -1,0 +1,25 @@
+# Whale Parasites & Associates full engineering reproduction — October 23, 2026
+
+Read-only source: `drtforshortaol/MBA-hub` at `5c219508d23255080f6b050cefa8092905447d81`, `apps/whale-parasites-associates/`. All ten source files were freshly retrieved through GitHub, including the standalone manifest, SVG icon, worker and three documentation files. The portable source fixture retains every complete UTF-8 file and independently verifies each canonical Git blob ID against the explicit source inventory. Current inventory is exactly five files; complete current hashes, including the entire V2 manifest, fail closed. Neither source nor app files are modified by the review.
+
+The distinct tool `scripts/migration/review-whale-parasites-fidelity.mjs` executes this app, **not** Whale Associated Organisms. It compares:
+
+- Full original/current static documents after enumerated standalone-manifest, Google font/preconnect, maintenance-control, two-anchor and Hub-navigation substitutions. lxml parses both documents independently; every remaining element, attribute, text node and ordered child/tail is compared after whitespace normalization and equivalent HTML boolean-attribute normalization.
+- Complete original CSS and dataset bytes, all seven original records and five filters. Both actual original/current renderers execute; original innerHTML and current DOMParser output are independently parsed by lxml into complete trees. Entire card/filter trees retain icon background, nested paragraphs, scientific names, tags, category/search data, hosts/chips, all four harm dots/classes/ARIA, facts and ordering. No flattened-body or DATA-only equality substitutes for tree comparison.
+- Original/current jump-menu trees and executable function scope. Original search, normalization, escaping and visibility functions are exact. Original filter/card render functions are exact after reversing only the two documented DOMParser/replaceChildren adapters. Original jump function is exact after reversing its app-owned reveal helper substitution. The four legacy maintenance functions are confirmed inert; active shared-reveal/count corrections remain separately byte-bound and exercised.
+- **585** source/current filter/search combinations across five filters and all authored names, scientific names, tags, host headings, harm labels, paragraphs, hosts and fact fields; zero matches, trimming/case behavior and result counts. All seven jump targets preserve original visibility, open/scroll/reset behavior, with the explicitly corrected truthful visible-result count.
+- Complete current manifest inventory: nine stable destinations, all source scientific prose in each record's search entry, exact source-derived static-section text, four offline app files, original source pin and pending publication status. No app media or knowledge/cross-app declarations are introduced. Original standalone icon remains in source inventory but is not requested by the migrated app.
+- With `--root` set to the combined checkout, the actual shared navigator drives the actual Whale app adapter for all seven excluded cards: reveal, count, disclosure, summary focus, scrolling, preserved search controls and one-shot mutation suppression. The shared navigator's complete hash is retained in the report.
+
+Reproduction:
+
+```sh
+node scripts/migration/review-whale-parasites-fidelity.mjs --root /path/to/combined
+WHALE_FIDELITY_ROOT=/path/to/combined node --test tests/whale-parasites-fidelity.test.mjs
+```
+
+Track A's older baseline lacks canonical `src/core/section-navigation.js`. Its standalone tests explicitly bound local renderer scope, and test that demanding full navigation fails for the missing dependency. They do not silently substitute a stub or claim integrated navigation. Use the combined-root invocation for the retained complete report: `docs/verification/whale-parasites-full-20261023.json`.
+
+Adversarial checks reject altered current runtime/manifest bytes, complete static prose/CSS/data, added inventory, resource/source symlinks, and seven rendered-tree mutations even with the current-byte guard explicitly disabled for that structural probe: paragraph element, icon background, harm ARIA, dot count, host-chip class, fact-label element, and filter pressed state. An additional real-navigation probe changes only the reveal event name and must fail to expose the hidden card. Production CLI never disables byte guards.
+
+This engineering evidence grants no scientific/editorial or image-rights approval, no independent source-authority extension, and no physical browser/layout/offline lifecycle/privacy/operational acceptance. External Google font requests were removed; native typography remains a physical acceptance item. Optional original related-link calls do not establish a loaded working renderer. Central service-worker full-bundle lifecycle and HTTP acceptance remain separately required. No source, scientific text, style, manifest, image permission, approval record or deployment is changed by this tool.

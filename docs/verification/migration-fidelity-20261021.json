@@ -2423,8 +2423,9 @@
           "source_path": "app.js",
           "local_path": "src/apps/evolution-timeline/app.js",
           "pinned_sha256": "b7a9ea293d0ace7f25a613ed90cba6d0b1b31ebcf619a5fcd11505e153e6a426",
-          "current_sha256": "700cac611baf92969a91ee8d5074e91643315d6f25bede335e761730a6257503",
-          "status": "changed"
+          "current_sha256": "c8cd6dd369e53df308f66b318bb82a4e8b71d5097fa95b57414917e414a23e21",
+          "status": "changed",
+          "technical_diff_note": "Append-only app-owned shared-navigation adapter activates an existing owning mode when hidden, via its original button handler, before core focus/scroll. Scientific templates/shared data, original mode/lineage/tool handlers and stable IDs unchanged; no new scientific approval."
         },
         {
           "source_path": "index.html",
@@ -3067,8 +3068,9 @@
           "source_path": "apps/naturalist-field-notes/app.js",
           "local_path": "src/apps/naturalist-field-notes/app.js",
           "pinned_sha256": "9c615b5cbd105df4c38a69d5a8da316962aef62bac97822f58b2e2d4639903c2",
-          "current_sha256": "5102a2098a313824fc255fd287d080e8997a3172dccec647f71c7dc3fee424f7",
-          "status": "changed"
+          "current_sha256": "4e72f8e78b921e0172b5f1c85fe8d48a36c042c25e7b572aae39d9227bce008e",
+          "status": "changed",
+          "technical_diff_note": "Correct escaped Unicode control-prefix range in markup URL validation: retain valid local filenames and reject control-prefixed URLs. Scientific/October prose, data, images, scope and approvals unchanged."
         },
         {
           "source_path": "apps/naturalist-field-notes/data.js",

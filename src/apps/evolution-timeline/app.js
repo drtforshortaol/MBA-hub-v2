@@ -58,3 +58,17 @@ configureClosingAccordions();
 
 document.querySelectorAll('.mode').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.mode').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const view=btn.dataset.view;storyView.hidden=view!=='story';timeView.hidden=view!=='time';toolsView.hidden=view!=='tools';}));
 if(false){window.addEventListener('load',async()=>{try{const reg=await Promise.resolve({update:async()=>{},installing:null,waiting:null,active:null});if(navigator.onLine)await reg.update()}catch(_){}})}
+
+// A shared section request must reveal its owning view before core navigation
+// opens native disclosures and moves focus. Preserve the existing mode handlers.
+document.addEventListener('mba:reveal-section',event=>{
+ const id=event.detail?.id,target=event.target;
+ if(typeof id!=='string'||document.getElementById(id)!==target)return;
+ const destination=[[storyView,'story'],[timeView,'time'],[toolsView,'tools']].find(([panel])=>panel===target||panel.contains(target));
+ if(!destination)return;
+ const [panel,view]=destination;
+ if(panel.hidden){
+  const button=[...document.querySelectorAll('.mode')].find(button=>button.dataset.view===view);
+  button?.click();
+ }
+});

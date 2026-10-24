@@ -13,6 +13,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned fidelity parser
+        run: python -m pip install --requirement scripts/migration/requirements-fidelity.txt
       - name: Build and verify combined review
         run: |
           npm run validate
@@ -21,6 +26,8 @@ jobs:
           node scripts/plan-offline-media-registration.mjs
           node scripts/verify-media-registration.mjs --report dist/media-registration-report.json
           node scripts/migration/review-tree-of-life-fidelity.mjs > dist/tree-of-life-current-fidelity.json
+          node scripts/migration/review-whale-parasites-fidelity.mjs --root . > dist/whale-parasites-fidelity.json
+          node scripts/prepare-pending-media-review.mjs --report dist/pending-media-review.json --html dist/pending-media-review.html --asset-base developer/
           npm run security:scan
           npm test
           node --test tests/security-review.test.mjs
@@ -53,6 +60,9 @@ jobs:
           cp docs/COMPLETION_BATCH_20261022.md dist/COMPLETION_BATCH_20261022.md
           cp docs/FOUR_TRACK_IMPLEMENTATION_20261023.md dist/FOUR_TRACK_IMPLEMENTATION_20261023.md
           cp docs/SHARED_NAVIGATION_RECONCILIATION_20261023.md dist/SHARED_NAVIGATION_RECONCILIATION_20261023.md
+          cp docs/COMPLETION_CHECKPOINT_20261024.md dist/COMPLETION_CHECKPOINT_20261024.md
+          cp docs/TREE_OF_LIFE_ENGINEERING_REVIEW_20261023.md dist/
+          cp docs/WHALE_PARASITES_INDEPENDENT_REVIEW_20261023.md dist/
           cp docs/PENDING_OCTOBER_MEDIA_REGISTRATION_20261021.md dist/PENDING_OCTOBER_MEDIA_REGISTRATION_20261021.md
           cp docs/ACCEPTANCE_RECORD_PREPARATION_20261021.md dist/ACCEPTANCE_RECORD_PREPARATION_20261021.md
           cp docs/INHERITED_STATIC_RECONCILIATION_20261022.md dist/INHERITED_STATIC_RECONCILIATION_20261022.md
@@ -61,6 +71,8 @@ jobs:
           cp docs/verification/completion-ci-20261021.json dist/verification/
           cp config/inherited-v1-fidelity.json dist/verification/inherited-v1-fidelity.json
           cp docs/verification/tree-of-life-full-source-20261023.json dist/verification/
+          cp docs/verification/tree-of-life-independent-review-20261023.json dist/verification/
+          cp docs/verification/whale-parasites-full-20261023.json dist/verification/
           cp docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md dist/
           cp docs/OPEN_SEA_SEARCH_20261022.md dist/
           cp docs/HTTPS_ACCEPTANCE_PROPOSAL_20261022.md dist/

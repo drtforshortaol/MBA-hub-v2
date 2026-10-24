@@ -309,6 +309,28 @@
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current files, inline code, markup, styles, links, interactions, search and media review; portable full twelve-card body/SVG/metadata renderer and click-state reproduction with independent parsed trees; no new scientific approval",
       "content_sha256": "0948cc5974fe1b86c4c98dcf4c8353e116c0c91c8faa6f2d082c46ee85811005"
+    },
+    {
+      "app_id": "tree-of-life-origins",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/TREE_OF_LIFE_ENGINEERING_REVIEW_20261023.md",
+      "reviewed_on": "2026-10-24",
+      "review_method": "Independently reviewed complete pinned/current inventory, markup/code/style, source-derived search, media and executable/shared navigation. Existing unchanged V1 authorization only; no new scientific/editorial/image/device/release approval. Recovered evidence and exact resource digest reverified before binding.",
+      "content_sha256": "119eda8dfe11048126fe104bc6e3b7c39a1c098278d7a759e70c099ce8d14612"
+    },
+    {
+      "app_id": "whale-parasites-associates",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/WHALE_PARASITES_INDEPENDENT_REVIEW_20261023.md",
+      "reviewed_on": "2026-10-24",
+      "review_method": "Independently reviewed complete pinned/current inventory, markup/code/style, source-derived search, media and executable/shared navigation. Existing unchanged V1 authorization only; no new scientific/editorial/image/device/release approval. Recovered evidence and exact resource digest reverified before binding.",
+      "content_sha256": "d011236c6a92ae991c6413942d7da1deca6dc233d923e0683de0905d4827c457"
     }
   ]
 }
