@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
+import { spawnSync } from 'node:child_process';
 import { lstatSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -131,6 +132,14 @@ export function reviewTreeOfLife({ root = process.cwd(), sourceRoot = null } = {
     assert.equal(gitBlob(bytes), PINNED[name][0], 'unreviewed complete source bytes: ' + name);
   }
   const manifest = JSON.parse(read('manifest.json'));
+  // Derive every title, full search body, permanent/generated destination and
+  // alias list from byte-verified original HTML, not the current manifest.
+  const derived = spawnSync('python3', [fileURLToPath(new URL('./tree-source-sections.py', import.meta.url))],
+    { input: restored['index.html'].toString('utf8'), encoding: 'utf8', timeout: 3000 });
+  assert.equal(derived.status, 0, 'source section derivation failed: ' + derived.stderr);
+  const sourceSections = JSON.parse(derived.stdout);
+  assert.equal(sourceSections.length, 53, 'complete original search section inventory');
+  assert.deepEqual(manifest.sections, sourceSections, 'manifest semantics: complete original source-derived search sections');
   assert.ok(Array.isArray(manifest.offline_assets) && manifest.offline_assets.every(value => typeof value === 'string'), 'malformed offline assets');
   assert.equal(new Set(manifest.offline_assets).size, manifest.offline_assets.length, 'duplicate offline assets');
   const normalizedManifest = structuredClone(manifest);
@@ -170,10 +179,10 @@ export function reviewTreeOfLife({ root = process.cwd(), sourceRoot = null } = {
     retrieved_source_inventory: sourceFiles,
     current_inventory: current,
     normalized_source: Object.entries(restored).map(([name, bytes]) => ({ path: name, git_blob: gitBlob(bytes), sha256: sha256(bytes), bytes: bytes.length })),
-    manifest: { semantic_sha256: semanticHash(normalizedManifest), sections: manifest.sections.length, declared_offline_assets: manifest.offline_assets },
+    manifest: { semantic_sha256: semanticHash(normalizedManifest), sections: manifest.sections.length, declared_offline_assets: manifest.offline_assets, source_derived_sections: { count: sourceSections.length, complete_equal: true, semantic_sha256: semanticHash(sourceSections) } },
     media: { asset_id: MEDIA_ID, path: MEDIA, bytes: icon.length, sha256: sha256(icon), catalog_semantic_sha256: semanticHash(asset), recorded_permission: asset.permission },
     approval_granted: false,
-    remaining: ['Shared-navigation end-to-end evidence and independent technical reconciliation review', 'Physical browser/device/layout/accessibility acceptance', 'Existing scientific/editorial, permission and operational approval gates']
+    remaining: ['Independent technical reconciliation decision; this byte/search report does not itself decide inherited approval', 'Physical browser/device/layout/accessibility acceptance', 'Existing scientific/editorial, permission and operational approval gates']
   };
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
