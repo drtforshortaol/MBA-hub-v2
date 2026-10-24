@@ -37,6 +37,37 @@ test('literal scanner ignores comments, prose URLs, external/data resources and 
  const refs=extractMediaReferences('apps/fish/index.html','<img alt="example src=\'fake.jpg\'" src="../../shared/media/fish.jpg">');
  assert.equal(refs.length,1);assert.equal(refs[0].url,'../../shared/media/fish.jpg');
 });
+test('HTML numeric references without semicolons and named URL punctuation cannot hide local media',()=>{
+ for(const html of [
+  '<img src="../unregistered&#46jpg">',
+  '<img src=../unregistered&#x2Ejpg>',
+  '<source src="&period;&period;&sol;unregistered&period;jpg">',
+  '<video poster=../unregistered&period;jpg>',
+  '<link imagesrcset="../unregistered&#46jpg 1x, data:image/png;base64,AA== 2x">',
+  '<div style="background:url(&quot;../unregistered&period;jpg&quot;)"></div>'
+ ]){
+  const r=audit(html);
+  assert.equal(r.complete,false,html);
+  assert.equal(r.summary.uncataloged_resources,1,html);
+  assert.equal(r.resources[0].path,'apps/unregistered.jpg');
+  assert.deepEqual(r.resources[0].issues,['not-in-media-catalog','permission-evidence-missing','not-in-app-offline-assets']);
+ }
+});
+test('HTML attribute entity decoding is single-pass and does not invent recursively encoded media URLs',()=>{
+ const refs=extractMediaReferences('apps/fish/index.html','<img src="../unregistered&amp;#46;jpg"><img src="../unregistered&amp;period;jpg"><img src="../fish.jpg?v=1&amp;x=2">');
+ assert.deepEqual(refs.map(r=>r.url),['../unregistered&#46;jpg','../unregistered&period;jpg','../fish.jpg?v=1&x=2']);
+ const r=audit('<img src="../../shared/media/fish.jpg?note=&amp;#46;">');
+ assert.equal(r.complete,true);
+ assert.equal(r.resources[0].path,'shared/media/fish.jpg');
+});
+test('invalid numeric HTML references do not crash or silently approve unsafe media paths',()=>{
+ for(const encoded of ['&#0;','&#xD800;','&#1114112;','&#999999999999999999999999999999999;']){
+  const r=audit('<img src="../'+encoded+'fish.jpg">');
+  assert.equal(r.complete,false);
+  assert.equal(r.errors.length,1);
+  assert.equal(r.errors[0].reason,'unsafe-media-path');
+ }
+});
 test('source/srcset, video posters and CSS URLs are audited with shared paths deduplicated',()=>{
  const r=audit('<video poster="../../shared/media/fish.jpg"><source src="clip.mp4"></video><img srcset="../../shared/media/fish.jpg 1x, other.webp 2x"><style>.hero{background:url("../../shared/media/fish.jpg")}</style>');
  assert.equal(r.resources.length,3);

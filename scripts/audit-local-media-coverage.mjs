@@ -6,7 +6,26 @@ import {safeLocalPath} from './build.mjs';
 const mediaExtension=/\.(?:avif|gif|jpe?g|png|svg|webp|ico|mp3|mp4|m4a|ogg|wav|webm)$/i;
 const recordedPermissionStates=new Set(['owner-approved-v1','approved','licensed','public-domain']);
 const mediaKey=/(?:\b(?:src|image|img|poster|audio|video|url)\s*[:=]\s*|["'](?:src|image|img|poster|audio|video|url)["']\s*:\s*)$/i;
-const decodeHTML=s=>s.replace(/&amp;/g,'&').replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number(n))).replace(/&#x([\da-f]+);/gi,(_,n)=>String.fromCodePoint(parseInt(n,16)));
+// Decode once, as an HTML attribute does: replacement text must never be parsed
+// again (e.g. &amp;#46; is the literal &#46;, not a period). Numeric references
+// may omit their semicolon; invalid scalar values become replacement characters
+// instead of crashing the whole read-only audit. This bounded named table covers
+// ASCII URL punctuation; it is not a complete named-character-reference parser.
+const namedURLCharacters={amp:'&',AMP:'&',lt:'<',LT:'<',gt:'>',GT:'>',quot:'"',QUOT:'"',apos:"'",excl:'!',num:'#',dollar:'$',percnt:'%',lpar:'(',rpar:')',ast:'*',plus:'+',comma:',',period:'.',sol:'/',colon:':',semi:';',equals:'=',quest:'?',commat:'@',lsqb:'[',lbrack:'[',bsol:'\\',rsqb:']',rbrack:']',Hat:'^',lowbar:'_',UnderBar:'_',grave:'`',DiacriticalGrave:'`',lcub:'{',lbrace:'{',verbar:'|',vert:'|',VerticalLine:'|',rcub:'}',rbrace:'}',Tab:'\t',NewLine:'\n'};
+const legacyAttributeNames=new Set(['amp','AMP','lt','LT','gt','GT','quot','QUOT']);
+function decodeHTML(s){
+ return s.replace(/&(?:#(?:[xX][\da-fA-F]+|\d+);?|[a-zA-Z][a-zA-Z0-9]*;?)/g,(reference,offset)=>{
+  if(reference.startsWith('&#')){
+   const digits=reference.slice(2).replace(/;$/,''),hex=/^[xX]/.test(digits);
+   const codepoint=parseInt(hex?digits.slice(1):digits,hex?16:10);
+   return codepoint===0||codepoint>0x10ffff||(codepoint>=0xd800&&codepoint<=0xdfff)?'\ufffd':String.fromCodePoint(codepoint);
+  }
+  const terminated=reference.endsWith(';'),name=reference.slice(1,terminated?-1:undefined);
+  if(!Object.hasOwn(namedURLCharacters,name))return reference;
+  if(!terminated&&(!legacyAttributeNames.has(name)||/[a-zA-Z0-9=]/.test(s[offset+reference.length]||'')))return reference;
+  return namedURLCharacters[name];
+ });
+}
 
 // Follow srcset's URL/descriptor boundaries rather than splitting every comma:
 // data URLs and ordinary URL filenames can themselves contain commas. Keep all
@@ -124,7 +143,7 @@ export function auditLocalMediaCoverage({apps,media,files,exists,platformAssets=
   }
  }
  const resources=[...rows.values()].sort((a,b)=>(a.app_id+a.path).localeCompare(b.app_id+b.path));
- return {schema_version:1,scope:'Read-only literal media coverage; no permission, content or release approval',writePerformed:false,complete:errors.length===0&&resources.every(r=>!r.issues.length),summary:{apps:apps.length,source_files:files.length,local_resources:resources.length,resources_with_findings:resources.filter(r=>r.issues.length).length,uncataloged_resources:resources.filter(r=>r.issues.includes('not-in-media-catalog')).length},resources,errors,platform_exemptions:exemptions,limitations:['Static HTML media attributes, CSS url() and literal JS/JSON media properties only.','Computed/escaped URLs, dynamic templates, imported shared scripts, JS string markup and runtime network/media behavior are not certified.','Permission labels require recorded evidence but are not independently adjudicated; attribution is not permission.']};
+ return {schema_version:1,scope:'Read-only literal media coverage; no permission, content or release approval',writePerformed:false,complete:errors.length===0&&resources.every(r=>!r.issues.length),summary:{apps:apps.length,source_files:files.length,local_resources:resources.length,resources_with_findings:resources.filter(r=>r.issues.length).length,uncataloged_resources:resources.filter(r=>r.issues.includes('not-in-media-catalog')).length},resources,errors,platform_exemptions:exemptions,limitations:['Static HTML media attributes, CSS url() and literal JS/JSON media properties only.','HTML attributes decode numeric references and ASCII URL-punctuation names once; other named references and browser parsing are not certified.','Computed/escaped script URLs, dynamic templates, imported shared scripts, JS string markup and runtime network/media behavior are not certified.','Permission labels require recorded evidence but are not independently adjudicated; attribution is not permission.']};
 }
 export function auditRepositoryMedia(root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..')){
  const source=path.join(root,'src'),files=[],apps=[];
