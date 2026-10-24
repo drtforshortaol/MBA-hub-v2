@@ -75,3 +75,9 @@ test('typing in Naturalist search drops stale note route without breaking restor
  assert.ok(new URL(selected.location.href).searchParams.has('note'),
   'synthetic contextual-back input must preserve the selected note route');
 });
+
+test('optional Naturalist photographs may be absent',()=>{
+ const f=fixture();
+ assert.equal(vm.runInContext('photo(null)',f.context),'');
+ assert.equal(vm.runInContext('photo({})',f.context),'');
+});
