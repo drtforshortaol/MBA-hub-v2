@@ -60,3 +60,18 @@ test('clearing Naturalist search also clears a stale note deep link',()=>{
  assert.equal(f.controls.search.value,'');
  assert.match(f.markup,/class="home-intro"/);
 });
+
+test('typing in Naturalist search drops stale note route without breaking restored input replay',()=>{
+ const f=fixture();
+ f.openFirst();
+ f.controls.search.value='whale';
+ f.controls.search.dispatchEvent({type:'input',isTrusted:true});
+ assert.equal(new URL(f.location.href).searchParams.has('note'),false);
+ assert.match(f.markup,/class="search-results"/);
+ const selected=fixture();
+ selected.openFirst();
+ selected.controls.search.value='whale';
+ selected.controls.search.dispatchEvent({type:'input',isTrusted:false});
+ assert.ok(new URL(selected.location.href).searchParams.has('note'),
+  'synthetic contextual-back input must preserve the selected note route');
+});
