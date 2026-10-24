@@ -102,7 +102,7 @@ test('JSON CLI creates a blank template and validates partial responses without 
  assert.equal(run.status,0,run.stderr);assert.equal(JSON.parse(run.stdout).ready_for_human_review,false);
  assert.equal(JSON.parse(fs.readFileSync(report)).permission_granted,false);assert.deepEqual(fs.readFileSync(template),bytes);
  const unsafe=spawnSync(process.execPath,[script,'--root',f.root,'--template',path.join(f.root,'src/template.json')],{encoding:'utf8'});
- assert.equal(unsafe.status,1);assert.match(unsafe.stderr,/Unsafe response output/);
+ assert.equal(unsafe.status,1);assert.match(unsafe.stderr,/Unsafe review output/);
 });
 test('response validation never treats HTML-looking submitted text as executable output',t=>{
  const f=fixture(t),r=complete(f);r.responses[0].evidence.rights_holder='<script>alert(1)</script>';
@@ -118,4 +118,16 @@ test('CLI output cannot overwrite a supplied exact evidence file',t=>{
  const evidence=path.join(f.root,'evidence/license.json');
  const run=spawnSync(process.execPath,[script,'--root',f.root,'--responses',path.join(f.root,'responses.json'),'--evidence-root',f.root,'--report',evidence],{encoding:'utf8'});
  assert.equal(run.status,1);assert.match(run.stderr,/cannot overwrite evidence/);assert.equal(fs.readFileSync(evidence,'utf8'),'license document');
+});
+test('response template CLI cannot overwrite protected configuration, code or existing evidence records',t=>{
+ for(const relative of ['config/platform.json','config/inherited-v1-fidelity.json','scripts/package.json','tests/fixture.json','.github/workflows/release.json','package.json','docs/verification/rights.json']){
+  const f=fixture(t);f.write(relative,'protected configuration bytes');const target=path.join(f.root,relative),before=fs.readFileSync(target);
+  const run=spawnSync(process.execPath,[script,'--root',f.root,'--template',target],{encoding:'utf8'});
+  assert.equal(run.status,1,relative);assert.match(run.stderr,/Unsafe review output/);
+  assert.deepEqual(fs.readFileSync(target),before);
+  f.write('review/responses.json',JSON.stringify(f.template()));
+  const report=spawnSync(process.execPath,[script,'--root',f.root,'--responses',path.join(f.root,'review/responses.json'),'--report',target],{encoding:'utf8'});
+  assert.equal(report.status,1,relative);assert.match(report.stderr,/Unsafe review output/);
+  assert.deepEqual(fs.readFileSync(target),before);
+ }
 });

@@ -110,3 +110,12 @@ test('artifact contact sheet can use an exact-byte built developer media base',t
  assert.throws(()=>writePendingMediaReview({root:f.root,report,html,assetBase:'developer/'}),/Preview media hash mismatch/);
  for(const assetBase of ['../src','/outside','https://example.test/'])assert.throws(()=>writePendingMediaReview({root:f.root,report,html,assetBase}),/Unsafe review asset base/);
 });
+test('packet outputs cannot overwrite protected repository configuration, code or verification records',t=>{
+ const reserved=['config/platform.json','config/inherited-v1-fidelity.json','scripts/package.json','tests/fixture.json','.github/workflows/release.json','package.json','docs/verification/rights.json'];
+ for(const relative of reserved){
+  const f=fixture(t);f.write(relative,'protected repository bytes');
+  const target=path.join(f.root,relative),before=fs.readFileSync(target);
+  assert.throws(()=>writePendingMediaReview({root:f.root,report:target,html:path.join(f.root,'review','contact.html')}),/Unsafe review output/);
+  assert.deepEqual(fs.readFileSync(target),before);
+ }
+});

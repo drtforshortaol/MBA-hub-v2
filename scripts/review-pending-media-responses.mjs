@@ -4,6 +4,7 @@ import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {safeLocalPath} from './build.mjs';
 import {preparePendingMediaReview} from './prepare-pending-media-review.mjs';
+import {checkedReviewOutputPath} from './review-output-path.mjs';
 
 const channels=new Set(['internal-development','private-hub','public-tester','public-web']);
 const evidenceText=['rights_holder','permission_basis','licensor_authority','grant_scope','attribution_requirements','restrictions','submitted_by'];
@@ -96,17 +97,12 @@ function readResponseFile(filename){
  return JSON.parse(evidenceFile(root,path.basename(absolute)).toString('utf8'));
 }
 function writeJSON(root,filename,value){
- const target=path.resolve(filename),relative=path.relative(path.join(path.resolve(root),'src'),target);
- if(path.extname(target)!=='.json'||relative===''||(!relative.startsWith('..'+path.sep)&&relative!=='..'&&!path.isAbsolute(relative)))throw Error('Unsafe response output path');
- const check=()=>{
-  let cursor=path.parse(target).root;
-  for(const part of target.slice(cursor.length).split(path.sep)){
-   cursor=path.join(cursor,part);let stat;try{stat=fs.lstatSync(cursor);}catch(error){if(error.code==='ENOENT')break;throw error;}
-   if(stat.isSymbolicLink())throw Error('Symlink prohibited in response output');
-  }
- };
- check();fs.mkdirSync(path.dirname(target),{recursive:true});check();fs.writeFileSync(target,JSON.stringify(value,null,2)+'\n');
+ const target=checkedReviewOutputPath(root,filename,'.json');
+ fs.mkdirSync(path.dirname(target),{recursive:true});
+ checkedReviewOutputPath(root,target,'.json');
+ fs.writeFileSync(target,JSON.stringify(value,null,2)+'\n');
 }
+
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  try{
   const args=process.argv.slice(2),options={root:path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..')},seen=new Set();
