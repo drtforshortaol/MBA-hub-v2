@@ -16,7 +16,15 @@
     }
   ],
   "offline_assets": [
-    "apps/whale-associated-organisms/index.html"
+    "apps/whale-associated-organisms/index.html",
+    "shared/media/asset-edd9d5ec2d0bbd07--IMG_3392.jpeg",
+    "shared/media/asset-c9581b267211cbcb--IMG_3393.jpeg",
+    "shared/media/asset-54b172586520e9bd--IMG_3394.jpeg",
+    "shared/media/asset-8940026ea5ec69fa--IMG_3395.jpeg",
+    "shared/media/asset-eae8123213eff35a--IMG_3396.jpeg",
+    "shared/media/asset-f78cedfed1d74f6b--IMG_3397.jpeg",
+    "shared/media/asset-80f9762446c0fc02--IMG_3398.jpeg",
+    "shared/media/asset-18794e74477d7c0e--IMG_3399.jpeg"
   ],
   "media": [
     "asset-edd9d5ec2d0bbd07",

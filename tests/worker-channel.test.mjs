@@ -6,8 +6,9 @@ function harness(reply){
  const port={closed:false,onmessage:null,onmessageerror:null,close(){this.closed=true;}};
  const worker={postMessage(){reply?.(port);}};
  Object.defineProperty(globalThis,'navigator',{configurable:true,value:{serviceWorker:{ready:Promise.resolve({active:worker}),controller:null}}});
- globalThis.MessageChannel=class{constructor(){this.port1=port;this.port2={closed:false,close(){this.closed=true;}};}};
- return {port,restore(){if(previousNavigator===undefined)delete globalThis.navigator;else Object.defineProperty(globalThis,'navigator',{configurable:true,value:previousNavigator});if(previousChannel===undefined)delete globalThis.MessageChannel;else globalThis.MessageChannel=previousChannel;}};
+ const port2={closed:false,close(){this.closed=true;}};
+ globalThis.MessageChannel=class{constructor(){this.port1=port;this.port2=port2;}};
+ return {port,port2,restore(){if(previousNavigator===undefined)delete globalThis.navigator;else Object.defineProperty(globalThis,'navigator',{configurable:true,value:previousNavigator});if(previousChannel===undefined)delete globalThis.MessageChannel;else globalThis.MessageChannel=previousChannel;}};
 }
 test('worker channel closes after successful reply',async()=>{const h=harness(p=>queueMicrotask(()=>p.onmessage({data:{complete:true}})));try{assert.equal((await request('STATUS')).complete,true);assert.equal(h.port.closed,true);}finally{h.restore();}});
 test('worker channel rejects malformed response and closes',async()=>{const h=harness(p=>queueMicrotask(()=>p.onmessage({data:null})));try{await assert.rejects(request('STATUS'),/Invalid offline worker response/);assert.equal(h.port.closed,true);}finally{h.restore();}});
@@ -20,3 +21,80 @@ test('worker channel rejects when no active worker is available',async()=>{const
 
 test('worker channel uses an existing controlling worker when available',async()=>{const h=harness(p=>queueMicrotask(()=>p.onmessage({data:{complete:true}})));try{Object.defineProperty(globalThis,'navigator',{configurable:true,value:{serviceWorker:{ready:Promise.resolve({active:null}),controller:{postMessage(){queueMicrotask(()=>h.port.onmessage({data:{complete:true}}));}}}}});assert.equal((await request('STATUS')).complete,true);assert.equal(h.port.closed,true);}finally{h.restore();}});
 test('worker channel rejects when service workers are unavailable',async()=>{const h=harness();try{Object.defineProperty(globalThis,'navigator',{configurable:true,value:{}});await assert.rejects(request('STATUS'));}finally{h.restore();}});
+
+test('controlling worker responds even when registration readiness never resolves',async()=>{
+ const h=harness();try{
+  Object.defineProperty(globalThis,'navigator',{configurable:true,value:{serviceWorker:{ready:new Promise(()=>{}),controller:{postMessage(){queueMicrotask(()=>h.port.onmessage({data:{complete:true}}));}}}}});
+  assert.equal((await request('STATUS')).complete,true);assert.equal(h.port.closed,true);
+ }finally{h.restore();}
+});
+test('registration readiness shares request deadline and late registration cannot send',async t=>{
+ const h=harness();let release,sends=0;
+ t.mock.timers.enable({apis:['setTimeout']});
+ try{
+  Object.defineProperty(globalThis,'navigator',{configurable:true,value:{serviceWorker:{ready:new Promise(resolve=>{release=resolve;}),controller:null}}});
+  const pending=request('STATUS');const rejected=assert.rejects(pending,/Offline worker timed out/);
+  t.mock.timers.tick(30000);await rejected;
+  release({active:{postMessage(){sends++;}}});await Promise.resolve();assert.equal(sends,0);
+ }finally{t.mock.timers.reset();h.restore();}
+});
+test('registration rejection releases the request deadline',async()=>{
+ const h=harness();try{
+  Object.defineProperty(globalThis,'navigator',{configurable:true,value:{serviceWorker:{ready:Promise.reject(Error('registration unavailable')),controller:null}}});
+  await assert.rejects(request('STATUS'),/registration unavailable/);
+ }finally{h.restore();}
+});
+test('worker reply timeout releases both ports and ignores a late reply',async t=>{
+ let lateReply;const h=harness(port=>{lateReply=()=>port.onmessage;});
+ t.mock.timers.enable({apis:['setTimeout']});
+ try{
+  const pending=request('STATUS');await Promise.resolve();
+  const rejected=assert.rejects(pending,/Offline worker timed out/);
+  t.mock.timers.tick(30000);await rejected;
+  assert.equal(h.port.closed,true);assert.equal(h.port2.closed,true);assert.equal(lateReply(),null);
+ }finally{t.mock.timers.reset();h.restore();}
+});
+
+test('worker response with non-string error is safely surfaced and closes ports',async()=>{
+ const h=harness(p=>queueMicrotask(()=>p.onmessage({data:{error:{code:'unavailable'}}})));
+ try{await assert.rejects(request('STATUS'));assert.equal(h.port.closed,true);assert.equal(h.port2.closed,true);}finally{h.restore();}
+});
+
+test('pre-cancelled worker request never waits for readiness or sends',async()=>{
+ let sends=0;const h=harness(()=>sends++),controller=new AbortController();
+ try{
+  controller.abort();
+  await assert.rejects(request('STATUS',{signal:controller.signal}),{name:'AbortError'});
+  assert.equal(sends,0);assert.equal(h.port.closed,false);
+ }finally{h.restore();}
+});
+test('cancellation during registration prevents a late worker send',async()=>{
+ const h=harness(),controller=new AbortController();let ready,sends=0;
+ try{
+  navigator.serviceWorker.ready=new Promise(resolve=>{ready=resolve;});
+  const pending=request('STATUS',{signal:controller.signal});
+  controller.abort();await assert.rejects(pending,{name:'AbortError'});
+  ready({active:{postMessage(){sends++;}}});await Promise.resolve();
+  assert.equal(sends,0);
+ }finally{h.restore();}
+});
+test('cancellation after send releases ports and ignores captured late reply',async()=>{
+ let reply;const h=harness(port=>{reply=port.onmessage;}),controller=new AbortController();
+ try{
+  const pending=request('STATUS',{signal:controller.signal});await Promise.resolve();
+  controller.abort();await assert.rejects(pending,{name:'AbortError'});
+  assert.equal(h.port.closed,true);assert.equal(h.port2.closed,true);
+  assert.equal(h.port.onmessage,null);assert.equal(h.port.onmessageerror,null);
+  assert.doesNotThrow(()=>reply({data:{complete:true}}));
+ }finally{h.restore();}
+});
+test('successful reply removes cancellation listener',async()=>{
+ const h=harness(port=>queueMicrotask(()=>port.onmessage({data:{complete:true}})));
+ const controller=new AbortController();let removals=0;
+ const remove=controller.signal.removeEventListener.bind(controller.signal);
+ controller.signal.removeEventListener=(...args)=>{removals++;return remove(...args);};
+ try{
+  assert.equal((await request('STATUS',{signal:controller.signal})).complete,true);
+  assert.equal(removals,1);controller.abort();assert.equal(removals,1);
+ }finally{h.restore();}
+});

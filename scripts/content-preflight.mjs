@@ -7,8 +7,8 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const appsDir=path.join(root,'src/apps');
 
-export function inspectRegistration({apps,categories,media,knowledge,exists,appId}){
- const errors=validate({apps,categories,media,knowledge,exists});
+export function inspectRegistration({apps,categories,media,knowledge,exists,interfaces,appId}){
+ const errors=validate({apps,categories,media,knowledge,exists,interfaces});
  const app=apps.find(a=>a.app_id===appId);
  if(!app)errors.push('unknown app: '+appId);
  if(app){
@@ -32,7 +32,8 @@ export function inspectAllRegistrations(context){
 
 export function inspectRepository(appId){
  const apps=fs.readdirSync(appsDir,{withFileTypes:true}).filter(d=>d.isDirectory()).map(d=>read('src/apps/'+d.name+'/manifest.json'));
- const context={apps,categories:read('config/categories.json'),media:read('src/shared/media/catalog.json'),knowledge:read('src/shared/knowledge.json'),exists:p=>safeLocalPath(p)&&fs.existsSync(path.join(root,'src',p))};
+ const interfaces=fs.existsSync(path.join(root,'src/shared/interfaces.json'))?read('src/shared/interfaces.json'):undefined;
+ const context={apps,interfaces,categories:read('config/categories.json'),media:read('src/shared/media/catalog.json'),knowledge:read('src/shared/knowledge.json'),exists:p=>safeLocalPath(p)&&fs.existsSync(path.join(root,'src',p))};
  if(appId==='--all'){
   return inspectAllRegistrations(context);
  }

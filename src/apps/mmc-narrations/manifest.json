@@ -20,7 +20,8 @@
     "apps/mmc-narrations/apps.js",
     "apps/mmc-narrations/data.js",
     "apps/mmc-narrations/index.html",
-    "apps/mmc-narrations/styles.css"
+    "apps/mmc-narrations/styles.css",
+    "shared/media/asset-f40aca52c0606336--icon.svg"
   ],
   "media": [
     "asset-f40aca52c0606336"
