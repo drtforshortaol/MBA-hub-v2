@@ -27,7 +27,11 @@ jobs:
           node scripts/verify-media-registration.mjs --report dist/media-registration-report.json
           node scripts/migration/review-tree-of-life-fidelity.mjs > dist/tree-of-life-current-fidelity.json
           node scripts/migration/review-whale-parasites-fidelity.mjs --root . > dist/whale-parasites-fidelity.json
+          node scripts/migration/review-evolution-timeline-fidelity.mjs --root . > dist/evolution-timeline-fidelity.json
+          node scripts/migration/review-naturalist-original-fidelity.mjs --root . > dist/naturalist-original-scope.json
           node scripts/prepare-pending-media-review.mjs --report dist/pending-media-review.json --html dist/pending-media-review.html --asset-base developer/
+          node scripts/review-pending-media-responses.mjs --template dist/pending-media-responses.json
+          node scripts/review-pending-media-responses.mjs --responses dist/pending-media-responses.json --report dist/pending-media-response-validation.json
           npm run security:scan
           npm test
           node --test tests/security-review.test.mjs
@@ -63,6 +67,11 @@ jobs:
           cp docs/COMPLETION_CHECKPOINT_20261024.md dist/COMPLETION_CHECKPOINT_20261024.md
           cp docs/TREE_OF_LIFE_ENGINEERING_REVIEW_20261023.md dist/
           cp docs/WHALE_PARASITES_INDEPENDENT_REVIEW_20261023.md dist/
+          cp docs/EVOLUTION_TIMELINE_INDEPENDENT_REVIEW_20261023.md dist/
+          cp docs/EVOLUTION_TIMELINE_FULL_FIDELITY_20261024.md dist/
+          cp docs/NATURALIST_ORIGINAL_SCOPE_20261023.md dist/
+          cp docs/NATURALIST_INDEPENDENT_SCOPE_REVIEW_20261023.md dist/
+          cp docs/TIMELINE_NATURALIST_REVIEW_CHECKPOINT_20261024.md dist/
           cp docs/PENDING_OCTOBER_MEDIA_REGISTRATION_20261021.md dist/PENDING_OCTOBER_MEDIA_REGISTRATION_20261021.md
           cp docs/ACCEPTANCE_RECORD_PREPARATION_20261021.md dist/ACCEPTANCE_RECORD_PREPARATION_20261021.md
           cp docs/INHERITED_STATIC_RECONCILIATION_20261022.md dist/INHERITED_STATIC_RECONCILIATION_20261022.md
@@ -73,6 +82,8 @@ jobs:
           cp docs/verification/tree-of-life-full-source-20261023.json dist/verification/
           cp docs/verification/tree-of-life-independent-review-20261023.json dist/verification/
           cp docs/verification/whale-parasites-full-20261023.json dist/verification/
+          cp docs/verification/evolution-timeline-full-20261024.json dist/verification/
+          cp docs/verification/naturalist-original-scope-20261023.json dist/verification/
           cp docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md dist/
           cp docs/OPEN_SEA_SEARCH_20261022.md dist/
           cp docs/HTTPS_ACCEPTANCE_PROPOSAL_20261022.md dist/

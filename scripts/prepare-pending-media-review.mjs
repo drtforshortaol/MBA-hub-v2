@@ -5,6 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {safeLocalPath} from './build.mjs';
 import {auditRepositoryMedia} from './audit-local-media-coverage.mjs';
 import {assessMediaRegistration} from './verify-media-registration.mjs';
+import {checkedReviewOutputPath} from './review-output-path.mjs';
 
 const order=(a,b)=>a<b?-1:a>b?1:0;
 const dense=values=>Array.isArray(values)&&Array.from({length:values.length},(_,i)=>Object.hasOwn(values,i)).every(Boolean);
@@ -108,22 +109,11 @@ export function renderPendingMediaReview(packet,{root,htmlFile,assetBase}){
  }).join('');
  return '<!doctype html>\n<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src \'none\'; img-src \'self\' file:; style-src \'unsafe-inline\'; base-uri \'none\'; form-action \'none\'"><title>Pending media permission review</title><style>body{font:16px system-ui,sans-serif;margin:2rem;background:#f5f6f8;color:#18242b}header{max-width:80rem;margin:auto}main{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;max-width:100rem;margin:auto}article{padding:1.5rem;background:white;border:1px solid #ccd4da;border-radius:.5rem;min-width:0}img{width:100%;height:260px;object-fit:contain;background:#edf1f3}dt{font-weight:700;margin-top:.65rem}dd{margin:0;overflow-wrap:anywhere}li{margin:.5rem 0}a{color:#124b77}</style><header><h1>Pending media permission review</h1><p>'+escapeHTML(packet.pending_items)+' items. This read-only packet does not establish copyright ownership or grant permission. Review the exact image and supply the listed evidence through the existing approval process.</p></header><main>'+cards+'</main></html>\n';
 }
-function outputPath(root,filename,extension){
- const resolved=path.resolve(filename),inside=path.relative(path.join(root,'src'),resolved);
- if(path.extname(resolved)!==extension||inside===''||(!inside.startsWith('..'+path.sep)&&inside!=='..'&&!path.isAbsolute(inside)))throw Error('Unsafe review output path');
- let current=path.parse(resolved).root;
- for(const part of resolved.slice(current.length).split(path.sep)){
-  current=path.join(current,part);
-  let stat;try{stat=fs.lstatSync(current);}catch(error){if(error.code==='ENOENT')break;throw error;}
-  if(stat.isSymbolicLink())throw Error('Symlink prohibited in review output');
- }
- return resolved;
-}
 export function writePendingMediaReview({root,report,html,assetBase}){
  root=checkedRoot(root);
- const reportFile=outputPath(root,report,'.json'),htmlFile=outputPath(root,html,'.html');
+ const reportFile=checkedReviewOutputPath(root,report,'.json'),htmlFile=checkedReviewOutputPath(root,html,'.html');
  const packet=preparePendingMediaReview(root),rendered=renderPendingMediaReview(packet,{root,htmlFile,assetBase});
- for(const filename of [reportFile,htmlFile]){fs.mkdirSync(path.dirname(filename),{recursive:true});outputPath(root,filename,path.extname(filename));}
+ for(const filename of [reportFile,htmlFile]){fs.mkdirSync(path.dirname(filename),{recursive:true});checkedReviewOutputPath(root,filename,path.extname(filename));}
  fs.writeFileSync(reportFile,JSON.stringify(packet,null,2)+'\n');fs.writeFileSync(htmlFile,rendered);
  return {pending_items:packet.pending_items,permissionReviewComplete:packet.permissionReviewComplete,sourceWritePerformed:false,report:reportFile,html:htmlFile};
 }

@@ -331,6 +331,17 @@
       "reviewed_on": "2026-10-24",
       "review_method": "Independently reviewed complete pinned/current inventory, markup/code/style, source-derived search, media and executable/shared navigation. Existing unchanged V1 authorization only; no new scientific/editorial/image/device/release approval. Recovered evidence and exact resource digest reverified before binding.",
       "content_sha256": "d011236c6a92ae991c6413942d7da1deca6dc233d923e0683de0905d4827c457"
+    },
+    {
+      "app_id": "evolution-timeline",
+      "source_repository": "drtforshortaol/evolution-timeline",
+      "source_commit": "c6d782d3a8a03e407861a0fbc3aab76e5fbf8d0c",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/EVOLUTION_TIMELINE_INDEPENDENT_REVIEW_20261023.md",
+      "reviewed_on": "2026-10-24",
+      "review_method": "Independent complete eleven-file pinned-source, full executable/static/style/data/three-view DOM/source-derived search/media/actual anchor assignment and native/shared-control reproduction; existing unchanged V1 authorization only, no new scientific/editorial/media/device/release approval",
+      "content_sha256": "74b87175368b413f747cc77696ded33cc9622cb0aa5577b5be7623e6e45bb699"
     }
   ]
 }
