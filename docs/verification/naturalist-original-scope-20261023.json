@@ -1,0 +1,923 @@
+{
+  "schema_version": 1,
+  "scope": "Original inherited runtime only; no whole-app approval",
+  "source_repository": "drtforshortaol/MBA-hub",
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "source_fixture_sha256": "95461c215fc9e2c83b7f13e7752e74563439bfb9bfd70fb879b1269efd9cba4c",
+  "current_byte_guard": true,
+  "original_text_files": 9,
+  "source_app_inventory": 122,
+  "current_app_inventory": {
+    "app.js": "412c28db578382ca785b4476fb6f59ec217e9671870dea4206040cc000b51eff",
+    "data.js": "683693a6417256d65056a48145ded9714159adb2bef56ec5e8e434334b83a089",
+    "inaturalist-reference.html": "2bfccfcfe452cd8f9b1e5034818b02f68909569715f0c07f79bc62d24f5f1d52",
+    "index.html": "ecbcd7616aab2f75c59660d62efd6872bbfd090ac27a9837468647cfaa696252",
+    "manifest.json": "a6ad9198f2c0f57be576d69909c02b6b0e3700f6fed05c9f577e8ca67443bfb8",
+    "october-2026-08-14.html": "692a40302b95ecdba4e19ba6a5849dba89ad20b49ea36c7754a0c3db1a00713b",
+    "october-2026-note.js": "a56ba922bfc12cb7b57ff69ae0d450621ea355953ff64baec550b83c36fed969",
+    "steve-webster-gray-whale.html": "7b667e08280a4730acad59895a773a7f5799e2e944986ac1e02799bf8edaf11f",
+    "styles.css": "14d93dbd164bdb3e063af75d47c254e4f9d81f47dfa1995d5371eea84ed4f2ff"
+  },
+  "original_notes": 24,
+  "original_qa": 38,
+  "original_resources": 8,
+  "complete_original_CSS": true,
+  "complete_data_after_media_relocation": true,
+  "original_media_relocations": 118,
+  "media_value_occurrences": 118,
+  "registered_original_offline_media": 119,
+  "media_git_blob_matches": [
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3520.jpeg",
+      "current_path": "shared/media/asset-47d33e98d003d66e--IMG_3520.jpeg",
+      "git_blob": "e54e5c624a27523cf5a4b8963cb890628582ed17",
+      "sha256": "47d33e98d003d66e3385364cbbc07c895021368a87dd045351ebb6fbe6473201"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3515.jpeg",
+      "current_path": "shared/media/asset-0c3ad11dc596bfa3--IMG_3515.jpeg",
+      "git_blob": "27bf3529753e52c73184e660f80c1ec03dd4a35f",
+      "sha256": "0c3ad11dc596bfa35e2c8da2f7a6551fa1d77cc7a7fe3d96a4c71dbc43894f40"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3516.jpeg",
+      "current_path": "shared/media/asset-48b0779c4998c64f--IMG_3516.jpeg",
+      "git_blob": "45cc8561a53eb512053478a516b30559f89dffb3",
+      "sha256": "48b0779c4998c64fc77cfea5dc7ca7224f98c6997f66a9fbeadc75fcae4c43c2"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3518.jpeg",
+      "current_path": "shared/media/asset-a682abf588d51b0d--IMG_3518.jpeg",
+      "git_blob": "a4d04265a01017d170f220250118cd8cd50c9f61",
+      "sha256": "a682abf588d51b0dc8092115c807b13505b7257af80fbd1a7bfa970853a7663e"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3517.jpeg",
+      "current_path": "shared/media/asset-345be463837369de--IMG_3517.jpeg",
+      "git_blob": "34255760acfe3b4ac918d1782c159365508fabb5",
+      "sha256": "345be463837369de208528d47de18d76642e317c45749e3f2799a291e2b3a927"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3519.jpeg",
+      "current_path": "shared/media/asset-9110c28e0898a79e--IMG_3519.jpeg",
+      "git_blob": "7b73c500354b00792273025ae7111095a62c893c",
+      "sha256": "9110c28e0898a79eb8866c1404b7055429d79728c0c05720741035a4dd1ff4df"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3510.jpeg",
+      "current_path": "shared/media/asset-f194f7d134beec45--IMG_3510.jpeg",
+      "git_blob": "2d88c9b37baff2c69729444391ac8f375ccd9a32",
+      "sha256": "f194f7d134beec45f48a7451308c4583265e5db18db9b12b36745b59917a5d2d"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3511.jpeg",
+      "current_path": "shared/media/asset-9667261b6fee5730--IMG_3511.jpeg",
+      "git_blob": "9f9eb1e74648ed2fa7d67d42a7cb29b90662ca4e",
+      "sha256": "9667261b6fee573052a464a8dda2bf8f51d68761d136f635e32c47ea111cb6d0"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3512.jpeg",
+      "current_path": "shared/media/asset-fbed2a5036b96a43--IMG_3512.jpeg",
+      "git_blob": "cdd2261fd86096fad0547e7a2f0a1d9fce7ef1fa",
+      "sha256": "fbed2a5036b96a43f1e3c211509e0a1b74f42205365b88c9c4f209ae78477e2a"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3513.jpeg",
+      "current_path": "shared/media/asset-bffd82626effa542--IMG_3513.jpeg",
+      "git_blob": "83a10d6d6a08efc31fb4f99774c7fee4bdbf3a61",
+      "sha256": "bffd82626effa542ece021e58e951bbf65412cfe6d8ea6dea7521ab2a36ac938"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3509.jpeg",
+      "current_path": "shared/media/asset-dbfeba5da571feb6--IMG_3509.jpeg",
+      "git_blob": "86e441af287bb80202de0ebf73740e37c642260e",
+      "sha256": "dbfeba5da571feb669e91464c4453452f163a7296edc0f0dd1b6bad660b70fe4"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3505.jpeg",
+      "current_path": "shared/media/asset-922d38f86c89f73d--IMG_3505.jpeg",
+      "git_blob": "1287c8074f072e37a94d014a02fefee68246f63d",
+      "sha256": "922d38f86c89f73d911e043b800eb5123ab837346e09b400695f411ddf12ef3f"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3506.jpeg",
+      "current_path": "shared/media/asset-a547e5af9334e5b1--IMG_3506.jpeg",
+      "git_blob": "cd3bd2bb1b9e01c5040adb5df26503f017d9ab62",
+      "sha256": "a547e5af9334e5b1370d2ed18377cf46e74731787a983ada6c4b2f32f26e38c6"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3507.jpeg",
+      "current_path": "shared/media/asset-07e9859dce7506c6--IMG_3507.jpeg",
+      "git_blob": "5acc5ae63f06667b6a753d2c1845be333c5771cd",
+      "sha256": "07e9859dce7506c68ec7cd0232b7e8953841d41cd7529dbae45706043b4d0856"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3508.jpeg",
+      "current_path": "shared/media/asset-81892438cc2e6a55--IMG_3508.jpeg",
+      "git_blob": "5abe3be2bd8321ddd3471d144e2ae149ccb8488a",
+      "sha256": "81892438cc2e6a553fffdd7f8f32e23d3bf07be309b1b23330d8a7881b717a9c"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3465.jpeg",
+      "current_path": "shared/media/asset-538d5993b59b2206--IMG_3465.jpeg",
+      "git_blob": "700d16eb31cd8c94a7bf284195b7014eb08da87b",
+      "sha256": "538d5993b59b22063bff336dbff95f1f9d4006d729cd710aa9ec82beb3caae01"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3466.jpeg",
+      "current_path": "shared/media/asset-717b2911c7edcb80--IMG_3466.jpeg",
+      "git_blob": "0c9a065a288a2273795f1ce88002106ae26d580a",
+      "sha256": "717b2911c7edcb8084d5e419cc406c85c8ef32d315a367c543557be2981dc00d"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3467.jpeg",
+      "current_path": "shared/media/asset-2a1a981e1a8e0bc5--IMG_3467.jpeg",
+      "git_blob": "ebd07c084bff6ceffab16ac990d4182efb9e4973",
+      "sha256": "2a1a981e1a8e0bc516baee5b13858177ccb26d6a2524458a380e4ea5df3fb1ca"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3468.jpeg",
+      "current_path": "shared/media/asset-cd38f502a51bf6bd--IMG_3468.jpeg",
+      "git_blob": "4745b0fa3397b9f404fe3f8a4f5522366a50395f",
+      "sha256": "cd38f502a51bf6bdad09467c4a4e1e2ca5be1363c1cf7595334fdbab4abfa5fa"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3469.jpeg",
+      "current_path": "shared/media/asset-2716d888f851c96f--IMG_3469.jpeg",
+      "git_blob": "67f13f1ce2b2068a078a776ca37e20516c108e15",
+      "sha256": "2716d888f851c96fecb01fbf174a2bffb7ba210b178ae9227ec6d9e8132c3ae6"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3470.jpeg",
+      "current_path": "shared/media/asset-3fd33c52e769a694--IMG_3470.jpeg",
+      "git_blob": "ebee9cf9cab523d95bddc86131e4322dcebbe89b",
+      "sha256": "3fd33c52e769a69443c98659d1acd4b506a6278142251bacac823caf4dae730f"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3471.jpeg",
+      "current_path": "shared/media/asset-7ddf650d12a6e651--IMG_3471.jpeg",
+      "git_blob": "0e131cbfd91f03ccb88a86d2b968d0b50ce9e5eb",
+      "sha256": "7ddf650d12a6e65194e76a465e2e1cc88d92be9fdf8cfb5b9263ae58b713a058"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3431.jpeg",
+      "current_path": "shared/media/asset-d34f2070f7948422--IMG_3431.jpeg",
+      "git_blob": "4dcca1812a5fe19fe9eb57af33317a4c0912c3d5",
+      "sha256": "d34f2070f7948422e4ac81c4fa3361550a3339c5064e9d8cf13c8a9b1966e321"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3432.jpeg",
+      "current_path": "shared/media/asset-b205c0a01d209fae--IMG_3432.jpeg",
+      "git_blob": "20b8cd2e16bf0cd2f1e45fbf18ec79e0c102d9da",
+      "sha256": "b205c0a01d209faeacde3776148366c0e9a9921ed34575b37346132855fdd232"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3433.jpeg",
+      "current_path": "shared/media/asset-51cf45f51cb910c0--IMG_3433.jpeg",
+      "git_blob": "3c110219f8d7f1d1633dfea0ad756cb6d5cd11ba",
+      "sha256": "51cf45f51cb910c010098a2e652516f05f73913331e59eb79b68dbd7b147c2fe"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3434.jpeg",
+      "current_path": "shared/media/asset-73ee72c7a88882ba--IMG_3434.jpeg",
+      "git_blob": "b01b98b5590758cfa18693e6c4a89534257eb1c1",
+      "sha256": "73ee72c7a88882ba517bc94d2c2755f0887165520a40495eb828607641fc5043"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3435.jpeg",
+      "current_path": "shared/media/asset-8b71e68d81b525dc--IMG_3435.jpeg",
+      "git_blob": "5af13510dfcd6eca632a6edd8f70532b911d5195",
+      "sha256": "8b71e68d81b525dc90236c91af674019dbca57df64a86b3e4746bccce99d90bd"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3436.jpeg",
+      "current_path": "shared/media/asset-0cba57ea7e48e08d--IMG_3436.jpeg",
+      "git_blob": "da696d5648bc61fc56036cf7ef5e6ac23815d599",
+      "sha256": "0cba57ea7e48e08dd17adda6fc08a8670f83b4e6c682d51a3f547ed20d764ad4"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3437.jpeg",
+      "current_path": "shared/media/asset-f913f6c6c932177d--IMG_3437.jpeg",
+      "git_blob": "1e9cb49d38b81c9ba5a596f40cc8a6141de2fe13",
+      "sha256": "f913f6c6c932177dbe21302675d0ee634097cb8ea4945169ada564555a5b1d3e"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3438.jpeg",
+      "current_path": "shared/media/asset-e424da94f452ee09--IMG_3438.jpeg",
+      "git_blob": "61cdbacc21a186f6e0f73269c8562d0894f084e4",
+      "sha256": "e424da94f452ee094802a0bb78a737370fb3a6ef8ca734f0953b908b7cee83f5"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3439.jpeg",
+      "current_path": "shared/media/asset-a6a0f1e28ae2bd1a--IMG_3439.jpeg",
+      "git_blob": "15806bd2ef3ef1164e558225b208b20249b6a522",
+      "sha256": "a6a0f1e28ae2bd1a563731a61edc0fdcd050773f8c2da66fbbae4145c5e807e0"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3440.jpeg",
+      "current_path": "shared/media/asset-e27e2ab941b776a9--IMG_3440.jpeg",
+      "git_blob": "d20629dbbf85dc71ffd60bfe3aca4efeaaafdc83",
+      "sha256": "e27e2ab941b776a9b37a83b7b3742c3f59e0ebe594aae935b06c52009c040131"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3441.jpeg",
+      "current_path": "shared/media/asset-b5206667bf07f05b--IMG_3441.jpeg",
+      "git_blob": "7d81a687df27266fc4e7848f908dc2376ec475c7",
+      "sha256": "b5206667bf07f05b107f241d2c88f3fc999fd166a25174811905e1c2f3fd95af"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3442.jpeg",
+      "current_path": "shared/media/asset-b2920aa1dbefcb97--IMG_3442.jpeg",
+      "git_blob": "be2cab5f03049e8c364ea178ba7ddec1b8b81821",
+      "sha256": "b2920aa1dbefcb97eed25af4c168a4719f5cc2d216aae44ab9a5589a0f902d22"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3443.jpeg",
+      "current_path": "shared/media/asset-1daf222da5380986--IMG_3443.jpeg",
+      "git_blob": "9392fcefc72de0aa389993664fc04b8bc419f8a0",
+      "sha256": "1daf222da53809869b2aeb6b0441555483372fa613f744d336e04e3812882d36"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3444.jpeg",
+      "current_path": "shared/media/asset-af9d1b481c381dc7--IMG_3444.jpeg",
+      "git_blob": "3e29126252a13c69c2ab8d6d75581926836453ba",
+      "sha256": "af9d1b481c381dc7cb2682037ea223fedd2929cf23978d48f1d199ea587a992b"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3445.jpeg",
+      "current_path": "shared/media/asset-4e686c83c7a2de1e--IMG_3445.jpeg",
+      "git_blob": "57e851e66b4d97f660d1d26d7c974f043b97b586",
+      "sha256": "4e686c83c7a2de1e4b9c473144bb1f35594a69c13a19617b3965d9ebf31fe40f"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3446.jpeg",
+      "current_path": "shared/media/asset-04c2c8b8e6e36a70--IMG_3446.jpeg",
+      "git_blob": "71a65e783f6434ba9dc58f5941ae5d45cf14eace",
+      "sha256": "04c2c8b8e6e36a70187fb746c959087efed49075b7401d4389cb4b77d2ac1600"
+    },
+    {
+      "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/size_compare.jpg",
+      "current_path": "shared/media/asset-bc4d2d7822e21690--size_compare.jpg",
+      "git_blob": "954fb2041caef000e2a708436cb43f08773f2100",
+      "sha256": "bc4d2d7822e216901811e3fcfb30f082acf54e7d39f761f0289e3cb102b3a304"
+    },
+    {
+      "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/size_sketch.jpg",
+      "current_path": "shared/media/asset-43951da610ad3fd3--size_sketch.jpg",
+      "git_blob": "f0318d5e9f951f7936c255baedf5fd3137b74915",
+      "sha256": "43951da610ad3fd364dc6613b3f78c242c4e3517d679eaae7ab0efadaae6ac70"
+    },
+    {
+      "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/migration_map.jpg",
+      "current_path": "shared/media/asset-1a0051b4ea4be7ea--migration_map.jpg",
+      "git_blob": "1f50ce2244643ac0a2d599f69b64a54090a391ce",
+      "sha256": "1a0051b4ea4be7eaa1b8c253ca75c0f347dd0a3aaf10e0a549fc05de541bfc74"
+    },
+    {
+      "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/calendar.jpg",
+      "current_path": "shared/media/asset-c6185696aabf48e5--calendar.jpg",
+      "git_blob": "c7e3c3e6d0a580e988a4a456d90405a024db63bf",
+      "sha256": "c6185696aabf48e563f46f41ba06d40e6a2bc1c81b3545ddaafdb51e3d2cf1a2"
+    },
+    {
+      "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/rookery_scene.jpg",
+      "current_path": "shared/media/asset-125a4bbb92b0953b--rookery_scene.jpg",
+      "git_blob": "b3afcdae5ac433c49cd1dbc8f75a87083da42ea3",
+      "sha256": "125a4bbb92b0953befd39bc0fe78620af299393026ff02df968481c62c9d00a6"
+    },
+    {
+      "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/diet_diagram.jpg",
+      "current_path": "shared/media/asset-9fa770d5f87c286a--diet_diagram.jpg",
+      "git_blob": "207808f7f59dc8b608f0bd6c295d2616f0639033",
+      "sha256": "9fa770d5f87c286aecbee5fb7a809a486c934ddad35b8cdfe23496579c375ba3"
+    },
+    {
+      "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/buoyancy_chart.jpg",
+      "current_path": "shared/media/asset-3895d93118cf6834--buoyancy_chart.jpg",
+      "git_blob": "b2535b45c9fa6de1ae7cd1c1cd405dad0c8eb05c",
+      "sha256": "3895d93118cf68349b7bdbea5fd5cec0b43faaf9b57948b3494d49d9489a585f"
+    },
+    {
+      "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/sleep_diagram.jpg",
+      "current_path": "shared/media/asset-dded438de5077361--sleep_diagram.jpg",
+      "git_blob": "d79583f20083ea26a397f49c7775c33673e93cd5",
+      "sha256": "dded438de507736147d29b7b7efaf04b4c7229c4db1d56f1167e1e40410c579b"
+    },
+    {
+      "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/cons_basics.jpg",
+      "current_path": "shared/media/asset-d8d7415dc63ff8f8--cons_basics.jpg",
+      "git_blob": "3717f58c001250a7ac814b3c0ecd255a63fe3ee8",
+      "sha256": "d8d7415dc63ff8f8178baf0937480417bb33d8a0aadf26244e7caf668ac52b07"
+    },
+    {
+      "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/cons_comeback.jpg",
+      "current_path": "shared/media/asset-a632a1f72984e42f--cons_comeback.jpg",
+      "git_blob": "2de1b74b02ccef2aed5fdbd123de7947ebc5e77b",
+      "sha256": "a632a1f72984e42f627987cf2df15793cd2e5aa4c20e4a0164d36e522df8ace4"
+    },
+    {
+      "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/cons_success.jpg",
+      "current_path": "shared/media/asset-e13b365854bf974b--cons_success.jpg",
+      "git_blob": "463c999b5690899b9781ff075db2089984ec99d3",
+      "sha256": "e13b365854bf974bd4aaa498f14ce7a18cde72f3713b8859006d088ef6dee6b9"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3400.jpeg",
+      "current_path": "shared/media/asset-c57d8cb4bb8dc7bd--IMG_3400.jpeg",
+      "git_blob": "db545627cb9cb648de777dd3292587fe4cff2d55",
+      "sha256": "c57d8cb4bb8dc7bda4e58e1b7f64688b9a53e03db1d973af695dab4bc08a305e"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3401.jpeg",
+      "current_path": "shared/media/asset-98329025e63f551d--IMG_3401.jpeg",
+      "git_blob": "b0ee519effc653879ee9cb3787e1ffd488e8cd58",
+      "sha256": "98329025e63f551d4ef1e58093db47c6a3426a968e0a5db6405ad5adfb25abf6"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3402.jpeg",
+      "current_path": "shared/media/asset-e69c83a579df2ebb--IMG_3402.jpeg",
+      "git_blob": "7a71025a003d73015f08e14ef7ec0934cbbd669d",
+      "sha256": "e69c83a579df2ebb5c7cfa4175bb3d284f6a5cca0350ed9ba2f88f6f7e79b66b"
+    },
+    {
+      "source_path": "apps/whale-associated-organisms/IMG_3392.jpeg",
+      "current_path": "shared/media/asset-edd9d5ec2d0bbd07--IMG_3392.jpeg",
+      "git_blob": "42216cfa506179db5a5d6313e68dda325264e066",
+      "sha256": "edd9d5ec2d0bbd07852ad0d906341a589bee5a974352f245b945dc660ef24118"
+    },
+    {
+      "source_path": "apps/whale-associated-organisms/IMG_3393.jpeg",
+      "current_path": "shared/media/asset-c9581b267211cbcb--IMG_3393.jpeg",
+      "git_blob": "725a8eb60406b15079a09a595ec69e688620b727",
+      "sha256": "c9581b267211cbcb33e4079571f2cb136ad2f6753087d951dcaa1a608abdf60a"
+    },
+    {
+      "source_path": "apps/whale-associated-organisms/IMG_3394.jpeg",
+      "current_path": "shared/media/asset-54b172586520e9bd--IMG_3394.jpeg",
+      "git_blob": "6029dbca086a575bcaacf6da17be76d0d5985ebe",
+      "sha256": "54b172586520e9bdae0f022cff9fedb5b8abb99af7653c0613e5dd78ea5ea861"
+    },
+    {
+      "source_path": "apps/whale-associated-organisms/IMG_3395.jpeg",
+      "current_path": "shared/media/asset-8940026ea5ec69fa--IMG_3395.jpeg",
+      "git_blob": "079ae4ae7ca142885a2867b7ff80de0d271b0a2b",
+      "sha256": "8940026ea5ec69fa762b679f1299c30699291ec34a4747da3be061fd48989c18"
+    },
+    {
+      "source_path": "apps/whale-associated-organisms/IMG_3396.jpeg",
+      "current_path": "shared/media/asset-eae8123213eff35a--IMG_3396.jpeg",
+      "git_blob": "3a38eb6157b29a98c588efe2270a5db696824a28",
+      "sha256": "eae8123213eff35a91417664e3c820700953670a7beb8b92213e75ea5643169d"
+    },
+    {
+      "source_path": "apps/whale-associated-organisms/IMG_3397.jpeg",
+      "current_path": "shared/media/asset-f78cedfed1d74f6b--IMG_3397.jpeg",
+      "git_blob": "87996d226469ca65c5c48c4db849386d05032372",
+      "sha256": "f78cedfed1d74f6b211987c11b53263f9fdd634d8abf34ce3a7e9d62c2984409"
+    },
+    {
+      "source_path": "apps/whale-associated-organisms/IMG_3398.jpeg",
+      "current_path": "shared/media/asset-80f9762446c0fc02--IMG_3398.jpeg",
+      "git_blob": "1c3aecf23d2cd1926f6167aace691ad93f00a8c9",
+      "sha256": "80f9762446c0fc02dce976faa1a627d7cbb3de49cf9e78132ff90801bbd3c26f"
+    },
+    {
+      "source_path": "apps/whale-associated-organisms/IMG_3399.jpeg",
+      "current_path": "shared/media/asset-18794e74477d7c0e--IMG_3399.jpeg",
+      "git_blob": "37a7ba89eca5df2d52236bc6705e864094a33460",
+      "sha256": "18794e74477d7c0e693afcdd23c5d35c6ac9cbf0d44098568653fe32eb22ea6b"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3379.jpeg",
+      "current_path": "shared/media/asset-00cca4d1893f2370--IMG_3379.jpeg",
+      "git_blob": "bf13a0ceb01aded1767f046f496d19d9c868ed31",
+      "sha256": "00cca4d1893f23706e3497d1e893d1be8de353903af98a9ecb8416704372059c"
+    },
+    {
+      "source_path": "apps/california-flying-fish/IMG_3380.jpeg",
+      "current_path": "shared/media/asset-768c33463b4de0e3--IMG_3380.jpeg",
+      "git_blob": "2f0da1c6de13f9cad7ffa1ff75609e7f6eb22acc",
+      "sha256": "768c33463b4de0e3a035d5014efe022815ccb8069b63fb9ee3784ebb64ce4d8c"
+    },
+    {
+      "source_path": "apps/california-flying-fish/IMG_3381.jpeg",
+      "current_path": "shared/media/asset-afa736f83a460b13--IMG_3381.jpeg",
+      "git_blob": "15663b3d0a1cff2b14e727e06862572a791f0b19",
+      "sha256": "afa736f83a460b13bfe2590dbcb3021308401e7ad78c4cb646a1931257bc841d"
+    },
+    {
+      "source_path": "apps/california-flying-fish/IMG_3382.jpeg",
+      "current_path": "shared/media/asset-e679c304e357c5d1--IMG_3382.jpeg",
+      "git_blob": "e274a9f92de657e396c73bb5f25c8083f01be395",
+      "sha256": "e679c304e357c5d18dc532e479aa3861b2cda8479da8394ce73e88c4c15a79e7"
+    },
+    {
+      "source_path": "apps/california-flying-fish/IMG_3383.jpeg",
+      "current_path": "shared/media/asset-c11690bd147b5db5--IMG_3383.jpeg",
+      "git_blob": "c8043292b2cb92f6d3a8a64f0180a21b694c13bf",
+      "sha256": "c11690bd147b5db561ccd1dd437ee53bea05cb11240347154d472aeffd6b108a"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3355.jpeg",
+      "current_path": "shared/media/asset-1154cf3cd4637129--IMG_3355.jpeg",
+      "git_blob": "750ee48686d68ff461c25f325576af7a5d6da54c",
+      "sha256": "1154cf3cd463712984530fa3694c7212286ff0808487d9cad52b2c9c13c3b28f"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3356.jpeg",
+      "current_path": "shared/media/asset-732320e8868e04e9--IMG_3356.jpeg",
+      "git_blob": "6168f5affcaf0f6041f1576b8f247b7f05b2d515",
+      "sha256": "732320e8868e04e9865db21283a5a78c9e98bac2485972534670bf5595aca854"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3357.jpeg",
+      "current_path": "shared/media/asset-312b492bbd93cf7f--IMG_3357.jpeg",
+      "git_blob": "d4e98b8b7a16c9dd4b82a848726a0bddea189f54",
+      "sha256": "312b492bbd93cf7f45068ca11840663ed3121361e8ba46000f76f04353f13ae7"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3358.jpeg",
+      "current_path": "shared/media/asset-ada016e625c82729--IMG_3358.jpeg",
+      "git_blob": "132d1b2f6017c4f2a9e75f87e4c4966cadecc00b",
+      "sha256": "ada016e625c82729f2bb2c27a96986a143079a3668ca6cb5c9b118084160f63f"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3359.jpeg",
+      "current_path": "shared/media/asset-ba81c2492733aa1b--IMG_3359.jpeg",
+      "git_blob": "266b53c5f26f72c1b5dce92df43a6a3677e13564",
+      "sha256": "ba81c2492733aa1b0e7158ba1e6750ccf96758da8c3448a3621c80e6b5e23d99"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3360.jpeg",
+      "current_path": "shared/media/asset-11daee627f87910c--IMG_3360.jpeg",
+      "git_blob": "e79111efed271b24286b83c82ce01c9c8f3f7443",
+      "sha256": "11daee627f87910c0cb83d620eeb8450dac1f0584220811bd5e341fa442788e8"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3361.jpeg",
+      "current_path": "shared/media/asset-9d32c2f766326d0e--IMG_3361.jpeg",
+      "git_blob": "39a199b8d99ca420b49c00a991f0eedf20916087",
+      "sha256": "9d32c2f766326d0eaaa334286aca25dabeb62af4d4a2abebdda580aac29c674c"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3362.jpeg",
+      "current_path": "shared/media/asset-bc73e2ecfad3750f--IMG_3362.jpeg",
+      "git_blob": "f42163b86a71474e51bfc2f09d04b69f6639fdbe",
+      "sha256": "bc73e2ecfad3750f03f056974455f6a3678bf464d0f858cb7241ebe3cf67b299"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3363.jpeg",
+      "current_path": "shared/media/asset-a5b81ee6dc73e406--IMG_3363.jpeg",
+      "git_blob": "3927b3cfa37e3a8716f4d9cb2d82f87a3ad21aac",
+      "sha256": "a5b81ee6dc73e406dd5d189a3a847a5083e2342c5faa644b6f134c846e3a0c48"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2867.jpeg",
+      "current_path": "shared/media/asset-7be108d4e4678453--IMG_2867.jpeg",
+      "git_blob": "ef6e533de640ef9efd441fd1a4afb12618418af0",
+      "sha256": "7be108d4e4678453b1624af4396414b619018fef49a31417bca832ad533485b4"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2868.jpeg",
+      "current_path": "shared/media/asset-f63a876a5501a7df--IMG_2868.jpeg",
+      "git_blob": "dc5494a7782babeebf530304789111015801a59a",
+      "sha256": "f63a876a5501a7df42b6e674a5eadadf0f59ba6490583984152f421f8d61b670"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2869.jpeg",
+      "current_path": "shared/media/asset-2c5a4f34f857290c--IMG_2869.jpeg",
+      "git_blob": "996ce64e0c6892862a8fede289287b039f9eb48f",
+      "sha256": "2c5a4f34f857290c1b742d8e101c66c50cc68270f3f1e708d0c065df5017408c"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2870.jpeg",
+      "current_path": "shared/media/asset-9b844bb19245cc28--IMG_2870.jpeg",
+      "git_blob": "fc73b952116cd9ae1cc3866ff51eff5fdd99c586",
+      "sha256": "9b844bb19245cc284fba91e94085466bc3f1a3d9da93ed255fdc1973cba09008"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2871.jpeg",
+      "current_path": "shared/media/asset-717aac5f1a01e9a4--IMG_2871.jpeg",
+      "git_blob": "750b72f0330a1b69c9d9ec18abf9071c3369f029",
+      "sha256": "717aac5f1a01e9a49504763fd5da8a8396cef5d110e6ef70fa78bfbfbb863a98"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2873.jpeg",
+      "current_path": "shared/media/asset-05332b7e8a82d46d--IMG_2873.jpeg",
+      "git_blob": "42a75cec9ad945fcfff96ed6914785f6aa45d91b",
+      "sha256": "05332b7e8a82d46dafad51286c9ef3e38dc92f188fcce206c8d4894447502714"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2874.jpeg",
+      "current_path": "shared/media/asset-4d7635af67d3f236--IMG_2874.jpeg",
+      "git_blob": "095113ec594d4ebc76512649682f70379527bd6b",
+      "sha256": "4d7635af67d3f236f42a0835a9516e99b441fe507b8e37d1c197bd5287296db2"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2876.jpeg",
+      "current_path": "shared/media/asset-b741e9d8704a02e7--IMG_2876.jpeg",
+      "git_blob": "e508387634257307736c67267e83ebed4a64dc3f",
+      "sha256": "b741e9d8704a02e75cdd8fe952ac65a3a6bf7724ed4049435a2a401e6e407701"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2877.jpeg",
+      "current_path": "shared/media/asset-80b0c96b94623a37--IMG_2877.jpeg",
+      "git_blob": "cf862b0b5acc893a69aefcc5029f2ef3ba1287a6",
+      "sha256": "80b0c96b94623a3715b7f037f878c8cb539df05a313c67bd5b48726dff29964d"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2878.jpeg",
+      "current_path": "shared/media/asset-b1db1b549a2c88c2--IMG_2878.jpeg",
+      "git_blob": "aa6b161cefce1de29d79b0feb121cf148bf54b49",
+      "sha256": "b1db1b549a2c88c223440ca3dc05bbbf4f6dbb7dacb01adfec696304ca5ee3f4"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2882.jpeg",
+      "current_path": "shared/media/asset-e9e0af345fc4b30e--IMG_2882.jpeg",
+      "git_blob": "e0c81551821864afc9dc8d8091bf8f52ce36cacd",
+      "sha256": "e9e0af345fc4b30e74846e34e10147f5082be3d330bae7ad91bbd272ea02eed4"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2883.jpeg",
+      "current_path": "shared/media/asset-0ddc6e6b4b55ea55--IMG_2883.jpeg",
+      "git_blob": "bb7a1d6b808bd4f73eee6dc07afe76c63d9faf2a",
+      "sha256": "0ddc6e6b4b55ea55f45bd4c1f5349c07f60b76fe59fada3475fef87a0fc6ba30"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2884.jpeg",
+      "current_path": "shared/media/asset-bbd4d6a226d73e44--IMG_2884.jpeg",
+      "git_blob": "cb05bfad74b3d0cf54fb1c9887d98015918c0d96",
+      "sha256": "bbd4d6a226d73e44ce79f41ae95d4867ae727c61e6377821a8fce0a0542d997d"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2885.jpeg",
+      "current_path": "shared/media/asset-5afe045acf5fb1f9--IMG_2885.jpeg",
+      "git_blob": "2171fc7866eff892f0bff930d2255d8811381758",
+      "sha256": "5afe045acf5fb1f9d0d32761136b8c01046e2c066bfe1c36a11d3a0f36dd01ce"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2886.jpeg",
+      "current_path": "shared/media/asset-dfd821c14f7227eb--IMG_2886.jpeg",
+      "git_blob": "eb1455c84cf3b2472a299ca1a23409658bb99433",
+      "sha256": "dfd821c14f7227eb7729f542e67c9865ed2eb363521222a6a848d6822f01a266"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2773.jpeg",
+      "current_path": "shared/media/asset-b27788d55542f1cc--IMG_2773.jpeg",
+      "git_blob": "92452966ab525fcde0dfe2e8e5c7620918bb37ca",
+      "sha256": "b27788d55542f1cc1aa79481563231b29da24ec6bb84317b1e9578fe71653b3e"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2774.jpeg",
+      "current_path": "shared/media/asset-7d047bea07617472--IMG_2774.jpeg",
+      "git_blob": "8962a1ed2c9ec63293b46d2faaf4f1837e0debf1",
+      "sha256": "7d047bea07617472ce343b1226633f83bcf2fbb2ba4a87c54a2c234f822a6bf7"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2775.jpeg",
+      "current_path": "shared/media/asset-f962da252f20ff0b--IMG_2775.jpeg",
+      "git_blob": "7975f7f2b925ca6070592f22153b532632b3ed28",
+      "sha256": "f962da252f20ff0b3a148c3096cdd041566d37b183f5138472b3e34517003985"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2776.jpeg",
+      "current_path": "shared/media/asset-91d6ffad34058a9a--IMG_2776.jpeg",
+      "git_blob": "886d4c0a4827dc5a8d23d03797aad139c6698728",
+      "sha256": "91d6ffad34058a9af7606984a98acba19e4e5fdff3739a8176e7139a64ab1174"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3321.jpeg",
+      "current_path": "shared/media/asset-a4398df911d06d3f--IMG_3321.jpeg",
+      "git_blob": "6ebfaaf78c705219c408e8adc01fa956aed76b83",
+      "sha256": "a4398df911d06d3fe332d7859f9812734311fe434f45edff5ca25bb3397928fb"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3323.jpeg",
+      "current_path": "shared/media/asset-9229c64cb1782826--IMG_3323.jpeg",
+      "git_blob": "10441d4dbac3923518574e2adbad2beff3ebb4ad",
+      "sha256": "9229c64cb178282684da3df07c68945b769dd59390c822095921edcc2f6ffa79"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3325.jpeg",
+      "current_path": "shared/media/asset-9f572f692467181d--IMG_3325.jpeg",
+      "git_blob": "2fe10c3cfac9ec6be18954646b038b81328b0cc8",
+      "sha256": "9f572f692467181de1f47e676f67b545907c2fdac2ba67a0f6b286e8138da5f2"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3326.jpeg",
+      "current_path": "shared/media/asset-818de3a0d026f0a9--IMG_3326.jpeg",
+      "git_blob": "302327b6c102136f4a65498b51e56c1a6021ba6d",
+      "sha256": "818de3a0d026f0a9b9930feebe26e6a39732c70e01d0835d969d8750cd5f03a3"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3327.jpeg",
+      "current_path": "shared/media/asset-b91a9436ec4665fa--IMG_3327.jpeg",
+      "git_blob": "d469a0e6df17694de110166a16655d708d1594c7",
+      "sha256": "b91a9436ec4665fa3363442d74c0bbefac6fef14802b07e0437963e3bedc2eaa"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3328.jpeg",
+      "current_path": "shared/media/asset-b44f5c60088e266e--IMG_3328.jpeg",
+      "git_blob": "9bcdce22877f34a7b34939f70600837f201c4d85",
+      "sha256": "b44f5c60088e266e10e3bfd526e1b41496cc753da4e5f82c82270afd0668d996"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3329.jpeg",
+      "current_path": "shared/media/asset-bb0bd8d9c4cf87c9--IMG_3329.jpeg",
+      "git_blob": "217b810bfd5e46bc1d0cc5e8f0658112f2aa50cb",
+      "sha256": "bb0bd8d9c4cf87c97ea075ff5619422c20a206195fd27f06d75f8aace0a0976a"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3330.jpeg",
+      "current_path": "shared/media/asset-cce4063a62b3e108--IMG_3330.jpeg",
+      "git_blob": "9a7f50c62fe59e8b9a9d6d60cf350431966a51e2",
+      "sha256": "cce4063a62b3e1086075401dfcac3e9cc08fdf70d1056351126e329a63f0b814"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3331.jpeg",
+      "current_path": "shared/media/asset-276522d542fa9f2f--IMG_3331.jpeg",
+      "git_blob": "31b864856272b023c5501bfffdff6755e6854543",
+      "sha256": "276522d542fa9f2ff551fa520dab80f64e8ea368771db5c776b9fca2488eb97b"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3332.jpeg",
+      "current_path": "shared/media/asset-c7ed2418445f414d--IMG_3332.jpeg",
+      "git_blob": "8aa19cd57dc343b90ed1a986b2c028589c189342",
+      "sha256": "c7ed2418445f414d245f16c8907121343a722bcf4270ba836cc73df3f5d7a1ff"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3333.jpeg",
+      "current_path": "shared/media/asset-ae77a87f437ebb70--IMG_3333.jpeg",
+      "git_blob": "fbdac5d71a5d53eb27ce27aa86381c7255a2036a",
+      "sha256": "ae77a87f437ebb70aea0a837c2d2b3144739b257be95deec771dadd7ef31d64b"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3334.jpeg",
+      "current_path": "shared/media/asset-2244802faeca1c2e--IMG_3334.jpeg",
+      "git_blob": "8b2fd36d109b65013928784d6f0573cb17827b8a",
+      "sha256": "2244802faeca1c2e59c58c6d17f81a6af41ac63b243b42dbdc5c82201ef04c4a"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3335.jpeg",
+      "current_path": "shared/media/asset-d9b0176a49c0bd0e--IMG_3335.jpeg",
+      "git_blob": "0792c341d9a97ef5ecb0667745c2c1c09f35f09f",
+      "sha256": "d9b0176a49c0bd0ebff084108817655d13540f571be0af338474de4602465756"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_3336.jpeg",
+      "current_path": "shared/media/asset-9aa5f388b2c0a9ca--IMG_3336.jpeg",
+      "git_blob": "a877c943a7b459c415384586a521d4fb11deacba",
+      "sha256": "9aa5f388b2c0a9ca282d04155d21a790cbb9f049d5bd81a790b0a7b2155833e1"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2345.jpeg",
+      "current_path": "shared/media/asset-eae131e12565427c--IMG_2345.jpeg",
+      "git_blob": "7079a38430c14febb1476ad34986f820ddb0622e",
+      "sha256": "eae131e12565427ccb4854f63d9d879831871b82dca99398c3edc5c98f199e82"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2346.jpeg",
+      "current_path": "shared/media/asset-f754918d4841d773--IMG_2346.jpeg",
+      "git_blob": "014c03ab342ea86adbf7d8b1eaaac2e4bfa58183",
+      "sha256": "f754918d4841d773869d3c5b1b131c266b93662b430a8506e16bb87dd0205503"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2347.jpeg",
+      "current_path": "shared/media/asset-a4d85e828d55cded--IMG_2347.jpeg",
+      "git_blob": "79c37d90063eadea0abbfefcc0d860934de4e56f",
+      "sha256": "a4d85e828d55cdeddd62955f066b777e80087de2ba1abee321d011d55176c962"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2348.jpeg",
+      "current_path": "shared/media/asset-e8dcc0bd89672b84--IMG_2348.jpeg",
+      "git_blob": "3dd221dfc398822535e943c07ca9538cf545511c",
+      "sha256": "e8dcc0bd89672b8435aa15bd162f3b8d27d8ecec7714c46b556f4f878ea7c87d"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2349.jpeg",
+      "current_path": "shared/media/asset-b74a2689500db075--IMG_2349.jpeg",
+      "git_blob": "719eb35db09223d9be2580362e2112d84bd05b5d",
+      "sha256": "b74a2689500db075777c24db27c21b2dbf60c71a32aa47bcd27dfa8fa2d8dd92"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2352.jpeg",
+      "current_path": "shared/media/asset-0cc3efb40d46bc0d--IMG_2352.jpeg",
+      "git_blob": "ac105554c01ac39e83f8c1bf7005b0c65ff64fed",
+      "sha256": "0cc3efb40d46bc0d3141af1e446fb9d80cb404789330f1687d973822f969a1cb"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2353.jpeg",
+      "current_path": "shared/media/asset-c6c418300e5375d9--IMG_2353.jpeg",
+      "git_blob": "46628c2f4022c3ff9e65fe32318ca32a3bbdda04",
+      "sha256": "c6c418300e5375d9ae582e9ad870eaf0312552aacec14b2108efa0421cb453d8"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2354.jpeg",
+      "current_path": "shared/media/asset-caa579c4403475c0--IMG_2354.jpeg",
+      "git_blob": "ddc9a81d61c83f17482a09873b890f1e716263b5",
+      "sha256": "caa579c4403475c08e09bf3364809f9033e02fa23316665e8056702948691b01"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2355.jpeg",
+      "current_path": "shared/media/asset-9b0525aa1c37954a--IMG_2355.jpeg",
+      "git_blob": "6532190839abedbf17a2a6e13f45aa7ac29e94bf",
+      "sha256": "9b0525aa1c37954a2e64ce0ece965e3b354e4dbde50da5d8ea2a6ea7c29540ca"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2359.jpeg",
+      "current_path": "shared/media/asset-a7a46c98b37498ca--IMG_2359.jpeg",
+      "git_blob": "2191267a21408b9fa61453b763f08ced991d05ad",
+      "sha256": "a7a46c98b37498cac685408dd4ba9ab48938fae2abf96bc9fc6f9d459126b525"
+    },
+    {
+      "source_path": "apps/naturalist-field-notes/IMG_2360.jpeg",
+      "current_path": "shared/media/asset-57ba856b9eed6807--IMG_2360.jpeg",
+      "git_blob": "0e35f5118700228bf5bd98f642fbfe339de6da32",
+      "sha256": "57ba856b9eed6807915fdacab7556f044fe54e7735875b4703af4859df35b052"
+    }
+  ],
+  "standalone_hero_git_blob": "a06cea378c4533dc2d8f5e144951538b9aa0b0a7",
+  "static_pages": 3,
+  "complete_rendered_blocks": [
+    "latestBlock()",
+    "archiveBlock()",
+    "bayBlock()",
+    "highlightBlock()",
+    "resourcesBlock()"
+  ],
+  "complete_home_equal": false,
+  "complete_home_equal_outside_QA": true,
+  "source_derived_inline_QA_cards": 38,
+  "presentation_review_required": [
+    {
+      "block": "qaBlock()",
+      "change": "Original question index buttons now inline disclosure cards with original answers/photos/tags and source-note buttons; not original presentation equality."
+    },
+    {
+      "block": "home()",
+      "change": "Contains changed Q&A block; all other complete subtrees match source."
+    }
+  ],
+  "complete_issue_trees": 24,
+  "bound_original_issue_buttons": 24,
+  "search_cases": 29,
+  "actual_species_letter_toggles": 9,
+  "actual_full_startup_note_queries": 24,
+  "original_query_destinations": [
+    {
+      "id": "note-2025-12-17-year-end",
+      "note": "2025-12-17-year-end"
+    },
+    {
+      "id": "note-2026-01-08-seabirds-training-bay-watch",
+      "note": "2026-01-08-seabirds-training-bay-watch"
+    },
+    {
+      "id": "note-2026-01-15-gray-whale-migration-ecology-conservation",
+      "note": "2026-01-15-gray-whale-migration-ecology-conservation"
+    },
+    {
+      "id": "note-2026-01-21-gray-whales-bait-ball-inaturalist",
+      "note": "2026-01-21-gray-whales-bait-ball-inaturalist"
+    },
+    {
+      "id": "note-2026-02-04-gray-whale-migration-sheephead",
+      "note": "2026-02-04-gray-whale-migration-sheephead"
+    },
+    {
+      "id": "note-2026-02-11-sperm-whale-clans-kelp-gray-whales",
+      "note": "2026-02-11-sperm-whale-clans-kelp-gray-whales"
+    },
+    {
+      "id": "note-2026-02-26-whale-reproduction",
+      "note": "2026-02-26-whale-reproduction"
+    },
+    {
+      "id": "note-2026-03-12-pacific-white-sided-dolphin",
+      "note": "2026-03-12-pacific-white-sided-dolphin"
+    },
+    {
+      "id": "note-2026-05-20-hopkins-rose-marine-mammal-cart",
+      "note": "2026-05-20-hopkins-rose-marine-mammal-cart"
+    },
+    {
+      "id": "note-2026-10-07-blue-spotted-ray",
+      "note": "2026-10-07-blue-spotted-ray"
+    },
+    {
+      "id": "note-2026-05-28-elephant-seals",
+      "note": "2026-05-28-elephant-seals"
+    },
+    {
+      "id": "note-2026-05-28-humpback-carcass",
+      "note": "2026-05-28-humpback-carcass"
+    },
+    {
+      "id": "note-2026-06-08-stranding",
+      "note": "2026-06-08-stranding"
+    },
+    {
+      "id": "note-2026-06-18-24",
+      "note": "2026-06-18-24"
+    },
+    {
+      "id": "note-2026-07-02-08",
+      "note": "2026-07-02-08"
+    },
+    {
+      "id": "note-2026-07-09-15",
+      "note": "2026-07-09-15"
+    },
+    {
+      "id": "note-2026-07-30-08-05",
+      "note": "2026-07-30-08-05"
+    },
+    {
+      "id": "note-2026-08-06-12",
+      "note": "2026-08-06-12"
+    },
+    {
+      "id": "note-2026-08-13-19",
+      "note": "2026-08-13-19"
+    },
+    {
+      "id": "note-2026-08-20-26",
+      "note": "2026-08-20-26"
+    },
+    {
+      "id": "note-2026-08-27-09-02",
+      "note": "2026-08-27-09-02"
+    },
+    {
+      "id": "note-2026-09-03-09",
+      "note": "2026-09-03-09"
+    },
+    {
+      "id": "note-2026-09-24-30",
+      "note": "2026-09-24-30"
+    },
+    {
+      "id": "note-2026-09-10-16",
+      "note": "2026-09-10-16"
+    }
+  ],
+  "excluded_new_material": {
+    "files": {
+      "october-2026-note.js": "a56ba922bfc12cb7b57ff69ae0d450621ea355953ff64baec550b83c36fed969",
+      "october-2026-08-14.html": "692a40302b95ecdba4e19ba6a5849dba89ad20b49ea36c7754a0c3db1a00713b"
+    },
+    "query_destinations": [
+      {
+        "id": "note-2026-10-15-seahorse",
+        "note": "2026-10-15-seahorse",
+        "review_required": true
+      }
+    ],
+    "photos": [
+      {
+        "path": "apps/IMG_4207.jpeg",
+        "asset_id": "asset-1bd100105f88c83a",
+        "sha256": "1bd100105f88c83aadb9272fccacd1c023e417799d1b7dc79684e7f321bafb6e",
+        "permission": "review-required",
+        "registration_present": true
+      },
+      {
+        "path": "apps/IMG_4208.jpeg",
+        "asset_id": "asset-95daa2493750e82f",
+        "sha256": "95daa2493750e82f0444679b1c567d66af4e5212ab9d864eca3f2ddb8e475f1d",
+        "permission": "review-required",
+        "registration_present": true
+      },
+      {
+        "path": "apps/IMG_4209.jpeg",
+        "asset_id": "asset-47f9bbb193878eec",
+        "sha256": "47f9bbb193878eeced59326418949849427489f0167e33a7e063be9d091f643b",
+        "permission": "review-required",
+        "registration_present": true
+      },
+      {
+        "path": "apps/IMG_4210.jpeg",
+        "asset_id": "asset-50646c3fe1d0c359",
+        "sha256": "50646c3fe1d0c359860229e041767429fc21a382cd16d75bd165fd5f7a3cef52",
+        "permission": "review-required",
+        "registration_present": true
+      }
+    ],
+    "registration_complete": true,
+    "executed_or_approved": false
+  },
+  "technical_adapters": [
+    "Exact centralized media relocation and removal of obsolete IMG_33 cache query.",
+    "Parsed safe-markup construction with validated links.",
+    "Canonical note URL selection and Back cleanup.",
+    "Standalone maintenance/worker ownership replaced by Hub controls.",
+    "New October script removed only for explicit original-source-scope reproduction."
+  ],
+  "whole_app_inheritance": false,
+  "approval_granted": false,
+  "limitations": [
+    "Original data/runtime reproduction excludes October additive script execution and standalone new page/photo interpretation.",
+    "Bounded lxml DOM/event reproduction is not native browser layout, service-worker lifecycle or physical device acceptance.",
+    "Scientific/editorial, media-rights, privacy and operational gates remain separate."
+  ]
+}
