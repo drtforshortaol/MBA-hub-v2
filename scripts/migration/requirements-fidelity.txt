@@ -1,0 +1,2 @@
+# Test-only parser for complete inherited renderer comparisons.
+lxml==6.1.1

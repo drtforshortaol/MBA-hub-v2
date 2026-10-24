@@ -34,6 +34,12 @@ export function restoreAppView(document,state,{Event,scrollTo}){
   input.dispatchEvent(new Event('input',{bubbles:true}));
   input.dispatchEvent(new Event('change',{bubbles:true}));
  }
+ // Input handlers may render a search view. Let the owning app restore a
+ // URL-selected view before disclosure state and the final scroll replay.
+ const RestoreEvent=document.defaultView?.CustomEvent;
+ if(typeof RestoreEvent==='function'&&typeof document.dispatchEvent==='function'){
+  document.dispatchEvent(new RestoreEvent('mba:restore-view',{detail:{reason:'contextual-back'}}));
+ }
  const expanded=new Set(state.expanded);
  // Click the app's own controls so visual state and accessibility stay in sync.
  for(const control of document.querySelectorAll('[aria-expanded]')){
