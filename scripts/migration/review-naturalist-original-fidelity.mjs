@@ -17,7 +17,7 @@ const originalHashes={
  'manifest.json':'1811ae6e53018867b9c243acd17dc4f69bd11ba0a2917592d290edb06e428269'
 };
 const runtimeHashes=['4e72f8e78b921e0172b5f1c85fe8d48a36c042c25e7b572aae39d9227bce008e','412c28db578382ca785b4476fb6f59ec217e9671870dea4206040cc000b51eff'];
-const additions={'october-2026-note.js':'a56ba922bfc12cb7b57ff69ae0d450621ea355953ff64baec550b83c36fed969','october-2026-08-14.html':'692a40302b95ecdba4e19ba6a5849dba89ad20b49ea36c7754a0c3db1a00713b'};
+const additions={'october-2026-note.js':'f942215c8f7eb22ed2ee9eb26a0f05b9f6076212bdb42be03cc1e7e52f0c2210','october-2026-08-14.html':'692a40302b95ecdba4e19ba6a5849dba89ad20b49ea36c7754a0c3db1a00713b'};
 function read(root,relative,encoding='utf8'){
  assert(!path.isAbsolute(relative)&&relative.split('/').every(p=>p&&p!=='.'&&p!=='..'),'unsafe input path');
  let p=path.resolve(root);assert(!fs.lstatSync(p).isSymbolicLink(),'root symlink');
