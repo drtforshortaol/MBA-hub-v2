@@ -21,7 +21,7 @@ function fixture(hash = '') {
   const button = element('BUTTON'); button.dataset.target = 'target';
   const link = element('A'); link.getAttribute = () => '#target';
   const hero = element(), handlers = {}, history = { replaceState(...args) { this.args = args; } };
-  const document = { getElementById: id => ids[id] || null,
+  const document = { addEventListener() {}, getElementById: id => ids[id] || null,
     querySelectorAll: selector => ({ '.searchable': [outer, inner], 'details': [outer, inner], '.fast-tools button[data-target]': [button], 'a[href^="#"]': [link] }[selector] || []),
     querySelector: () => hero };
   vm.runInNewContext(source, { document, window: { addEventListener(type, handler) { handlers[type] = handler; } }, navigator: { onLine: true }, location: { hash }, history });
