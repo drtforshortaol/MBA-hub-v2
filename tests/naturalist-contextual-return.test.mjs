@@ -49,3 +49,14 @@ test('Naturalist return to a search route stays in search and unknown note route
   assert.deepEqual(f.scrolls.at(-1),[0,90]);
  }
 });
+
+test('clearing Naturalist search also clears a stale note deep link',()=>{
+ const f=fixture();
+ f.openFirst();
+ assert.ok(new URL(f.location.href).searchParams.has('note'));
+ f.controls.search.value='whale';
+ f.controls.clearSearch.onclick();
+ assert.equal(new URL(f.location.href).searchParams.has('note'),false);
+ assert.equal(f.controls.search.value,'');
+ assert.match(f.markup,/class="home-intro"/);
+});
