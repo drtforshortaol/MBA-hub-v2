@@ -1,0 +1,37 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+
+const root = new URL('../src/apps/big-bellied-seahorse/', import.meta.url);
+const manifest = JSON.parse(readFileSync(new URL('manifest.json', root), 'utf8'));
+const html = readFileSync(new URL('index.html', root), 'utf8');
+
+test('Seahorse draft retains explicit content and publication gates', () => {
+  assert.equal(manifest.app_id, 'big-bellied-seahorse');
+  assert.equal(manifest.status, 'development');
+  assert.equal(manifest.publication_review, 'pending');
+  assert.match(html, /Scientific review and image permissions pending\./);
+  assert.match(html, /attribution and publication permission pending\./);
+  assert.match(html, /Confirm current listings before public release\./);
+  assert.match(html, /MBA Species Guide • Draft/);
+});
+
+test('Seahorse search sections remain identical to their displayed draft text', () => {
+  assert.equal(manifest.sections.length, 10);
+  const ids = new Set();
+  for (const { id, title, text } of manifest.sections) {
+    assert.ok(!ids.has(id), `duplicate section: ${id}`);
+    ids.add(id);
+    const escape = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const pattern = new RegExp(`<details id="${escape(id)}"><summary>${escape(title)}</summary><p>${escape(text)}</p>`);
+    assert.match(html, pattern, `manifest/display mismatch: ${id}`);
+  }
+});
+
+test('Seahorse photos remain registered for offline review without implying permission', () => {
+  const images = [...html.matchAll(/<img\b[^>]*\bsrc="\.\.\/(IMG_\d+\.jpeg)"/g)].map(match => match[1]);
+  const paths = [...new Set(images.map(image => `apps/${image}`))].sort();
+  assert.deepEqual(paths, manifest.offline_assets.filter(path => path.endsWith('.jpeg')).sort());
+  assert.equal(paths.length, 5);
+  assert.equal(manifest.media.length, 5);
+});
