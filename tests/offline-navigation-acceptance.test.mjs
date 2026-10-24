@@ -1,0 +1,132 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import {verifyOfflineNavigation} from '../scripts/verify-offline-navigation.mjs';
+
+test('actual generated workers serve every app entry, directory and search deep link offline',async()=>{
+ for(const environment of ['developer','tester']){
+  const report=await verifyOfflineNavigation(`dist/${environment}`,environment);
+  assert.equal(report.passed,true,JSON.stringify(report));
+  const registry=JSON.parse(fs.readFileSync(`dist/${environment}/registry.json`));
+  assert.deepEqual(report.apps.map(app=>app.app_id),registry.apps.map(app=>app.app_id));
+  assert(report.apps.every(app=>app.verified===app.expected&&app.expected>=2));
+  assert.equal(report.offlineNetworkAttempts,0);
+  assert.equal(report.resources.verified,report.resources.expected);
+  assert.deepEqual(report.resources.errors,[]);
+  assert.equal(report.appEntryPoints,new Set(registry.apps.map(app=>app.entry_point)).size);
+  assert.equal(report.navigationTargets,report.apps.reduce((sum,app)=>sum+app.expected,0));
+  assert.equal(report.searchTargets,report.apps.reduce((sum,app)=>sum+app.searchTargets,0));
+  assert(report.navigationTargets>report.appEntryPoints);
+ }
+});
+
+test('offline navigation acceptance detects a worker that silently returns Hub for app routes',async t=>{
+ const directory=fs.mkdtempSync(path.join(os.tmpdir(),'mba-offline-navigation-'));
+ t.after(()=>fs.rmSync(directory,{recursive:true,force:true}));
+ fs.cpSync('dist/tester',directory,{recursive:true});
+ const worker=fs.readFileSync(path.join(directory,'sw.js'),'utf8');
+ assert(worker.includes("url.search='';"));
+ fs.writeFileSync(path.join(directory,'sw.js'),worker.replace("url.search='';","url.pathname=ROOT.pathname+'index.html';url.search='';"));
+ const report=await verifyOfflineNavigation(directory,'tester');
+ assert.equal(report.passed,false);
+ assert(report.apps.some(app=>app.errors.some(error=>error.includes('incorrect entry bytes'))));
+});
+
+
+test('every app and search route recovers exact bytes when all current entries are corrupted',async()=>{
+ for(const environment of ['developer','tester']){
+  const report=await verifyOfflineNavigation(`dist/${environment}`,environment,{recoverFromPrior:true});
+  assert.equal(report.scenario,'corrupted-entry-recovery');
+  assert.equal(report.passed,true,JSON.stringify(report));
+  assert.equal(report.offlineNetworkAttempts,0);
+  assert.equal(report.resources.verified,report.resources.expected);
+  assert.deepEqual(report.resources.errors,[]);
+  assert.equal(report.apps.length,JSON.parse(fs.readFileSync(`dist/${environment}/registry.json`)).apps.length);
+  assert(report.apps.every(app=>app.verified===app.expected));
+ }
+});
+
+test('recovery evidence fails when a worker loses compatible rollback lookup',async t=>{
+ const directory=fs.mkdtempSync(path.join(os.tmpdir(),'mba-offline-recovery-'));
+ t.after(()=>fs.rmSync(directory,{recursive:true,force:true}));
+ fs.cpSync('dist/tester',directory,{recursive:true});
+ const worker=fs.readFileSync(path.join(directory,'sw.js'),'utf8');
+ const lookup='const candidate=await previous.match(url.href);';
+ assert(worker.includes(lookup));
+ fs.writeFileSync(path.join(directory,'sw.js'),worker.replace(lookup,'const candidate=null;'));
+ const report=await verifyOfflineNavigation(directory,'tester',{recoverFromPrior:true});
+ assert.equal(report.passed,false);
+ assert.equal(report.apps.length,JSON.parse(fs.readFileSync(path.join(directory,'registry.json'))).apps.length);
+ assert(report.apps.every(app=>app.verified===0));
+ assert(report.offlineNetworkAttempts>0);
+});
+
+// A worker may route every HTML page correctly while dropping media. This must
+// fail acceptance even though every app/navigation target still succeeds.
+test('offline acceptance detects missing non-navigation resources',async t=>{
+ const directory=fs.mkdtempSync(path.join(os.tmpdir(),'mba-offline-resource-'));
+ t.after(()=>fs.rmSync(directory,{recursive:true,force:true}));
+ fs.cpSync('dist/tester',directory,{recursive:true});
+ const file=path.join(directory,'sw.js'),worker=fs.readFileSync(file,'utf8');
+ const needle="event.respondWith((async()=>{";
+ assert(worker.includes(needle));
+ fs.writeFileSync(file,worker.replace(needle,needle+"if(url.pathname.endsWith('/icon.svg'))return new Response('Missing icon',{status:503});"));
+ const report=await verifyOfflineNavigation(directory,'tester');
+ assert.equal(report.passed,false);
+ assert(report.apps.every(app=>app.passed));
+ assert(report.resources.errors.some(error=>error.startsWith('icon.svg:')));
+ assert(report.resources.verified<report.resources.expected);
+});
+
+for(const interruptRecovery of [false,true])test(`whole generated inventory recovery works before offline navigation (interrupted=${interruptRecovery})`,async()=>{
+ for(const environment of ['developer','tester']){
+  const report=await verifyOfflineNavigation(`dist/${environment}`,environment,{recoverInventory:true,interruptRecovery});
+  assert.equal(report.passed,true,JSON.stringify(report));
+  assert.equal(report.recovery.interrupted,interruptRecovery);
+  assert.equal(report.recovery.retainedDataPreserved,true);
+  assert.equal(report.recovery.count,report.resources.expected);
+  assert.equal(report.resources.verified,report.resources.expected);
+  assert.equal(report.offlineNetworkAttempts,0);
+ }
+});
+test('whole inventory acceptance rejects a worker that cannot recover from refresh',async t=>{
+ const directory=fs.mkdtempSync(path.join(os.tmpdir(),'mba-inventory-recovery-'));
+ t.after(()=>fs.rmSync(directory,{recursive:true,force:true}));fs.cpSync('dist/tester',directory,{recursive:true});
+ const file=path.join(directory,'sw.js'),worker=fs.readFileSync(file,'utf8');
+ assert(worker.includes("type==='RECOVER_OFFLINE'"));
+ fs.writeFileSync(file,worker.replace("type==='RECOVER_OFFLINE'","type==='DISABLED_RECOVERY'"));
+ const report=await verifyOfflineNavigation(directory,'tester',{recoverInventory:true});
+ assert.equal(report.passed,false);assert(report.errors.some(error=>error.includes('readiness mismatch')));
+});
+
+for(const corruptInventory of [null,'json','forged'])test(`generated refresh page recovers generated inventory (corruption=${corruptInventory})`,async()=>{
+ for(const environment of ['developer','tester']){
+  const report=await verifyOfflineNavigation(`dist/${environment}`,environment,{recoverInventory:true,refreshPage:true,corruptInventory});
+  assert.equal(report.passed,true,JSON.stringify(report));
+  assert.deepEqual(report.refreshPage.commands,['STATUS','RECOVER_OFFLINE']);
+  assert.equal(report.refreshPage.navigations,1);
+  assert.equal(report.refreshPage.channelsClosed,true);
+  assert.equal(report.refreshPage.timersCleared,true);
+ }
+});
+test('generated acceptance detects refresh page that never invokes worker recovery',async t=>{
+ const directory=fs.mkdtempSync(path.join(os.tmpdir(),'mba-refresh-orchestration-'));
+ t.after(()=>fs.rmSync(directory,{recursive:true,force:true}));fs.cpSync('dist/tester',directory,{recursive:true});
+ const file=path.join(directory,'refresh.html'),page=fs.readFileSync(file,'utf8');
+ assert(page.includes("command(active,'RECOVER_OFFLINE')"));
+ fs.writeFileSync(file,page.replaceAll("command(active,'RECOVER_OFFLINE')","command(active,'STATUS')"));
+ // Rebind the fixture's inventory so install succeeds: this regression tests
+ // page orchestration, separately from the worker's resource hash rejection.
+ const releaseFile=path.join(directory,'release.json'),release=JSON.parse(fs.readFileSync(releaseFile));
+ const oldRelease=release.release,bytes=fs.readFileSync(file),item=release.resources.find(item=>item.url==='refresh.html');
+ item.bytes=bytes.length;item.sha256=crypto.createHash('sha256').update(bytes).digest('hex');
+ release.release=crypto.createHash('sha256').update(JSON.stringify(release.resources)).digest('hex').slice(0,16);
+ fs.writeFileSync(releaseFile,JSON.stringify(release));
+ const workerFile=path.join(directory,'sw.js');
+ fs.writeFileSync(workerFile,fs.readFileSync(workerFile,'utf8').replace(`RELEASE='${oldRelease}'`,`RELEASE='${release.release}'`));
+ const report=await verifyOfflineNavigation(directory,'tester',{recoverInventory:true,refreshPage:true});
+ assert.equal(report.passed,false);assert(report.errors.some(error=>error.includes('orchestration')));
+});

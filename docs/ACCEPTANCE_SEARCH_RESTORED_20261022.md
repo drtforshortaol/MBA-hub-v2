@@ -1,0 +1,11 @@
+# Verified search-restored acceptance candidate — October 22, 2026
+
+Candidate source: b8045ecfa0e394f82d471abcce2ad8088656de20. Successful combined CI: https://github.com/drtforshortaol/MBA-hub-v2/actions/runs/39899787547. Artifact 12477893247 (mba-v2-combined-iphone-review), 128096441 bytes; ZIP SHA-256 35af522ea2a14c05c1974713f19b15bf85023efc70a257a897e89145015ba6ba.
+
+Developer release e00ff574fbb7b864 / 383 resources; tester b98cfb7e3e6a6ed6 / 374 resources. Includes all 18 Information Center search sections and 17 Library Wishlist routes, with exact-book reveal and Back filter restoration. Node 829/829, EVO 35/35, app preflight 33/33, security, build and artifact checks pass. All 14 simulated offline/recovery scenarios pass 525/525 targets each and all resources, with zero offline network attempts. Physical device tests remain separate.
+
+The original ZIP was downloaded and independently passed scripts/prepare-acceptance-record.py: size/digest, workflow/source/success, source marker, safe archive extraction, complete artifact resource bytes and retained HTTP/offline evidence. The generated verification/candidate-acceptance-search-restored-20261022.json has 33 app rows, 17 checks and owner plus three-reviewer roles, all NOT TESTED; five operational gates remain PENDING.
+
+No HTTPS acceptance location was deployed. Existing previews are not represented as this build. Trusted HTTPS full-device installation, app/media/layout, navigation/search/Back, offline restart, update and whole-compatible-bundle rollback remain necessary. All 44 release blockers remain: 29 inherited-app reconciliations, one new Seahorse review, nine October image permissions and five operational gates. Additional 15-app reconciliation work lost before saving remains pending reconstruction. Unchanged V1 authorization is preserved, with no duplicate owner approval requested.
+
+The later Five Senses provenance correction changes repository metadata/evidence only, not these runtime releases. This exact artifact remains bound to b8045ec; do not relabel it with a later documentation commit. Further runtime changes require a newly identified candidate. No new scientific approval, permission grant, merge, publication, preview update, deployment or release is authorized by this record.
