@@ -19,7 +19,9 @@
     "apps/kelp-forest/app.js",
     "apps/kelp-forest/data.js",
     "apps/kelp-forest/index.html",
-    "apps/kelp-forest/styles.css"
+    "apps/kelp-forest/styles.css",
+    "shared/media/asset-5a78a8d75c9a6174--icon.svg",
+    "shared/media/asset-3805cae5eba70cef--kelp-forest-hero.jpg"
   ],
   "media": [
     "asset-5a78a8d75c9a6174",

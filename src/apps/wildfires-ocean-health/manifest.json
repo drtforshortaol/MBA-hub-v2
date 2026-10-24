@@ -16,7 +16,10 @@
     }
   ],
   "offline_assets": [
-    "apps/wildfires-ocean-health/index.html"
+    "apps/wildfires-ocean-health/index.html",
+    "shared/media/asset-2d0fb775dfa440e2--IMG_2499.jpeg",
+    "shared/media/asset-73243e04da0b39f1--IMG_2501.jpeg",
+    "shared/media/asset-2f53072d7bea2b19--IMG_2729.jpeg"
   ],
   "media": [
     "asset-2d0fb775dfa440e2",

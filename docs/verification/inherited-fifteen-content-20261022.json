@@ -1,0 +1,1402 @@
+{
+  "schema_version": 1,
+  "scope": "Engineering reviewed migration-only differences; no new approvals or physical acceptance",
+  "apps": [
+    {
+      "app_id": "bluespotted-ribbontail-ray",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_html_sha256": "98d991e796cda081a3cfb7b6e529e9d52423d60a5a2524d426778a6f2568be90",
+      "current_html_sha256": "47ac6b0cee8cbf9d21034f756de0d6886a6497a561897505203ccad3ff2aa600",
+      "complete_normalized_dom_equal": true,
+      "sections": [
+        {
+          "id": "Identification-and-range",
+          "search_matches_rendered_source": true,
+          "text_sha256": "a62f086fa8beeea183fe1449052f111780e70b70f089f842093f1582040c0ced"
+        },
+        {
+          "id": "Habitat-and-behavior",
+          "search_matches_rendered_source": true,
+          "text_sha256": "ba8780b81c7fce8e88221c99a8c7d8037128a3bd2774d17e81831f1ca0c15fb7"
+        },
+        {
+          "id": "Diet-and-sensory-adaptations",
+          "search_matches_rendered_source": true,
+          "text_sha256": "d85ca8ac47ba4259116368fbe46e98bfe10c17fced95a04a7391119e7b12e754"
+        },
+        {
+          "id": "Reproduction",
+          "search_matches_rendered_source": true,
+          "text_sha256": "637e6b885bafc24a7f71161295723a3b0412a572bdcbfa0c32937822044145d9"
+        },
+        {
+          "id": "Why-the-spots-look-blue",
+          "search_matches_rendered_source": true,
+          "text_sha256": "ecd18a0ad8ed6b0452954e6d250fc81efaa2846e75b074b4088db04e08e65857"
+        },
+        {
+          "id": "Conservation-and-visitor-interpretation",
+          "search_matches_rendered_source": true,
+          "text_sha256": "4319279ecf1ea2d8795077ca44c4076ddc34e4a2035d685e55ddb7a89a390ea2"
+        },
+        {
+          "id": "Further-reading",
+          "search_matches_rendered_source": true,
+          "text_sha256": "75e099f17b53bfebc29326d172cdc0ebf0b6769b8f1bcb45b36f9dea9ac90548"
+        },
+        {
+          "id": "Source-illustrations",
+          "search_matches_rendered_source": true,
+          "text_sha256": "1bc06da96ce95978ba1738c65c5df16110391890247a932aff55869259540831"
+        }
+      ],
+      "displayed_media_uses": [
+        {
+          "url": "../../shared/media/asset-58caefb914af891a--ScreenHunter-10658.jpg",
+          "sha256": "58caefb914af891af2d596201babcf72dce15d74a73b251cfd18e7941fa89559"
+        },
+        {
+          "url": "../../shared/media/asset-1daf222da5380986--IMG_3443.jpeg",
+          "sha256": "1daf222da53809869b2aeb6b0441555483372fa613f744d336e04e3812882d36"
+        },
+        {
+          "url": "../../shared/media/asset-af9d1b481c381dc7--IMG_3444.jpeg",
+          "sha256": "af9d1b481c381dc7cb2682037ea223fedd2929cf23978d48f1d199ea587a992b"
+        },
+        {
+          "url": "../../shared/media/asset-4e686c83c7a2de1e--IMG_3445.jpeg",
+          "sha256": "4e686c83c7a2de1e4b9c473144bb1f35594a69c13a19617b3965d9ebf31fe40f"
+        },
+        {
+          "url": "../../shared/media/asset-04c2c8b8e6e36a70--IMG_3446.jpeg",
+          "sha256": "04c2c8b8e6e36a70187fb746c959087efed49075b7401d4389cb4b77d2ac1600"
+        }
+      ],
+      "reviewed_inline_script_hashes": null,
+      "files": [
+        {
+          "source_path": "apps/bluespotted-ribbontail-ray/index.html",
+          "pinned_sha256": "98d991e796cda081a3cfb7b6e529e9d52423d60a5a2524d426778a6f2568be90",
+          "current_sha256": "47ac6b0cee8cbf9d21034f756de0d6886a6497a561897505203ccad3ff2aa600"
+        }
+      ],
+      "external_dependencies": [],
+      "dynamic_rendering": null
+    },
+    {
+      "app_id": "california-sheephead",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_html_sha256": "7c782095ee7c6ddbcddbfdd31318221f15e81775fe1508dbff149f5e59a70132",
+      "current_html_sha256": "4aebaa66cf873f850f63033fd1cd326f7a41fdb633f2a54cad9e980ba5f5761c",
+      "complete_normalized_dom_equal": true,
+      "sections": [
+        {
+          "id": "In-30-Seconds",
+          "search_matches_rendered_source": true,
+          "text_sha256": "9f13fa60a441c202be30b2db54f428a4cacedd93b2863e20698015e9aea59b63"
+        },
+        {
+          "id": "Quick-Facts",
+          "search_matches_rendered_source": true,
+          "text_sha256": "c11a8da0a09f7c7903a771090d01b38f4cb28787c1f89696f16aad0b4582f82d"
+        },
+        {
+          "id": "Identification",
+          "search_matches_rendered_source": true,
+          "text_sha256": "871d337a2ef0f84843eb3b1df0971935340249bad33f34dcc7fc41a899f1089a"
+        },
+        {
+          "id": "Feeding-and-Teeth",
+          "search_matches_rendered_source": true,
+          "text_sha256": "7b815267f41defd622a9f3bb68d8f1827cf96965d7305aabf437721b66b54ce9"
+        },
+        {
+          "id": "Sex-Change-and-Reproduction",
+          "search_matches_rendered_source": true,
+          "text_sha256": "25c8f2353fceb6044991b12d5eaa21fc268157e44d5ed9c38d2e65c2e55907d6"
+        },
+        {
+          "id": "Day-and-Night-Behavior",
+          "search_matches_rendered_source": true,
+          "text_sha256": "db341c6807e494ce5dc8bf041eb9567a7c28bc7b2fc4a25b67b702e619a8cee6"
+        },
+        {
+          "id": "Kelp-Forest-Connections",
+          "search_matches_rendered_source": true,
+          "text_sha256": "52cedb55de5594059265279f35a08a8769c20d67f03916a555bfe42ef25ab3da"
+        },
+        {
+          "id": "Conservation",
+          "search_matches_rendered_source": true,
+          "text_sha256": "8e84f453f9ced5283c6144f735865a48483e15e122728cda96e55f086bd193fc"
+        },
+        {
+          "id": "Scientific-Name-and-Taxonomy",
+          "search_matches_rendered_source": true,
+          "text_sha256": "f2ee13ccc5debb7e16db3a85c81a1470495abb50de992912396787aca9a2c2e6"
+        },
+        {
+          "id": "Visitor-Questions",
+          "search_matches_rendered_source": true,
+          "text_sha256": "4bbe8eba393442fcbd76fc7d65514e475e29c79df129094e4e7f4911b5435a35"
+        },
+        {
+          "id": "Naturalist-Species-Highlight-February-4-2026",
+          "search_matches_rendered_source": true,
+          "text_sha256": "0f448aacdfbd902b49d0536f06e66d604d9cd3b88f12e1650987250940befc2b"
+        }
+      ],
+      "displayed_media_uses": [
+        {
+          "url": "../../shared/media/asset-05fc671c0b53bef7--IMG_3594.jpeg",
+          "sha256": "05fc671c0b53bef760eda58928df67dac830f4b8d84bae9865d308df5566907e"
+        },
+        {
+          "url": "../../shared/media/asset-0ddc6e6b4b55ea55--IMG_2883.jpeg",
+          "sha256": "0ddc6e6b4b55ea55f45bd4c1f5349c07f60b76fe59fada3475fef87a0fc6ba30"
+        }
+      ],
+      "reviewed_inline_script_hashes": null,
+      "files": [
+        {
+          "source_path": "apps/california-sheephead/index.html",
+          "pinned_sha256": "7c782095ee7c6ddbcddbfdd31318221f15e81775fe1508dbff149f5e59a70132",
+          "current_sha256": "4aebaa66cf873f850f63033fd1cd326f7a41fdb633f2a54cad9e980ba5f5761c"
+        }
+      ],
+      "external_dependencies": [],
+      "dynamic_rendering": null
+    },
+    {
+      "app_id": "gray-whale",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_html_sha256": "7f9852a29c0de86804b0a8702139c92e8d0895532d57f12399a50839f9668cde",
+      "current_html_sha256": "e5f4a5abf97ec94682c9d66aa6c3718fb91b18be5ca5dcf483c68ff77c10da46",
+      "complete_normalized_dom_equal": true,
+      "sections": [
+        {
+          "id": "Overview",
+          "search_matches_rendered_source": true,
+          "text_sha256": "140604c58eb0468e9db759d6b06687c6b9dee9ebbc90802f11bcf0b1d1aa2e0a"
+        },
+        {
+          "id": "Gray-Whale-Quick-Facts",
+          "search_matches_rendered_source": true,
+          "text_sha256": "ea2cdf5480a912f1f4bfabc9a951d3ee4597e8b06ba22a46c69034b99baff09b"
+        },
+        {
+          "id": "Identification",
+          "search_matches_rendered_source": true,
+          "text_sha256": "22a444af85344b2602a8b3724bcc669a491018ac0ff9f9677f897babab95aab5"
+        },
+        {
+          "id": "Migration-and-feeding",
+          "search_matches_rendered_source": true,
+          "text_sha256": "afa47d719792f7c6020ee2b4875eeb4b4832a44d665fcc419aca2e1007f96e7f"
+        },
+        {
+          "id": "January-2026-Gray-Whale-Migration",
+          "search_matches_rendered_source": true,
+          "text_sha256": "5ffc5a9386338aa4b8b947ddb6b98a0b427bb90662fa04a2530f1259eaaff972"
+        },
+        {
+          "id": "Gray-Whale-Ecology-Conservation-January-2026",
+          "search_matches_rendered_source": true,
+          "text_sha256": "0caa7446cf7613b9c02cd820605bcf3f931d86ac811baeda31e860d2d00cbb8b"
+        },
+        {
+          "id": "Migration-reproduction-and-calves",
+          "search_matches_rendered_source": true,
+          "text_sha256": "ea6dee4972919180ffcea072ee88886623f354226d002bf7056a7b27b3f03218"
+        },
+        {
+          "id": "Feeding-whale-riders-and-ecosystem-engineering",
+          "search_matches_rendered_source": true,
+          "text_sha256": "d50cd38aa25a25b15c3aa42ce67c37244ea9bf77e700442786d8fa27ead64ce5"
+        },
+        {
+          "id": "Population-decline-and-unusual-mortality-events",
+          "search_matches_rendered_source": true,
+          "text_sha256": "b57e8f5c9303bf16556a214910c6c7e67ac5d114599cec65801c896b5cf04367"
+        },
+        {
+          "id": "Sources-and-dated-Field-Note",
+          "search_matches_rendered_source": true,
+          "text_sha256": "ef07774bccee178dedcaeb05f8e1a141d5df2d32481f9ff174008d014cf73ee7"
+        },
+        {
+          "id": "Gray-Whale-Research-Graphics-January-2026",
+          "search_matches_rendered_source": true,
+          "text_sha256": "aa37350091f7a700c869296884e006f419354fe9dca037526cc233b373ad7c8f"
+        },
+        {
+          "id": "Growth-and-life-cycle-3-graphics",
+          "search_matches_rendered_source": true,
+          "text_sha256": "38d014b96ff789d1a234968173f3986e28e06c111e895aa21970591ff35a2d8b"
+        },
+        {
+          "id": "Feeding-and-adaptations-3-graphics",
+          "search_matches_rendered_source": true,
+          "text_sha256": "e74c8aec5bab0af4194d58240c6db130b4c9d49c3ef505cacd1a014f810ed62f"
+        },
+        {
+          "id": "Migration-and-populations-2-graphics",
+          "search_matches_rendered_source": true,
+          "text_sha256": "293fba77a133828252c42a966ee8347792fa0ab17b0ecd49086a1c26dfefc77d"
+        },
+        {
+          "id": "Conservation-and-recent-trends-4-graphics",
+          "search_matches_rendered_source": true,
+          "text_sha256": "3006c67ee2ad6e326ee86dfce7d310f45d04c86d7f5fe6a3d9a1709c3cac5ef9"
+        },
+        {
+          "id": "Gray-Whale-Skeleton",
+          "search_matches_rendered_source": true,
+          "text_sha256": "dc70d8e98e3300087704586111ae6ad626623a761e0b89a832931249e176afce"
+        },
+        {
+          "id": "Steve-Webster-s-Story",
+          "search_matches_rendered_source": true,
+          "text_sha256": "0109bbbf6d9d2dcc6dd2492fb59d9cb8ea140f54074cd9da85d4388c06ce6120"
+        },
+        {
+          "id": "Visitor-Questions",
+          "search_matches_rendered_source": true,
+          "text_sha256": "f09396757744cff25b066579f8e66e5e246b6a42e1653635f81fd0026688c8d1"
+        },
+        {
+          "id": "Science-Behind-the-Story",
+          "search_matches_rendered_source": true,
+          "text_sha256": "937a8d3d8e4b0e53f97ed67cfca4ff8dffe9fa0055f3d1856ccb40d02d08def9"
+        },
+        {
+          "id": "Understanding-Osteochondrosis-Dissecans-OCD",
+          "search_matches_rendered_source": true,
+          "text_sha256": "df122ae2eadce9f324be58f7f101a1c23fda388b81804b349341ea03cd96c0ee"
+        },
+        {
+          "id": "Full-Transcript-edited-for-readability",
+          "search_matches_rendered_source": true,
+          "text_sha256": "7de80c107b54e5ee5d41f6f06d01dd2d83c323bd32dbb742eb6bc8d8ae57c2df"
+        },
+        {
+          "id": "Future-modules",
+          "search_matches_rendered_source": true,
+          "text_sha256": "e6046d82d2ab95d74b319fa23cb589d522826b1195882d0b028249c770c070c1"
+        },
+        {
+          "id": "Install-and-troubleshooting",
+          "search_matches_rendered_source": true,
+          "text_sha256": "fe19da5fb69438eafb3bd925b2d96fb79e756db554a584d05b1ce7b74a73c5b7"
+        }
+      ],
+      "displayed_media_uses": [
+        {
+          "url": "../../shared/media/asset-0723eb2fca2615b0--IMG_3527.jpeg?v=2",
+          "sha256": "0723eb2fca2615b0b3673658eb9d3a9c48f7063dd10cbfcdb0642d6119baa9ca"
+        },
+        {
+          "url": "../../shared/media/asset-47d33e98d003d66e--IMG_3520.jpeg",
+          "sha256": "47d33e98d003d66e3385364cbbc07c895021368a87dd045351ebb6fbe6473201"
+        },
+        {
+          "url": "../../shared/media/asset-39bdbafd26672e9d--IMG_3529.jpeg",
+          "sha256": "39bdbafd26672e9d865aa9afb3b098756f0e4b7ddcfd652e8a33aaa1460c73dc"
+        },
+        {
+          "url": "../../shared/media/asset-ea111dd21c705418--IMG_3530.jpeg",
+          "sha256": "ea111dd21c705418cfb025114e614b1dd89a36563467d2cbe73cba6b29d13493"
+        },
+        {
+          "url": "../../shared/media/asset-c19e56bb82b1ed88--IMG_3531.jpeg",
+          "sha256": "c19e56bb82b1ed884b7038793d977e5b751f1e3d005787a8d75f49fce88457e3"
+        },
+        {
+          "url": "../../shared/media/asset-d9f462d362090d02--IMG_3532.jpeg",
+          "sha256": "d9f462d362090d02783df5dd400c7c7cc70cb807f48d9ed7c740e13c344ff5e0"
+        },
+        {
+          "url": "../../shared/media/asset-2daaa1e0d8612506--IMG_3533.jpeg",
+          "sha256": "2daaa1e0d8612506d6776e21139e47e74f0da14215399965dcd37949f3e4304f"
+        },
+        {
+          "url": "../../shared/media/asset-c49e1ad2ede6d927--IMG_3534.jpeg",
+          "sha256": "c49e1ad2ede6d9271c1dc202fbb9eb4a677003f1905268bd743ad97c200f62b3"
+        },
+        {
+          "url": "../../shared/media/asset-8d35b32acc8ef4e4--IMG_3536.jpeg",
+          "sha256": "8d35b32acc8ef4e4d4f5977b9ae55e3c2c4dad75e3b1cdfdde085b2578e2e6fd"
+        },
+        {
+          "url": "../../shared/media/asset-fdf70c3654d8b77c--IMG_3537.jpeg",
+          "sha256": "fdf70c3654d8b77c7362e5e98d8e3166049eafae4eb200111691e585a4217035"
+        },
+        {
+          "url": "../../shared/media/asset-6d2f0c12e888b454--IMG_3535.jpeg",
+          "sha256": "6d2f0c12e888b454c0b3b982bd4491a7a3665267e9f705afe0cdc0fd7c620286"
+        },
+        {
+          "url": "../../shared/media/asset-b11c558cc1916c03--IMG_3538.jpeg",
+          "sha256": "b11c558cc1916c0392c25227b3c991a199a0dc02b7c5d6ce896c3cf325eea8e6"
+        },
+        {
+          "url": "../../shared/media/asset-9af5aa3882b2f4fe--IMG_3539.jpeg",
+          "sha256": "9af5aa3882b2f4fec14fccb5f89078ae07dbc4e363731d0a097d92ec6c504c18"
+        },
+        {
+          "url": "../../shared/media/asset-007bf887266bfa71--IMG_3540.jpeg",
+          "sha256": "007bf887266bfa71e0e456e533d368e0b8c2cfd2f14bbac2639180a308a9ebc8"
+        },
+        {
+          "url": "../../shared/media/asset-29f85ad9d9ef593f--IMG_3475.jpeg",
+          "sha256": "29f85ad9d9ef593ff78d85220dfe1048bda595de4478bae7b3fdbddcc52b7730"
+        }
+      ],
+      "reviewed_inline_script_hashes": [
+        "f0fbe36996fa1248c364a20dff466bd85cb003f905a40d28e6a3b829e8acfed3",
+        "6536a1cf7f1a6dc2f138d20837ac2f891b81b21c9b5a1021f2f674f32286e6f8"
+      ],
+      "files": [
+        {
+          "source_path": "apps/gray-whale/index.html",
+          "pinned_sha256": "7f9852a29c0de86804b0a8702139c92e8d0895532d57f12399a50839f9668cde",
+          "current_sha256": "e5f4a5abf97ec94682c9d66aa6c3718fb91b18be5ca5dcf483c68ff77c10da46"
+        }
+      ],
+      "external_dependencies": [],
+      "dynamic_rendering": null
+    },
+    {
+      "app_id": "gray-whale-skeleton-exhibit",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_html_sha256": "f9d6d82524fb11a7abe9170b34f78631960f838c797172055c4de1866c3c32bb",
+      "current_html_sha256": "548b59cbf5abfe490621c12a3984bf484f87c3640b18e77c7c684098c337e816",
+      "complete_normalized_dom_equal": true,
+      "sections": [
+        {
+          "id": "Gray-Whale-Skeleton",
+          "search_matches_rendered_source": true,
+          "text_sha256": "dc70d8e98e3300087704586111ae6ad626623a761e0b89a832931249e176afce"
+        },
+        {
+          "id": "Steve-Webster-s-Story",
+          "search_matches_rendered_source": true,
+          "text_sha256": "0109bbbf6d9d2dcc6dd2492fb59d9cb8ea140f54074cd9da85d4388c06ce6120"
+        },
+        {
+          "id": "Visitor-Questions",
+          "search_matches_rendered_source": true,
+          "text_sha256": "f09396757744cff25b066579f8e66e5e246b6a42e1653635f81fd0026688c8d1"
+        },
+        {
+          "id": "Science-Behind-the-Story",
+          "search_matches_rendered_source": true,
+          "text_sha256": "937a8d3d8e4b0e53f97ed67cfca4ff8dffe9fa0055f3d1856ccb40d02d08def9"
+        },
+        {
+          "id": "Understanding-Osteochondrosis-Dissecans-OCD",
+          "search_matches_rendered_source": true,
+          "text_sha256": "df122ae2eadce9f324be58f7f101a1c23fda388b81804b349341ea03cd96c0ee"
+        },
+        {
+          "id": "Full-Transcript-edited-for-readability",
+          "search_matches_rendered_source": true,
+          "text_sha256": "7de80c107b54e5ee5d41f6f06d01dd2d83c323bd32dbb742eb6bc8d8ae57c2df"
+        }
+      ],
+      "displayed_media_uses": [
+        {
+          "url": "../../shared/media/asset-29f85ad9d9ef593f--IMG_3475.jpeg",
+          "sha256": "29f85ad9d9ef593ff78d85220dfe1048bda595de4478bae7b3fdbddcc52b7730"
+        }
+      ],
+      "reviewed_inline_script_hashes": null,
+      "files": [
+        {
+          "source_path": "apps/gray-whale-skeleton/index.html",
+          "pinned_sha256": "f9d6d82524fb11a7abe9170b34f78631960f838c797172055c4de1866c3c32bb",
+          "current_sha256": "548b59cbf5abfe490621c12a3984bf484f87c3640b18e77c7c684098c337e816"
+        }
+      ],
+      "external_dependencies": [],
+      "dynamic_rendering": null
+    },
+    {
+      "app_id": "hopkins-rose-nudibranch",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_html_sha256": "910a808731a6bd30eb02a2f3b0271ce6dcd4490f884ba2899d2e3d3d576fa5cc",
+      "current_html_sha256": "0a2df2dbec2696fc869eac9bba7df6894ae3d3d2e584203e8c673fd248482568",
+      "complete_normalized_dom_equal": true,
+      "sections": [
+        {
+          "id": "Quick-guide",
+          "search_matches_rendered_source": true,
+          "text_sha256": "bd4e6c3b64a41c502c49c166fbd53546ca325a93973e4b715aa784255b540fa0"
+        },
+        {
+          "id": "Life-cycle-and-pink-eggs",
+          "search_matches_rendered_source": true,
+          "text_sha256": "c23a3ec798858ba07a245c43c961de1c03514673889101349f9cbda246a0f9da"
+        },
+        {
+          "id": "Dorid-versus-aeolid",
+          "search_matches_rendered_source": true,
+          "text_sha256": "505809947687f5d34aaff3c97f0946ac5362853729f9861865273cd560e6c6c3"
+        },
+        {
+          "id": "Rhinophores-and-camouflage",
+          "search_matches_rendered_source": true,
+          "text_sha256": "5476d7cf4a9941d1195f75692083f773722a51b0f49f3ac6767e64f71770b9be"
+        },
+        {
+          "id": "Pink-coloration-and-diet",
+          "search_matches_rendered_source": true,
+          "text_sha256": "ff7ffc6c4598012f36e8ef13240ea6ac7346dccbcd2fa8803176c871e00162a7"
+        },
+        {
+          "id": "Warm-water-range-shifts",
+          "search_matches_rendered_source": true,
+          "text_sha256": "349b5ff21e202f6001837260916050f5bfcc185baba7e8bf4ff12727427d06fa"
+        }
+      ],
+      "displayed_media_uses": [
+        {
+          "url": "../../shared/media/asset-8cb346af7e0cfb48--ScreenHunter-10648.jpg",
+          "sha256": "8cb346af7e0cfb488f3a0edc5c82e6afbb8d50ed0929abd8bd600a338d92d0f0"
+        },
+        {
+          "url": "../../shared/media/asset-538d5993b59b2206--IMG_3465.jpeg",
+          "sha256": "538d5993b59b22063bff336dbff95f1f9d4006d729cd710aa9ec82beb3caae01"
+        },
+        {
+          "url": "../../shared/media/asset-717b2911c7edcb80--IMG_3466.jpeg",
+          "sha256": "717b2911c7edcb8084d5e419cc406c85c8ef32d315a367c543557be2981dc00d"
+        },
+        {
+          "url": "../../shared/media/asset-2a1a981e1a8e0bc5--IMG_3467.jpeg",
+          "sha256": "2a1a981e1a8e0bc516baee5b13858177ccb26d6a2524458a380e4ea5df3fb1ca"
+        },
+        {
+          "url": "../../shared/media/asset-cd38f502a51bf6bd--IMG_3468.jpeg",
+          "sha256": "cd38f502a51bf6bdad09467c4a4e1e2ca5be1363c1cf7595334fdbab4abfa5fa"
+        },
+        {
+          "url": "../../shared/media/asset-2716d888f851c96f--IMG_3469.jpeg",
+          "sha256": "2716d888f851c96fecb01fbf174a2bffb7ba210b178ae9227ec6d9e8132c3ae6"
+        },
+        {
+          "url": "../../shared/media/asset-3fd33c52e769a694--IMG_3470.jpeg",
+          "sha256": "3fd33c52e769a69443c98659d1acd4b506a6278142251bacac823caf4dae730f"
+        },
+        {
+          "url": "../../shared/media/asset-7ddf650d12a6e651--IMG_3471.jpeg",
+          "sha256": "7ddf650d12a6e65194e76a465e2e1cc88d92be9fdf8cfb5b9263ae58b713a058"
+        }
+      ],
+      "reviewed_inline_script_hashes": null,
+      "files": [
+        {
+          "source_path": "apps/hopkins-rose-nudibranch/index.html",
+          "pinned_sha256": "910a808731a6bd30eb02a2f3b0271ce6dcd4490f884ba2899d2e3d3d576fa5cc",
+          "current_sha256": "0a2df2dbec2696fc869eac9bba7df6894ae3d3d2e584203e8c673fd248482568"
+        }
+      ],
+      "external_dependencies": [],
+      "dynamic_rendering": null
+    },
+    {
+      "app_id": "inaturalist-citizen-science",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_html_sha256": "5513a05300ad928a74e59acc4839a8d7dc3703ce02d6e7ccb37d4166556a9957",
+      "current_html_sha256": "96c6c6853251e940c714013c17cf5b68b6316603fe123b3a904b08b06b82dc18",
+      "complete_normalized_dom_equal": true,
+      "sections": [
+        {
+          "id": "In-30-seconds",
+          "search_matches_rendered_source": true,
+          "text_sha256": "6845d5fc94cf943028790e1f3f62ce4127d17bb37d0df2a21f20385d97d53040"
+        },
+        {
+          "id": "What-is-iNaturalist-and-is-it-credible",
+          "search_matches_rendered_source": true,
+          "text_sha256": "9e187af35ca7e8ae1550b34a6a15fb9a258fa96071b4a0c1d3f63fd22183069d"
+        },
+        {
+          "id": "How-reliable-is-a-sighting",
+          "search_matches_rendered_source": true,
+          "text_sha256": "0613b1b72e88315f601394923a3af1421404303023870e656ff6a91585142d6b"
+        },
+        {
+          "id": "Do-scientists-use-these-observations",
+          "search_matches_rendered_source": true,
+          "text_sha256": "21250f5f7c8e3b0539a63284d978f43cca7ad9433e4b8b21d425b58c802ab764"
+        },
+        {
+          "id": "How-do-we-use-iNaturalist-in-MBA-Hub",
+          "search_matches_rendered_source": true,
+          "text_sha256": "15bbdd54aaec4a8b2a4e561cd368e4ef28c299dfb5dbc4c5c1a3b45ccbbb7fe9"
+        },
+        {
+          "id": "For-curious-guides-evidence-and-scientific-authority",
+          "search_matches_rendered_source": true,
+          "text_sha256": "4224737d6decc8097f1d202cdb79615e5ad671015682e850a28d04240e1455ee"
+        },
+        {
+          "id": "Explore-the-source",
+          "search_matches_rendered_source": true,
+          "text_sha256": "318959d707a777457fe1716221ca49c73ac9f4c786d9373474f2392fe4546276"
+        }
+      ],
+      "displayed_media_uses": [],
+      "reviewed_inline_script_hashes": null,
+      "files": [
+        {
+          "source_path": "apps/inaturalist-citizen-science/index.html",
+          "pinned_sha256": "5513a05300ad928a74e59acc4839a8d7dc3703ce02d6e7ccb37d4166556a9957",
+          "current_sha256": "96c6c6853251e940c714013c17cf5b68b6316603fe123b3a904b08b06b82dc18"
+        }
+      ],
+      "external_dependencies": [],
+      "dynamic_rendering": null
+    },
+    {
+      "app_id": "pacific-white-sided-dolphin",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_html_sha256": "a63b592fbd7735e3f668440becf3335b73f80c4e8e12228c7dae794f8a3a12bf",
+      "current_html_sha256": "988eb0eb8fbac7bad7b265ea73f2ed680b4ce646f3721031e53efbb96ca78cbd",
+      "complete_normalized_dom_equal": true,
+      "sections": [
+        {
+          "id": "At-a-glance",
+          "search_matches_rendered_source": true,
+          "text_sha256": "9145956b1d725c8ef99dee7a58d2ab01d238de13557cead34b47f585438f881b"
+        },
+        {
+          "id": "Standard-coloration-and-Brownell-morph",
+          "search_matches_rendered_source": true,
+          "text_sha256": "dac79f0e77f49c5efd8958f0c3e0c55d1948238f6ce86710f8b9ef8a23aeb227"
+        },
+        {
+          "id": "2025-proposed-taxonomic-changes",
+          "search_matches_rendered_source": true,
+          "text_sha256": "5171ccd41bd1f55961da1f0d60df4ca7139378dfe5cc036a163fe5696cf70348"
+        },
+        {
+          "id": "Range-habitat-prey-and-diving",
+          "search_matches_rendered_source": true,
+          "text_sha256": "9a15fd98fcaffc9c4d6ea9cbc6968239d56c4938be05abb6c7b6ec6106ba7f46"
+        },
+        {
+          "id": "Regional-stock-and-returning-pods",
+          "search_matches_rendered_source": true,
+          "text_sha256": "9a1447ccc1a587f621e4764dd11d9a78b289f74bed143e59faa7b8b80540f643"
+        },
+        {
+          "id": "Reproduction-and-calf-development",
+          "search_matches_rendered_source": true,
+          "text_sha256": "dd7cacb5dcd839329b77d2c67dd5e9f676d49b441e8fa61efe9203ace591f6bc"
+        },
+        {
+          "id": "Mixed-species-associations-and-superpods",
+          "search_matches_rendered_source": true,
+          "text_sha256": "29d007d35a79f0dcc67549b826a6983534a24d271204db0c013f5cb31ce45031"
+        },
+        {
+          "id": "Visitor-questions",
+          "search_matches_rendered_source": true,
+          "text_sha256": "454e5f876226d6b7061af9fba336e88c6535fc3f1052030fbf69054d9ef7e2dc"
+        },
+        {
+          "id": "References",
+          "search_matches_rendered_source": true,
+          "text_sha256": "490e05e36655859365e7180b07d0bfddafabd773cf709eef08f8f232da355b58"
+        }
+      ],
+      "displayed_media_uses": [
+        {
+          "url": "../../shared/media/asset-dbfeba5da571feb6--IMG_3509.jpeg",
+          "sha256": "dbfeba5da571feb669e91464c4453452f163a7296edc0f0dd1b6bad660b70fe4"
+        },
+        {
+          "url": "../../shared/media/asset-922d38f86c89f73d--IMG_3505.jpeg",
+          "sha256": "922d38f86c89f73d911e043b800eb5123ab837346e09b400695f411ddf12ef3f"
+        },
+        {
+          "url": "../../shared/media/asset-a547e5af9334e5b1--IMG_3506.jpeg",
+          "sha256": "a547e5af9334e5b1370d2ed18377cf46e74731787a983ada6c4b2f32f26e38c6"
+        },
+        {
+          "url": "../../shared/media/asset-07e9859dce7506c6--IMG_3507.jpeg",
+          "sha256": "07e9859dce7506c68ec7cd0232b7e8953841d41cd7529dbae45706043b4d0856"
+        },
+        {
+          "url": "../../shared/media/asset-81892438cc2e6a55--IMG_3508.jpeg",
+          "sha256": "81892438cc2e6a553fffdd7f8f32e23d3bf07be309b1b23330d8a7881b717a9c"
+        }
+      ],
+      "reviewed_inline_script_hashes": null,
+      "files": [
+        {
+          "source_path": "apps/pacific-white-sided-dolphin/index.html",
+          "pinned_sha256": "a63b592fbd7735e3f668440becf3335b73f80c4e8e12228c7dae794f8a3a12bf",
+          "current_sha256": "988eb0eb8fbac7bad7b265ea73f2ed680b4ce646f3721031e53efbb96ca78cbd"
+        }
+      ],
+      "external_dependencies": [],
+      "dynamic_rendering": null
+    },
+    {
+      "app_id": "pseudo-nitzschia",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_html_sha256": "700220351bf44444c029d68747d74914dab159759eda60790b4869a561fa49f2",
+      "current_html_sha256": "0dd1725d11cba949e2e34627cb7da5045cbef8a73ba0d5956f4eb0e421e8af89",
+      "complete_normalized_dom_equal": true,
+      "sections": [
+        {
+          "id": "Quick-guide",
+          "search_matches_rendered_source": true,
+          "text_sha256": "e459e729c7f84323731efe32000739ec66f61e4b8e376c95278107c82e92a466"
+        },
+        {
+          "id": "Identification-and-life-cycle",
+          "search_matches_rendered_source": true,
+          "text_sha256": "1897b7f2b784a2758a8dd90944d1181277ae44d2a47b9a34d548d507a279e913"
+        },
+        {
+          "id": "Harmful-algal-blooms-and-the-2015-event",
+          "search_matches_rendered_source": true,
+          "text_sha256": "e3017a99f687e2832fed31404952956d105d51e28fa200b56c73edab1bdfdb87"
+        },
+        {
+          "id": "Domoic-acid-in-food-webs",
+          "search_matches_rendered_source": true,
+          "text_sha256": "8aeb0243f6e1368f077b2512d6cbbd66b6fd2fd1b025e7668d73fe992ed15476"
+        }
+      ],
+      "displayed_media_uses": [
+        {
+          "url": "../../shared/media/asset-3406e524b14b7757--ScreenHunter-10643.jpg",
+          "sha256": "3406e524b14b775756e04d18a4f2edaa16c7403f293a8c9399c12de066a893e2"
+        },
+        {
+          "url": "../../shared/media/asset-312b492bbd93cf7f--IMG_3357.jpeg",
+          "sha256": "312b492bbd93cf7f45068ca11840663ed3121361e8ba46000f76f04353f13ae7"
+        },
+        {
+          "url": "../../shared/media/asset-ada016e625c82729--IMG_3358.jpeg",
+          "sha256": "ada016e625c82729f2bb2c27a96986a143079a3668ca6cb5c9b118084160f63f"
+        },
+        {
+          "url": "../../shared/media/asset-ba81c2492733aa1b--IMG_3359.jpeg",
+          "sha256": "ba81c2492733aa1b0e7158ba1e6750ccf96758da8c3448a3621c80e6b5e23d99"
+        }
+      ],
+      "reviewed_inline_script_hashes": null,
+      "files": [
+        {
+          "source_path": "apps/pseudo-nitzschia/index.html",
+          "pinned_sha256": "700220351bf44444c029d68747d74914dab159759eda60790b4869a561fa49f2",
+          "current_sha256": "0dd1725d11cba949e2e34627cb7da5045cbef8a73ba0d5956f4eb0e421e8af89"
+        }
+      ],
+      "external_dependencies": [],
+      "dynamic_rendering": null
+    },
+    {
+      "app_id": "sea-slugs-nudibranchs",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_html_sha256": "4bf5bd3ff4c8049772dacb4b3bfe334c9ef23e9949bda2ecf07c201a14f8e1dc",
+      "current_html_sha256": "fb977add7e1a5f098c605d1f7f32deb8a6743bfa4131575d9cfe2f5fff291129",
+      "complete_normalized_dom_equal": true,
+      "sections": [
+        {
+          "id": "Overview",
+          "search_matches_rendered_source": true,
+          "text_sha256": "048e96cffe525e4d5e53e7e2587a70e08133e14a21c8e015a8cfaa381f0068d9"
+        },
+        {
+          "id": "Species-directory-1",
+          "search_matches_rendered_source": true,
+          "text_sha256": "55e052f51a4e9ae865c03af4d1176c3ed28d4e5a269f95e6b03cb48d393dc6b7"
+        },
+        {
+          "id": "H",
+          "search_matches_rendered_source": true,
+          "text_sha256": "55e052f51a4e9ae865c03af4d1176c3ed28d4e5a269f95e6b03cb48d393dc6b7"
+        },
+        {
+          "id": "Naturalist-Species-Highlights-1",
+          "search_matches_rendered_source": true,
+          "text_sha256": "a1b3585441fafad19c38ef49cb6f5403ecd5f55fb1fa459eba6d0cfa209c608a"
+        },
+        {
+          "id": "Sea-Slug-Search-2026",
+          "search_matches_rendered_source": true,
+          "text_sha256": "cbc89dd51ac7344c90605d9ada4a6929283a7a3679d3053574c437db22e59102"
+        },
+        {
+          "id": "Future-species-and-resources",
+          "search_matches_rendered_source": true,
+          "text_sha256": "66ba9761b204fe04f0b708616643edd856649f43a963bc5d812e66155be3b124"
+        }
+      ],
+      "displayed_media_uses": [],
+      "reviewed_inline_script_hashes": null,
+      "files": [
+        {
+          "source_path": "apps/sea-slugs-nudibranchs/index.html",
+          "pinned_sha256": "4bf5bd3ff4c8049772dacb4b3bfe334c9ef23e9949bda2ecf07c201a14f8e1dc",
+          "current_sha256": "fb977add7e1a5f098c605d1f7f32deb8a6743bfa4131575d9cfe2f5fff291129"
+        }
+      ],
+      "external_dependencies": [],
+      "dynamic_rendering": null
+    },
+    {
+      "app_id": "sperm-whale",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_html_sha256": "a8a5ab788822d15be7388c0a8b4652b2e6255372880877d9bf75bfa44962700b",
+      "current_html_sha256": "90f7b2f03399d3282249c7c21643faec25772c180d13c3e05a72df7765bf60cb",
+      "complete_normalized_dom_equal": true,
+      "sections": [
+        {
+          "id": "At-a-glance",
+          "search_matches_rendered_source": true,
+          "text_sha256": "ca5971a82ddd0372bce58b70ee620e2892ac883a1d989914693e10fdca9d5d1c"
+        },
+        {
+          "id": "MBARI-hydrophone-and-Monterey-Bay",
+          "search_matches_rendered_source": true,
+          "text_sha256": "0dcebff961f3a71de6201eacbe95cf6f58bac41f95d27ea81c6155fabd5e6269"
+        },
+        {
+          "id": "Clans-codas-and-cultural-identity",
+          "search_matches_rendered_source": true,
+          "text_sha256": "78521c1958d61de844d254381962b379e4224128cc387aa1e2315ba37ea5afc1"
+        },
+        {
+          "id": "Age-sex-and-seasonal-distribution",
+          "search_matches_rendered_source": true,
+          "text_sha256": "b12adc00b1201e9a52dd96342d9cef434510ee3f59d15033bb4f0a73f9d2416f"
+        },
+        {
+          "id": "Changing-oceans-and-future-ranges",
+          "search_matches_rendered_source": true,
+          "text_sha256": "c22f9f4a3b85244168b3c549bd6e2ceaaeb297d012abcdb0925b1df71ed48a98"
+        },
+        {
+          "id": "Visitor-friendly-takeaway",
+          "search_matches_rendered_source": true,
+          "text_sha256": "6be8a15a3aa2fd5e43cf08b38f6bc5dac09d83fbe507e8bf17563321808af241"
+        }
+      ],
+      "displayed_media_uses": [
+        {
+          "url": "../../shared/media/asset-0c3ad11dc596bfa3--IMG_3515.jpeg",
+          "sha256": "0c3ad11dc596bfa35e2c8da2f7a6551fa1d77cc7a7fe3d96a4c71dbc43894f40"
+        },
+        {
+          "url": "../../shared/media/asset-48b0779c4998c64f--IMG_3516.jpeg",
+          "sha256": "48b0779c4998c64fc77cfea5dc7ca7224f98c6997f66a9fbeadc75fcae4c43c2"
+        },
+        {
+          "url": "../../shared/media/asset-a682abf588d51b0d--IMG_3518.jpeg",
+          "sha256": "a682abf588d51b0dc8092115c807b13505b7257af80fbd1a7bfa970853a7663e"
+        },
+        {
+          "url": "../../shared/media/asset-345be463837369de--IMG_3517.jpeg",
+          "sha256": "345be463837369de208528d47de18d76642e317c45749e3f2799a291e2b3a927"
+        }
+      ],
+      "reviewed_inline_script_hashes": null,
+      "files": [
+        {
+          "source_path": "apps/sperm-whale/index.html",
+          "pinned_sha256": "a8a5ab788822d15be7388c0a8b4652b2e6255372880877d9bf75bfa44962700b",
+          "current_sha256": "90f7b2f03399d3282249c7c21643faec25772c180d13c3e05a72df7765bf60cb"
+        }
+      ],
+      "external_dependencies": [],
+      "dynamic_rendering": null
+    },
+    {
+      "app_id": "stargazer-species-guide",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_html_sha256": "b997ad28d51b4bbb96819776ceebe7693d159656e9e48bf9f0f0d26c92842022",
+      "current_html_sha256": "06f7f6cbdd3b844071cc8692fc883ad25a7a39b695567a93593c9a4c674badd4",
+      "complete_normalized_dom_equal": true,
+      "sections": [
+        {
+          "id": "Identification",
+          "search_matches_rendered_source": true,
+          "text_sha256": "c66ff1615d2a0e78e26a2778fac03b7a37035c4a75819f836afeac0b8e451924"
+        },
+        {
+          "id": "Sand-burial-and-breathing",
+          "search_matches_rendered_source": true,
+          "text_sha256": "42b1d74c40bc1382b769b0aab880d134e1a3c6d0c72ee07e444e34ae67de49be"
+        },
+        {
+          "id": "Ambush-hunting",
+          "search_matches_rendered_source": true,
+          "text_sha256": "44c1ad44fa55ea2cb29cfbd0a4eee219a23ed8f3f2969dae28aeb95dc2212246"
+        },
+        {
+          "id": "Venom-and-electricity",
+          "search_matches_rendered_source": true,
+          "text_sha256": "6f1cc43439cdb8afe980fa0cbcad2f686c64dbfa2ee7ea004a94b5adbcb2633e"
+        },
+        {
+          "id": "Development",
+          "search_matches_rendered_source": true,
+          "text_sha256": "2068d23b1f7956fc8699394f1a53fb7b8ead5c58b2ee067103f3fc7d87a38a8d"
+        },
+        {
+          "id": "Visitor-interpretation",
+          "search_matches_rendered_source": true,
+          "text_sha256": "9a5500026ecf6241d88ddbd7bb72542e06d1254628bff1c2fbf51754f977d7e9"
+        },
+        {
+          "id": "Further-reading",
+          "search_matches_rendered_source": true,
+          "text_sha256": "efecb5061ec375742953a173c909be382c985a49a5cb13a4f36ed00471b1faff"
+        },
+        {
+          "id": "Source-illustrations",
+          "search_matches_rendered_source": true,
+          "text_sha256": "7cd991023623ae1e641a97c1077eb3ef024c69be4cc48e56890bbbb1aa4303b5"
+        }
+      ],
+      "displayed_media_uses": [
+        {
+          "url": "../../shared/media/asset-4b41d3a89ec67f65--IMG_3450.jpeg",
+          "sha256": "4b41d3a89ec67f65815128e4be2a4319371babc09bcc25a8cde5b9d6c4ec1e41"
+        },
+        {
+          "url": "../../shared/media/asset-a6a0f1e28ae2bd1a--IMG_3439.jpeg",
+          "sha256": "a6a0f1e28ae2bd1a563731a61edc0fdcd050773f8c2da66fbbae4145c5e807e0"
+        },
+        {
+          "url": "../../shared/media/asset-e27e2ab941b776a9--IMG_3440.jpeg",
+          "sha256": "e27e2ab941b776a9b37a83b7b3742c3f59e0ebe594aae935b06c52009c040131"
+        },
+        {
+          "url": "../../shared/media/asset-b5206667bf07f05b--IMG_3441.jpeg",
+          "sha256": "b5206667bf07f05b107f241d2c88f3fc999fd166a25174811905e1c2f3fd95af"
+        },
+        {
+          "url": "../../shared/media/asset-b2920aa1dbefcb97--IMG_3442.jpeg",
+          "sha256": "b2920aa1dbefcb97eed25af4c168a4719f5cc2d216aae44ab9a5589a0f902d22"
+        }
+      ],
+      "reviewed_inline_script_hashes": null,
+      "files": [
+        {
+          "source_path": "apps/stargazer-species-guide/index.html",
+          "pinned_sha256": "b997ad28d51b4bbb96819776ceebe7693d159656e9e48bf9f0f0d26c92842022",
+          "current_sha256": "06f7f6cbdd3b844071cc8692fc883ad25a7a39b695567a93593c9a4c674badd4"
+        }
+      ],
+      "external_dependencies": [],
+      "dynamic_rendering": null
+    },
+    {
+      "app_id": "whale-associated-organisms",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_html_sha256": "399e77875e7100f1e35c5adac56f0c4c89e16885011acfccf1003807f99870e2",
+      "current_html_sha256": "267a606bcf9384367b20f1c03d31db2f2a1004b91ca836cd6ad40124b2014c40",
+      "complete_normalized_dom_equal": true,
+      "sections": [
+        {
+          "id": "Photo-field-guide",
+          "search_matches_rendered_source": true,
+          "text_sha256": "d860a607407c7646a6ab0af85a039ab4103f76445b38efd59474932d1162a2d1"
+        },
+        {
+          "id": "Whales-as-mobile-ecosystems-Overview",
+          "search_matches_rendered_source": true,
+          "text_sha256": "496858f595dbe5477e5dfaa1b6d3304b59347ca43b9dbf7317995493027369a4"
+        },
+        {
+          "id": "Cookiecutter-sharks-Photo-and-field-notes",
+          "search_matches_rendered_source": true,
+          "text_sha256": "cc6a5357fcff0a5541162dc1979e257e49f341c7198c746fa2fe3f9e0ce40e15"
+        },
+        {
+          "id": "Whalesuckers-Photo-and-field-notes",
+          "search_matches_rendered_source": true,
+          "text_sha256": "bfa27aef7d4c04d3142e999d3998617440044e5acc7c6cd849b739cb090638c8"
+        },
+        {
+          "id": "Whalesucker-scars-on-dolphins-Photo-and-field-notes",
+          "search_matches_rendered_source": true,
+          "text_sha256": "3d5536c480908db1ce08974fc728a71b972982a9096437bdd4cac4d3a97f6a64"
+        },
+        {
+          "id": "Whale-barnacles-Photo-and-field-notes",
+          "search_matches_rendered_source": true,
+          "text_sha256": "b5f806b3ab71d8dbf1d5f7aab9e31e6b1d23c564585bdd517d64c1b988a5b080"
+        },
+        {
+          "id": "Humpback-chin-barnacles-Photo-and-field-notes",
+          "search_matches_rendered_source": true,
+          "text_sha256": "c36c5243a9664477e8d07b6154dea309bc944854b279a9597e941ce640c322d5"
+        },
+        {
+          "id": "Gray-whale-barnacles-Photo-and-field-notes",
+          "search_matches_rendered_source": true,
+          "text_sha256": "a76652ed5c210b0663b3a2191b419cce7f6f10032825a5f7336b2c16c22ba238"
+        },
+        {
+          "id": "Whale-lice-find-the-boops-Photo-and-field-notes",
+          "search_matches_rendered_source": true,
+          "text_sha256": "4126f730570642902ce504d2f088d1180068ea9c27c1dcbdc48e6d7210cbb916"
+        },
+        {
+          "id": "Whale-lice-challenge-level-2-Photo-and-field-notes",
+          "search_matches_rendered_source": true,
+          "text_sha256": "9fdcff58320d11b3fea07726fe1856366cc47f1a3823e697e84cf080ce7d7f60"
+        },
+        {
+          "id": "Source-Source-details",
+          "search_matches_rendered_source": true,
+          "text_sha256": "175c9c733759b126ca569f4ccdfac6b3b5f94079857bc8e66f77fa26749e75a4"
+        },
+        {
+          "id": "Detailed-species-reference",
+          "search_matches_rendered_source": true,
+          "text_sha256": "d860a607407c7646a6ab0af85a039ab4103f76445b38efd59474932d1162a2d1"
+        }
+      ],
+      "displayed_media_uses": [
+        {
+          "url": "../../shared/media/asset-edd9d5ec2d0bbd07--IMG_3392.jpeg",
+          "sha256": "edd9d5ec2d0bbd07852ad0d906341a589bee5a974352f245b945dc660ef24118"
+        },
+        {
+          "url": "../../shared/media/asset-edd9d5ec2d0bbd07--IMG_3392.jpeg",
+          "sha256": "edd9d5ec2d0bbd07852ad0d906341a589bee5a974352f245b945dc660ef24118"
+        },
+        {
+          "url": "../../shared/media/asset-c9581b267211cbcb--IMG_3393.jpeg",
+          "sha256": "c9581b267211cbcb33e4079571f2cb136ad2f6753087d951dcaa1a608abdf60a"
+        },
+        {
+          "url": "../../shared/media/asset-54b172586520e9bd--IMG_3394.jpeg",
+          "sha256": "54b172586520e9bdae0f022cff9fedb5b8abb99af7653c0613e5dd78ea5ea861"
+        },
+        {
+          "url": "../../shared/media/asset-8940026ea5ec69fa--IMG_3395.jpeg",
+          "sha256": "8940026ea5ec69fa762b679f1299c30699291ec34a4747da3be061fd48989c18"
+        },
+        {
+          "url": "../../shared/media/asset-eae8123213eff35a--IMG_3396.jpeg",
+          "sha256": "eae8123213eff35a91417664e3c820700953670a7beb8b92213e75ea5643169d"
+        },
+        {
+          "url": "../../shared/media/asset-f78cedfed1d74f6b--IMG_3397.jpeg",
+          "sha256": "f78cedfed1d74f6b211987c11b53263f9fdd634d8abf34ce3a7e9d62c2984409"
+        },
+        {
+          "url": "../../shared/media/asset-80f9762446c0fc02--IMG_3398.jpeg",
+          "sha256": "80f9762446c0fc02dce976faa1a627d7cbb3de49cf9e78132ff90801bbd3c26f"
+        },
+        {
+          "url": "../../shared/media/asset-18794e74477d7c0e--IMG_3399.jpeg",
+          "sha256": "18794e74477d7c0e693afcdd23c5d35c6ac9cbf0d44098568653fe32eb22ea6b"
+        }
+      ],
+      "reviewed_inline_script_hashes": [
+        "3a53c2187fcf0d4ac96dde2724153d2aedfce30a7fad113b1d8b29ce54a09c88",
+        "505d4bfa811e68e03a6e5278ef4d8bb990d3870029d11223085e37c02f94f1ee"
+      ],
+      "files": [
+        {
+          "source_path": "apps/whale-associated-organisms/index.html",
+          "pinned_sha256": "399e77875e7100f1e35c5adac56f0c4c89e16885011acfccf1003807f99870e2",
+          "current_sha256": "267a606bcf9384367b20f1c03d31db2f2a1004b91ca836cd6ad40124b2014c40"
+        },
+        {
+          "source_path": "apps/whale-associated-organisms/manifest.webmanifest",
+          "pinned_sha256": "f86c69552508326a7b65d0806ee556a7e7cf4308e4975abb19e563fe82100bfd",
+          "replacement": "Shared Hub worker/manifest; standalone registration removed"
+        },
+        {
+          "source_path": "apps/whale-associated-organisms/sw.js",
+          "pinned_sha256": "e6312d1184a83f339d08c8ec4c003cde1064406699ac73b75e91e981698a8bf3",
+          "replacement": "Shared Hub worker/manifest; standalone registration removed"
+        }
+      ],
+      "external_dependencies": [
+        {
+          "path": "../whale-parasites-associates/data.js",
+          "pinned_sha256": "eba6c75c2e079c0b04df1634b324489113f2ee8e790a0f23d2a0ab3accfa2954",
+          "current_sha256": "eba6c75c2e079c0b04df1634b324489113f2ee8e790a0f23d2a0ab3accfa2954"
+        }
+      ],
+      "dynamic_rendering": {
+        "entries": 7,
+        "complete_rendered_dom_equal": true,
+        "pinned_rendered_sha256": "665a77b9ff02ca377522b518748906d4b845e59e498a6607cc7d4812a98df258",
+        "current_rendered_sha256": "665a77b9ff02ca377522b518748906d4b845e59e498a6607cc7d4812a98df258"
+      }
+    },
+    {
+      "app_id": "wildfires-ocean-health",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_html_sha256": "b0019ae73884771233405ba4a6424320f8a232d66110efcd153e026b9a38960e",
+      "current_html_sha256": "31cad2d45944e2bfdb82cd9e510bc5ee7a8316693b96de8b84f1460a460ba2f4",
+      "complete_normalized_dom_equal": true,
+      "sections": [
+        {
+          "id": "Quick-Guide",
+          "search_matches_rendered_source": true,
+          "text_sha256": "fbb291a3d5c4a4f74b80e6b66b1487444989e1033f09da65c549d18ba5678849"
+        },
+        {
+          "id": "1-Smoke-Ash",
+          "search_matches_rendered_source": true,
+          "text_sha256": "544bd3a886669b66e29d28bf3b396c7db8d19e7ddacd3e27f92d031a558e1215"
+        },
+        {
+          "id": "2-Sunlight-pH-Plankton",
+          "search_matches_rendered_source": true,
+          "text_sha256": "fb83c6da913942035b876dfcebb46e7a0b3adb5f469b47a93a2fb0dfbdbb2931"
+        },
+        {
+          "id": "3-Fire-Retardants",
+          "search_matches_rendered_source": true,
+          "text_sha256": "8902336a5391abc6e0da66eeb6d5b5690184bc8fcd71b2486df2310a87241170"
+        },
+        {
+          "id": "4-The-Second-Pulse-Rain-Runoff",
+          "search_matches_rendered_source": true,
+          "text_sha256": "ec684f1bab2ffbe3cf89de462c62c83cea64599223049d5b8d8c5ce8c60b2055"
+        },
+        {
+          "id": "5-Kelp-Coastal-Food-Webs",
+          "search_matches_rendered_source": true,
+          "text_sha256": "3b4a4b6877d382e7161c8c9cf8e2041dd458304eb47f675deb244fce02fcbcbc"
+        },
+        {
+          "id": "6-Marine-Mammals",
+          "search_matches_rendered_source": true,
+          "text_sha256": "a8ec5ca9bd5e10fa7bfb8ee11afc02b9290519e9b6de8b8ec7aa6a188d254bd1"
+        },
+        {
+          "id": "Guide-Talking-Points",
+          "search_matches_rendered_source": true,
+          "text_sha256": "d181285907f239fc3ccc2dafd4ed86fb803172eb9fb06fd6d298f9e1bb7d67c7"
+        },
+        {
+          "id": "References-Further-Reading",
+          "search_matches_rendered_source": true,
+          "text_sha256": "23c5f9e8c78e330c8f12c3b92c96e2b0644dd5d75ac388d02bc9f4b88891deab"
+        }
+      ],
+      "displayed_media_uses": [
+        {
+          "url": "../../shared/media/asset-2f53072d7bea2b19--IMG_2729.jpeg",
+          "sha256": "2f53072d7bea2b195b2f03b835b7338804aed08b6a2865958ba8487488efe348"
+        },
+        {
+          "url": "../../shared/media/asset-2d0fb775dfa440e2--IMG_2499.jpeg",
+          "sha256": "2d0fb775dfa440e2201b09ab99fbdda20b8be09c9811abfa0561a5b79ba51dfd"
+        },
+        {
+          "url": "../../shared/media/asset-73243e04da0b39f1--IMG_2501.jpeg",
+          "sha256": "73243e04da0b39f1fab324a556f66aabf428428cd798a80b64680363042a05f4"
+        },
+        {
+          "url": "../../shared/media/asset-2f53072d7bea2b19--IMG_2729.jpeg",
+          "sha256": "2f53072d7bea2b195b2f03b835b7338804aed08b6a2865958ba8487488efe348"
+        }
+      ],
+      "reviewed_inline_script_hashes": null,
+      "files": [
+        {
+          "source_path": "apps/wildfires-ocean-health/index.html",
+          "pinned_sha256": "b0019ae73884771233405ba4a6424320f8a232d66110efcd153e026b9a38960e",
+          "current_sha256": "31cad2d45944e2bfdb82cd9e510bc5ee7a8316693b96de8b84f1460a460ba2f4"
+        }
+      ],
+      "external_dependencies": [],
+      "dynamic_rendering": null
+    },
+    {
+      "app_id": "wildlife-rescue",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_html_sha256": "4517454c82a0e76047430e224206edf47916d7a65a4285826d2fc67f2b816007",
+      "current_html_sha256": "db677776c3f7ab7954b6bea64f4adc7d6ca365fc62cd9a03f923b8c1e9c7e8bf",
+      "complete_normalized_dom_equal": true,
+      "sections": [
+        {
+          "id": "Who-should-I-call",
+          "search_matches_rendered_source": true,
+          "text_sha256": "a730207d2e190b4aaec08071b5723beb884b9fcfc0776c11167d197d4bfe5ca0"
+        },
+        {
+          "id": "What-to-say-when-you-call",
+          "search_matches_rendered_source": true,
+          "text_sha256": "33607e5a4b9dec8d89474e87e5968707ce6608efd325799f582b2324922df972"
+        },
+        {
+          "id": "Seabirds-wildlife-SPCA",
+          "search_matches_rendered_source": true,
+          "text_sha256": "b31edabdad4ec9f9b4331028a4bcab86c89c9b59db6927bb4ec710e5d199f320"
+        },
+        {
+          "id": "SPCA-Wildlife-Rescue-Rehabilitation",
+          "search_matches_rendered_source": true,
+          "text_sha256": "042e4dc139684b6fc6e58cbef10ae66da6ebbb96e0869ae6322bef5c3b0f55ea"
+        },
+        {
+          "id": "Seals-sea-lions-symptoms-response",
+          "search_matches_rendered_source": true,
+          "text_sha256": "947b8f6c7b2e379a8318e34d963d2ad041f28af1d939c15c3b2086feef46995f"
+        },
+        {
+          "id": "The-Marine-Mammal-Center",
+          "search_matches_rendered_source": true,
+          "text_sha256": "a5a28c0d385c9507c3ae702a35aa158bcdb71c50ba0139715005081e7eebf520"
+        },
+        {
+          "id": "Warning-signs-in-the-July-Naturalist-Field-Note",
+          "search_matches_rendered_source": true,
+          "text_sha256": "a5a28c0d385c9507c3ae702a35aa158bcdb71c50ba0139715005081e7eebf520"
+        },
+        {
+          "id": "Sea-otters-Monterey-County",
+          "search_matches_rendered_source": true,
+          "text_sha256": "5bc6d215a02ec6e3eb57abbc025ad613b85e69a4d0e4fcfe07cc4c8528498b97"
+        },
+        {
+          "id": "Monterey-Bay-Aquarium-Sea-Otter-Hotline",
+          "search_matches_rendered_source": true,
+          "text_sha256": "029bedd276762f4ca5844fad477714a88d58157106c8d38a69b0122ffcbd4e6b"
+        },
+        {
+          "id": "Whales-dolphins-entanglement",
+          "search_matches_rendered_source": true,
+          "text_sha256": "627889a7bddacf071235151984dc233ab931ac859903b270ba6c6a3954bba4c3"
+        },
+        {
+          "id": "NOAA-Fisheries",
+          "search_matches_rendered_source": true,
+          "text_sha256": "34b96ab18785622a51d0a039c64eabbd95a688a45557c1f5449eb11d334ec8f6"
+        },
+        {
+          "id": "Oiled-wildlife-or-suspected-rabies",
+          "search_matches_rendered_source": true,
+          "text_sha256": "50771c670a43a6d50f82ebfc570c320a64b9700cbe734957476566529aed52cb"
+        },
+        {
+          "id": "Oiled-wildlife",
+          "search_matches_rendered_source": true,
+          "text_sha256": "4b22eb3c9752778cfaa0f2af6cc1ca024e2856d48e3495d90a4e95e250414635"
+        },
+        {
+          "id": "Wild-animal-suspected-of-rabies",
+          "search_matches_rendered_source": true,
+          "text_sha256": "4b22eb3c9752778cfaa0f2af6cc1ca024e2856d48e3495d90a4e95e250414635"
+        },
+        {
+          "id": "Additional-local-contacts-situations",
+          "search_matches_rendered_source": true,
+          "text_sha256": "e535d6067a856def13af201aff3f3fffcad7284f0fe2711ded3bc686d0cb0cb5"
+        },
+        {
+          "id": "Source-Field-Note",
+          "search_matches_rendered_source": true,
+          "text_sha256": "428f81a8b670310f7ed9c4e8eeee3e96dcca3a35b05088952c1bf4b10abfd6aa"
+        }
+      ],
+      "displayed_media_uses": [],
+      "reviewed_inline_script_hashes": [
+        "fcf53aa37f51c1c0308281e5ce2c9f6c33a351109e5d01dd73b3be960f6d0231",
+        "0fcf7e5425b5ecfe625ffc2fdc8a19a1328a5175cbd97e7282c02a3051cbc8c3"
+      ],
+      "files": [
+        {
+          "source_path": "apps/wildlife-rescue/index.html",
+          "pinned_sha256": "4517454c82a0e76047430e224206edf47916d7a65a4285826d2fc67f2b816007",
+          "current_sha256": "db677776c3f7ab7954b6bea64f4adc7d6ca365fc62cd9a03f923b8c1e9c7e8bf"
+        },
+        {
+          "source_path": "apps/wildlife-rescue/manifest.webmanifest",
+          "pinned_sha256": "5bc15d5f0ef38d20bef4357e5c3d7fbd316505037d3150d6626a3fd6727291e3",
+          "replacement": "Shared Hub worker/manifest; standalone registration removed"
+        },
+        {
+          "source_path": "apps/wildlife-rescue/styles.css",
+          "pinned_sha256": "e1bb83bbfd476fff213dac636d9399ddad7574f5f4580acdbf17bb1af7ffed4a",
+          "current_sha256": "e1bb83bbfd476fff213dac636d9399ddad7574f5f4580acdbf17bb1af7ffed4a"
+        },
+        {
+          "source_path": "apps/wildlife-rescue/sw.js",
+          "pinned_sha256": "10c7d3fb7004d385550fda8ecd2351c13dfd41b1a8a77b6e72243d01b0d0df15",
+          "replacement": "Shared Hub worker/manifest; standalone registration removed"
+        }
+      ],
+      "external_dependencies": [
+        {
+          "path": "styles.css",
+          "pinned_sha256": "e1bb83bbfd476fff213dac636d9399ddad7574f5f4580acdbf17bb1af7ffed4a",
+          "current_sha256": "e1bb83bbfd476fff213dac636d9399ddad7574f5f4580acdbf17bb1af7ffed4a"
+        }
+      ],
+      "dynamic_rendering": null
+    },
+    {
+      "app_id": "gooseneck-barnacle",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_html_sha256": "0f06623b205b5bd8da161e36a6262ea10c0f9e3f2424be494d412676458a34ca",
+      "current_html_sha256": "ce3834c0c30fcf8028787c6be00ae131f1b9e5667de68e07a485fafdab244979",
+      "complete_normalized_dom_equal": true,
+      "sections": [
+        {
+          "id": "Quick-Facts",
+          "search_matches_rendered_source": true,
+          "text_sha256": "bd7f84fe80b07712a090c218782d1739fe4c091a0d08b2712e258fb4b5c69ecc"
+        },
+        {
+          "id": "What-Makes-It-Different",
+          "search_matches_rendered_source": true,
+          "text_sha256": "d297b2b2d84df61c5a24bdcc4136c99fa217d261743ec135559da189c4172890"
+        },
+        {
+          "id": "Life-Cycle-Settlement",
+          "search_matches_rendered_source": true,
+          "text_sha256": "21a53ddccfd448e730d6301341fa7b3e3ce1c640196d31b33e71e0981b18d34b"
+        },
+        {
+          "id": "Anatomy",
+          "search_matches_rendered_source": true,
+          "text_sha256": "78f7d959b3b075472a7b4891263316c22b2f31f6eebbcef634d86d15350adff1"
+        },
+        {
+          "id": "Feeding-Life-in-the-Surf",
+          "search_matches_rendered_source": true,
+          "text_sha256": "cdf8aa525a2f2e6c509f310e24cf074cde231652752f67e52dc3d322b4e34d84"
+        },
+        {
+          "id": "Reproduction-Rosettes",
+          "search_matches_rendered_source": true,
+          "text_sha256": "e3a4660d4eaab36d31beb40d4dfbdddc4fcd8638b46476193e90dec4bb867538"
+        },
+        {
+          "id": "Fluorescence",
+          "search_matches_rendered_source": true,
+          "text_sha256": "ba4b18df710246e0a22dc3113140d6c92d96a1c94842b38c53adaedef2c62ecf"
+        },
+        {
+          "id": "People-Harvest-Food",
+          "search_matches_rendered_source": true,
+          "text_sha256": "96e3650dc4b81faf7d4f4f0c5eb3185a654b359e918f13546e1987914a5c4686"
+        },
+        {
+          "id": "Guide-Talking-Points",
+          "search_matches_rendered_source": true,
+          "text_sha256": "187e216b831cbf139d42435c1a9a0ee93d02f5abb6c50e2e4214123b8bfb212c"
+        },
+        {
+          "id": "References-Further-Reading",
+          "search_matches_rendered_source": true,
+          "text_sha256": "98294c84fc69d818ba93582196ae9fd48a55133b593f9c4fa14e6f38430d5ca7"
+        },
+        {
+          "id": "Install-Offline-Help",
+          "search_matches_rendered_source": true,
+          "text_sha256": "66117704ac6a7ed8d7c495bb27de09467c54791f8723568e9d082bf5840e15a1"
+        }
+      ],
+      "displayed_media_uses": [
+        {
+          "url": "../../shared/media/asset-240372707379e853--IMG_2489.jpeg",
+          "sha256": "240372707379e853987caac99f2571ce56deeeafa824dcfc7abb811c462abc9c"
+        },
+        {
+          "url": "../../shared/media/asset-328e69410ff6d027--IMG_2491.jpeg",
+          "sha256": "328e69410ff6d027283ab35cd9fac8b6e3afdc2e2b496fb8e32707df76c5c0cb"
+        },
+        {
+          "url": "../../shared/media/asset-9e3c4419134f3e95--IMG_2492.jpeg",
+          "sha256": "9e3c4419134f3e955bbd3fb8a70f0a951c199b53aa11f7d6616978ecdbd8d5b1"
+        },
+        {
+          "url": "../../shared/media/asset-2abba7e42847f4a7--IMG_2493.jpeg",
+          "sha256": "2abba7e42847f4a72978718f1526ac57ccf0f03efbc95f8d600c0c4e2ecca182"
+        },
+        {
+          "url": "../../shared/media/asset-6940746379bdd044--IMG_2490.jpeg",
+          "sha256": "6940746379bdd044acff05a7d4e8798df34ace5fbda5a8db87bd55d945a3d9e6"
+        },
+        {
+          "url": "../../shared/media/asset-4ba4d87b5678a0c8--IMG_2496.jpeg",
+          "sha256": "4ba4d87b5678a0c802dc74bcc3a6d90324a2bbccb916e2d8496ef0e5e262d7ac"
+        }
+      ],
+      "reviewed_inline_script_hashes": null,
+      "files": [
+        {
+          "source_path": "apps/gooseneck-barnacle/app.js",
+          "pinned_sha256": "6fc1795d1819b1c1895d625910ea78de831b445c429a6a5a5780aab256b6d09f",
+          "current_sha256": "0a0455ed83230290da6c4477138675cc3e86bbf66e31a5f69896435607d3fd03"
+        },
+        {
+          "source_path": "apps/gooseneck-barnacle/index.html",
+          "pinned_sha256": "0f06623b205b5bd8da161e36a6262ea10c0f9e3f2424be494d412676458a34ca",
+          "current_sha256": "ce3834c0c30fcf8028787c6be00ae131f1b9e5667de68e07a485fafdab244979"
+        },
+        {
+          "source_path": "apps/gooseneck-barnacle/manifest.webmanifest",
+          "pinned_sha256": "745cca1e4eaa443f20114def2e77fea4c5208e46468d6b8aeb9ee3b4345fe473",
+          "replacement": "Shared Hub worker/manifest; standalone registration removed"
+        },
+        {
+          "source_path": "apps/gooseneck-barnacle/styles.css",
+          "pinned_sha256": "6080c5d15371abf386c886afa9f16a052b04ab6326f1cd041839a8b0df6ee5f0",
+          "current_sha256": "6080c5d15371abf386c886afa9f16a052b04ab6326f1cd041839a8b0df6ee5f0"
+        },
+        {
+          "source_path": "apps/gooseneck-barnacle/sw.js",
+          "pinned_sha256": "646115a7e0099293aa90f83ade6162e38137713c1d66bbaa696bfb6b9e72a67c",
+          "replacement": "Shared Hub worker/manifest; standalone registration removed"
+        }
+      ],
+      "external_dependencies": [
+        {
+          "path": "styles.css",
+          "pinned_sha256": "6080c5d15371abf386c886afa9f16a052b04ab6326f1cd041839a8b0df6ee5f0",
+          "current_sha256": "6080c5d15371abf386c886afa9f16a052b04ab6326f1cd041839a8b0df6ee5f0"
+        },
+        {
+          "path": "app.js",
+          "pinned_sha256": "6fc1795d1819b1c1895d625910ea78de831b445c429a6a5a5780aab256b6d09f",
+          "current_sha256": "0a0455ed83230290da6c4477138675cc3e86bbf66e31a5f69896435607d3fd03"
+        }
+      ],
+      "dynamic_rendering": null
+    }
+  ],
+  "summary": {
+    "apps": 15,
+    "sections": 142,
+    "displayed_media_uses": 68
+  }
+}
