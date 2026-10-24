@@ -13,3 +13,9 @@ if(false){navigator.serviceWorker.addEventListener("message",event=>{const m=eve
 // Deep-link directly to a specific published Field Note (used by emergency contact cards).
 const directNote=new URLSearchParams(window.location.search).get("note");
 if(directNote&&FIELD_NOTES.some(n=>n.id===directNote))openIssue(directNote);
+// Restore the URL-selected note after shared input replay, before panels/scroll.
+document.addEventListener('mba:restore-view',event=>{
+ if(event.detail?.reason!=='contextual-back')return;
+ const id=new URL(location.href).searchParams.get('note');
+ if(id&&FIELD_NOTES.some(note=>note.id===id))openIssue(id);
+});

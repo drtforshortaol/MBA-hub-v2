@@ -3065,9 +3065,9 @@
           "source_path": "apps/naturalist-field-notes/app.js",
           "local_path": "src/apps/naturalist-field-notes/app.js",
           "pinned_sha256": "9c615b5cbd105df4c38a69d5a8da316962aef62bac97822f58b2e2d4639903c2",
-          "current_sha256": "4e72f8e78b921e0172b5f1c85fe8d48a36c042c25e7b572aae39d9227bce008e",
+          "current_sha256": "412c28db578382ca785b4476fb6f59ec217e9671870dea4206040cc000b51eff",
           "status": "changed",
-          "technical_diff_note": "Correct URL control-prefix range; valid local filenames retained. Scientific, October content, media and approval scope unchanged."
+          "technical_diff_note": "Retains URL validation correction; app-owned contextual-Back hook restores the URL-selected note after shared input replay and before panel/scroll restoration. No scientific, October content, data, styles, media or approval changes; live integration depends on the canonical Track B app-view contract."
         },
         {
           "source_path": "apps/naturalist-field-notes/data.js",
