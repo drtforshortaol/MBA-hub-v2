@@ -30,7 +30,7 @@ export async function initializeOffline(status){
  };
  const updateStatus=async()=>{
   if(stopped)return;
-  if(status&&!confirmedReady)status.textContent='Checking offline readiness…';
+  if(status)status.textContent='Checking offline readiness…';
   const controller=new AbortController();activeRequest=controller;
   let result;
   try{result=await request('STATUS',{signal:controller.signal});}
