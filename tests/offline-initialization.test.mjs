@@ -196,3 +196,15 @@ test('slow activation and early offline event never prematurely claim readiness'
   assert.equal(status.textContent,'Ready offline · 360 files');
  }finally{lifecycle?.stop();h.restore();}
 });
+
+test('late registration failure cannot replace verified offline readiness',async()=>{
+ let rejectRegistration;
+ const registration=new Promise((resolve,reject)=>{rejectRegistration=reject;});
+ const h=harness({register:()=>registration});let lifecycle;
+ try{
+  const status={textContent:''};lifecycle=await initializeOffline(status);
+  assert.equal(status.textContent,'Ready offline · 360 files');
+  rejectRegistration(Error('network unavailable'));await tick();
+  assert.equal(status.textContent,'Ready offline · 360 files');
+ }finally{lifecycle?.stop();h.restore();}
+});
