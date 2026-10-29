@@ -1,5 +1,7 @@
 # Big-Bellied Seahorse — external-source claim verification (2026-10-28)
 
+Follow-up: [October 29 primary-source evidence](SEAHORSE_PRIMARY_EVIDENCE_20261029.md) locates species-specific pivot-feeding and newborn attachment studies, corrects the overlooked species-account life-cycle passage, narrows exhibit-history questions, and records current-source access failures. Read that dated update alongside this historical review; its evidence does not grant publication approval.
+
 Evidence review of current `src/apps/big-bellied-seahorse/manifest.json`. **No app runtime text or permission flag changed.** Linked external sources were inspected on 2026-10-28; future reconfirmation is necessary for time-sensitive status.
 
 | Existing section | Finding | Evidence and limits |
