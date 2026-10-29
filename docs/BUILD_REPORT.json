@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generatedAt": "2026-10-23T13:28:29.654Z",
+  "generatedAt": "2026-10-29T05:05:45.626Z",
   "platformVersion": "2.0.0-alpha.7",
   "stage": "migration-review",
   "apps": 33,
@@ -15,10 +15,7 @@
     "release gate: rollbackDevicePassed",
     "release gate: privacyReviewed",
     "content review pending: big-bellied-seahorse",
-    "content review pending: evolution-timeline",
     "content review pending: naturalist-field-notes",
-    "content review pending: tree-of-life-origins",
-    "content review pending: whale-parasites-associates",
     "media permission review: asset-1bd100105f88c83a",
     "media permission review: asset-95daa2493750e82f",
     "media permission review: asset-47f9bbb193878eec",
@@ -30,7 +27,7 @@
     "media permission review: asset-93c15fb934aba9e6"
   ],
   "publicationReview": {
-    "inheritedV1Content": 28,
+    "inheritedV1Content": 31,
     "scope": "Inherited V1 content only; do not confuse with production approval"
   },
   "deviceQA": {
@@ -78,6 +75,6 @@
   "explicitOutstanding": [
     "Pilot with additional guides not recorded",
     "Android and Windows physical device tests not recorded",
-    "Comprehensive dynamic app/media and 100-200 app performance validation pending"
+    "Current 33-app collection acceptance remains pending; no future app-count expansion is required"
   ]
 }
