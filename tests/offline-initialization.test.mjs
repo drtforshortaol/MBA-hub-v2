@@ -58,12 +58,12 @@ test('stopping lifecycle cancels in-flight verification without late status upda
   const status={textContent:''};lifecycle=await initializeOffline(status);
   h.serviceWorker.controller.postMessage=(message,ports)=>{reply=ports[0];};
   const pending=lifecycle.verify();
-  assert.equal(status.textContent,'Checking offline files…');
+  assert.equal(status.textContent,'Checking offline readiness…');
   lifecycle.stop();await pending;
-  assert.equal(status.textContent,'Checking offline files…','cancellation must not overwrite a disposed status');
+  assert.equal(status.textContent,'Checking offline readiness…','cancellation must not overwrite a disposed status');
   reply.postMessage({complete:true,count:999,total:999});reply.close();await tick();
-  assert.equal(status.textContent,'Checking offline files…');
-  await lifecycle.verify();assert.equal(status.textContent,'Checking offline files…');
+  assert.equal(status.textContent,'Checking offline readiness…');
+  await lifecycle.verify();assert.equal(status.textContent,'Checking offline readiness…');
  }finally{lifecycle?.stop();h.restore();}
 });
 
@@ -104,7 +104,7 @@ test('worker handover interrupts a stalled old worker and immediately verifies r
   const status={textContent:''};lifecycle=await initializeOffline(status);
   h.serviceWorker.controller.postMessage=(message,ports)=>{oldPort=ports[0];};
   const pending=lifecycle.verify();
-  assert.equal(status.textContent,'Checking offline files…');
+  assert.equal(status.textContent,'Checking offline readiness…');
   let replacementRequests=0;
   h.serviceWorker.controller={postMessage(message,ports){replacementRequests++;ports[0].postMessage({complete:true,count:361,total:361});}};
   h.serviceWorker.dispatchEvent(new Event('controllerchange'));
@@ -133,7 +133,7 @@ test('controller handover recovers initialization blocked on its first verificat
  h.serviceWorker.controller.postMessage=(message,ports)=>{oldPort=ports[0];};
  try{
   const status={textContent:''};const pending=initializeOffline(status);
-  assert.equal(status.textContent,'Checking offline files…');
+  assert.equal(status.textContent,'Checking offline readiness…');
   h.serviceWorker.controller={postMessage(message,ports){ports[0].postMessage({complete:true,count:361,total:361});}};
   h.serviceWorker.dispatchEvent(new Event('controllerchange'));
   lifecycle=await pending;assert.equal(status.textContent,'Ready offline · 361 files');
@@ -146,7 +146,7 @@ test('back-forward cache restore interrupts a suspended check and ignores its la
   const status={textContent:''};lifecycle=await initializeOffline(status);
   h.serviceWorker.controller.postMessage=(message,ports)=>{oldPort=ports[0];};
   const pending=lifecycle.verify();
-  assert.equal(status.textContent,'Checking offline files…');
+  assert.equal(status.textContent,'Checking offline readiness…');
   let resumedRequests=0;
   h.serviceWorker.controller.postMessage=(message,ports)=>{resumedRequests++;ports[0].postMessage({complete:false,count:7,total:360});};
   const restored=new Event('pageshow');Object.defineProperty(restored,'persisted',{value:true});
@@ -157,4 +157,54 @@ test('back-forward cache restore interrupts a suspended check and ignores its la
   assert.equal(status.textContent,'Preparing offline · 7/360','suspended readiness cannot overwrite the resumed check');
   lifecycle.stop();h.window.dispatchEvent(restored);await tick();assert.equal(resumedRequests,1);
  }finally{oldPort?.close();lifecycle?.stop();h.restore();}
+});
+
+test('fresh installation reports partial cache then automatically becomes ready on installed state',async()=>{
+ const installing=new EventTarget();installing.state='installing';
+ const registration=new EventTarget();registration.installing=installing;registration.update=async()=>{};
+ let count=2;
+ const h=harness({register:async()=>registration});let lifecycle;
+ h.serviceWorker.controller.postMessage=(message,ports)=>ports[0].postMessage({complete:count===360,count,total:360});
+ try{
+  const status={textContent:''};
+  lifecycle=await initializeOffline(status);
+  assert.equal(status.textContent,'Preparing offline · 2/360');
+  await tick();
+  installing.state='installed';count=360;installing.dispatchEvent(new Event('statechange'));
+  await tick();await lifecycle.verify();
+  assert.equal(status.textContent,'Ready offline · 360 files');
+ }finally{lifecycle?.stop();h.restore();}
+});
+test('slow activation and early offline event never prematurely claim readiness',async()=>{
+ const installing=new EventTarget();installing.state='installing';
+ const registration=new EventTarget();registration.installing=installing;registration.update=async()=>{};
+ let count=0;
+ const h=harness({register:async()=>registration});let lifecycle;
+ h.serviceWorker.controller.postMessage=(message,ports)=>ports[0].postMessage({complete:count===360,count,total:360});
+ try{
+  const status={textContent:''};
+  lifecycle=await initializeOffline(status);await tick();
+  assert.equal(status.textContent,'Preparing offline · 0/360');
+  count=42;h.window.dispatchEvent(new Event('offline'));
+  await lifecycle.verify();
+  assert.equal(status.textContent,'Preparing offline · 42/360');
+  installing.state='installed';installing.dispatchEvent(new Event('statechange'));
+  await lifecycle.verify();
+  assert.notEqual(status.textContent,'Ready offline · 360 files');
+  count=360;installing.state='activated';installing.dispatchEvent(new Event('statechange'));
+  await tick();await lifecycle.verify();
+  assert.equal(status.textContent,'Ready offline · 360 files');
+ }finally{lifecycle?.stop();h.restore();}
+});
+
+test('late registration failure cannot replace verified offline readiness',async()=>{
+ let rejectRegistration;
+ const registration=new Promise((resolve,reject)=>{rejectRegistration=reject;});
+ const h=harness({register:()=>registration});let lifecycle;
+ try{
+  const status={textContent:''};lifecycle=await initializeOffline(status);
+  assert.equal(status.textContent,'Ready offline · 360 files');
+  rejectRegistration(Error('network unavailable'));await tick();
+  assert.equal(status.textContent,'Ready offline · 360 files');
+ }finally{lifecycle?.stop();h.restore();}
 });

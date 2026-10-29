@@ -103,9 +103,15 @@ function runtime(html,data,script){
   createElement:tag=>new Element({tag,attrs:{},text:'',children:[]}),
   addEventListener(t,f){(handlers[t]??=[]).push(f);},dispatchEvent(e){for(const fn of handlers[e.type]||[])fn(e);}};
  class DOMParser{parseFromString(markup){return {body:parse(markup)};}}
- const context=vm.createContext({document,window:{},DOMParser,setTimeout:fn=>fn()});
+ // Exercise the authored startup listener, rather than rebuilding its intended
+ // effects by calling functions ourselves. The old standalone worker is outside
+ // this audit; omit that capability and supply empty legacy message storage.
+ const relatedCalls=[];
+ const context=vm.createContext({document,window:{renderRelatedHubTopics:id=>relatedCalls.push(id)},navigator:{},localStorage:{getItem:()=>null},DOMParser,setTimeout:fn=>fn()});
  vm.runInContext(data+'\n'+script,context,{timeout:3000});
- vm.runInContext('buildJumpMenu();buildFilters();buildCards();setupSearch();applyCardVisibility();',context,{timeout:3000});
+ assert.equal((handlers.DOMContentLoaded||[]).length,1,'one authored startup listener');
+ vm.runInContext('document.dispatchEvent({type:"DOMContentLoaded"});',context,{timeout:3000});
+ assert.deepEqual(relatedCalls,['whale-parasites-associates'],'startup optional related-topic call');
  return {document,context,records:JSON.parse(vm.runInContext('JSON.stringify(PARASITES)',context)),filters:JSON.parse(vm.runInContext('JSON.stringify(FILTERS)',context)),
   cards:()=>document.querySelectorAll('.card'),tabs:()=>document.querySelectorAll('.filter-tab'),
   fn:name=>vm.runInContext(name+'.toString()',context),visible(){return this.cards().filter(c=>c.dataset.hidden==='false').map(c=>c.id);},

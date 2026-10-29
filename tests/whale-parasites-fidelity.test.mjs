@@ -34,6 +34,16 @@ test('unreviewed runtime and manifest bytes fail before structural reproduction'
  await assert.rejects(reviewWhaleParasites({...base,overrides:{'manifest.json':JSON.stringify(manifest)}}),/unreviewed current bytes manifest.json/);
 });
 
+test('authored startup must build cards instead of relying on audit-side initialization',async()=>{
+ assert(original.includes('  buildCards();'));
+ await assert.rejects(reviewWhaleParasites({...base,verifyBytes:false,overrides:{'app.js':original.replace('  buildCards();','  // startup card construction removed')}}),/complete rendered card trees/);
+});
+
+test('authored startup must retain its listener and optional related-topic invocation',async()=>{
+ await assert.rejects(reviewWhaleParasites({...base,verifyBytes:false,overrides:{'app.js':original.replace('"DOMContentLoaded"','"never-loaded"')}}),/one authored startup listener/);
+ await assert.rejects(reviewWhaleParasites({...base,verifyBytes:false,overrides:{'app.js':original.replace('window.renderRelatedHubTopics("whale-parasites-associates");','')}}),/startup optional related-topic call/);
+});
+
 for(const [label,before,after] of [
  ['paragraph element','<p>${escapeHTML(paragraph)}</p>','<aside>${escapeHTML(paragraph)}</aside>'],
  ['icon background','style="background:${escapeHTML(item.iconBg)};"','style="background:#ffffff;"'],
