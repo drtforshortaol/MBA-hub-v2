@@ -30,6 +30,8 @@ The current-runtime follow-up in `docs/NATURALIST_OCTOBER_RUNTIME_20261029.md` e
 
 ## New October scope: precise source gaps and disagreements
 
+**Later evidence update:** `NATURALIST_PRIMARY_EVIDENCE_FOLLOWUP_20261029.md` now locates primary ephyra **arm** transport evidence and direct Aquarium member/donor preview schedules. Those two evidence findings supersede the corresponding initial source-gap assessments below; distal-lappet/early-ephyra postfeeding wording and original 2008 archival verification remain bounded as described in the follow-up. No factual/editorial approval is inferred.
+
 Both new content files are minified to **line 1**. The field/section locators below distinguish exact claims on that line. `october-2026-note.js` is the active structured issue. `october-2026-08-14.html` is a separately packaged text summary; it is declared as an offline asset in `manifest.json:25`, while the indexed October destination at `manifest.json:602–613` routes to the structured issue. No direct reference to the separate page was found in current app runtime/data/index HTML. Offline inclusion still makes its content part of the review scope.
 
 | Locator | Current material needing review | Evidence / narrow next action |
