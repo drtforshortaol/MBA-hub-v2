@@ -1,5 +1,7 @@
 # Seahorse claim evidence follow-up — October 29, 2026
 
+Next review packet: [numeric claims and final disposition checklist](SEAHORSE_REVIEW_DISPOSITION_20261029.md), including primary brood-count evidence and a newly retrieved September 2026 specialist-authority conservation table. The narrower current-status evidence there supplements the access limits recorded below.
+
 Evidence-only follow-up to the [October 28 verification](SEAHORSE_SOURCE_VERIFICATION_20261028.md) and [review queue](SEAHORSE_SCIENTIFIC_EDITORIAL_REVIEW_QUEUE_20261028.md). Baseline: `c0ddccf0b10dc50b01aba17e917d646946af352c`. No scientific/editorial approval is inferred from retrieval, and no runtime, manifest, image permission or release gate changes here.
 
 Reviewed current files, SHA-256:
