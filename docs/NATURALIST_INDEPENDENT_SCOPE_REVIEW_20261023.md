@@ -1,5 +1,7 @@
 # Naturalist original-scope independent review — October 23, 2026
 
+> Current disposition (October 29, 2026): the owner approved the expandable Q&A presentation, collapsed by default, with inline answers/photos/tags and a button to the dated Field Note. See `NATURALIST_SCOPED_OWNER_REVIEW_20261029.md` for the exact scope. The pending-presentation statements below are the historical October 23 findings; new October content, image rights and whole-app review remain pending.
+
 ## Conclusion
 
 The bounded original-source evidence is substantive and accurately labeled. It does **not** justify whole-application inherited-content reconciliation. Naturalist remains pending: changed Q&A/Home presentation and new October material require their separately recorded reviews; the four new photo permissions remain review-required. No configuration, source or approval fields are edited by this review.

@@ -1,12 +1,12 @@
 # Naturalist scoped owner review — October 29, 2026
 
-**One presentation decision can be made now. It does not approve the new October facts, images or whole application.** No content or approval record is changed by this packet.
+**Owner approved the expandable Q&A presentation on October 29, 2026.** This records presentation approval only; new October facts, image rights and whole-application publication review remain pending. No application content or release-gate configuration changes here.
 
 Reviewed content baseline: `c0ddccf0b10dc50b01aba17e917d646946af352c`; subsequent Naturalist engineering commit `faee249` adds runtime checks without changing these app files. Source pin for inherited material: `drtforshortaol/MBA-hub@5c219508d23255080f6b050cefa8092905447d81`.
 
-## Decision ready now: keep inline Q&A presentation?
+## Approved decision: keep inline Q&A presentation
 
-**Recommended decision text:** “Keep the current expandable Q&A cards, with the original answer and any original photographs/tags inside each card and a button back to its dated Field Note. This approves the presentation change only. Existing unchanged V1 content remains under its prior authorization; new October content and image rights remain separately pending.”
+**Accepted scope:** “Keep the current expandable Q&A cards, with the original answer and any original photographs/tags inside each card and a button back to its dated Field Note. This approves the presentation change only. Existing unchanged V1 content remains under its prior authorization; new October content and image rights remain separately pending.”
 
 | Before: pinned V1 | Current V2 | Actual scope of this decision |
 | --- | --- | --- |
@@ -16,7 +16,9 @@ Example: “What changed in the Seabirds exhibit?” originally linked to `2026-
 
 Evidence: `src/apps/naturalist-field-notes/app.js:2`, function `qaBlock()` and the call from `home()` on line 10. Pinned original `app.js` Git blob: `23e4718ec959e9aa0044000d7826c3d6f0c1583a`. `scripts/migration/review-naturalist-original-fidelity.mjs:88–98` separately compares all 38 source-derived cards; lines 100–111 exercise original issue buttons, Back and note-query startup. The existing independent review explicitly leaves presentation approval pending: `docs/NATURALIST_INDEPENDENT_SCOPE_REVIEW_20261023.md`.
 
-**Record now: PRESENTATION DECISION NOT RECORDED.** A positive answer would resolve this scoped presentation question, not justify blanket `reviewed-unchanged-v1` for today's whole Naturalist app. The three October Q&A entries use the same layout but their factual text is new and remains pending below.
+**Decision record — APPROVED, October 29, 2026.** The owner replied, “I approve your recommendation,” after comparing the original index-only approach with expandable cards. The accepted recommendation keeps cards collapsed by default, reveals the answer and associated photographs/tags on expansion, and retains the button back to the dated Field Note. This approval covers the layout, including its Home embedding; it does not approve newly added answer text or new media rights. The current `qaBlock()` already renders native details without an `open` attribute, so no runtime rewrite is necessary.
+
+The presentation question is resolved. This is not a blanket `reviewed-unchanged-v1` record for the whole current app. The three October Q&A entries use the accepted layout but their factual text remains pending below. The engineering reports' `approval_granted:false` and `whole_app_inheritance:false` remain correct for their original, broader scope.
 
 ## Already-authorized inherited scope — no repeat content approval requested
 
@@ -51,7 +53,7 @@ External sources are paraphrased here; source retrieval does not clear image rig
 
 ## Smallest next steps
 
-1. Record only the owner's keep/revert decision for the current inline Q&A layout. No image-rights or new-fact decision is bundled into that answer.
+1. **Completed:** owner approved retaining the current expandable Q&A layout, collapsed by default. No image-rights or new-fact decision is bundled into that answer.
 2. Continue exact original-source recovery and the itemized factual review above. In particular, obtain Aquarium evidence for the **separate page's** 2008/preview assertions; ask for a scoped retain/edit/omit decision only after exact evidence or proposed replacement text is available.
 3. Preserve pending content/publication/media flags. Update the scoped evidence record after decisions; do not decrement the whole-app release blocker merely because the layout is accepted.
 
