@@ -30,3 +30,13 @@ test('a different gray-whale photo cannot stand in for the absent source attachm
  const script=changed(n=>n.observations.find(o=>o.title.startsWith('Historical gray-whale')).photos=[{src:'../another-gray-whale.jpeg',caption:'Replacement'}]);
  assert.throws(()=>reviewNaturalistOwnerSource({scriptOverride:script}),/cannot be silently replaced/);
 });
+
+const html=fs.readFileSync(new URL('../src/apps/naturalist-field-notes/october-2026-08-14.html',import.meta.url),'utf8');
+test('offline summary retains historical timing and cannot silently gain a substitute image',()=>{
+ const result=reviewNaturalistOwnerSource();
+ assert.equal(result.standalone_historical_context_matches,true);
+ assert.equal(result.standalone_missing_photo_preserved,true);
+ assert.throws(()=>reviewNaturalistOwnerSource({htmlOverride:html.replace('in March, two years earlier','this week')}),/same historical context/);
+ assert.throws(()=>reviewNaturalistOwnerSource({htmlOverride:html.replace('not an October 8–14 sighting.</p>','not an October 8–14 sighting.</p><img src="replacement.jpg">')}),/substitute a missing historical photo/);
+ assert.throws(()=>reviewNaturalistOwnerSource({htmlOverride:html.replace('Naturalist Update • October 8–14, 2026','Naturalist Update • October 15, 2026')}),/observation period/);
+});

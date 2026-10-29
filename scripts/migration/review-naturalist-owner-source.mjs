@@ -10,7 +10,7 @@ const packageRoot=fileURLToPath(new URL('../../',import.meta.url));
 const evidencePath='docs/verification/naturalist-october-owner-source-20261029.json';
 const evidenceSHA='b2cbba54e814482fab3a34de01305a6a6e4a97a53dddefbd58bc060dc3ad6673';
 const sha=s=>createHash('sha256').update(s).digest('hex');
-export function reviewNaturalistOwnerSource({root=packageRoot,scriptOverride}={}){
+export function reviewNaturalistOwnerSource({root=packageRoot,scriptOverride,htmlOverride}={}){
  const evidenceBytes=fs.readFileSync(path.join(packageRoot,evidencePath));
  assert.equal(sha(evidenceBytes),evidenceSHA,'unreviewed owner-source receipt');
  const source=JSON.parse(evidenceBytes);
@@ -27,6 +27,12 @@ export function reviewNaturalistOwnerSource({root=packageRoot,scriptOverride}={}
  assert(historical,'historical source observation is preserved');
  for(const term of ['Big Sur','Highway 1','March','two years earlier','not an October 8–14 sighting'])assert(historical.text.includes(term),'historical context: '+term);
  assert(!historical.photos?.length,'missing original photo cannot be silently replaced');
+ const html=htmlOverride??fs.readFileSync(path.join(root,'src/apps/naturalist-field-notes/october-2026-08-14.html'),'utf8');
+ const historicalSections=[...html.matchAll(/<section\b[^>]*>([\s\S]*?)<\/section>/gi)].map(m=>m[1]).filter(section=>section.includes('<h2>'+historical.title+'</h2>'));
+ assert.equal(historicalSections.length,1,'one historical observation in the offline summary');
+ assert(historicalSections[0].includes('<p>'+historical.text+'</p>'),'offline summary preserves the same historical context');
+ assert(!/<(?:img|picture|video|object|embed|iframe)\b|(?:src|srcset)\s*=/i.test(historicalSections[0]),'offline summary cannot substitute a missing historical photo');
+ assert(html.includes('<h1>Naturalist Update • October 8–14, 2026</h1>'),'offline summary uses the observation period');
  const photos=note.observations.flatMap(o=>o.photos||[]).map(p=>path.posix.normalize('apps/naturalist-field-notes/'+p.src));
  assert.deepEqual(photos,source.source_media.filter(row=>row.candidate_app_asset).map(row=>row.candidate_app_asset),'declared subject-corresponding assets');
  const manifest=JSON.parse(fs.readFileSync(path.join(root,'src/apps/naturalist-field-notes/manifest.json'),'utf8'));
@@ -34,6 +40,7 @@ export function reviewNaturalistOwnerSource({root=packageRoot,scriptOverride}={}
  for(const term of ['Big Sur','historical gray whale'])assert(section.aliases.includes(term),'historical search metadata');
  assert.equal(manifest.publication_review,'pending');
  return {schema_version:1,app_id:manifest.app_id,source_receipt_sha256:evidenceSHA,current_script_sha256:sha(script),
+  current_summary_sha256:sha(html),standalone_historical_context_matches:true,standalone_missing_photo_preserved:true,
   source_rows:38,normalized_species:39,complete_bay_watch:true,stable_note_id:note.id,
   source_email_date_verified:false,display_uses_observation_period:true,historical_context_restored:true,
   source_photo_items:source.source_media.length,current_photo_items:photos.length,
