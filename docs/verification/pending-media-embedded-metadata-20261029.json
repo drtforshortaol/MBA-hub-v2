@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "scope": "Read-only EXIF/IPTC provenance triage; no metadata value establishes authorship, licensing or permission. No XMP, visual reverse-image or external licensing-record review claimed.",
+  "source_commit": "c0ddccf0b10dc50b01aba17e917d646946af352c",
+  "pending_items": 9,
+  "sourceWritePerformed": false,
+  "permission_granted": false,
+  "items": [
+    {
+      "asset_id": "asset-1bd100105f88c83a",
+      "path": "apps/IMG_4207.jpeg",
+      "sha256": "1bd100105f88c83aadb9272fccacd1c023e417799d1b7dc79684e7f321bafb6e",
+      "catalog_hash_matches": true,
+      "dimensions": [
+        997,
+        754
+      ],
+      "exif_description": "Screenshot",
+      "iptc_caption": "Screenshot",
+      "rights_fields": {
+        "exif_artist": null,
+        "exif_copyright": null,
+        "iptc_byline": null,
+        "iptc_credit": null,
+        "iptc_copyright": null,
+        "iptc_source": null
+      },
+      "recorded_permission": "review-required",
+      "permission_granted": false
+    },
+    {
+      "asset_id": "asset-95daa2493750e82f",
+      "path": "apps/IMG_4208.jpeg",
+      "sha256": "95daa2493750e82f0444679b1c567d66af4e5212ab9d864eca3f2ddb8e475f1d",
+      "catalog_hash_matches": true,
+      "dimensions": [
+        1206,
+        944
+      ],
+      "exif_description": "Screenshot",
+      "iptc_caption": "Screenshot",
+      "rights_fields": {
+        "exif_artist": null,
+        "exif_copyright": null,
+        "iptc_byline": null,
+        "iptc_credit": null,
+        "iptc_copyright": null,
+        "iptc_source": null
+      },
+      "recorded_permission": "review-required",
+      "permission_granted": false
+    },
+    {
+      "asset_id": "asset-47f9bbb193878eec",
+      "path": "apps/IMG_4209.jpeg",
+      "sha256": "47f9bbb193878eeced59326418949849427489f0167e33a7e063be9d091f643b",
+      "catalog_hash_matches": true,
+      "dimensions": [
+        1206,
+        808
+      ],
+      "exif_description": "Screenshot",
+      "iptc_caption": "Screenshot",
+      "rights_fields": {
+        "exif_artist": null,
+        "exif_copyright": null,
+        "iptc_byline": null,
+        "iptc_credit": null,
+        "iptc_copyright": null,
+        "iptc_source": null
+      },
+      "recorded_permission": "review-required",
+      "permission_granted": false
+    },
+    {
+      "asset_id": "asset-50646c3fe1d0c359",
+      "path": "apps/IMG_4210.jpeg",
+      "sha256": "50646c3fe1d0c359860229e041767429fc21a382cd16d75bd165fd5f7a3cef52",
+      "catalog_hash_matches": true,
+      "dimensions": [
+        1042,
+        856
+      ],
+      "exif_description": "Screenshot",
+      "iptc_caption": "Screenshot",
+      "rights_fields": {
+        "exif_artist": null,
+        "exif_copyright": null,
+        "iptc_byline": null,
+        "iptc_credit": null,
+        "iptc_copyright": null,
+        "iptc_source": null
+      },
+      "recorded_permission": "review-required",
+      "permission_granted": false
+    },
+    {
+      "asset_id": "asset-486b6cdb96375dfb",
+      "path": "apps/IMG_4212.jpeg",
+      "sha256": "486b6cdb96375dfb0c5fa97a8d9538ff81384cc4360d8884875cb71eb16b6e53",
+      "catalog_hash_matches": true,
+      "dimensions": [
+        999,
+        818
+      ],
+      "exif_description": "Screenshot",
+      "iptc_caption": "Screenshot",
+      "rights_fields": {
+        "exif_artist": null,
+        "exif_copyright": null,
+        "iptc_byline": null,
+        "iptc_credit": null,
+        "iptc_copyright": null,
+        "iptc_source": null
+      },
+      "recorded_permission": "review-required",
+      "permission_granted": false
+    },
+    {
+      "asset_id": "asset-2913dc8df835400c",
+      "path": "apps/IMG_4213.jpeg",
+      "sha256": "2913dc8df835400ca429d1626e1aebbbdbe358f313db4e6f9b26d88629230889",
+      "catalog_hash_matches": true,
+      "dimensions": [
+        982,
+        888
+      ],
+      "exif_description": "Screenshot",
+      "iptc_caption": "Screenshot",
+      "rights_fields": {
+        "exif_artist": null,
+        "exif_copyright": null,
+        "iptc_byline": null,
+        "iptc_credit": null,
+        "iptc_copyright": null,
+        "iptc_source": null
+      },
+      "recorded_permission": "review-required",
+      "permission_granted": false
+    },
+    {
+      "asset_id": "asset-e62b39cc07a542c4",
+      "path": "apps/IMG_4214.jpeg",
+      "sha256": "e62b39cc07a542c4def4dd10a7a5f17cdf7dddb235fd81af7c20b564089c1fea",
+      "catalog_hash_matches": true,
+      "dimensions": [
+        922,
+        352
+      ],
+      "exif_description": "Screenshot",
+      "iptc_caption": "Screenshot",
+      "rights_fields": {
+        "exif_artist": null,
+        "exif_copyright": null,
+        "iptc_byline": null,
+        "iptc_credit": null,
+        "iptc_copyright": null,
+        "iptc_source": null
+      },
+      "recorded_permission": "review-required",
+      "permission_granted": false
+    },
+    {
+      "asset_id": "asset-54f52bac7bc827bc",
+      "path": "apps/IMG_4215.jpeg",
+      "sha256": "54f52bac7bc827bc49ca4d0d5e3fd121988d61fc9dd75aa65bdca2cbbcd8ce4a",
+      "catalog_hash_matches": true,
+      "dimensions": [
+        1053,
+        741
+      ],
+      "exif_description": "Screenshot",
+      "iptc_caption": "Screenshot",
+      "rights_fields": {
+        "exif_artist": null,
+        "exif_copyright": null,
+        "iptc_byline": null,
+        "iptc_credit": null,
+        "iptc_copyright": null,
+        "iptc_source": null
+      },
+      "recorded_permission": "review-required",
+      "permission_granted": false
+    },
+    {
+      "asset_id": "asset-93c15fb934aba9e6",
+      "path": "apps/IMG_4216.jpeg",
+      "sha256": "93c15fb934aba9e67b2cc30cc9732565460cea8d395ba408f37d0a8982d4a19c",
+      "catalog_hash_matches": true,
+      "dimensions": [
+        1206,
+        1554
+      ],
+      "exif_description": "Screenshot",
+      "iptc_caption": "Screenshot",
+      "rights_fields": {
+        "exif_artist": null,
+        "exif_copyright": null,
+        "iptc_byline": null,
+        "iptc_credit": null,
+        "iptc_copyright": null,
+        "iptc_source": null
+      },
+      "recorded_permission": "review-required",
+      "permission_granted": false
+    }
+  ]
+}

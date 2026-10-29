@@ -14,6 +14,9 @@ export function checkedReviewOutputPath(root,filename,extension){
   current=path.join(current,part);let stat;
   try{stat=fs.lstatSync(current);}catch(error){if(error.code==='ENOENT')break;throw error;}
   if(stat.isSymbolicLink())throw Error('Symlink prohibited in review output');
+  // A scratch filename can be another directory entry for protected source or
+  // attached evidence. Path allowlists alone cannot distinguish those aliases.
+  if(current===target&&(!stat.isFile()||stat.nlink!==1))throw Error('Review output must be a singly linked regular file');
  }
  const relative=path.relative(repository,target);
  if(relative===''||(!relative.startsWith('..'+path.sep)&&relative!=='..'&&!path.isAbsolute(relative))){
