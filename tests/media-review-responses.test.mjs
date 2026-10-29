@@ -131,3 +131,17 @@ test('response template CLI cannot overwrite protected configuration, code or ex
   assert.deepEqual(fs.readFileSync(target),before);
  }
 });
+
+test('response CLI rejects differently named hard-link aliases of supplied evidence or protected source',t=>{
+ for(const mode of ['template-source','report-evidence']){
+  const f=fixture(t),response=complete(f);
+  f.write('review/responses.json',JSON.stringify(response));
+  const target=path.join(f.root,'review','output.json');
+  const original=path.join(f.root,mode==='template-source'?'src/shared/media/catalog.json':'evidence/license.txt');
+  fs.linkSync(original,target);const before=fs.readFileSync(original);
+  const args=mode==='template-source'?['--template',target]:['--responses',path.join(f.root,'review/responses.json'),'--evidence-root',f.root,'--report',target];
+  const run=spawnSync(process.execPath,[script,'--root',f.root,...args],{encoding:'utf8'});
+  assert.equal(run.status,1,run.stderr);assert.match(run.stderr,/singly linked regular file/);
+  assert.deepEqual(fs.readFileSync(original),before);assert.deepEqual(fs.readFileSync(target),before);
+ }
+});

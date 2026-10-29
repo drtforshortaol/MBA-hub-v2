@@ -119,3 +119,17 @@ test('packet outputs cannot overwrite protected repository configuration, code o
   assert.deepEqual(fs.readFileSync(target),before);
  }
 });
+
+test('contact sheet and JSON outputs reject hard-linked aliases without altering protected bytes',t=>{
+ for(const kind of ['report','html']){
+  const f=fixture(t),protectedPath=path.join(f.root,'src/shared/media/catalog.json');
+  const before=fs.readFileSync(protectedPath),report=path.join(f.root,'review','packet.json'),html=path.join(f.root,'review','contact.html');
+  fs.mkdirSync(path.dirname(report),{recursive:true});
+  const alias=kind==='report'?report:html;
+  fs.linkSync(protectedPath,alias);
+  assert.throws(()=>writePendingMediaReview({root:f.root,report,html}),/singly linked regular file/);
+  assert.deepEqual(fs.readFileSync(protectedPath),before);
+  assert.deepEqual(fs.readFileSync(alias),before);
+  assert.equal(fs.existsSync(kind==='report'?html:report),false,'no partial packet output');
+ }
+});
