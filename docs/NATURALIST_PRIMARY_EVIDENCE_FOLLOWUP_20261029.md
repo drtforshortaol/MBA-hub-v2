@@ -1,5 +1,7 @@
 # Naturalist primary evidence and exact proposed corrections — October 29, 2026
 
+> Later source update (October 29, 2026): the owner has now supplied the actual October 8–14 text. See `NATURALIST_OWNER_SOURCE_RECONCILIATION_20261029.md` for transcription verification, corrected date labeling, restored historical context and the missing `MZD_5048.JPG` photograph. Earlier missing-source statements below describe the pre-receipt review; no whole-app or media approval is implied.
+
 Evidence-only follow-up to `NATURALIST_SCOPED_OWNER_REVIEW_20261029.md`. The owner has already approved the collapsed expandable Q&A presentation, as recorded on this branch in `44f12b8c31877fcba5d31e144dbc3430ce5da5df`; that decision is preserved. No application text, scientific approval, media permission or release gate is changed here.
 
 ## Findings that change the earlier pending assessment

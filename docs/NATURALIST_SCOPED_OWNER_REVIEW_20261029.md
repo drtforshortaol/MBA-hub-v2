@@ -1,5 +1,7 @@
 # Naturalist scoped owner review — October 29, 2026
 
+> Later source update (October 29, 2026): the owner has now supplied the actual October 8–14 text. See `NATURALIST_OWNER_SOURCE_RECONCILIATION_20261029.md` for transcription verification, corrected date labeling, restored historical context and the missing `MZD_5048.JPG` photograph. Earlier missing-source statements below describe the pre-receipt review; no whole-app or media approval is implied.
+
 **Owner approved the expandable Q&A presentation on October 29, 2026.** This records presentation approval only; new October facts, image rights and whole-application publication review remain pending. No application content or release-gate configuration changes here.
 
 Reviewed content baseline: `c0ddccf0b10dc50b01aba17e917d646946af352c`; subsequent Naturalist engineering commit `faee249` adds runtime checks without changing these app files. Source pin for inherited material: `drtforshortaol/MBA-hub@5c219508d23255080f6b050cefa8092905447d81`.

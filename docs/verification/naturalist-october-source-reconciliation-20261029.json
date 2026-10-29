@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "app_id": "naturalist-field-notes",
+  "source_receipt_sha256": "b2cbba54e814482fab3a34de01305a6a6e4a97a53dddefbd58bc060dc3ad6673",
+  "current_script_sha256": "409140fc080fac1ddcc3390db326ea4a5df56ebdf10b4756b73de4d8a68d9787",
+  "source_rows": 38,
+  "normalized_species": 39,
+  "complete_bay_watch": true,
+  "stable_note_id": "2026-10-15-seahorse",
+  "source_email_date_verified": false,
+  "display_uses_observation_period": true,
+  "historical_context_restored": true,
+  "source_photo_items": 5,
+  "current_photo_items": 4,
+  "unresolved_photo_files": [
+    "MZD_5048.JPG"
+  ],
+  "attachment_identity_verified": false,
+  "approval_granted": false,
+  "publication_review": "pending",
+  "limitations": [
+    "Selected excerpts and Bay Watch rows, not a complete email or original attachment archive.",
+    "Subject/caption correspondence does not establish exact image identity or reuse rights.",
+    "Source-derived biology and exhibit recollections are not independently certified by this comparison."
+  ]
+}
