@@ -22,3 +22,6 @@ Evidence review of current `src/apps/big-bellied-seahorse/manifest.json`. **No a
 5. Keep reviewer signoff, full iPhone acceptance and release approvals pending.
 
 No image, scientific claim, source approval, runtime, production/tester repository or deployment was changed in this evidence-only step.
+
+## Owner release-wording decision (2026-10-28)
+The owner prefers publication-ready, post-opening exhibit wording to avoid an unnecessary rewrite after launch. Approved target wording for release **after verification of opening**: “Big-bellied seahorses are featured in Monterey Bay Aquarium’s *Ocean in Motion* exhibit.” The Aquarium's September 8 announcement schedules opening November 7, 2026; the sentence must not be presented as an already-verified event before that date. At release, confirm opening took place as announced. This decision does not approve unsupported historical claims about earlier exhibits or change other review gates.
