@@ -4,9 +4,9 @@
   "title": "Big-Bellied Seahorse",
   "category": "animals",
   "type": "species",
-  "version": "2.0.0-alpha.7",
+  "version": "2.0.0-alpha.8",
   "entry_point": "apps/big-bellied-seahorse/index.html",
-  "status": "development",
+  "status": "testing",
   "owner": "big-bellied-seahorse",
   "listed": true,
   "dependencies": [
@@ -58,7 +58,7 @@
     {
       "id": "Male-pregnancy",
       "title": "Male pregnancy",
-      "text": "The female transfers eggs to the male brood pouch after courtship. The male broods developing young. Published species accounts describe a gestation period of approximately 28–34 days, varying with conditions, and broods often numbering in the hundreds.",
+      "text": "The female transfers eggs to the male brood pouch after courtship. The male broods developing young. Published species accounts describe a gestation period of approximately 28\u201334 days, varying with conditions, and broods often numbering in the hundreds.",
       "aliases": []
     },
     {
@@ -76,13 +76,13 @@
     {
       "id": "Conservation",
       "title": "Conservation",
-      "text": "FishBase (IUCN Red List assessment dated August 19, 2016; status shown in its 2025-2 listing) reports Least Concern for this species. All seahorses (Hippocampus spp.) are listed under CITES Appendix II, which regulates international trade rather than prohibiting it. Habitat loss, bycatch and wildlife trade remain useful conservation topics. Check authoritative listings again before publication.",
+      "text": "FishBase's 2025-2 global IUCN listing reports Least Concern for this species, with an assessment date of August 19, 2016. The IUCN Seahorse, Pipefish & Seadragon Specialist Group's species table, updated September 2026, also displays Least Concern. All seahorses (Hippocampus spp.) are listed under CITES Appendix II, which regulates international trade rather than prohibiting it. Habitat loss, bycatch and wildlife trade remain useful conservation topics. Check authoritative listings again before publication.",
       "aliases": []
     },
     {
       "id": "Aquarium-history",
       "title": "Aquarium history",
-      "text": "Big-bellied seahorses are featured in Monterey Bay Aquarium's Ocean in Motion exhibit. The October 2026 Naturalist source also recalls earlier seahorse exhibits, including Splash Zone and The Secret Lives of Seahorses; their precise history awaits Aquarium editorial confirmation.",
+      "text": "Big-bellied seahorses are featured in Monterey Bay Aquarium's Ocean in Motion exhibit. The Aquarium's historical timeline records Splash Zone opening in April 2000 and The Secret Lives of Seahorses opening in April 2009. The precise earlier exhibit history of big-bellied seahorses awaits Aquarium confirmation.",
       "aliases": []
     },
     {
@@ -94,9 +94,9 @@
     {
       "id": "References",
       "title": "References",
-      "text": "Source: October 8–14, 2026 Naturalist update. Species information: Animal Diversity Web (Hippocampus abdominalis species account) and Fishes of Australia. Confirm image rights and Aquarium-specific exhibit history before publication.",
+      "text": "Source: October 8\u201314, 2026 Naturalist update. Species information: Animal Diversity Web (Hippocampus abdominalis species account) and Fishes of Australia. Confirm image rights and Aquarium-specific exhibit history before publication.",
       "aliases": []
     }
   ],
-  "publication_review": "pending"
+  "publication_review": "owner-approved-text"
 }

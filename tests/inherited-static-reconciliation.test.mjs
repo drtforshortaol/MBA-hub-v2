@@ -19,10 +19,10 @@ test('thirty-one reviewed migrations reconcile existing content without changing
  for(const app_id of expected)assert(!report.blockers.some(item=>item.reason===`content review pending: ${app_id}`));
  assert.equal(report.blockers.filter(item=>item.category==='operational-gate').length,5);
  assert.equal(report.blockers.filter(item=>item.reason.startsWith('media permission review:')).length,9);
- assert(report.blockers.some(item=>item.reason==='content review pending: big-bellied-seahorse'));
+ assert(!report.blockers.some(item=>item.reason==='content review pending: big-bellied-seahorse')); // Separate explicit owner-text decision.
  assert(report.blockers.some(item=>item.reason==='content review pending: naturalist-field-notes'));
  assert.equal(report.approvalReconciliation.inheritedCandidates,1);
  assert.deepEqual(report.blockers.filter(item=>item.category==='inherited-approval-reconciliation').map(item=>item.reason).sort(),['content review pending: naturalist-field-notes']);
- assert.equal(report.blockers.length,16);
+ assert.equal(report.blockers.length,15);
  assert.equal(report.releaseEligible,false);
 });

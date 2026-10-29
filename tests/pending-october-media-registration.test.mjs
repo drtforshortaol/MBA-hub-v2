@@ -75,7 +75,7 @@ test('new October media registration preserves bytes, original paths and pending
   assert.equal(asset.sha256,expected);assert.equal(asset.permission,'review-required');assert.equal(asset.permission_evidence,undefined);
   assert.equal(asset.offline,true);assert.ok(app.media.includes(asset_id));assert.ok(app.offline_assets.includes(path));
   assert.equal(asset.source_repository,'drtforshortaol/MBA-hub-v2');assert.equal(asset.source_commit,'12afc2052c6117cc33616a9687199e353c3d8c48');assert.equal(asset.source_path,'src/'+path);
-  assert.equal(app.publication_review,'pending');assert.ok(!['approved','published'].includes(app.status));
+  assert.equal(app.publication_review,id==='big-bellied-seahorse'?'owner-approved-text':'pending');assert.ok(!['approved','published'].includes(app.status));
  }
  const blockers=releaseErrors(read('config/platform.json'),[...apps.values()],catalog,{apps:[]});
  for(const row of rows)assert.ok(blockers.includes('media permission review: '+row[2]));

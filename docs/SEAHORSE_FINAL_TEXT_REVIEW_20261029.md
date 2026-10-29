@@ -1,5 +1,7 @@
 # Seahorse final text for owner review — October 29, 2026
 
+> Accepted by the owner for authored-text implementation on October 29, 2026 after the scoped approval request and blocker-clearance explanation. See `SEAHORSE_TEXT_APPROVAL_20261029.md` for implementation, binding and remaining gates. The candidate and evidence limits below are preserved as the reviewed record.
+
 This is a concrete proposed text packet, **not an approval**. It preserves eight current sections exactly and proposes two substitutions: Conservation adds the recent specialist-authority corroboration while retaining dated FishBase attribution; Aquarium history states verified exhibit dates without claiming this species occupied those earlier exhibits. No app files are edited.
 
 Current manifest SHA-256: `f33413e8af005d7ab6164b69a4d5228c96f4dd2cd2cd636ff6b692ebf21db051`. Current displayed HTML SHA-256: `a3c407524e85e84ef19207fc8d2bef05968473f347d0ea3a36460156a4963f47`. Supporting records: [primary evidence](SEAHORSE_PRIMARY_EVIDENCE_20261029.md), [numeric disposition](SEAHORSE_REVIEW_DISPOSITION_20261029.md), and [status receipt](verification/seahorse-status-source-receipt-20261029.json).

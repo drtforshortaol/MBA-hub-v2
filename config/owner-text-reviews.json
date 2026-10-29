@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "apps": [
+    {
+      "app_id": "big-bellied-seahorse",
+      "status": "owner-approved-text",
+      "scope": "authored-text-only",
+      "reviewer": "owner",
+      "reviewed_on": "2026-10-29",
+      "review_reference": "docs/SEAHORSE_TEXT_APPROVAL_20261029.md",
+      "authorization_reference": "Owner conversation: approval request for exact ten-section Seahorse draft at 74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9, followed by explanation of clearing the content blocker",
+      "authorization_quote": "Proceed",
+      "candidate_commit": "74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9",
+      "content_sha256": "14c0767d1b9feb92dc7ca3713a779427e629c699256734ead3b36e2896417353"
+    }
+  ]
+}

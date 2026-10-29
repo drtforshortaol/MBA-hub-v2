@@ -63,13 +63,36 @@ export function inheritedApprovalSupported(app,{provenance,evidence,sourceRoot='
  try{return record.content_sha256===inheritedContentDigest(app,{sourceRoot});}catch{return false;}
 }
 
+// New authored text has its own explicit owner decision; it is not V1 inheritance
+// or permission to reuse illustrations. Bind the reviewed bundle to that record.
+export function ownerTextApprovalSupported(app,{sourceRoot='src',ownerTextEvidence}={}){
+ if(!app||app.status!=='testing'||app.publication_review!=='owner-approved-text')return false;
+ try{
+  const evidence=ownerTextEvidence===undefined?readOptional(new URL('../config/owner-text-reviews.json',import.meta.url)):ownerTextEvidence;
+  if(evidence?.schema_version!==1||!Array.isArray(evidence.apps)||!Array.from(evidence.apps).every(row=>row&&typeof row==='object'&&!Array.isArray(row)))return false;
+  const matches=evidence.apps.filter(row=>row.app_id===app.app_id);
+  if(matches.length!==1)return false;
+  const record=matches[0];
+  if(record.status!=='owner-approved-text'||record.scope!=='authored-text-only'||record.reviewer!=='owner'||
+     !/^\d{4}-\d{2}-\d{2}$/.test(record.reviewed_on||'')||typeof record.review_reference!=='string'||!record.review_reference.trim()||
+     typeof record.authorization_reference!=='string'||!record.authorization_reference.trim()||!record.authorization_quote?.trim()||
+     !/^[a-f0-9]{64}$/.test(record.content_sha256||''))return false;
+  return record.content_sha256===inheritedContentDigest(app,{sourceRoot});
+ }catch{return false;}
+}
+
 // Guide distribution and tester isolation are separate from final release approval.
 export function preparePublicReview(out,input,options={}){
- const context={sourceRoot:options.sourceRoot||'src',
+ const context={sourceRoot:options.sourceRoot||'src',ownerTextEvidence:options.ownerTextEvidence,
   provenance:options.provenance===undefined?readOptional('config/migration-provenance.json'):options.provenance,
   evidence:options.evidence===undefined?readOptional('config/inherited-v1-fidelity.json'):options.evidence};
- const apps=structuredClone(input),inherited=[],pending=[];
+ const apps=structuredClone(input),inherited=[],pending=[],ownerVerified=[],ownerPending=[];
  for(const app of apps){
+  if(app.publication_review==='owner-approved-text'){
+   if(ownerTextApprovalSupported(app,context))ownerVerified.push(app.app_id);
+   else{app.publication_review='pending';ownerPending.push(app.app_id);}
+   continue;
+  }
   if(!['pending','inherited-v1-approved'].includes(app.publication_review))continue;
   if(inheritedApprovalSupported(app,context)){
    app.publication_review='inherited-v1-approved';inherited.push(app.app_id);
@@ -82,7 +105,8 @@ export function preparePublicReview(out,input,options={}){
   scope:'Unchanged V1 authorization only; new/changed content remains pending; no production approval',
   libraryPersonalFieldsRemoved:0,operationalItemsRemoved:0,withheldApps:[],
   restored:['information-center','mba-leadership','naturalist-field-notes','aquarium-library-explorer'],
-  inheritedApproval:{evidenceContract:'config/inherited-v1-fidelity.json',verifiedApps:inherited,pendingApps:pending}
+  inheritedApproval:{evidenceContract:'config/inherited-v1-fidelity.json',verifiedApps:inherited,pendingApps:pending},
+  ownerTextApproval:{evidenceContract:'config/owner-text-reviews.json',scope:'Authored text only; media and release gates separate',verifiedApps:ownerVerified,pendingApps:ownerPending}
  },null,2));
  return apps;
 }
