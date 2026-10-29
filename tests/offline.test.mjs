@@ -144,10 +144,19 @@ test('offline fetch rejects corrupted cache when network is unavailable',async()
 
 test('activation retains verified prior release for rollback',async()=>{
  const w=await worker();await w.invoke('install');
- const old=w.stores.get('mba-v2-tester:/v2/tester/:prior');
- await old.put(new URL('release.json',w.root),new Response(JSON.stringify({...w.manifest,release:'prior'})));
+ const syntheticKey='mba-v2-tester:/v2/tester/:prior',old=w.stores.get(syntheticKey);
+ // Real release IDs bind the complete ordered inventory. Make a distinct,
+ // complete prior bundle instead of using a synthetic unbound "prior" label.
+ const previous=structuredClone(w.manifest),icon=previous.resources.find(item=>item.url==='icon.svg');
+ const bytes=Buffer.from('<svg xmlns="http://www.w3.org/2000/svg"><title>Prior release</title></svg>');
+ icon.bytes=bytes.length;icon.sha256=Buffer.from(await webcrypto.subtle.digest('SHA-256',bytes)).toString('hex');
+ previous.release=Buffer.from(await webcrypto.subtle.digest('SHA-256',Buffer.from(JSON.stringify(previous.resources)))).toString('hex').slice(0,16);
+ await old.put(new URL('icon.svg',w.root),new Response(bytes));
+ await old.put(new URL('release.json',w.root),new Response(JSON.stringify(previous)));
+ const priorKey='mba-v2-tester:/v2/tester/:'+previous.release;
+ w.stores.delete(syntheticKey);w.stores.set(priorKey,old);
  await w.invoke('activate');
- assert(w.stores.has('mba-v2-tester:/v2/tester/:prior'));
+ assert(w.stores.has(priorKey));
  assert(w.stores.has('mba-shared-assets-v1'));
 });
 test('activation discards invalid rollback candidate without deleting V1 assets',async()=>{
