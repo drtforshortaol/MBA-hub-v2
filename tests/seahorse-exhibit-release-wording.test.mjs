@@ -14,7 +14,6 @@ test('seahorse release-facing exhibit description follows owner decision',()=>{
 test('future-facing exhibit text must not automatically approve seahorse publication or media',()=>{
  assert.equal(manifest.publication_review,'owner-approved-text');
  assert.deepEqual(manifest.media,[
-  'asset-486b6cdb96375dfb',
   'asset-e62b39cc07a542c4',
   'asset-b2bea165550eabcc',
   'asset-225131703b4c0c59',

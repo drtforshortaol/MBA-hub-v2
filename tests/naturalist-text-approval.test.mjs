@@ -33,7 +33,7 @@ test('Naturalist uses the exact approved candidate bytes and explicit owner deci
  assert.equal(record.candidate_packet_sha256,hash(fs.readFileSync(packetPath)));
  assert.equal(record.authorization_quote,'Approved');assert.equal(record.scope,'authored-text-only');
  assert.equal(packet.planned_app_version,'2.0.0-alpha.10');assert.equal(app.version,'2.0.0-alpha.11');
- assert.deepEqual(record.resource_rebindings.map(r=>r.review_reference),['docs/EPHYRA_FIGURE_LICENSE_20261029.md','docs/FOVEA_FIGURE_LICENSE_20261029.md','docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md','docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md','docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md']);
+ assert.deepEqual(record.resource_rebindings.map(r=>r.review_reference),['docs/EPHYRA_FIGURE_LICENSE_20261029.md','docs/FOVEA_FIGURE_LICENSE_20261029.md','docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md','docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md','docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md','docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md']);
  assert.equal(record.resource_rebindings.find(r=>r.review_reference==='docs/FOVEA_FIGURE_LICENSE_20261029.md').scope,'Catalog metadata for one licensed Seahorse figure only; approved Naturalist files unchanged');assert.equal(app.status,'testing');
  assert.equal(app.publication_review,'owner-approved-text');assert.equal(ownerTextApprovalSupported(app),true);
  const changed=structuredClone(app);changed.sections.at(-1).text+=' Unapproved claim.';
@@ -47,8 +47,8 @@ test('Naturalist approval clears only that content blocker and preserves all rem
  assert(!report.blockers.some(b=>b.reason==='content review pending: naturalist-field-notes'));
  assert(!report.blockers.some(b=>b.reason==='content review pending: big-bellied-seahorse'));
  assert.equal(report.blockers.filter(b=>b.category==='operational-gate').length,5);
- assert.equal(report.blockers.filter(b=>b.category==='media-review-required').length,1);
- assert.equal(report.blockers.length,6);assert.equal(report.releaseEligible,false);
+ assert.equal(report.blockers.filter(b=>b.category==='media-review-required').length,0);
+ assert.equal(report.blockers.length,5);assert.equal(report.releaseEligible,false);
  const catalog=read('src/shared/media/catalog.json');
  for(const id of ['asset-1bd100105f88c83a','asset-95daa2493750e82f','asset-47f9bbb193878eec','asset-df392914e6cf5502'])assert.equal(catalog.assets.find(a=>a.asset_id===id).permission,'approved');
  assert.equal(catalog.assets.find(a=>a.asset_id==='asset-50646c3fe1d0c359').permission,'licensed');

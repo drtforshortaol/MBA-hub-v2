@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generatedAt": "2026-10-30T15:32:58.812Z",
+  "generatedAt": "2026-10-30T15:46:11.427Z",
   "platformVersion": "2.0.0-alpha.7",
   "stage": "migration-review",
   "apps": 33,
@@ -13,8 +13,7 @@
     "release gate: pilotPassed",
     "release gate: deviceOfflinePassed",
     "release gate: rollbackDevicePassed",
-    "release gate: privacyReviewed",
-    "media permission review: asset-486b6cdb96375dfb"
+    "release gate: privacyReviewed"
   ],
   "publicationReview": {
     "inheritedV1Content": 31,

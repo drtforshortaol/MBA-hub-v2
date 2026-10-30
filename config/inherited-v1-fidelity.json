@@ -11,7 +11,7 @@
       "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#california-flying-fish",
       "reviewed_on": "2026-10-22",
       "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
-      "content_sha256": "db675e87650ec88e40dd313e44d6c9b37a3d5e395441ac820b78789e31b3dd6f",
+      "content_sha256": "c9c2a86a223b391860b3d75a756d2b660b38932e25409ba15675ca45f1c2f81e",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -33,6 +33,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "0c3bb39914a3066666919d32eeb6a2e9207ff35bea397a2a363763dca8225751",
           "content_sha256": "db675e87650ec88e40dd313e44d6c9b37a3d5e395441ac820b78789e31b3dd6f"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "db675e87650ec88e40dd313e44d6c9b37a3d5e395441ac820b78789e31b3dd6f",
+          "content_sha256": "c9c2a86a223b391860b3d75a756d2b660b38932e25409ba15675ca45f1c2f81e"
         }
       ]
     },
@@ -45,7 +52,7 @@
       "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#green-falsejingle",
       "reviewed_on": "2026-10-22",
       "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
-      "content_sha256": "bf7a8af43555fc90f27c7c185337f15dfde34113d30f024b997b794a6aad420a",
+      "content_sha256": "673800688dc17e19283d099779c8d3abe703293277c63e54aea9bb4ca4abe438",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -67,6 +74,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "cf783c7e7941739fc108e609acd693e3777aae2f29bcd8c6347a4abd1b801050",
           "content_sha256": "bf7a8af43555fc90f27c7c185337f15dfde34113d30f024b997b794a6aad420a"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "bf7a8af43555fc90f27c7c185337f15dfde34113d30f024b997b794a6aad420a",
+          "content_sha256": "673800688dc17e19283d099779c8d3abe703293277c63e54aea9bb4ca4abe438"
         }
       ]
     },
@@ -79,7 +93,7 @@
       "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#flamboyant-cuttlefish",
       "reviewed_on": "2026-10-22",
       "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
-      "content_sha256": "ee3c2094efe4969ccdd3e2746951c2da112016db55dc9e6d7f1f3662044c7050",
+      "content_sha256": "85323849b7fe366889704befb3f143cc740414e2b882d1a9deccd4dd649dfa33",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -101,6 +115,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "341814ed700e83e65cd20dbb2489d305beceef8d60083ec915b6c218118750d6",
           "content_sha256": "ee3c2094efe4969ccdd3e2746951c2da112016db55dc9e6d7f1f3662044c7050"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "ee3c2094efe4969ccdd3e2746951c2da112016db55dc9e6d7f1f3662044c7050",
+          "content_sha256": "85323849b7fe366889704befb3f143cc740414e2b882d1a9deccd4dd649dfa33"
         }
       ]
     },
@@ -113,7 +134,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "413a46bfdde7eb3a8a062e34dbb0a446389a222e5abb15566760fe66b14989b6",
+      "content_sha256": "8acf4ac72f30c6bcecf3cc45d0a312bf838a7a9178b0dfce201fe1aeea53d017",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -135,6 +156,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "90eee5f2f248d593b5c782e74c6077f2da3363d40c636fe7d746961cb8e91515",
           "content_sha256": "413a46bfdde7eb3a8a062e34dbb0a446389a222e5abb15566760fe66b14989b6"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "413a46bfdde7eb3a8a062e34dbb0a446389a222e5abb15566760fe66b14989b6",
+          "content_sha256": "8acf4ac72f30c6bcecf3cc45d0a312bf838a7a9178b0dfce201fe1aeea53d017"
         }
       ]
     },
@@ -147,7 +175,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "a32427db2778507e9b58084628f80c7f200b528674c87e3482e5f0faa4fa0d4d",
+      "content_sha256": "74171ea2f6d76daa5c754956aa870f975ad35d4a6b520df25e0e8c1c2391cab7",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -169,6 +197,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "d5ced2f24aa1be0ae8cb5c0778ba78cccb69cf15c1a2da614b42e6e3ad740e79",
           "content_sha256": "a32427db2778507e9b58084628f80c7f200b528674c87e3482e5f0faa4fa0d4d"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "a32427db2778507e9b58084628f80c7f200b528674c87e3482e5f0faa4fa0d4d",
+          "content_sha256": "74171ea2f6d76daa5c754956aa870f975ad35d4a6b520df25e0e8c1c2391cab7"
         }
       ]
     },
@@ -181,7 +216,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "b215967e7d51591df27a72f45bc2ce2996fb8dee8d9c8e2eda0b72cf51d6a364",
+      "content_sha256": "13157e3e02c272cfb4ced7547200ef0975253451dfc58f460397e6621cfdde27",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -203,6 +238,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "e89c56d42c6d514513a6da2d6d2640c6c886579eebda1104c4334d94c787b47a",
           "content_sha256": "b215967e7d51591df27a72f45bc2ce2996fb8dee8d9c8e2eda0b72cf51d6a364"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "b215967e7d51591df27a72f45bc2ce2996fb8dee8d9c8e2eda0b72cf51d6a364",
+          "content_sha256": "13157e3e02c272cfb4ced7547200ef0975253451dfc58f460397e6621cfdde27"
         }
       ]
     },
@@ -215,7 +257,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "8f241b024fb43320773d4317a986aaf558d9f638772f813fc53fe75b5403b821",
+      "content_sha256": "a62e895ebafbb573c7b44ac0546f5a357b16c30a5613d746440bd609e6c991ef",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -237,6 +279,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "485d2ea3805bdc0c4ca97ed7fbec1dc925f94b56a3e057e391be04ed29e7b450",
           "content_sha256": "8f241b024fb43320773d4317a986aaf558d9f638772f813fc53fe75b5403b821"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "8f241b024fb43320773d4317a986aaf558d9f638772f813fc53fe75b5403b821",
+          "content_sha256": "a62e895ebafbb573c7b44ac0546f5a357b16c30a5613d746440bd609e6c991ef"
         }
       ]
     },
@@ -249,7 +298,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "240ebc88341f0020ad0ac82c4aeb9762037ea92060f038fa3913c9f1ad4100c4",
+      "content_sha256": "7835b5fa311dd8d87dffe5b2d7e56937a489a4d80abb39a67ff98b47cf7a20ac",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -271,6 +320,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "7bce08715763ad5c2f05e824bc07d41b95e63acda670cf514451c8aa076a1858",
           "content_sha256": "240ebc88341f0020ad0ac82c4aeb9762037ea92060f038fa3913c9f1ad4100c4"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "240ebc88341f0020ad0ac82c4aeb9762037ea92060f038fa3913c9f1ad4100c4",
+          "content_sha256": "7835b5fa311dd8d87dffe5b2d7e56937a489a4d80abb39a67ff98b47cf7a20ac"
         }
       ]
     },
@@ -283,7 +339,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "f9b683f2010b2aa1803656dd7bcd9cec3138396e43872fbd3c651d0c46b570aa",
+      "content_sha256": "5d2d6cc8249f4e73b64885ca9c4b0cb01c9b7e00a01657dd2f604285919e960a",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -305,6 +361,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "60af72ba1e0560d647c38cb7a2f3b28ab0091a0345acd0627cb10108280dc9d6",
           "content_sha256": "f9b683f2010b2aa1803656dd7bcd9cec3138396e43872fbd3c651d0c46b570aa"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "f9b683f2010b2aa1803656dd7bcd9cec3138396e43872fbd3c651d0c46b570aa",
+          "content_sha256": "5d2d6cc8249f4e73b64885ca9c4b0cb01c9b7e00a01657dd2f604285919e960a"
         }
       ]
     },
@@ -317,7 +380,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "bb91ee4c5d870f2429284c049c29ad6fa1402f4eb4ef0ccf9fbe9fea4127c07d",
+      "content_sha256": "6ed5ef7d57d4079d1962c9b06c0c0c2bc1bcfa804c8a044259c51d5da9f3d3f1",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -339,6 +402,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "0dac9c29e6bbc03d45b066f8a42a68733a9295c23eac9c84d769c16eb0c3b2b1",
           "content_sha256": "bb91ee4c5d870f2429284c049c29ad6fa1402f4eb4ef0ccf9fbe9fea4127c07d"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "bb91ee4c5d870f2429284c049c29ad6fa1402f4eb4ef0ccf9fbe9fea4127c07d",
+          "content_sha256": "6ed5ef7d57d4079d1962c9b06c0c0c2bc1bcfa804c8a044259c51d5da9f3d3f1"
         }
       ]
     },
@@ -351,7 +421,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "bcccd4cd9b748facae7fda9515da938a16368f6443de3c7a933e158a5925a7ef",
+      "content_sha256": "0b3910e72c05295beac430d4132700ee7753c11a9ebfa6f166e090e65ad8c309",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -373,6 +443,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "5835961bfecfb5071c8df0c57d52b1c377ecb02387eaa6a5d22b66cf1750e054",
           "content_sha256": "bcccd4cd9b748facae7fda9515da938a16368f6443de3c7a933e158a5925a7ef"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "bcccd4cd9b748facae7fda9515da938a16368f6443de3c7a933e158a5925a7ef",
+          "content_sha256": "0b3910e72c05295beac430d4132700ee7753c11a9ebfa6f166e090e65ad8c309"
         }
       ]
     },
@@ -385,7 +462,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "86b80662e51f1ffed9f08e1b53daa546ad41c4f189d809b43dcb40da5356c104",
+      "content_sha256": "d40a430da2a8dcc35e038980d7c23004b7159b6a26b7568f135657f88c097df6",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -407,6 +484,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "d038f357cf71afef8f49e05d0587805301a805e1ed206ae3aed17c1093e4439d",
           "content_sha256": "86b80662e51f1ffed9f08e1b53daa546ad41c4f189d809b43dcb40da5356c104"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "86b80662e51f1ffed9f08e1b53daa546ad41c4f189d809b43dcb40da5356c104",
+          "content_sha256": "d40a430da2a8dcc35e038980d7c23004b7159b6a26b7568f135657f88c097df6"
         }
       ]
     },
@@ -419,7 +503,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "7cc07ed714a85ebb70a11776a79924d22fba6303fe5ad7bf13fe7d3e2ff15365",
+      "content_sha256": "0c95f6a5d61f3a2d0f9d65469f5ff3e40759dba92255291072558b147f458dae",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -441,6 +525,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "da80b97925500931f036df72c57d9496d7dd05d2075fe30c5a63db9e5da04f81",
           "content_sha256": "7cc07ed714a85ebb70a11776a79924d22fba6303fe5ad7bf13fe7d3e2ff15365"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "7cc07ed714a85ebb70a11776a79924d22fba6303fe5ad7bf13fe7d3e2ff15365",
+          "content_sha256": "0c95f6a5d61f3a2d0f9d65469f5ff3e40759dba92255291072558b147f458dae"
         }
       ]
     },
@@ -453,7 +544,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "bf579310af7f4a3cf84d7cea25a902d2f9701992e168d9ec05fc57a7891dbc01",
+      "content_sha256": "446d084c03895314196c278a4af8a40c55855f4887ea6bce2cb4ed5782ce546b",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -475,6 +566,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "87a9ff3e40f12b97ac43ad5a3997f86456e52ca21ec83c3838cd3c10a1b705ac",
           "content_sha256": "bf579310af7f4a3cf84d7cea25a902d2f9701992e168d9ec05fc57a7891dbc01"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "bf579310af7f4a3cf84d7cea25a902d2f9701992e168d9ec05fc57a7891dbc01",
+          "content_sha256": "446d084c03895314196c278a4af8a40c55855f4887ea6bce2cb4ed5782ce546b"
         }
       ]
     },
@@ -487,7 +585,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "b2f9d6bf363cb1ab112680e0566b1c9cc510248b8a45143770b48e5aa7a12046",
+      "content_sha256": "a35a1680cfbda5417e8f6306964b437536bf0bb1253613d1a066fbdc12658a27",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -509,6 +607,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "8c3fa3c0f7778b3922e7a26bd7792abf79cb6c05ea79073978d8c05dbb93a267",
           "content_sha256": "b2f9d6bf363cb1ab112680e0566b1c9cc510248b8a45143770b48e5aa7a12046"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "b2f9d6bf363cb1ab112680e0566b1c9cc510248b8a45143770b48e5aa7a12046",
+          "content_sha256": "a35a1680cfbda5417e8f6306964b437536bf0bb1253613d1a066fbdc12658a27"
         }
       ]
     },
@@ -521,7 +626,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "abfe18ffae556fecb8f3586d52c861431e2dd5acdd0e2061ab26ae385009a949",
+      "content_sha256": "48a730141848001f53c5d9b22c397ac6bc0822a0658c609df5f634120e200731",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -543,6 +648,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "1992b3d2d7dfb8c8c1948db1665296e87fe3cca07155e3dc5d2023251de03b45",
           "content_sha256": "abfe18ffae556fecb8f3586d52c861431e2dd5acdd0e2061ab26ae385009a949"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "abfe18ffae556fecb8f3586d52c861431e2dd5acdd0e2061ab26ae385009a949",
+          "content_sha256": "48a730141848001f53c5d9b22c397ac6bc0822a0658c609df5f634120e200731"
         }
       ]
     },
@@ -555,7 +667,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "7842506b6fd490c87f5cb73963df5615ccce27233467b02a7775ce95a38197e6",
+      "content_sha256": "566fb5e7509448f7749f0db2bf8002435a3a5f8b18959e2f2e6cb9002159e9b3",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -577,6 +689,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "20a485c2aa63fe90ecbb9078f4a546a570f1916c69cc61a8542c13b7b43f638f",
           "content_sha256": "7842506b6fd490c87f5cb73963df5615ccce27233467b02a7775ce95a38197e6"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "7842506b6fd490c87f5cb73963df5615ccce27233467b02a7775ce95a38197e6",
+          "content_sha256": "566fb5e7509448f7749f0db2bf8002435a3a5f8b18959e2f2e6cb9002159e9b3"
         }
       ]
     },
@@ -589,7 +708,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "4c2a965069818637ffc41e14e8ccac4c12a681797d52294ef500d53b1473da0c",
+      "content_sha256": "519529360aceafb9459478447f50f77835ec5c2dd21c336a7985a0b28505c314",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -611,6 +730,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "ef1512eedd1ed6acd58f9658f028d42e1ba2d52d048e4175958137022b922efa",
           "content_sha256": "4c2a965069818637ffc41e14e8ccac4c12a681797d52294ef500d53b1473da0c"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "4c2a965069818637ffc41e14e8ccac4c12a681797d52294ef500d53b1473da0c",
+          "content_sha256": "519529360aceafb9459478447f50f77835ec5c2dd21c336a7985a0b28505c314"
         }
       ]
     },
@@ -623,7 +749,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "6966380debcb7ab2626c769fbfbec4935bdf1b06640826c52d1a49f355784879",
+      "content_sha256": "586cbec11472762c4b4ba34d1cc4a705c8a9c9730190ecd83506b607dc524550",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -645,6 +771,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "e0f45882499f710759ec014eb974be91ff07dc2ab084b3f73152a057d32ba6a3",
           "content_sha256": "6966380debcb7ab2626c769fbfbec4935bdf1b06640826c52d1a49f355784879"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "6966380debcb7ab2626c769fbfbec4935bdf1b06640826c52d1a49f355784879",
+          "content_sha256": "586cbec11472762c4b4ba34d1cc4a705c8a9c9730190ecd83506b607dc524550"
         }
       ]
     },
@@ -657,7 +790,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "96b145d8646857cc478aa0078b80e2adf95154257ca67319bedc847ea6103763",
+      "content_sha256": "85be7df2ff63044a2b134a1b07f0783ea064bc13db3566369e60a5b7d5e0e76e",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -679,6 +812,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "2b9a0c61f53084f0d54d011969996b6299842fe5345029e62277c4308bfdac44",
           "content_sha256": "96b145d8646857cc478aa0078b80e2adf95154257ca67319bedc847ea6103763"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "96b145d8646857cc478aa0078b80e2adf95154257ca67319bedc847ea6103763",
+          "content_sha256": "85be7df2ff63044a2b134a1b07f0783ea064bc13db3566369e60a5b7d5e0e76e"
         }
       ]
     },
@@ -691,7 +831,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "a19beb98924b3a846fb11ab5ffdf0acd5be45eb3cc1e498b532067579366f827",
+      "content_sha256": "e9baefbc1715c3df5cc1fe8335953ebe42c41d8b1080adc62324be0e2087e9af",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -713,6 +853,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "88c5be7de0aa30435ab0092d18f15bd3af573a20c1174e112b99c71158ec2087",
           "content_sha256": "a19beb98924b3a846fb11ab5ffdf0acd5be45eb3cc1e498b532067579366f827"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "a19beb98924b3a846fb11ab5ffdf0acd5be45eb3cc1e498b532067579366f827",
+          "content_sha256": "e9baefbc1715c3df5cc1fe8335953ebe42c41d8b1080adc62324be0e2087e9af"
         }
       ]
     },
@@ -725,7 +872,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "8f89e9fd1bd973830e091b3f530cd6f6eb81f017482144df95a6d4e62908b5f0",
+      "content_sha256": "8d68180c4c837b508141d8746648b721172d1d7a58cd9264e2fd831d7a8821e1",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -747,6 +894,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "ccbd721253eb15f9ddd2b87f98630500aef4a04d7ff44426990a8eb23532d541",
           "content_sha256": "8f89e9fd1bd973830e091b3f530cd6f6eb81f017482144df95a6d4e62908b5f0"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "8f89e9fd1bd973830e091b3f530cd6f6eb81f017482144df95a6d4e62908b5f0",
+          "content_sha256": "8d68180c4c837b508141d8746648b721172d1d7a58cd9264e2fd831d7a8821e1"
         }
       ]
     },
@@ -759,7 +913,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "dd5de4a040dcf6c81b67057041e95aa1ab72dfad732ff02ee2cfcc11b02fb115",
+      "content_sha256": "ee88cd6d83670a1da16ccef270ce23ed0bcb5842c697f85c2d2bc5ea065ed7a8",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -781,6 +935,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "679f896e09362aafa21c21c39d62451c5a1d6c32f88f869bc25d5095526e1160",
           "content_sha256": "dd5de4a040dcf6c81b67057041e95aa1ab72dfad732ff02ee2cfcc11b02fb115"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "dd5de4a040dcf6c81b67057041e95aa1ab72dfad732ff02ee2cfcc11b02fb115",
+          "content_sha256": "ee88cd6d83670a1da16ccef270ce23ed0bcb5842c697f85c2d2bc5ea065ed7a8"
         }
       ]
     },
@@ -793,7 +954,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "a8811ab6983d64793de51b3dd02ff8c55024d249cff6ef17af31a5b2277ad34e",
+      "content_sha256": "6512bb7cd362c676ba199e7a861371a49b24175047c8efccc45ee8fb090c8edd",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -815,6 +976,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "69fafc7c8009f3b03d0c92bb7d06649d691f356200634472ae3864d3acfc3827",
           "content_sha256": "a8811ab6983d64793de51b3dd02ff8c55024d249cff6ef17af31a5b2277ad34e"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "a8811ab6983d64793de51b3dd02ff8c55024d249cff6ef17af31a5b2277ad34e",
+          "content_sha256": "6512bb7cd362c676ba199e7a861371a49b24175047c8efccc45ee8fb090c8edd"
         }
       ]
     },
@@ -827,7 +995,7 @@
       "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
-      "content_sha256": "3d0e6bd9e87ba2a59338328b96aef20ced8c5150e9c26f1a18a63d5e8fead5ba",
+      "content_sha256": "5ed278a12db6886c1312c74a92aafa7ca32e59922dfbc4ebb91867990b3ed314",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -849,6 +1017,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "d1802032f08d19d927a2adf554f87b135dafa74ae091626b9b2491eeaa413aed",
           "content_sha256": "3d0e6bd9e87ba2a59338328b96aef20ced8c5150e9c26f1a18a63d5e8fead5ba"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "3d0e6bd9e87ba2a59338328b96aef20ced8c5150e9c26f1a18a63d5e8fead5ba",
+          "content_sha256": "5ed278a12db6886c1312c74a92aafa7ca32e59922dfbc4ebb91867990b3ed314"
         }
       ]
     },
@@ -861,7 +1036,7 @@
       "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
-      "content_sha256": "ef97983a295fa90afdc21a34c6e81a118bb4e25df028d9663b34f6b2c8b2c773",
+      "content_sha256": "dc676ca42108218d3fabf876c8f2251362ca04e397d18a90c459dc89c87876ff",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -883,6 +1058,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "72192a74e4ff1739ca74e2a7ca570e543ad1556533107c8fc804e0bf6d9cd415",
           "content_sha256": "ef97983a295fa90afdc21a34c6e81a118bb4e25df028d9663b34f6b2c8b2c773"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "ef97983a295fa90afdc21a34c6e81a118bb4e25df028d9663b34f6b2c8b2c773",
+          "content_sha256": "dc676ca42108218d3fabf876c8f2251362ca04e397d18a90c459dc89c87876ff"
         }
       ]
     },
@@ -895,7 +1077,7 @@
       "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
-      "content_sha256": "c840a91d4276278a7f1b01b9a650f36c211f6bb26f006d71241528e0c35b6276",
+      "content_sha256": "021bc5089a532c73e64ddc29b68bb656b5ccbe4538d45dda5fea8526792a2118",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -917,6 +1099,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "02c2979055163b7e82f1d3b70d7b58120bb4ec4644da0e13fd78f2cd756c329c",
           "content_sha256": "c840a91d4276278a7f1b01b9a650f36c211f6bb26f006d71241528e0c35b6276"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "c840a91d4276278a7f1b01b9a650f36c211f6bb26f006d71241528e0c35b6276",
+          "content_sha256": "021bc5089a532c73e64ddc29b68bb656b5ccbe4538d45dda5fea8526792a2118"
         }
       ]
     },
@@ -929,7 +1118,7 @@
       "review_reference": "docs/OPEN_SEA_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current files, inline code, markup, styles, links, interactions, search and media review; portable full twelve-card body/SVG/metadata renderer and click-state reproduction with independent parsed trees; no new scientific approval",
-      "content_sha256": "e6c90ccf830926f6456b92a4c610143407604687fd38d1fc92f8508be14af29d",
+      "content_sha256": "5bf925e765bd296f0c4b3aeebc1073e11186ffd1c3c71b992150ce96a3c1f608",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -951,6 +1140,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "1b4f9c0028c69893deb2850f6404c044d97307dafac93fde6aff4e40d54878b4",
           "content_sha256": "e6c90ccf830926f6456b92a4c610143407604687fd38d1fc92f8508be14af29d"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "e6c90ccf830926f6456b92a4c610143407604687fd38d1fc92f8508be14af29d",
+          "content_sha256": "5bf925e765bd296f0c4b3aeebc1073e11186ffd1c3c71b992150ce96a3c1f608"
         }
       ]
     },
@@ -963,7 +1159,7 @@
       "review_reference": "docs/TREE_OF_LIFE_ENGINEERING_REVIEW_20261023.md",
       "reviewed_on": "2026-10-24",
       "review_method": "Independently reviewed complete pinned/current inventory, markup/code/style, source-derived search, media and executable/shared navigation. Existing unchanged V1 authorization only; no new scientific/editorial/image/device/release approval. Recovered evidence and exact resource digest reverified before binding.",
-      "content_sha256": "66fb007f41ed8eef00665b956be3610dda5d9ff63a13bb4cacdf393b5ad32620",
+      "content_sha256": "33730d698b9d8aa9df73dd8f3e6e7cd54ad80782d093a8b7a53f00fb6972e99b",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -985,6 +1181,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "fa48998685ab32932ff5509f79286e6993c366be974f0d0aa5cb46b405002bbc",
           "content_sha256": "66fb007f41ed8eef00665b956be3610dda5d9ff63a13bb4cacdf393b5ad32620"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "66fb007f41ed8eef00665b956be3610dda5d9ff63a13bb4cacdf393b5ad32620",
+          "content_sha256": "33730d698b9d8aa9df73dd8f3e6e7cd54ad80782d093a8b7a53f00fb6972e99b"
         }
       ]
     },
@@ -997,7 +1200,7 @@
       "review_reference": "docs/WHALE_PARASITES_INDEPENDENT_REVIEW_20261023.md",
       "reviewed_on": "2026-10-24",
       "review_method": "Independently reviewed complete pinned/current inventory, markup/code/style, source-derived search, media and executable/shared navigation. Existing unchanged V1 authorization only; no new scientific/editorial/image/device/release approval. Recovered evidence and exact resource digest reverified before binding.",
-      "content_sha256": "203e6700c31c0b3d7d7987571140778e5f015b57db8f05132576aa3cc5e9ce19",
+      "content_sha256": "2d25482d63bb4f0676a37918ca57cd9545dc9867a6177850ad783c9e9500e280",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -1019,6 +1222,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "783e05b2c5050baa212ba00f795cb31a9f0a626645a14137715b9a0be9d6801c",
           "content_sha256": "203e6700c31c0b3d7d7987571140778e5f015b57db8f05132576aa3cc5e9ce19"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "203e6700c31c0b3d7d7987571140778e5f015b57db8f05132576aa3cc5e9ce19",
+          "content_sha256": "2d25482d63bb4f0676a37918ca57cd9545dc9867a6177850ad783c9e9500e280"
         }
       ]
     },
@@ -1031,7 +1241,7 @@
       "review_reference": "docs/EVOLUTION_TIMELINE_INDEPENDENT_REVIEW_20261023.md",
       "reviewed_on": "2026-10-24",
       "review_method": "Independent complete eleven-file pinned-source, full executable/static/style/data/three-view DOM/source-derived search/media/actual anchor assignment and native/shared-control reproduction; existing unchanged V1 authorization only, no new scientific/editorial/media/device/release approval",
-      "content_sha256": "545877190bce1edf1a343836e8b2d9a580113b92907cfa307366478477b222ac",
+      "content_sha256": "ed107ca217c49fcc579832b5610c9a98ef2fc0540cbb468c44c3ce7333206ff6",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -1053,6 +1263,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "0a22b1283bfb770aee1656f9c928ba273269b4327b723a0d9f3db563589b7531",
           "content_sha256": "545877190bce1edf1a343836e8b2d9a580113b92907cfa307366478477b222ac"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "545877190bce1edf1a343836e8b2d9a580113b92907cfa307366478477b222ac",
+          "content_sha256": "ed107ca217c49fcc579832b5610c9a98ef2fc0540cbb468c44c3ce7333206ff6"
         }
       ]
     }
