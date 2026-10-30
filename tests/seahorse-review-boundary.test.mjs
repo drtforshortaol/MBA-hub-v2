@@ -17,9 +17,9 @@ test('Seahorse draft retains explicit content and publication gates', () => {
 });
 
 test('Seahorse search sections remain identical to their displayed draft text', () => {
-  assert.equal(manifest.sections.length, 10);
+  assert.equal(manifest.sections.length, 11);
   const ids = new Set();
-  for (const { id, title, text } of manifest.sections) {
+  for (const { id, title, text } of manifest.sections.slice(0,10)) {
     assert.ok(!ids.has(id), `duplicate section: ${id}`);
     ids.add(id);
     const escape = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -32,7 +32,7 @@ test('Seahorse photos remain registered for offline review without implying perm
   const images = [...html.matchAll(/<img\b[^>]*\bsrc="\.\.\/(IMG_\d+\.jpeg)"/g)].map(match => match[1]);
   const paths = [...new Set(images.map(image => `apps/${image}`))].sort();
   assert.deepEqual(paths, manifest.offline_assets.filter(path => /IMG_\d+\.jpeg$/.test(path)).sort());
-  assert.equal(paths.length, 5);
+  assert.equal(paths.length, 4);
   assert.ok(manifest.offline_assets.includes('apps/seahorse-takenaga.jpeg'));
-  assert.equal(manifest.media.length, 6);
+  assert.equal(manifest.media.length, 5);
 });

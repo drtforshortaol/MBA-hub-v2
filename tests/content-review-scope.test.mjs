@@ -50,6 +50,6 @@ test('current collection keeps October additions and three remaining media right
     assert.equal(notes.files.find(f => f.path.endsWith(name)).classification, 'local-addition-review');
   }
   assert.equal(notes.offline_media.filter(m => m.permission_review_pending).length, 0);
-  assert.equal(report.apps.find(a => a.app_id === 'big-bellied-seahorse').offline_media.filter(m => m.permission_review_pending).length, 2);
-  assert.equal(report.summary.media_rights_review_uses, 2);
+  assert.equal(report.apps.find(a => a.app_id === 'big-bellied-seahorse').offline_media.filter(m => m.permission_review_pending).length, 1);
+  assert.equal(report.summary.media_rights_review_uses, 1);
 });

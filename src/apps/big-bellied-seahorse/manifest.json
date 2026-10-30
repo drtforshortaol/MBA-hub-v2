@@ -4,7 +4,7 @@
   "title": "Big-Bellied Seahorse",
   "category": "animals",
   "type": "species",
-  "version": "2.0.0-alpha.12",
+  "version": "2.0.0-alpha.13",
   "entry_point": "apps/big-bellied-seahorse/index.html",
   "status": "testing",
   "owner": "big-bellied-seahorse",
@@ -18,7 +18,6 @@
   "offline_assets": [
     "apps/big-bellied-seahorse/index.html",
     "apps/IMG_4212.jpeg",
-    "apps/IMG_4213.jpeg",
     "apps/IMG_4214.jpeg",
     "apps/IMG_4215.jpeg",
     "apps/IMG_4216.jpeg",
@@ -26,7 +25,6 @@
   ],
   "media": [
     "asset-486b6cdb96375dfb",
-    "asset-2913dc8df835400c",
     "asset-e62b39cc07a542c4",
     "asset-b2bea165550eabcc",
     "asset-225131703b4c0c59",
@@ -98,6 +96,16 @@
       "title": "References",
       "text": "Source: October 8–14, 2026 Naturalist update. Species information: Animal Diversity Web (Hippocampus abdominalis species account) and Fishes of Australia. Confirm image rights and Aquarium-specific exhibit history before publication.",
       "aliases": []
+    },
+    {
+      "id": "Seahorse-close-up",
+      "title": "Seahorse Close-Up — 10 Things to Notice",
+      "text": "Ten general seahorse talking points. The photograph shows only some features; the tail tip is not fully shown. Upright swimmer. A seahorse usually swims with its body upright, rather than in the horizontal posture typical of many fishes. Bony armor. Bony plates support and protect its body beneath the skin; rings continue along its flexible tail. Frequent meals. Big-bellied seahorses lack a true stomach for storing food, so they need to feed frequently. Small fins. The dorsal fin and paired pectoral fins help with movement and control. A much smaller anal fin is also present. A grasping tail. The prehensile tail can wrap around vegetation and other supports to help the animal hold position. An ambush hunter. Big-bellied seahorses often wait among vegetation for small crustaceans to come within reach. Suction feeding. A tubular snout directs suction that draws small prey into the mouth. Independent eyes. The eyes can move independently, helping a seahorse watch its surroundings. No chewing. Seahorses have no teeth; prey small enough to enter the mouth is swallowed whole. A male brood pouch. The female transfers eggs into the male’s pouch. He broods the developing young and later gives birth.",
+      "aliases": [
+        "seahorse facts",
+        "seahorse close-up",
+        "10 things to notice"
+      ]
     }
   ],
   "publication_review": "owner-approved-text"

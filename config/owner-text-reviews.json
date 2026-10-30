@@ -12,7 +12,7 @@
       "authorization_quote": "Approved",
       "candidate_commit": "74b91bb5af8f0215d4863bcdf9a2c39e76aa3c58",
       "candidate_packet_sha256": "f4324b0ca675b24d4a45b71a48fd3cbefd33a786c9357539357c6c148e1ecf41",
-      "content_sha256": "1eb6e5130e768e0e46ff200da190bb07e73d39acf0f8fe8d99a9592b46628ba8",
+      "content_sha256": "2d72ac36ee76fdfb5437ebd0442789ad2c42a7ecc20b35b50f61a0f873e8a5d2",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-29",
@@ -41,6 +41,13 @@
           "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
           "previous_content_sha256": "411144cedc4e87abc0cf93199a1ce9a4e1f1de29f92e6c62566c08037e47a7b8",
           "content_sha256": "1eb6e5130e768e0e46ff200da190bb07e73d39acf0f8fe8d99a9592b46628ba8"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "1eb6e5130e768e0e46ff200da190bb07e73d39acf0f8fe8d99a9592b46628ba8",
+          "content_sha256": "2d72ac36ee76fdfb5437ebd0442789ad2c42a7ecc20b35b50f61a0f873e8a5d2"
         }
       ]
     },
@@ -54,7 +61,7 @@
       "authorization_reference": "Owner conversation: approval request for exact ten-section Seahorse draft at 74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9, followed by explanation of clearing the content blocker",
       "authorization_quote": "Proceed",
       "candidate_commit": "74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9",
-      "content_sha256": "a2efa4bb7ba9901d795b3c5c704665898c37a9af07326186661de199e70919ef",
+      "content_sha256": "6b663ca281d3e7ae42b2e9f9628e55c01c4543cd6479da31d498614fb4a1295f",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -62,6 +69,21 @@
           "scope": "Exact approved sections integrated with independently authorized images; no new text approval",
           "previous_content_sha256": "14c0767d1b9feb92dc7ca3713a779427e629c699256734ead3b36e2896417353",
           "content_sha256": "a2efa4bb7ba9901d795b3c5c704665898c37a9af07326186661de199e70919ef"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Owner explicitly approved exact ten-fact addition and poster replacement",
+          "previous_content_sha256": "a2efa4bb7ba9901d795b3c5c704665898c37a9af07326186661de199e70919ef",
+          "content_sha256": "6b663ca281d3e7ae42b2e9f9628e55c01c4543cd6479da31d498614fb4a1295f"
+        }
+      ],
+      "additional_owner_decisions": [
+        {
+          "approval": "Approved",
+          "candidate_commit": "74f87ed459a174e4d73169860c399e853b2caa18",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "section_id": "Seahorse-close-up"
         }
       ]
     }

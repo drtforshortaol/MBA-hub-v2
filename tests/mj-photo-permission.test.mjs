@@ -6,7 +6,7 @@ import vm from 'node:vm';
 import {releaseErrors} from '../scripts/build.mjs';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const approvedIds=['asset-1bd100105f88c83a','asset-95daa2493750e82f','asset-47f9bbb193878eec','asset-df392914e6cf5502'];
-const pendingIds=['asset-486b6cdb96375dfb','asset-2913dc8df835400c'];
+const pendingIds=['asset-486b6cdb96375dfb'];
 test('MJ confirmation binds exactly four photographs and removes only their reuse blockers',()=>{
  const permission=read('docs/verification/mj-photo-permission-20261029.json');
  const catalog=read('src/shared/media/catalog.json');
