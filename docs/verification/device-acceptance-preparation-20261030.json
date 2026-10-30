@@ -1,0 +1,429 @@
+{
+  "schema_version": 1,
+  "record_type": "device-acceptance-preparation-not-evidence",
+  "status": "NOT TESTED",
+  "prepared_on": "2026-10-30",
+  "candidate": {
+    "source_commit": "4ec51ddb3010bd31587047c05d0bd6c59a85096c",
+    "archive_filename": "mba-v2-device-candidate-4ec51dd.zip",
+    "archive_sha256": "8e43297051989844e51151d41b96294141b0b7d7210efb5097a07cede481aacf",
+    "archive_bytes": 129721688,
+    "path_prefix": "fixed-4ec51dd",
+    "environments": {
+      "developer": {
+        "release": "0bbada026367452f",
+        "resources": 384,
+        "release_json_sha256": "3af228af1a2fde59b21c268d3097e5fa654fe25699ec4a016e3ed4f7a45ef3d3"
+      },
+      "tester": {
+        "release": "605c2916c5613ab2",
+        "resources": 375,
+        "release_json_sha256": "6a257bfe356abf44a39f1185e928b34ac117813930af248532d8d548a408aa20"
+      }
+    },
+    "privacy_snapshot_sha256": "743fa8b0664082e8f86ab26e011410ce947b1ed61801d6acc2a890db61135180"
+  },
+  "hosting": {
+    "status": "NOT PROVISIONED",
+    "existing_tester_release_observed": "bd61125685d0214f",
+    "existing_developer_release_observed": "73eb33c7b88e0808",
+    "current_candidate_tester_release": "605c2916c5613ab2",
+    "existing_urls_are_not_candidate": true,
+    "proposed_scope": "Separate isolated HTTPS acceptance copy of exact prepared archive; no update to V1, existing tester or existing developer site.",
+    "actual_tester_url": null,
+    "actual_developer_url": null,
+    "publication_authorized": false,
+    "https_byte_verification": "NOT TESTED"
+  },
+  "sessions": [],
+  "tests": [
+    {
+      "id": "identity",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": []
+    },
+    {
+      "id": "online_navigation",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": []
+    },
+    {
+      "id": "prepare_offline",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": []
+    },
+    {
+      "id": "cold_installed_offline_start",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": []
+    },
+    {
+      "id": "all_apps_and_bundled_media_offline",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": []
+    },
+    {
+      "id": "offline_search_and_back",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": []
+    },
+    {
+      "id": "reconnect_restart",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": []
+    },
+    {
+      "id": "qr_camera_scan",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": []
+    }
+  ],
+  "apps": [
+    {
+      "app_id": "applied-water-science-life-support",
+      "title": "Applied Water Science",
+      "listed": true,
+      "entry_point": "apps/applied-water-science-life-support/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "aquarium-library-explorer",
+      "title": "Aquarium Library Explorer",
+      "listed": true,
+      "entry_point": "apps/aquarium-library-explorer/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "big-bellied-seahorse",
+      "title": "Big-Bellied Seahorse",
+      "listed": true,
+      "entry_point": "apps/big-bellied-seahorse/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "bluespotted-ribbontail-ray",
+      "title": "Blue-spotted Ribbontail Ray",
+      "listed": true,
+      "entry_point": "apps/bluespotted-ribbontail-ray/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "california-flying-fish",
+      "title": "California Flying Fish",
+      "listed": true,
+      "entry_point": "apps/california-flying-fish/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "california-sheephead",
+      "title": "California Sheephead",
+      "listed": true,
+      "entry_point": "apps/california-sheephead/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "evolution-timeline",
+      "title": "Evolution Timeline \u2014 From Universe to Us",
+      "listed": true,
+      "entry_point": "apps/evolution-timeline/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "five-senses-pwa",
+      "title": "Using the Five Senses",
+      "listed": true,
+      "entry_point": "apps/five-senses-pwa/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "flamboyant-cuttlefish",
+      "title": "Flamboyant Cuttlefish",
+      "listed": false,
+      "entry_point": "apps/flamboyant-cuttlefish/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "gooseneck-barnacle",
+      "title": "Gooseneck Barnacle",
+      "listed": true,
+      "entry_point": "apps/gooseneck-barnacle/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "gray-whale",
+      "title": "Gray Whale",
+      "listed": true,
+      "entry_point": "apps/gray-whale/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "gray-whale-skeleton-exhibit",
+      "title": "Gray Whale Skeleton",
+      "listed": true,
+      "entry_point": "apps/gray-whale-skeleton-exhibit/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "green-falsejingle",
+      "title": "Green Falsejingle",
+      "listed": true,
+      "entry_point": "apps/green-falsejingle/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "hopkins-rose-nudibranch",
+      "title": "Hopkins\u2019 Rose Nudibranch",
+      "listed": true,
+      "entry_point": "apps/hopkins-rose-nudibranch/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "inaturalist-citizen-science",
+      "title": "iNaturalist & Citizen Science",
+      "listed": false,
+      "entry_point": "apps/inaturalist-citizen-science/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "information-center",
+      "title": "Information Center Handbook",
+      "listed": true,
+      "entry_point": "apps/information-center/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "interpretation-principles",
+      "title": "Six Interpretation Principles",
+      "listed": true,
+      "entry_point": "apps/interpretation-principles/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "kelp-forest",
+      "title": "Kelp Forest",
+      "listed": false,
+      "entry_point": "apps/kelp-forest/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "mba-leadership",
+      "title": "MBA Leadership",
+      "listed": true,
+      "entry_point": "apps/mba-leadership/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "mmc-narrations",
+      "title": "Marine Mammal Cart",
+      "listed": true,
+      "entry_point": "apps/mmc-narrations/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "title": "Naturalist Field Notes",
+      "listed": true,
+      "entry_point": "apps/naturalist-field-notes/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "title": "Northern Elephant Seal",
+      "listed": true,
+      "entry_point": "apps/northern-elephant-seal/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "open-sea",
+      "title": "Open Sea Exhibit",
+      "listed": true,
+      "entry_point": "apps/open-sea/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "pacific-white-sided-dolphin",
+      "title": "Pacific White-Sided Dolphin",
+      "listed": false,
+      "entry_point": "apps/pacific-white-sided-dolphin/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "pseudo-nitzschia",
+      "title": "Pseudo-nitzschia",
+      "listed": false,
+      "entry_point": "apps/pseudo-nitzschia/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "sea-slugs-nudibranchs",
+      "title": "Sea Slugs & Nudibranchs",
+      "listed": true,
+      "entry_point": "apps/sea-slugs-nudibranchs/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "sperm-whale",
+      "title": "\ud83d\udc0b Sperm Whale",
+      "listed": false,
+      "entry_point": "apps/sperm-whale/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "stargazer-species-guide",
+      "title": "Stargazer Fish",
+      "listed": true,
+      "entry_point": "apps/stargazer-species-guide/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "tree-of-life-origins",
+      "title": "Tree of Life Origins",
+      "listed": false,
+      "entry_point": "apps/tree-of-life-origins/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "whale-associated-organisms",
+      "title": "Whale-Associated Organisms",
+      "listed": true,
+      "entry_point": "apps/whale-associated-organisms/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "whale-parasites-associates",
+      "title": "Whale Parasites & Associates",
+      "listed": true,
+      "entry_point": "apps/whale-parasites-associates/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "wildfires-ocean-health",
+      "title": "Wildfires & Ocean Health",
+      "listed": true,
+      "entry_point": "apps/wildfires-ocean-health/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    },
+    {
+      "app_id": "wildlife-rescue",
+      "title": "Wildlife Rescue \u2014 Important Contacts",
+      "listed": true,
+      "entry_point": "apps/wildlife-rescue/index.html",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "media_status": "NOT TESTED",
+      "findings": []
+    }
+  ],
+  "deviceOfflinePassed": false,
+  "pilotPassed": false,
+  "rollbackDevicePassed": false,
+  "ownerApproved": false,
+  "notes": [
+    "No device test, pilot, rollback or release authorization is inferred from technical simulation or this preparation.",
+    "Record reviewer identities/results privately; public summaries use owner/reviewer references only."
+  ]
+}
