@@ -4,7 +4,7 @@
 |---|---|---|---|---|
 | Applied Water Science | applied-water-science-life-support | 2.0.0-alpha.6 | testing | applied-water-science-life-support |
 | Aquarium Library Explorer | aquarium-library-explorer | 2.0.0-alpha.6 | testing | aquarium-library-explorer |
-| Big-Bellied Seahorse | big-bellied-seahorse | 2.0.0-alpha.12 | testing | big-bellied-seahorse |
+| Big-Bellied Seahorse | big-bellied-seahorse | 2.0.0-alpha.13 | testing | big-bellied-seahorse |
 | Blue-spotted Ribbontail Ray | bluespotted-ribbontail-ray | 2.0.0-alpha.6 | testing | bluespotted-ribbontail-ray |
 | California Flying Fish | california-flying-fish | 2.0.0-alpha.6 | testing | california-flying-fish |
 | California Sheephead | california-sheephead | 2.0.0-alpha.6 | testing | california-sheephead |

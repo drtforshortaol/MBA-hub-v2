@@ -17,5 +17,5 @@ test('only the fovea permission clears; Seaweek source recovery does not grant i
  assert.equal(sea.status,'review-required');assert.equal(sea.permission_granted,false);assert.equal(sea.contacted,false);
  assert.equal(catalog.assets.find(a=>a.asset_id==='asset-486b6cdb96375dfb').permission,'review-required');
  const report=assessRepositoryReadiness();assert(!report.blockers.some(b=>b.reason==='media permission review: asset-e62b39cc07a542c4'));
- assert.equal(report.blockers.filter(b=>b.category==='media-review-required').length,2);assert.equal(report.blockers.filter(b=>b.category==='operational-gate').length,5);assert.equal(report.blockers.length,7);assert.equal(report.releaseEligible,false);
+ assert.equal(report.blockers.filter(b=>b.category==='media-review-required').length,1);assert.equal(report.blockers.filter(b=>b.category==='operational-gate').length,5);assert.equal(report.blockers.length,6);assert.equal(report.releaseEligible,false);
 });

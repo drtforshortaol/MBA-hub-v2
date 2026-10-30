@@ -39,12 +39,6 @@ const rows=[
   ],
   [
     "big-bellied-seahorse",
-    "apps/IMG_4213.jpeg",
-    "asset-2913dc8df835400c",
-    "2913dc8df835400ca429d1626e1aebbbdbe358f313db4e6f9b26d88629230889"
-  ],
-  [
-    "big-bellied-seahorse",
     "apps/IMG_4214.jpeg",
     "asset-e62b39cc07a542c4",
     "e62b39cc07a542c4def4dd10a7a5f17cdf7dddb235fd81af7c20b564089c1fea"
@@ -68,7 +62,7 @@ const read=p=>JSON.parse(fs.readFileSync(new URL('../'+p,import.meta.url),'utf8'
 
 test('new October media registration preserves bytes, original paths and pending permissions',()=>{
  const catalog=read('src/shared/media/catalog.json'),apps=new Map();
- assert.equal(catalog.assets.length,214);
+ assert.equal(catalog.assets.length,213);
  for(const [id,path,asset_id,expected] of rows){
   const app=apps.get(id)||read('src/apps/'+id+'/manifest.json');apps.set(id,app);
   const matches=catalog.assets.filter(a=>a.path===path);assert.equal(matches.length,1);
@@ -85,7 +79,7 @@ test('new October media registration preserves bytes, original paths and pending
 });
 test('literal media audit reports resolved registration gaps while retaining three remaining rights findings',()=>{
  const report=auditRepositoryMedia(),findings=report.resources.filter(r=>r.issues.length);
- assert.equal(report.summary.uncataloged_resources,0);assert.equal(findings.length,2);assert.equal(report.complete,false);
+ assert.equal(report.summary.uncataloged_resources,0);assert.equal(findings.length,1);assert.equal(report.complete,false);
  assert.deepEqual(findings.map(r=>r.path).sort(),rows.filter(r=>!mjIds.has(r[2])&&!licensedIds.has(r[2])&&r[2]!=='asset-b2bea165550eabcc').map(r=>r[1]).sort());
  for(const result of findings)assert.deepEqual(result.issues,['permission-evidence-missing']);
 });
