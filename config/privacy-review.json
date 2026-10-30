@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates.",
-  "snapshot_sha256": "5cf734a544b60c40c9f6788cc448d56b36648b07abbfd1f7abe2adb6a282a5df",
+  "snapshot_sha256": "743fa8b0664082e8f86ab26e011410ce947b1ed61801d6acc2a890db61135180",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "5cf734a544b60c40c9f6788cc448d56b36648b07abbfd1f7abe2adb6a282a5df",
+    "snapshot_sha256": "743fa8b0664082e8f86ab26e011410ce947b1ed61801d6acc2a890db61135180",
     "resources": [
       {
         "path": "config/categories.json",
@@ -95,8 +95,8 @@
       },
       {
         "path": "scripts/audit-privacy-snapshot.mjs",
-        "bytes": 1928,
-        "sha256": "143bb0945c196a9ca1638b317c8659a52880dbb969412db559032ac2f4cde314"
+        "bytes": 2015,
+        "sha256": "19e122980644324bb90453c08a6a3a51bdf571f9b33641372722db5dcb3416d6"
       },
       {
         "path": "scripts/build.mjs",
@@ -2371,5 +2371,12 @@
     "No new physical-device, pilot, rollback or production-release acceptance.",
     "Future source/config/build-script changes invalidate the recorded snapshot and require privacy re-review; CI regression checks enforce the binding."
   ],
-  "release_authorized": false
+  "release_authorized": false,
+  "ci_reconciliation": {
+    "recorded_on": "2026-10-30",
+    "failed_run": 41085130760,
+    "cause": "CI Python checks generate scripts/**/__pycache__/*.pyc before npm test; these were wrongly counted as source inputs.",
+    "change": "Exclude only generated Python .pyc files under scripts/**/__pycache__; actual source/config/build files remain hashed and symlinks remain rejected.",
+    "runtime_changed": false
+  }
 }
