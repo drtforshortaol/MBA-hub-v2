@@ -4,7 +4,7 @@
   "title": "Big-Bellied Seahorse",
   "category": "animals",
   "type": "species",
-  "version": "2.0.0-alpha.9",
+  "version": "2.0.0-alpha.10",
   "entry_point": "apps/big-bellied-seahorse/index.html",
   "status": "development",
   "owner": "big-bellied-seahorse",
@@ -21,14 +21,16 @@
     "apps/IMG_4213.jpeg",
     "apps/IMG_4214.jpeg",
     "apps/IMG_4215.jpeg",
-    "apps/IMG_4216.jpeg"
+    "apps/IMG_4216.jpeg",
+    "apps/seahorse-takenaga.jpeg"
   ],
   "media": [
     "asset-486b6cdb96375dfb",
     "asset-2913dc8df835400c",
     "asset-e62b39cc07a542c4",
-    "asset-54f52bac7bc827bc",
-    "asset-225131703b4c0c59"
+    "asset-b2bea165550eabcc",
+    "asset-225131703b4c0c59",
+    "asset-75872032b1277b00"
   ],
   "knowledge": [],
   "cross_links": [

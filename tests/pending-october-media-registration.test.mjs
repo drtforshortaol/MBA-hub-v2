@@ -52,8 +52,8 @@ const rows=[
   [
     "big-bellied-seahorse",
     "apps/IMG_4215.jpeg",
-    "asset-54f52bac7bc827bc",
-    "54f52bac7bc827bc49ca4d0d5e3fd121988d61fc9dd75aa65bdca2cbbcd8ce4a"
+    "asset-b2bea165550eabcc",
+    "b2bea165550eabcce52b1abd564cfadca4f5631901143322d921b3a2621600ea"
   ],
   [
     "big-bellied-seahorse",
@@ -68,11 +68,11 @@ const read=p=>JSON.parse(fs.readFileSync(new URL('../'+p,import.meta.url),'utf8'
 
 test('new October media registration preserves bytes, original paths and pending permissions',()=>{
  const catalog=read('src/shared/media/catalog.json'),apps=new Map();
- assert.equal(catalog.assets.length,213);
+ assert.equal(catalog.assets.length,214);
  for(const [id,path,asset_id,expected] of rows){
   const app=apps.get(id)||read('src/apps/'+id+'/manifest.json');apps.set(id,app);
   const matches=catalog.assets.filter(a=>a.path===path);assert.equal(matches.length,1);
-  const asset=matches[0];assert.equal(asset.asset_id,asset_id);assert.equal(asset_id,'asset-'+expected.slice(0,16));
+  const asset=matches[0];if(asset_id==='asset-b2bea165550eabcc'){assert.equal(asset.permission,'public-domain');assert.equal(asset.sha256,expected);assert.equal(crypto.createHash('sha256').update(fs.readFileSync('src/'+path)).digest('hex'),expected);assert.ok(app.media.includes(asset_id));assert.ok(app.offline_assets.includes(path));assert.match(asset.permission_evidence,/seahorse-trout-photo-replacement/);continue;}assert.equal(asset.asset_id,asset_id);assert.equal(asset_id,'asset-'+expected.slice(0,16));
   const bytes=fs.readFileSync(new URL('../src/'+path,import.meta.url));
   assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),expected);
   assert.equal(asset.sha256,expected);assert.equal(asset.permission,mjIds.has(asset_id)?'approved':licensedIds.has(asset_id)?'licensed':'review-required');if(mjIds.has(asset_id))assert.match(asset.permission_evidence,/mj-photo-permission-20261029.json|seahorse-poster-replacement-20261030.json/);else if(asset_id==='asset-50646c3fe1d0c359')assert.match(asset.permission_evidence,/ephyra-figure-license-20261029.json/);else if(asset_id==='asset-e62b39cc07a542c4')assert.match(asset.permission_evidence,/fovea-figure-license-20261029.json/);else assert.equal(asset.permission_evidence,undefined);
@@ -81,11 +81,11 @@ test('new October media registration preserves bytes, original paths and pending
   assert.equal(app.publication_review,id==='naturalist-field-notes'?'owner-approved-text':'pending');assert.ok(!['approved','published'].includes(app.status));
  }
  const blockers=releaseErrors(read('config/platform.json'),[...apps.values()],catalog,{apps:[]});
- for(const row of rows)assert.equal(blockers.includes('media permission review: '+row[2]),!mjIds.has(row[2])&&!licensedIds.has(row[2]));
+ for(const row of rows)assert.equal(blockers.includes('media permission review: '+row[2]),!mjIds.has(row[2])&&!licensedIds.has(row[2])&&row[2]!=='asset-b2bea165550eabcc');
 });
 test('literal media audit reports resolved registration gaps while retaining three remaining rights findings',()=>{
  const report=auditRepositoryMedia(),findings=report.resources.filter(r=>r.issues.length);
- assert.equal(report.summary.uncataloged_resources,0);assert.equal(findings.length,3);assert.equal(report.complete,false);
- assert.deepEqual(findings.map(r=>r.path).sort(),rows.filter(r=>!mjIds.has(r[2])&&!licensedIds.has(r[2])).map(r=>r[1]).sort());
+ assert.equal(report.summary.uncataloged_resources,0);assert.equal(findings.length,2);assert.equal(report.complete,false);
+ assert.deepEqual(findings.map(r=>r.path).sort(),rows.filter(r=>!mjIds.has(r[2])&&!licensedIds.has(r[2])&&r[2]!=='asset-b2bea165550eabcc').map(r=>r[1]).sort());
  for(const result of findings)assert.deepEqual(result.issues,['permission-evidence-missing']);
 });

@@ -1,5 +1,7 @@
 # Seahorse / trout image — source review and replacement candidate
 
+Historical candidate: superseded by the owner-selected photograph / public-domain trout pairing in SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md. The original source-license findings remain valid.
+
 The retained IMG_4215.jpeg visually matches the diagram in Natural Habitat Adventures’ “The Secret Life of a Seahorse” (Megan Brief, September 19, 2023). Its terms (updated August 4, 2024), sections 4 and 12, do not supply a guide-hub/source-repository/offline redistribution grant. Source identification does not establish which rights Natural Habitat Adventures holds in every underlying component. No permission was requested or inferred, and the current image is preserved.
 
 An original vector candidate, “Two fish. Different designs.”, is prepared in docs/review. It uses new hand-authored schematic path geometry and a new stacked layout, not the source’s photos, pink composition or logos. Numbered labels cover gill structures, fins, body coverings, snout, male brood pouch and prehensile tail. General external anatomy was cross-checked against Clare Driscoll’s Seahorse Anatomy text and South Carolina DNR’s Trout in the Classroom Guide, Basic Trout Biology / External Anatomy. Those sources support factual terminology; no right to copy their illustrations is asserted or needed for this original geometry. It does not carry forward an ambiguous “fused jaw” claim or imply immovable seahorse jaws.
