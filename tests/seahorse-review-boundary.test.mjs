@@ -11,7 +11,7 @@ test('Seahorse draft retains explicit content and publication gates', () => {
   assert.equal(manifest.status, 'development');
   assert.equal(manifest.publication_review, 'pending');
   assert.match(html, /Scientific review and image permissions pending\./);
-  assert.match(html, /attribution and publication permission pending\./);
+  assert.match(html, /AI-generated illustration supplied and approved for replacement by the hub owner\./);
   assert.match(html, /Check authoritative listings again before publication\./);
   assert.match(html, /MBA Species Guide • Draft/);
 });

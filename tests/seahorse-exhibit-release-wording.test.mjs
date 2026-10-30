@@ -18,7 +18,7 @@ test('future-facing exhibit text must not automatically approve seahorse publica
   'asset-2913dc8df835400c',
   'asset-e62b39cc07a542c4',
   'asset-54f52bac7bc827bc',
-  'asset-93c15fb934aba9e6'
+  'asset-225131703b4c0c59'
  ]);
  const catalog=JSON.parse(readFileSync(new URL('../src/shared/media/catalog.json',import.meta.url),'utf8'));
  for(const id of manifest.media){
@@ -29,6 +29,6 @@ test('future-facing exhibit text must not automatically approve seahorse publica
    assert.match(asset.permission_evidence,/fovea-figure-license-20261029.json/);
    const evidence=JSON.parse(readFileSync(new URL('../docs/verification/fovea-figure-license-20261029.json',import.meta.url),'utf8'));
    assert.equal(evidence.asset_id,id);assert.equal(evidence.sha256,asset.sha256);
-  }else assert.equal(asset.permission,'review-required','rights review cannot be inferred from exhibit wording');
+  }else if(id==='asset-225131703b4c0c59'){assert.equal(asset.permission,'approved');assert.match(asset.permission_evidence,/seahorse-poster-replacement-20261030.json/);}else assert.equal(asset.permission,'review-required','rights review cannot be inferred from exhibit wording');
  }
 });

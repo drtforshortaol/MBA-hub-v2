@@ -11,7 +11,16 @@
       "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#california-flying-fish",
       "reviewed_on": "2026-10-22",
       "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
-      "content_sha256": "3148e9c53677057f1b3a571c1c1ee017ceffaf75782be6f29d327ce62d98107e"
+      "content_sha256": "f78bbc523eb5ab9b7957e56394a15f886d7cd665e769cf0b2afecca80c5b1a9a",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "3148e9c53677057f1b3a571c1c1ee017ceffaf75782be6f29d327ce62d98107e",
+          "content_sha256": "f78bbc523eb5ab9b7957e56394a15f886d7cd665e769cf0b2afecca80c5b1a9a"
+        }
+      ]
     },
     {
       "app_id": "green-falsejingle",
@@ -22,7 +31,16 @@
       "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#green-falsejingle",
       "reviewed_on": "2026-10-22",
       "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
-      "content_sha256": "1f71381cf7e05f6a7006933a04818b6d38c748b7c495570f5a13e9167c411791"
+      "content_sha256": "4665125d357e674c1d1d9f72d7afcbfeb3745d86f6f87ece83ec40e37c500dc5",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "1f71381cf7e05f6a7006933a04818b6d38c748b7c495570f5a13e9167c411791",
+          "content_sha256": "4665125d357e674c1d1d9f72d7afcbfeb3745d86f6f87ece83ec40e37c500dc5"
+        }
+      ]
     },
     {
       "app_id": "flamboyant-cuttlefish",
@@ -33,7 +51,16 @@
       "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#flamboyant-cuttlefish",
       "reviewed_on": "2026-10-22",
       "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
-      "content_sha256": "f9f5bad65f2d0fef933952750363c777140ba4df3107ead560744f7f48195173"
+      "content_sha256": "fd6f413d8671cdca6bb4f2b8e1bd64086d71608395351d5ef031820ddc8601da",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "f9f5bad65f2d0fef933952750363c777140ba4df3107ead560744f7f48195173",
+          "content_sha256": "fd6f413d8671cdca6bb4f2b8e1bd64086d71608395351d5ef031820ddc8601da"
+        }
+      ]
     },
     {
       "app_id": "bluespotted-ribbontail-ray",
@@ -44,7 +71,16 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "cb31205f03f3b3cf98642946e3a87eab61d4d89c797186062ee834bcf4e1f76c"
+      "content_sha256": "bdc25cf079c0294c833db9585d69ed4f7f484c973117009dcf0833fddc471e2d",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "cb31205f03f3b3cf98642946e3a87eab61d4d89c797186062ee834bcf4e1f76c",
+          "content_sha256": "bdc25cf079c0294c833db9585d69ed4f7f484c973117009dcf0833fddc471e2d"
+        }
+      ]
     },
     {
       "app_id": "california-sheephead",
@@ -55,7 +91,16 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "74b3e0c5542827b0a59f3fc3a007c40195b1f9a9d6f604ea03acb7985bb44e53"
+      "content_sha256": "baf860602063cdd0fc3ad99d32fa1de09d5279b8ff55142130c4afe70dc342e6",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "74b3e0c5542827b0a59f3fc3a007c40195b1f9a9d6f604ea03acb7985bb44e53",
+          "content_sha256": "baf860602063cdd0fc3ad99d32fa1de09d5279b8ff55142130c4afe70dc342e6"
+        }
+      ]
     },
     {
       "app_id": "gray-whale",
@@ -66,7 +111,16 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "7dd8531a958e3b7fc4383e32bd4bfd9ffac489cd5969c6bde05e494dc66c43e6"
+      "content_sha256": "32397f7ffa3dcc4f173cd288cc20ccb2c433bffaf297f13e37c64789fe7019e5",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "7dd8531a958e3b7fc4383e32bd4bfd9ffac489cd5969c6bde05e494dc66c43e6",
+          "content_sha256": "32397f7ffa3dcc4f173cd288cc20ccb2c433bffaf297f13e37c64789fe7019e5"
+        }
+      ]
     },
     {
       "app_id": "gray-whale-skeleton-exhibit",
@@ -77,7 +131,16 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "2e3ca94a524f95c50b5191a7d62b782c63c1e03b8741a6902e3c0f3baab79de4"
+      "content_sha256": "7db551a1caf381ae01ba551bb8727bf881bfefe7aaefcf7c396e5b648c0e7554",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "2e3ca94a524f95c50b5191a7d62b782c63c1e03b8741a6902e3c0f3baab79de4",
+          "content_sha256": "7db551a1caf381ae01ba551bb8727bf881bfefe7aaefcf7c396e5b648c0e7554"
+        }
+      ]
     },
     {
       "app_id": "hopkins-rose-nudibranch",
@@ -88,7 +151,16 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "e432f54fe2ca5a286325e0ee0140a0c9775570f08a616b6531c94b2511e23074"
+      "content_sha256": "153515e7a63c0efda14cd84ce714b183bf18d47c579506cfe1b43f54d2812dfc",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "e432f54fe2ca5a286325e0ee0140a0c9775570f08a616b6531c94b2511e23074",
+          "content_sha256": "153515e7a63c0efda14cd84ce714b183bf18d47c579506cfe1b43f54d2812dfc"
+        }
+      ]
     },
     {
       "app_id": "inaturalist-citizen-science",
@@ -99,7 +171,16 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "59196018fb8ed84b02336511c9fcdb7fbd78cb0bf7f4f741c27c87a8d545350f"
+      "content_sha256": "890c04ead887e6e0803dba3edc6d241164e8d3fa7ff3b60e3b257c6ea5f8bf7e",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "59196018fb8ed84b02336511c9fcdb7fbd78cb0bf7f4f741c27c87a8d545350f",
+          "content_sha256": "890c04ead887e6e0803dba3edc6d241164e8d3fa7ff3b60e3b257c6ea5f8bf7e"
+        }
+      ]
     },
     {
       "app_id": "pacific-white-sided-dolphin",
@@ -110,7 +191,16 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "707c5e77b91bb485bbba307eea7e2e8a4466f9bbad51e10603b36e8ea3b4a723"
+      "content_sha256": "88a7a745bbc7000aec6bd43034555007521cacb3e48b1a39524a5b188b6884c7",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "707c5e77b91bb485bbba307eea7e2e8a4466f9bbad51e10603b36e8ea3b4a723",
+          "content_sha256": "88a7a745bbc7000aec6bd43034555007521cacb3e48b1a39524a5b188b6884c7"
+        }
+      ]
     },
     {
       "app_id": "pseudo-nitzschia",
@@ -121,7 +211,16 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "ce08f82c5ef1357c59371ff88214106a9a655e63e939f80056929a206ea4a130"
+      "content_sha256": "c0a84e6c9881c98d17011d2bd8a0bec388f727eb47eb50a4ed7abe99930ab97a",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "ce08f82c5ef1357c59371ff88214106a9a655e63e939f80056929a206ea4a130",
+          "content_sha256": "c0a84e6c9881c98d17011d2bd8a0bec388f727eb47eb50a4ed7abe99930ab97a"
+        }
+      ]
     },
     {
       "app_id": "sea-slugs-nudibranchs",
@@ -132,7 +231,16 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "b0110903339f704766441c9e502124562b1b3a4da47516b5cd4a84ef6b0d0a27"
+      "content_sha256": "a0c3230b7a27331794d0d1ad3382884a92c53b146ed34b70b0c248f955b2465b",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "b0110903339f704766441c9e502124562b1b3a4da47516b5cd4a84ef6b0d0a27",
+          "content_sha256": "a0c3230b7a27331794d0d1ad3382884a92c53b146ed34b70b0c248f955b2465b"
+        }
+      ]
     },
     {
       "app_id": "sperm-whale",
@@ -143,7 +251,16 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "6e48b90dd549d3f32da615d203cf3026b5d5c143c4f72130e41004ff139e2625"
+      "content_sha256": "0cb346d60d07e60df6c3d94c93a5310ca2240702e6b2aa8af501f8614aa5670d",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "6e48b90dd549d3f32da615d203cf3026b5d5c143c4f72130e41004ff139e2625",
+          "content_sha256": "0cb346d60d07e60df6c3d94c93a5310ca2240702e6b2aa8af501f8614aa5670d"
+        }
+      ]
     },
     {
       "app_id": "stargazer-species-guide",
@@ -154,7 +271,16 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "f55e2cc8f9bb5d12bf172d7465531c53ac7d455c6cefc0b115928495c79cc43b"
+      "content_sha256": "4148011b91b3d1a692d2285ab04b0c0c77336920bd8d1bdb2e86d1789f97a2fc",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "f55e2cc8f9bb5d12bf172d7465531c53ac7d455c6cefc0b115928495c79cc43b",
+          "content_sha256": "4148011b91b3d1a692d2285ab04b0c0c77336920bd8d1bdb2e86d1789f97a2fc"
+        }
+      ]
     },
     {
       "app_id": "whale-associated-organisms",
@@ -165,7 +291,16 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "e5c8586db98224205998e4baabd632b30af2f842245cade186db4032f51d0521"
+      "content_sha256": "e3be418145eb80e6898ddd95047270684f8797d5404ba8e5d7d5a80df2145208",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "e5c8586db98224205998e4baabd632b30af2f842245cade186db4032f51d0521",
+          "content_sha256": "e3be418145eb80e6898ddd95047270684f8797d5404ba8e5d7d5a80df2145208"
+        }
+      ]
     },
     {
       "app_id": "wildfires-ocean-health",
@@ -176,7 +311,16 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "7dfa4a1cbfde7d08c23376b1e5ed024dae6915bb28ce86f28f0c3c15d1b16f4d"
+      "content_sha256": "ba1e12868c6398c195456360529ec7f5ff0ec518545111c28db59833341f332d",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "7dfa4a1cbfde7d08c23376b1e5ed024dae6915bb28ce86f28f0c3c15d1b16f4d",
+          "content_sha256": "ba1e12868c6398c195456360529ec7f5ff0ec518545111c28db59833341f332d"
+        }
+      ]
     },
     {
       "app_id": "wildlife-rescue",
@@ -187,7 +331,16 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "07cbd3ef20174f8eaf85a03a8b350e0c82b5147cf5d720af141d01d753ecc36a"
+      "content_sha256": "820ddcfab1416c254be1ec0c83362b97fc455a87bfb54cfb55770b994b8962fd",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "07cbd3ef20174f8eaf85a03a8b350e0c82b5147cf5d720af141d01d753ecc36a",
+          "content_sha256": "820ddcfab1416c254be1ec0c83362b97fc455a87bfb54cfb55770b994b8962fd"
+        }
+      ]
     },
     {
       "app_id": "gooseneck-barnacle",
@@ -198,7 +351,16 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "2770f4d9d05f23fe725f62e33d1591629f12ad413433f090c97c3b1642d29872"
+      "content_sha256": "6e910a4b4ac5ba38379c141de425895c2695efee4132cb05a7227c97320f88fe",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "2770f4d9d05f23fe725f62e33d1591629f12ad413433f090c97c3b1642d29872",
+          "content_sha256": "6e910a4b4ac5ba38379c141de425895c2695efee4132cb05a7227c97320f88fe"
+        }
+      ]
     },
     {
       "app_id": "applied-water-science-life-support",
@@ -209,7 +371,16 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "a6d34665d42d1c763aacac2b21f536ce12ba55a22fb11c72ce52dfceb066dfb0"
+      "content_sha256": "2afbbee3749018f59c31b7c07220ee6109afbb4bbf9475b15a7b25062843f572",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "a6d34665d42d1c763aacac2b21f536ce12ba55a22fb11c72ce52dfceb066dfb0",
+          "content_sha256": "2afbbee3749018f59c31b7c07220ee6109afbb4bbf9475b15a7b25062843f572"
+        }
+      ]
     },
     {
       "app_id": "interpretation-principles",
@@ -220,7 +391,16 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "fd484e2c58ae591b53d8ddf0e105088d2c450c4692d971a808bb6e0d0d987c38"
+      "content_sha256": "5b62fc5c91b810474c66fd270fd6b7826240067a39eebebb794397bcc4a76a56",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "fd484e2c58ae591b53d8ddf0e105088d2c450c4692d971a808bb6e0d0d987c38",
+          "content_sha256": "5b62fc5c91b810474c66fd270fd6b7826240067a39eebebb794397bcc4a76a56"
+        }
+      ]
     },
     {
       "app_id": "mba-leadership",
@@ -231,7 +411,16 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "2bd57903e03438522c68e764b55efefec589c2af3e1fa7069dfe16a174b18399"
+      "content_sha256": "08db9d32f5f51c4cefee86fce6b71ce2057d8f9e9500069ce860822b3b161392",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "2bd57903e03438522c68e764b55efefec589c2af3e1fa7069dfe16a174b18399",
+          "content_sha256": "08db9d32f5f51c4cefee86fce6b71ce2057d8f9e9500069ce860822b3b161392"
+        }
+      ]
     },
     {
       "app_id": "information-center",
@@ -242,7 +431,16 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "5033488bea2a803fd1020f83694311d611dec239c663c13d234ef36cc5b81db7"
+      "content_sha256": "4687f86ff7cc28650110e0cc06f0cae55406af43d061923d42740d962ebc4e09",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "5033488bea2a803fd1020f83694311d611dec239c663c13d234ef36cc5b81db7",
+          "content_sha256": "4687f86ff7cc28650110e0cc06f0cae55406af43d061923d42740d962ebc4e09"
+        }
+      ]
     },
     {
       "app_id": "aquarium-library-explorer",
@@ -253,7 +451,16 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "efe6d4790683f70e4827c422b86dd66b79a19fea1cbb923ac5b1877648c27575"
+      "content_sha256": "b1dc14f444f5233f70bb5d6414ed6893b7fd2e787717ab9b8a266009d2444b50",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "efe6d4790683f70e4827c422b86dd66b79a19fea1cbb923ac5b1877648c27575",
+          "content_sha256": "b1dc14f444f5233f70bb5d6414ed6893b7fd2e787717ab9b8a266009d2444b50"
+        }
+      ]
     },
     {
       "app_id": "mmc-narrations",
@@ -264,7 +471,16 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "56e5c459df67a803dc9e16d22def543e2b048896d33c56f5d2e2ac5967af2e70"
+      "content_sha256": "b9199223ea79a3610636f2c824ae2e59a927b66997a2e212379fec4bbedef9cb",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "56e5c459df67a803dc9e16d22def543e2b048896d33c56f5d2e2ac5967af2e70",
+          "content_sha256": "b9199223ea79a3610636f2c824ae2e59a927b66997a2e212379fec4bbedef9cb"
+        }
+      ]
     },
     {
       "app_id": "five-senses-pwa",
@@ -275,7 +491,16 @@
       "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
-      "content_sha256": "428ed9a9dbf7a8c65740ed0f28e68bcc6ba3c3a2b5d0827713c60893cde6323b"
+      "content_sha256": "470ca89abf583e83957f262dcf72cc248c211ff0cd332c28a3beacc275eb36be",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "428ed9a9dbf7a8c65740ed0f28e68bcc6ba3c3a2b5d0827713c60893cde6323b",
+          "content_sha256": "470ca89abf583e83957f262dcf72cc248c211ff0cd332c28a3beacc275eb36be"
+        }
+      ]
     },
     {
       "app_id": "kelp-forest",
@@ -286,7 +511,16 @@
       "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
-      "content_sha256": "1885876bf8dc4efdea86c1c89a7a8416e9aa88cb38b156978c1f7a18f4972d21"
+      "content_sha256": "985a012ec7e59897aac85e25a88e454330b868747836af91158335630d3fe607",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "1885876bf8dc4efdea86c1c89a7a8416e9aa88cb38b156978c1f7a18f4972d21",
+          "content_sha256": "985a012ec7e59897aac85e25a88e454330b868747836af91158335630d3fe607"
+        }
+      ]
     },
     {
       "app_id": "northern-elephant-seal",
@@ -297,7 +531,16 @@
       "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
-      "content_sha256": "77873a683df0fb0698e37ec84e88a04210479c6da3bf993152be4964ec4000c9"
+      "content_sha256": "7a53ba6a8c03d68e31b27eb4a265724a4ef1a68a6a7e417d7ad0dff533493b1d",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "77873a683df0fb0698e37ec84e88a04210479c6da3bf993152be4964ec4000c9",
+          "content_sha256": "7a53ba6a8c03d68e31b27eb4a265724a4ef1a68a6a7e417d7ad0dff533493b1d"
+        }
+      ]
     },
     {
       "app_id": "open-sea",
@@ -308,7 +551,16 @@
       "review_reference": "docs/OPEN_SEA_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current files, inline code, markup, styles, links, interactions, search and media review; portable full twelve-card body/SVG/metadata renderer and click-state reproduction with independent parsed trees; no new scientific approval",
-      "content_sha256": "671c4e913f44fe973afdccdef3fb1bab30906e7e54cd2bd1c6f417cc3770ce99"
+      "content_sha256": "90bfb4bbf24f6c2cffb38977978317ad0e8fd50ec6c9de54765ed7579a9ed0f1",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "671c4e913f44fe973afdccdef3fb1bab30906e7e54cd2bd1c6f417cc3770ce99",
+          "content_sha256": "90bfb4bbf24f6c2cffb38977978317ad0e8fd50ec6c9de54765ed7579a9ed0f1"
+        }
+      ]
     },
     {
       "app_id": "tree-of-life-origins",
@@ -319,7 +571,16 @@
       "review_reference": "docs/TREE_OF_LIFE_ENGINEERING_REVIEW_20261023.md",
       "reviewed_on": "2026-10-24",
       "review_method": "Independently reviewed complete pinned/current inventory, markup/code/style, source-derived search, media and executable/shared navigation. Existing unchanged V1 authorization only; no new scientific/editorial/image/device/release approval. Recovered evidence and exact resource digest reverified before binding.",
-      "content_sha256": "b2ec37505024140e5355948ea41a80048b44d005769085b36983b1648690dd82"
+      "content_sha256": "1c6327cc32071248a6ffa0c99070b02cee375301c9a57da0758bd48ab9b1c83a",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "b2ec37505024140e5355948ea41a80048b44d005769085b36983b1648690dd82",
+          "content_sha256": "1c6327cc32071248a6ffa0c99070b02cee375301c9a57da0758bd48ab9b1c83a"
+        }
+      ]
     },
     {
       "app_id": "whale-parasites-associates",
@@ -330,7 +591,16 @@
       "review_reference": "docs/WHALE_PARASITES_INDEPENDENT_REVIEW_20261023.md",
       "reviewed_on": "2026-10-24",
       "review_method": "Independently reviewed complete pinned/current inventory, markup/code/style, source-derived search, media and executable/shared navigation. Existing unchanged V1 authorization only; no new scientific/editorial/image/device/release approval. Recovered evidence and exact resource digest reverified before binding.",
-      "content_sha256": "6c4b9fb2429252091f364295af713510bdc9399c717df66c3a062dc6e03b830a"
+      "content_sha256": "17a39481c1021bafe6c5ab6c18df6a9a395f9f69da603ef6189cc8863dcedcf5",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "6c4b9fb2429252091f364295af713510bdc9399c717df66c3a062dc6e03b830a",
+          "content_sha256": "17a39481c1021bafe6c5ab6c18df6a9a395f9f69da603ef6189cc8863dcedcf5"
+        }
+      ]
     },
     {
       "app_id": "evolution-timeline",
@@ -341,7 +611,16 @@
       "review_reference": "docs/EVOLUTION_TIMELINE_INDEPENDENT_REVIEW_20261023.md",
       "reviewed_on": "2026-10-24",
       "review_method": "Independent complete eleven-file pinned-source, full executable/static/style/data/three-view DOM/source-derived search/media/actual anchor assignment and native/shared-control reproduction; existing unchanged V1 authorization only, no new scientific/editorial/media/device/release approval",
-      "content_sha256": "3957a281c5d26f091f7cd59235f642f260b83a4544fea6d81652a42e1946437a"
+      "content_sha256": "eaa1eb09fffcf9c58b8627e5c247362c12a136a9f38feefe3d3bc38074a973f6",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "3957a281c5d26f091f7cd59235f642f260b83a4544fea6d81652a42e1946437a",
+          "content_sha256": "eaa1eb09fffcf9c58b8627e5c247362c12a136a9f38feefe3d3bc38074a973f6"
+        }
+      ]
     }
   ],
   "catalog_rebind_reference": "docs/FOVEA_FIGURE_LICENSE_20261029.md"
