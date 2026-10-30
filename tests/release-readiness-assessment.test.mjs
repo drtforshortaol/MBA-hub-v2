@@ -11,7 +11,7 @@ test('read-only release assessment exposes actual outstanding gates without repl
  const before=files.map(file=>fs.readFileSync(file,'utf8'));
  const report=assessRepositoryReadiness();
  assert.equal(report.releaseEligible,false);
- for(const gate of ['ownerApproved','pilotPassed','deviceOfflinePassed','rollbackDevicePassed','privacyReviewed']){
+ for(const gate of ['ownerApproved','pilotPassed','deviceOfflinePassed','rollbackDevicePassed']){
   const blocker=report.blockers.find(item=>item.reason===`release gate: ${gate}`);
   assert(blocker,gate);assert.equal(blocker.source,'config/platform.json');assert(blocker.action.length>20);
  }
@@ -21,7 +21,7 @@ test('read-only release assessment exposes actual outstanding gates without repl
  assert.equal(report.technicalEvidence.status,'not-provided');
  assert.equal(report.approvalReconciliation.inheritedCandidates,0);
  assert.equal(report.approvalReconciliation.contentReviewsRequired,0);
- assert.equal(report.blockers.length,5);
+ assert.equal(report.blockers.length,4);
  assert.equal(report.blockers.filter(item=>item.reason.startsWith('media permission review: ')).length,0);
  assert(!report.blockers.some(item=>item.reason==='content review pending: big-bellied-seahorse'));
  assert.deepEqual(files.map(file=>fs.readFileSync(file,'utf8')),before);

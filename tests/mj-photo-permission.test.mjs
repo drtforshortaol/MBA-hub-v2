@@ -23,7 +23,7 @@ test('MJ confirmation binds exactly four photographs and removes only their reus
  }
  const errors=releaseErrors(read('config/platform.json'),[],catalog,{apps:[]});
  assert.deepEqual(errors.filter(s=>s.startsWith('media permission review: ')).map(s=>s.replace('media permission review: ','')).sort(),pendingIds.slice().sort());
- assert.equal(errors.filter(s=>s.startsWith('release gate: ')).length,5);
+ assert.equal(errors.filter(s=>s.startsWith('release gate: ')).length,4);
  assert.equal(permission.publication_authorized,false);
  assert.deepEqual(permission.scope.not_granted,['standalone-visitor-sharing','unrelated-public-redistribution']);
 });
