@@ -4180,26 +4180,6 @@
       }
     },
     {
-      "asset_id": "asset-486b6cdb96375dfb",
-      "path": "apps/IMG_4212.jpeg",
-      "owner": "media-library",
-      "alt": "Source-provided seahorse educational illustration 4212",
-      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
-      "permission": "review-required",
-      "offline": true,
-      "sha256": "486b6cdb96375dfb0c5fa97a8d9538ff81384cc4360d8884875cb71eb16b6e53",
-      "source_repository": "drtforshortaol/MBA-hub-v2",
-      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
-      "source_path": "src/apps/IMG_4212.jpeg",
-      "uses": [
-        {
-          "app_id": "big-bellied-seahorse",
-          "source_path": "src/apps/IMG_4212.jpeg"
-        }
-      ],
-      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
-    },
-    {
       "asset_id": "asset-e62b39cc07a542c4",
       "path": "apps/IMG_4214.jpeg",
       "owner": "media-library",

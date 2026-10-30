@@ -12,7 +12,7 @@
       "authorization_quote": "Approved",
       "candidate_commit": "74b91bb5af8f0215d4863bcdf9a2c39e76aa3c58",
       "candidate_packet_sha256": "f4324b0ca675b24d4a45b71a48fd3cbefd33a786c9357539357c6c148e1ecf41",
-      "content_sha256": "2d72ac36ee76fdfb5437ebd0442789ad2c42a7ecc20b35b50f61a0f873e8a5d2",
+      "content_sha256": "5dc412c5c751d33710de31fb8db23a2fcb9975bb49d74859570fc4b89a4c48ac",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-29",
@@ -48,6 +48,13 @@
           "scope": "Catalog removal of retired poster only; this app unchanged",
           "previous_content_sha256": "1eb6e5130e768e0e46ff200da190bb07e73d39acf0f8fe8d99a9592b46628ba8",
           "content_sha256": "2d72ac36ee76fdfb5437ebd0442789ad2c42a7ecc20b35b50f61a0f873e8a5d2"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "2d72ac36ee76fdfb5437ebd0442789ad2c42a7ecc20b35b50f61a0f873e8a5d2",
+          "content_sha256": "5dc412c5c751d33710de31fb8db23a2fcb9975bb49d74859570fc4b89a4c48ac"
         }
       ]
     },
@@ -61,7 +68,7 @@
       "authorization_reference": "Owner conversation: approval request for exact ten-section Seahorse draft at 74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9, followed by explanation of clearing the content blocker",
       "authorization_quote": "Proceed",
       "candidate_commit": "74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9",
-      "content_sha256": "6b663ca281d3e7ae42b2e9f9628e55c01c4543cd6479da31d498614fb4a1295f",
+      "content_sha256": "288240c9d57dc5f20ec2b34f8932088291e7c4edd6d6862986d66609107befaa",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -76,6 +83,13 @@
           "scope": "Owner explicitly approved exact ten-fact addition and poster replacement",
           "previous_content_sha256": "a2efa4bb7ba9901d795b3c5c704665898c37a9af07326186661de199e70919ef",
           "content_sha256": "6b663ca281d3e7ae42b2e9f9628e55c01c4543cd6479da31d498614fb4a1295f"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Owner accepted exact eight-feature anatomy-key addition and replacement",
+          "previous_content_sha256": "6b663ca281d3e7ae42b2e9f9628e55c01c4543cd6479da31d498614fb4a1295f",
+          "content_sha256": "288240c9d57dc5f20ec2b34f8932088291e7c4edd6d6862986d66609107befaa"
         }
       ],
       "additional_owner_decisions": [
@@ -84,6 +98,12 @@
           "candidate_commit": "74f87ed459a174e4d73169860c399e853b2caa18",
           "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
           "section_id": "Seahorse-close-up"
+        },
+        {
+          "approval": "Ok",
+          "candidate_commit": "dcf540b8a6f6925e7e0c934f8d5995766e4124d2",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "section_id": "Seahorse-anatomy-key"
         }
       ]
     }

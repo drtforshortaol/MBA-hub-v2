@@ -1,0 +1,9 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {createHash} from 'node:crypto';import {ownerTextApprovalSupported} from '../scripts/public-review.mjs';import {assessRepositoryReadiness} from '../scripts/assess-release-readiness.mjs';
+const read=p=>JSON.parse(fs.readFileSync(p));const sha=b=>createHash('sha256').update(b).digest('hex');
+test('accepted anatomy key preserves exact eight rows and photo limitations while clearing only the final media gate',()=>{
+ const e=read('docs/verification/seahorse-anatomy-key-approval-20261030.json'),r=read('docs/verification/seahorse-anatomy-key-candidate-20261030.json'),m=read('src/apps/big-bellied-seahorse/manifest.json'),c=read('src/shared/media/catalog.json'),h=fs.readFileSync('src/apps/big-bellied-seahorse/index.html','utf8');
+ assert.equal(e.approval,'Ok');assert.equal(e.candidate_sha256,sha(fs.readFileSync('docs/verification/seahorse-anatomy-key-candidate-20261030.json')));assert.deepEqual(e.rows,r.rows);assert.equal(e.rows.length,8);assert(ownerTextApprovalSupported(m));assert.equal(sha(h),e.html_after_sha256);assert.equal(h.replace(e.html_delta.after,e.html_delta.before),e.html_before);
+ const text=h.replaceAll('&#x27;',"'").replaceAll('&amp;','&'),s=m.sections.find(s=>s.id==='Seahorse-anatomy-key');for(const row of e.rows){assert(text.includes(row.text));assert(text.includes(row.photo_note));assert(s.text.includes(row.text));assert(s.text.includes(row.photo_note));}
+ assert(!c.assets.some(a=>a.asset_id===e.retired_asset.asset_id));assert(!m.offline_assets.includes(e.retired_asset.path));assert(!fs.existsSync('src/'+e.retired_asset.path));assert(!h.includes('IMG_4212.jpeg'));
+ const q=assessRepositoryReadiness();assert.equal(q.blockers.length,5);assert(q.blockers.every(b=>b.category==='operational-gate'));assert.equal(q.releaseEligible,false);assert.equal(e.release_authorized,false);
+});

@@ -15,7 +15,7 @@ test('fovea license binds retained crop and required visible attribution without
 test('only the fovea permission clears; Seaweek source recovery does not grant its image permission',()=>{
  const catalog=read('src/shared/media/catalog.json'),sea=read('docs/verification/seaweek-anatomy-source-20261029.json');
  assert.equal(sea.status,'review-required');assert.equal(sea.permission_granted,false);assert.equal(sea.contacted,false);
- assert.equal(catalog.assets.find(a=>a.asset_id==='asset-486b6cdb96375dfb').permission,'review-required');
+ assert(!catalog.assets.some(a=>a.asset_id==='asset-486b6cdb96375dfb'));assert.equal(read('docs/verification/seahorse-anatomy-key-approval-20261030.json').retired_asset.permission,'review-required');
  const report=assessRepositoryReadiness();assert(!report.blockers.some(b=>b.reason==='media permission review: asset-e62b39cc07a542c4'));
- assert.equal(report.blockers.filter(b=>b.category==='media-review-required').length,1);assert.equal(report.blockers.filter(b=>b.category==='operational-gate').length,5);assert.equal(report.blockers.length,6);assert.equal(report.releaseEligible,false);
+ assert.equal(report.blockers.filter(b=>b.category==='media-review-required').length,0);assert.equal(report.blockers.filter(b=>b.category==='operational-gate').length,5);assert.equal(report.blockers.length,5);assert.equal(report.releaseEligible,false);
 });
