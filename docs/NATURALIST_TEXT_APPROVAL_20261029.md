@@ -1,3 +1,5 @@
+**Later license/provenance update:** The retained ephyra illustration is now sourced and licensed, with its caption/alt and source/license references corrected. See `EPHYRA_FIGURE_LICENSE_20261029.md`. All approved scientific/editorial text and the standalone summary remain unchanged; the original approval and candidate below remain the baseline for the precisely bounded technical rebind.
+
 # Naturalist authored-text approval — October 29, 2026
 
 The owner explicitly replied **“Approved”** to the exact October text packet at commit `74b91bb5af8f0215d4863bcdf9a2c39e76aa3c58`, after being shown the proposed jelly wording, sourced exhibit-history paragraph and stale photo-label cleanup. This is approval of the reviewed authored text only. It is not permission for the remaining illustrations, public release, a pilot result or physical-device acceptance.

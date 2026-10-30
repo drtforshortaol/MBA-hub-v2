@@ -11,15 +11,29 @@ test('Naturalist uses the exact approved candidate bytes and explicit owner deci
  const packetPath='docs/verification/naturalist-final-text-candidate-20261029.json';
  const packet=read(packetPath),app=read('src/apps/naturalist-field-notes/manifest.json');
  for(const [file,candidate] of Object.entries(packet.candidate_files)){
-  assert.equal(fs.readFileSync(file,'utf8'),candidate.content,'exact approved file '+file);
-  assert.equal(hash(fs.readFileSync(file)),candidate.sha256);
+  if(file.endsWith('october-2026-note.js')){
+   const receipt=read('docs/verification/ephyra-figure-license-20261029.json');
+   const current=fs.readFileSync(file,'utf8');
+   const note=JSON.parse(current.slice('FIELD_NOTES.push('.length,current.lastIndexOf(');')));
+   const observation=note.observations.find(o=>o.title==='Moon jelly ephyrae');
+   assert.deepEqual(observation.links,receipt.observation_links_delta.after);delete observation.links;
+   const photo=observation.photos;
+   assert.deepEqual(photo[0],receipt.caption_delta.after);
+   photo[0]=receipt.caption_delta.before;
+   assert.equal('FIELD_NOTES.push('+JSON.stringify(note)+');\n',candidate.content,'only licensed attribution differs from approved text');
+   assert.equal(hash(fs.readFileSync(file)),receipt.current_script_sha256);
+  }else{
+   assert.equal(fs.readFileSync(file,'utf8'),candidate.content,'exact approved file '+file);
+   assert.equal(hash(fs.readFileSync(file)),candidate.sha256);
+  }
  }
  const records=read('config/owner-text-reviews.json').apps.filter(r=>r.app_id===app.app_id);
  assert.equal(records.length,1);const record=records[0];
  assert.equal(record.candidate_commit,'74b91bb5af8f0215d4863bcdf9a2c39e76aa3c58');
  assert.equal(record.candidate_packet_sha256,hash(fs.readFileSync(packetPath)));
  assert.equal(record.authorization_quote,'Approved');assert.equal(record.scope,'authored-text-only');
- assert.equal(app.version,packet.planned_app_version);assert.equal(app.status,'testing');
+ assert.equal(packet.planned_app_version,'2.0.0-alpha.10');assert.equal(app.version,'2.0.0-alpha.11');
+ assert.equal(record.resource_rebindings.at(-1).review_reference,'docs/EPHYRA_FIGURE_LICENSE_20261029.md');assert.equal(app.status,'testing');
  assert.equal(app.publication_review,'owner-approved-text');assert.equal(ownerTextApprovalSupported(app),true);
  const changed=structuredClone(app);changed.sections.at(-1).text+=' Unapproved claim.';
  assert.equal(ownerTextApprovalSupported(changed),false);
@@ -32,9 +46,9 @@ test('Naturalist approval clears only that content blocker and preserves all rem
  assert(!report.blockers.some(b=>b.reason==='content review pending: naturalist-field-notes'));
  assert(report.blockers.some(b=>b.reason==='content review pending: big-bellied-seahorse'));
  assert.equal(report.blockers.filter(b=>b.category==='operational-gate').length,5);
- assert.equal(report.blockers.filter(b=>b.category==='media-review-required').length,6);
- assert.equal(report.blockers.length,12);assert.equal(report.releaseEligible,false);
+ assert.equal(report.blockers.filter(b=>b.category==='media-review-required').length,5);
+ assert.equal(report.blockers.length,11);assert.equal(report.releaseEligible,false);
  const catalog=read('src/shared/media/catalog.json');
  for(const id of ['asset-1bd100105f88c83a','asset-95daa2493750e82f','asset-47f9bbb193878eec','asset-df392914e6cf5502'])assert.equal(catalog.assets.find(a=>a.asset_id===id).permission,'approved');
- assert.equal(catalog.assets.find(a=>a.asset_id==='asset-50646c3fe1d0c359').permission,'review-required');
+ assert.equal(catalog.assets.find(a=>a.asset_id==='asset-50646c3fe1d0c359').permission,'licensed');
 });

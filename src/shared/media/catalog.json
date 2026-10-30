@@ -4156,9 +4156,9 @@
       "asset_id": "asset-50646c3fe1d0c359",
       "path": "apps/IMG_4210.jpeg",
       "owner": "media-library",
-      "alt": "Moon jelly ephyra anatomy",
-      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
-      "permission": "review-required",
+      "alt": "Scyphozoan ephyra anatomy reference diagram, cropped from Figure 1",
+      "credit": "Lau López; cropped Figure 1, Ballesteros et al. (2021), Frontiers in Marine Science 8:714503; CC BY 4.0.",
+      "permission": "licensed",
       "offline": true,
       "sha256": "50646c3fe1d0c359860229e041767429fc21a382cd16d75bd165fd5f7a3cef52",
       "source_repository": "drtforshortaol/MBA-hub-v2",
@@ -4170,7 +4170,14 @@
           "source_path": "src/apps/IMG_4210.jpeg"
         }
       ],
-      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+      "review_note": "Existing JPEG bytes and engineering source provenance are unchanged. Figure-specific restrictive notice not found. General reference diagram from a Pelagia study; do not identify it as a verified moon-jelly specimen.",
+      "permission_evidence": "Publisher Figure 1 visually matches the existing cropped screenshot. Article licenses reuse under CC BY 4.0; the displayed caption retains creator/copyright credit, source and license URIs, and crop disclosure. See docs/verification/ephyra-figure-license-20261029.json.",
+      "license": {
+        "id": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "source_url": "https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2021.714503/full#F1",
+        "illustrator": "Lau López"
+      }
     },
     {
       "asset_id": "asset-486b6cdb96375dfb",

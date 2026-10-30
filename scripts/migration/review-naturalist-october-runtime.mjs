@@ -53,8 +53,9 @@ export function reviewNaturalistOctober({root=packageRoot,overrides={}}={}){
   const imagePath=path.posix.normalize('apps/naturalist-field-notes/'+relative);
   const rows=catalog.assets.filter(a=>a.path===imagePath);assert.equal(rows.length,1,'one media catalog record '+imagePath);
   const mjApproved=new Set(['asset-1bd100105f88c83a','asset-95daa2493750e82f','asset-47f9bbb193878eec','asset-df392914e6cf5502']).has(rows[0].asset_id);
-  assert.equal(rows[0].permission,mjApproved?'approved':'review-required','exact scoped October permission');
+  assert.equal(rows[0].permission,mjApproved?'approved':'licensed','exact scoped October permission');
   if(mjApproved)assert(rows[0].permission_evidence.includes('mj-photo-permission-20261029.json'),'recorded MJ authorization');
+  else assert(rows[0].permission_evidence.includes('ephyra-figure-license-20261029.json'),'recorded ephyra license');
   assert(manifest.media.includes(rows[0].asset_id),'manifest media identity '+imagePath);
   assert(manifest.offline_assets.includes(imagePath),'offline declaration '+imagePath);
   assert(fs.statSync(path.join(root,'src',imagePath)).isFile(),'local October resource '+imagePath);

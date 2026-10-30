@@ -74,17 +74,17 @@ test('new October media registration preserves bytes, original paths and pending
   const asset=matches[0];assert.equal(asset.asset_id,asset_id);assert.equal(asset_id,'asset-'+expected.slice(0,16));
   const bytes=fs.readFileSync(new URL('../src/'+path,import.meta.url));
   assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),expected);
-  assert.equal(asset.sha256,expected);assert.equal(asset.permission,mjIds.has(asset_id)?'approved':'review-required');if(mjIds.has(asset_id))assert.match(asset.permission_evidence,/mj-photo-permission-20261029.json/);else assert.equal(asset.permission_evidence,undefined);
+  assert.equal(asset.sha256,expected);assert.equal(asset.permission,mjIds.has(asset_id)?'approved':asset_id==='asset-50646c3fe1d0c359'?'licensed':'review-required');if(mjIds.has(asset_id))assert.match(asset.permission_evidence,/mj-photo-permission-20261029.json/);else if(asset_id==='asset-50646c3fe1d0c359')assert.match(asset.permission_evidence,/ephyra-figure-license-20261029.json/);else assert.equal(asset.permission_evidence,undefined);
   assert.equal(asset.offline,true);assert.ok(app.media.includes(asset_id));assert.ok(app.offline_assets.includes(path));
   assert.equal(asset.source_repository,'drtforshortaol/MBA-hub-v2');assert.equal(asset.source_commit,path.includes('big-sur-gray-whale')?'cae20ad89424d941cfb8f2bf39595307b0bb74a8':'12afc2052c6117cc33616a9687199e353c3d8c48');assert.equal(asset.source_path,'src/'+path);
   assert.equal(app.publication_review,id==='naturalist-field-notes'?'owner-approved-text':'pending');assert.ok(!['approved','published'].includes(app.status));
  }
  const blockers=releaseErrors(read('config/platform.json'),[...apps.values()],catalog,{apps:[]});
- for(const row of rows)assert.equal(blockers.includes('media permission review: '+row[2]),!mjIds.has(row[2]));
+ for(const row of rows)assert.equal(blockers.includes('media permission review: '+row[2]),!mjIds.has(row[2])&&row[2]!=='asset-50646c3fe1d0c359');
 });
-test('literal media audit reports resolved registration gaps while retaining six remaining rights findings',()=>{
+test('literal media audit reports resolved registration gaps while retaining five remaining rights findings',()=>{
  const report=auditRepositoryMedia(),findings=report.resources.filter(r=>r.issues.length);
- assert.equal(report.summary.uncataloged_resources,0);assert.equal(findings.length,6);assert.equal(report.complete,false);
- assert.deepEqual(findings.map(r=>r.path).sort(),rows.filter(r=>!mjIds.has(r[2])).map(r=>r[1]).sort());
+ assert.equal(report.summary.uncataloged_resources,0);assert.equal(findings.length,5);assert.equal(report.complete,false);
+ assert.deepEqual(findings.map(r=>r.path).sort(),rows.filter(r=>!mjIds.has(r[2])&&r[2]!=='asset-50646c3fe1d0c359').map(r=>r[1]).sort());
  for(const result of findings)assert.deepEqual(result.issues,['permission-evidence-missing']);
 });

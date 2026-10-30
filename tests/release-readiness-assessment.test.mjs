@@ -21,8 +21,8 @@ test('read-only release assessment exposes actual outstanding gates without repl
  assert.equal(report.technicalEvidence.status,'not-provided');
  assert.equal(report.approvalReconciliation.inheritedCandidates,0);
  assert.equal(report.approvalReconciliation.contentReviewsRequired,1);
- assert.equal(report.blockers.length,12);
- assert.equal(report.blockers.filter(item=>item.reason.startsWith('media permission review: ')).length,6);
+ assert.equal(report.blockers.length,11);
+ assert.equal(report.blockers.filter(item=>item.reason.startsWith('media permission review: ')).length,5);
  assert.equal(report.blockers.find(item=>item.reason==='content review pending: big-bellied-seahorse').category,'content-review-required');
  assert.deepEqual(files.map(file=>fs.readFileSync(file,'utf8')),before);
 });

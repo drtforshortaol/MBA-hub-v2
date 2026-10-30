@@ -22,7 +22,7 @@
 | Kelp Forest | kelp-forest | 2.0.0-alpha.6 | testing | kelp-forest |
 | MBA Leadership | mba-leadership | 2.0.0-alpha.6 | testing | mba-leadership |
 | Marine Mammal Cart | mmc-narrations | 2.0.0-alpha.6 | testing | mmc-narrations |
-| Naturalist Field Notes | naturalist-field-notes | 2.0.0-alpha.10 | testing | naturalist-field-notes |
+| Naturalist Field Notes | naturalist-field-notes | 2.0.0-alpha.11 | testing | naturalist-field-notes |
 | Northern Elephant Seal | northern-elephant-seal | 2.0.0-alpha.6 | testing | northern-elephant-seal |
 | Open Sea Exhibit | open-sea | 2.0.0-alpha.6 | testing | open-sea |
 | Pacific White-Sided Dolphin | pacific-white-sided-dolphin | 2.0.0-alpha.6 | testing | pacific-white-sided-dolphin |

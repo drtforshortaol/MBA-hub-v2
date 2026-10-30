@@ -2,7 +2,7 @@
   "schema_version": 1,
   "app_id": "naturalist-field-notes",
   "source_receipt_sha256": "b2cbba54e814482fab3a34de01305a6a6e4a97a53dddefbd58bc060dc3ad6673",
-  "current_script_sha256": "c00624ff6edf131d3b971c85a5c42cc5866412ed50816a3461d1b4b1fe0bb82a",
+  "current_script_sha256": "dcdc5a7983b529e9da02bd8dcbcdabde967b298f36b7ae178a57003bc35bb267",
   "current_summary_sha256": "61e66bf9406a3b06e98fbec810fc64dd172828a94159bf119a72528927482b25",
   "standalone_historical_context_matches": true,
   "standalone_uploaded_photo_matches": true,
