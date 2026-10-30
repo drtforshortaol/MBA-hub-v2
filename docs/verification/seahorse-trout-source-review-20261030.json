@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-30",
+  "asset_id": "asset-54f52bac7bc827bc",
+  "path": "apps/IMG_4215.jpeg",
+  "sha256": "54f52bac7bc827bc49ca4d0d5e3fd121988d61fc9dd75aa65bdca2cbbcd8ce4a",
+  "status": "review-required",
+  "source_page": "https://www.nathab.com/blog/secret-life-seahorse",
+  "source_image": "https://good-nature-blog-uploads.s3.amazonaws.com/uploads/2023/09/seahorse-diagram-2.jpeg",
+  "source_match": "Manual visual match: pink seahorse panel, rotated trout, anatomical label set and Nat Hab/WWF logos; existing screenshot adds a linked caption. No encoding identity claimed.",
+  "terms_url": "https://www.nathab.com/terms-of-service",
+  "terms_version": "August 4, 2024",
+  "terms_findings": {
+    "section_4": "Reproduction, adaptation and distribution require express written consent except as expressly authorized in the terms.",
+    "section_12": "The limited grant is viewing one copy on one device for personal noncommercial use.",
+    "section_13": "No general right to use the company or third-party logos is granted."
+  },
+  "permission_granted": false,
+  "contacted": false,
+  "replacement_candidate": {
+    "status": "awaiting-owner-review",
+    "original_geometry": true,
+    "third_party_pixels_or_logos": false,
+    "scope": "Simplified general external anatomy, not a species identification plate; no claim that jaw bones are immovable.",
+    "assets": [
+      {
+        "path": "docs/review/seahorse-trout-original-candidate.svg",
+        "sha256": "e843df971bb9875ef98dc43e834d860da2479e53267e7552849db56f2d09f880",
+        "bytes": 16201
+      },
+      {
+        "path": "docs/review/seahorse-trout-original-candidate.png",
+        "sha256": "1f9b2e02944f7373d3501ec473db7c7d3de763b8b056d01b083166b8251973f9",
+        "bytes": 180744
+      }
+    ],
+    "factual_references": [
+      "https://www.seahorse.org/library/articles/anatomy.shtml",
+      "https://www.dnr.sc.gov/education/pdf/TroutClassroomGuide.pdf"
+    ],
+    "app_replaced": false,
+    "catalog_changed": false,
+    "blocker_cleared": false
+  }
+}
