@@ -6,6 +6,7 @@ import {releaseErrors} from '../scripts/build.mjs';
 import {auditRepositoryMedia} from '../scripts/audit-local-media-coverage.mjs';
 
 const rows=[
+ ["naturalist-field-notes","shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg","asset-df392914e6cf5502","df392914e6cf55020db2cf2ae2eab1b55f23160708b1284f765232f300cbb707"],
   [
     "naturalist-field-notes",
     "apps/IMG_4207.jpeg",
@@ -65,7 +66,7 @@ const read=p=>JSON.parse(fs.readFileSync(new URL('../'+p,import.meta.url),'utf8'
 
 test('new October media registration preserves bytes, original paths and pending permissions',()=>{
  const catalog=read('src/shared/media/catalog.json'),apps=new Map();
- assert.equal(catalog.assets.length,212);
+ assert.equal(catalog.assets.length,213);
  for(const [id,path,asset_id,expected] of rows){
   const app=apps.get(id)||read('src/apps/'+id+'/manifest.json');apps.set(id,app);
   const matches=catalog.assets.filter(a=>a.path===path);assert.equal(matches.length,1);
@@ -74,15 +75,15 @@ test('new October media registration preserves bytes, original paths and pending
   assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),expected);
   assert.equal(asset.sha256,expected);assert.equal(asset.permission,'review-required');assert.equal(asset.permission_evidence,undefined);
   assert.equal(asset.offline,true);assert.ok(app.media.includes(asset_id));assert.ok(app.offline_assets.includes(path));
-  assert.equal(asset.source_repository,'drtforshortaol/MBA-hub-v2');assert.equal(asset.source_commit,'12afc2052c6117cc33616a9687199e353c3d8c48');assert.equal(asset.source_path,'src/'+path);
+  assert.equal(asset.source_repository,'drtforshortaol/MBA-hub-v2');assert.equal(asset.source_commit,path.includes('big-sur-gray-whale')?'cae20ad89424d941cfb8f2bf39595307b0bb74a8':'12afc2052c6117cc33616a9687199e353c3d8c48');assert.equal(asset.source_path,'src/'+path);
   assert.equal(app.publication_review,'pending');assert.ok(!['approved','published'].includes(app.status));
  }
  const blockers=releaseErrors(read('config/platform.json'),[...apps.values()],catalog,{apps:[]});
  for(const row of rows)assert.ok(blockers.includes('media permission review: '+row[2]));
 });
-test('literal media audit reports resolved registration gaps while retaining all nine rights findings',()=>{
+test('literal media audit reports resolved registration gaps while retaining all ten rights findings',()=>{
  const report=auditRepositoryMedia(),findings=report.resources.filter(r=>r.issues.length);
- assert.equal(report.summary.uncataloged_resources,0);assert.equal(findings.length,9);assert.equal(report.complete,false);
+ assert.equal(report.summary.uncataloged_resources,0);assert.equal(findings.length,10);assert.equal(report.complete,false);
  assert.deepEqual(findings.map(r=>r.path).sort(),rows.map(r=>r[1]).sort());
  for(const result of findings)assert.deepEqual(result.issues,['permission-evidence-missing']);
 });

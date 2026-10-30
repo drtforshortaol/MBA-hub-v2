@@ -4235,6 +4235,26 @@
         }
       ],
       "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+    },
+    {
+      "asset_id": "asset-df392914e6cf5502",
+      "path": "shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg",
+      "owner": "media-library",
+      "alt": "Historical gray-whale observation offshore from Big Sur, viewed from Highway 1",
+      "credit": "Newsletter photograph supplied by the owner; photographer identity and reuse attribution unresolved.",
+      "permission": "review-required",
+      "offline": true,
+      "sha256": "df392914e6cf55020db2cf2ae2eab1b55f23160708b1284f765232f300cbb707",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "cae20ad89424d941cfb8f2bf39595307b0bb74a8",
+      "source_path": "src/shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg",
+      "uses": [
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "src/shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg"
+        }
+      ],
+      "review_note": "Exact uploaded bytes preserved. Owner-supplied mapping to newsletter MZD_5048.JPG is recorded in docs/verification/naturalist-gray-whale-upload-20261029.json; byte identity with the original email attachment and reuse rights are not independently established."
     }
   ]
 }

@@ -17,7 +17,7 @@ const originalHashes={
  'manifest.json':'1811ae6e53018867b9c243acd17dc4f69bd11ba0a2917592d290edb06e428269'
 };
 const runtimeHashes=['4e72f8e78b921e0172b5f1c85fe8d48a36c042c25e7b572aae39d9227bce008e','412c28db578382ca785b4476fb6f59ec217e9671870dea4206040cc000b51eff','c871238eeb6f808a034eb5123517df4720b4a8dd6f560177c25c2df4303065a2'];
-const additions={'october-2026-note.js':'409140fc080fac1ddcc3390db326ea4a5df56ebdf10b4756b73de4d8a68d9787','october-2026-08-14.html':'daf14bd5145cf7a4394c8d8b476d9a3135793d07bd823d84b10e8b2c448d1c1e'};
+const additions={'october-2026-note.js':'e20a37bfc1d319fb7d5d046f67854d971ffb0798ea7b9cf1c77ff046c28de7a3','october-2026-08-14.html':'4deed1a5196903ce36497c7ba8c589ecc9f824f27a42857c042b7fea061095db'};
 function read(root,relative,encoding='utf8'){
  assert(!path.isAbsolute(relative)&&relative.split('/').every(p=>p&&p!=='.'&&p!=='..'),'unsafe input path');
  let p=path.resolve(root);assert(!fs.lstatSync(p).isSymbolicLink(),'root symlink');
@@ -73,7 +73,7 @@ export async function reviewNaturalistOriginal({root=packageRoot,verifyBytes=tru
  const source={};for(const f of fixture.files){assert.equal(blob(f.content),f.git_blob,'pinned complete source '+f.path);source[f.path.slice(prefix.length)]=f.content;}
  assert.equal(Object.keys(source).length,9);assert.equal(fixture.inventory.length,122);
  const app='src/'+prefix;const names=fs.readdirSync(path.join(root,app)).sort();assert.deepEqual(names,[...Object.keys(originalHashes),'app.js',...Object.keys(additions)].sort(),'complete current app inventory');
- const current={};for(const n of names){current[n]=n in overrides?overrides[n]:read(root,app+n);if(verifyBytes){if(n==='app.js')assert(runtimeHashes.includes(sha(current[n])),'unreviewed app runtime bytes');else if(n==='manifest.json')assert([originalHashes[n],'a6ad9198f2c0f57be576d69909c02b6b0e3700f6fed05c9f577e8ca67443bfb8','f6d5eb979f63212966c7e2fab36e09f3eedae8a1752b325983956e01362be208'].includes(sha(current[n])),'unreviewed manifest bytes');else assert.equal(sha(current[n]),originalHashes[n]||additions[n],'current bytes '+n);}}
+ const current={};for(const n of names){current[n]=n in overrides?overrides[n]:read(root,app+n);if(verifyBytes){if(n==='app.js')assert(runtimeHashes.includes(sha(current[n])),'unreviewed app runtime bytes');else if(n==='manifest.json')assert([originalHashes[n],'a6ad9198f2c0f57be576d69909c02b6b0e3700f6fed05c9f577e8ca67443bfb8','f6d5eb979f63212966c7e2fab36e09f3eedae8a1752b325983956e01362be208','0f3cd31bfe01c591fc3e8b046cc7637eeebc21e12f06ccf47638d62ef857f7f7'].includes(sha(current[n])),'unreviewed manifest bytes');else assert.equal(sha(current[n]),originalHashes[n]||additions[n],'current bytes '+n);}}
  assert.equal(current['styles.css'],source['styles.css'],'complete original CSS');
  const originalData=dataObject(source['data.js']),newData=dataObject(current['data.js']);assert.equal(originalData.FIELD_NOTES.length,24);assert.equal(originalData.RESOURCES.length,8);
  const inventory=[...fixture.inventory,...fixture.external_inventory];const media=metadataPairs(originalData,newData,inventory,root);
@@ -114,7 +114,7 @@ export async function reviewNaturalistOriginal({root=packageRoot,verifyBytes=tru
  const catalog=JSON.parse(read(root,'src/shared/media/catalog.json'));
  const registeredOriginal=[...media.pairs.map(p=>p.current_path),'shared/media/asset-29f85ad9d9ef593f--IMG_3475.jpeg'];
  for(const p of new Set(registeredOriginal)){const entry=catalog.assets.find(a=>a.path===p);assert(entry,'original catalog registration '+p);assert(manifest.media.includes(entry.asset_id),'original app media declaration '+p);assert.equal(entry.offline,true,'original offline media '+p);assert.equal(entry.sha256,sha(read(root,'src/'+p,null)),'original catalog bytes '+p);}
- const pendingPhotos=['apps/IMG_4207.jpeg','apps/IMG_4208.jpeg','apps/IMG_4209.jpeg','apps/IMG_4210.jpeg'];
+ const pendingPhotos=['apps/IMG_4207.jpeg','apps/IMG_4208.jpeg','apps/IMG_4209.jpeg','apps/IMG_4210.jpeg','shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg'];
  const pendingMedia=pendingPhotos.map(p=>{const entry=catalog.assets.find(a=>a.path===p);if(entry)assert.equal(entry.permission,'review-required','new October photo remains pending');assert(manifest.offline_assets.includes(p));return {path:p,asset_id:entry?.asset_id||null,sha256:sha(read(root,'src/'+p,null)),permission:entry?.permission||'review-required-unregistered',registration_present:Boolean(entry)};});
  const newQueries=manifest.sections.filter(s=>s.query?.note&&!originalData.FIELD_NOTES.some(n=>n.id===s.query.note)).map(s=>({id:s.id,note:s.query.note,review_required:true}));assert.equal(newQueries.length,1);
  return {schema_version:1,scope:'Original inherited runtime only; no whole-app approval',source_repository:fixture.repository,source_commit:pin,source_fixture_sha256:fixtureSHA,current_byte_guard:verifyBytes,

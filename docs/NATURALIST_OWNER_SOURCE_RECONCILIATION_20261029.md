@@ -1,3 +1,5 @@
+**Later photo update:** The owner has now supplied the historical Big Sur image. See `NATURALIST_GRAY_WHALE_PHOTO_20261029.md` and the supplemental upload receipt. Missing-photo statements below describe the earlier checkpoint; reuse permission and original attachment byte identity remain unverified.
+
 # Naturalist owner-source reconciliation — October 29, 2026
 
 The owner supplied the October 8–14 update in the current conversation. This resolves the earlier inability to inspect the source text. It does not supply original email headers, attached image bytes, creator permissions or blanket scientific/editorial approval. Existing approved Q&A presentation remains settled.

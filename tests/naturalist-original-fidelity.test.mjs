@@ -11,7 +11,7 @@ test('full original Naturalist content and runtime reproduce while presentation/
  assert.equal(r.complete_original_CSS,true);assert.equal(r.complete_data_after_media_relocation,true);assert.equal(r.original_media_relocations,118);assert.equal(r.registered_original_offline_media,119);
  assert.equal(r.source_derived_inline_QA_cards,38);assert.equal(r.complete_home_equal,false);assert.equal(r.complete_home_equal_outside_QA,true);assert.equal(r.presentation_review_required.length,2);
  assert.equal(r.original_query_destinations.length,24);assert.ok(r.search_cases>=29);assert.ok(r.actual_species_letter_toggles>5);
- assert.deepEqual(Object.keys(r.excluded_new_material.files).sort(),['october-2026-08-14.html','october-2026-note.js']);assert.equal(r.excluded_new_material.photos.length,4);assert.equal(r.excluded_new_material.query_destinations.length,1);
+ assert.deepEqual(Object.keys(r.excluded_new_material.files).sort(),['october-2026-08-14.html','october-2026-note.js']);assert.equal(r.excluded_new_material.photos.length,5);assert.equal(r.excluded_new_material.query_destinations.length,1);
  assert.equal(r.excluded_new_material.executed_or_approved,false);for(const photo of r.excluded_new_material.photos)assert.match(photo.permission,/^review-required/);
  assert.equal(r.whole_app_inheritance,false);assert.equal(r.approval_granted,false);
 });

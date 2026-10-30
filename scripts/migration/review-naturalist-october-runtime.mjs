@@ -46,7 +46,7 @@ export function reviewNaturalistOctober({root=packageRoot,overrides={}}={}){
  assert(initial.document.querySelector('.home-intro'),'bound Back restores Home');
  const direct=fixture('?note='+id);verifyArticle(direct,added);
  const imagePaths=added.observations.flatMap(o=>o.photos||[]).map(p=>p.src);
- assert.deepEqual(imagePaths,['../IMG_4207.jpeg','../IMG_4208.jpeg','../IMG_4209.jpeg','../IMG_4210.jpeg'],'complete October image set');
+ assert.deepEqual(imagePaths,['../IMG_4207.jpeg','../IMG_4208.jpeg','../IMG_4209.jpeg','../../shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg','../IMG_4210.jpeg'],'complete October image set');
  const catalog=JSON.parse(fs.readFileSync(path.join(root,'src/shared/media/catalog.json'),'utf8'));
  for(const relative of imagePaths){
   const imagePath=path.posix.normalize('apps/naturalist-field-notes/'+relative);
@@ -72,7 +72,7 @@ export function reviewNaturalistOctober({root=packageRoot,overrides={}}={}){
  assert.deepEqual(section.query,{note:id},'October destination query');
  return {schema_version:1,app_id:manifest.app_id,current_inventory:Object.fromEntries(Object.entries(files).map(([n,s])=>[n,sha(s)])),
   current_classic_script_order:scripts,current_notes:25,current_QA:41,october_source_buttons:issueButtons.length,authored_october_fields:true,
-  direct_query_startup:true,bound_issue_and_back:true,search_cases:searches,october_photos:4,
+  direct_query_startup:true,bound_issue_and_back:true,search_cases:searches,october_photos:5,
   approval_granted:false,whole_app_inheritance:false,limitations:['Independent lxml trees and bounded synchronous events, not native browser layout or service-worker acceptance.','Current added data is exercised as authored, without scientific/editorial or image-rights approval.','Shared app-contract module and separate October HTML page are outside this runtime check.']};
 }
 function verifyArticle(f,n){

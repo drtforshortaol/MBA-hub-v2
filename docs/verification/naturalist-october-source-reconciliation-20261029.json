@@ -2,10 +2,14 @@
   "schema_version": 1,
   "app_id": "naturalist-field-notes",
   "source_receipt_sha256": "b2cbba54e814482fab3a34de01305a6a6e4a97a53dddefbd58bc060dc3ad6673",
-  "current_script_sha256": "409140fc080fac1ddcc3390db326ea4a5df56ebdf10b4756b73de4d8a68d9787",
-  "current_summary_sha256": "daf14bd5145cf7a4394c8d8b476d9a3135793d07bd823d84b10e8b2c448d1c1e",
+  "current_script_sha256": "e20a37bfc1d319fb7d5d046f67854d971ffb0798ea7b9cf1c77ff046c28de7a3",
+  "current_summary_sha256": "4deed1a5196903ce36497c7ba8c589ecc9f824f27a42857c042b7fea061095db",
   "standalone_historical_context_matches": true,
-  "standalone_missing_photo_preserved": true,
+  "standalone_uploaded_photo_matches": true,
+  "uploaded_photo_bytes_verified": true,
+  "upload_receipt_sha256": "b49fa8e796487c68869f567bbe5468d0a4f6773449300b2e2fc45f34c70173e7",
+  "owner_supplied_filename_mapping": true,
+  "newsletter_original_byte_identity_verified": false,
   "source_rows": 38,
   "normalized_species": 39,
   "complete_bay_watch": true,
@@ -14,16 +18,14 @@
   "display_uses_observation_period": true,
   "historical_context_restored": true,
   "source_photo_items": 5,
-  "current_photo_items": 4,
-  "unresolved_photo_files": [
-    "MZD_5048.JPG"
-  ],
+  "current_photo_items": 5,
+  "unresolved_photo_files": [],
   "attachment_identity_verified": false,
   "approval_granted": false,
   "publication_review": "pending",
   "limitations": [
     "Selected excerpts and Bay Watch rows, not a complete email or original attachment archive.",
-    "Subject/caption correspondence does not establish exact image identity or reuse rights.",
+    "Other subject/caption mappings do not establish exact image identity. The owner-supplied historical photo is bound to uploaded bytes, not a recovered original email attachment; reuse rights remain pending.",
     "Source-derived biology and exhibit recollections are not independently certified by this comparison."
   ]
 }
