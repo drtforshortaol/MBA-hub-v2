@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "baseline_commit": "74b91bb5af8f0215d4863bcdf9a2c39e76aa3c58",
+  "app_id": "naturalist-field-notes",
+  "version": "2.0.0-alpha.10",
+  "owner_authorization_quote": "Approved",
+  "scope": "Approved October authored text only; no media, operational or publication approval",
+  "candidate_packet_sha256": "f4324b0ca675b24d4a45b71a48fd3cbefd33a786c9357539357c6c148e1ecf41",
+  "exact_candidate_files": {
+    "src/apps/naturalist-field-notes/october-2026-note.js": "c00624ff6edf131d3b971c85a5c42cc5866412ed50816a3461d1b4b1fe0bb82a",
+    "src/apps/naturalist-field-notes/october-2026-08-14.html": "61e66bf9406a3b06e98fbec810fc64dd172828a94159bf119a72528927482b25"
+  },
+  "manifest_sha256": "441e2fa984b7c9e9a92deb724314032a7899789b18ab452089a57bff81e3c448",
+  "approval_content_sha256": "d2b46d585e142d43e59016adffc6c998473fc532cf04788de9976eee4bee8b72",
+  "owner_text_approval_verified": true,
+  "before_branch_blockers": 13,
+  "after_branch_blockers": 12,
+  "cleared_blocker": "content review pending: naturalist-field-notes",
+  "remaining_blockers": [
+    "release gate: ownerApproved",
+    "release gate: pilotPassed",
+    "release gate: deviceOfflinePassed",
+    "release gate: rollbackDevicePassed",
+    "release gate: privacyReviewed",
+    "content review pending: big-bellied-seahorse",
+    "media permission review: asset-50646c3fe1d0c359",
+    "media permission review: asset-486b6cdb96375dfb",
+    "media permission review: asset-2913dc8df835400c",
+    "media permission review: asset-e62b39cc07a542c4",
+    "media permission review: asset-54f52bac7bc827bc",
+    "media permission review: asset-93c15fb934aba9e6"
+  ],
+  "checks": {
+    "focused_tests_passed": 27,
+    "full_tests": {
+      "passed": 1033,
+      "failed": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "stdout_sha256": "8f2553bc4685576a28a2bcd82eeaca047e8c01d6dcb57b603a2c06cf607cc744"
+    },
+    "build": "passed",
+    "security_scan": "passed",
+    "all_app_content_preflight": "passed",
+    "artifact_integrity": "passed",
+    "diff_check": "passed",
+    "offline_navigation": [
+      {
+        "environment": "developer",
+        "passed": true,
+        "scenario": "prepared-navigation",
+        "release": "db467bd50de2e744",
+        "resources": {
+          "expected": 384,
+          "verified": 384,
+          "errors": []
+        },
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "passed": true,
+        "scenario": "prepared-navigation",
+        "release": "f5438e08b58c8544",
+        "resources": {
+          "expected": 375,
+          "verified": 375,
+          "errors": []
+        },
+        "offline_network_attempts": 0
+      }
+    ]
+  },
+  "inherited_content_records_unchanged": 31,
+  "catalog_knowledge_original_data_renderer_styles_unchanged": true,
+  "four_MJ_photo_permissions_preserved": true,
+  "six_illustration_permissions_pending": true,
+  "physical_device_reverified": false,
+  "combined_branches_reverified": false,
+  "publication_authorized": false
+}

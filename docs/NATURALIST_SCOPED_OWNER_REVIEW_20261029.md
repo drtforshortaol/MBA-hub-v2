@@ -1,3 +1,5 @@
+**Later October text decision:** The owner explicitly approved the final October packet at `74b91bb5af8f0215d4863bcdf9a2c39e76aa3c58`; implementation and exact scope are recorded in `NATURALIST_TEXT_APPROVAL_20261029.md`. Earlier pending-text and missing-photo statements below describe prior checkpoints. Six illustration permissions and operational release gates remain separate.
+
 # Naturalist scoped owner review — October 29, 2026
 
 > Later source update (October 29, 2026): the owner has now supplied the actual October 8–14 text. See `NATURALIST_OWNER_SOURCE_RECONCILIATION_20261029.md` for transcription verification, corrected date labeling, restored historical context and the missing `MZD_5048.JPG` photograph. Earlier missing-source statements below describe the pre-receipt review; no whole-app or media approval is implied.

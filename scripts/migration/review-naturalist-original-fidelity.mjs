@@ -17,7 +17,7 @@ const originalHashes={
  'manifest.json':'1811ae6e53018867b9c243acd17dc4f69bd11ba0a2917592d290edb06e428269'
 };
 const runtimeHashes=['4e72f8e78b921e0172b5f1c85fe8d48a36c042c25e7b572aae39d9227bce008e','412c28db578382ca785b4476fb6f59ec217e9671870dea4206040cc000b51eff','c871238eeb6f808a034eb5123517df4720b4a8dd6f560177c25c2df4303065a2'];
-const additions={'october-2026-note.js':'74ce84bf148a13b4fd80bd77cb6b9b310a190d63eaedd5e6fcea5c80ce19df4a','october-2026-08-14.html':'221f4ff2aff8244bc21973a1dd2b2936c580d3420a2ad7ce4fd2469161dcc67e'};
+const additions={'october-2026-note.js':'c00624ff6edf131d3b971c85a5c42cc5866412ed50816a3461d1b4b1fe0bb82a','october-2026-08-14.html':'61e66bf9406a3b06e98fbec810fc64dd172828a94159bf119a72528927482b25'};
 function read(root,relative,encoding='utf8'){
  assert(!path.isAbsolute(relative)&&relative.split('/').every(p=>p&&p!=='.'&&p!=='..'),'unsafe input path');
  let p=path.resolve(root);assert(!fs.lstatSync(p).isSymbolicLink(),'root symlink');
@@ -73,7 +73,7 @@ export async function reviewNaturalistOriginal({root=packageRoot,verifyBytes=tru
  const source={};for(const f of fixture.files){assert.equal(blob(f.content),f.git_blob,'pinned complete source '+f.path);source[f.path.slice(prefix.length)]=f.content;}
  assert.equal(Object.keys(source).length,9);assert.equal(fixture.inventory.length,122);
  const app='src/'+prefix;const names=fs.readdirSync(path.join(root,app)).sort();assert.deepEqual(names,[...Object.keys(originalHashes),'app.js',...Object.keys(additions)].sort(),'complete current app inventory');
- const current={};for(const n of names){current[n]=n in overrides?overrides[n]:read(root,app+n);if(verifyBytes){if(n==='app.js')assert(runtimeHashes.includes(sha(current[n])),'unreviewed app runtime bytes');else if(n==='manifest.json')assert([originalHashes[n],'a6ad9198f2c0f57be576d69909c02b6b0e3700f6fed05c9f577e8ca67443bfb8','f6d5eb979f63212966c7e2fab36e09f3eedae8a1752b325983956e01362be208','0f3cd31bfe01c591fc3e8b046cc7637eeebc21e12f06ccf47638d62ef857f7f7','27a294dd25426cfdba3c2900625544ff0d9c5cc4cd2c78087f4e3825a81b14f0'].includes(sha(current[n])),'unreviewed manifest bytes');else assert.equal(sha(current[n]),originalHashes[n]||additions[n],'current bytes '+n);}}
+ const current={};for(const n of names){current[n]=n in overrides?overrides[n]:read(root,app+n);if(verifyBytes){if(n==='app.js')assert(runtimeHashes.includes(sha(current[n])),'unreviewed app runtime bytes');else if(n==='manifest.json')assert([originalHashes[n],'a6ad9198f2c0f57be576d69909c02b6b0e3700f6fed05c9f577e8ca67443bfb8','f6d5eb979f63212966c7e2fab36e09f3eedae8a1752b325983956e01362be208','0f3cd31bfe01c591fc3e8b046cc7637eeebc21e12f06ccf47638d62ef857f7f7','27a294dd25426cfdba3c2900625544ff0d9c5cc4cd2c78087f4e3825a81b14f0','441e2fa984b7c9e9a92deb724314032a7899789b18ab452089a57bff81e3c448'].includes(sha(current[n])),'unreviewed manifest bytes');else assert.equal(sha(current[n]),originalHashes[n]||additions[n],'current bytes '+n);}}
  assert.equal(current['styles.css'],source['styles.css'],'complete original CSS');
  const originalData=dataObject(source['data.js']),newData=dataObject(current['data.js']);assert.equal(originalData.FIELD_NOTES.length,24);assert.equal(originalData.RESOURCES.length,8);
  const inventory=[...fixture.inventory,...fixture.external_inventory];const media=metadataPairs(originalData,newData,inventory,root);

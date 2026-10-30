@@ -1,3 +1,5 @@
+**Owner decision — APPROVED:** Glenn explicitly approved this exact packet at commit `74b91bb5af8f0215d4863bcdf9a2c39e76aa3c58`. See `NATURALIST_TEXT_APPROVAL_20261029.md` for implementation, byte binding and remaining gates. The candidate below is preserved as the reviewed record.
+
 # Naturalist October final text for owner review — October 29, 2026
 
 **Status: prepared for owner review; not applied or approved.**

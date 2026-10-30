@@ -6,6 +6,7 @@ import vm from 'node:vm';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
+import {ownerTextApprovalSupported} from '../public-review.mjs';
 const packageRoot=fileURLToPath(new URL('../../',import.meta.url));
 const evidencePath='docs/verification/naturalist-october-owner-source-20261029.json';
 const evidenceSHA='b2cbba54e814482fab3a34de01305a6a6e4a97a53dddefbd58bc060dc3ad6673';
@@ -59,14 +60,15 @@ export function reviewNaturalistOwnerSource({root=packageRoot,scriptOverride,htm
  for(const term of ['Big Sur','historical gray whale'])assert(section.aliases.includes(term),'historical search metadata');
  assert(manifest.media.includes(assets[0].asset_id),'uploaded photo manifest media');
  assert(manifest.offline_assets.includes(upload.asset_path),'uploaded photo offline declaration');
- assert.equal(manifest.publication_review,'pending');
+ assert.equal(manifest.publication_review,'owner-approved-text','scoped text marker');
+ assert(ownerTextApprovalSupported(manifest,{sourceRoot:path.join(root,'src')}),'owner text approval binding');
  return {schema_version:1,app_id:manifest.app_id,source_receipt_sha256:evidenceSHA,current_script_sha256:sha(script),
   current_summary_sha256:sha(html),standalone_historical_context_matches:true,standalone_uploaded_photo_matches:true,uploaded_photo_bytes_verified:true,upload_receipt_sha256:uploadReceiptSHA,owner_supplied_filename_mapping:true,historical_photo_permission_recorded:true,newsletter_original_byte_identity_verified:false,
   source_rows:38,normalized_species:39,complete_bay_watch:true,stable_note_id:note.id,
   source_email_date_verified:false,display_uses_observation_period:true,historical_context_restored:true,
   source_photo_items:source.source_media.length,current_photo_items:photos.length,
   unresolved_photo_files:source.source_media.filter(row=>!row.candidate_app_asset&&row.filename!==upload.newsletter_filename).map(row=>row.filename),
-  attachment_identity_verified:false,approval_granted:false,publication_review:'pending',
+  attachment_identity_verified:false,approval_granted:false,owner_text_approval_verified:true,publication_review:manifest.publication_review,
   limitations:['Selected excerpts and Bay Watch rows, not a complete email or original attachment archive.',
    'Other subject/caption mappings do not establish exact image identity. The owner-supplied historical photo is bound to uploaded bytes, not a recovered original email attachment; Glenn later confirmed MJ permission confirmation is separately recorded.',
    'Source-derived biology and exhibit recollections are not independently certified by this comparison.']};

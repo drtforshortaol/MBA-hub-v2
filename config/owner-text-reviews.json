@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "apps": [
+    {
+      "app_id": "naturalist-field-notes",
+      "status": "owner-approved-text",
+      "scope": "authored-text-only",
+      "reviewer": "owner",
+      "reviewed_on": "2026-10-29",
+      "review_reference": "docs/NATURALIST_TEXT_APPROVAL_20261029.md",
+      "authorization_reference": "Owner conversation: explicit approval of the exact October Naturalist text packet at 74b91bb5af8f0215d4863bcdf9a2c39e76aa3c58",
+      "authorization_quote": "Approved",
+      "candidate_commit": "74b91bb5af8f0215d4863bcdf9a2c39e76aa3c58",
+      "candidate_packet_sha256": "f4324b0ca675b24d4a45b71a48fd3cbefd33a786c9357539357c6c148e1ecf41",
+      "content_sha256": "d2b46d585e142d43e59016adffc6c998473fc532cf04788de9976eee4bee8b72"
+    }
+  ]
+}

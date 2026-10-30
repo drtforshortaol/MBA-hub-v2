@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generatedAt": "2026-10-30T03:38:03.999Z",
+  "generatedAt": "2026-10-30T05:04:53.297Z",
   "platformVersion": "2.0.0-alpha.7",
   "stage": "migration-review",
   "apps": 33,
@@ -15,7 +15,6 @@
     "release gate: rollbackDevicePassed",
     "release gate: privacyReviewed",
     "content review pending: big-bellied-seahorse",
-    "content review pending: naturalist-field-notes",
     "media permission review: asset-50646c3fe1d0c359",
     "media permission review: asset-486b6cdb96375dfb",
     "media permission review: asset-2913dc8df835400c",

@@ -6,6 +6,7 @@ import vm from 'node:vm';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
+import {ownerTextApprovalSupported} from '../public-review.mjs';
 import {createNaturalistDOM} from './naturalist-fidelity-dom.mjs';
 const packageRoot=fileURLToPath(new URL('../../',import.meta.url));
 const directory='src/apps/naturalist-field-notes/';
@@ -69,13 +70,14 @@ export function reviewNaturalistOctober({root=packageRoot,overrides={}}={}){
   assert.equal(initial.document.getElementById('search').value,'');assert(initial.document.querySelector('.home-intro'));
   searches++;
  }
- assert.equal(manifest.publication_review,'pending','whole-app publication review remains pending');
+ assert.equal(manifest.publication_review,'owner-approved-text','scoped text marker');
+ assert(ownerTextApprovalSupported(manifest,{sourceRoot:path.join(root,'src')}),'owner text approval binding');
  const section=manifest.sections.find(s=>s.id==='note-'+id);assert(section,'stable October destination');
  assert.deepEqual(section.query,{note:id},'October destination query');
  return {schema_version:1,app_id:manifest.app_id,current_inventory:Object.fromEntries(Object.entries(files).map(([n,s])=>[n,sha(s)])),
   current_classic_script_order:scripts,current_notes:25,current_QA:41,october_source_buttons:issueButtons.length,authored_october_fields:true,
   direct_query_startup:true,bound_issue_and_back:true,search_cases:searches,october_photos:5,
-  approval_granted:false,whole_app_inheritance:false,limitations:['Independent lxml trees and bounded synchronous events, not native browser layout or service-worker acceptance.','Current added data is exercised as authored, without scientific/editorial or image-rights approval.','Shared app-contract module and separate October HTML page are outside this runtime check.']};
+  approval_granted:false,owner_text_approval_verified:true,whole_app_inheritance:false,limitations:['Independent lxml trees and bounded synchronous events, not native browser layout or service-worker acceptance.','Current added data is exercised as authored, without scientific/editorial or image-rights approval.','Shared app-contract module and separate October HTML page are outside this runtime check.']};
 }
 function verifyArticle(f,n){
  const article=f.document.querySelector('.article');assert(article,'October article rendered');

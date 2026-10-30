@@ -20,9 +20,9 @@ test('thirty-one reviewed migrations reconcile existing content without changing
  assert.equal(report.blockers.filter(item=>item.category==='operational-gate').length,5);
  assert.equal(report.blockers.filter(item=>item.reason.startsWith('media permission review:')).length,6);
  assert(report.blockers.some(item=>item.reason==='content review pending: big-bellied-seahorse'));
- assert(report.blockers.some(item=>item.reason==='content review pending: naturalist-field-notes'));
- assert.equal(report.approvalReconciliation.inheritedCandidates,1);
- assert.deepEqual(report.blockers.filter(item=>item.category==='inherited-approval-reconciliation').map(item=>item.reason).sort(),['content review pending: naturalist-field-notes']);
- assert.equal(report.blockers.length,13);
+ assert(!report.blockers.some(item=>item.reason==='content review pending: naturalist-field-notes'));
+ assert.equal(report.approvalReconciliation.inheritedCandidates,0);
+ assert.deepEqual(report.blockers.filter(item=>item.category==='inherited-approval-reconciliation').map(item=>item.reason).sort(),[]);
+ assert.equal(report.blockers.length,12);
  assert.equal(report.releaseEligible,false);
 });

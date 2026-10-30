@@ -77,7 +77,7 @@ test('new October media registration preserves bytes, original paths and pending
   assert.equal(asset.sha256,expected);assert.equal(asset.permission,mjIds.has(asset_id)?'approved':'review-required');if(mjIds.has(asset_id))assert.match(asset.permission_evidence,/mj-photo-permission-20261029.json/);else assert.equal(asset.permission_evidence,undefined);
   assert.equal(asset.offline,true);assert.ok(app.media.includes(asset_id));assert.ok(app.offline_assets.includes(path));
   assert.equal(asset.source_repository,'drtforshortaol/MBA-hub-v2');assert.equal(asset.source_commit,path.includes('big-sur-gray-whale')?'cae20ad89424d941cfb8f2bf39595307b0bb74a8':'12afc2052c6117cc33616a9687199e353c3d8c48');assert.equal(asset.source_path,'src/'+path);
-  assert.equal(app.publication_review,'pending');assert.ok(!['approved','published'].includes(app.status));
+  assert.equal(app.publication_review,id==='naturalist-field-notes'?'owner-approved-text':'pending');assert.ok(!['approved','published'].includes(app.status));
  }
  const blockers=releaseErrors(read('config/platform.json'),[...apps.values()],catalog,{apps:[]});
  for(const row of rows)assert.equal(blockers.includes('media permission review: '+row[2]),!mjIds.has(row[2]));

@@ -35,5 +35,5 @@ test('MJ credit appears beside all four approved photographs without crediting t
  const jelly=photos.find(p=>p.src==='../IMG_4210.jpeg');assert(jelly);assert(!jelly.caption.includes('MJ'));
  for(const id of pendingIds)assert.equal(catalog.assets.find(a=>a.asset_id===id).permission,'review-required');
  assert(fs.readFileSync('src/apps/naturalist-field-notes/october-2026-08-14.html','utf8').includes('Photo: MJ.</figcaption>'));
- assert.equal(read('src/apps/naturalist-field-notes/manifest.json').publication_review,'pending');
+ assert.equal(read('src/apps/naturalist-field-notes/manifest.json').publication_review,'owner-approved-text');
 });
