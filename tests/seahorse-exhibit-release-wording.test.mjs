@@ -8,11 +8,11 @@ test('seahorse release-facing exhibit description follows owner decision',()=>{
  const history=manifest.sections.find(section=>section.id==='Aquarium-history');
  assert.ok(history,'Aquarium-history section is required');
  assert.match(history.text,/Big-bellied seahorses are featured in Monterey Bay Aquarium's Ocean in Motion exhibit\./);
- assert.match(history.text,/precise history awaits Aquarium editorial confirmation/);
+ assert.match(history.text,/precise earlier exhibit history of big-bellied seahorses awaits Aquarium confirmation/);
 });
 
 test('future-facing exhibit text must not automatically approve seahorse publication or media',()=>{
- assert.equal(manifest.publication_review,'pending');
+ assert.equal(manifest.publication_review,'owner-approved-text');
  assert.deepEqual(manifest.media,[
   'asset-486b6cdb96375dfb',
   'asset-2913dc8df835400c',
