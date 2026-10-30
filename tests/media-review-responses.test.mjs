@@ -25,14 +25,14 @@ function complete(f){
  item.evidence={rights_holder:'Submitted rights holder claim',permission_basis:'Submitted license claim',licensor_authority:'Submitted authority explanation',grant_scope:'Private guide use only',attribution_requirements:'Requested credit line',restrictions:'No public redistribution',submitted_by:'Example submitter',files:[{path:'evidence/license.txt',sha256:digest('license document')}]};
  f.write('evidence/license.txt','license document');return response;
 }
-test('live five-image template is deterministic with stable exact identity and blank evidence/scope',()=>{
+test('live four-image template is deterministic with stable exact identity and blank evidence/scope',()=>{
  const root=path.resolve(path.dirname(script),'..'),first=createMediaReviewResponseTemplate(root);
- assert.deepEqual(createMediaReviewResponseTemplate(root),first);assert.equal(first.responses.length,5);
- assert.equal(new Set(first.responses.map(x=>x.response_id)).size,5);
+ assert.deepEqual(createMediaReviewResponseTemplate(root),first);assert.equal(first.responses.length,4);
+ assert.equal(new Set(first.responses.map(x=>x.response_id)).size,4);
  assert.equal(first.purpose,'evidence-submission-only');
  for(const row of first.responses){assert.equal(row.response_id,row.identity.app_id+':'+row.identity.asset_id);assert.match(row.identity.sha256,/^[a-f0-9]{64}$/);assert.deepEqual(row.evidence.files,[]);assert.deepEqual(row.scope.distribution_channels,[]);}
  const report=validateMediaReviewResponses(root,first);
- assert.equal(report.ready_for_human_review,false);assert.equal(report.pending_items,5);assert.equal(report.permission_granted,false);assert.equal(report.publication_authorized,false);
+ assert.equal(report.ready_for_human_review,false);assert.equal(report.pending_items,4);assert.equal(report.permission_granted,false);assert.equal(report.publication_authorized,false);
  assert.ok(report.items.every(row=>row.missing_fields.includes('evidence.files')));
 });
 test('empty and partial evidence packages stay pending with actionable per-image missing fields',t=>{

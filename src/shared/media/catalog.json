@@ -4223,9 +4223,9 @@
       "asset_id": "asset-e62b39cc07a542c4",
       "path": "apps/IMG_4214.jpeg",
       "owner": "media-library",
-      "alt": "Source-provided seahorse educational illustration 4214",
-      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
-      "permission": "review-required",
+      "alt": "Comparative diagrams of convexiclivate and concaviclivate foveae, cropped Figure 1a",
+      "credit": "Potier et al. (2020), Scientific Reports 10:6133, cropped Figure 1a; CC BY 4.0.",
+      "permission": "licensed",
       "offline": true,
       "sha256": "e62b39cc07a542c4def4dd10a7a5f17cdf7dddb235fd81af7c20b564089c1fea",
       "source_repository": "drtforshortaol/MBA-hub-v2",
@@ -4237,7 +4237,14 @@
           "source_path": "src/apps/IMG_4214.jpeg"
         }
       ],
-      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+      "review_note": "Existing JPEG bytes and engineering source provenance retained. General comparative schematic from a black-kite study; no seahorse-specific retinal measurement or new scientific interpretation is asserted.",
+      "permission_evidence": "Publisher-deposited article explicitly licenses figures under CC BY 4.0 unless a separate credit excludes them; Figure 1 has no restrictive credit. Exact existing crop visually matched, source/copyright/license credit and crop disclosure displayed. See docs/verification/fovea-figure-license-20261029.json.",
+      "license": {
+        "id": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "source_url": "https://doi.org/10.1038/s41598-020-63039-y",
+        "figure": "1a"
+      }
     },
     {
       "asset_id": "asset-54f52bac7bc827bc",

@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generatedAt": "2026-10-30T05:19:36.055Z",
+  "generatedAt": "2026-10-30T05:39:42.553Z",
   "platformVersion": "2.0.0-alpha.7",
   "stage": "migration-review",
   "apps": 33,
@@ -17,7 +17,6 @@
     "content review pending: big-bellied-seahorse",
     "media permission review: asset-486b6cdb96375dfb",
     "media permission review: asset-2913dc8df835400c",
-    "media permission review: asset-e62b39cc07a542c4",
     "media permission review: asset-54f52bac7bc827bc",
     "media permission review: asset-93c15fb934aba9e6"
   ],
