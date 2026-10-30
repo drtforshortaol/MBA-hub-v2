@@ -4,7 +4,7 @@
   "title": "Naturalist Field Notes",
   "category": "aquarium-updates",
   "type": "field-notes",
-  "version": "2.0.0-alpha.8",
+  "version": "2.0.0-alpha.9",
   "entry_point": "apps/naturalist-field-notes/index.html",
   "status": "testing",
   "owner": "naturalist-field-notes",

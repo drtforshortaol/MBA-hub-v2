@@ -1,3 +1,5 @@
+**Later permission confirmation:** Glenn has confirmed MJ authorized the four newsletter photographs for the Aquarium guide hub. See `MJ_PHOTO_PERMISSION_20261029.md`. Pending-photo-permission statements below describe the earlier checkpoint; the six third-party illustration reviews remain separate.
+
 # Naturalist photograph attribution — October 29, 2026
 
 Glenn identified the photographer as **MJ, the naturalist and his Aquarium shift captain**, in the current project conversation:

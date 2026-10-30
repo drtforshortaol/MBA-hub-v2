@@ -12,7 +12,7 @@ test('full original Naturalist content and runtime reproduce while presentation/
  assert.equal(r.source_derived_inline_QA_cards,38);assert.equal(r.complete_home_equal,false);assert.equal(r.complete_home_equal_outside_QA,true);assert.equal(r.presentation_review_required.length,2);
  assert.equal(r.original_query_destinations.length,24);assert.ok(r.search_cases>=29);assert.ok(r.actual_species_letter_toggles>5);
  assert.deepEqual(Object.keys(r.excluded_new_material.files).sort(),['october-2026-08-14.html','october-2026-note.js']);assert.equal(r.excluded_new_material.photos.length,5);assert.equal(r.excluded_new_material.query_destinations.length,1);
- assert.equal(r.excluded_new_material.executed_or_approved,false);for(const photo of r.excluded_new_material.photos)assert.match(photo.permission,/^review-required/);
+ assert.equal(r.excluded_new_material.executed_or_approved,false);for(const photo of r.excluded_new_material.photos)assert.equal(photo.permission,photo.path==='apps/IMG_4210.jpeg'?'review-required':'approved','scoped original-excluded image permission '+photo.path);
  assert.equal(r.whole_app_inheritance,false);assert.equal(r.approval_granted,false);
 });
 

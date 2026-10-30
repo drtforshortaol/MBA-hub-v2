@@ -31,7 +31,7 @@ export function reviewNaturalistOwnerSource({root=packageRoot,scriptOverride,htm
  const uploadBytes=fs.readFileSync(path.join(packageRoot,uploadReceiptPath));
  assert.equal(sha(uploadBytes),uploadReceiptSHA,'unreviewed uploaded-photo receipt');
  const upload=JSON.parse(uploadBytes);
- assert.deepEqual(historical.photos,[{src:'../../'+upload.asset_path,alt:'Whale offshore beside a coastal bluff at Big Sur',caption:'Historical gray-whale observation from Highway 1, Big Sur — March, two years before the source update.'}],'exact owner-supplied historical photo placement');
+ assert.deepEqual(historical.photos,[{src:'../../'+upload.asset_path,alt:'Whale offshore beside a coastal bluff at Big Sur',caption:'Historical gray-whale observation from Highway 1, Big Sur — March, two years before the source update. Photo: MJ.'}],'exact owner-supplied historical photo placement');
  let target=path.join(root,'src');
  for(const part of upload.asset_path.split('/')){target=path.join(target,part);assert(!fs.lstatSync(target).isSymbolicLink(),'uploaded photo must not be a symlink');}
  assert(fs.statSync(target).isFile(),'uploaded photo must be a regular file');
@@ -42,7 +42,8 @@ export function reviewNaturalistOwnerSource({root=packageRoot,scriptOverride,htm
  const assets=catalog.assets.filter(a=>a.path===upload.asset_path);
  assert.equal(assets.length,1,'unique uploaded photo registration');
  assert.equal(assets[0].sha256,upload.sha256,'uploaded photo catalog hash');
- assert.equal(assets[0].permission,'review-required','upload does not grant reuse rights');
+ assert.equal(assets[0].permission,'approved','historical photo has scoped MJ authorization');
+ assert(assets[0].permission_evidence.includes('mj-photo-permission-20261029.json'),'historical photo permission evidence');
  const html=htmlOverride??fs.readFileSync(path.join(root,'src/apps/naturalist-field-notes/october-2026-08-14.html'),'utf8');
  const historicalSections=[...html.matchAll(/<section\b[^>]*>([\s\S]*?)<\/section>/gi)].map(m=>m[1]).filter(section=>section.includes('<h2>'+historical.title+'</h2>'));
  assert.equal(historicalSections.length,1,'one historical observation in the offline summary');
@@ -60,14 +61,14 @@ export function reviewNaturalistOwnerSource({root=packageRoot,scriptOverride,htm
  assert(manifest.offline_assets.includes(upload.asset_path),'uploaded photo offline declaration');
  assert.equal(manifest.publication_review,'pending');
  return {schema_version:1,app_id:manifest.app_id,source_receipt_sha256:evidenceSHA,current_script_sha256:sha(script),
-  current_summary_sha256:sha(html),standalone_historical_context_matches:true,standalone_uploaded_photo_matches:true,uploaded_photo_bytes_verified:true,upload_receipt_sha256:uploadReceiptSHA,owner_supplied_filename_mapping:true,newsletter_original_byte_identity_verified:false,
+  current_summary_sha256:sha(html),standalone_historical_context_matches:true,standalone_uploaded_photo_matches:true,uploaded_photo_bytes_verified:true,upload_receipt_sha256:uploadReceiptSHA,owner_supplied_filename_mapping:true,historical_photo_permission_recorded:true,newsletter_original_byte_identity_verified:false,
   source_rows:38,normalized_species:39,complete_bay_watch:true,stable_note_id:note.id,
   source_email_date_verified:false,display_uses_observation_period:true,historical_context_restored:true,
   source_photo_items:source.source_media.length,current_photo_items:photos.length,
   unresolved_photo_files:source.source_media.filter(row=>!row.candidate_app_asset&&row.filename!==upload.newsletter_filename).map(row=>row.filename),
   attachment_identity_verified:false,approval_granted:false,publication_review:'pending',
   limitations:['Selected excerpts and Bay Watch rows, not a complete email or original attachment archive.',
-   'Other subject/caption mappings do not establish exact image identity. The owner-supplied historical photo is bound to uploaded bytes, not a recovered original email attachment; reuse rights remain pending.',
+   'Other subject/caption mappings do not establish exact image identity. The owner-supplied historical photo is bound to uploaded bytes, not a recovered original email attachment; Glenn later confirmed MJ permission confirmation is separately recorded.',
    'Source-derived biology and exhibit recollections are not independently certified by this comparison.']};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))process.stdout.write(JSON.stringify(reviewNaturalistOwnerSource(),null,2)+'\n');

@@ -1,3 +1,5 @@
+**Later permission confirmation:** Glenn has confirmed MJ authorized the four newsletter photographs for the Aquarium guide hub. See `MJ_PHOTO_PERMISSION_20261029.md`. Pending-photo-permission statements below describe the earlier checkpoint; the six third-party illustration reviews remain separate.
+
 # Historical Big Sur photo supplied — October 29, 2026
 
 The owner uploaded a JPEG in response to the request for the newsletter's `MZD_5048.JPG`. The upload is named `4CA34687-27E0-4BF5-8693-38CBD17AFDA3.jpeg`; its 425,361 bytes, 1206 × 789 dimensions and SHA-256 are recorded in `verification/naturalist-gray-whale-upload-20261029.json`. The uploaded file is preserved without cropping, resizing, recompression or metadata changes. The mapping comes from the conversation context, not a recovered email attachment or filename match. Neither photographer identity nor reuse rights is established.
