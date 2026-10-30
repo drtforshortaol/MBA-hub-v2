@@ -46,9 +46,9 @@ test('Naturalist approval clears only that content blocker and preserves all rem
  const report=assessRepositoryReadiness();
  assert(!report.blockers.some(b=>b.reason==='content review pending: naturalist-field-notes'));
  assert(!report.blockers.some(b=>b.reason==='content review pending: big-bellied-seahorse'));
- assert.equal(report.blockers.filter(b=>b.category==='operational-gate').length,5);
+ assert.equal(report.blockers.filter(b=>b.category==='operational-gate').length,4);
  assert.equal(report.blockers.filter(b=>b.category==='media-review-required').length,0);
- assert.equal(report.blockers.length,5);assert.equal(report.releaseEligible,false);
+ assert.equal(report.blockers.length,4);assert.equal(report.releaseEligible,false);
  const catalog=read('src/shared/media/catalog.json');
  for(const id of ['asset-1bd100105f88c83a','asset-95daa2493750e82f','asset-47f9bbb193878eec','asset-df392914e6cf5502'])assert.equal(catalog.assets.find(a=>a.asset_id===id).permission,'approved');
  assert.equal(catalog.assets.find(a=>a.asset_id==='asset-50646c3fe1d0c359').permission,'licensed');

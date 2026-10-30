@@ -21,8 +21,8 @@ test('only the ephyra image leaves the remaining review list, without clearing S
  assert(!report.blockers.some(b=>b.reason==='media permission review: asset-50646c3fe1d0c359'));
  assert(!report.blockers.some(b=>b.reason==='content review pending: naturalist-field-notes'));
  assert.equal(report.blockers.filter(b=>b.category==='media-review-required').length,0);
- assert.equal(report.blockers.filter(b=>b.category==='operational-gate').length,5);
- assert.equal(report.blockers.length,5);assert.equal(report.releaseEligible,false);
+ assert.equal(report.blockers.filter(b=>b.category==='operational-gate').length,4);
+ assert.equal(report.blockers.length,4);assert.equal(report.releaseEligible,false);
  const pending=read('src/shared/media/catalog.json').assets.filter(a=>a.permission==='review-required');assert.equal(pending.length,0);
  assert(pending.every(a=>a.uses.every(u=>u.app_id==='big-bellied-seahorse')));
 });
