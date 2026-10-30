@@ -29,9 +29,9 @@
   },
   "assets": [
     {
-      "asset_id": "asset-75872032b1277b00",
+      "asset_id": "asset-83f2a50a706d2488",
       "path": "apps/seahorse-takenaga.jpeg",
-      "sha256": "75872032b1277b0073930765172c29907a13b376b71152a1109c77d77132d981",
+      "sha256": "83f2a50a706d2488424eaf94ad8ebc96b517b1d622438536c0b35d55d4c3acd4",
       "permission": "approved",
       "credit": "Photo: Glenn A. Takenaga."
     },
@@ -50,10 +50,18 @@
   "images_edited": false,
   "html_delta": {
     "before": "<figure><img loading=\"lazy\" src=\"../IMG_4215.jpeg\" alt=\"Source-provided seahorse educational illustration 4215\"></figure>",
-    "after": "<div class=\"anatomy-comparison\" style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px\"><figure><img style=\"height:440px;object-fit:contain;background:#f2f7f6\" loading=\"lazy\" src=\"../seahorse-takenaga.jpeg\" alt=\"Yellow seahorse among aquarium vegetation, showing its snout, body plates, dorsal fin and curled tail\"><figcaption><strong>Seahorse — upright body and grasping tail.</strong> Visible features: elongated snout, body plates, dorsal fin and curled tail. Smaller structures obscured by the animal’s position or vegetation are not labeled. Photo: Glenn A. Takenaga, Monterey Bay Aquarium. Owner photograph of a living animal; not exhibit artwork.</figcaption></figure><figure><img style=\"height:440px;object-fit:contain;background:#f2f7f6\" loading=\"lazy\" src=\"../IMG_4215.jpeg\" alt=\"Realistic rainbow trout illustration in side view with dorsal, adipose and tail fins visible\"><figcaption><strong>Rainbow trout (Oncorhynchus mykiss) — streamlined body and tail fin.</strong> Compare its gill cover, scales, pectoral, pelvic, dorsal, anal, adipose and caudal (tail) fins. Illustration: Duane Raver / U.S. Fish &amp; Wildlife Service. Public domain. <a href=\"https://www.fws.gov/media/rainbow-trout-11\" target=\"_blank\" rel=\"noopener noreferrer\">Source and public-domain record</a>. General comparison; images are not to the same scale.</figcaption></figure></div>",
+    "after": "<div class=\"anatomy-comparison\" style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px\"><figure><img style=\"height:440px;object-fit:contain;background:#f2f7f6\" loading=\"lazy\" src=\"../seahorse-takenaga.jpeg\" alt=\"Yellow seahorse among aquarium vegetation, showing its snout, body plates and dorsal fin; tail tip not fully shown\"><figcaption><strong>Seahorse — upright body and grasping tail.</strong> Visible features: elongated snout, body plates and dorsal fin. The tail tip is not fully shown in this owner-supplied crop. Smaller structures obscured by the animal’s position or vegetation are not labeled. Photo: Glenn A. Takenaga, Monterey Bay Aquarium. Owner photograph of a living animal; not exhibit artwork.</figcaption></figure><figure><img style=\"height:440px;object-fit:contain;background:#f2f7f6\" loading=\"lazy\" src=\"../IMG_4215.jpeg\" alt=\"Realistic rainbow trout illustration in side view with dorsal, adipose and tail fins visible\"><figcaption><strong>Rainbow trout (Oncorhynchus mykiss) — streamlined body and tail fin.</strong> Compare its gill cover, scales, pectoral, pelvic, dorsal, anal, adipose and caudal (tail) fins. Illustration: Duane Raver / U.S. Fish &amp; Wildlife Service. Public domain. <a href=\"https://www.fws.gov/media/rainbow-trout-11\" target=\"_blank\" rel=\"noopener noreferrer\">Source and public-domain record</a>. General comparison; images are not to the same scale.</figcaption></figure></div>",
     "baseline_html_sha256": "8624e365a0e96a0cccd30c9d2679140844f9f3afa49bf4feef7cfc5d1595550e",
-    "current_html_sha256": "34523238bc99255825659d23e52906e7b5b41846ba87c8050186f403102c1fa1"
+    "current_html_sha256": "7be0056117db691901ad23901f8cd8843753a9ee71bf1b02a9ae5d5c9ad0f6e0"
   },
   "scope": "Replace only the blocked comparison graphic. All scientific paragraphs and search text retained. Photo labels limited to visible features. No Aquarium wall artwork used. No additional species or sex identification inferred from photo.",
-  "release_authorized": false
+  "release_authorized": false,
+  "owner_crop_update": {
+    "approved_on": "2026-10-30",
+    "approval": "Proceed",
+    "source_attachment": "36FF8EE3-82E2-4A85-B118-245451482125.jpeg",
+    "previous_sha256": "75872032b1277b0073930765172c29907a13b376b71152a1109c77d77132d981",
+    "sha256": "83f2a50a706d2488424eaf94ad8ebc96b517b1d622438536c0b35d55d4c3acd4",
+    "scope": "Exact owner-supplied crop; tail tip not fully shown; future better photograph can replace it."
+  }
 }

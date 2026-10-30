@@ -4319,18 +4319,18 @@
       }
     },
     {
-      "asset_id": "asset-75872032b1277b00",
+      "asset_id": "asset-83f2a50a706d2488",
       "path": "apps/seahorse-takenaga.jpeg",
       "owner": "Glenn A. Takenaga",
-      "alt": "Owner photograph of a yellow seahorse among aquarium vegetation",
+      "alt": "Owner close-up photograph of a yellow seahorse; snout, body plates and dorsal fin visible; tail tip not fully shown",
       "credit": "Photo: Glenn A. Takenaga.",
       "permission": "approved",
       "permission_evidence": "docs/verification/seahorse-trout-photo-replacement-20261030.json",
       "offline": true,
-      "sha256": "75872032b1277b0073930765172c29907a13b376b71152a1109c77d77132d981",
+      "sha256": "83f2a50a706d2488424eaf94ad8ebc96b517b1d622438536c0b35d55d4c3acd4",
       "source_origin": {
         "type": "owner-upload",
-        "filename": "6E96D24E-4DF6-4204-B66E-C74F35FDD410.jpeg"
+        "filename": "36FF8EE3-82E2-4A85-B118-245451482125.jpeg"
       },
       "uses": [
         {

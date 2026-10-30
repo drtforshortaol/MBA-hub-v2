@@ -7,3 +7,7 @@ The owner-photo caption identifies only the visible snout, body plates, dorsal f
 The original vector candidate in PR #13 is superseded by the owner-selected photographic approach. All prior content bindings reproduced before changes; catalog-only rebindings preserve their original decisions. Only the comparison media permission clears: this branch has two remaining media permissions, five operational gates, and the separately approved Seahorse text awaiting integration. No merge, deployment or physical-device approval.
 
 Evidence and exact image/HTML hashes: verification/seahorse-trout-photo-replacement-20261030.json.
+
+## Owner crop update
+
+Owner approved the supplied 36FF8EE3 crop with “Proceed.” It replaces the wider photo without additional image processing. Captions and alt text identify visible snout, plates and dorsal fin and disclose that the tail tip is not fully shown. Credit and permission remain unchanged; a better future owner photo can replace this one. Catalog/content bindings are refreshed for this bounded resource change only. No blocker or release approval changes.
