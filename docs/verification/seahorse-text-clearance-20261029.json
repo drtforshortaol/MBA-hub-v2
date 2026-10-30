@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-29",
+  "app_id": "big-bellied-seahorse",
+  "approved_candidate_commit": "74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9",
+  "scope": "Authored text only; not image permission or release approval",
+  "input_sha256": {
+    "src/apps/big-bellied-seahorse/manifest.json": "5f1d670a8283895d0131b2c315a1eeabfc9eaefdeb44ea1c12eacc284a4c1307",
+    "src/apps/big-bellied-seahorse/index.html": "c3452ba132c7e32e24632b0ec52bc92cec77b5b54f917797889674969faf9eb1",
+    "config/owner-text-reviews.json": "4bf54676ca63b892016b05f1cd297e9e0978b34ae491290fd0a8fff85ecc9cb7",
+    "scripts/public-review.mjs": "a5fa86bd29605de13a80dcd793ac18ccfeba912e7800396b20a4f8f42367adc0",
+    "scripts/build.mjs": "d195305bbbb9b1759bb9122e580bcb0661720b91bac87aaa2158da79f2ef7fcf"
+  },
+  "content_blocker_cleared": true,
+  "remaining_blockers": [
+    {
+      "reason": "release gate: ownerApproved",
+      "category": "operational-gate",
+      "source": "config/platform.json",
+      "action": "Obtain explicit owner authorization for release."
+    },
+    {
+      "reason": "release gate: pilotPassed",
+      "category": "operational-gate",
+      "source": "config/platform.json",
+      "action": "Record the additional-guide pilot result."
+    },
+    {
+      "reason": "release gate: deviceOfflinePassed",
+      "category": "operational-gate",
+      "source": "config/platform.json",
+      "action": "Complete and record the required physical-device offline acceptance."
+    },
+    {
+      "reason": "release gate: rollbackDevicePassed",
+      "category": "operational-gate",
+      "source": "config/platform.json",
+      "action": "Complete and record physical-device rollback acceptance."
+    },
+    {
+      "reason": "release gate: privacyReviewed",
+      "category": "operational-gate",
+      "source": "config/platform.json",
+      "action": "Complete and record the privacy review."
+    },
+    {
+      "reason": "content review pending: naturalist-field-notes",
+      "category": "inherited-approval-reconciliation",
+      "source": "src/apps/naturalist-field-notes/manifest.json",
+      "action": "Verify unchanged content against pinned migration provenance, then reconcile the existing inherited V1 approval record. Review new or materially altered content separately."
+    },
+    {
+      "reason": "media permission review: asset-1bd100105f88c83a",
+      "category": "media-review-required",
+      "source": "src/shared/media/catalog.json",
+      "action": "Resolve the recorded media permission review."
+    },
+    {
+      "reason": "media permission review: asset-95daa2493750e82f",
+      "category": "media-review-required",
+      "source": "src/shared/media/catalog.json",
+      "action": "Resolve the recorded media permission review."
+    },
+    {
+      "reason": "media permission review: asset-47f9bbb193878eec",
+      "category": "media-review-required",
+      "source": "src/shared/media/catalog.json",
+      "action": "Resolve the recorded media permission review."
+    },
+    {
+      "reason": "media permission review: asset-50646c3fe1d0c359",
+      "category": "media-review-required",
+      "source": "src/shared/media/catalog.json",
+      "action": "Resolve the recorded media permission review."
+    },
+    {
+      "reason": "media permission review: asset-486b6cdb96375dfb",
+      "category": "media-review-required",
+      "source": "src/shared/media/catalog.json",
+      "action": "Resolve the recorded media permission review."
+    },
+    {
+      "reason": "media permission review: asset-2913dc8df835400c",
+      "category": "media-review-required",
+      "source": "src/shared/media/catalog.json",
+      "action": "Resolve the recorded media permission review."
+    },
+    {
+      "reason": "media permission review: asset-e62b39cc07a542c4",
+      "category": "media-review-required",
+      "source": "src/shared/media/catalog.json",
+      "action": "Resolve the recorded media permission review."
+    },
+    {
+      "reason": "media permission review: asset-54f52bac7bc827bc",
+      "category": "media-review-required",
+      "source": "src/shared/media/catalog.json",
+      "action": "Resolve the recorded media permission review."
+    },
+    {
+      "reason": "media permission review: asset-93c15fb934aba9e6",
+      "category": "media-review-required",
+      "source": "src/shared/media/catalog.json",
+      "action": "Resolve the recorded media permission review."
+    }
+  ],
+  "releaseEligible": false,
+  "validation": {
+    "node_tests_passed": 1017,
+    "failed": 0,
+    "skipped": 0,
+    "build": "passed",
+    "security_scan": "passed",
+    "content_preflight": "passed",
+    "built_artifact_integrity": "passed"
+  },
+  "limits": [
+    "Local engineering verification; exact implementation commit GitHub CI must pass.",
+    "No physical device, deployment, image or distribution approval."
+  ]
+}

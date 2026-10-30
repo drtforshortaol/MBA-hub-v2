@@ -8,9 +8,9 @@ const html = readFileSync(new URL('index.html', root), 'utf8');
 
 test('Seahorse draft retains explicit content and publication gates', () => {
   assert.equal(manifest.app_id, 'big-bellied-seahorse');
-  assert.equal(manifest.status, 'development');
-  assert.equal(manifest.publication_review, 'pending');
-  assert.match(html, /Scientific review and image permissions pending\./);
+  assert.equal(manifest.status, 'testing');
+  assert.equal(manifest.publication_review, 'owner-approved-text');
+  assert.match(html, /Image permissions and release acceptance pending\./);
   assert.match(html, /AI-generated illustration supplied and approved for replacement by the hub owner\./);
   assert.match(html, /Check authoritative listings again before publication\./);
   assert.match(html, /MBA Species Guide • Draft/);
@@ -23,8 +23,8 @@ test('Seahorse search sections remain identical to their displayed draft text', 
     assert.ok(!ids.has(id), `duplicate section: ${id}`);
     ids.add(id);
     const escape = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const pattern = new RegExp(`<details id="${escape(id)}"><summary>${escape(title)}</summary><p>${escape(text)}</p>`);
-    if (id === 'References') { assert.match(html, /<details id="References"><summary>References<\/summary><p>Source: Naturalist update covering October 8–14, 2026\./); assert.match(html, /animaldiversity\.org\/accounts\/Hippocampus_abdominalis/); } else assert.match(html, pattern, `manifest/display mismatch: ${id}`);
+    const pattern = new RegExp(`<details id="${escape(id)}"><summary>${escape(title)}</summary><p>${escape(text.replaceAll('&','&amp;'))}</p>`);
+    if (id === 'References') { assert.match(html, /<details id="References"><summary>References<\/summary><p>Source: October 8–14, 2026 Naturalist update\./); assert.match(html, /animaldiversity\.org\/accounts\/Hippocampus_abdominalis/); } else assert.match(html, pattern, `manifest/display mismatch: ${id}`);
   }
 });
 
