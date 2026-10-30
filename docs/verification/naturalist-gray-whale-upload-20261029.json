@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "received_on": "2026-10-29",
+  "source_kind": "Owner upload in response to request for missing newsletter photo",
+  "newsletter_filename": "MZD_5048.JPG",
+  "uploaded_filename": "4CA34687-27E0-4BF5-8693-38CBD17AFDA3.jpeg",
+  "library_file_id": "libfile_43e31f8adc9c81919dfe8973e60a8b17",
+  "asset_path": "shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg",
+  "sha256": "df392914e6cf55020db2cf2ae2eab1b55f23160708b1284f765232f300cbb707",
+  "bytes": 425361,
+  "width": 1206,
+  "height": 789,
+  "mapping_basis": "Owner supplied this image immediately after instructions to upload MZD_5048.JPG. Visual content is consistent with a whale seen offshore from a coastal bluff.",
+  "newsletter_original_byte_identity_verified": false,
+  "modifications": "None; uploaded bytes preserved exactly",
+  "creator_identity": null,
+  "permission": "review-required",
+  "scope": "Source-photo placement only; no rights or publication approval"
+}
