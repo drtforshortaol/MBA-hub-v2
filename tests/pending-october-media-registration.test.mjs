@@ -58,11 +58,11 @@ const rows=[
   [
     "big-bellied-seahorse",
     "apps/IMG_4216.jpeg",
-    "asset-93c15fb934aba9e6",
-    "93c15fb934aba9e67b2cc30cc9732565460cea8d395ba408f37d0a8982d4a19c"
+    "asset-225131703b4c0c59",
+    "225131703b4c0c59b352d94d48dfbe738bd72d589ad1daccfe8e37687ddc5ec7"
   ]
 ];
-const mjIds=new Set(['asset-1bd100105f88c83a','asset-95daa2493750e82f','asset-47f9bbb193878eec','asset-df392914e6cf5502']);
+const mjIds=new Set(['asset-1bd100105f88c83a','asset-95daa2493750e82f','asset-47f9bbb193878eec','asset-df392914e6cf5502','asset-225131703b4c0c59']);
 const licensedIds=new Set(['asset-50646c3fe1d0c359','asset-e62b39cc07a542c4']);
 const read=p=>JSON.parse(fs.readFileSync(new URL('../'+p,import.meta.url),'utf8'));
 
@@ -75,17 +75,17 @@ test('new October media registration preserves bytes, original paths and pending
   const asset=matches[0];assert.equal(asset.asset_id,asset_id);assert.equal(asset_id,'asset-'+expected.slice(0,16));
   const bytes=fs.readFileSync(new URL('../src/'+path,import.meta.url));
   assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),expected);
-  assert.equal(asset.sha256,expected);assert.equal(asset.permission,mjIds.has(asset_id)?'approved':licensedIds.has(asset_id)?'licensed':'review-required');if(mjIds.has(asset_id))assert.match(asset.permission_evidence,/mj-photo-permission-20261029.json/);else if(asset_id==='asset-50646c3fe1d0c359')assert.match(asset.permission_evidence,/ephyra-figure-license-20261029.json/);else if(asset_id==='asset-e62b39cc07a542c4')assert.match(asset.permission_evidence,/fovea-figure-license-20261029.json/);else assert.equal(asset.permission_evidence,undefined);
+  assert.equal(asset.sha256,expected);assert.equal(asset.permission,mjIds.has(asset_id)?'approved':licensedIds.has(asset_id)?'licensed':'review-required');if(mjIds.has(asset_id))assert.match(asset.permission_evidence,/mj-photo-permission-20261029.json|seahorse-poster-replacement-20261030.json/);else if(asset_id==='asset-50646c3fe1d0c359')assert.match(asset.permission_evidence,/ephyra-figure-license-20261029.json/);else if(asset_id==='asset-e62b39cc07a542c4')assert.match(asset.permission_evidence,/fovea-figure-license-20261029.json/);else assert.equal(asset.permission_evidence,undefined);
   assert.equal(asset.offline,true);assert.ok(app.media.includes(asset_id));assert.ok(app.offline_assets.includes(path));
-  assert.equal(asset.source_repository,'drtforshortaol/MBA-hub-v2');assert.equal(asset.source_commit,path.includes('big-sur-gray-whale')?'cae20ad89424d941cfb8f2bf39595307b0bb74a8':'12afc2052c6117cc33616a9687199e353c3d8c48');assert.equal(asset.source_path,'src/'+path);
+  assert.equal(asset.source_repository,'drtforshortaol/MBA-hub-v2');assert.equal(asset.source_commit,asset_id==='asset-225131703b4c0c59'?'abb077a0549bdff2693ccd166c14251e036e72bd':path.includes('big-sur-gray-whale')?'cae20ad89424d941cfb8f2bf39595307b0bb74a8':'12afc2052c6117cc33616a9687199e353c3d8c48');assert.equal(asset.source_path,'src/'+path);
   assert.equal(app.publication_review,id==='naturalist-field-notes'?'owner-approved-text':'pending');assert.ok(!['approved','published'].includes(app.status));
  }
  const blockers=releaseErrors(read('config/platform.json'),[...apps.values()],catalog,{apps:[]});
  for(const row of rows)assert.equal(blockers.includes('media permission review: '+row[2]),!mjIds.has(row[2])&&!licensedIds.has(row[2]));
 });
-test('literal media audit reports resolved registration gaps while retaining four remaining rights findings',()=>{
+test('literal media audit reports resolved registration gaps while retaining three remaining rights findings',()=>{
  const report=auditRepositoryMedia(),findings=report.resources.filter(r=>r.issues.length);
- assert.equal(report.summary.uncataloged_resources,0);assert.equal(findings.length,4);assert.equal(report.complete,false);
+ assert.equal(report.summary.uncataloged_resources,0);assert.equal(findings.length,3);assert.equal(report.complete,false);
  assert.deepEqual(findings.map(r=>r.path).sort(),rows.filter(r=>!mjIds.has(r[2])&&!licensedIds.has(r[2])).map(r=>r[1]).sort());
  for(const result of findings)assert.deepEqual(result.issues,['permission-evidence-missing']);
 });

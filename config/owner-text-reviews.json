@@ -12,7 +12,7 @@
       "authorization_quote": "Approved",
       "candidate_commit": "74b91bb5af8f0215d4863bcdf9a2c39e76aa3c58",
       "candidate_packet_sha256": "f4324b0ca675b24d4a45b71a48fd3cbefd33a786c9357539357c6c148e1ecf41",
-      "content_sha256": "55046201ee3c8a54f4f0843389c2f67aa6b1d931bc586488a78c5f02af7a9ec4",
+      "content_sha256": "411144cedc4e87abc0cf93199a1ce9a4e1f1de29f92e6c62566c08037e47a7b8",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-29",
@@ -27,6 +27,13 @@
           "scope": "Catalog metadata for one licensed Seahorse figure only; approved Naturalist files unchanged",
           "previous_content_sha256": "e632fde079737b6eac70f5e4ab25cc39328c257abfd760c2b5570d46194d0f5f",
           "content_sha256": "55046201ee3c8a54f4f0843389c2f67aa6b1d931bc586488a78c5f02af7a9ec4"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "55046201ee3c8a54f4f0843389c2f67aa6b1d931bc586488a78c5f02af7a9ec4",
+          "content_sha256": "411144cedc4e87abc0cf93199a1ce9a4e1f1de29f92e6c62566c08037e47a7b8"
         }
       ]
     }

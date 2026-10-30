@@ -4,7 +4,7 @@
   "title": "Big-Bellied Seahorse",
   "category": "animals",
   "type": "species",
-  "version": "2.0.0-alpha.8",
+  "version": "2.0.0-alpha.9",
   "entry_point": "apps/big-bellied-seahorse/index.html",
   "status": "development",
   "owner": "big-bellied-seahorse",
@@ -28,7 +28,7 @@
     "asset-2913dc8df835400c",
     "asset-e62b39cc07a542c4",
     "asset-54f52bac7bc827bc",
-    "asset-93c15fb934aba9e6"
+    "asset-225131703b4c0c59"
   ],
   "knowledge": [],
   "cross_links": [

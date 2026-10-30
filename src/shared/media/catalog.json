@@ -4267,16 +4267,16 @@
       "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
     },
     {
-      "asset_id": "asset-93c15fb934aba9e6",
+      "asset_id": "asset-225131703b4c0c59",
       "path": "apps/IMG_4216.jpeg",
       "owner": "media-library",
-      "alt": "Source-provided seahorse educational illustration 4216",
-      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
-      "permission": "review-required",
+      "alt": "Seahorse Dads: courtship, egg transfer to the male brood pouch, development and birth; simplified general life cycle, not to scale",
+      "credit": "AI-generated illustration supplied by Glenn A. Takenaga for MBA Hub V2; general seahorse life cycle.",
+      "permission": "approved",
       "offline": true,
-      "sha256": "93c15fb934aba9e67b2cc30cc9732565460cea8d395ba408f37d0a8982d4a19c",
+      "sha256": "225131703b4c0c59b352d94d48dfbe738bd72d589ad1daccfe8e37687ddc5ec7",
       "source_repository": "drtforshortaol/MBA-hub-v2",
-      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_commit": "abb077a0549bdff2693ccd166c14251e036e72bd",
       "source_path": "src/apps/IMG_4216.jpeg",
       "uses": [
         {
@@ -4284,7 +4284,8 @@
           "source_path": "src/apps/IMG_4216.jpeg"
         }
       ],
-      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+      "review_note": "Owner authorized original AI-generated replacement in prior chat and supplied the finalized image here. This does not license the superseded third-party poster or imply species-specific anatomy.",
+      "permission_evidence": "docs/verification/seahorse-poster-replacement-20261030.json"
     },
     {
       "asset_id": "asset-df392914e6cf5502",

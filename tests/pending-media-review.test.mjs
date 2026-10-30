@@ -36,9 +36,9 @@ test('pending packet is deterministic, byte-bound and actionable without inferri
  assert.match(item.missing_evidence.join(' '),/exact image/);
  assert.deepEqual(fs.readFileSync(path.join(f.root,'src/shared/media/catalog.json')),before);
 });
-test('live repository packet contains the four remaining permission-only items and preserves review gates',()=>{
+test('live repository packet contains the three remaining permission-only items and preserves review gates',()=>{
  const root=path.resolve(path.dirname(script),'..'),packet=preparePendingMediaReview(root);
- assert.equal(packet.pending_items,4);assert.equal(packet.registrationValid,true);assert.equal(packet.permissionReviewComplete,false);
+ assert.equal(packet.pending_items,3);assert.equal(packet.registrationValid,true);assert.equal(packet.permissionReviewComplete,false);
  assert.equal(new Set(packet.items.map(x=>x.app_id)).size,1);
  for(const item of packet.items){assert.equal(item.recorded_permission,'review-required');assert.equal(item.recorded_permission_evidence,'');assert.equal(item.catalog_hash_matches,true);assert.equal(item.review_status,'pending');}
 });
