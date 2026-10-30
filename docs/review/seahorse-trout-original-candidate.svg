@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1510" viewBox="0 0 1200 1510" role="img" aria-labelledby="title desc"><title id="title">Two fish, different designs: seahorse and trout</title><desc id="desc">Original schematic comparison of external anatomy. Seahorse: tubular snout and small mouth, gill opening, pectoral fin, bony plates, dorsal fin, anal fin, male brood pouch and grasping tail. Trout: gill cover, pectoral fin, scales, dorsal fin, pelvic fin, anal fin, adipose fin and caudal fin. Simplified lateral views, not to scale.</desc>
+<rect width="1200" height="1510" fill="#f4f8f7"/><rect width="1200" height="195" fill="#083d4b"/>
+<text x="55" y="62" font-family="DejaVu Sans,sans-serif" font-size="20" fill="#79d0d1" font-weight="700">LOOK CLOSER</text>
+<text x="55" y="115" font-family="DejaVu Sans,sans-serif" font-size="44" fill="#fff" font-weight="700">Two fish. Different designs.</text>
+<text x="55" y="157" font-family="DejaVu Sans,sans-serif" font-size="22" fill="#e1efef" font-weight="400">A seahorse and a trout share a fish body plan with striking adaptations.</text>
+<rect x="35" y="225" width="1130" height="570" rx="22" fill="#fff" stroke="#d1e3e1" stroke-width="2"/>
+<rect x="35" y="825" width="1130" height="570" rx="22" fill="#fff" stroke="#d1e3e1" stroke-width="2"/>
+<text x="65" y="275" font-family="DejaVu Sans,sans-serif" font-size="28" fill="#163e4c" font-weight="700">SEAHORSE</text>
+<text x="65" y="306" font-family="DejaVu Sans,sans-serif" font-size="20" fill="#506872" font-weight="400">Upright body • grasping tail</text>
+<g stroke="#846335" stroke-width="4" stroke-linejoin="round"><path d="M278 351 L290 329 L307 342 L326 333 L330 355 C359 356 370 370 387 389 L458 411 L455 435 L382 417 C361 421 351 433 353 456 C357 479 382 493 393 525 C417 580 393 627 365 654 C342 677 329 708 346 735 C365 759 400 748 404 728 C406 711 385 704 374 717 C388 710 398 726 385 734 C359 749 343 722 354 705 C368 684 391 675 403 655 C427 614 434 573 420 532 C407 492 385 471 381 451 C376 434 389 432 390 423 L382 394 C369 368 341 361 315 363 L299 350 Z" fill="#d4b576"/><path d="M393 521 Q452 540 444 589 Q424 597 410 612" fill="#efd5a3"/><path d="M356 446 Q322 452 339 472 Q356 470 367 460" fill="#d5e9df"/><path d="M414 520 l22 -7 l-14 22" fill="#d5e9df"/></g>
+<path d="M387 520 Q343 518 342 558 Q350 580 391 584" fill="#d5e9df" stroke="#846335" stroke-width="3"/>
+<path d="M370 480 q22 8 45 0" fill="none" stroke="#a1834a" stroke-width="2"/>
+<path d="M370 500 q22 8 45 0" fill="none" stroke="#a1834a" stroke-width="2"/>
+<path d="M370 520 q22 8 45 0" fill="none" stroke="#a1834a" stroke-width="2"/>
+<path d="M370 540 q22 8 45 0" fill="none" stroke="#a1834a" stroke-width="2"/>
+<path d="M370 560 q22 8 45 0" fill="none" stroke="#a1834a" stroke-width="2"/>
+<path d="M370 580 q22 8 45 0" fill="none" stroke="#a1834a" stroke-width="2"/>
+<path d="M370 600 q22 8 45 0" fill="none" stroke="#a1834a" stroke-width="2"/>
+<circle cx="351" cy="390" r="11" fill="#123f49"/><circle cx="354" cy="386" r="3" fill="#fff"/><path d="M360 435 l-7 9" stroke="#846335" stroke-width="4"/>
+<circle cx="445" cy="410" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="445" y="415" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">1</text>
+<circle cx="347" cy="431" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="347" y="436" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">2</text>
+<circle cx="324" cy="466" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="324" y="471" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">3</text>
+<circle cx="414" cy="501" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="414" y="506" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">4</text>
+<circle cx="335" cy="550" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="335" y="555" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">5</text>
+<circle cx="449" cy="521" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="449" y="526" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">6</text>
+<circle cx="442" cy="578" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="442" y="583" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">7</text>
+<circle cx="338" cy="716" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="338" y="721" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">8</text>
+<circle cx="620" cy="343" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="620" y="348" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">1</text>
+<text x="650" y="351" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#163e4c" font-weight="700">Tubular snout &amp; small mouth</text>
+<text x="650" y="374" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#506872" font-weight="400">A small mouth at the tip</text>
+<circle cx="620" cy="401" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="620" y="406" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">2</text>
+<text x="650" y="409" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#163e4c" font-weight="700">Gill opening</text>
+<text x="650" y="432" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#506872" font-weight="400">Behind the head</text>
+<circle cx="620" cy="459" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="620" y="464" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">3</text>
+<text x="650" y="467" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#163e4c" font-weight="700">Pectoral fin</text>
+<text x="650" y="490" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#506872" font-weight="400">A paired fin; one side shown</text>
+<circle cx="620" cy="517" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="620" y="522" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">4</text>
+<text x="650" y="525" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#163e4c" font-weight="700">Bony plates</text>
+<text x="650" y="548" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#506872" font-weight="400">Armor beneath the skin</text>
+<circle cx="620" cy="575" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="620" y="580" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">5</text>
+<text x="650" y="583" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#163e4c" font-weight="700">Dorsal fin</text>
+<text x="650" y="606" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#506872" font-weight="400">On the back, near the tail base</text>
+<circle cx="620" cy="633" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="620" y="638" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">6</text>
+<text x="650" y="641" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#163e4c" font-weight="700">Anal fin</text>
+<text x="650" y="664" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#506872" font-weight="400">Small fin near the tail base</text>
+<circle cx="620" cy="691" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="620" y="696" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">7</text>
+<text x="650" y="699" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#163e4c" font-weight="700">Brood pouch — male</text>
+<text x="650" y="722" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#506872" font-weight="400">Broods developing young</text>
+<circle cx="620" cy="749" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="620" y="754" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">8</text>
+<text x="650" y="757" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#163e4c" font-weight="700">Prehensile tail</text>
+<text x="650" y="780" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#506872" font-weight="400">Grasps vegetation and other supports</text>
+<text x="65" y="875" font-family="DejaVu Sans,sans-serif" font-size="28" fill="#163e4c" font-weight="700">TROUT</text>
+<text x="65" y="906" font-family="DejaVu Sans,sans-serif" font-size="20" fill="#506872" font-weight="400">Streamlined body • tail fin</text>
+<g fill="#a2c2bc" stroke="#315e61" stroke-width="4" stroke-linejoin="round"><path d="M142 1085 Q203 998 402 1066 L451 1084 L521 1036 L506 1096 L521 1159 L452 1112 Q227 1201 142 1116 L118 1102 Z"/><path d="M277 1052 L307 994 L350 1060"/><path d="M393 1065 Q405 1037 417 1074"/><path d="M221 1123 L255 1170 L281 1133"/><path d="M306 1138 L329 1181 L352 1130"/><path d="M383 1128 L402 1166 L426 1119"/></g>
+<path d="M166 1093 Q270 1064 451 1093 Q271 1119 167 1113" fill="#e3b5ad" opacity=".6"/><path d="M210 1055 Q244 1093 218 1139" fill="none" stroke="#315e61" stroke-width="4"/><circle cx="175" cy="1082" r="9" fill="#123f49"/>
+<circle cx="254" cy="1071" r="3" fill="#507475"/>
+<circle cx="280" cy="1072" r="3" fill="#507475"/>
+<circle cx="305" cy="1080" r="3" fill="#507475"/>
+<circle cx="324" cy="1070" r="3" fill="#507475"/>
+<circle cx="350" cy="1084" r="3" fill="#507475"/>
+<circle cx="374" cy="1080" r="3" fill="#507475"/>
+<circle cx="392" cy="1094" r="3" fill="#507475"/>
+<circle cx="285" cy="1117" r="3" fill="#507475"/>
+<circle cx="326" cy="1113" r="3" fill="#507475"/>
+<circle cx="360" cy="1112" r="3" fill="#507475"/>
+<circle cx="219" cy="1092" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="219" y="1097" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">1</text>
+<circle cx="253" cy="1158" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="253" y="1163" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">2</text>
+<circle cx="331" cy="1091" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="331" y="1096" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">3</text>
+<circle cx="307" cy="1008" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="307" y="1013" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">4</text>
+<circle cx="329" cy="1170" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="329" y="1175" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">5</text>
+<circle cx="401" cy="1154" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="401" y="1159" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">6</text>
+<circle cx="408" cy="1045" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="408" y="1050" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">7</text>
+<circle cx="509" cy="1097" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="509" y="1102" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">8</text>
+<circle cx="620" cy="943" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="620" y="948" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">1</text>
+<text x="650" y="951" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#163e4c" font-weight="700">Gill cover (operculum)</text>
+<text x="650" y="974" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#506872" font-weight="400">Covers the gills</text>
+<circle cx="620" cy="1001" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="620" y="1006" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">2</text>
+<text x="650" y="1009" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#163e4c" font-weight="700">Pectoral fin</text>
+<text x="650" y="1032" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#506872" font-weight="400">A paired fin; one side shown</text>
+<circle cx="620" cy="1059" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="620" y="1064" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">3</text>
+<text x="650" y="1067" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#163e4c" font-weight="700">Scales</text>
+<text x="650" y="1090" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#506872" font-weight="400">Cover the body</text>
+<circle cx="620" cy="1117" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="620" y="1122" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">4</text>
+<text x="650" y="1125" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#163e4c" font-weight="700">Dorsal fin</text>
+<text x="650" y="1148" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#506872" font-weight="400">On the back</text>
+<circle cx="620" cy="1175" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="620" y="1180" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">5</text>
+<text x="650" y="1183" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#163e4c" font-weight="700">Pelvic fin</text>
+<text x="650" y="1206" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#506872" font-weight="400">A paired fin; one side shown</text>
+<circle cx="620" cy="1233" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="620" y="1238" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">6</text>
+<text x="650" y="1241" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#163e4c" font-weight="700">Anal fin</text>
+<text x="650" y="1264" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#506872" font-weight="400">On the underside, toward the tail</text>
+<circle cx="620" cy="1291" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="620" y="1296" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">7</text>
+<text x="650" y="1299" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#163e4c" font-weight="700">Adipose fin</text>
+<text x="650" y="1322" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#506872" font-weight="400">Small fleshy fin behind the dorsal fin</text>
+<circle cx="620" cy="1349" r="16" fill="#fff" stroke="#087f8c" stroke-width="2"/>
+<text x="620" y="1354" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" fill="#075c67" font-weight="700">8</text>
+<text x="650" y="1357" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#163e4c" font-weight="700">Caudal fin</text>
+<text x="650" y="1380" font-family="DejaVu Sans,sans-serif" font-size="17" fill="#506872" font-weight="400">The tail fin</text>
+<text x="55" y="1437" font-family="DejaVu Sans,sans-serif" font-size="21" fill="#163e4c" font-weight="700">Original schematic for MBA Hub V2 • Review candidate • Not to scale</text>
+<text x="55" y="1472" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#506872" font-weight="400">General anatomy only; not a species-identification plate. Fin size and body proportions are simplified.</text>
+</svg>

@@ -4247,24 +4247,23 @@
       }
     },
     {
-      "asset_id": "asset-54f52bac7bc827bc",
+      "asset_id": "asset-b2bea165550eabcc",
       "path": "apps/IMG_4215.jpeg",
       "owner": "media-library",
-      "alt": "Source-provided seahorse educational illustration 4215",
-      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
-      "permission": "review-required",
+      "alt": "Rainbow trout, realistic side-view illustration",
+      "credit": "Duane Raver / U.S. Fish & Wildlife Service. Public domain.",
+      "permission": "public-domain",
       "offline": true,
-      "sha256": "54f52bac7bc827bc49ca4d0d5e3fd121988d61fc9dd75aa65bdca2cbbcd8ce4a",
-      "source_repository": "drtforshortaol/MBA-hub-v2",
-      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
-      "source_path": "src/apps/IMG_4215.jpeg",
+      "sha256": "b2bea165550eabcce52b1abd564cfadca4f5631901143322d921b3a2621600ea",
       "uses": [
         {
           "app_id": "big-bellied-seahorse",
           "source_path": "src/apps/IMG_4215.jpeg"
         }
       ],
-      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+      "review_note": "Exact downloaded FWS original, no image edits; explicit public-domain record reviewed. Supersedes third-party comparison screenshot.",
+      "permission_evidence": "docs/verification/seahorse-trout-photo-replacement-20261030.json",
+      "source_uri": "https://www.fws.gov/media/rainbow-trout-11"
     },
     {
       "asset_id": "asset-225131703b4c0c59",
@@ -4318,6 +4317,27 @@
           "unrelated-public-redistribution"
         ]
       }
+    },
+    {
+      "asset_id": "asset-83f2a50a706d2488",
+      "path": "apps/seahorse-takenaga.jpeg",
+      "owner": "Glenn A. Takenaga",
+      "alt": "Owner close-up photograph of a yellow seahorse; snout, body plates and dorsal fin visible; tail tip not fully shown",
+      "credit": "Photo: Glenn A. Takenaga.",
+      "permission": "approved",
+      "permission_evidence": "docs/verification/seahorse-trout-photo-replacement-20261030.json",
+      "offline": true,
+      "sha256": "83f2a50a706d2488424eaf94ad8ebc96b517b1d622438536c0b35d55d4c3acd4",
+      "source_origin": {
+        "type": "owner-upload",
+        "filename": "36FF8EE3-82E2-4A85-B118-245451482125.jpeg"
+      },
+      "uses": [
+        {
+          "app_id": "big-bellied-seahorse",
+          "source_path": "src/apps/seahorse-takenaga.jpeg"
+        }
+      ]
     }
   ]
 }
