@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-29",
+  "baseline_commit": "503b5805982cdcb3f077f676458888b2515d16f1",
+  "asset": {
+    "asset_id": "asset-93c15fb934aba9e6",
+    "path": "src/apps/IMG_4216.jpeg",
+    "sha256": "93c15fb934aba9e67b2cc30cc9732565460cea8d395ba408f37d0a8982d4a19c",
+    "permission_before": "review-required",
+    "permission_after": "review-required"
+  },
+  "source": {
+    "project_url": "https://www.nicolechristinevisuals.com/medical-illustration/seahorse",
+    "ami_entry": "https://meetingarchive.ami.org/2020/project/reproductive-cycle-of-a-seahorse/",
+    "copyright_credit": "2020 Nicole Hampshire",
+    "portfolio_name": "Nicole Christine Visuals",
+    "current_about_name": "Nicole Barocas",
+    "contact_url": "https://www.nicolechristinevisuals.com/about",
+    "public_contact": "nicolechristinevisuals@gmail.com",
+    "depicted_species": "Hippocampus histrix",
+    "portfolio_image_url": "https://images.squarespace-cdn.com/content/v1/661951ca75339d2a007d4634/0dc3b867-562d-4b99-9ed2-6ed5a65ec0f3/Reproductive-Cycle-of-the-Seahorse%2B-%2BCopy.png",
+    "portfolio_image_sha256": "64ddc318d46480af7f73bd8417876f442b59c70c7df5ecb2514148f360497e09",
+    "portfolio_image_bytes": 6001184,
+    "portfolio_image_dimensions": [
+      1800,
+      2336
+    ],
+    "match_method": "Manual visual comparison of title, composition, stage labels, distinctive models, foreground branches and signature; not byte identity.",
+    "ami_direct_image_download": "CAPTCHA HTML, excluded as image evidence"
+  },
+  "rights": {
+    "terms_url": "https://ami.org/about-us/using-images-from-this-site/",
+    "portfolio_notice": "All rights reserved; visuals property of artist unless stated otherwise",
+    "reusable_license_found": false,
+    "permission_granted": false,
+    "message_sent": false
+  },
+  "scope": {
+    "documentation_only": true,
+    "catalog_changed": false,
+    "runtime_changed": false,
+    "owner_text_changed": false,
+    "gate_cleared": false,
+    "published": false,
+    "unique_remaining": 9,
+    "remaining_image_permissions": 4,
+    "remaining_operational_gates": 5
+  }
+}

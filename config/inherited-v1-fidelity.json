@@ -11,7 +11,7 @@
       "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#california-flying-fish",
       "reviewed_on": "2026-10-22",
       "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
-      "content_sha256": "28facd1e4cd348a0068462bb55a20a941755723b7b00dc211a80c912c70af806"
+      "content_sha256": "3148e9c53677057f1b3a571c1c1ee017ceffaf75782be6f29d327ce62d98107e"
     },
     {
       "app_id": "green-falsejingle",
@@ -22,7 +22,7 @@
       "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#green-falsejingle",
       "reviewed_on": "2026-10-22",
       "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
-      "content_sha256": "0158e18a5b99d0b24ba72de736a271f6b050727195fdcba1714c844c1f4ebff7"
+      "content_sha256": "1f71381cf7e05f6a7006933a04818b6d38c748b7c495570f5a13e9167c411791"
     },
     {
       "app_id": "flamboyant-cuttlefish",
@@ -33,7 +33,7 @@
       "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#flamboyant-cuttlefish",
       "reviewed_on": "2026-10-22",
       "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
-      "content_sha256": "9aeaa4240b03210850692a2ae84f1ded519073b272470acbb80bad537867a06a"
+      "content_sha256": "f9f5bad65f2d0fef933952750363c777140ba4df3107ead560744f7f48195173"
     },
     {
       "app_id": "bluespotted-ribbontail-ray",
@@ -44,7 +44,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "a6ddc9987ddf5c35453e17a7d26c884afb51319fad78aaffc17e38f11a6dae3c"
+      "content_sha256": "cb31205f03f3b3cf98642946e3a87eab61d4d89c797186062ee834bcf4e1f76c"
     },
     {
       "app_id": "california-sheephead",
@@ -55,7 +55,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "978ae240d30f91f21951d89453f00f2488b26ff0e62b5912b701a9a077c2a209"
+      "content_sha256": "74b3e0c5542827b0a59f3fc3a007c40195b1f9a9d6f604ea03acb7985bb44e53"
     },
     {
       "app_id": "gray-whale",
@@ -66,7 +66,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "15fbc14a3bca8517f2c3d85bc58ef110d9b15befb1cac3f412c03ccdcf67b043"
+      "content_sha256": "7dd8531a958e3b7fc4383e32bd4bfd9ffac489cd5969c6bde05e494dc66c43e6"
     },
     {
       "app_id": "gray-whale-skeleton-exhibit",
@@ -77,7 +77,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "9050bafefc1d8499016699d877c94d18cc1f15ee28c192540ecabd9b4b59590f"
+      "content_sha256": "2e3ca94a524f95c50b5191a7d62b782c63c1e03b8741a6902e3c0f3baab79de4"
     },
     {
       "app_id": "hopkins-rose-nudibranch",
@@ -88,7 +88,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "31297544977aeab653a249ba71fffc4493256f435b2694bb7d25295da1db68de"
+      "content_sha256": "e432f54fe2ca5a286325e0ee0140a0c9775570f08a616b6531c94b2511e23074"
     },
     {
       "app_id": "inaturalist-citizen-science",
@@ -99,7 +99,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "a0fed6fa783853fefcc7c726d73df54b82707e7338cdfce6fa7088461ee8acd0"
+      "content_sha256": "59196018fb8ed84b02336511c9fcdb7fbd78cb0bf7f4f741c27c87a8d545350f"
     },
     {
       "app_id": "pacific-white-sided-dolphin",
@@ -110,7 +110,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "b86ee5e0b66e37b5ca9248473551d027a6fcc3dbfa2b1f4de30f8f4721c177b3"
+      "content_sha256": "707c5e77b91bb485bbba307eea7e2e8a4466f9bbad51e10603b36e8ea3b4a723"
     },
     {
       "app_id": "pseudo-nitzschia",
@@ -121,7 +121,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "026c323a17530fea74244386e8578024684600adbc38f5afbd2ae066cc9ec6d4"
+      "content_sha256": "ce08f82c5ef1357c59371ff88214106a9a655e63e939f80056929a206ea4a130"
     },
     {
       "app_id": "sea-slugs-nudibranchs",
@@ -132,7 +132,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "d30ed61f9a21ed6c950a2cfb293671ae801029eecf47dffee399cd239771dbb8"
+      "content_sha256": "b0110903339f704766441c9e502124562b1b3a4da47516b5cd4a84ef6b0d0a27"
     },
     {
       "app_id": "sperm-whale",
@@ -143,7 +143,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "15b447324ffdadacf8d62dfceb689a0c12e2b4bf67a17383fc4ebc6291017196"
+      "content_sha256": "6e48b90dd549d3f32da615d203cf3026b5d5c143c4f72130e41004ff139e2625"
     },
     {
       "app_id": "stargazer-species-guide",
@@ -154,7 +154,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "6336b0292b711e1cc54939bed0aa0012b8fa78d95ad69547f99aa79f53748b19"
+      "content_sha256": "f55e2cc8f9bb5d12bf172d7465531c53ac7d455c6cefc0b115928495c79cc43b"
     },
     {
       "app_id": "whale-associated-organisms",
@@ -165,7 +165,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "8dea8a40f312900d78559667a1deff4f1a392dc8f7b7151817d44483f2d723a0"
+      "content_sha256": "e5c8586db98224205998e4baabd632b30af2f842245cade186db4032f51d0521"
     },
     {
       "app_id": "wildfires-ocean-health",
@@ -176,7 +176,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "efcfe6a27b85b699c4830f674467f9c2899ec74255f8a3c97aca1c2afe27db80"
+      "content_sha256": "7dfa4a1cbfde7d08c23376b1e5ed024dae6915bb28ce86f28f0c3c15d1b16f4d"
     },
     {
       "app_id": "wildlife-rescue",
@@ -187,7 +187,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "10cbc87be71047d79d55565489ab74ca0d36b47699f94292bf69dca1000e9b6b"
+      "content_sha256": "07cbd3ef20174f8eaf85a03a8b350e0c82b5147cf5d720af141d01d753ecc36a"
     },
     {
       "app_id": "gooseneck-barnacle",
@@ -198,7 +198,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "eb7ce777c30245b83b2f9b839ac24b76e80374a907ff5a399acdc03ce231a336"
+      "content_sha256": "2770f4d9d05f23fe725f62e33d1591629f12ad413433f090c97c3b1642d29872"
     },
     {
       "app_id": "applied-water-science-life-support",
@@ -209,7 +209,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "5e8ae712f481f34d43784efba599d1de9cb11d83ed069c34d95a08feb4fe2512"
+      "content_sha256": "a6d34665d42d1c763aacac2b21f536ce12ba55a22fb11c72ce52dfceb066dfb0"
     },
     {
       "app_id": "interpretation-principles",
@@ -220,7 +220,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "9437b4221af43d704a6618b589b22f768ec931f908469264c44e4e87dccb5607"
+      "content_sha256": "fd484e2c58ae591b53d8ddf0e105088d2c450c4692d971a808bb6e0d0d987c38"
     },
     {
       "app_id": "mba-leadership",
@@ -231,7 +231,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "44b16dd914a3cd11127c33ebf8a4349d91eef37ad9be2319096f6f5caad7d325"
+      "content_sha256": "2bd57903e03438522c68e764b55efefec589c2af3e1fa7069dfe16a174b18399"
     },
     {
       "app_id": "information-center",
@@ -242,7 +242,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "1cae2a1108c63f4ad01b959948078ae39f2081590d977599dec4c742265a232a"
+      "content_sha256": "5033488bea2a803fd1020f83694311d611dec239c663c13d234ef36cc5b81db7"
     },
     {
       "app_id": "aquarium-library-explorer",
@@ -253,7 +253,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "f2aafaeb0a2e21d9020e9d022517a3e76e0162042f3c6281c995cb947cd5fc26"
+      "content_sha256": "efe6d4790683f70e4827c422b86dd66b79a19fea1cbb923ac5b1877648c27575"
     },
     {
       "app_id": "mmc-narrations",
@@ -264,7 +264,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "c07d1b4588850e521e44cf9e9893a308e55fc18118cf33383da1eedf8a4ecad2"
+      "content_sha256": "56e5c459df67a803dc9e16d22def543e2b048896d33c56f5d2e2ac5967af2e70"
     },
     {
       "app_id": "five-senses-pwa",
@@ -275,7 +275,7 @@
       "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
-      "content_sha256": "efe3839f8961cf8bb2bcdfc01a9567cbbb90774f8c3511d054b2e910f094f408"
+      "content_sha256": "428ed9a9dbf7a8c65740ed0f28e68bcc6ba3c3a2b5d0827713c60893cde6323b"
     },
     {
       "app_id": "kelp-forest",
@@ -286,7 +286,7 @@
       "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
-      "content_sha256": "5db0fdaa9b508a1a017480b092bea1f2488e778623377a642051152babf68376"
+      "content_sha256": "1885876bf8dc4efdea86c1c89a7a8416e9aa88cb38b156978c1f7a18f4972d21"
     },
     {
       "app_id": "northern-elephant-seal",
@@ -297,7 +297,7 @@
       "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
-      "content_sha256": "e28109fb60a25dd4b13f74e2863e55f84b26f7a04149dea9b4de1ed043678533"
+      "content_sha256": "77873a683df0fb0698e37ec84e88a04210479c6da3bf993152be4964ec4000c9"
     },
     {
       "app_id": "open-sea",
@@ -308,7 +308,7 @@
       "review_reference": "docs/OPEN_SEA_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current files, inline code, markup, styles, links, interactions, search and media review; portable full twelve-card body/SVG/metadata renderer and click-state reproduction with independent parsed trees; no new scientific approval",
-      "content_sha256": "0948cc5974fe1b86c4c98dcf4c8353e116c0c91c8faa6f2d082c46ee85811005"
+      "content_sha256": "671c4e913f44fe973afdccdef3fb1bab30906e7e54cd2bd1c6f417cc3770ce99"
     },
     {
       "app_id": "tree-of-life-origins",
@@ -319,7 +319,7 @@
       "review_reference": "docs/TREE_OF_LIFE_ENGINEERING_REVIEW_20261023.md",
       "reviewed_on": "2026-10-24",
       "review_method": "Independently reviewed complete pinned/current inventory, markup/code/style, source-derived search, media and executable/shared navigation. Existing unchanged V1 authorization only; no new scientific/editorial/image/device/release approval. Recovered evidence and exact resource digest reverified before binding.",
-      "content_sha256": "119eda8dfe11048126fe104bc6e3b7c39a1c098278d7a759e70c099ce8d14612"
+      "content_sha256": "b2ec37505024140e5355948ea41a80048b44d005769085b36983b1648690dd82"
     },
     {
       "app_id": "whale-parasites-associates",
@@ -330,7 +330,7 @@
       "review_reference": "docs/WHALE_PARASITES_INDEPENDENT_REVIEW_20261023.md",
       "reviewed_on": "2026-10-24",
       "review_method": "Independently reviewed complete pinned/current inventory, markup/code/style, source-derived search, media and executable/shared navigation. Existing unchanged V1 authorization only; no new scientific/editorial/image/device/release approval. Recovered evidence and exact resource digest reverified before binding.",
-      "content_sha256": "d011236c6a92ae991c6413942d7da1deca6dc233d923e0683de0905d4827c457"
+      "content_sha256": "6c4b9fb2429252091f364295af713510bdc9399c717df66c3a062dc6e03b830a"
     },
     {
       "app_id": "evolution-timeline",
@@ -341,7 +341,8 @@
       "review_reference": "docs/EVOLUTION_TIMELINE_INDEPENDENT_REVIEW_20261023.md",
       "reviewed_on": "2026-10-24",
       "review_method": "Independent complete eleven-file pinned-source, full executable/static/style/data/three-view DOM/source-derived search/media/actual anchor assignment and native/shared-control reproduction; existing unchanged V1 authorization only, no new scientific/editorial/media/device/release approval",
-      "content_sha256": "74b87175368b413f747cc77696ded33cc9622cb0aa5577b5be7623e6e45bb699"
+      "content_sha256": "3957a281c5d26f091f7cd59235f642f260b83a4544fea6d81652a42e1946437a"
     }
-  ]
+  ],
+  "catalog_rebind_reference": "docs/FOVEA_FIGURE_LICENSE_20261029.md"
 }

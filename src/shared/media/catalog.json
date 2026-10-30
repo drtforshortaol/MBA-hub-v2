@@ -4061,8 +4061,8 @@
       "path": "apps/IMG_4207.jpeg",
       "owner": "media-library",
       "alt": "Ancient murrelets",
-      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
-      "permission": "review-required",
+      "credit": "Photo: MJ — Naturalist and Aquarium shift captain.",
+      "permission": "approved",
       "offline": true,
       "sha256": "1bd100105f88c83aadb9272fccacd1c023e417799d1b7dc79684e7f321bafb6e",
       "source_repository": "drtforshortaol/MBA-hub-v2",
@@ -4074,15 +4074,27 @@
           "source_path": "src/apps/IMG_4207.jpeg"
         }
       ],
-      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+      "review_note": "Photographer and reuse authorization reported by Glenn for the exact cataloged bytes. Existing source identity records remain unchanged; this approval does not cover third-party illustrations or separate visitor distribution.",
+      "permission_evidence": "Glenn confirmed MJ authorized these photographs for the Aquarium guide hub and its testers on 2026-10-29. See docs/verification/mj-photo-permission-20261029.json and docs/MJ_PHOTO_PERMISSION_20261029.md.",
+      "permission_scope": {
+        "audience": "Aquarium guide hub and its testers",
+        "uses": [
+          "guide-hub-display",
+          "guide-hub-offline-cache"
+        ],
+        "not_granted": [
+          "standalone-visitor-sharing",
+          "unrelated-public-redistribution"
+        ]
+      }
     },
     {
       "asset_id": "asset-95daa2493750e82f",
       "path": "apps/IMG_4208.jpeg",
       "owner": "media-library",
       "alt": "Rhinoceros auklets",
-      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
-      "permission": "review-required",
+      "credit": "Photo: MJ — Naturalist and Aquarium shift captain.",
+      "permission": "approved",
       "offline": true,
       "sha256": "95daa2493750e82f0444679b1c567d66af4e5212ab9d864eca3f2ddb8e475f1d",
       "source_repository": "drtforshortaol/MBA-hub-v2",
@@ -4094,15 +4106,27 @@
           "source_path": "src/apps/IMG_4208.jpeg"
         }
       ],
-      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+      "review_note": "Photographer and reuse authorization reported by Glenn for the exact cataloged bytes. Existing source identity records remain unchanged; this approval does not cover third-party illustrations or separate visitor distribution.",
+      "permission_evidence": "Glenn confirmed MJ authorized these photographs for the Aquarium guide hub and its testers on 2026-10-29. See docs/verification/mj-photo-permission-20261029.json and docs/MJ_PHOTO_PERMISSION_20261029.md.",
+      "permission_scope": {
+        "audience": "Aquarium guide hub and its testers",
+        "uses": [
+          "guide-hub-display",
+          "guide-hub-offline-cache"
+        ],
+        "not_granted": [
+          "standalone-visitor-sharing",
+          "unrelated-public-redistribution"
+        ]
+      }
     },
     {
       "asset_id": "asset-47f9bbb193878eec",
       "path": "apps/IMG_4209.jpeg",
       "owner": "media-library",
       "alt": "Fork-tailed storm-petrel near Wharf 2",
-      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
-      "permission": "review-required",
+      "credit": "Photo: MJ — Naturalist and Aquarium shift captain.",
+      "permission": "approved",
       "offline": true,
       "sha256": "47f9bbb193878eeced59326418949849427489f0167e33a7e063be9d091f643b",
       "source_repository": "drtforshortaol/MBA-hub-v2",
@@ -4114,15 +4138,27 @@
           "source_path": "src/apps/IMG_4209.jpeg"
         }
       ],
-      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+      "review_note": "Photographer and reuse authorization reported by Glenn for the exact cataloged bytes. Existing source identity records remain unchanged; this approval does not cover third-party illustrations or separate visitor distribution.",
+      "permission_evidence": "Glenn confirmed MJ authorized these photographs for the Aquarium guide hub and its testers on 2026-10-29. See docs/verification/mj-photo-permission-20261029.json and docs/MJ_PHOTO_PERMISSION_20261029.md.",
+      "permission_scope": {
+        "audience": "Aquarium guide hub and its testers",
+        "uses": [
+          "guide-hub-display",
+          "guide-hub-offline-cache"
+        ],
+        "not_granted": [
+          "standalone-visitor-sharing",
+          "unrelated-public-redistribution"
+        ]
+      }
     },
     {
       "asset_id": "asset-50646c3fe1d0c359",
       "path": "apps/IMG_4210.jpeg",
       "owner": "media-library",
-      "alt": "Moon jelly ephyra anatomy",
-      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
-      "permission": "review-required",
+      "alt": "Scyphozoan ephyra anatomy reference diagram, cropped from Figure 1",
+      "credit": "Lau López; cropped Figure 1, Ballesteros et al. (2021), Frontiers in Marine Science 8:714503; CC BY 4.0.",
+      "permission": "licensed",
       "offline": true,
       "sha256": "50646c3fe1d0c359860229e041767429fc21a382cd16d75bd165fd5f7a3cef52",
       "source_repository": "drtforshortaol/MBA-hub-v2",
@@ -4134,7 +4170,14 @@
           "source_path": "src/apps/IMG_4210.jpeg"
         }
       ],
-      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+      "review_note": "Existing JPEG bytes and engineering source provenance are unchanged. Figure-specific restrictive notice not found. General reference diagram from a Pelagia study; do not identify it as a verified moon-jelly specimen.",
+      "permission_evidence": "Publisher Figure 1 visually matches the existing cropped screenshot. Article licenses reuse under CC BY 4.0; the displayed caption retains creator/copyright credit, source and license URIs, and crop disclosure. See docs/verification/ephyra-figure-license-20261029.json.",
+      "license": {
+        "id": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "source_url": "https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2021.714503/full#F1",
+        "illustrator": "Lau López"
+      }
     },
     {
       "asset_id": "asset-486b6cdb96375dfb",
@@ -4180,9 +4223,9 @@
       "asset_id": "asset-e62b39cc07a542c4",
       "path": "apps/IMG_4214.jpeg",
       "owner": "media-library",
-      "alt": "Source-provided seahorse educational illustration 4214",
-      "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
-      "permission": "review-required",
+      "alt": "Comparative diagrams of convexiclivate and concaviclivate foveae, cropped Figure 1a",
+      "credit": "Potier et al. (2020), Scientific Reports 10:6133, cropped Figure 1a; CC BY 4.0.",
+      "permission": "licensed",
       "offline": true,
       "sha256": "e62b39cc07a542c4def4dd10a7a5f17cdf7dddb235fd81af7c20b564089c1fea",
       "source_repository": "drtforshortaol/MBA-hub-v2",
@@ -4194,7 +4237,14 @@
           "source_path": "src/apps/IMG_4214.jpeg"
         }
       ],
-      "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+      "review_note": "Existing JPEG bytes and engineering source provenance retained. General comparative schematic from a black-kite study; no seahorse-specific retinal measurement or new scientific interpretation is asserted.",
+      "permission_evidence": "Publisher-deposited article explicitly licenses figures under CC BY 4.0 unless a separate credit excludes them; Figure 1 has no restrictive credit. Exact existing crop visually matched, source/copyright/license credit and crop disclosure displayed. See docs/verification/fovea-figure-license-20261029.json.",
+      "license": {
+        "id": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "source_url": "https://doi.org/10.1038/s41598-020-63039-y",
+        "figure": "1a"
+      }
     },
     {
       "asset_id": "asset-54f52bac7bc827bc",
@@ -4235,6 +4285,38 @@
         }
       ],
       "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+    },
+    {
+      "asset_id": "asset-df392914e6cf5502",
+      "path": "shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg",
+      "owner": "media-library",
+      "alt": "Historical gray-whale observation offshore from Big Sur, viewed from Highway 1",
+      "credit": "Photo: MJ — Naturalist and Aquarium shift captain.",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "df392914e6cf55020db2cf2ae2eab1b55f23160708b1284f765232f300cbb707",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "cae20ad89424d941cfb8f2bf39595307b0bb74a8",
+      "source_path": "src/shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg",
+      "uses": [
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "src/shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg"
+        }
+      ],
+      "review_note": "Photographer and reuse authorization reported by Glenn for the exact cataloged bytes. Existing source identity records remain unchanged; this approval does not cover third-party illustrations or separate visitor distribution.",
+      "permission_evidence": "Glenn confirmed MJ authorized these photographs for the Aquarium guide hub and its testers on 2026-10-29. See docs/verification/mj-photo-permission-20261029.json and docs/MJ_PHOTO_PERMISSION_20261029.md.",
+      "permission_scope": {
+        "audience": "Aquarium guide hub and its testers",
+        "uses": [
+          "guide-hub-display",
+          "guide-hub-offline-cache"
+        ],
+        "not_granted": [
+          "standalone-visitor-sharing",
+          "unrelated-public-redistribution"
+        ]
+      }
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generatedAt": "2026-10-29T05:05:45.626Z",
+  "generatedAt": "2026-10-30T05:39:42.553Z",
   "platformVersion": "2.0.0-alpha.7",
   "stage": "migration-review",
   "apps": 33,
@@ -15,14 +15,8 @@
     "release gate: rollbackDevicePassed",
     "release gate: privacyReviewed",
     "content review pending: big-bellied-seahorse",
-    "content review pending: naturalist-field-notes",
-    "media permission review: asset-1bd100105f88c83a",
-    "media permission review: asset-95daa2493750e82f",
-    "media permission review: asset-47f9bbb193878eec",
-    "media permission review: asset-50646c3fe1d0c359",
     "media permission review: asset-486b6cdb96375dfb",
     "media permission review: asset-2913dc8df835400c",
-    "media permission review: asset-e62b39cc07a542c4",
     "media permission review: asset-54f52bac7bc827bc",
     "media permission review: asset-93c15fb934aba9e6"
   ],

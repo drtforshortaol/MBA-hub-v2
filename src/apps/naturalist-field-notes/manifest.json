@@ -4,7 +4,7 @@
   "title": "Naturalist Field Notes",
   "category": "aquarium-updates",
   "type": "field-notes",
-  "version": "2.0.0-alpha.6",
+  "version": "2.0.0-alpha.11",
   "entry_point": "apps/naturalist-field-notes/index.html",
   "status": "testing",
   "owner": "naturalist-field-notes",
@@ -146,7 +146,8 @@
     "shared/media/asset-a682abf588d51b0d--IMG_3518.jpeg",
     "shared/media/asset-9110c28e0898a79e--IMG_3519.jpeg",
     "shared/media/asset-47d33e98d003d66e--IMG_3520.jpeg",
-    "shared/media/asset-29f85ad9d9ef593f--IMG_3475.jpeg"
+    "shared/media/asset-29f85ad9d9ef593f--IMG_3475.jpeg",
+    "shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg"
   ],
   "media": [
     "asset-edd9d5ec2d0bbd07",
@@ -271,7 +272,8 @@
     "asset-1bd100105f88c83a",
     "asset-95daa2493750e82f",
     "asset-47f9bbb193878eec",
-    "asset-50646c3fe1d0c359"
+    "asset-50646c3fe1d0c359",
+    "asset-df392914e6cf5502"
   ],
   "knowledge": [],
   "cross_links": [
@@ -600,12 +602,14 @@
     },
     {
       "id": "note-2026-10-15-seahorse",
-      "title": "October 15, 2026 (Bay Watch October 8–14) — Seahorse, Ocean in Motion and Bay Watch",
-      "text": "October 8–14, 2026 weekly Naturalist update. Humpbacks, dolphins, orcas, whale hydrophone, seabirds, jelly gastrovascular system, Splash Zone and Ocean in Motion, big-bellied seahorse. Dedicated guide: big-bellied-seahorse. October 2026 update rendered through modular issue data.",
+      "title": "October 8–14, 2026 — Seahorse, Ocean in Motion and Bay Watch",
+      "text": "October 8–14, 2026 weekly Naturalist update. Humpbacks, dolphins, orcas, whale hydrophone, seabirds, jelly gastrovascular system, Splash Zone and Ocean in Motion, big-bellied seahorse. Dedicated guide: big-bellied-seahorse. October 2026 update rendered through modular issue data. Historical gray-whale observation: Big Sur, Highway 1, March two years earlier; not a current Bay Watch sighting. Source email timestamp was not supplied; stable note ID retained.",
       "aliases": [
         "seahorse",
         "Ocean in Motion",
-        "Bay Watch"
+        "Bay Watch",
+        "Big Sur",
+        "historical gray whale"
       ],
       "query": {
         "note": "2026-10-15-seahorse"
@@ -615,5 +619,5 @@
   "source_version": "1.0",
   "source_repository": "drtforshortaol/MBA-hub",
   "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
-  "publication_review": "pending"
+  "publication_review": "owner-approved-text"
 }

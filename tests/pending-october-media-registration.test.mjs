@@ -6,6 +6,7 @@ import {releaseErrors} from '../scripts/build.mjs';
 import {auditRepositoryMedia} from '../scripts/audit-local-media-coverage.mjs';
 
 const rows=[
+ ["naturalist-field-notes","shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg","asset-df392914e6cf5502","df392914e6cf55020db2cf2ae2eab1b55f23160708b1284f765232f300cbb707"],
   [
     "naturalist-field-notes",
     "apps/IMG_4207.jpeg",
@@ -61,28 +62,30 @@ const rows=[
     "93c15fb934aba9e67b2cc30cc9732565460cea8d395ba408f37d0a8982d4a19c"
   ]
 ];
+const mjIds=new Set(['asset-1bd100105f88c83a','asset-95daa2493750e82f','asset-47f9bbb193878eec','asset-df392914e6cf5502']);
+const licensedIds=new Set(['asset-50646c3fe1d0c359','asset-e62b39cc07a542c4']);
 const read=p=>JSON.parse(fs.readFileSync(new URL('../'+p,import.meta.url),'utf8'));
 
 test('new October media registration preserves bytes, original paths and pending permissions',()=>{
  const catalog=read('src/shared/media/catalog.json'),apps=new Map();
- assert.equal(catalog.assets.length,212);
+ assert.equal(catalog.assets.length,213);
  for(const [id,path,asset_id,expected] of rows){
   const app=apps.get(id)||read('src/apps/'+id+'/manifest.json');apps.set(id,app);
   const matches=catalog.assets.filter(a=>a.path===path);assert.equal(matches.length,1);
   const asset=matches[0];assert.equal(asset.asset_id,asset_id);assert.equal(asset_id,'asset-'+expected.slice(0,16));
   const bytes=fs.readFileSync(new URL('../src/'+path,import.meta.url));
   assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),expected);
-  assert.equal(asset.sha256,expected);assert.equal(asset.permission,'review-required');assert.equal(asset.permission_evidence,undefined);
+  assert.equal(asset.sha256,expected);assert.equal(asset.permission,mjIds.has(asset_id)?'approved':licensedIds.has(asset_id)?'licensed':'review-required');if(mjIds.has(asset_id))assert.match(asset.permission_evidence,/mj-photo-permission-20261029.json/);else if(asset_id==='asset-50646c3fe1d0c359')assert.match(asset.permission_evidence,/ephyra-figure-license-20261029.json/);else if(asset_id==='asset-e62b39cc07a542c4')assert.match(asset.permission_evidence,/fovea-figure-license-20261029.json/);else assert.equal(asset.permission_evidence,undefined);
   assert.equal(asset.offline,true);assert.ok(app.media.includes(asset_id));assert.ok(app.offline_assets.includes(path));
-  assert.equal(asset.source_repository,'drtforshortaol/MBA-hub-v2');assert.equal(asset.source_commit,'12afc2052c6117cc33616a9687199e353c3d8c48');assert.equal(asset.source_path,'src/'+path);
-  assert.equal(app.publication_review,'pending');assert.ok(!['approved','published'].includes(app.status));
+  assert.equal(asset.source_repository,'drtforshortaol/MBA-hub-v2');assert.equal(asset.source_commit,path.includes('big-sur-gray-whale')?'cae20ad89424d941cfb8f2bf39595307b0bb74a8':'12afc2052c6117cc33616a9687199e353c3d8c48');assert.equal(asset.source_path,'src/'+path);
+  assert.equal(app.publication_review,id==='naturalist-field-notes'?'owner-approved-text':'pending');assert.ok(!['approved','published'].includes(app.status));
  }
  const blockers=releaseErrors(read('config/platform.json'),[...apps.values()],catalog,{apps:[]});
- for(const row of rows)assert.ok(blockers.includes('media permission review: '+row[2]));
+ for(const row of rows)assert.equal(blockers.includes('media permission review: '+row[2]),!mjIds.has(row[2])&&!licensedIds.has(row[2]));
 });
-test('literal media audit reports resolved registration gaps while retaining all nine rights findings',()=>{
+test('literal media audit reports resolved registration gaps while retaining four remaining rights findings',()=>{
  const report=auditRepositoryMedia(),findings=report.resources.filter(r=>r.issues.length);
- assert.equal(report.summary.uncataloged_resources,0);assert.equal(findings.length,9);assert.equal(report.complete,false);
- assert.deepEqual(findings.map(r=>r.path).sort(),rows.map(r=>r[1]).sort());
+ assert.equal(report.summary.uncataloged_resources,0);assert.equal(findings.length,4);assert.equal(report.complete,false);
+ assert.deepEqual(findings.map(r=>r.path).sort(),rows.filter(r=>!mjIds.has(r[2])&&!licensedIds.has(r[2])).map(r=>r[1]).sort());
  for(const result of findings)assert.deepEqual(result.issues,['permission-evidence-missing']);
 });

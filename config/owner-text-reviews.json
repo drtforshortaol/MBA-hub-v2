@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "apps": [
+    {
+      "app_id": "naturalist-field-notes",
+      "status": "owner-approved-text",
+      "scope": "authored-text-only",
+      "reviewer": "owner",
+      "reviewed_on": "2026-10-29",
+      "review_reference": "docs/NATURALIST_TEXT_APPROVAL_20261029.md",
+      "authorization_reference": "Owner conversation: explicit approval of the exact October Naturalist text packet at 74b91bb5af8f0215d4863bcdf9a2c39e76aa3c58",
+      "authorization_quote": "Approved",
+      "candidate_commit": "74b91bb5af8f0215d4863bcdf9a2c39e76aa3c58",
+      "candidate_packet_sha256": "f4324b0ca675b24d4a45b71a48fd3cbefd33a786c9357539357c6c148e1ecf41",
+      "content_sha256": "55046201ee3c8a54f4f0843389c2f67aa6b1d931bc586488a78c5f02af7a9ec4",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-29",
+          "review_reference": "docs/EPHYRA_FIGURE_LICENSE_20261029.md",
+          "scope": "Licensed illustration attribution and catalog metadata only; all approved scientific/editorial text unchanged",
+          "previous_content_sha256": "d2b46d585e142d43e59016adffc6c998473fc532cf04788de9976eee4bee8b72",
+          "content_sha256": "e632fde079737b6eac70f5e4ab25cc39328c257abfd760c2b5570d46194d0f5f"
+        },
+        {
+          "recorded_on": "2026-10-29",
+          "review_reference": "docs/FOVEA_FIGURE_LICENSE_20261029.md",
+          "scope": "Catalog metadata for one licensed Seahorse figure only; approved Naturalist files unchanged",
+          "previous_content_sha256": "e632fde079737b6eac70f5e4ab25cc39328c257abfd760c2b5570d46194d0f5f",
+          "content_sha256": "55046201ee3c8a54f4f0843389c2f67aa6b1d931bc586488a78c5f02af7a9ec4"
+        }
+      ]
+    }
+  ]
+}
