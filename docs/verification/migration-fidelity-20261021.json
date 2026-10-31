@@ -4267,18 +4267,31 @@
           "source_path": "apps/open-sea/index.html",
           "local_path": "src/apps/open-sea/index.html",
           "pinned_sha256": "62b247861eaf4cf4ecdff38d339f442389bc6a18a5b90044682e36104d2c2669",
-          "current_sha256": "217e9b3187dba518f58bfbe45adad87ee58fc119c1c3ae5cb4214500a8979872",
+          "current_sha256": "2cfcc0bcb1598e6e9d718b4b8e75972d9a9255248f88877b92955d5cbaa91a0a",
           "status": "changed",
-          "static_text_equal": true,
+          "static_text_equal": false,
           "pinned_static_text_sha256": "6039df0182746d707c0227f5a4c94dd668a84644030b51c470a3acf6a059b035",
-          "current_static_text_sha256": "6039df0182746d707c0227f5a4c94dd668a84644030b51c470a3acf6a059b035"
+          "previous_current_sha256": "217e9b3187dba518f58bfbe45adad87ee58fc119c1c3ae5cb4214500a8979872",
+          "content_data_comparison": {
+            "equal_after_only_image_url_normalization": false
+          },
+          "review_reference": "docs/OPEN_SEA_COUNTERSHADING_20261031.md",
+          "review_scope": "Owner-requested countershading addition; new wording pending approval, not unchanged-V1 fidelity.",
+          "previous_current_static_text_sha256": "6039df0182746d707c0227f5a4c94dd668a84644030b51c470a3acf6a059b035"
         },
         {
           "source_path": "apps/open-sea/manifest.json",
           "local_path": "src/apps/open-sea/manifest.json",
           "pinned_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-          "current_sha256": "c2d6b95f4693370192c4df480c25effe7386967271a6ccc72baed6b157cf3667",
-          "status": "changed"
+          "current_sha256": "43b9e15bc5651d75fc6aa09be9dadd6886b25211a127bf1dc103d822292466eb",
+          "status": "changed",
+          "previous_current_sha256": "c2d6b95f4693370192c4df480c25effe7386967271a6ccc72baed6b157cf3667",
+          "static_text_equal": false,
+          "content_data_comparison": {
+            "equal_after_only_image_url_normalization": false
+          },
+          "review_reference": "docs/OPEN_SEA_COUNTERSHADING_20261031.md",
+          "review_scope": "Owner-requested countershading addition; new wording pending approval, not unchanged-V1 fidelity."
         },
         {
           "source_path": "apps/open-sea/styles.css",

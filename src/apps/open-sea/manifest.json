@@ -124,6 +124,18 @@
       "title": "Bioluminescence",
       "text": "Bioluminescence Defense, camouflage, hunting, and deception Adaptation Deception Defensive Uses Confuse predators Startle or delay attackers Match light from above so predators looking upward cannot easily see the animal, a strategy called counter-illumination Offensive Uses Lure prey Search for prey Illuminate nearby objects Dragonfish Red Light Some dragonfishes produce red light. Many deep-sea animals cannot see red wavelengths, allowing the dragonfish to illuminate prey without being easily detected.",
       "aliases": []
+    },
+    {
+      "id": "Countershading",
+      "title": "Countershading — dark above, light below",
+      "text": "🐟 Countershading — dark above, light below Countershading is camouflage through body coloration. Many open-ocean animals, including tuna and sharks, have darker backs and paler undersides. Viewed from above: the dark back blends with the darker water below. Viewed from below: the pale belly blends with brighter surface waters. This can make an animal harder for predators or prey to spot. It reduces contrast; it does not make the animal invisible. Try it with visitors Look for a fish with a dark back and a light belly. Ask: “If you were looking up at this fish, what background would you see behind it?” Then ask how the background changes when looking down. Compare with counter-illumination Countershading uses body coloration. Counter-illumination uses light-producing structures on an animal’s underside to match light from above. The Bioluminescence section explains that related camouflage strategy. Sources: Monterey Bay Aquarium — Open ocean ; Smithsonian Ocean — Fish Using Counterillumination . External references require a connection; this explanation is available offline.",
+      "aliases": [
+        "countershading",
+        "counter-shading",
+        "camouflage",
+        "dark back",
+        "light belly"
+      ]
     }
   ],
   "source_version": "1.0",

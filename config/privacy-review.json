@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates.",
-  "snapshot_sha256": "e311d704c227d6f8b5b568ae5b47f36e40101e18cc1192ab366c389ead150564",
+  "snapshot_sha256": "cf2e5dd4b68ccff27b3b9d98676e722a20561c2ec03acfadc41166962eae5670",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "e311d704c227d6f8b5b568ae5b47f36e40101e18cc1192ab366c389ead150564",
+    "snapshot_sha256": "cf2e5dd4b68ccff27b3b9d98676e722a20561c2ec03acfadc41166962eae5670",
     "resources": [
       {
         "path": "config/categories.json",
@@ -945,13 +945,13 @@
       },
       {
         "path": "src/apps/open-sea/index.html",
-        "bytes": 36780,
-        "sha256": "217e9b3187dba518f58bfbe45adad87ee58fc119c1c3ae5cb4214500a8979872"
+        "bytes": 38431,
+        "sha256": "2cfcc0bcb1598e6e9d718b4b8e75972d9a9255248f88877b92955d5cbaa91a0a"
       },
       {
         "path": "src/apps/open-sea/manifest.json",
-        "bytes": 17409,
-        "sha256": "c2d6b95f4693370192c4df480c25effe7386967271a6ccc72baed6b157cf3667"
+        "bytes": 18781,
+        "sha256": "43b9e15bc5651d75fc6aa09be9dadd6886b25211a127bf1dc103d822292466eb"
       },
       {
         "path": "src/apps/open-sea/styles.css",
@@ -2428,5 +2428,14 @@
   "classification_delta_review": {
     "recorded_on": "2026-10-31",
     "scope": "Owner-authorized permanent animal records, optional source-attributed taxonomy and searchable names; visible collapsed classification browser and in-app names/source card. No new remote API calls, automatic external resources or collection. Existing source app files/scientific prose preserved."
-  }
+  },
+  "delta_reviews": [
+    {
+      "reviewed_on": "2026-10-31",
+      "reference": "docs/OPEN_SEA_COUNTERSHADING_20261031.md",
+      "scope": "Owner-requested local text/native disclosure and click-only source references; original cards/media preserved; new wording remains pending content approval",
+      "previous_snapshot_sha256": "e311d704c227d6f8b5b568ae5b47f36e40101e18cc1192ab366c389ead150564",
+      "snapshot_sha256": "cf2e5dd4b68ccff27b3b9d98676e722a20561c2ec03acfadc41166962eae5670"
+    }
+  ]
 }
