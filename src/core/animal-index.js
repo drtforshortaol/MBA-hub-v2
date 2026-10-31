@@ -1,3 +1,4 @@
+import {listedHubApps,whaleTopic} from './whale-reference.js';
 // Index presentation only: canonical titles, app IDs and species content stay intact.
 const names=Object.freeze({
  'big-bellied-seahorse':'Seahorse, Big-Bellied',
@@ -12,9 +13,9 @@ const references=Object.freeze({
  'sperm-whale':'Whale'
 });
 export function animalIndexEntries(apps){
- const unique=[...new Map(apps.filter(app=>app.category==='animals'&&app.listed!==false).map(app=>[app.app_id,app])).values()];
+ const unique=[...new Map(listedHubApps(apps).filter(app=>app.category==='animals'&&app.listed!==false).map(app=>[app.app_id,app])).values()];
  return unique.flatMap(app=>{
-  const label=names[app.app_id]||String(app.title||'').replace(/^[^\p{L}\p{N}]+/u,'');
+  const label=(app.app_id===whaleTopic.id?whaleTopic.title:names[app.app_id])||String(app.title||'').replace(/^[^\p{L}\p{N}]+/u,'');
   const entry={app,label,letter:label.charAt(0).toUpperCase(),crossReference:false};
   const group=references[app.app_id];
   return group?[entry,{app,label:group+' → '+label,letter:group.charAt(0),crossReference:true}]:[entry];

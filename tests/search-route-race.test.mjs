@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {listedHubApps} from '../src/core/whale-reference.js';
 import {animalIndexEntries} from '../src/core/animal-index.js';
 import {searchHub} from '../src/core/search.js';
 import {runInNewContext} from 'node:vm';
@@ -13,7 +14,7 @@ function fixture(){
  let currentInput=null,currentResults=null,currentCategory=null;
  const view={querySelectorAll(selector){return selector==='.category'?this.children.filter(child=>child.props?.class==='category'):[];},children:[],textContent:'',replaceChildren(...children){this.children=children;this.textContent='';currentInput=children.find(child=>child.props?.id==='query')||null;currentResults=children.find(child=>child.props?.id==='results')||null;currentCategory=children.find(child=>child.props?.id==='search-category')||null;}};
  const node=(tag,props={},...children)=>({tag,props,children,value:'',append(...items){this.children.push(...items);},listeners:[],focused:false,addEventListener(type,listener){this.listeners.push({type,listener});},focus(){this.focused=true;},replaceChildren(...items){this.children=items;}});
- const context={view,node,searchHub,animalIndexEntries,registry:{categories:[{id:'animals',title:'Animals'},{id:'guides',title:'Guides'}],apps:[{app_id:'ray',category:'animals'},{app_id:'guide',category:'guides'}]},location:{hash:'#search'},document:{querySelector(selector){if(selector==='#query'){if(currentInput&&!inputs.includes(currentInput))inputs.push(currentInput);return currentInput;}if(selector==='#results')return currentResults;if(selector==='#search-category')return currentCategory;return null;},createTextNode:text=>({text})},fetch(){const request=deferred();requests.push(request);return request.promise;},state:{query:'ray',scroll:190},returned:null,index:undefined,remember(){},safeHref:value=>value,requestAnimationFrame:callback=>frames.push(callback),scrollTo(){context.scrolls++;},scrolls:0,bindAnimalFilter(){}};
+ const context={view,node,searchHub,animalIndexEntries,listedHubApps,registry:{categories:[{id:'animals',title:'Animals'},{id:'guides',title:'Guides'}],apps:[{app_id:'ray',category:'animals'},{app_id:'guide',category:'guides'}]},location:{hash:'#search'},document:{querySelector(selector){if(selector==='#query'){if(currentInput&&!inputs.includes(currentInput))inputs.push(currentInput);return currentInput;}if(selector==='#results')return currentResults;if(selector==='#search-category')return currentCategory;return null;},createTextNode:text=>({text})},fetch(){const request=deferred();requests.push(request);return request.promise;},state:{query:'ray',scroll:190},returned:null,index:undefined,remember(){},safeHref:value=>value,requestAnimationFrame:callback=>frames.push(callback),scrollTo(){context.scrolls++;},scrolls:0,bindAnimalFilter(){}};
  const routes=runInNewContext(routeSource+'\n({route,renderRoute});',context);
  return {...routes,context,view,requests,frames,inputs,input:()=>currentInput,results:()=>currentResults,category:()=>currentCategory};
 }
