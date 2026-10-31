@@ -1,6 +1,6 @@
 // Navigation interface 1.0.0: contextual Back and explicit main-Hub return.
 export function mainHubURL(root){const url=new URL('index.html',root);url.searchParams.set('home','1');return url;}
-export function restoredHubState(saved,url){return new URL(url).searchParams.get('home')==='1'?{...saved,open:[],scroll:0,categoryScroll:0,animalLetter:'',animalGroup:'',animalGroupsOpen:false}:saved;}
+export function restoredHubState(saved,url){return new URL(url).searchParams.get('home')==='1'?{...saved,open:[],scroll:0,categoryScroll:0,animalLetter:'',animalGroup:'',animalGroupsOpen:false,classificationOpen:[]}:saved;}
 function key(namespace,id){return `${namespace}:return:${id}`;}
 export function captureVisit(destination,root,origin,state,storage,namespace,id){
  const target=new URL(destination,origin),scope=new URL(root),source=new URL(origin,scope);

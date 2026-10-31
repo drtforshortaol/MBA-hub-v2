@@ -4,7 +4,7 @@ const apps=ids.map(app_id=>({app_id,title:app_id,category:'animals',entry_point:
 test('all twelve agreed guides have one broad group and exact alternate letters',()=>{
  const rows=animalIndexEntries(apps);assert.equal(new Set(rows.map(r=>r.app.app_id)).size,12);
  assert.deepEqual(animalGroups.map(g=>[g.title,new Set(rows.filter(r=>r.group===g.id).map(r=>r.app.app_id)).size]),[['Fishes',4],['Sharks & Rays',1],['Marine Mammals',3],['Invertebrates',4]]);
- for(const [id,letters,label] of [['bluespotted-ribbontail-ray',['B','R'],'Ribbontail Ray, Blue-spotted'],['gooseneck-barnacle',['B','G'],'Barnacle, Gooseneck'],['green-falsejingle',['F','G'],'Falsejingle, Green'],['hopkins-rose-nudibranch',['H','N'],'Nudibranch, Hopkins’ Rose'],['sea-slugs-nudibranchs',['N','S'],'sea-slugs-nudibranchs']]){const r=rows.filter(r=>r.app.app_id===id);assert.deepEqual(r.map(r=>r.letter).sort(),letters);assert.equal(r.find(r=>!r.crossReference).label,label);}
+ for(const [id,letters,label] of [['bluespotted-ribbontail-ray',['B','R'],'Ribbontail Ray, Blue-spotted'],['gooseneck-barnacle',['B','G'],'Barnacle, Gooseneck'],['green-falsejingle',['F','G'],'Falsejingle, Green'],['hopkins-rose-nudibranch',['H','N'],'Nudibranch, Hopkins’ Rose'],['sea-slugs-nudibranchs',['N','S'],'Sea Slugs & Nudibranchs']]){const r=rows.filter(r=>r.app.app_id===id);assert.deepEqual(r.map(r=>r.letter).sort(),letters);assert.equal(r.find(r=>!r.crossReference).label,label);}
  assert(!animalSearchTerms('bluespotted-ribbontail-ray').toLowerCase().includes('stingray'));assert(!animalSearchTerms('gray-whale').toLowerCase().includes('grey'));assert.equal(animalGroupFor('california-sheephead'),'fishes');
 });
 function fixture(){

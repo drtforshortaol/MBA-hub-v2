@@ -1,3 +1,4 @@
+import {enhanceAnimalIdentity} from './animal-classification.js';
 import {captureAppView,restoreAppView} from './app-view.js';
 import {createSectionNavigator,revisitSectionLink} from './section-navigation.js';
 import {mainHubURL,returnToVisit,appRestoreState,captureAppVisit} from './navigation.js';
@@ -12,6 +13,7 @@ let restore=null;try{restore=appRestoreState(root,location.href,sessionStorage,e
 if(restore?.appView){requestAnimationFrame(()=>restoreAppView(document,restore,{Event,scrollTo}));}
 const id=location.pathname.slice(root.pathname.length).split('/')[1];
 if(id==='whale-associated-organisms'){const {enhanceWhaleReference}=await import('./whale-reference.js');enhanceWhaleReference(document,typeof PARASITES==='undefined'?[]:PARASITES);}
+enhanceAnimalIdentity(document,id);
 let manifest;try{manifest=await fetch(new URL(`apps/${id}/manifest.json`,root)).then(r=>r.json());}catch{}
 function assignSectionIDs(){for(const section of [...(manifest?.sections||[])].sort((a,b)=>b.title.length-a.title.length)){if(section.query||document.getElementById(section.id))continue;const title=section.title.replace(/\s+/g,' ').trim().toLowerCase();const node=[...document.querySelectorAll('summary,h2,h3,h4')].find(e=>e.textContent.replace(/\s+/g,' ').trim().toLowerCase().includes(title));if(node){const target=node.tagName==='SUMMARY'?node.parentElement:node;target.id=section.id;}}}
 const section=createSectionNavigator({document,location,escape:value=>CSS.escape(value),skipInitial:Boolean(restore?.appView)});

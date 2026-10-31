@@ -1,3 +1,5 @@
+import {animalCatalog} from '../src/shared/animal-records.js';
+import {validateAnimalRecords} from './validate-animal-records.mjs';
 import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';import {preparePublicReview,inheritedApprovalSupported,ownerTextApprovalSupported} from './public-review.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');process.chdir(root);
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
@@ -44,6 +46,7 @@ export function build(){
  const platform=read('config/platform.json'),categories=read('config/categories.json'),media=read('src/shared/media/catalog.json'),knowledge=read('src/shared/knowledge.json'),inventory=read('config/v1-inventory.json');
  const inheritanceContext={provenance:read('config/migration-provenance.json'),evidence:fs.existsSync('config/inherited-v1-fidelity.json')?read('config/inherited-v1-fidelity.json'):null,sourceRoot:path.join(root,'src')};
  const apps=fs.readdirSync('src/apps',{withFileTypes:true}).filter(entry=>entry.isDirectory()).map(entry=>read(`src/apps/${entry.name}/manifest.json`)).sort((a,b)=>a.app_id.localeCompare(b.app_id));const interfaces=fs.existsSync('src/shared/interfaces.json')?read('src/shared/interfaces.json'):undefined;const errors=validate({apps,categories,media,knowledge,interfaces,exists:p=>fs.existsSync(`src/${p}`)});if(errors.length)throw Error(errors.join('\n'));
+ const animalErrors=validateAnimalRecords(animalCatalog,apps);if(animalErrors.length)throw Error(animalErrors.join('\n'));
  const environments=process.argv.includes('--published')?['published']:['developer','tester'];if(environments[0]==='published'){const failures=releaseErrors(platform,apps,media,inventory,inheritanceContext);if(failures.length)throw Error(failures.join('\n'));}
  if(process.argv.includes('--check')){console.log(`Validated ${apps.length} apps and ${categories.length} categories.`);return;}
  for(const environment of environments){

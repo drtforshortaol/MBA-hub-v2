@@ -1,37 +1,12 @@
 import {listedHubApps,whaleTopic} from './whale-reference.js';
 // Index presentation only: canonical titles, app IDs and species content stay intact.
-const names=Object.freeze({
- 'big-bellied-seahorse':'Seahorse, Big-Bellied',
- 'bluespotted-ribbontail-ray':'Ribbontail Ray, Blue-spotted',
- 'gooseneck-barnacle':'Barnacle, Gooseneck',
- 'green-falsejingle':'Falsejingle, Green',
- 'hopkins-rose-nudibranch':'Nudibranch, Hopkins’ Rose',
- 'northern-elephant-seal':'Elephant Seal, Northern',
- 'california-flying-fish':'Flying Fish, California',
- 'california-sheephead':'Sheephead, California'
-});
-const references=Object.freeze({
- 'big-bellied-seahorse':'Big-Bellied Seahorse',
- 'bluespotted-ribbontail-ray':'Blue-spotted Ribbontail Ray',
- 'gooseneck-barnacle':'Gooseneck Barnacle',
- 'green-falsejingle':'Green Falsejingle',
- 'hopkins-rose-nudibranch':'Hopkins’ Rose Nudibranch',
- 'sea-slugs-nudibranchs':'Nudibranchs & Sea Slugs',
- 'northern-elephant-seal':'Seal',
- 'gray-whale':'Whale',
- 'sperm-whale':'Whale'
-});
+import {animalCatalog,animalRecordForApp} from '../shared/animal-records.js';
+const names=Object.fromEntries(animalCatalog.records.map(r=>[r.app_id,r.index.primary]));
+const references=Object.fromEntries(animalCatalog.records.filter(r=>r.index.alternate.length).map(r=>[r.app_id,r.index.alternate[0]]));
 export const animalGroups=Object.freeze([{id:'fishes',title:'Fishes'},{id:'sharks-rays',title:'Sharks & Rays'},{id:'marine-mammals',title:'Marine Mammals'},{id:'invertebrates',title:'Invertebrates'}]);
-const groups=Object.freeze({
- 'big-bellied-seahorse':'fishes','california-flying-fish':'fishes','california-sheephead':'fishes','stargazer-species-guide':'fishes',
- 'bluespotted-ribbontail-ray':'sharks-rays',
- 'gray-whale':'marine-mammals','northern-elephant-seal':'marine-mammals','whale-associated-organisms':'marine-mammals',
- 'gooseneck-barnacle':'invertebrates','green-falsejingle':'invertebrates','hopkins-rose-nudibranch':'invertebrates','sea-slugs-nudibranchs':'invertebrates'
-});
-const searchAliases=Object.freeze({'california-sheephead':'wrasse wrasses','big-bellied-seahorse':'seahorse seahorses big belly','california-flying-fish':'flying fish flying fishes'});
-export function animalGroupFor(id){return groups[id]||'';}
+export function animalGroupFor(id){return animalRecordForApp(id)?.browse_group||'';}
 export function animalFilterGroup(value){return animalGroups.some(g=>g.id===value)?value:'';}
-export function animalSearchTerms(id){const g=animalGroups.find(g=>g.id===groups[id]);return [names[id],references[id],g?.title,searchAliases[id]].filter(Boolean).join(' ');}
+export function animalSearchTerms(id){const r=animalRecordForApp(id);if(!r)return '';const g=animalGroups.find(g=>g.id===r.browse_group);return [r.index.primary,...r.index.alternate,r.common_names.primary,...r.common_names.aliases,r.scientific_names.primary,...r.scientific_names.aliases,g?.title,...r.search_aliases,...Object.values(r.taxonomy).filter(Boolean)].filter(Boolean).join(' ');}
 export function animalIndexEntries(apps){
  const unique=[...new Map(listedHubApps(apps).filter(app=>app.category==='animals'&&app.listed!==false).map(app=>[app.app_id,app])).values()];
  return unique.flatMap(app=>{
