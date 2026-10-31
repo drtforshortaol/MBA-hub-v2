@@ -10,7 +10,7 @@ test('animal letter filter hides nonmatching rows despite flex layout',()=>{
 
 test('animal alphabet disables letters without registered apps',()=>{
  const hub=readFileSync(new URL('../src/core/hub.js',import.meta.url),'utf8');
- assert.match(hub,/apps\.some\(app=>String\(app\.title\|\|''\)\.charAt\(0\)\.toUpperCase\(\)===l\)/);
+ assert.match(hub,/indexed\.some\(entry=>entry\.letter===l\)/);
  assert.match(hub,/\{disabled:''\}/);
  const css=readFileSync(new URL('../src/core/hub.css',import.meta.url),'utf8');
  assert.match(css,/\.letters button:disabled\s*\{/);

@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates.",
-  "snapshot_sha256": "033fa52e00d603de65828525e4916890639a6c6d5657a51c47a34944a74bda6c",
+  "snapshot_sha256": "51fb8fba0f0b03078828784cce0e0ba1e7f09ca6cd6e704a3e6608d009373831",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "033fa52e00d603de65828525e4916890639a6c6d5657a51c47a34944a74bda6c",
+    "snapshot_sha256": "51fb8fba0f0b03078828784cce0e0ba1e7f09ca6cd6e704a3e6608d009373831",
     "resources": [
       {
         "path": "config/categories.json",
@@ -1094,6 +1094,11 @@
         "sha256": "a4c9016fe6899b74bd7c2cb1a382f179fecf242fedc0cf28e60da3dbfa2c2023"
       },
       {
+        "path": "src/core/animal-index.js",
+        "bytes": 963,
+        "sha256": "98c398ba9f4d9b0de010d67a6c549c22d07f87f2628442a41881f4974373d267"
+      },
+      {
         "path": "src/core/app-contract.js",
         "bytes": 3245,
         "sha256": "aad743f840ee86018659ab3a6c3e7be1df8d860bb97bbb74c4ee8ec6071acf27"
@@ -1130,8 +1135,8 @@
       },
       {
         "path": "src/core/hub.js",
-        "bytes": 10313,
-        "sha256": "8e02664d53b7f3122db847f9ba1178e17b2636cab88f34c134b70e045cca590e"
+        "bytes": 10549,
+        "sha256": "1053974eef7b239b57def0f872e3f52bd1d5a928ec4cc07902730b3bc8078beb"
       },
       {
         "path": "src/core/naturalist-change-request.js",
@@ -2383,5 +2388,9 @@
     "recorded_on": "2026-10-31",
     "scope": "Local inline SVG text/leader-line overlays only; same local images, no scripts, automatic external requests or new data collection",
     "reference": "docs/verification/seahorse-label-restoration-20261031.json"
+  },
+  "animal_index_delta_review": {
+    "scope": "Owner-approved index labels and selective Seal/Whale cross-references only; local code, no new network calls or collection",
+    "recorded_on": "2026-10-31"
   }
 }
