@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates.",
-  "snapshot_sha256": "cf2e5dd4b68ccff27b3b9d98676e722a20561c2ec03acfadc41166962eae5670",
+  "snapshot_sha256": "406263fee1e221b30f2f4af2edceb202453c4c99b3de0e0ffd984a6d4c9cf348",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "cf2e5dd4b68ccff27b3b9d98676e722a20561c2ec03acfadc41166962eae5670",
+    "snapshot_sha256": "406263fee1e221b30f2f4af2edceb202453c4c99b3de0e0ffd984a6d4c9cf348",
     "resources": [
       {
         "path": "config/categories.json",
@@ -945,8 +945,8 @@
       },
       {
         "path": "src/apps/open-sea/index.html",
-        "bytes": 38431,
-        "sha256": "2cfcc0bcb1598e6e9d718b4b8e75972d9a9255248f88877b92955d5cbaa91a0a"
+        "bytes": 39034,
+        "sha256": "2c1b8eb9013e03c4e949053ef84d6934cd666fad5f59881d324c309e8431f2ce"
       },
       {
         "path": "src/apps/open-sea/manifest.json",
@@ -2436,6 +2436,13 @@
       "scope": "Owner-requested local text/native disclosure and click-only source references; original cards/media preserved; new wording remains pending content approval",
       "previous_snapshot_sha256": "e311d704c227d6f8b5b568ae5b47f36e40101e18cc1192ab366c389ead150564",
       "snapshot_sha256": "cf2e5dd4b68ccff27b3b9d98676e722a20561c2ec03acfadc41166962eae5670"
+    },
+    {
+      "reviewed_on": "2026-10-31",
+      "reference": "docs/OPEN_SEA_COUNTERSHADING_CONTROL_20261031.md",
+      "scope": "Presentation only: native summary reuses existing card layout, title/subtitle fonts, icon and right chevron; disclosure remains native; explanation and source links unchanged",
+      "previous_snapshot_sha256": "cf2e5dd4b68ccff27b3b9d98676e722a20561c2ec03acfadc41166962eae5670",
+      "snapshot_sha256": "406263fee1e221b30f2f4af2edceb202453c4c99b3de0e0ffd984a6d4c9cf348"
     }
   ]
 }
