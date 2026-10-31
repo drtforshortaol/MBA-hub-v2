@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates.",
-  "snapshot_sha256": "0eacb87aebe3bb78d6ada2d9aa40184f6e8040a3ad19d97155073712ee192a59",
+  "snapshot_sha256": "6a2b35bdf80d7a684090eb98bcece06ed7dcec6f85dbf4bbdfb844c312e6680f",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "0eacb87aebe3bb78d6ada2d9aa40184f6e8040a3ad19d97155073712ee192a59",
+    "snapshot_sha256": "6a2b35bdf80d7a684090eb98bcece06ed7dcec6f85dbf4bbdfb844c312e6680f",
     "resources": [
       {
         "path": "config/categories.json",
@@ -1090,13 +1090,13 @@
       },
       {
         "path": "src/core/animal-filter.js",
-        "bytes": 1066,
-        "sha256": "1a70b6a4cccf2c07d1a6606962d0e5ed3aee0b7a96095c230ba333e08a132315"
+        "bytes": 2398,
+        "sha256": "1ac9d580dbcb91c27adb2d20f15942a74141ab48b65ab0040e97f0f001157e97"
       },
       {
         "path": "src/core/animal-index.js",
-        "bytes": 1184,
-        "sha256": "26aba6b6bc833d879a5dd8e9ef571d0d2ccbe850437d120b3f34cdff35a43925"
+        "bytes": 2918,
+        "sha256": "aa3eb3fee93e5d2a298cd9b429899e085344c1418315a3a4e945ec135ef72f16"
       },
       {
         "path": "src/core/app-contract.js",
@@ -1130,13 +1130,13 @@
       },
       {
         "path": "src/core/hub.css",
-        "bytes": 3643,
-        "sha256": "c0585313a6ff17c20f01fa37f4d415fa6075059a2a188386647acf8f07478121"
+        "bytes": 4176,
+        "sha256": "a3fd45b65112e63ff0e75919aff5abc4bde5a8d43587212a74a7edfea5cffc59"
       },
       {
         "path": "src/core/hub.js",
-        "bytes": 10779,
-        "sha256": "0f02e8f12b9adb4ef8018cdb4cdc5962aa0b9f8b4319c51cd55f383fc5ae0c16"
+        "bytes": 11807,
+        "sha256": "0430803d8f3c14c664f7f59c5c6bd0180ba3dc86fc6bd7dfd628f6f24156a2f4"
       },
       {
         "path": "src/core/naturalist-change-request.js",
@@ -1215,8 +1215,8 @@
       },
       {
         "path": "src/core/navigation.js",
-        "bytes": 4545,
-        "sha256": "a57b52cae26f338b44c698622777ac6d26e4779528109042abe1f15578eb03de"
+        "bytes": 4583,
+        "sha256": "69ad4c3ab850b24c63c3ceda40120a26e29054944c122657dae72b5628cc3083"
       },
       {
         "path": "src/core/offline-controls.js",
@@ -1245,8 +1245,8 @@
       },
       {
         "path": "src/core/search.js",
-        "bytes": 1209,
-        "sha256": "a04f2a41c0c725400b32b9b2ffa055e5ffc81fc72c6d5c79986c3c8a33fbff86"
+        "bytes": 1298,
+        "sha256": "e34214dbaf1e715fd9506f634e36ad174069c8fe30c932da5715378f111c36ac"
       },
       {
         "path": "src/core/section-navigation.js",
@@ -2405,5 +2405,9 @@
   "whale_topic_delta_review": {
     "recorded_on": "2026-10-31",
     "scope": "Owner-approved single whale topic, local presentation grouping and search routing; original scientific text/media/data and historical app files unchanged; no external calls or collection added"
+  },
+  "animal_groups_delta_review": {
+    "recorded_on": "2026-10-31",
+    "scope": "Owner-approved four broad collapsed browse groups, exact reviewed index names/routes and group/search state; local metadata/UI only; canonical species records/scientific content unchanged; no new network endpoints or collection"
   }
 }

@@ -1,3 +1,4 @@
+import {animalSearchTerms} from './animal-index.js';
 import {whaleSearchEntries} from './whale-reference.js';
 // Fold typographic variants only for comparison; keep canonical text and routes intact.
 function searchableText(value){
@@ -12,7 +13,7 @@ export function searchHub(index,query,{category='',apps=[]}={}){
  const categories=new Map(apps.map(app=>[app.app_id,app.category]));
  return whaleSearchEntries(index).flatMap((entry,position)=>{
   if(category&&categories.get(entry.app_id)!==category)return [];
-  const title=searchableText(entry.title),text=searchableText(entry.text),combined=title+' '+text;
+  const title=searchableText(entry.title),text=searchableText(entry.text+' '+animalSearchTerms(entry.app_id)),combined=title+' '+text;
   if(!terms.every(term=>combined.includes(term)))return [];
   const rank=title===phrase?0:title.includes(phrase)?1:terms.every(term=>title.includes(term))?2:text.includes(phrase)?3:4;
   return [{entry,rank,position}];

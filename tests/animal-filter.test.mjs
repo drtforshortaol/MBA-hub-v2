@@ -51,7 +51,7 @@ test('old or invalid saved filter values show all animals',()=>{
 });
 test('Hub binds saved animal letter and remembers changed selections',()=>{
  const source=fs.readFileSync('src/core/hub.js','utf8');
- assert.match(source,/bindAnimalFilter\(view,\{letter:state\.animalLetter,onChange:letter=>\{state\.animalLetter=letter;remember\(\);\}\}\)/);
+ assert.match(source,/bindAnimalFilter\(view,\{letter:state\.animalLetter,onChange:letter=>\{state\.animalLetter=letter;remember\(\);\},group:state\.animalGroup,onGroupChange:group=>\{state\.animalGroup=group;remember\(\);\}\}\)/);
 });
 
 test('All restores every row and unavailable saved letters reset safely',()=>{
