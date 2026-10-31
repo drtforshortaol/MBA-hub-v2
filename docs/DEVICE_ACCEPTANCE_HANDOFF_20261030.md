@@ -1,5 +1,7 @@
 # Current-build iPhone offline acceptance — prepared, not tested
 
+> Historical candidate record. For the current private-review candidate and remaining work, use [CURRENT_DEVICE_ACCEPTANCE_20261031.md](CURRENT_DEVICE_ACCEPTANCE_20261031.md) and its linked delivery receipt. Statements below describe the earlier preparation/publication state.
+
 The next blocker requires actual iPhone observations. No physical acceptance is recorded here. Current live tester release bd61125685d0214f and live developer release 73eb33c7b88e0808 differ from the current prepared artifacts; do not use those live sites to approve this candidate. V1, existing tester and existing developer hosts are unchanged.
 
 ## Fixed candidate

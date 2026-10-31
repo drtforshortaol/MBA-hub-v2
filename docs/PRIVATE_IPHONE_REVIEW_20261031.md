@@ -1,5 +1,7 @@
 # Private iPhone review — 31 October 2026
 
+> Historical candidate record. For the current private-review candidate and remaining work, use [CURRENT_DEVICE_ACCEPTANCE_20261031.md](CURRENT_DEVICE_ACCEPTANCE_20261031.md) and its linked delivery receipt. Statements below describe the earlier preparation/publication state.
+
 Review URL: https://mba-v2-iphone-review-4ec51dd.drtforshort.chatgpt.site
 
 Owner-private Sites copy. Existing GitHub Pages sites remain unchanged.
