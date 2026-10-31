@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates.",
-  "snapshot_sha256": "5cf734a544b60c40c9f6788cc448d56b36648b07abbfd1f7abe2adb6a282a5df",
+  "snapshot_sha256": "e311d704c227d6f8b5b568ae5b47f36e40101e18cc1192ab366c389ead150564",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "5cf734a544b60c40c9f6788cc448d56b36648b07abbfd1f7abe2adb6a282a5df",
+    "snapshot_sha256": "e311d704c227d6f8b5b568ae5b47f36e40101e18cc1192ab366c389ead150564",
     "resources": [
       {
         "path": "config/categories.json",
@@ -35,8 +35,8 @@
       },
       {
         "path": "config/owner-text-reviews.json",
-        "bytes": 6063,
-        "sha256": "c017478bba1144c606d8b8168a03b8acd03ea0804336d8ba827b7df0e639f2b7"
+        "bytes": 6564,
+        "sha256": "79ff82bb35237f5ad654e683ccef6e8f29fb5a06b23991f4eb6a5f7a0490eb8e"
       },
       {
         "path": "config/platform.json",
@@ -95,13 +95,13 @@
       },
       {
         "path": "scripts/audit-privacy-snapshot.mjs",
-        "bytes": 1928,
-        "sha256": "143bb0945c196a9ca1638b317c8659a52880dbb969412db559032ac2f4cde314"
+        "bytes": 2015,
+        "sha256": "19e122980644324bb90453c08a6a3a51bdf571f9b33641372722db5dcb3416d6"
       },
       {
         "path": "scripts/build.mjs",
-        "bytes": 11834,
-        "sha256": "d195305bbbb9b1759bb9122e580bcb0661720b91bac87aaa2158da79f2ef7fcf"
+        "bytes": 12089,
+        "sha256": "26c2887ff8ae19e80fe1de360b08fe6e56e3156c4f6fc478f44ef6e61d878810"
       },
       {
         "path": "scripts/change-request-validation.mjs",
@@ -369,6 +369,11 @@
         "sha256": "75b1a4b15485a5cbbb69fd788cde7a50bc891a3fe6a5f9dd22868af0c03f3060"
       },
       {
+        "path": "scripts/validate-animal-records.mjs",
+        "bytes": 2626,
+        "sha256": "cf31a3fe8e0026b04d784d5982171f651f96e53580d2a1bb95d32fd7b007a2e6"
+      },
+      {
         "path": "scripts/validation/test_acceptance_record.py",
         "bytes": 3458,
         "sha256": "5804c6a940e5ae63182a156199f32329a5db78da7c5ab817ebc705588e291e66"
@@ -540,8 +545,8 @@
       },
       {
         "path": "src/apps/big-bellied-seahorse/index.html",
-        "bytes": 12721,
-        "sha256": "00c271180891abb5a6d4a56a68051df1779b6e546f79f88330e5a1488d87d658"
+        "bytes": 21902,
+        "sha256": "6b38a239e4189b258434bf9db804817a0915626957e6eaa3f43dacab4b255f65"
       },
       {
         "path": "src/apps/big-bellied-seahorse/manifest.json",
@@ -1089,14 +1094,24 @@
         "sha256": "e1bb83bbfd476fff213dac636d9399ddad7574f5f4580acdbf17bb1af7ffed4a"
       },
       {
+        "path": "src/core/animal-classification.js",
+        "bytes": 5593,
+        "sha256": "7ffccc57bf0b508188fc14d8e0498dbb3e62bbac415cac80ee75147b7319f07c"
+      },
+      {
         "path": "src/core/animal-filter.js",
-        "bytes": 1027,
-        "sha256": "a4c9016fe6899b74bd7c2cb1a382f179fecf242fedc0cf28e60da3dbfa2c2023"
+        "bytes": 2398,
+        "sha256": "1ac9d580dbcb91c27adb2d20f15942a74141ab48b65ab0040e97f0f001157e97"
+      },
+      {
+        "path": "src/core/animal-index.js",
+        "bytes": 1926,
+        "sha256": "3c44c9f541d999f2e96ecff24e2b7ba47206ab1a4a8b120afa8ec606d150bd44"
       },
       {
         "path": "src/core/app-contract.js",
-        "bytes": 3245,
-        "sha256": "aad743f840ee86018659ab3a6c3e7be1df8d860bb97bbb74c4ee8ec6071acf27"
+        "bytes": 3530,
+        "sha256": "552ec49c12080d1759928586f6539eb88295505b093a97e1182a5d195d1a9a6d"
       },
       {
         "path": "src/core/app-view.js",
@@ -1125,13 +1140,13 @@
       },
       {
         "path": "src/core/hub.css",
-        "bytes": 3625,
-        "sha256": "6d410009237346240e9357114fdf22d92d59684f425685e3fc2e9b847a5807da"
+        "bytes": 4647,
+        "sha256": "835d990cb69c98d3bad15ad221bc5539db52472d7dc7cace6fc2203101bbcea4"
       },
       {
         "path": "src/core/hub.js",
-        "bytes": 10313,
-        "sha256": "8e02664d53b7f3122db847f9ba1178e17b2636cab88f34c134b70e045cca590e"
+        "bytes": 12363,
+        "sha256": "d0bbe56611716ee79613e6f759dbc919c34fab49cd65221827e276e60bfb816c"
       },
       {
         "path": "src/core/naturalist-change-request.js",
@@ -1210,8 +1225,8 @@
       },
       {
         "path": "src/core/navigation.js",
-        "bytes": 4545,
-        "sha256": "a57b52cae26f338b44c698622777ac6d26e4779528109042abe1f15578eb03de"
+        "bytes": 4605,
+        "sha256": "f412a95d97d30882b165e90d5f2b2b81b7160274ec80b9f3ff07e8bcd58d8c87"
       },
       {
         "path": "src/core/offline-controls.js",
@@ -1240,13 +1255,18 @@
       },
       {
         "path": "src/core/search.js",
-        "bytes": 1132,
-        "sha256": "e0729c7307985df02752207a8018523e2291fa5d2f4411d3c51c6f40dfeb26d8"
+        "bytes": 1298,
+        "sha256": "e34214dbaf1e715fd9506f634e36ad174069c8fe30c932da5715378f111c36ac"
       },
       {
         "path": "src/core/section-navigation.js",
         "bytes": 3435,
         "sha256": "4543850ab43b9864e76b1cca189e9f96e5d49e6e04f88e4a75cfa2b0b9f514c6"
+      },
+      {
+        "path": "src/core/whale-reference.js",
+        "bytes": 2935,
+        "sha256": "5dafd618abe738d2d03427f3daaa0ad9d56e3168757729df429572aefbadc7f6"
       },
       {
         "path": "src/core/worker-channel.js",
@@ -1277,6 +1297,11 @@
         "path": "src/refresh.html",
         "bytes": 5557,
         "sha256": "97bf61146958e4aa664c7b16bae5787d3232ff00ba8116a66ce08c1dab15a111"
+      },
+      {
+        "path": "src/shared/animal-records.js",
+        "bytes": 24076,
+        "sha256": "f3dd010408c3b02b704850bcc0dae884af7a2254d8cb261cc4213ff1a10da4a3"
       },
       {
         "path": "src/shared/interfaces.json",
@@ -2371,5 +2396,37 @@
     "No new physical-device, pilot, rollback or production-release acceptance.",
     "Future source/config/build-script changes invalidate the recorded snapshot and require privacy re-review; CI regression checks enforce the binding."
   ],
-  "release_authorized": false
+  "release_authorized": false,
+  "ci_reconciliation": {
+    "recorded_on": "2026-10-30",
+    "failed_run": 41085130760,
+    "cause": "CI Python checks generate scripts/**/__pycache__/*.pyc before npm test; these were wrongly counted as source inputs.",
+    "change": "Exclude only generated Python .pyc files under scripts/**/__pycache__; actual source/config/build files remain hashed and symlinks remain rejected.",
+    "runtime_changed": false
+  },
+  "presentation_delta_review": {
+    "recorded_on": "2026-10-31",
+    "scope": "Local inline SVG text/leader-line overlays only; same local images, no scripts, automatic external requests or new data collection",
+    "reference": "docs/verification/seahorse-label-restoration-20261031.json"
+  },
+  "animal_index_delta_review": {
+    "scope": "Owner-approved index labels and selective Seal/Whale cross-references only; local code, no new network calls or collection",
+    "recorded_on": "2026-10-31"
+  },
+  "compact_alphabet_delta_review": {
+    "recorded_on": "2026-10-31",
+    "scope": "Local index and filter presentation only: omit empty letters, All control and same-record B/S seahorse routes; no new data collection or external calls"
+  },
+  "whale_topic_delta_review": {
+    "recorded_on": "2026-10-31",
+    "scope": "Owner-approved single whale topic, local presentation grouping and search routing; original scientific text/media/data and historical app files unchanged; no external calls or collection added"
+  },
+  "animal_groups_delta_review": {
+    "recorded_on": "2026-10-31",
+    "scope": "Owner-approved four broad collapsed browse groups, exact reviewed index names/routes and group/search state; local metadata/UI only; canonical species records/scientific content unchanged; no new network endpoints or collection"
+  },
+  "classification_delta_review": {
+    "recorded_on": "2026-10-31",
+    "scope": "Owner-authorized permanent animal records, optional source-attributed taxonomy and searchable names; visible collapsed classification browser and in-app names/source card. No new remote API calls, automatic external resources or collection. Existing source app files/scientific prose preserved."
+  }
 }

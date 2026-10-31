@@ -1,7 +1,7 @@
 import fs from 'node:fs';import path from 'node:path';import {createHash} from 'node:crypto';import {fileURLToPath} from 'node:url';
 const sha=b=>createHash('sha256').update(b).digest('hex');
 export function privacySnapshot(root='.'){
- const files=[];const add=p=>{const full=path.join(root,p),stat=fs.lstatSync(full);if(stat.isSymbolicLink())throw Error('Privacy snapshot rejects symlink: '+p);if(stat.isDirectory())for(const child of fs.readdirSync(full).sort())add(p+'/'+child);else if(stat.isFile()&&p!=='config/privacy-review.json')files.push(p);};
+ const files=[];const add=p=>{const full=path.join(root,p),stat=fs.lstatSync(full);if(stat.isSymbolicLink())throw Error('Privacy snapshot rejects symlink: '+p);if(stat.isDirectory())for(const child of fs.readdirSync(full).sort())add(p+'/'+child);else if(stat.isFile()&&p!=='config/privacy-review.json'&&!(p.startsWith('scripts/')&&p.split('/').includes('__pycache__')&&p.endsWith('.pyc')))files.push(p);};
  for(const p of ['src','config','scripts','package.json','docs/GUIDE_CONTENT_RESTORED.md'])add(p);
  const resources=files.sort().map(p=>{const b=fs.readFileSync(path.join(root,p));return {path:p,bytes:b.length,sha256:sha(b)};});
  const automaticExternalResources=[],sensitiveBrowserAPIs=[],storageFiles=[],networkFiles=[];
