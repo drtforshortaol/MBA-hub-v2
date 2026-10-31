@@ -53,3 +53,10 @@ test('Hub binds saved animal letter and remembers changed selections',()=>{
  const source=fs.readFileSync('src/core/hub.js','utf8');
  assert.match(source,/bindAnimalFilter\(view,\{letter:state\.animalLetter,onChange:letter=>\{state\.animalLetter=letter;remember\(\);\}\}\)/);
 });
+
+test('All restores every row and unavailable saved letters reset safely',()=>{
+ const f=fixture('Z');assert.ok(f.entries.every(e=>!e.hidden));assert.deepEqual(f.changes,['']);
+ const changes=[],buttons=['All','B','S'].map(textContent=>({textContent,setAttribute(k,v){this.pressed=v;},addEventListener(t,f){this.click=f;}})),entries=['B','S'].map(letter=>({dataset:{letter}}));
+ const view={querySelectorAll:()=>[{querySelectorAll:()=>buttons,parentElement:{querySelectorAll:()=>entries}}]};
+ bindAnimalFilter(view,{letter:'B',onChange:l=>changes.push(l)});assert.equal(buttons[0].pressed,'false');assert.deepEqual(entries.map(e=>e.hidden),[false,true]);buttons[0].click();assert.equal(buttons[0].pressed,'true');assert.ok(entries.every(e=>!e.hidden));assert.deepEqual(changes,['']);
+});

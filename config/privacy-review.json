@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates.",
-  "snapshot_sha256": "51fb8fba0f0b03078828784cce0e0ba1e7f09ca6cd6e704a3e6608d009373831",
+  "snapshot_sha256": "73ecd87d233bb62dba1e2f5b5e880039a052eacbf21ea653b4f55c9a0a205d35",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "51fb8fba0f0b03078828784cce0e0ba1e7f09ca6cd6e704a3e6608d009373831",
+    "snapshot_sha256": "73ecd87d233bb62dba1e2f5b5e880039a052eacbf21ea653b4f55c9a0a205d35",
     "resources": [
       {
         "path": "config/categories.json",
@@ -1090,13 +1090,13 @@
       },
       {
         "path": "src/core/animal-filter.js",
-        "bytes": 1027,
-        "sha256": "a4c9016fe6899b74bd7c2cb1a382f179fecf242fedc0cf28e60da3dbfa2c2023"
+        "bytes": 1066,
+        "sha256": "1a70b6a4cccf2c07d1a6606962d0e5ed3aee0b7a96095c230ba333e08a132315"
       },
       {
         "path": "src/core/animal-index.js",
-        "bytes": 963,
-        "sha256": "98c398ba9f4d9b0de010d67a6c549c22d07f87f2628442a41881f4974373d267"
+        "bytes": 1060,
+        "sha256": "41b9d4452e4c2fb4cd43afe878d0392bcdaeeebfa16a5e1e5501077e216a944d"
       },
       {
         "path": "src/core/app-contract.js",
@@ -1130,13 +1130,13 @@
       },
       {
         "path": "src/core/hub.css",
-        "bytes": 3625,
-        "sha256": "6d410009237346240e9357114fdf22d92d59684f425685e3fc2e9b847a5807da"
+        "bytes": 3643,
+        "sha256": "c0585313a6ff17c20f01fa37f4d415fa6075059a2a188386647acf8f07478121"
       },
       {
         "path": "src/core/hub.js",
-        "bytes": 10549,
-        "sha256": "1053974eef7b239b57def0f872e3f52bd1d5a928ec4cc07902730b3bc8078beb"
+        "bytes": 10592,
+        "sha256": "ee1f25c1ac6a9c81d474dcb1f5785ad9855a76380ff64a9e1a61c8c23ee54e43"
       },
       {
         "path": "src/core/naturalist-change-request.js",
@@ -2392,5 +2392,9 @@
   "animal_index_delta_review": {
     "scope": "Owner-approved index labels and selective Seal/Whale cross-references only; local code, no new network calls or collection",
     "recorded_on": "2026-10-31"
+  },
+  "compact_alphabet_delta_review": {
+    "recorded_on": "2026-10-31",
+    "scope": "Local index and filter presentation only: omit empty letters, All control and same-record B/S seahorse routes; no new data collection or external calls"
   }
 }

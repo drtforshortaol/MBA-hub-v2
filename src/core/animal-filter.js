@@ -4,9 +4,9 @@ export function bindAnimalFilter(view,{letter='',onChange}){
  let selected=animalFilterLetter(letter);
  for(const row of view.querySelectorAll('.letters')){
   const buttons=[...row.querySelectorAll('button')],entries=[...row.parentElement.querySelectorAll('.entry')];
-  if(selected&&buttons.some(button=>button.textContent===selected&&button.disabled)){selected='';onChange(selected);}
+  if(selected&&!buttons.some(button=>button.textContent===selected&&!button.disabled)){selected='';onChange(selected);}
   function apply(){
-   buttons.forEach(button=>button.setAttribute('aria-pressed',String(Boolean(selected)&&button.textContent===selected)));
+   buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.textContent==='All'?!selected:Boolean(selected)&&button.textContent===selected)));
    entries.forEach(entry=>{entry.hidden=Boolean(selected)&&entry.dataset.letter!==selected;});
   }
   buttons.forEach(button=>button.addEventListener('click',()=>{

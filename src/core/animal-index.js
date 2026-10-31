@@ -1,10 +1,12 @@
 // Index presentation only: canonical titles, app IDs and species content stay intact.
 const names=Object.freeze({
+ 'big-bellied-seahorse':'Seahorse, Big-Bellied',
  'northern-elephant-seal':'Elephant Seal, Northern',
  'california-flying-fish':'Flying Fish, California',
  'california-sheephead':'Sheephead, California'
 });
 const references=Object.freeze({
+ 'big-bellied-seahorse':'Big-Bellied Seahorse',
  'northern-elephant-seal':'Seal',
  'gray-whale':'Whale',
  'sperm-whale':'Whale'
