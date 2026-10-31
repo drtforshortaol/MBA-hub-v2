@@ -29,7 +29,7 @@ test('Seahorse search sections remain identical to their displayed draft text', 
 });
 
 test('Seahorse photos remain registered for offline review without implying permission', () => {
-  const images = [...html.matchAll(/<img\b[^>]*\bsrc="\.\.\/(IMG_\d+\.jpeg)"/g)].map(match => match[1]);
+  const images = [...html.matchAll(/<(?:img|image)\b[^>]*\b(?:src|href)="\.\.\/(IMG_\d+\.jpeg)"/g)].map(match => match[1]);
   const paths = [...new Set(images.map(image => `apps/${image}`))].sort();
   assert.deepEqual(paths, manifest.offline_assets.filter(path => /IMG_\d+\.jpeg$/.test(path)).sort());
   assert.equal(paths.length, 3);

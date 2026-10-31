@@ -68,7 +68,7 @@
       "authorization_reference": "Owner conversation: approval request for exact ten-section Seahorse draft at 74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9, followed by explanation of clearing the content blocker",
       "authorization_quote": "Proceed",
       "candidate_commit": "74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9",
-      "content_sha256": "288240c9d57dc5f20ec2b34f8932088291e7c4edd6d6862986d66609107befaa",
+      "content_sha256": "23d8d9323b7a767e1f6e6fe52357cccc201b19d497bf1f1723f936e8d9b86528",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -90,6 +90,13 @@
           "scope": "Owner accepted exact eight-feature anatomy-key addition and replacement",
           "previous_content_sha256": "6b663ca281d3e7ae42b2e9f9628e55c01c4543cd6479da31d498614fb4a1295f",
           "content_sha256": "288240c9d57dc5f20ec2b34f8932088291e7c4edd6d6862986d66609107befaa"
+        },
+        {
+          "recorded_on": "2026-10-31",
+          "review_reference": "docs/verification/seahorse-label-restoration-20261031.json",
+          "scope": "Owner-requested restoration of on-image labels on existing approved visible features; unchanged photo bytes and approved prose",
+          "previous_content_sha256": "288240c9d57dc5f20ec2b34f8932088291e7c4edd6d6862986d66609107befaa",
+          "content_sha256": "23d8d9323b7a767e1f6e6fe52357cccc201b19d497bf1f1723f936e8d9b86528"
         }
       ],
       "additional_owner_decisions": [

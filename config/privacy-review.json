@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates.",
-  "snapshot_sha256": "743fa8b0664082e8f86ab26e011410ce947b1ed61801d6acc2a890db61135180",
+  "snapshot_sha256": "033fa52e00d603de65828525e4916890639a6c6d5657a51c47a34944a74bda6c",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "743fa8b0664082e8f86ab26e011410ce947b1ed61801d6acc2a890db61135180",
+    "snapshot_sha256": "033fa52e00d603de65828525e4916890639a6c6d5657a51c47a34944a74bda6c",
     "resources": [
       {
         "path": "config/categories.json",
@@ -35,8 +35,8 @@
       },
       {
         "path": "config/owner-text-reviews.json",
-        "bytes": 6063,
-        "sha256": "c017478bba1144c606d8b8168a03b8acd03ea0804336d8ba827b7df0e639f2b7"
+        "bytes": 6564,
+        "sha256": "79ff82bb35237f5ad654e683ccef6e8f29fb5a06b23991f4eb6a5f7a0490eb8e"
       },
       {
         "path": "config/platform.json",
@@ -540,8 +540,8 @@
       },
       {
         "path": "src/apps/big-bellied-seahorse/index.html",
-        "bytes": 12721,
-        "sha256": "00c271180891abb5a6d4a56a68051df1779b6e546f79f88330e5a1488d87d658"
+        "bytes": 21902,
+        "sha256": "6b38a239e4189b258434bf9db804817a0915626957e6eaa3f43dacab4b255f65"
       },
       {
         "path": "src/apps/big-bellied-seahorse/manifest.json",
@@ -2378,5 +2378,10 @@
     "cause": "CI Python checks generate scripts/**/__pycache__/*.pyc before npm test; these were wrongly counted as source inputs.",
     "change": "Exclude only generated Python .pyc files under scripts/**/__pycache__; actual source/config/build files remain hashed and symlinks remain rejected.",
     "runtime_changed": false
+  },
+  "presentation_delta_review": {
+    "recorded_on": "2026-10-31",
+    "scope": "Local inline SVG text/leader-line overlays only; same local images, no scripts, automatic external requests or new data collection",
+    "reference": "docs/verification/seahorse-label-restoration-20261031.json"
   }
 }
