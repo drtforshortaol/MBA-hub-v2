@@ -137,6 +137,22 @@
           "section_id": "Seahorse-anatomy-key"
         }
       ]
+    },
+    {
+      "app_id": "open-sea",
+      "status": "owner-approved-text",
+      "scope": "authored-text-only",
+      "reviewer": "owner",
+      "reviewed_on": "2026-11-01",
+      "review_reference": "docs/OPEN_SEA_TEXT_APPROVAL_20261101.md",
+      "authorization_reference": "docs/verification/open-sea-countershading-text-approval-20261101.json",
+      "authorization_quote": "Approved",
+      "candidate_commit": "6c4f44040cb9dad147e7b7aa2557ba91ec7d93de",
+      "section_ids": [
+        "Countershading"
+      ],
+      "content_sha256": "2dd2611e240968503c391359b60686bebfe20e445941b15cddb5ebd98913a7e5",
+      "release_authorized": false
     }
   ]
 }

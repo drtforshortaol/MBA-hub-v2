@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generatedAt": "2026-11-01T19:53:20.230Z",
+  "generatedAt": "2026-11-01T22:40:49.533Z",
   "platformVersion": "2.0.0-alpha.7",
   "stage": "migration-review",
   "apps": 33,
@@ -13,7 +13,6 @@
     "release gate: pilotPassed",
     "release gate: deviceOfflinePassed",
     "release gate: rollbackDevicePassed",
-    "content review pending: open-sea",
     "content review pending: sperm-whale"
   ],
   "publicationReview": {

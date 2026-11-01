@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates.",
-  "snapshot_sha256": "3a52e56dd6149ba63b3422a2667291bd8e2b148ed608e39135390c09f75e2bb1",
+  "snapshot_sha256": "7b0f8d51005c9b19cf2d50a601ae0dc0d4830a2f89d864011e43266fea755ec0",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "3a52e56dd6149ba63b3422a2667291bd8e2b148ed608e39135390c09f75e2bb1",
+    "snapshot_sha256": "7b0f8d51005c9b19cf2d50a601ae0dc0d4830a2f89d864011e43266fea755ec0",
     "resources": [
       {
         "path": "config/categories.json",
@@ -35,8 +35,8 @@
       },
       {
         "path": "config/owner-text-reviews.json",
-        "bytes": 8116,
-        "sha256": "286a1fca5ff8901ce4e70bb7ec2753416d93804fc100058d6a38a0251cdd3cc6"
+        "bytes": 8764,
+        "sha256": "4c0d9a7efcb068c107cd7be90149bf377bc4a6fd95bf97d002414fc3b8edaf28"
       },
       {
         "path": "config/platform.json",
@@ -950,8 +950,8 @@
       },
       {
         "path": "src/apps/open-sea/manifest.json",
-        "bytes": 18781,
-        "sha256": "43b9e15bc5651d75fc6aa09be9dadd6886b25211a127bf1dc103d822292466eb"
+        "bytes": 18913,
+        "sha256": "cf681eb5b953a72e852f3a63d1eb0811e16406e060609694309408608f3e0b7f"
       },
       {
         "path": "src/apps/open-sea/styles.css",
@@ -2502,6 +2502,13 @@
       "scope": "Move existing Sperm Whale photo credit and license text to local footnotes; numbered forward and return anchors; media bytes/rights unchanged",
       "previous_snapshot_sha256": "6f5f69cc1698ff0c0e4b5b33e2f9f78da44895959cf49996eef4d5c51d5c1598",
       "snapshot_sha256": "3a52e56dd6149ba63b3422a2667291bd8e2b148ed608e39135390c09f75e2bb1"
+    },
+    {
+      "reviewed_on": "2026-11-01",
+      "reference": "docs/OPEN_SEA_TEXT_APPROVAL_20261101.md",
+      "scope": "Record explicit owner Countershading text approval; manifest/approval metadata only; scientific/runtime source and media unchanged",
+      "previous_snapshot_sha256": "3a52e56dd6149ba63b3422a2667291bd8e2b148ed608e39135390c09f75e2bb1",
+      "snapshot_sha256": "7b0f8d51005c9b19cf2d50a601ae0dc0d4830a2f89d864011e43266fea755ec0"
     }
   ]
 }

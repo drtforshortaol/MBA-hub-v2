@@ -4283,15 +4283,16 @@
           "source_path": "apps/open-sea/manifest.json",
           "local_path": "src/apps/open-sea/manifest.json",
           "pinned_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-          "current_sha256": "43b9e15bc5651d75fc6aa09be9dadd6886b25211a127bf1dc103d822292466eb",
+          "current_sha256": "cf681eb5b953a72e852f3a63d1eb0811e16406e060609694309408608f3e0b7f",
           "status": "changed",
           "previous_current_sha256": "c2d6b95f4693370192c4df480c25effe7386967271a6ccc72baed6b157cf3667",
           "static_text_equal": false,
           "content_data_comparison": {
             "equal_after_only_image_url_normalization": false
           },
-          "review_reference": "docs/OPEN_SEA_COUNTERSHADING_20261031.md",
-          "review_scope": "Owner-requested countershading addition; new wording pending approval, not unchanged-V1 fidelity."
+          "review_reference": "docs/OPEN_SEA_TEXT_APPROVAL_20261101.md",
+          "review_scope": "Manifest review status only; scientific app HTML unchanged; Countershading text explicitly approved.",
+          "previous_approval_current_sha256": "43b9e15bc5651d75fc6aa09be9dadd6886b25211a127bf1dc103d822292466eb"
         },
         {
           "source_path": "apps/open-sea/styles.css",
