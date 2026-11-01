@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates.",
-  "snapshot_sha256": "ede5fe579f3f4d1104980dd3289ff6b17bd5d86da0dac420f4c42f9acbdf8ef3",
+  "snapshot_sha256": "7c32bedd266509030a75bd45a7563229e5353fe64be3883cb547f46b5c121453",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "ede5fe579f3f4d1104980dd3289ff6b17bd5d86da0dac420f4c42f9acbdf8ef3",
+    "snapshot_sha256": "7c32bedd266509030a75bd45a7563229e5353fe64be3883cb547f46b5c121453",
     "resources": [
       {
         "path": "config/categories.json",
@@ -20,8 +20,8 @@
       },
       {
         "path": "config/inherited-v1-fidelity.json",
-        "bytes": 77678,
-        "sha256": "8edd2158cbf9373f25d5b64c14447dd0172c3c45a9f0f08c9de8f447fef7f4b8"
+        "bytes": 77980,
+        "sha256": "d73aa6052309c5201d0aed479682777ab446ae090fe6253de895660249d1ccbd"
       },
       {
         "path": "config/migration-blob-ledger.json",
@@ -236,7 +236,7 @@
       {
         "path": "scripts/migration/review-tree-of-life-fidelity.mjs",
         "bytes": 15324,
-        "sha256": "8de808c733523c2d027ba285d9fa87db0e34f430bbddc9a23f2badec6b625649"
+        "sha256": "f5669fa683db7e0ebc07b8d53591940114ab66a65466e1a6e88704c29d826d04"
       },
       {
         "path": "scripts/migration/review-whale-parasites-fidelity.mjs",
@@ -995,13 +995,13 @@
       },
       {
         "path": "src/apps/sperm-whale/index.html",
-        "bytes": 4459,
-        "sha256": "90f7b2f03399d3282249c7c21643faec25772c180d13c3e05a72df7765bf60cb"
+        "bytes": 8483,
+        "sha256": "568e6784b9f4b4b9acf13a96b4ee8bea80addcbf176a0f39196efc9da41c28af"
       },
       {
         "path": "src/apps/sperm-whale/manifest.json",
-        "bytes": 3887,
-        "sha256": "d0b2cf9ae009d41da159d84daae2d7e4058598542e80bee1c18cef20cb9afba3"
+        "bytes": 6600,
+        "sha256": "ef7b0d40f32737bb22ce8f702a07837a3633321349f06c1cfd66f6f718f876dc"
       },
       {
         "path": "src/apps/stargazer-species-guide/index.html",
@@ -1025,8 +1025,8 @@
       },
       {
         "path": "src/apps/tree-of-life-origins/manifest.json",
-        "bytes": 35854,
-        "sha256": "d95bc86fdfdeff9847ded94eba7fc89e27237f2405842c579b3f920a5463be92"
+        "bytes": 35853,
+        "sha256": "c28e65b3d6790d76a77f1c1e999d2c694e3732b49d2fea23f5b37b7983817f9f"
       },
       {
         "path": "src/apps/tree-of-life-origins/styles.css",
@@ -1305,8 +1305,8 @@
       },
       {
         "path": "src/shared/animal-records.js",
-        "bytes": 24076,
-        "sha256": "f3dd010408c3b02b704850bcc0dae884af7a2254d8cb261cc4213ff1a10da4a3"
+        "bytes": 24822,
+        "sha256": "d5480d37be62e3bf772d53a50453b90a1d749f965b8cb08f9fc1b0d9fad52364"
       },
       {
         "path": "src/shared/interfaces.json",
@@ -2455,6 +2455,13 @@
       "scope": "Owner-requested shared maintenance panel concealment, search filtering and old-help fragment routing; scientific app bytes and approvals unchanged",
       "previous_snapshot_sha256": "406263fee1e221b30f2f4af2edceb202453c4c99b3de0e0ffd984a6d4c9cf348",
       "snapshot_sha256": "ede5fe579f3f4d1104980dd3289ff6b17bd5d86da0dac420f4c42f9acbdf8ef3"
+    },
+    {
+      "reviewed_on": "2026-11-01",
+      "reference": "docs/TREE_AND_SPERM_WHALE_20261101.md",
+      "scope": "Local sourced Sperm Whale text and source links; list two existing apps; canonical animal browse metadata; no new automatic resource, storage or network behavior",
+      "previous_snapshot_sha256": "ede5fe579f3f4d1104980dd3289ff6b17bd5d86da0dac420f4c42f9acbdf8ef3",
+      "snapshot_sha256": "7c32bedd266509030a75bd45a7563229e5353fe64be3883cb547f46b5c121453"
     }
   ]
 }

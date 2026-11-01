@@ -1159,7 +1159,7 @@
       "review_reference": "docs/TREE_OF_LIFE_ENGINEERING_REVIEW_20261023.md",
       "reviewed_on": "2026-10-24",
       "review_method": "Independently reviewed complete pinned/current inventory, markup/code/style, source-derived search, media and executable/shared navigation. Existing unchanged V1 authorization only; no new scientific/editorial/image/device/release approval. Recovered evidence and exact resource digest reverified before binding.",
-      "content_sha256": "33730d698b9d8aa9df73dd8f3e6e7cd54ad80782d093a8b7a53f00fb6972e99b",
+      "content_sha256": "3991d2fe825d1a86de079e42f2f028bc2072a115056296c03206c0e124b9b28f",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -1188,6 +1188,11 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "66fb007f41ed8eef00665b956be3610dda5d9ff63a13bb4cacdf393b5ad32620",
           "content_sha256": "33730d698b9d8aa9df73dd8f3e6e7cd54ad80782d093a8b7a53f00fb6972e99b"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/TREE_AND_SPERM_WHALE_20261101.md",
+          "scope": "Reviewed metadata-only listed false to true; original scientific/runtime files unchanged; complete manifest guard updated for exactly that difference"
         }
       ]
     },

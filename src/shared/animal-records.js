@@ -60,6 +60,11 @@ export const animalCatalog = {
       "title": "Animal Diversity Web — Uranoscopus scaber classification, family context only",
       "url": "https://animaldiversity.org/accounts/Uranoscopus_scaber/",
       "checked_on": "2026-10-31"
+    },
+    "noaa-sperm-whale": {
+      "title": "NOAA Fisheries — Sperm Whale",
+      "url": "https://www.fisheries.noaa.gov/species/sperm-whale",
+      "checked_on": "2026-11-01"
     }
   },
   "records": [
@@ -722,22 +727,45 @@ export const animalCatalog = {
           "Whale"
         ]
       },
-      "browse_group": null,
-      "search_aliases": [],
+      "browse_group": "marine-mammals",
+      "search_aliases": [
+        "toothed whale",
+        "echolocation",
+        "spermaceti",
+        "codas"
+      ],
       "taxonomy": {
-        "phylum": null,
-        "class": null,
+        "phylum": "Chordata",
+        "class": "Mammalia",
         "order": null,
-        "family": null,
-        "genus": null,
-        "species": null
+        "family": "Physeteridae",
+        "genus": "Physeter",
+        "species": "Physeter macrocephalus"
       },
-      "taxonomy_sources": {},
+      "taxonomy_sources": {
+        "phylum": [
+          "noaa-sperm-whale"
+        ],
+        "class": [
+          "noaa-sperm-whale"
+        ],
+        "family": [
+          "noaa-sperm-whale"
+        ],
+        "genus": [
+          "noaa-sperm-whale"
+        ],
+        "species": [
+          "noaa-sperm-whale"
+        ]
+      },
       "review": {
-        "status": "pending",
-        "checked_on": null,
-        "source_ids": [],
-        "note": "Unlisted supporting app. Existing name recorded; classification not reviewed here."
+        "status": "partial",
+        "checked_on": "2026-11-01",
+        "source_ids": [
+          "noaa-sperm-whale"
+        ],
+        "note": "Order left unassigned: sources differ in rank treatment of Cetacea and Artiodactyla. Sourced shared ranks only."
       },
       "identity_source": "Existing app names and owner-approved index review; common/scientific identity is preserved, not independently reassigned."
     },
@@ -802,7 +830,10 @@ export const animalCatalog = {
       "record_type": "topic",
       "common_names": {
         "primary": "Whales — Hitchhikers & Parasites",
-        "aliases": ["Whale-Associated Organisms", "Whale Parasites & Associates"]
+        "aliases": [
+          "Whale-Associated Organisms",
+          "Whale Parasites & Associates"
+        ]
       },
       "scientific_names": {
         "primary": null,
