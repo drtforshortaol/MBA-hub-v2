@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "source_commit": "7236e6459cb8b88411a9575624e9e5dcd3659863",
+  "release": "aa406db2f1d84ac7",
+  "host_source_commit": "51a12d73cec7fb02cc06b00ab29e243aedff29f0",
+  "deployment": {
+    "id": "appgdep_6ae7905966b0819188ca9c9c487a841b",
+    "project_id": "appgprj_6ae55daba7b08191a19ce7036c6a4152",
+    "title": "MBA Hub V2 — iPhone Review",
+    "version_id": "appgprj_6ae55daba7b08191a19ce7036c6a4152~appgver_8c7a5dddfdc081918bbf0a5c52dcee24",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://mba-v2-iphone-review-4ec51dd.drtforshort.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ae55daba7b08191a19ce7036c6a4152",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-11-01T19:17:54.776157+00:00"
+  },
+  "validation": {
+    "full_suite_passed": 1066,
+    "full_suite_failed": 0,
+    "artifacts": "both passed",
+    "security": "passed",
+    "privacy": "snapshot matches",
+    "local_host_resources": 380,
+    "host_verifier_scenarios": 8,
+    "browser": "Local built Tree page: Back and Return to Hub visible above title on same row; both 44px height, 16px font, padding 9px 16px",
+    "physical_device": "not assessed"
+  },
+  "scope": "Tree-only shared navigation presentation; existing destinations preserved; no production approval"
+}
