@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates.",
-  "snapshot_sha256": "7c32bedd266509030a75bd45a7563229e5353fe64be3883cb547f46b5c121453",
+  "snapshot_sha256": "6eecc7c5ec3edd85005f75e749a2bd1789bd6a18fd52c33b129a6090b15a0123",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "7c32bedd266509030a75bd45a7563229e5353fe64be3883cb547f46b5c121453",
+    "snapshot_sha256": "6eecc7c5ec3edd85005f75e749a2bd1789bd6a18fd52c33b129a6090b15a0123",
     "resources": [
       {
         "path": "config/categories.json",
@@ -1110,8 +1110,8 @@
       },
       {
         "path": "src/core/app-contract.js",
-        "bytes": 3886,
-        "sha256": "4cae6dc9c3fd3272fa9d229b3867f67d9e5cc4f6201506aa911b3a87d12fb8a7"
+        "bytes": 3896,
+        "sha256": "82016f10e7d5e91394af75e012714b68b769b05167932a99f8a7faeeb09c3a1e"
       },
       {
         "path": "src/core/app-view.js",
@@ -2462,6 +2462,13 @@
       "scope": "Local sourced Sperm Whale text and source links; list two existing apps; canonical animal browse metadata; no new automatic resource, storage or network behavior",
       "previous_snapshot_sha256": "ede5fe579f3f4d1104980dd3289ff6b17bd5d86da0dac420f4c42f9acbdf8ef3",
       "snapshot_sha256": "7c32bedd266509030a75bd45a7563229e5353fe64be3883cb547f46b5c121453"
+    },
+    {
+      "reviewed_on": "2026-11-01",
+      "reference": "docs/TREE_OF_LIFE_BACK_20261101.md",
+      "scope": "Recognize exact short Hub label for existing shared contextual Back; no new storage or network behavior",
+      "previous_snapshot_sha256": "7c32bedd266509030a75bd45a7563229e5353fe64be3883cb547f46b5c121453",
+      "snapshot_sha256": "6eecc7c5ec3edd85005f75e749a2bd1789bd6a18fd52c33b129a6090b15a0123"
     }
   ]
 }

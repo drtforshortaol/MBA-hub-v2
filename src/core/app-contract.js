@@ -5,7 +5,7 @@ import {createSectionNavigator,revisitSectionLink} from './section-navigation.js
 import {mainHubURL,returnToVisit,appRestoreState,captureAppVisit} from './navigation.js';
 import {initializeOffline} from './offline.js';
 const root=new URL('../',import.meta.url);let env;try{env=await fetch(new URL('environment.json',root)).then(r=>r.json());}catch{env={namespace:'mba-v2'};}
-const hubLinks=[...document.querySelectorAll('a')].filter(link=>/MBA Hub|Return to Hub/i.test(link.textContent)&&new URL(link.href).pathname===new URL('index.html',root).pathname);
+const hubLinks=[...document.querySelectorAll('a')].filter(link=>/MBA Hub|Return to Hub|^← Hub$/i.test(link.textContent)&&new URL(link.href).pathname===new URL('index.html',root).pathname);
 hubLinks.forEach(link=>{link.href=mainHubURL(root).href;});
 const primaryHub=hubLinks[0];if(primaryHub){const button=document.createElement('a');button.href=mainHubURL(root).href;button.textContent='← Back';button.className=primaryHub.className;button.setAttribute('data-v2-back','true');button.style.cssText='font:inherit;cursor:pointer;margin-right:8px;min-height:44px;display:inline-flex;align-items:center';button.onclick=event=>{event.preventDefault();let destination=mainHubURL(root);try{destination=returnToVisit(root,location.href,sessionStorage,env.namespace);}catch{}location.assign(destination);};primaryHub.before(button);}
 function viewState(){return captureAppView(document,scrollY);}
