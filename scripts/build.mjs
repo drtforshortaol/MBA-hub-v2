@@ -1,3 +1,4 @@
+import {isIntegratedLegacyHelp} from '../src/core/integrated-help.js';
 import {animalCatalog} from '../src/shared/animal-records.js';
 import {validateAnimalRecords} from './validate-animal-records.mjs';
 import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';import {preparePublicReview,inheritedApprovalSupported,ownerTextApprovalSupported} from './public-review.mjs';
@@ -67,7 +68,7 @@ export function build(){
   const registry={schema_version:1,version:platform.version,environment,categories,apps:bundleApps};
   const put=(p,data)=>fs.writeFileSync(`${out}/${p}`,JSON.stringify(data,null,2));put('registry.json',registry);
   put('environment.json',{environment,version:platform.version,stage:platform.releaseStage,namespace:`mba-v2-${environment}`,developer:environment==='developer'});
-  const facts=new Map(knowledge.records.map(r=>[r.id,r]));put('search-index.json',bundleApps.flatMap(a=>{const owned=new Map(a.sections.map(s=>[s.id,s]));for(const id of a.knowledge)for(const section of facts.get(id)?.sections||[])owned.set(section.id,section);return [{app_id:a.app_id,title:a.title,text:a.title,url:a.entry_point},...[...owned.values()].map(s=>({app_id:a.app_id,title:`${a.title} · ${s.title}`,text:[s.title,s.text,...s.aliases||[]].join(' '),url:a.entry_point+(s.query?'?'+new URLSearchParams(s.query).toString():`#${s.id}`)}))];}));
+  const facts=new Map(knowledge.records.map(r=>[r.id,r]));put('search-index.json',bundleApps.flatMap(a=>{const owned=new Map(a.sections.map(s=>[s.id,s]));for(const id of a.knowledge)for(const section of facts.get(id)?.sections||[])owned.set(section.id,section);return [{app_id:a.app_id,title:a.title,text:a.title,url:a.entry_point},...[...owned.values()].filter(s=>!isIntegratedLegacyHelp(a.app_id,s.id)).map(s=>({app_id:a.app_id,title:`${a.title} · ${s.title}`,text:[s.title,s.text,...s.aliases||[]].join(' '),url:a.entry_point+(s.query?'?'+new URLSearchParams(s.query).toString():`#${s.id}`)}))];}));
   put('manifest.webmanifest',{id:'./',name:`MBA Hub V2 ${environment}`,short_name:'MBA V2',start_url:'./index.html',scope:'./',display:'standalone',theme_color:'#123e50',background_color:'#f4f7f7',icons:[{src:'icon.svg',sizes:'any',type:'image/svg+xml',purpose:'any'}]});
   // Diagnostics code and maintenance handlers are physically absent from tester artifacts.
   if(environment==='developer')fs.appendFileSync(`${out}/core/hub.js`,"\nimport('./developer.js');\n");

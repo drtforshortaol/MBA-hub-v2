@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates.",
-  "snapshot_sha256": "406263fee1e221b30f2f4af2edceb202453c4c99b3de0e0ffd984a6d4c9cf348",
+  "snapshot_sha256": "ede5fe579f3f4d1104980dd3289ff6b17bd5d86da0dac420f4c42f9acbdf8ef3",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "406263fee1e221b30f2f4af2edceb202453c4c99b3de0e0ffd984a6d4c9cf348",
+    "snapshot_sha256": "ede5fe579f3f4d1104980dd3289ff6b17bd5d86da0dac420f4c42f9acbdf8ef3",
     "resources": [
       {
         "path": "config/categories.json",
@@ -100,8 +100,8 @@
       },
       {
         "path": "scripts/build.mjs",
-        "bytes": 12089,
-        "sha256": "26c2887ff8ae19e80fe1de360b08fe6e56e3156c4f6fc478f44ef6e61d878810"
+        "bytes": 12210,
+        "sha256": "edfac8ddd96440092e06a033f1033701f4139c70524a6f672b6102a30df9cd45"
       },
       {
         "path": "scripts/change-request-validation.mjs",
@@ -1110,8 +1110,8 @@
       },
       {
         "path": "src/core/app-contract.js",
-        "bytes": 3530,
-        "sha256": "552ec49c12080d1759928586f6539eb88295505b093a97e1182a5d195d1a9a6d"
+        "bytes": 3886,
+        "sha256": "4cae6dc9c3fd3272fa9d229b3867f67d9e5cc4f6201506aa911b3a87d12fb8a7"
       },
       {
         "path": "src/core/app-view.js",
@@ -1145,8 +1145,13 @@
       },
       {
         "path": "src/core/hub.js",
-        "bytes": 12363,
-        "sha256": "d0bbe56611716ee79613e6f759dbc919c34fab49cd65221827e276e60bfb816c"
+        "bytes": 12558,
+        "sha256": "706f63acf7a431c3583fafb41a436822b3cdabb9c636b04c34214e29e507d7a5"
+      },
+      {
+        "path": "src/core/integrated-help.js",
+        "bytes": 1090,
+        "sha256": "790baca10db68957b56377e5a5d0df140316a62c30bd58a5c45c87c2fa707ec1"
       },
       {
         "path": "src/core/naturalist-change-request.js",
@@ -2443,6 +2448,13 @@
       "scope": "Presentation only: native summary reuses existing card layout, title/subtitle fonts, icon and right chevron; disclosure remains native; explanation and source links unchanged",
       "previous_snapshot_sha256": "cf2e5dd4b68ccff27b3b9d98676e722a20561c2ec03acfadc41166962eae5670",
       "snapshot_sha256": "406263fee1e221b30f2f4af2edceb202453c4c99b3de0e0ffd984a6d4c9cf348"
+    },
+    {
+      "reviewed_on": "2026-11-01",
+      "reference": "docs/INTEGRATED_GUIDE_HELP_20261101.md",
+      "scope": "Owner-requested shared maintenance panel concealment, search filtering and old-help fragment routing; scientific app bytes and approvals unchanged",
+      "previous_snapshot_sha256": "406263fee1e221b30f2f4af2edceb202453c4c99b3de0e0ffd984a6d4c9cf348",
+      "snapshot_sha256": "ede5fe579f3f4d1104980dd3289ff6b17bd5d86da0dac420f4c42f9acbdf8ef3"
     }
   ]
 }

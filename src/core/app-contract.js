@@ -1,3 +1,4 @@
+import {hideIntegratedLegacyHelp,integratedHelpDestination} from './integrated-help.js';
 import {enhanceAnimalIdentity} from './animal-classification.js';
 import {captureAppView,restoreAppView} from './app-view.js';
 import {createSectionNavigator,revisitSectionLink} from './section-navigation.js';
@@ -12,6 +13,9 @@ document.addEventListener('click',event=>{const link=event.target.closest?.('a')
 let restore=null;try{restore=appRestoreState(root,location.href,sessionStorage,env.namespace);}catch{}
 if(restore?.appView){requestAnimationFrame(()=>restoreAppView(document,restore,{Event,scrollTo}));}
 const id=location.pathname.slice(root.pathname.length).split('/')[1];
+hideIntegratedLegacyHelp(document,id);
+function redirectLegacyHelp(){const destination=integratedHelpDestination(root,id,location.hash);if(destination)location.replace(destination.href);}
+window.addEventListener('hashchange',redirectLegacyHelp);redirectLegacyHelp();
 if(id==='whale-associated-organisms'){const {enhanceWhaleReference}=await import('./whale-reference.js');enhanceWhaleReference(document,typeof PARASITES==='undefined'?[]:PARASITES);}
 enhanceAnimalIdentity(document,id);
 let manifest;try{manifest=await fetch(new URL(`apps/${id}/manifest.json`,root)).then(r=>r.json());}catch{}
