@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "source_commit": "572c89a7e84ff276e75f864cd902748e63b01aec",
+  "test_followup_commit": "b8ffafef441de7aca422333791c3df6d5830ee88",
+  "release": "66f5264da4cc1ec2",
+  "host_source_commit": "c8afc454abcc690a305adff55c75594b6341b75d",
+  "deployment": {
+    "id": "appgdep_6ae7c0572e988191a01643c9ad58a890",
+    "project_id": "appgprj_6ae55daba7b08191a19ce7036c6a4152",
+    "title": "MBA Hub V2 — iPhone Review",
+    "version_id": "appgprj_6ae55daba7b08191a19ce7036c6a4152~appgver_1260a4d3bae88191858a1b1be2c7e7eb",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://mba-v2-iphone-review-4ec51dd.drtforshort.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ae55daba7b08191a19ce7036c6a4152",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-11-01T22:42:40.270692+00:00"
+  },
+  "approval": {
+    "app": "open-sea",
+    "section": "Countershading",
+    "scope": "authored-text-only",
+    "owner_quote": "Approved",
+    "evidence": "docs/verification/open-sea-countershading-text-approval-20261101.json",
+    "runtime_html_changed": false
+  },
+  "validation": {
+    "exact_section_binding": "passed",
+    "future_text_change_rejected": true,
+    "full_suite": {
+      "tests": 1066,
+      "passed": 1065,
+      "failed": 1,
+      "reason": "Old Open Sea search test expected pending; expectation updated only and all three tests in that file pass in focused rerun"
+    },
+    "focused_integrity_privacy_readiness": 25,
+    "focused_open_sea_search": 3,
+    "artifacts": "both passed",
+    "security": "passed",
+    "privacy": "snapshot matches",
+    "local_host_resources": 381,
+    "host_update_verifier_scenarios": 8,
+    "physical_device": "no new test inferred"
+  },
+  "remaining": {
+    "operational_flags": 4,
+    "pending_content": [
+      "sperm-whale"
+    ]
+  },
+  "production_release_authorized": false
+}
