@@ -24,7 +24,7 @@ function rendered(){const list=element('div');vm.runInNewContext(script,{documen
 test('all twelve dynamic Open Sea cards index complete source text at existing stable IDs',()=>{
  assert.equal(data.length,12);assert.equal(manifest.sections.length,17);
  for(const item of data){const s=manifest.sections.find(s=>s.id===`card-${item.id}`);assert(s);assert.equal(s.title,plain(item.title));assert.equal(s.text,[item.title,item.subtitle,...item.tags,item.body].map(plain).join(' '));assert(!s.title.includes('&amp;'));}
- assert.equal(manifest.publication_review,'pending');assert.equal(manifest.status,'testing');
+ assert.equal(manifest.publication_review,'owner-approved-text');assert.equal(manifest.status,'testing');
 });
 test('actual Open Sea renderer creates every stable card target with working toggle and ARIA state',()=>{
  const nodes=all(rendered());
