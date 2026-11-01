@@ -51,5 +51,5 @@ test('current collection keeps October additions and three remaining media right
   }
   assert.equal(notes.offline_media.filter(m => m.permission_review_pending).length, 0);
   assert.equal(report.apps.find(a => a.app_id === 'big-bellied-seahorse').offline_media.filter(m => m.permission_review_pending).length, 0);
-  assert.equal(report.summary.media_rights_review_uses, 1);
+  assert.equal(report.summary.media_rights_review_uses, 0);
 });

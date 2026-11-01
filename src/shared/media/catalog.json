@@ -4300,25 +4300,25 @@
       ]
     },
     {
-      "asset_id": "asset-3f1a17a6c8208427",
-      "path": "shared/media/asset-3f1a17a6c8208427--sperm-whale-title.jpeg",
+      "asset_id": "asset-ee96e0719845ef73",
+      "path": "shared/media/asset-ee96e0719845ef73--sperm-whale-pod.jpeg",
       "owner": "sperm-whale",
-      "alt": "Sperm whale swimming just below the sunlit ocean surface",
-      "credit": "SDM Diving — Sperm Whale Diving Trip Report 2023; source supplied with uploaded image. Individual photographer not verified.",
-      "permission": "review-required",
+      "alt": "Two sperm whales swimming together beneath the ocean surface",
+      "credit": "“Sperm whale pod” — Gabriel Barathieu / Wikimedia Commons, CC BY-SA 2.0; cropped/resized copy, shared under the same license.",
+      "permission": "licensed",
+      "permission_evidence": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sperm_whale_pod.jpg",
+      "source_path": "File:Sperm_whale_pod.jpg",
+      "sha256": "ee96e0719845ef73a7b4827bccd4686c816b231995cb2dfb4fb77e9e6ebfa928",
       "offline": true,
-      "sha256": "3f1a17a6c8208427ad49f70d1f989fc4f98b829a5bb83780b5418c845185c692",
-      "source_url": "https://sdmdiving.com/sperm-whale-trip-report-2023",
       "uses": [
         {
           "app_id": "sperm-whale",
-          "source_path": "owner-supplied attachment 6DE01CC4-0558-4EBE-BCD9-301AC3CABC12.jpeg"
+          "source_path": "File:Sperm_whale_pod.jpg"
         }
-      ],
-      "permission_note": "Owner requested private review placement; this does not establish third-party public reuse permission.",
-      "source_repository": "drtforshortaol/MBA-hub-v2",
-      "source_commit": "fc2fe96f41d2219d7b22747e3b09cd031bd2ae48",
-      "source_path": "src/shared/media/asset-3f1a17a6c8208427--sperm-whale-title.jpeg"
+      ]
     }
   ]
 }

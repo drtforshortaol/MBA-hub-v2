@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates.",
-  "snapshot_sha256": "b89fca0eb4029759fb3b40fc916011ee5bf9d3aea4f619f56d99e2fdaa981120",
+  "snapshot_sha256": "6f5f69cc1698ff0c0e4b5b33e2f9f78da44895959cf49996eef4d5c51d5c1598",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "b89fca0eb4029759fb3b40fc916011ee5bf9d3aea4f619f56d99e2fdaa981120",
+    "snapshot_sha256": "6f5f69cc1698ff0c0e4b5b33e2f9f78da44895959cf49996eef4d5c51d5c1598",
     "resources": [
       {
         "path": "config/categories.json",
@@ -20,8 +20,8 @@
       },
       {
         "path": "config/inherited-v1-fidelity.json",
-        "bytes": 89058,
-        "sha256": "aa3177d8f43f25d98e90d94a3765c5ea49e05812a1ec116baba3d700448f8ee2"
+        "bytes": 100484,
+        "sha256": "7bc71e0ee5c0277e751634e4d779be611bc5c6fbdbfbceb8d3860e9c00941146"
       },
       {
         "path": "config/migration-blob-ledger.json",
@@ -35,8 +35,8 @@
       },
       {
         "path": "config/owner-text-reviews.json",
-        "bytes": 7328,
-        "sha256": "08ec677fb76a336b88fdb46cb1699f657c976cc383ad125ca87a9c6c9f9476bb"
+        "bytes": 8116,
+        "sha256": "286a1fca5ff8901ce4e70bb7ec2753416d93804fc100058d6a38a0251cdd3cc6"
       },
       {
         "path": "config/platform.json",
@@ -995,13 +995,13 @@
       },
       {
         "path": "src/apps/sperm-whale/index.html",
-        "bytes": 8910,
-        "sha256": "08d28d6d379a83ffd47dfb16a11785b0b43c74895eeff85c159d478130bee00d"
+        "bytes": 9108,
+        "sha256": "ae261c334ae08e1e3919aa0b627bae10fab2ecc9798c6428c06a507c36db7670"
       },
       {
         "path": "src/apps/sperm-whale/manifest.json",
-        "bytes": 6697,
-        "sha256": "77d5d9e0a1baf907fe94076161e54d90fb804f54b25af07d98e0ae77d2c2ab32"
+        "bytes": 6695,
+        "sha256": "fe41347000d75295c4094c26da2f8af56d1d2f5d78358b43b5a96b2deb7273a0"
       },
       {
         "path": "src/apps/stargazer-species-guide/index.html",
@@ -1557,11 +1557,6 @@
         "path": "src/shared/media/asset-3c14753fc4275150--icon.svg",
         "bytes": 879,
         "sha256": "3c14753fc4275150bdc60f80e857128d11c945f7079da90c46c1e4f16d68db06"
-      },
-      {
-        "path": "src/shared/media/asset-3f1a17a6c8208427--sperm-whale-title.jpeg",
-        "bytes": 93010,
-        "sha256": "3f1a17a6c8208427ad49f70d1f989fc4f98b829a5bb83780b5418c845185c692"
       },
       {
         "path": "src/shared/media/asset-3f24669c2980c4f8--IMG_2777.jpeg",
@@ -2294,6 +2289,11 @@
         "sha256": "edd9d5ec2d0bbd07852ad0d906341a589bee5a974352f245b945dc660ef24118"
       },
       {
+        "path": "src/shared/media/asset-ee96e0719845ef73--sperm-whale-pod.jpeg",
+        "bytes": 130655,
+        "sha256": "ee96e0719845ef73a7b4827bccd4686c816b231995cb2dfb4fb77e9e6ebfa928"
+      },
+      {
         "path": "src/shared/media/asset-f194f7d134beec45--IMG_3510.jpeg",
         "bytes": 216789,
         "sha256": "f194f7d134beec45f48a7451308c4583265e5db18db9b12b36745b59917a5d2d"
@@ -2350,8 +2350,8 @@
       },
       {
         "path": "src/shared/media/catalog.json",
-        "bytes": 190702,
-        "sha256": "9f7d99b5c7dbb7759edc87316b6014904358aad5474f222153bc60c8bb1c524c"
+        "bytes": 190556,
+        "sha256": "77603270657849ef79e8397c6b8df8cfa18e6ca60f4201136f09e3e6b6847cb1"
       },
       {
         "path": "src/shared/media/five-senses-header.svg",
@@ -2488,6 +2488,13 @@
       "scope": "One local title photo, offline registration and click-only credit; public reuse permission pending; unrelated app catalog-only rebindings",
       "previous_snapshot_sha256": "3d140eae3ed6bb060e3abdaec74f4cd2b953a7c110ff663d25ab3bbba2f6eec9",
       "snapshot_sha256": "b89fca0eb4029759fb3b40fc916011ee5bf9d3aea4f619f56d99e2fdaa981120"
+    },
+    {
+      "reviewed_on": "2026-11-01",
+      "reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+      "scope": "Replace local Sperm Whale title JPEG with licensed supplied copy; visible source/license credit; remove retired photo; catalog-only unrelated-app rebindings",
+      "previous_snapshot_sha256": "b89fca0eb4029759fb3b40fc916011ee5bf9d3aea4f619f56d99e2fdaa981120",
+      "snapshot_sha256": "6f5f69cc1698ff0c0e4b5b33e2f9f78da44895959cf49996eef4d5c51d5c1598"
     }
   ]
 }

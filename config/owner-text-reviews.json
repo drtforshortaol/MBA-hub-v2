@@ -12,7 +12,7 @@
       "authorization_quote": "Approved",
       "candidate_commit": "74b91bb5af8f0215d4863bcdf9a2c39e76aa3c58",
       "candidate_packet_sha256": "f4324b0ca675b24d4a45b71a48fd3cbefd33a786c9357539357c6c148e1ecf41",
-      "content_sha256": "e080f7a2ad91d280ab5e812c48fcef2e048a5c57f4c8ace4dc8ce7041bf2ea36",
+      "content_sha256": "750be0f04c9e132d9545147b9395c5822783faf60115b191ed982da2e6b773fb",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-29",
@@ -61,6 +61,12 @@
           "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
           "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
           "previous_content_sha256": "5dc412c5c751d33710de31fb8db23a2fcb9975bb49d74859570fc4b89a4c48ac"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "e080f7a2ad91d280ab5e812c48fcef2e048a5c57f4c8ace4dc8ce7041bf2ea36"
         }
       ]
     },
@@ -74,7 +80,7 @@
       "authorization_reference": "Owner conversation: approval request for exact ten-section Seahorse draft at 74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9, followed by explanation of clearing the content blocker",
       "authorization_quote": "Proceed",
       "candidate_commit": "74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9",
-      "content_sha256": "0a06520da51055f2203a1cc97d14914039c04eba9a9951ebe5090d90a90f20c5",
+      "content_sha256": "99bf7edd716756c043dddce93160401b39097b9e39d0a7bdbbe696dc79b1fa8a",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -109,6 +115,12 @@
           "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
           "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
           "previous_content_sha256": "23d8d9323b7a767e1f6e6fe52357cccc201b19d497bf1f1723f936e8d9b86528"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "0a06520da51055f2203a1cc97d14914039c04eba9a9951ebe5090d90a90f20c5"
         }
       ],
       "additional_owner_decisions": [
