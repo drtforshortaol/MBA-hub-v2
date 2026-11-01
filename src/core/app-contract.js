@@ -14,6 +14,18 @@ let restore=null;try{restore=appRestoreState(root,location.href,sessionStorage,e
 if(restore?.appView){requestAnimationFrame(()=>restoreAppView(document,restore,{Event,scrollTo}));}
 const id=location.pathname.slice(root.pathname.length).split('/')[1];
 hideIntegratedLegacyHelp(document,id);
+// Tree's inherited grid needs one full-width navigation row above its title.
+if(id==='tree-of-life-origins'&&primaryHub){
+ const header=primaryHub.closest('.header-inner'),back=header?.querySelector('[data-v2-back]');
+ if(header&&back){
+  const row=document.createElement('nav');row.setAttribute('aria-label','Page navigation');row.className='integrated-page-navigation';
+  row.style.cssText='display:flex;flex-wrap:wrap;align-items:center;gap:8px;width:100%';
+  primaryHub.before(row);row.append(back,primaryHub);primaryHub.textContent='← Return to Hub';
+  header.style.cssText='display:flex;flex-direction:column;align-items:stretch;gap:16px';
+  for(const control of [back,primaryHub])control.style.cssText='box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 16px;margin:0;border:1px solid #6b9eae;border-radius:999px;background:#075975;color:#fff;font:700 1rem/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-decoration:none;cursor:pointer;white-space:nowrap';
+ }
+}
+
 function redirectLegacyHelp(){const destination=integratedHelpDestination(root,id,location.hash);if(destination)location.replace(destination.href);}
 window.addEventListener('hashchange',redirectLegacyHelp);redirectLegacyHelp();
 if(id==='whale-associated-organisms'){const {enhanceWhaleReference}=await import('./whale-reference.js');enhanceWhaleReference(document,typeof PARASITES==='undefined'?[]:PARASITES);}
