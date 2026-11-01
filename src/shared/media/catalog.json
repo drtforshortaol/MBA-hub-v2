@@ -4315,7 +4315,10 @@
           "source_path": "owner-supplied attachment 6DE01CC4-0558-4EBE-BCD9-301AC3CABC12.jpeg"
         }
       ],
-      "permission_note": "Owner requested private review placement; this does not establish third-party public reuse permission."
+      "permission_note": "Owner requested private review placement; this does not establish third-party public reuse permission.",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "fc2fe96f41d2219d7b22747e3b09cd031bd2ae48",
+      "source_path": "src/shared/media/asset-3f1a17a6c8208427--sperm-whale-title.jpeg"
     }
   ]
 }
