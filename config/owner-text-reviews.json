@@ -12,7 +12,7 @@
       "authorization_quote": "Approved",
       "candidate_commit": "74b91bb5af8f0215d4863bcdf9a2c39e76aa3c58",
       "candidate_packet_sha256": "f4324b0ca675b24d4a45b71a48fd3cbefd33a786c9357539357c6c148e1ecf41",
-      "content_sha256": "5dc412c5c751d33710de31fb8db23a2fcb9975bb49d74859570fc4b89a4c48ac",
+      "content_sha256": "4fba0f2f676d7ec8c2892b3468a4d67d77dd3ec66eba414a401934a182569483",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-29",
@@ -55,6 +55,12 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "2d72ac36ee76fdfb5437ebd0442789ad2c42a7ecc20b35b50f61a0f873e8a5d2",
           "content_sha256": "5dc412c5c751d33710de31fb8db23a2fcb9975bb49d74859570fc4b89a4c48ac"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved authored text/media in this app unchanged; no photo permission granted",
+          "previous_content_sha256": "5dc412c5c751d33710de31fb8db23a2fcb9975bb49d74859570fc4b89a4c48ac"
         }
       ]
     },
@@ -68,7 +74,7 @@
       "authorization_reference": "Owner conversation: approval request for exact ten-section Seahorse draft at 74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9, followed by explanation of clearing the content blocker",
       "authorization_quote": "Proceed",
       "candidate_commit": "74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9",
-      "content_sha256": "23d8d9323b7a767e1f6e6fe52357cccc201b19d497bf1f1723f936e8d9b86528",
+      "content_sha256": "49f2c6d1d5a06a962a99c2c1075389675ad041459ccca3ace5d47f49c2aa9200",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -97,6 +103,12 @@
           "scope": "Owner-requested restoration of on-image labels on existing approved visible features; unchanged photo bytes and approved prose",
           "previous_content_sha256": "288240c9d57dc5f20ec2b34f8932088291e7c4edd6d6862986d66609107befaa",
           "content_sha256": "23d8d9323b7a767e1f6e6fe52357cccc201b19d497bf1f1723f936e8d9b86528"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved authored text/media in this app unchanged; no photo permission granted",
+          "previous_content_sha256": "23d8d9323b7a767e1f6e6fe52357cccc201b19d497bf1f1723f936e8d9b86528"
         }
       ],
       "additional_owner_decisions": [

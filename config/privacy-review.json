@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates.",
-  "snapshot_sha256": "3d140eae3ed6bb060e3abdaec74f4cd2b953a7c110ff663d25ab3bbba2f6eec9",
+  "snapshot_sha256": "5b14a985d423f763af9a6b278d32d1b7ebd26ebcfe43b6763cb5a3786f9ed647",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "3d140eae3ed6bb060e3abdaec74f4cd2b953a7c110ff663d25ab3bbba2f6eec9",
+    "snapshot_sha256": "5b14a985d423f763af9a6b278d32d1b7ebd26ebcfe43b6763cb5a3786f9ed647",
     "resources": [
       {
         "path": "config/categories.json",
@@ -20,8 +20,8 @@
       },
       {
         "path": "config/inherited-v1-fidelity.json",
-        "bytes": 77980,
-        "sha256": "d73aa6052309c5201d0aed479682777ab446ae090fe6253de895660249d1ccbd"
+        "bytes": 88942,
+        "sha256": "81ab0dda354a74787091a23536cd2cdb9a4d51d4c3de01f16ec6d8a8331c90c0"
       },
       {
         "path": "config/migration-blob-ledger.json",
@@ -35,8 +35,8 @@
       },
       {
         "path": "config/owner-text-reviews.json",
-        "bytes": 6564,
-        "sha256": "79ff82bb35237f5ad654e683ccef6e8f29fb5a06b23991f4eb6a5f7a0490eb8e"
+        "bytes": 7338,
+        "sha256": "b59237e15671cf6b5b978d3a05bc5635f1e7d7593e119a74bce04dbaa3115fcc"
       },
       {
         "path": "config/platform.json",
@@ -995,13 +995,13 @@
       },
       {
         "path": "src/apps/sperm-whale/index.html",
-        "bytes": 8483,
-        "sha256": "568e6784b9f4b4b9acf13a96b4ee8bea80addcbf176a0f39196efc9da41c28af"
+        "bytes": 8910,
+        "sha256": "08d28d6d379a83ffd47dfb16a11785b0b43c74895eeff85c159d478130bee00d"
       },
       {
         "path": "src/apps/sperm-whale/manifest.json",
-        "bytes": 6600,
-        "sha256": "ef7b0d40f32737bb22ce8f702a07837a3633321349f06c1cfd66f6f718f876dc"
+        "bytes": 6697,
+        "sha256": "77d5d9e0a1baf907fe94076161e54d90fb804f54b25af07d98e0ae77d2c2ab32"
       },
       {
         "path": "src/apps/stargazer-species-guide/index.html",
@@ -1557,6 +1557,11 @@
         "path": "src/shared/media/asset-3c14753fc4275150--icon.svg",
         "bytes": 879,
         "sha256": "3c14753fc4275150bdc60f80e857128d11c945f7079da90c46c1e4f16d68db06"
+      },
+      {
+        "path": "src/shared/media/asset-3f1a17a6c8208427--sperm-whale-title.jpeg",
+        "bytes": 93010,
+        "sha256": "3f1a17a6c8208427ad49f70d1f989fc4f98b829a5bb83780b5418c845185c692"
       },
       {
         "path": "src/shared/media/asset-3f24669c2980c4f8--IMG_2777.jpeg",
@@ -2345,8 +2350,8 @@
       },
       {
         "path": "src/shared/media/catalog.json",
-        "bytes": 189583,
-        "sha256": "aefae3c8dbf666e4bf936af8e3b91bccb974f02f81085c1c52aa6d6de6201d07"
+        "bytes": 190491,
+        "sha256": "fe4809e39ba23f9982c0031859578faa34d7aa76c021d6da5bd33debc78f30bc"
       },
       {
         "path": "src/shared/media/five-senses-header.svg",
@@ -2476,6 +2481,13 @@
       "scope": "Tree-only shared navigation layout and button styles; existing Back and Hub destinations unchanged; no new network or storage behavior",
       "previous_snapshot_sha256": "6eecc7c5ec3edd85005f75e749a2bd1789bd6a18fd52c33b129a6090b15a0123",
       "snapshot_sha256": "3d140eae3ed6bb060e3abdaec74f4cd2b953a7c110ff663d25ab3bbba2f6eec9"
+    },
+    {
+      "reviewed_on": "2026-11-01",
+      "reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+      "scope": "One local title photo, offline registration and click-only credit; public reuse permission pending; unrelated app catalog-only rebindings",
+      "previous_snapshot_sha256": "3d140eae3ed6bb060e3abdaec74f4cd2b953a7c110ff663d25ab3bbba2f6eec9",
+      "snapshot_sha256": "5b14a985d423f763af9a6b278d32d1b7ebd26ebcfe43b6763cb5a3786f9ed647"
     }
   ]
 }

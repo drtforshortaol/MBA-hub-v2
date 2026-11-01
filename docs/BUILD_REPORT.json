@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generatedAt": "2026-11-01T19:15:29.177Z",
+  "generatedAt": "2026-11-01T19:27:56.802Z",
   "platformVersion": "2.0.0-alpha.7",
   "stage": "migration-review",
   "apps": 33,
@@ -14,7 +14,8 @@
     "release gate: deviceOfflinePassed",
     "release gate: rollbackDevicePassed",
     "content review pending: open-sea",
-    "content review pending: sperm-whale"
+    "content review pending: sperm-whale",
+    "media permission review: asset-3f1a17a6c8208427"
   ],
   "publicationReview": {
     "inheritedV1Content": 29,

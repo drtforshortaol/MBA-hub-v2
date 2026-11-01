@@ -18,11 +18,11 @@ test('unchanged migrations reconcile while authored Open Sea and Sperm Whale con
  const report=assessRepositoryReadiness();
  for(const app_id of expected)assert.equal(report.blockers.some(item=>item.reason===`content review pending: ${app_id}`),['open-sea','sperm-whale'].includes(app_id));
  assert.equal(report.blockers.filter(item=>item.category==='operational-gate').length,4);
- assert.equal(report.blockers.filter(item=>item.reason.startsWith('media permission review:')).length,0);
+ assert.equal(report.blockers.filter(item=>item.reason.startsWith('media permission review:')).length,1);
  assert(!report.blockers.some(item=>item.reason==='content review pending: big-bellied-seahorse'));
  assert(!report.blockers.some(item=>item.reason==='content review pending: naturalist-field-notes'));
  assert.equal(report.approvalReconciliation.inheritedCandidates,2);
  assert.deepEqual(report.blockers.filter(item=>item.category==='inherited-approval-reconciliation').map(item=>item.reason).sort(),['content review pending: open-sea','content review pending: sperm-whale']);
- assert.equal(report.blockers.length,6);
+ assert.equal(report.blockers.length,7);
  assert.equal(report.releaseEligible,false);
 });

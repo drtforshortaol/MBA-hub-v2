@@ -4298,6 +4298,24 @@
           "source_path": "src/apps/seahorse-takenaga.jpeg"
         }
       ]
+    },
+    {
+      "asset_id": "asset-3f1a17a6c8208427",
+      "path": "shared/media/asset-3f1a17a6c8208427--sperm-whale-title.jpeg",
+      "owner": "sperm-whale",
+      "alt": "Sperm whale swimming just below the sunlit ocean surface",
+      "credit": "SDM Diving — Sperm Whale Diving Trip Report 2023; source supplied with uploaded image. Individual photographer not verified.",
+      "permission": "review-required",
+      "offline": true,
+      "sha256": "3f1a17a6c8208427ad49f70d1f989fc4f98b829a5bb83780b5418c845185c692",
+      "source_url": "https://sdmdiving.com/sperm-whale-trip-report-2023",
+      "uses": [
+        {
+          "app_id": "sperm-whale",
+          "source_path": "owner-supplied attachment 6DE01CC4-0558-4EBE-BCD9-301AC3CABC12.jpeg"
+        }
+      ],
+      "permission_note": "Owner requested private review placement; this does not establish third-party public reuse permission."
     }
   ]
 }
