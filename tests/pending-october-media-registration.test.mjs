@@ -56,7 +56,7 @@ const read=p=>JSON.parse(fs.readFileSync(new URL('../'+p,import.meta.url),'utf8'
 
 test('new October media registration preserves bytes, original paths and pending permissions',()=>{
  const catalog=read('src/shared/media/catalog.json'),apps=new Map();
- assert.equal(catalog.assets.length,212);
+ assert.equal(catalog.assets.length,213);
  for(const [id,path,asset_id,expected] of rows){
   const app=apps.get(id)||read('src/apps/'+id+'/manifest.json');apps.set(id,app);
   const matches=catalog.assets.filter(a=>a.path===path);assert.equal(matches.length,1);
@@ -71,9 +71,9 @@ test('new October media registration preserves bytes, original paths and pending
  const blockers=releaseErrors(read('config/platform.json'),[...apps.values()],catalog,{apps:[]});
  for(const row of rows)assert.equal(blockers.includes('media permission review: '+row[2]),!mjIds.has(row[2])&&!licensedIds.has(row[2])&&row[2]!=='asset-b2bea165550eabcc');
 });
-test('literal media audit reports resolved registration gaps while retaining three remaining rights findings',()=>{
+test('literal media audit preserves resolved older registrations and the new title photo rights finding',()=>{
  const report=auditRepositoryMedia(),findings=report.resources.filter(r=>r.issues.length);
- assert.equal(report.summary.uncataloged_resources,0);assert.equal(findings.length,0);assert.equal(report.complete,true);
- assert.deepEqual(findings.map(r=>r.path).sort(),rows.filter(r=>!mjIds.has(r[2])&&!licensedIds.has(r[2])&&r[2]!=='asset-b2bea165550eabcc').map(r=>r[1]).sort());
+ assert.equal(report.summary.uncataloged_resources,0);assert.equal(findings.length,1);assert.equal(report.complete,false);
+ assert.deepEqual(findings.map(r=>r.path).sort(),['shared/media/asset-3f1a17a6c8208427--sperm-whale-title.jpeg']);
  for(const result of findings)assert.deepEqual(result.issues,['permission-evidence-missing']);
 });
