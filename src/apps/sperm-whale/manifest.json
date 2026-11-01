@@ -114,6 +114,15 @@
       "title": "How researchers recognize individuals",
       "text": "Marks and scars on flukes and dorsal fins help researchers follow individual whales over time. Photo-identification, acoustic recordings, genetics and tags reveal different parts of their lives. A sound detection, a photograph and a tracked dive each answer different questions.",
       "aliases": []
+    },
+    {
+      "id": "Photo-sources",
+      "title": "Photo sources",
+      "text": "Gabriel Barathieu, Sperm whale pod, Wikimedia Commons, CC BY-SA 2.0. Cropped/resized copy, shared under the same license. William Oestreich © 2024 MBARI; bathymetry NOAA NCEI. Infographic by Taylor Hersh, based on Hersh et al. (2022), PNAS.",
+      "aliases": [
+        "Photo credits",
+        "Image sources"
+      ]
     }
   ],
   "source_version": "preserved-v1",

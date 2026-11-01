@@ -4386,12 +4386,12 @@
           "source_path": "apps/sperm-whale/index.html",
           "local_path": "src/apps/sperm-whale/index.html",
           "pinned_sha256": "a8a5ab788822d15be7388c0a8b4652b2e6255372880877d9bf75bfa44962700b",
-          "current_sha256": "ae261c334ae08e1e3919aa0b627bae10fab2ecc9798c6428c06a507c36db7670",
+          "current_sha256": "c7a5687dd884e04c2e7787d2319afb3b7e135a51886ebe6f040478098fb0c288",
           "status": "changed",
           "static_text_equal": false,
           "pinned_static_text_sha256": "faa9de8aba0e2e89734b1420156e48d39ec54fe4c163726ec089e82dc580f142",
           "previous_current_sha256": "90f7b2f03399d3282249c7c21643faec25772c180d13c3e05a72df7765bf60cb",
-          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "review_reference": "docs/SPERM_WHALE_PHOTO_FOOTNOTES_20261101.md",
           "previous_static_text_diff": [
             "--- pinned",
             "+++ current",
@@ -4410,7 +4410,8 @@
           ],
           "previous_current_static_text_sha256": "227e4349fb2c509d84f7f468360872bb82de4195130eaf1d429e549bfe09dc16",
           "previous_photo_current_sha256": "568e6784b9f4b4b9acf13a96b4ee8bea80addcbf176a0f39196efc9da41c28af",
-          "previous_licensed_photo_current_sha256": "08d28d6d379a83ffd47dfb16a11785b0b43c74895eeff85c159d478130bee00d"
+          "previous_licensed_photo_current_sha256": "08d28d6d379a83ffd47dfb16a11785b0b43c74895eeff85c159d478130bee00d",
+          "previous_footnote_current_sha256": "ae261c334ae08e1e3919aa0b627bae10fab2ecc9798c6428c06a507c36db7670"
         }
       ],
       "approval_reconciliation": "pending-reviewed-differences",

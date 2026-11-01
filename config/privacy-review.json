@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates.",
-  "snapshot_sha256": "6f5f69cc1698ff0c0e4b5b33e2f9f78da44895959cf49996eef4d5c51d5c1598",
+  "snapshot_sha256": "3a52e56dd6149ba63b3422a2667291bd8e2b148ed608e39135390c09f75e2bb1",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "6f5f69cc1698ff0c0e4b5b33e2f9f78da44895959cf49996eef4d5c51d5c1598",
+    "snapshot_sha256": "3a52e56dd6149ba63b3422a2667291bd8e2b148ed608e39135390c09f75e2bb1",
     "resources": [
       {
         "path": "config/categories.json",
@@ -995,13 +995,13 @@
       },
       {
         "path": "src/apps/sperm-whale/index.html",
-        "bytes": 9108,
-        "sha256": "ae261c334ae08e1e3919aa0b627bae10fab2ecc9798c6428c06a507c36db7670"
+        "bytes": 10001,
+        "sha256": "c7a5687dd884e04c2e7787d2319afb3b7e135a51886ebe6f040478098fb0c288"
       },
       {
         "path": "src/apps/sperm-whale/manifest.json",
-        "bytes": 6695,
-        "sha256": "fe41347000d75295c4094c26da2f8af56d1d2f5d78358b43b5a96b2deb7273a0"
+        "bytes": 7104,
+        "sha256": "4dfaf357c4b414d2b8cbd7fddfab62b40506e7bbccad6e69c67d764750ed8a1c"
       },
       {
         "path": "src/apps/stargazer-species-guide/index.html",
@@ -2495,6 +2495,13 @@
       "scope": "Replace local Sperm Whale title JPEG with licensed supplied copy; visible source/license credit; remove retired photo; catalog-only unrelated-app rebindings",
       "previous_snapshot_sha256": "b89fca0eb4029759fb3b40fc916011ee5bf9d3aea4f619f56d99e2fdaa981120",
       "snapshot_sha256": "6f5f69cc1698ff0c0e4b5b33e2f9f78da44895959cf49996eef4d5c51d5c1598"
+    },
+    {
+      "reviewed_on": "2026-11-01",
+      "reference": "docs/SPERM_WHALE_PHOTO_FOOTNOTES_20261101.md",
+      "scope": "Move existing Sperm Whale photo credit and license text to local footnotes; numbered forward and return anchors; media bytes/rights unchanged",
+      "previous_snapshot_sha256": "6f5f69cc1698ff0c0e4b5b33e2f9f78da44895959cf49996eef4d5c51d5c1598",
+      "snapshot_sha256": "3a52e56dd6149ba63b3422a2667291bd8e2b148ed608e39135390c09f75e2bb1"
     }
   ]
 }
