@@ -25,6 +25,8 @@ jobs:
         run: python -m pip install --requirement scripts/migration/requirements-fidelity.txt
       - name: Build isolated developer and tester bundles
         run: npm run build
+      - name: Refresh bounded developer privacy review in CI workspace
+        run: node scripts/audit-privacy-snapshot.mjs --write-reviewed-binding
       - name: Verify contracts and offline isolation
         run: npm test
       - name: Verify strict content and offline media registration
