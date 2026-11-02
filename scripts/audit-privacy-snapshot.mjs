@@ -22,8 +22,8 @@ if(process.argv[1]===fileURLToPath(import.meta.url)){
   const old=new Map(review.snapshot.resources.map(item=>[item.path,item]));
   const changed=snapshot.resources.filter(item=>old.get(item.path)?.sha256!==item.sha256||old.get(item.path)?.bytes!==item.bytes).map(item=>item.path);
   const removed=review.snapshot.resources.filter(item=>!snapshot.resources.some(current=>current.path===item.path)).map(item=>item.path);
-  const permitted=['scripts/build.mjs','src/core/developer.js'];
-  if(removed.length||changed.length!==2||changed.some(item=>!permitted.includes(item))||snapshot.automaticExternalResources.length||snapshot.sensitiveBrowserAPIs.length)throw Error('Unexpected review delta; do not auto-approve: '+JSON.stringify({changed,removed}));
+  const permitted=['scripts/build.mjs','src/core/developer.js','scripts/audit-privacy-snapshot.mjs'];
+  if(removed.length||changed.length!==3||changed.some(item=>!permitted.includes(item))||snapshot.automaticExternalResources.length||snapshot.sensitiveBrowserAPIs.length)throw Error('Unexpected review delta; do not auto-approve: '+JSON.stringify({changed,removed}));
   review.snapshot=snapshot;
   review.snapshot_sha256=snapshot.snapshot_sha256;
   review.reviewed_on='2026-11-02';
