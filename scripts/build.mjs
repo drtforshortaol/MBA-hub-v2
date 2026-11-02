@@ -77,7 +77,28 @@ export function build(){
   }
   put('manifest.webmanifest',{id:'./',name:isDev?'MBA Hub DEV':'MBA Hub V2',short_name:isDev?'MBA DEV':'MBA V2',start_url:'./index.html',scope:'./',display:'standalone',theme_color:isDev?'#d66b12':'#123e50',background_color:'#f4f7f7',icons:[{src:'icon.svg',sizes:'any',type:'image/svg+xml',purpose:'any'}]});
   // Diagnostics code and maintenance handlers are physically absent from tester artifacts.
-  if(environment==='developer')fs.appendFileSync(`${out}/core/hub.js`,"\nimport('./developer.js');\n");
+  if(environment==='developer')fs.appendFileSync(`${out}/core/hub.js`,`
+\n// Bind the shortcut before loading optional diagnostics dependencies.
+const developerTitle=document.querySelector('#title');
+let developerTaps=0,developerLastTap=0,developerOpening=false;
+developerTitle?.addEventListener('click',async()=>{
+ const now=Date.now();
+ if(now-developerLastTap>2200)developerTaps=0;
+ developerLastTap=now;
+ if(++developerTaps!==5)return;
+ developerTaps=0;
+ if(developerOpening)return;
+ developerOpening=true;
+ try{
+  const {toggleDeveloper}=await import('./developer.js');
+  toggleDeveloper();
+ }catch(error){
+  console.error('Developer tools unavailable',error);
+  const status=document.querySelector('#environment');
+  if(status)status.textContent='Developer tools failed to load. Refresh and retry.';
+ }finally{developerOpening=false;}
+});
+`);
   const files=[];function walk(dir){for(const ent of fs.readdirSync(dir,{withFileTypes:true})){const p=path.join(dir,ent.name);if(ent.isDirectory())walk(p);else files.push(p.slice(out.length+1));}}walk(out);
   const resources=files.filter(p=>p!=='sw.js').sort().map(url=>({url,sha256:hash(fs.readFileSync(`${out}/${url}`)),bytes:fs.statSync(`${out}/${url}`).size}));
   const release=hash(JSON.stringify(resources)).slice(0,16);put('release.json',{schema_version:1,version:platform.version,environment,release,resources});
