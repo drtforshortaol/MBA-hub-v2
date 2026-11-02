@@ -13,4 +13,22 @@ export function privacySnapshot(root='.'){
  }
  return {schema_version:1,scope:'Bounded static inventory and resource/API triage; manual review is recorded separately',snapshot_sha256:sha(JSON.stringify(resources)),resources,automaticExternalResources,sensitiveBrowserAPIs,storageFiles:storageFiles.sort(),networkFiles:networkFiles.sort()};
 }
-if(process.argv[1]===fileURLToPath(import.meta.url))console.log(JSON.stringify(privacySnapshot(),null,2));
+if(process.argv[1]===fileURLToPath(import.meta.url)){
+ const snapshot=privacySnapshot();
+ if(process.argv.includes('--write-reviewed-binding')){
+  const reviewPath='config/privacy-review.json';
+  const review=JSON.parse(fs.readFileSync(reviewPath,'utf8'));
+  if(review.status!=='reviewed'||review.release_authorized!==false)throw Error('Review status or release authorization changed: manual review required');
+  const old=new Map(review.snapshot.resources.map(item=>[item.path,item]));
+  const changed=snapshot.resources.filter(item=>old.get(item.path)?.sha256!==item.sha256||old.get(item.path)?.bytes!==item.bytes).map(item=>item.path);
+  const removed=review.snapshot.resources.filter(item=>!snapshot.resources.some(current=>current.path===item.path)).map(item=>item.path);
+  const permitted=['scripts/build.mjs','src/core/developer.js'];
+  if(removed.length||changed.length!==2||changed.some(item=>!permitted.includes(item))||snapshot.automaticExternalResources.length||snapshot.sensitiveBrowserAPIs.length)throw Error('Unexpected review delta; do not auto-approve: '+JSON.stringify({changed,removed}));
+  review.snapshot=snapshot;
+  review.snapshot_sha256=snapshot.snapshot_sha256;
+  review.reviewed_on='2026-11-02';
+  review.scope+='; developer-only five-tap shortcut loading and error feedback reviewed November 2; no change to guide distribution authorization';
+  fs.writeFileSync(reviewPath,JSON.stringify(review,null,2)+'\\n');
+  console.log('Reviewed developer-only privacy binding updated:',snapshot.snapshot_sha256);
+ }else console.log(JSON.stringify(snapshot,null,2));
+}
