@@ -1,5 +1,7 @@
 name: Prepare permanent installation channel bundles
 on:
+  push:
+    branches: [work/device-acceptance-prep-20261030]
   workflow_dispatch:
 permissions:
   contents: read
@@ -33,13 +35,16 @@ jobs:
           const devEnv = read('dist/developer/environment.json');
           const guideEnv = read('dist/tester/environment.json');
           if (dev.name !== 'MBA Hub DEV' || guide.name !== 'MBA Hub V2') throw Error('Unexpected install identity');
-          if (devEnv.namespace === guideEnv.namespace || !devEnv.developer || guideEnv.developer) throw Error('Channel isolation failed');
-          if (dev.scope !== './' || guide.scope !== './') throw Error('Unexpected PWA scope');
+          if (devEnv.namespace !== 'mba-v2-developer' || guideEnv.namespace !== 'mba-v2-tester' || !devEnv.developer || guideEnv.developer) throw Error('Channel isolation failed');
+          if (dev.id !== './' || guide.id !== './' || dev.scope !== './' || guide.scope !== './') throw Error('Unexpected PWA scope');
           if (!fs.readFileSync('dist/developer/icon.svg','utf8').includes('#d66b12')) throw Error('Orange developer icon missing');
           if (fs.readFileSync('dist/tester/icon.svg','utf8').includes('#d66b12')) throw Error('Guide icon unexpectedly orange');
+          const qr = read('config/privacy-review.json').qr;
+          if (!qr.target.includes('/MBA-hub-v2-test/')) throw Error('Unexpected legacy QR target: review before distribution');
           console.log('Distinct installation names, icons, and offline namespaces verified.');
+          console.log('NOTICE: Bundled QR is LEGACY and must not be distributed as the permanent guide QR:', qr.target);
           EOF
-      - name: Retain owner-only developer bundle as workflow artifact
+      - name: Retain developer bundle for repository collaborators (not a secured owner deployment)
         uses: actions/upload-artifact@v4
         with:
           name: mba-hub-dev-install-bundle
@@ -53,5 +58,6 @@ jobs:
           path: dist/tester/
           retention-days: 14
           if-no-files-found: error
-# No deploy step. Downloadable workflow artifacts are not public app hosting.
+# No deploy step. Artifacts are available to authorized GitHub repository collaborators; they are not owner-authenticated hosting.
+# Bundles still contain the legacy QR and must NOT be distributed as permanent installs.
 # Publishing requires approved permanent URLs, access control, and guide release authorization.
