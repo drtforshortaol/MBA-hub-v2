@@ -28,7 +28,7 @@ if(process.argv[1]===fileURLToPath(import.meta.url)){
   review.snapshot_sha256=snapshot.snapshot_sha256;
   review.reviewed_on='2026-11-02';
   review.scope+='; developer-only five-tap shortcut loading and error feedback reviewed November 2; no change to guide distribution authorization';
-  fs.writeFileSync(reviewPath,JSON.stringify(review,null,2)+'\\n');
+  fs.writeFileSync(reviewPath,JSON.stringify(review,null,2)+'\n');
   console.log('Reviewed developer-only privacy binding updated:',snapshot.snapshot_sha256);
  }else console.log(JSON.stringify(snapshot,null,2));
 }
