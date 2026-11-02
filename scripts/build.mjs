@@ -69,7 +69,13 @@ export function build(){
   const put=(p,data)=>fs.writeFileSync(`${out}/${p}`,JSON.stringify(data,null,2));put('registry.json',registry);
   put('environment.json',{environment,version:platform.version,stage:platform.releaseStage,namespace:`mba-v2-${environment}`,developer:environment==='developer'});
   const facts=new Map(knowledge.records.map(r=>[r.id,r]));put('search-index.json',bundleApps.flatMap(a=>{const owned=new Map(a.sections.map(s=>[s.id,s]));for(const id of a.knowledge)for(const section of facts.get(id)?.sections||[])owned.set(section.id,section);return [{app_id:a.app_id,title:a.title,text:a.title,url:a.entry_point},...[...owned.values()].filter(s=>!isIntegratedLegacyHelp(a.app_id,s.id)).map(s=>({app_id:a.app_id,title:`${a.title} · ${s.title}`,text:[s.title,s.text,...s.aliases||[]].join(' '),url:a.entry_point+(s.query?'?'+new URLSearchParams(s.query).toString():`#${s.id}`)}))];}));
-  put('manifest.webmanifest',{id:'./',name:`MBA Hub V2 ${environment}`,short_name:'MBA V2',start_url:'./index.html',scope:'./',display:'standalone',theme_color:'#123e50',background_color:'#f4f7f7',icons:[{src:'icon.svg',sizes:'any',type:'image/svg+xml',purpose:'any'}]});
+  const isDev=environment==='developer';
+  if(isDev){
+   fs.writeFileSync(`${out}/icon.svg`, '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192"><rect width="192" height="192" rx="44" fill="#d66b12"/><path d="M24 112 Q60 72 96 112 T168 112" fill="none" stroke="#fff1cf" stroke-width="15"/><text x="96" y="70" text-anchor="middle" fill="white" font-family="sans-serif" font-size="34">MBA</text><text x="96" y="162" text-anchor="middle" fill="white" font-weight="bold" font-family="sans-serif" font-size="37">DEV</text></svg>');
+   const indexPath=`${out}/index.html`;
+   fs.writeFileSync(indexPath,fs.readFileSync(indexPath,'utf8').replaceAll('MBA Hub Version 2','MBA Hub DEV').replace('<small>V2</small>','<small>DEV</small>'));
+  }
+  put('manifest.webmanifest',{id:isDev?'./mba-hub-dev':'./mba-hub-v2',name:isDev?'MBA Hub DEV':'MBA Hub V2',short_name:isDev?'MBA DEV':'MBA V2',start_url:'./index.html',scope:'./',display:'standalone',theme_color:isDev?'#d66b12':'#123e50',background_color:'#f4f7f7',icons:[{src:'icon.svg',sizes:'any',type:'image/svg+xml',purpose:'any'}]});
   // Diagnostics code and maintenance handlers are physically absent from tester artifacts.
   if(environment==='developer')fs.appendFileSync(`${out}/core/hub.js`,"\nimport('./developer.js');\n");
   const files=[];function walk(dir){for(const ent of fs.readdirSync(dir,{withFileTypes:true})){const p=path.join(dir,ent.name);if(ent.isDirectory())walk(p);else files.push(p.slice(out.length+1));}}walk(out);
