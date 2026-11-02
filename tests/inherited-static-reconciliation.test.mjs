@@ -10,19 +10,19 @@ test('unchanged migrations reconcile while approved Open Sea text clears only it
  assert.deepEqual(evidence.apps.map(app=>app.app_id).sort(),expected);
  for(const app_id of expected){
   const app=read(`src/apps/${app_id}/manifest.json`);
-  assert.equal(app.publication_review,app_id==='open-sea'?'owner-approved-text':'pending');assert.equal(app.status,'testing');
+  assert.equal(app.publication_review,['open-sea','sperm-whale'].includes(app_id)?'owner-approved-text':'pending');assert.equal(app.status,'testing');
   assert.equal(inheritedApprovalSupported(app,{evidence,provenance}),!['open-sea','sperm-whale'].includes(app_id));
   const changed=structuredClone(app);changed.sections[0].text+=' New unreviewed claim.';
   assert.equal(inheritedApprovalSupported(changed,{evidence,provenance}),false);
  }
  const report=assessRepositoryReadiness();
- for(const app_id of expected)assert.equal(report.blockers.some(item=>item.reason===`content review pending: ${app_id}`),app_id==='sperm-whale');
+ for(const app_id of expected)assert.equal(report.blockers.some(item=>item.reason===`content review pending: ${app_id}`),false);
  assert.equal(report.blockers.filter(item=>item.category==='operational-gate').length,4);
  assert.equal(report.blockers.filter(item=>item.reason.startsWith('media permission review:')).length,0);
  assert(!report.blockers.some(item=>item.reason==='content review pending: big-bellied-seahorse'));
  assert(!report.blockers.some(item=>item.reason==='content review pending: naturalist-field-notes'));
- assert.equal(report.approvalReconciliation.inheritedCandidates,1);
- assert.deepEqual(report.blockers.filter(item=>item.category==='inherited-approval-reconciliation').map(item=>item.reason).sort(),['content review pending: sperm-whale']);
- assert.equal(report.blockers.length,5);
+ assert.equal(report.approvalReconciliation.inheritedCandidates,0);
+ assert.deepEqual(report.blockers.filter(item=>item.category==='inherited-approval-reconciliation').map(item=>item.reason).sort(),[]);
+ assert.equal(report.blockers.length,4);
  assert.equal(report.releaseEligible,false);
 });

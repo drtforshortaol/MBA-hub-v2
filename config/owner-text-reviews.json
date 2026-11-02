@@ -173,7 +173,9 @@
         "Conservation-and-observation",
         "Research-and-individuals"
       ],
-      "release_authorized": false
+      "release_authorized": false,
+      "authorization_reference": "docs/verification/sperm-whale-text-approval-20261101.json",
+      "content_sha256": "6f8339b5a3ddc1b479e041683347258ff11ecb302ca4d6995bb0bc93d8a5ed61"
     }
   ]
 }
