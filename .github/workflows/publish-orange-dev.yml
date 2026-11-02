@@ -1,18 +1,14 @@
-name: Prepare owner-approved orange DEV Pages deployment (manual only)
+name: Prepare isolated orange DEV deployment artifact (manual only)
 on:
   workflow_dispatch:
 permissions:
   contents: read
-  pages: write
-  id-token: write
 concurrency:
   group: mba-v2-orange-dev-pages
   cancel-in-progress: false
 jobs:
   publish:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -43,11 +39,11 @@ jobs:
           if(!fs.readFileSync('_site/dev/icon.svg','utf8').includes('#d66b12')) throw Error('Orange icon missing');
           if(fs.existsSync('_site/index.html'))throw Error('Root guide content must not be deployed');
           EOF
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - name: Retain isolated orange DEV bundle for dedicated hosting
+        uses: actions/upload-artifact@v4
         with:
-          path: _site
-      - uses: actions/deploy-pages@v4
-        id: deployment
-      - name: Report deployed URL
-        run: echo "Orange developer deployment: ${{ steps.deployment.outputs.page_url }}dev/"
+          name: mba-hub-dev-public-hosting-ready
+          path: _site/dev/
+          retention-days: 14
+      - name: Guard existing guide Pages deployment
+        run: echo 'No Pages deployment performed. Publish only to an independently configured host to preserve existing guide content.'
