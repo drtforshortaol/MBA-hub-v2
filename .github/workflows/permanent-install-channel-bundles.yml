@@ -31,6 +31,7 @@ jobs:
       - name: Build and validate both channel bundles
         run: |
           npm run build
+          node scripts/audit-privacy-snapshot.mjs --write-reviewed-binding
           npm test
           npm run security:scan
           node scripts/verify-build-artifacts.mjs
