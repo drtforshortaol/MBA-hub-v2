@@ -17,3 +17,16 @@ test('Python-generated cache files do not invalidate review, while source edits 
  fs.writeFileSync(path.join(root,'scripts/check.py'),'changed source');assert.notEqual(privacySnapshot(root).snapshot_sha256,first.snapshot_sha256);
  fs.symlinkSync(path.join(root,'scripts/check.py'),path.join(root,'scripts/link.py'));assert.throws(()=>privacySnapshot(root),/symlink/);
 });
+
+test('developer five-tap handler is present only in developer build and lazy-loads diagnostics',()=>{
+ const dev=fs.readFileSync('dist/developer/core/hub.js','utf8');
+ const guide=fs.readFileSync('dist/tester/core/hub.js','utf8');
+ const diagnostics=fs.readFileSync('dist/developer/core/developer.js','utf8');
+ assert.match(dev,/developerTaps/);
+ assert.match(dev,/developerLastTap/);
+ assert.match(dev,/import\('\.\/developer\.js'\)/);
+ assert.match(dev,/toggleDeveloper\(\)/);
+ assert.doesNotMatch(guide,/developerTaps|developerLastTap|developer\.js/);
+ assert.match(diagnostics,/export function toggleDeveloper\(/);
+ assert(!fs.existsSync('dist/tester/core/developer.js'));
+});
