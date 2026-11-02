@@ -153,6 +153,27 @@
       ],
       "content_sha256": "2dd2611e240968503c391359b60686bebfe20e445941b15cddb5ebd98913a7e5",
       "release_authorized": false
+    },
+    {
+      "app_id": "sperm-whale",
+      "status": "owner-approved-text",
+      "scope": "authored-text-only",
+      "reviewer": "owner",
+      "reviewed_on": "2026-11-01",
+      "review_reference": "docs/verification/sperm-whale-text-approval-20261101.json",
+      "authorization_quote": "Approved",
+      "candidate_commit": "54113769101a2561d563357acf09453e08884a47",
+      "source_html_blob_sha": "86c52f8e1f0e298abf93ca9eb260553b2ece262d",
+      "section_ids": [
+        "Identification",
+        "Deep-diving-and-feeding",
+        "Sound-and-spermaceti",
+        "Family-life-and-calves",
+        "Built-for-depth",
+        "Conservation-and-observation",
+        "Research-and-individuals"
+      ],
+      "release_authorized": false
     }
   ]
 }
