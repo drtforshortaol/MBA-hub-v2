@@ -7,7 +7,7 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates. Exact seven-section Sperm Whale owner-approved wording is now content-digest-bound; source HTML and bundled media remain unchanged by the approval metadata.",
-  "snapshot_sha256": "f74c8e74cb3c3b8a6e41d71e82f573da4bef8c7aa295e73f1ac2ed3ac7706135",
+  "snapshot_sha256": "c746204c9736ffb435d482c4fe413f1412c8b4a45beef91486c9b3c9d6eb1d4a",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
