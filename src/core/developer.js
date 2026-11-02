@@ -14,8 +14,8 @@ import {renderNaturalistSourceEvidence} from './naturalist-source-evidence.js';
 import {readNaturalistReviewPosition,saveNaturalistReviewPosition} from './naturalist-review-position.js';
 import {renderNaturalistReviewLink} from './naturalist-review-link.js';
 const env=await fetch('environment.json').then(r=>r.json());if(!env.developer)throw Error('Developer module prohibited in this environment');
-const panel=document.querySelector('#developer'),title=document.querySelector('#title');let taps=0,last=0;
-title.addEventListener('click',()=>{if(Date.now()-last>2200)taps=0;last=Date.now();if(++taps===5){taps=0;panel.hidden=!panel.hidden;if(!panel.hidden)render();}});
+const panel=document.querySelector('#developer');
+export function toggleDeveloper(){panel.hidden=!panel.hidden;if(!panel.hidden)render();}
 async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','Diagnostics only. Publishing authority remains outside this app.'],['button','Update Now','update'],['button','Repair offline files','repair'],['details','','diagnostics-details'],['h2','Application inventory'],['label','Filter applications'],['input','','app-filter'],['div','','app-inventory'],['div','','app-details'],['h2','Tasks'],['label','Capture an item to fix later'],['input','','task'],['button','Add task','add'],['div','','tasks']].map(([tag,label,id])=>{const el=document.createElement(tag);if(id)el.id=id;if(tag==='label')el.htmlFor=label==='Filter applications'?'app-filter':'task';if(tag==='p')el.className='quiet';if(tag==='button')el.className='button';if(tag!=='input')el.textContent=label;return el;}));
 
  const diagnosticsDetails=document.querySelector('#diagnostics-details');
