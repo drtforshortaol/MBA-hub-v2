@@ -1,10 +1,6 @@
-name: Publish orange MBA Hub DEV (public, separate Pages path)
+name: Prepare owner-approved orange DEV Pages deployment (manual only)
 on:
   workflow_dispatch:
-  push:
-    branches: [work/device-acceptance-prep-20261030]
-    paths:
-      - '.github/workflows/publish-orange-dev.yml'
 permissions:
   contents: read
   pages: write
