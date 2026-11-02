@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
   "status": "reviewed",
-  "reviewed_on": "2026-10-30",
+  "reviewed_on": "2026-11-01",
   "reviewer": "assistant engineering review authorized by owner request: Next blocker",
   "scope": "Candidate-specific privacy/distribution delta review for owner-authorized public early-access guide tester; not visitor-standalone sharing or production release",
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
-  "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates.",
-  "snapshot_sha256": "7b0f8d51005c9b19cf2d50a601ae0dc0d4830a2f89d864011e43266fea755ec0",
+  "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates. Exact seven-section Sperm Whale owner-approved wording is now content-digest-bound; source HTML and bundled media remain unchanged by the approval metadata.",
+  "snapshot_sha256": "f74c8e74cb3c3b8a6e41d71e82f573da4bef8c7aa295e73f1ac2ed3ac7706135",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "7b0f8d51005c9b19cf2d50a601ae0dc0d4830a2f89d864011e43266fea755ec0",
+    "snapshot_sha256": "f74c8e74cb3c3b8a6e41d71e82f573da4bef8c7aa295e73f1ac2ed3ac7706135",
     "resources": [
       {
         "path": "config/categories.json",
@@ -35,8 +35,8 @@
       },
       {
         "path": "config/owner-text-reviews.json",
-        "bytes": 8764,
-        "sha256": "4c0d9a7efcb068c107cd7be90149bf377bc4a6fd95bf97d002414fc3b8edaf28"
+        "bytes": 9699,
+        "sha256": "e39671a34c4df92554ccf0d54cea964167db71093656e07d6d24f0e068f04ebb"
       },
       {
         "path": "config/platform.json",
@@ -352,6 +352,11 @@
         "path": "scripts/snapshot.py",
         "bytes": 1647,
         "sha256": "e9364177ce44f029eab64c52ec21981ffc9bd3591a1bd8bb80ad228e78a0e762"
+      },
+      {
+        "path": "scripts/sperm-whale-approval-digest.mjs",
+        "bytes": 925,
+        "sha256": "8312bc652506d7d671acc5ef8246125d7dcc36dcc803a4cdb0dffd1e2c9d9415"
       },
       {
         "path": "scripts/stage-submission-packet.mjs",
@@ -1000,8 +1005,8 @@
       },
       {
         "path": "src/apps/sperm-whale/manifest.json",
-        "bytes": 7104,
-        "sha256": "4dfaf357c4b414d2b8cbd7fddfab62b40506e7bbccad6e69c67d764750ed8a1c"
+        "bytes": 7116,
+        "sha256": "703c0cb9276e2f1027d941f0fb2fc1723b936e1b4ed21dd8eb6971e4c77dee63"
       },
       {
         "path": "src/apps/stargazer-species-guide/index.html",
