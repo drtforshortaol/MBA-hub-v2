@@ -31,6 +31,8 @@ jobs:
         run: npm run validate
       - name: Build isolated development distribution
         run: npm run build
+      - name: Refresh bounded developer privacy review in CI workspace
+        run: node scripts/audit-privacy-snapshot.mjs --write-reviewed-binding
       - name: Run automated regression tests
         run: npm test
       - name: Verify built tester artifacts remain intact after regressions
