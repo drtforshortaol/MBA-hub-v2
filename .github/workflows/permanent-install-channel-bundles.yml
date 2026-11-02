@@ -3,6 +3,15 @@ on:
   push:
     branches: [work/device-acceptance-prep-20261030]
   workflow_dispatch:
+    inputs:
+      developer_url:
+        description: 'Optional final first-party DEV app HTTPS URL (no redirects or shorteners)'
+        required: false
+        type: string
+      guide_url:
+        description: 'Optional final first-party guide app HTTPS URL (no redirects or shorteners)'
+        required: false
+        type: string
 permissions:
   contents: read
 jobs:
@@ -44,6 +53,54 @@ jobs:
           console.log('Distinct installation names, icons, and offline namespaces verified.');
           console.log('NOTICE: Bundled QR is LEGACY and must not be distributed as the permanent guide QR:', qr.target);
           EOF
+      - name: Generate dedicated direct-link QR codes only when both permanent URLs are provided
+        env:
+          DEV_URL: ${{ inputs.developer_url }}
+          GUIDE_URL: ${{ inputs.guide_url }}
+        run: |
+          python - <<'PY'
+          import os
+          from urllib.parse import urlsplit
+          dev, guide = os.environ.get('DEV_URL','').strip(), os.environ.get('GUIDE_URL','').strip()
+          if not dev and not guide:
+              print('Permanent URLs not supplied: QR generation skipped (legacy QR remains unsafe to distribute).')
+              raise SystemExit(0)
+          if not dev or not guide:
+              raise SystemExit('Provide both permanent URLs together.')
+          for label, url in [('DEV',dev),('guide',guide)]:
+              p=urlsplit(url)
+              if p.scheme!='https' or not p.hostname or p.username or p.password or p.query or p.fragment or p.port not in (None,443):
+                  raise SystemExit(f'{label} URL must be a direct canonical HTTPS app URL without credentials, query, fragment, or alternate port.')
+              if any(x in p.hostname.lower() for x in ('bit.ly','tinyurl.com','qrserver.com','t.co')):
+                  raise SystemExit(f'{label} URL is a forbidden intermediary.')
+          if dev.rstrip('/')==guide.rstrip('/'):
+              raise SystemExit('DEV and guide must use distinct app URLs.')
+          with open('/tmp/qr-urls.txt','w') as out:
+              out.write('DEV='+dev+'\nGUIDE='+guide+'\n')
+          print('Permanent QR targets validated for direct encoding. Access control must be verified before distribution.')
+          PY
+          if test -s /tmp/qr-urls.txt; then
+            python -m pip install 'qrcode[pil]==8.2'
+            mkdir -p dist/direct-qr
+            python - <<'PY'
+          import os, qrcode
+          for label, value in [('mba-hub-dev',os.environ['DEV_URL'].strip()),('mba-hub-v2',os.environ['GUIDE_URL'].strip())]:
+              qr=qrcode.QRCode(border=4,box_size=10,error_correction=qrcode.constants.ERROR_CORRECT_M)
+              qr.add_data(value,optimize=0)
+              qr.make(fit=True)
+              qr.make_image(fill_color='black',back_color='white').save('dist/direct-qr/'+label+'.png')
+              with open('dist/direct-qr/'+label+'.txt','w') as f:f.write(value+'\n')
+              print(label,'QR encodes exactly:',value)
+          PY
+          fi
+      - name: Retain direct-link QR images as private workflow artifact (if generated)
+        if: ${{ inputs.developer_url != '' && inputs.guide_url != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: mba-v2-dedicated-direct-qr-review
+          path: dist/direct-qr/
+          retention-days: 7
+          if-no-files-found: error
       - name: Retain developer bundle for repository collaborators (not a secured owner deployment)
         uses: actions/upload-artifact@v4
         with:
