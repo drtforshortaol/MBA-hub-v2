@@ -1,0 +1,57 @@
+name: Prepare permanent installation channel bundles
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned fidelity parser
+        run: python -m pip install --requirement scripts/migration/requirements-fidelity.txt
+      - name: Build and validate both channel bundles
+        run: |
+          npm run build
+          npm test
+          npm run security:scan
+          node scripts/verify-build-artifacts.mjs
+      - name: Verify installation identities and isolation
+        run: |
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          const read = p => JSON.parse(fs.readFileSync(p,'utf8'));
+          const dev = read('dist/developer/manifest.webmanifest');
+          const guide = read('dist/tester/manifest.webmanifest');
+          const devEnv = read('dist/developer/environment.json');
+          const guideEnv = read('dist/tester/environment.json');
+          if (dev.name !== 'MBA Hub DEV' || guide.name !== 'MBA Hub V2') throw Error('Unexpected install identity');
+          if (devEnv.namespace === guideEnv.namespace || !devEnv.developer || guideEnv.developer) throw Error('Channel isolation failed');
+          if (dev.scope !== './' || guide.scope !== './') throw Error('Unexpected PWA scope');
+          if (!fs.readFileSync('dist/developer/icon.svg','utf8').includes('#d66b12')) throw Error('Orange developer icon missing');
+          if (fs.readFileSync('dist/tester/icon.svg','utf8').includes('#d66b12')) throw Error('Guide icon unexpectedly orange');
+          console.log('Distinct installation names, icons, and offline namespaces verified.');
+          EOF
+      - name: Retain owner-only developer bundle as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mba-hub-dev-install-bundle
+          path: dist/developer/
+          retention-days: 14
+          if-no-files-found: error
+      - name: Retain guide candidate bundle as workflow artifact (not published)
+        uses: actions/upload-artifact@v4
+        with:
+          name: mba-hub-v2-guide-candidate-bundle
+          path: dist/tester/
+          retention-days: 14
+          if-no-files-found: error
+# No deploy step. Downloadable workflow artifacts are not public app hosting.
+# Publishing requires approved permanent URLs, access control, and guide release authorization.
