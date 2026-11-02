@@ -75,7 +75,7 @@ export function build(){
    const indexPath=`${out}/index.html`;
    fs.writeFileSync(indexPath,fs.readFileSync(indexPath,'utf8').replaceAll('MBA Hub Version 2','MBA Hub DEV').replace('<small>V2</small>','<small>DEV</small>'));
   }
-  put('manifest.webmanifest',{id:isDev?'./mba-hub-dev':'./mba-hub-v2',name:isDev?'MBA Hub DEV':'MBA Hub V2',short_name:isDev?'MBA DEV':'MBA V2',start_url:'./index.html',scope:'./',display:'standalone',theme_color:isDev?'#d66b12':'#123e50',background_color:'#f4f7f7',icons:[{src:'icon.svg',sizes:'any',type:'image/svg+xml',purpose:'any'}]});
+  put('manifest.webmanifest',{id:'./',name:isDev?'MBA Hub DEV':'MBA Hub V2',short_name:isDev?'MBA DEV':'MBA V2',start_url:'./index.html',scope:'./',display:'standalone',theme_color:isDev?'#d66b12':'#123e50',background_color:'#f4f7f7',icons:[{src:'icon.svg',sizes:'any',type:'image/svg+xml',purpose:'any'}]});
   // Diagnostics code and maintenance handlers are physically absent from tester artifacts.
   if(environment==='developer')fs.appendFileSync(`${out}/core/hub.js`,"\nimport('./developer.js');\n");
   const files=[];function walk(dir){for(const ent of fs.readdirSync(dir,{withFileTypes:true})){const p=path.join(dir,ent.name);if(ent.isDirectory())walk(p);else files.push(p.slice(out.length+1));}}walk(out);
