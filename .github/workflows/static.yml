@@ -65,7 +65,7 @@ jobs:
           const e=JSON.parse(fs.readFileSync(d+'environment.json','utf8'));
           if(m.name!=='MBA Hub V2'||m.theme_color!=='#123e50'||e.developer||e.namespace!=='mba-v2-tester')throw Error('Guide identity mismatch');
           if(fs.existsSync(d+'core/developer.js')||fs.readFileSync(d+'core/hub.js','utf8').includes('developerTaps'))throw Error('Developer controls found');
-          if(!fs.readFileSync(d+'install.html','utf8').includes('These QR codes point directly'))throw Error('Guide QR not enabled');
+          if(!fs.readFileSync(d+'install.html','utf8').includes('Universal installation link and QR code'))throw Error('Guide QR not enabled');
           if(!fs.readFileSync(d+'icon.svg','utf8').includes('#123e50'))throw Error('Blue icon missing');
           EOF
       - uses: actions/configure-pages@v5
@@ -95,7 +95,7 @@ jobs:
                   assert manifest['name']=='MBA Hub V2' and manifest['theme_color']=='#123e50'
                   assert len(registry['apps'])>=30
                   assert b'#123e50' in get('icon.svg')
-                  assert b'These QR codes point directly' in get('install.html')
+                  assert b'Universal installation link and QR code' in get('install.html')
                   assert len(get('install-qr.png'))>100
                   assert b'core/hub.js' in get('index.html')
                   print('Guide public delivery checks passed:',len(registry['apps']),'apps')
