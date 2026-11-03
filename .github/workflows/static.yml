@@ -1,5 +1,5 @@
 name: Deploy blue MBA Hub V2 Guide to Pages
-# Universal Guide QR and installation page release; canonical source branch remains separate.
+# Guide Install & Help refresh: universal QR, persistent link and device-specific recovery instructions.
 on:
   workflow_dispatch:
   push:
