@@ -22,13 +22,13 @@ if(process.argv[1]===fileURLToPath(import.meta.url)){
   const old=new Map(review.snapshot.resources.map(item=>[item.path,item]));
   const changed=snapshot.resources.filter(item=>old.get(item.path)?.sha256!==item.sha256||old.get(item.path)?.bytes!==item.bytes).map(item=>item.path);
   const removed=review.snapshot.resources.filter(item=>!snapshot.resources.some(current=>current.path===item.path)).map(item=>item.path);
-  const permitted=['scripts/build.mjs','src/core/developer.js','scripts/audit-privacy-snapshot.mjs'];
-  if(removed.length||changed.length!==3||changed.some(item=>!permitted.includes(item))||snapshot.automaticExternalResources.length||snapshot.sensitiveBrowserAPIs.length)throw Error('Unexpected review delta; do not auto-approve: '+JSON.stringify({changed,removed}));
+  const permitted=['scripts/build.mjs','src/core/developer.js','scripts/audit-privacy-snapshot.mjs','src/install.html'];
+  if(removed.length||changed.length!==permitted.length||changed.some(item=>!permitted.includes(item))||snapshot.automaticExternalResources.length||snapshot.sensitiveBrowserAPIs.length)throw Error('Unexpected review delta; do not auto-approve: '+JSON.stringify({changed,removed}));
   review.snapshot=snapshot;
   review.snapshot_sha256=snapshot.snapshot_sha256;
   review.reviewed_on='2026-11-02';
-  review.scope+='; developer-only five-tap shortcut loading and error feedback reviewed November 2; no change to guide distribution authorization';
+  review.scope+='; developer five-tap shortcut and Guide direct-link copy control (owner-authorized public Guide distribution); no additional public-content review requested';
   fs.writeFileSync(reviewPath,JSON.stringify(review,null,2)+'\n');
-  console.log('Reviewed developer-only privacy binding updated:',snapshot.snapshot_sha256);
+  console.log('Reviewed bounded deployment UI/privacy binding updated:',snapshot.snapshot_sha256);
  }else console.log(JSON.stringify(snapshot,null,2));
 }
