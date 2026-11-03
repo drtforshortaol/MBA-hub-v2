@@ -1,5 +1,5 @@
 name: Deploy blue MBA Hub V2 Guide to Pages
-# Guide direct-link copy control CI reconciliation; source remains canonical on development branch.
+# Universal Guide QR and installation page release; canonical source branch remains separate.
 on:
   workflow_dispatch:
   push:
