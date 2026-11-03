@@ -81,12 +81,12 @@ export function build(){
   if(!isDev){
    const installPath=`${out}/install.html`;
    let install=fs.readFileSync(installPath,'utf8');
-   const legacyQr=/<img class="qr" src="\\.\\/install-qr\\.png" alt="Universal MBA Hub V2 Guide QR code">/g;
-   const count=[...install.matchAll(legacyQr)].length;
+   const legacyQr='<img class="qr" src="./install-qr.png" alt="Universal MBA Hub V2 Guide QR code">';
+   const count=install.split(legacyQr).length-1;
    if(count!==1)throw Error('Universal Guide QR markup changed: verify before release');
    const guideUrl=process.env.MBA_GUIDE_PUBLIC_URL;
    if(guideUrl && guideUrl!=='https://drtforshortaol.github.io/MBA-hub-v2/')throw Error('Unrecognized Guide publication URL');
-   if(!guideUrl)install=install.replace(legacyQr,'<p class="muted"><strong>Guide QR pending.</strong> Use the approved installation address.</p>');
+   if(!guideUrl)install=install.replaceAll(legacyQr,'<p class="muted"><strong>Guide QR pending.</strong> Use the approved installation address.</p>');
    install=install.replace('QR images are included with the Hub for offline use.','Only the QR for the current approved Guide address is suitable for distribution.');
    if(!guideUrl)install=install.replace('Scan the code with your iPhone Camera and tap the link.','Open the approved Guide address directly in Safari.');
    if(!guideUrl)install=install.replace('Scan with your Camera or Google Lens.','Open the approved Guide address directly in Chrome.');
