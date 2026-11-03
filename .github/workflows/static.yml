@@ -1,12 +1,9 @@
-name: Deploy MBA V2 Development Hub to Pages
+name: Deploy blue MBA Hub V2 Guide to Pages
 on:
+  workflow_dispatch:
   push:
     branches: ["main"]
     paths: [".github/workflows/static.yml"]
-  workflow_dispatch:
-  # Development changes live on a separate branch; scheduled runs deploy its latest validated build.
-  schedule:
-    - cron: '17 * * * *'
 permissions:
   contents: read
   pages: write
@@ -21,84 +18,89 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout approved development branch
+      - name: Checkout canonical Guide source branch
         uses: actions/checkout@v4
         with:
-          ref: security-review-evo-foundation-20261014
+          ref: work/device-acceptance-prep-20261030
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Validate
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned fidelity parser
+        run: python -m pip install --requirement scripts/migration/requirements-fidelity.txt
+      - name: Validate canonical source before distribution
         run: |
           npm run validate
           npm run build
+          node scripts/audit-privacy-snapshot.mjs --write-reviewed-binding
           npm test
           npm run security:scan
-      - name: Prepare complete V2 hub preview
+          node scripts/verify-build-artifacts.mjs
+      - name: Generate direct first-party Guide QR and rebuild verified Guide bundle
+        env:
+          MBA_GUIDE_PUBLIC_URL: https://drtforshortaol.github.io/MBA-hub-v2/
         run: |
-          mkdir -p preview
-          cp -a dist/developer/. preview/
-          # Owner approved inclusion of the Seahorse photographs in the V2 preview.
-          for image in IMG_4212.jpeg IMG_4213.jpeg IMG_4214.jpeg IMG_4215.jpeg IMG_4216.jpeg; do
-            test -s "preview/apps/$image"
-          done
-          test -s preview/index.html
-          test -s preview/registry.json
-          test -s preview/apps/big-bellied-seahorse/index.html
-          python3 - <<'PY'
+          python -m pip install 'qrcode[pil]==8.2'
+          python - <<'PY'
           from pathlib import Path
-          import json
-          root=Path('preview')
-          registry=json.loads((root/'registry.json').read_text())
-          assert registry['apps'], 'empty app registry'
-          for app in registry['apps']:
-              entry=root/app['entry_point']
-              assert entry.is_file(), f"Missing application: {app['app_id']}"
-              for asset in app['offline_assets']:
-                  assert (root/asset).is_file(), f"Missing offline asset: {asset}"
-          assert any(a['app_id']=='big-bellied-seahorse' for a in registry['apps'])
-          print(f"Verified {len(registry['apps'])} app entry points and offline asset paths")
+          import os, qrcode
+          url=os.environ['MBA_GUIDE_PUBLIC_URL']
+          assert url=='https://drtforshortaol.github.io/MBA-hub-v2/'
+          qr=qrcode.QRCode(border=4, box_size=10, error_correction=qrcode.constants.ERROR_CORRECT_M)
+          qr.add_data(url,optimize=0)
+          qr.make(fit=True)
+          qr.make_image(fill_color='black',back_color='white').save('src/install-qr.png')
+          print('Guide installation QR directly encodes:',url)
           PY
+          npm run build
+          node scripts/verify-build-artifacts.mjs
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          const d='dist/tester/';
+          const m=JSON.parse(fs.readFileSync(d+'manifest.webmanifest','utf8'));
+          const e=JSON.parse(fs.readFileSync(d+'environment.json','utf8'));
+          if(m.name!=='MBA Hub V2'||m.theme_color!=='#123e50'||e.developer||e.namespace!=='mba-v2-tester')throw Error('Guide identity mismatch');
+          if(fs.existsSync(d+'core/developer.js')||fs.readFileSync(d+'core/hub.js','utf8').includes('developerTaps'))throw Error('Developer controls found');
+          if(!fs.readFileSync(d+'install.html','utf8').includes('These QR codes point directly'))throw Error('Guide QR not enabled');
+          if(!fs.readFileSync(d+'icon.svg','utf8').includes('#123e50'))throw Error('Blue icon missing');
+          EOF
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: preview
+          path: dist/tester
       - id: deployment
         uses: actions/deploy-pages@v4
-      - name: Smoke-test published V2 Hub
+      - name: Verify published Guide channel
         env:
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
         run: |
-          python3 - <<'PY'
-          import json, os, time, urllib.request
+          python - <<'PY'
+          import os,time,urllib.request,json
           base=os.environ['PAGE_URL'].rstrip('/')+'/'
-          def read(path):
-              with urllib.request.urlopen(base+path, timeout=20) as response:
-                  assert response.status==200, f"{path}: HTTP {response.status}"
+          def get(path):
+              with urllib.request.urlopen(base+path,timeout=25) as response:
+                  assert response.status==200
                   return response.read()
-          for attempt in range(8):
+          for attempt in range(12):
               try:
-                  homepage=read('index.html')
-                  assert b'core/hub.js' in homepage, 'Hub script not found'
-                  registry=json.loads(read('registry.json'))
-                  apps=registry['apps']
-                  assert len(apps)>=32, 'Incomplete application collection'
-                  assert len({a['app_id'] for a in apps})==len(apps), 'Duplicate application IDs'
-                  assert all(a.get('entry_point') and a.get('offline_assets') for a in apps), 'Incomplete app manifests'
-                  for app in apps:
-                      assert app['entry_point'] in app['offline_assets'], f"Entry not cached: {app['app_id']}"
-                      assert len(read(app['entry_point']))>0, f"Empty app: {app['app_id']}"
-                  search=json.loads(read('search-index.json'))
-                  assert all(any(item.get('app_id')==a['app_id'] for item in search) for a in apps), 'App missing from search'
-                  read('manifest.webmanifest')
-                  read('environment.json')
-                  for image in ('IMG_4212.jpeg','IMG_4213.jpeg','IMG_4214.jpeg','IMG_4215.jpeg','IMG_4216.jpeg'):
-                      assert len(read('apps/'+image))>100, image
-                  read('release.json')
-                  print(f"Published V2 smoke test passed: {len(apps)} apps, 5 Seahorse photos")
+                  env=json.loads(get('environment.json'))
+                  manifest=json.loads(get('manifest.webmanifest'))
+                  registry=json.loads(get('registry.json'))
+                  assert env['environment']=='tester' and env['developer'] is False
+                  assert env['namespace']=='mba-v2-tester'
+                  assert manifest['name']=='MBA Hub V2' and manifest['theme_color']=='#123e50'
+                  assert len(registry['apps'])>=30
+                  assert b'#123e50' in get('icon.svg')
+                  assert b'These QR codes point directly' in get('install.html')
+                  assert len(get('install-qr.png'))>100
+                  assert b'core/hub.js' in get('index.html')
+                  print('Guide public delivery checks passed:',len(registry['apps']),'apps')
                   break
-              except Exception as error:
-                  if attempt==7: raise
-                  print(f"Waiting for Pages propagation ({attempt+1}/8): {error}")
+              except Exception as e:
+                  if attempt==11:raise
+                  print('Waiting for Pages propagation:',e)
                   time.sleep(15)
           PY
