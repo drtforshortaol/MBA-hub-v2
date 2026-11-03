@@ -75,6 +75,23 @@ export function build(){
    const indexPath=`${out}/index.html`;
    fs.writeFileSync(indexPath,fs.readFileSync(indexPath,'utf8').replaceAll('MBA Hub Version 2','MBA Hub DEV').replace('<small>V2</small>','<small>DEV</small>'));
   }
+  // Guide installation help must not expose the retired tester QR.
+  // Until a permanent access-controlled Guide address is approved, show only
+  // the current first-party relative link. Keep the Developer bundle untouched.
+  if(!isDev){
+   const installPath=`${out}/install.html`;
+   let install=fs.readFileSync(installPath,'utf8');
+   const legacyQr=/<img class="qr" src="\.\/install-qr\.png" alt="QR code linking to the MBA Hub V2">/g;
+   const count=[...install.matchAll(legacyQr)].length;
+   if(count!==3)throw Error('Guide installation QR markup changed: verify before release');
+   install=install.replace(legacyQr,'<p class="muted"><strong>Guide QR code pending.</strong> A new code will be added only after the permanent, access-controlled Guide address is verified.</p>');
+   install=install.replace('QR images are included with the Hub for offline use.','The former tester QR is retired and must not be distributed.');
+   install=install.replace('The three QR codes point to the same MBA Hub V2 website; the installation steps vary by device.','The approved Guide QR is not yet available. Until then, open the Guide directly from its authorized installation address; installation steps vary by device.');
+   install=install.replaceAll('Scan the code with your iPhone Camera and tap the link.','Open the approved Guide address directly in Safari.');
+   install=install.replaceAll('Scan with your Camera or Google Lens.','Open the approved Guide address directly in Chrome.');
+   install=install.replace('The QR code is useful for sending the link to a phone, not installing on the PC itself.','Use only the approved Guide installation address.');
+   fs.writeFileSync(installPath,install);
+  }
   put('manifest.webmanifest',{id:'./',name:isDev?'MBA Hub DEV':'MBA Hub V2',short_name:isDev?'MBA DEV':'MBA V2',start_url:'./index.html',scope:'./',display:'standalone',theme_color:isDev?'#d66b12':'#123e50',background_color:'#f4f7f7',icons:[{src:'icon.svg',sizes:'any',type:'image/svg+xml',purpose:'any'}]});
   // Diagnostics code and maintenance handlers are physically absent from tester artifacts.
   if(environment==='developer')fs.appendFileSync(`${out}/core/hub.js`,`
