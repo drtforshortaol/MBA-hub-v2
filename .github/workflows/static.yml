@@ -1,4 +1,5 @@
 name: Deploy blue MBA Hub V2 Guide to Pages
+# Guide installation-link copy control update; source remains canonical on development branch.
 on:
   workflow_dispatch:
   push:
