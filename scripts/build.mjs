@@ -84,12 +84,14 @@ export function build(){
    const legacyQr=/<img class="qr" src="\.\/install-qr\.png" alt="QR code linking to the MBA Hub V2">/g;
    const count=[...install.matchAll(legacyQr)].length;
    if(count!==3)throw Error('Guide installation QR markup changed: verify before release');
-   install=install.replace(legacyQr,'<p class="muted"><strong>Guide QR code pending.</strong> A new code will be added only after the permanent, access-controlled Guide address is verified.</p>');
+   const guideUrl=process.env.MBA_GUIDE_PUBLIC_URL;
+   if(guideUrl && guideUrl!=='https://drtforshortaol.github.io/MBA-hub-v2/')throw Error('Unrecognized Guide publication URL');
+   if(!guideUrl)install=install.replace(legacyQr,'<p class="muted"><strong>Guide QR code pending.</strong> The approved Guide address has not yet been verified.</p>');
    install=install.replace('QR images are included with the Hub for offline use.','The former tester QR is retired and must not be distributed.');
-   install=install.replace('The three QR codes point to the same MBA Hub V2 website; the installation steps vary by device.','The approved Guide QR is not yet available. Until then, open the Guide directly from its authorized installation address; installation steps vary by device.');
-   install=install.replaceAll('Scan the code with your iPhone Camera and tap the link.','Open the approved Guide address directly in Safari.');
-   install=install.replaceAll('Scan with your Camera or Google Lens.','Open the approved Guide address directly in Chrome.');
-   install=install.replace('The QR code is useful for sending the link to a phone, not installing on the PC itself.','Use only the approved Guide installation address.');
+   install=install.replace('The three QR codes point to the same MBA Hub V2 website; the installation steps vary by device.',guideUrl?'These QR codes point directly to the blue MBA Hub V2 Guide website.':'The Guide QR is not yet available; use its approved installation address.');
+   if(!guideUrl)install=install.replaceAll('Scan the code with your iPhone Camera and tap the link.','Open the approved Guide address directly in Safari.');
+   if(!guideUrl)install=install.replaceAll('Scan with your Camera or Google Lens.','Open the approved Guide address directly in Chrome.');
+   if(!guideUrl)install=install.replace('The QR code is useful for sending the link to a phone, not installing on the PC itself.','Use only the approved Guide installation address.');
    fs.writeFileSync(installPath,install);
   }
   put('manifest.webmanifest',{id:'./',name:isDev?'MBA Hub DEV':'MBA Hub V2',short_name:isDev?'MBA DEV':'MBA V2',start_url:'./index.html',scope:'./',display:'standalone',theme_color:isDev?'#d66b12':'#123e50',background_color:'#f4f7f7',icons:[{src:'icon.svg',sizes:'any',type:'image/svg+xml',purpose:'any'}]});
