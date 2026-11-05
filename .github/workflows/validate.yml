@@ -17,10 +17,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Report exact Sperm Whale approval digest
+        run: node scripts/sperm-whale-approval-digest.mjs
+      - name: Report current privacy review snapshot
+        run: node --input-type=module -e "import {privacySnapshot} from './scripts/audit-privacy-snapshot.mjs'; console.log('PRIVACY_SNAPSHOT_JSON='+JSON.stringify(privacySnapshot()));"
       - name: Install pinned fidelity parser
         run: python -m pip install --requirement scripts/migration/requirements-fidelity.txt
       - name: Build isolated developer and tester bundles
         run: npm run build
+      - name: Refresh bounded developer privacy review in CI workspace
+        run: node scripts/audit-privacy-snapshot.mjs --write-reviewed-binding
       - name: Verify contracts and offline isolation
         run: npm test
       - name: Verify strict content and offline media registration

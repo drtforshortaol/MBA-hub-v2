@@ -81,3 +81,19 @@ test('shared application contract uses the app-specific capture interface',()=>{
  assert.match(source,/link\.href=captureAppVisit\(/);
  assert.doesNotMatch(source,/link\.href=captureVisit\(/);
 });
+
+
+test('Tree of Life short Hub link receives contextual Back while external Hub labels do not',()=>{
+ const source=fs.readFileSync('src/core/app-contract.js','utf8');
+ const setup=source.slice(source.indexOf('const hubLinks='),source.indexOf('function viewState()'));
+ const html=fs.readFileSync('src/apps/tree-of-life-origins/index.html','utf8');
+ const match=html.match(/<a class="hub-button" href="([^"]+)">([^<]+)<\/a>/);
+ assert(match);let back,assigned;
+ const origin=new URL('https://example.test/v2/'),link={href:new URL(match[1],new URL('apps/tree-of-life-origins/index.html',origin)).href,textContent:match[2],className:'hub-button',before(value){back=value;}};
+ const external={href:'https://elsewhere.test/index.html',textContent:'← Hub'};
+ const document={querySelectorAll:()=>[link,external],createElement:()=>({style:{},setAttribute(k,v){this[k]=v;}})};
+ const location={href:'https://example.test/v2/apps/tree-of-life-origins/index.html?visit=test',assign(url){assigned=String(url);}};
+ new Function('document','root','mainHubURL','returnToVisit','location','sessionStorage','env',setup)(document,origin,mainHubURL,()=>new URL('index.html?restore=test',origin),location,{}, {namespace:'tester'});
+ assert(back);assert.equal(back.textContent,'← Back');assert.equal(back['data-v2-back'],'true');
+ let prevented=false;back.onclick({preventDefault(){prevented=true;}});assert(prevented);assert.equal(assigned,'https://example.test/v2/index.html?restore=test');assert.equal(link.href,'https://example.test/v2/index.html?home=1');assert.equal(external.href,'https://elsewhere.test/index.html');
+});

@@ -12,7 +12,7 @@
       "authorization_quote": "Approved",
       "candidate_commit": "74b91bb5af8f0215d4863bcdf9a2c39e76aa3c58",
       "candidate_packet_sha256": "f4324b0ca675b24d4a45b71a48fd3cbefd33a786c9357539357c6c148e1ecf41",
-      "content_sha256": "5dc412c5c751d33710de31fb8db23a2fcb9975bb49d74859570fc4b89a4c48ac",
+      "content_sha256": "750be0f04c9e132d9545147b9395c5822783faf60115b191ed982da2e6b773fb",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-29",
@@ -55,6 +55,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "2d72ac36ee76fdfb5437ebd0442789ad2c42a7ecc20b35b50f61a0f873e8a5d2",
           "content_sha256": "5dc412c5c751d33710de31fb8db23a2fcb9975bb49d74859570fc4b89a4c48ac"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "5dc412c5c751d33710de31fb8db23a2fcb9975bb49d74859570fc4b89a4c48ac"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "e080f7a2ad91d280ab5e812c48fcef2e048a5c57f4c8ace4dc8ce7041bf2ea36"
         }
       ]
     },
@@ -68,7 +80,7 @@
       "authorization_reference": "Owner conversation: approval request for exact ten-section Seahorse draft at 74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9, followed by explanation of clearing the content blocker",
       "authorization_quote": "Proceed",
       "candidate_commit": "74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9",
-      "content_sha256": "288240c9d57dc5f20ec2b34f8932088291e7c4edd6d6862986d66609107befaa",
+      "content_sha256": "99bf7edd716756c043dddce93160401b39097b9e39d0a7bdbbe696dc79b1fa8a",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -90,6 +102,25 @@
           "scope": "Owner accepted exact eight-feature anatomy-key addition and replacement",
           "previous_content_sha256": "6b663ca281d3e7ae42b2e9f9628e55c01c4543cd6479da31d498614fb4a1295f",
           "content_sha256": "288240c9d57dc5f20ec2b34f8932088291e7c4edd6d6862986d66609107befaa"
+        },
+        {
+          "recorded_on": "2026-10-31",
+          "review_reference": "docs/verification/seahorse-label-restoration-20261031.json",
+          "scope": "Owner-requested restoration of on-image labels on existing approved visible features; unchanged photo bytes and approved prose",
+          "previous_content_sha256": "288240c9d57dc5f20ec2b34f8932088291e7c4edd6d6862986d66609107befaa",
+          "content_sha256": "23d8d9323b7a767e1f6e6fe52357cccc201b19d497bf1f1723f936e8d9b86528"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "23d8d9323b7a767e1f6e6fe52357cccc201b19d497bf1f1723f936e8d9b86528"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "0a06520da51055f2203a1cc97d14914039c04eba9a9951ebe5090d90a90f20c5"
         }
       ],
       "additional_owner_decisions": [
@@ -106,6 +137,45 @@
           "section_id": "Seahorse-anatomy-key"
         }
       ]
+    },
+    {
+      "app_id": "open-sea",
+      "status": "owner-approved-text",
+      "scope": "authored-text-only",
+      "reviewer": "owner",
+      "reviewed_on": "2026-11-01",
+      "review_reference": "docs/OPEN_SEA_TEXT_APPROVAL_20261101.md",
+      "authorization_reference": "docs/verification/open-sea-countershading-text-approval-20261101.json",
+      "authorization_quote": "Approved",
+      "candidate_commit": "6c4f44040cb9dad147e7b7aa2557ba91ec7d93de",
+      "section_ids": [
+        "Countershading"
+      ],
+      "content_sha256": "2dd2611e240968503c391359b60686bebfe20e445941b15cddb5ebd98913a7e5",
+      "release_authorized": false
+    },
+    {
+      "app_id": "sperm-whale",
+      "status": "owner-approved-text",
+      "scope": "authored-text-only",
+      "reviewer": "owner",
+      "reviewed_on": "2026-11-01",
+      "review_reference": "docs/verification/sperm-whale-text-approval-20261101.json",
+      "authorization_quote": "Approved",
+      "candidate_commit": "54113769101a2561d563357acf09453e08884a47",
+      "source_html_blob_sha": "86c52f8e1f0e298abf93ca9eb260553b2ece262d",
+      "section_ids": [
+        "Identification",
+        "Deep-diving-and-feeding",
+        "Sound-and-spermaceti",
+        "Family-life-and-calves",
+        "Built-for-depth",
+        "Conservation-and-observation",
+        "Research-and-individuals"
+      ],
+      "release_authorized": false,
+      "authorization_reference": "docs/verification/sperm-whale-text-approval-20261101.json",
+      "content_sha256": "6f8339b5a3ddc1b479e041683347258ff11ecb302ca4d6995bb0bc93d8a5ed61"
     }
   ]
 }

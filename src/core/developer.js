@@ -14,8 +14,8 @@ import {renderNaturalistSourceEvidence} from './naturalist-source-evidence.js';
 import {readNaturalistReviewPosition,saveNaturalistReviewPosition} from './naturalist-review-position.js';
 import {renderNaturalistReviewLink} from './naturalist-review-link.js';
 const env=await fetch('environment.json').then(r=>r.json());if(!env.developer)throw Error('Developer module prohibited in this environment');
-const panel=document.querySelector('#developer'),title=document.querySelector('#title');let taps=0,last=0;
-title.addEventListener('click',()=>{if(Date.now()-last>2200)taps=0;last=Date.now();if(++taps===5){taps=0;panel.hidden=!panel.hidden;if(!panel.hidden)render();}});
+const panel=document.querySelector('#developer');
+export function toggleDeveloper(){panel.hidden=!panel.hidden;if(!panel.hidden)render();}
 async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','Diagnostics only. Publishing authority remains outside this app.'],['button','Update Now','update'],['button','Repair offline files','repair'],['details','','diagnostics-details'],['h2','Application inventory'],['label','Filter applications'],['input','','app-filter'],['div','','app-inventory'],['div','','app-details'],['h2','Tasks'],['label','Capture an item to fix later'],['input','','task'],['button','Add task','add'],['div','','tasks']].map(([tag,label,id])=>{const el=document.createElement(tag);if(id)el.id=id;if(tag==='label')el.htmlFor=label==='Filter applications'?'app-filter':'task';if(tag==='p')el.className='quiet';if(tag==='button')el.className='button';if(tag!=='input')el.textContent=label;return el;}));
 
  const diagnosticsDetails=document.querySelector('#diagnostics-details');
@@ -633,4 +633,16 @@ async function render(){panel.replaceChildren(...[['h2','Developer mode'],['p','
  filter.addEventListener('input',drawInventory);drawInventory();
  const key=env.namespace+':issues';let tasks=[];try{tasks=JSON.parse(localStorage.getItem(key)||'[]');}catch{}const list=document.querySelector('#tasks');function draw(){list.replaceChildren();for(const t of tasks){const p=document.createElement('p'),b=document.createElement('button');p.append(document.createTextNode(t.text+' '));b.textContent=t.closed?'Reopen':'Close';b.className='button';b.onclick=()=>{t.closed=!t.closed;save();};p.append(b);list.append(p);}}function save(){try{localStorage.setItem(key,JSON.stringify(tasks));}catch{document.querySelector('#diagnostics').textContent='Local task storage unavailable';}draw();}document.querySelector('#add').onclick=()=>{const input=document.querySelector('#task');if(input.value.trim()){tasks.push({id:crypto.randomUUID(),text:input.value.trim(),closed:false});input.value='';save();}};draw();
  async function status(){try{const [offline,registry,release]=await Promise.all([request('STATUS'),fetch('registry.json').then(r=>r.json()),fetch('release.json').then(r=>r.json())]);document.querySelector('#diagnostics').textContent=JSON.stringify({offline,version:registry.version,release:release.release,apps:registry.apps.map(a=>({id:a.app_id,version:a.version,dependencies:a.dependencies})),tasksOpen:tasks.filter(t=>!t.closed).length},null,2);}catch(e){document.querySelector('#diagnostics').textContent=e.message;}}
- document.querySelector('#update').onclick=async()=>{try{const r=await navigator.serviceWorker.ready;await r.update();await status();}catch(e){document.querySelector('#diagnostics').textContent=e.message;}};document.querySelector('#repair').onclick=async()=>{try{await request('REPAIR');await status();}catch(e){document.querySelector('#diagnostics').textContent=e.message;}};await status();}
+ const updateButton=document.querySelector('#update');
+ const updateFeedback=document.createElement('p');updateFeedback.setAttribute('role','status');updateFeedback.setAttribute('aria-live','polite');updateButton.after(updateFeedback);
+ updateButton.onclick=async()=>{
+  if(updateButton.disabled)return;
+  updateButton.disabled=true;updateFeedback.textContent='Checking for updates…';
+  let timer;
+  try{
+   if(navigator.onLine===false)throw Error('Connect to the internet to check for updates.');
+   const r=await Promise.race([navigator.serviceWorker.ready.then(async registration=>{await registration.update();return registration;}),new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('Update check timed out. Try again while connected.')),20000);})]);
+   updateFeedback.textContent=r.waiting?'Update ready. Close and reopen the app to finish.':r.installing?'Update downloading. Keep the app open, then close and reopen it.':'Update check complete. No new version was found.';
+   await status();
+  }catch(e){updateFeedback.textContent=e.message;}finally{clearTimeout(timer);updateButton.disabled=false;}
+ };document.querySelector('#repair').onclick=async()=>{try{await request('REPAIR');await status();}catch(e){document.querySelector('#diagnostics').textContent=e.message;}};await status();}

@@ -330,6 +330,9 @@ main {
   cursor: pointer;
 }
 
+summary.card-header { list-style: none; }
+summary.card-header::-webkit-details-marker { display: none; }
+
 .card-header:hover {
   background: var(--surface);
 }
@@ -390,6 +393,7 @@ main {
   transition: transform 0.2s ease;
 }
 
+.card[open] > .card-header .chevron,
 .card.open .chevron {
   transform: rotate(180deg);
 }
@@ -710,6 +714,21 @@ footer {
   
 
   <div id="cardList"></div>
+
+  <details class="card" id="Countershading"><summary class="card-header"><span class="card-icon" aria-hidden="true">🐟</span><span class="card-title-wrap"><span class="card-title">Countershading</span><span class="card-subtitle">Dark above, light below</span><span class="card-tags"><span class="mini-tag">Adaptation</span><span class="mini-tag">Deception</span></span></span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary><div class="card-body-inner">
+    <p>Countershading is camouflage through body coloration. Many open-ocean animals, including tuna and sharks, have darker backs and paler undersides.</p>
+    <ul>
+      <li><strong>Viewed from above:</strong> the dark back blends with the darker water below.</li>
+      <li><strong>Viewed from below:</strong> the pale belly blends with brighter surface waters.</li>
+    </ul>
+    <p>This can make an animal harder for predators or prey to spot. It reduces contrast; it does not make the animal invisible.</p>
+    <h4>Try it with visitors</h4>
+    <p>Look for a fish with a dark back and a light belly. Ask: “If you were looking up at this fish, what background would you see behind it?” Then ask how the background changes when looking down.</p>
+    <h4>Compare with counter-illumination</h4>
+    <p>Countershading uses body coloration. Counter-illumination uses light-producing structures on an animal’s underside to match light from above. The Bioluminescence section explains that related camouflage strategy.</p>
+    <p>Sources: <a href="https://www.montereybayaquarium.org/animals-the-ocean/ecosystems/open-ocean" target="_blank" rel="noopener noreferrer">Monterey Bay Aquarium — Open ocean</a>; <a href="https://ocean.si.edu/ocean-life/fish/fish-using-counterillumination" target="_blank" rel="noopener noreferrer">Smithsonian Ocean — Fish Using Counterillumination</a>. External references require a connection; this explanation is available offline.</p>
+  </div></details>
+
 
   
 

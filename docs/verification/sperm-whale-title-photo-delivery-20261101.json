@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "runtime_source_commit": "b39813ce5053ef912d594b5c572fbfe4f34783c4",
+  "latest_test_expectation_commit": "246ee0302720cd431884cd815cdd9e2f9776319d",
+  "release": "c386cad26b93b724",
+  "host_source_commit": "8333f0851d3f71c7193049178f32ecdd77967cdf",
+  "deployment": {
+    "id": "appgdep_6ae793fc38508191980247af3a12fc35",
+    "project_id": "appgprj_6ae55daba7b08191a19ce7036c6a4152",
+    "title": "MBA Hub V2 — iPhone Review",
+    "version_id": "appgprj_6ae55daba7b08191a19ce7036c6a4152~appgver_e5a4fd69f7c88191b8a297a546a16a72",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://mba-v2-iphone-review-4ec51dd.drtforshort.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ae55daba7b08191a19ce7036c6a4152",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-11-01T19:33:27.403137+00:00"
+  },
+  "photo": {
+    "asset_id": "asset-3f1a17a6c8208427",
+    "path": "shared/media/asset-3f1a17a6c8208427--sperm-whale-title.jpeg",
+    "source": "https://sdmdiving.com/sperm-whale-trip-report-2023",
+    "permission": "review-required",
+    "offline": true
+  },
+  "validation": {
+    "full_suite": {
+      "tests": 1066,
+      "passed": 1064,
+      "failed": 2,
+      "failures": "Two old media inventory expectations (212 assets and zero pending rights); subsequently corrected and both passed in focused rerun; application inputs unchanged"
+    },
+    "focused_corrected_inventory": {
+      "passed": 2,
+      "failed": 0
+    },
+    "focused_media_provenance_privacy": {
+      "passed": 28,
+      "failed": 0
+    },
+    "artifacts": "both passed",
+    "security": "passed before provenance-only metadata correction",
+    "privacy": "snapshot matches",
+    "local_host_resources": 381,
+    "host_update_verifier_scenarios": 8,
+    "browser": "Local built page shows complete uncropped 1115x695 photo with visible credit, rendered 780x486.1875",
+    "physical_device": "not assessed"
+  },
+  "production_release_authorized": false
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "source_commit": "5802b6404d6d3c5154b3407e00c97d476d163136",
+  "release": "792689ccb7b3a41c",
+  "host_source_commit": "5e0047853a124c45f81bc79009f50027be11cb78",
+  "deployment": {
+    "id": "appgdep_6ae788601e8081918ee1ca07f5d0314f",
+    "project_id": "appgprj_6ae55daba7b08191a19ce7036c6a4152",
+    "title": "MBA Hub V2 — iPhone Review",
+    "version_id": "appgprj_6ae55daba7b08191a19ce7036c6a4152~appgver_8d91ee1457888191ae5b1fd5051a7011",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://mba-v2-iphone-review-4ec51dd.drtforshort.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ae55daba7b08191a19ce7036c6a4152",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-11-01T18:43:54.988891+00:00"
+  },
+  "validation": {
+    "full_suite_passed": 1066,
+    "full_suite_failed": 0,
+    "focused": 14,
+    "artifacts": "both passed",
+    "security": "passed",
+    "privacy": "snapshot matches",
+    "local_host_resources": 380,
+    "host_verifier_scenarios": 8,
+    "physical_device": "not assessed"
+  },
+  "scope": "Shared contextual Back recognition for exact short Hub label; scientific app files and media unchanged; no production release authorization"
+}

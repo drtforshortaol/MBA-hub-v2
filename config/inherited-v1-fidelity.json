@@ -11,7 +11,7 @@
       "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#california-flying-fish",
       "reviewed_on": "2026-10-22",
       "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
-      "content_sha256": "c9c2a86a223b391860b3d75a756d2b660b38932e25409ba15675ca45f1c2f81e",
+      "content_sha256": "0259de2eb8217f78e64a4065a7a5ae5efc7b3c5ab5155a08648207c270c67cfb",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -40,6 +40,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "db675e87650ec88e40dd313e44d6c9b37a3d5e395441ac820b78789e31b3dd6f",
           "content_sha256": "c9c2a86a223b391860b3d75a756d2b660b38932e25409ba15675ca45f1c2f81e"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "c9c2a86a223b391860b3d75a756d2b660b38932e25409ba15675ca45f1c2f81e"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "0d25be4a63f9c668cf89947bec748a934ca21beb1fc86a5e3f4da7cb100a6c87"
         }
       ]
     },
@@ -52,7 +64,7 @@
       "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#green-falsejingle",
       "reviewed_on": "2026-10-22",
       "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
-      "content_sha256": "673800688dc17e19283d099779c8d3abe703293277c63e54aea9bb4ca4abe438",
+      "content_sha256": "88804eef560d2c6d11a7f6f76d42622719db28c4eb925c3ac67416da733eac30",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -81,6 +93,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "bf7a8af43555fc90f27c7c185337f15dfde34113d30f024b997b794a6aad420a",
           "content_sha256": "673800688dc17e19283d099779c8d3abe703293277c63e54aea9bb4ca4abe438"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "673800688dc17e19283d099779c8d3abe703293277c63e54aea9bb4ca4abe438"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "b5ce5c2281162fb4ea03c605ed936843cf15e75948e0866ce60781e6cb4f83a4"
         }
       ]
     },
@@ -93,7 +117,7 @@
       "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#flamboyant-cuttlefish",
       "reviewed_on": "2026-10-22",
       "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
-      "content_sha256": "85323849b7fe366889704befb3f143cc740414e2b882d1a9deccd4dd649dfa33",
+      "content_sha256": "d8636dac2cc55b74a2a29a3b4fc3f76f81b89c179a2b8e2ded6c8732efe76ffb",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -122,6 +146,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "ee3c2094efe4969ccdd3e2746951c2da112016db55dc9e6d7f1f3662044c7050",
           "content_sha256": "85323849b7fe366889704befb3f143cc740414e2b882d1a9deccd4dd649dfa33"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "85323849b7fe366889704befb3f143cc740414e2b882d1a9deccd4dd649dfa33"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "4f18809bfd381f0b4e9e380f35ef146d59f735fae9676e1f807be07388176b85"
         }
       ]
     },
@@ -134,7 +170,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "8acf4ac72f30c6bcecf3cc45d0a312bf838a7a9178b0dfce201fe1aeea53d017",
+      "content_sha256": "379de45635389f48cedf0973e27a56bfec61ae31df571ac05965aae892f57729",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -163,6 +199,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "413a46bfdde7eb3a8a062e34dbb0a446389a222e5abb15566760fe66b14989b6",
           "content_sha256": "8acf4ac72f30c6bcecf3cc45d0a312bf838a7a9178b0dfce201fe1aeea53d017"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "8acf4ac72f30c6bcecf3cc45d0a312bf838a7a9178b0dfce201fe1aeea53d017"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "5a2320a5f7bd4b2b82a6c2a74d58352b48dab2bc36699ceb918468851444b726"
         }
       ]
     },
@@ -175,7 +223,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "74171ea2f6d76daa5c754956aa870f975ad35d4a6b520df25e0e8c1c2391cab7",
+      "content_sha256": "bd8d1d5c5b8752c0680fa7f2fec293f0556e7e82ba97b77cd874129276254e3c",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -204,6 +252,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "a32427db2778507e9b58084628f80c7f200b528674c87e3482e5f0faa4fa0d4d",
           "content_sha256": "74171ea2f6d76daa5c754956aa870f975ad35d4a6b520df25e0e8c1c2391cab7"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "74171ea2f6d76daa5c754956aa870f975ad35d4a6b520df25e0e8c1c2391cab7"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "c71367ae6faf1763e88b3353380438bd7aaf8b1cbf348a54bb57449e345305f7"
         }
       ]
     },
@@ -216,7 +276,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "13157e3e02c272cfb4ced7547200ef0975253451dfc58f460397e6621cfdde27",
+      "content_sha256": "68ed7f8b38aed71d5fc8d89ed0c35f9f3b1b1b951d57c2f3b41b0dcc3739337b",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -245,6 +305,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "b215967e7d51591df27a72f45bc2ce2996fb8dee8d9c8e2eda0b72cf51d6a364",
           "content_sha256": "13157e3e02c272cfb4ced7547200ef0975253451dfc58f460397e6621cfdde27"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "13157e3e02c272cfb4ced7547200ef0975253451dfc58f460397e6621cfdde27"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "8517c8ddfa56514d53b3f8e0944b0963b4b0bf099782438f60ed57abec0fbae9"
         }
       ]
     },
@@ -257,7 +329,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "a62e895ebafbb573c7b44ac0546f5a357b16c30a5613d746440bd609e6c991ef",
+      "content_sha256": "61a23ab1db08dda109b77a58e0ce60e9f71d4d23b16d2df3e4a5c68d6a51de62",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -286,6 +358,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "8f241b024fb43320773d4317a986aaf558d9f638772f813fc53fe75b5403b821",
           "content_sha256": "a62e895ebafbb573c7b44ac0546f5a357b16c30a5613d746440bd609e6c991ef"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "a62e895ebafbb573c7b44ac0546f5a357b16c30a5613d746440bd609e6c991ef"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "b635460bb503c2a7348d0ac06a6ba991ee9e5549d3c60edb3e6a799981269489"
         }
       ]
     },
@@ -298,7 +382,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "7835b5fa311dd8d87dffe5b2d7e56937a489a4d80abb39a67ff98b47cf7a20ac",
+      "content_sha256": "7cea170633fa8fedc467ea792ed832c164f17ded6c0299afb8deec9ff47e2662",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -327,6 +411,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "240ebc88341f0020ad0ac82c4aeb9762037ea92060f038fa3913c9f1ad4100c4",
           "content_sha256": "7835b5fa311dd8d87dffe5b2d7e56937a489a4d80abb39a67ff98b47cf7a20ac"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "7835b5fa311dd8d87dffe5b2d7e56937a489a4d80abb39a67ff98b47cf7a20ac"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "bff890704bc7ef971ce5756db7810bfe385b5d0ef192a5922fbae4137e0a12c4"
         }
       ]
     },
@@ -339,7 +435,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "5d2d6cc8249f4e73b64885ca9c4b0cb01c9b7e00a01657dd2f604285919e960a",
+      "content_sha256": "6001820a2477404a3b0d24e28da5361631d8743a671100bad462b41ee12abad8",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -368,6 +464,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "f9b683f2010b2aa1803656dd7bcd9cec3138396e43872fbd3c651d0c46b570aa",
           "content_sha256": "5d2d6cc8249f4e73b64885ca9c4b0cb01c9b7e00a01657dd2f604285919e960a"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "5d2d6cc8249f4e73b64885ca9c4b0cb01c9b7e00a01657dd2f604285919e960a"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "3602035252ab45856cb2e69d05c20896935b81cf1f7a3b49a45242dc5ea3c6c8"
         }
       ]
     },
@@ -380,7 +488,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "6ed5ef7d57d4079d1962c9b06c0c0c2bc1bcfa804c8a044259c51d5da9f3d3f1",
+      "content_sha256": "d8b3ad4867c501a27fff499e7221a3ae9b6f7789bf43fa56bf92437d6ac40ad2",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -409,6 +517,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "bb91ee4c5d870f2429284c049c29ad6fa1402f4eb4ef0ccf9fbe9fea4127c07d",
           "content_sha256": "6ed5ef7d57d4079d1962c9b06c0c0c2bc1bcfa804c8a044259c51d5da9f3d3f1"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "6ed5ef7d57d4079d1962c9b06c0c0c2bc1bcfa804c8a044259c51d5da9f3d3f1"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "13dfc6b66410254fa5e51736b1ad240d60dcdf4889c694a98749d8f7500c8707"
         }
       ]
     },
@@ -421,7 +541,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "0b3910e72c05295beac430d4132700ee7753c11a9ebfa6f166e090e65ad8c309",
+      "content_sha256": "8fe92588b65b56a58a9bbdb4e884dce5e22c1253eae56818b438c49c3de63a4f",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -450,6 +570,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "bcccd4cd9b748facae7fda9515da938a16368f6443de3c7a933e158a5925a7ef",
           "content_sha256": "0b3910e72c05295beac430d4132700ee7753c11a9ebfa6f166e090e65ad8c309"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "0b3910e72c05295beac430d4132700ee7753c11a9ebfa6f166e090e65ad8c309"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "468c982d05d8b17e3f890b0babe07fe71ffd427658f3d28cde1e5b7d0a4ab605"
         }
       ]
     },
@@ -462,7 +594,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "d40a430da2a8dcc35e038980d7c23004b7159b6a26b7568f135657f88c097df6",
+      "content_sha256": "68e02c716ce2315c3580b007f6910800d8a95b9232204db1416c23e9031d38b3",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -491,6 +623,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "86b80662e51f1ffed9f08e1b53daa546ad41c4f189d809b43dcb40da5356c104",
           "content_sha256": "d40a430da2a8dcc35e038980d7c23004b7159b6a26b7568f135657f88c097df6"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "d40a430da2a8dcc35e038980d7c23004b7159b6a26b7568f135657f88c097df6"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "1057969878ed57fa5cbc90658d20fbb8eb40012f8f4ecf2dfe79f23c952e624f"
         }
       ]
     },
@@ -544,7 +688,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "446d084c03895314196c278a4af8a40c55855f4887ea6bce2cb4ed5782ce546b",
+      "content_sha256": "78fa0639f7fdc0fdcd0df3e15afa2512207ee0d1d00c209b1ab2ccdd166e833e",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -573,6 +717,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "bf579310af7f4a3cf84d7cea25a902d2f9701992e168d9ec05fc57a7891dbc01",
           "content_sha256": "446d084c03895314196c278a4af8a40c55855f4887ea6bce2cb4ed5782ce546b"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "446d084c03895314196c278a4af8a40c55855f4887ea6bce2cb4ed5782ce546b"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "0679b7261b5ec1cae6a11879ea0f9e90834d45e85d2b76ad7a89e62fb04d3f0b"
         }
       ]
     },
@@ -585,7 +741,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "a35a1680cfbda5417e8f6306964b437536bf0bb1253613d1a066fbdc12658a27",
+      "content_sha256": "2145174e669a96540580ec4539fb102b1abcf3195e7052d9b18766efc89632da",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -614,6 +770,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "b2f9d6bf363cb1ab112680e0566b1c9cc510248b8a45143770b48e5aa7a12046",
           "content_sha256": "a35a1680cfbda5417e8f6306964b437536bf0bb1253613d1a066fbdc12658a27"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "a35a1680cfbda5417e8f6306964b437536bf0bb1253613d1a066fbdc12658a27"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "8a120cc9ffb61f212f61d1a7829af879a92b1421d82c0200093d5e885bca87c2"
         }
       ]
     },
@@ -626,7 +794,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "48a730141848001f53c5d9b22c397ac6bc0822a0658c609df5f634120e200731",
+      "content_sha256": "1037fc5cecbf5beafb6cdae3a1a5882409de1e027f6501ed36abbc52a38c3cac",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -655,6 +823,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "abfe18ffae556fecb8f3586d52c861431e2dd5acdd0e2061ab26ae385009a949",
           "content_sha256": "48a730141848001f53c5d9b22c397ac6bc0822a0658c609df5f634120e200731"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "48a730141848001f53c5d9b22c397ac6bc0822a0658c609df5f634120e200731"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "837dba0cd7ac8dbf11ecfd36b2bf3327ad50d4be5ba601642ce526a18b849fa9"
         }
       ]
     },
@@ -667,7 +847,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "566fb5e7509448f7749f0db2bf8002435a3a5f8b18959e2f2e6cb9002159e9b3",
+      "content_sha256": "6e85cc3bf55f415753bac7775430533c53f9d9ac3fbcee8945c3849be2e3b92e",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -696,6 +876,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "7842506b6fd490c87f5cb73963df5615ccce27233467b02a7775ce95a38197e6",
           "content_sha256": "566fb5e7509448f7749f0db2bf8002435a3a5f8b18959e2f2e6cb9002159e9b3"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "566fb5e7509448f7749f0db2bf8002435a3a5f8b18959e2f2e6cb9002159e9b3"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "482563ebfa9329e212b04d53b36ca2a2ece0bcbd2762722090993ac22617e8a5"
         }
       ]
     },
@@ -708,7 +900,7 @@
       "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
       "reviewed_on": "2026-10-22",
       "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
-      "content_sha256": "519529360aceafb9459478447f50f77835ec5c2dd21c336a7985a0b28505c314",
+      "content_sha256": "b4cc6a6eb8e991c82e1b8d175861fec9c4a7440c2a02042554d20fdd64691a8f",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -737,6 +929,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "4c2a965069818637ffc41e14e8ccac4c12a681797d52294ef500d53b1473da0c",
           "content_sha256": "519529360aceafb9459478447f50f77835ec5c2dd21c336a7985a0b28505c314"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "519529360aceafb9459478447f50f77835ec5c2dd21c336a7985a0b28505c314"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "9aac386b7e25e405339b42ab455199e5b8e7d414d8a884308b24885b82cebfc7"
         }
       ]
     },
@@ -749,7 +953,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "586cbec11472762c4b4ba34d1cc4a705c8a9c9730190ecd83506b607dc524550",
+      "content_sha256": "0c6f4384f9f33f388ac72ff23ffb46e08a337d997e29950f627f6e46b76d29ec",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -778,6 +982,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "6966380debcb7ab2626c769fbfbec4935bdf1b06640826c52d1a49f355784879",
           "content_sha256": "586cbec11472762c4b4ba34d1cc4a705c8a9c9730190ecd83506b607dc524550"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "586cbec11472762c4b4ba34d1cc4a705c8a9c9730190ecd83506b607dc524550"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "eae7ae5309b1b15809ccb1558c7c07cfdc383a55cbc15d324f80e58afabbdb2e"
         }
       ]
     },
@@ -790,7 +1006,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "85be7df2ff63044a2b134a1b07f0783ea064bc13db3566369e60a5b7d5e0e76e",
+      "content_sha256": "84905e75fe36233d06179653b5f0aa022e1f57931843cb6d27bff9f15ee03a3d",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -819,6 +1035,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "96b145d8646857cc478aa0078b80e2adf95154257ca67319bedc847ea6103763",
           "content_sha256": "85be7df2ff63044a2b134a1b07f0783ea064bc13db3566369e60a5b7d5e0e76e"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "85be7df2ff63044a2b134a1b07f0783ea064bc13db3566369e60a5b7d5e0e76e"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "aca29ae25af8160daa48a073934dfd37fb6df6aa383bb7945ca97bf5a6cdc05a"
         }
       ]
     },
@@ -831,7 +1059,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "e9baefbc1715c3df5cc1fe8335953ebe42c41d8b1080adc62324be0e2087e9af",
+      "content_sha256": "c366fc831e7e37450d157cf7d48b046eaa0136bb535f357f8bdb2fdb5b058f9b",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -860,6 +1088,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "a19beb98924b3a846fb11ab5ffdf0acd5be45eb3cc1e498b532067579366f827",
           "content_sha256": "e9baefbc1715c3df5cc1fe8335953ebe42c41d8b1080adc62324be0e2087e9af"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "e9baefbc1715c3df5cc1fe8335953ebe42c41d8b1080adc62324be0e2087e9af"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "45f8792fb8086d3944473ca886820936ef84b06a71190e7f7cc7cfebf3986be3"
         }
       ]
     },
@@ -872,7 +1112,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "8d68180c4c837b508141d8746648b721172d1d7a58cd9264e2fd831d7a8821e1",
+      "content_sha256": "20492d6b35583dccde857e2202d47981b7b0ac77b1cacff90a7fd0d22deb5910",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -901,6 +1141,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "8f89e9fd1bd973830e091b3f530cd6f6eb81f017482144df95a6d4e62908b5f0",
           "content_sha256": "8d68180c4c837b508141d8746648b721172d1d7a58cd9264e2fd831d7a8821e1"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "8d68180c4c837b508141d8746648b721172d1d7a58cd9264e2fd831d7a8821e1"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "a6866db2d1d1c571030766ef4d92af1aee543b37a91b120a3070662c21128a48"
         }
       ]
     },
@@ -913,7 +1165,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "ee88cd6d83670a1da16ccef270ce23ed0bcb5842c697f85c2d2bc5ea065ed7a8",
+      "content_sha256": "d85e74e8b16f185b2ce405a7f59bce10fec0775fe3d7456da1d115d26f3c3cfc",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -942,6 +1194,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "dd5de4a040dcf6c81b67057041e95aa1ab72dfad732ff02ee2cfcc11b02fb115",
           "content_sha256": "ee88cd6d83670a1da16ccef270ce23ed0bcb5842c697f85c2d2bc5ea065ed7a8"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "ee88cd6d83670a1da16ccef270ce23ed0bcb5842c697f85c2d2bc5ea065ed7a8"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "9a1be3a709f89a9ef790af7f2d4faa32ee2a7b99c4466e8a47e98b838c3819eb"
         }
       ]
     },
@@ -954,7 +1218,7 @@
       "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
-      "content_sha256": "6512bb7cd362c676ba199e7a861371a49b24175047c8efccc45ee8fb090c8edd",
+      "content_sha256": "5127659891159876918f8dbfb5b29096599d30028381a8419b6dc9627596f751",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -983,6 +1247,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "a8811ab6983d64793de51b3dd02ff8c55024d249cff6ef17af31a5b2277ad34e",
           "content_sha256": "6512bb7cd362c676ba199e7a861371a49b24175047c8efccc45ee8fb090c8edd"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "6512bb7cd362c676ba199e7a861371a49b24175047c8efccc45ee8fb090c8edd"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "e9dd046bbe5320e3c456f3737fd0221c501394d55a7ea33e86935cc104f7dbe8"
         }
       ]
     },
@@ -995,7 +1271,7 @@
       "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
-      "content_sha256": "5ed278a12db6886c1312c74a92aafa7ca32e59922dfbc4ebb91867990b3ed314",
+      "content_sha256": "8d673a6d571a4ec26b3127bf16cab98837561d511c0452c4f9802202e99a3e6d",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -1024,6 +1300,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "3d0e6bd9e87ba2a59338328b96aef20ced8c5150e9c26f1a18a63d5e8fead5ba",
           "content_sha256": "5ed278a12db6886c1312c74a92aafa7ca32e59922dfbc4ebb91867990b3ed314"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "5ed278a12db6886c1312c74a92aafa7ca32e59922dfbc4ebb91867990b3ed314"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "53ecb788c777b9e3a810b02a9fc1c6e2224e997a4c1272fe01c9c7efac991ee2"
         }
       ]
     },
@@ -1036,7 +1324,7 @@
       "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
-      "content_sha256": "dc676ca42108218d3fabf876c8f2251362ca04e397d18a90c459dc89c87876ff",
+      "content_sha256": "498e6ae426ff7042eb9c4ea12197572b3922943607ef4dfc33ae18658bac63dd",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -1065,6 +1353,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "ef97983a295fa90afdc21a34c6e81a118bb4e25df028d9663b34f6b2c8b2c773",
           "content_sha256": "dc676ca42108218d3fabf876c8f2251362ca04e397d18a90c459dc89c87876ff"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "dc676ca42108218d3fabf876c8f2251362ca04e397d18a90c459dc89c87876ff"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "c4aafabe14508de0dcc07604ff412fbac89b6f06868e58e3cc7c11cd9d7583b7"
         }
       ]
     },
@@ -1077,7 +1377,7 @@
       "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
       "reviewed_on": "2026-10-23",
       "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
-      "content_sha256": "021bc5089a532c73e64ddc29b68bb656b5ccbe4538d45dda5fea8526792a2118",
+      "content_sha256": "b78b7ec46a1970cdbfca7558b6e1effeb33396d058ec017dff92bcbb4601e7ed",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -1106,6 +1406,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "c840a91d4276278a7f1b01b9a650f36c211f6bb26f006d71241528e0c35b6276",
           "content_sha256": "021bc5089a532c73e64ddc29b68bb656b5ccbe4538d45dda5fea8526792a2118"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "021bc5089a532c73e64ddc29b68bb656b5ccbe4538d45dda5fea8526792a2118"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "c5c8c36f4d40e17c3383f2f24a0ad3a116bfead95a52845f9a58868de35b4f45"
         }
       ]
     },
@@ -1159,7 +1471,7 @@
       "review_reference": "docs/TREE_OF_LIFE_ENGINEERING_REVIEW_20261023.md",
       "reviewed_on": "2026-10-24",
       "review_method": "Independently reviewed complete pinned/current inventory, markup/code/style, source-derived search, media and executable/shared navigation. Existing unchanged V1 authorization only; no new scientific/editorial/image/device/release approval. Recovered evidence and exact resource digest reverified before binding.",
-      "content_sha256": "33730d698b9d8aa9df73dd8f3e6e7cd54ad80782d093a8b7a53f00fb6972e99b",
+      "content_sha256": "c03103fa796b4fc50f01cb0c8d2038ce0bcd53ed2703c944e895d47f11a68873",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -1188,6 +1500,23 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "66fb007f41ed8eef00665b956be3610dda5d9ff63a13bb4cacdf393b5ad32620",
           "content_sha256": "33730d698b9d8aa9df73dd8f3e6e7cd54ad80782d093a8b7a53f00fb6972e99b"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/TREE_AND_SPERM_WHALE_20261101.md",
+          "scope": "Reviewed metadata-only listed false to true; original scientific/runtime files unchanged; complete manifest guard updated for exactly that difference"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "3991d2fe825d1a86de079e42f2f028bc2072a115056296c03206c0e124b9b28f"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "a3992864ba66c33eed7df124d75ce87e26e9b50974c4449c98c4c4d90211030e"
         }
       ]
     },
@@ -1200,7 +1529,7 @@
       "review_reference": "docs/WHALE_PARASITES_INDEPENDENT_REVIEW_20261023.md",
       "reviewed_on": "2026-10-24",
       "review_method": "Independently reviewed complete pinned/current inventory, markup/code/style, source-derived search, media and executable/shared navigation. Existing unchanged V1 authorization only; no new scientific/editorial/image/device/release approval. Recovered evidence and exact resource digest reverified before binding.",
-      "content_sha256": "2d25482d63bb4f0676a37918ca57cd9545dc9867a6177850ad783c9e9500e280",
+      "content_sha256": "f5f3ca05c465e8e56ac15e8a3b7af1a10a4a4cc0142b7662b4fa37e127cb93f0",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -1229,6 +1558,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "203e6700c31c0b3d7d7987571140778e5f015b57db8f05132576aa3cc5e9ce19",
           "content_sha256": "2d25482d63bb4f0676a37918ca57cd9545dc9867a6177850ad783c9e9500e280"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "2d25482d63bb4f0676a37918ca57cd9545dc9867a6177850ad783c9e9500e280"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "41f1efdf46ab688053c78c4f4c4f84378495f6939751137e03a50d5ca9c5a0f3"
         }
       ]
     },
@@ -1241,7 +1582,7 @@
       "review_reference": "docs/EVOLUTION_TIMELINE_INDEPENDENT_REVIEW_20261023.md",
       "reviewed_on": "2026-10-24",
       "review_method": "Independent complete eleven-file pinned-source, full executable/static/style/data/three-view DOM/source-derived search/media/actual anchor assignment and native/shared-control reproduction; existing unchanged V1 authorization only, no new scientific/editorial/media/device/release approval",
-      "content_sha256": "ed107ca217c49fcc579832b5610c9a98ef2fc0540cbb468c44c3ce7333206ff6",
+      "content_sha256": "a44be486c06a5e83172a8980fa857af711699a62ea43263088681fe1708a9bc7",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -1270,6 +1611,18 @@
           "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
           "previous_content_sha256": "545877190bce1edf1a343836e8b2d9a580113b92907cfa307366478477b222ac",
           "content_sha256": "ed107ca217c49fcc579832b5610c9a98ef2fc0540cbb468c44c3ce7333206ff6"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "ed107ca217c49fcc579832b5610c9a98ef2fc0540cbb468c44c3ce7333206ff6"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "ac589a860868a9e73f824a3e8b44393844ca73e92e118feebb658784415e6e25"
         }
       ]
     }

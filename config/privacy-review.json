@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
   "status": "reviewed",
-  "reviewed_on": "2026-10-30",
+  "reviewed_on": "2026-11-01",
   "reviewer": "assistant engineering review authorized by owner request: Next blocker",
   "scope": "Candidate-specific privacy/distribution delta review for owner-authorized public early-access guide tester; not visitor-standalone sharing or production release",
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
-  "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates.",
-  "snapshot_sha256": "5cf734a544b60c40c9f6788cc448d56b36648b07abbfd1f7abe2adb6a282a5df",
+  "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates. Exact seven-section Sperm Whale owner-approved wording is now content-digest-bound; source HTML and bundled media remain unchanged by the approval metadata.",
+  "snapshot_sha256": "c746204c9736ffb435d482c4fe413f1412c8b4a45beef91486c9b3c9d6eb1d4a",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "5cf734a544b60c40c9f6788cc448d56b36648b07abbfd1f7abe2adb6a282a5df",
+    "snapshot_sha256": "c746204c9736ffb435d482c4fe413f1412c8b4a45beef91486c9b3c9d6eb1d4a",
     "resources": [
       {
         "path": "config/categories.json",
@@ -20,8 +20,8 @@
       },
       {
         "path": "config/inherited-v1-fidelity.json",
-        "bytes": 77678,
-        "sha256": "8edd2158cbf9373f25d5b64c14447dd0172c3c45a9f0f08c9de8f447fef7f4b8"
+        "bytes": 100484,
+        "sha256": "7bc71e0ee5c0277e751634e4d779be611bc5c6fbdbfbceb8d3860e9c00941146"
       },
       {
         "path": "config/migration-blob-ledger.json",
@@ -35,8 +35,8 @@
       },
       {
         "path": "config/owner-text-reviews.json",
-        "bytes": 6063,
-        "sha256": "c017478bba1144c606d8b8168a03b8acd03ea0804336d8ba827b7df0e639f2b7"
+        "bytes": 9699,
+        "sha256": "e39671a34c4df92554ccf0d54cea964167db71093656e07d6d24f0e068f04ebb"
       },
       {
         "path": "config/platform.json",
@@ -95,13 +95,13 @@
       },
       {
         "path": "scripts/audit-privacy-snapshot.mjs",
-        "bytes": 1928,
-        "sha256": "143bb0945c196a9ca1638b317c8659a52880dbb969412db559032ac2f4cde314"
+        "bytes": 2015,
+        "sha256": "19e122980644324bb90453c08a6a3a51bdf571f9b33641372722db5dcb3416d6"
       },
       {
         "path": "scripts/build.mjs",
-        "bytes": 11834,
-        "sha256": "d195305bbbb9b1759bb9122e580bcb0661720b91bac87aaa2158da79f2ef7fcf"
+        "bytes": 12991,
+        "sha256": "52abf0b5e94d060b95c6883bfe3f11c8307f91dd1e5c21eb7ca9f0dfb96061a9"
       },
       {
         "path": "scripts/change-request-validation.mjs",
@@ -236,7 +236,7 @@
       {
         "path": "scripts/migration/review-tree-of-life-fidelity.mjs",
         "bytes": 15324,
-        "sha256": "8de808c733523c2d027ba285d9fa87db0e34f430bbddc9a23f2badec6b625649"
+        "sha256": "f5669fa683db7e0ebc07b8d53591940114ab66a65466e1a6e88704c29d826d04"
       },
       {
         "path": "scripts/migration/review-whale-parasites-fidelity.mjs",
@@ -354,6 +354,11 @@
         "sha256": "e9364177ce44f029eab64c52ec21981ffc9bd3591a1bd8bb80ad228e78a0e762"
       },
       {
+        "path": "scripts/sperm-whale-approval-digest.mjs",
+        "bytes": 925,
+        "sha256": "8312bc652506d7d671acc5ef8246125d7dcc36dcc803a4cdb0dffd1e2c9d9415"
+      },
+      {
         "path": "scripts/stage-submission-packet.mjs",
         "bytes": 1846,
         "sha256": "d2cdd396001d828e7d8fd1011b7c208adf5cb088eb5f55548aaa18afb90d8885"
@@ -367,6 +372,11 @@
         "path": "scripts/summarize-naturalist-review.mjs",
         "bytes": 1171,
         "sha256": "75b1a4b15485a5cbbb69fd788cde7a50bc891a3fe6a5f9dd22868af0c03f3060"
+      },
+      {
+        "path": "scripts/validate-animal-records.mjs",
+        "bytes": 2626,
+        "sha256": "cf31a3fe8e0026b04d784d5982171f651f96e53580d2a1bb95d32fd7b007a2e6"
       },
       {
         "path": "scripts/validation/test_acceptance_record.py",
@@ -540,8 +550,8 @@
       },
       {
         "path": "src/apps/big-bellied-seahorse/index.html",
-        "bytes": 12721,
-        "sha256": "00c271180891abb5a6d4a56a68051df1779b6e546f79f88330e5a1488d87d658"
+        "bytes": 21902,
+        "sha256": "6b38a239e4189b258434bf9db804817a0915626957e6eaa3f43dacab4b255f65"
       },
       {
         "path": "src/apps/big-bellied-seahorse/manifest.json",
@@ -940,13 +950,13 @@
       },
       {
         "path": "src/apps/open-sea/index.html",
-        "bytes": 36780,
-        "sha256": "217e9b3187dba518f58bfbe45adad87ee58fc119c1c3ae5cb4214500a8979872"
+        "bytes": 39034,
+        "sha256": "2c1b8eb9013e03c4e949053ef84d6934cd666fad5f59881d324c309e8431f2ce"
       },
       {
         "path": "src/apps/open-sea/manifest.json",
-        "bytes": 17409,
-        "sha256": "c2d6b95f4693370192c4df480c25effe7386967271a6ccc72baed6b157cf3667"
+        "bytes": 18913,
+        "sha256": "cf681eb5b953a72e852f3a63d1eb0811e16406e060609694309408608f3e0b7f"
       },
       {
         "path": "src/apps/open-sea/styles.css",
@@ -990,13 +1000,13 @@
       },
       {
         "path": "src/apps/sperm-whale/index.html",
-        "bytes": 4459,
-        "sha256": "90f7b2f03399d3282249c7c21643faec25772c180d13c3e05a72df7765bf60cb"
+        "bytes": 10001,
+        "sha256": "c7a5687dd884e04c2e7787d2319afb3b7e135a51886ebe6f040478098fb0c288"
       },
       {
         "path": "src/apps/sperm-whale/manifest.json",
-        "bytes": 3887,
-        "sha256": "d0b2cf9ae009d41da159d84daae2d7e4058598542e80bee1c18cef20cb9afba3"
+        "bytes": 7116,
+        "sha256": "703c0cb9276e2f1027d941f0fb2fc1723b936e1b4ed21dd8eb6971e4c77dee63"
       },
       {
         "path": "src/apps/stargazer-species-guide/index.html",
@@ -1020,8 +1030,8 @@
       },
       {
         "path": "src/apps/tree-of-life-origins/manifest.json",
-        "bytes": 35854,
-        "sha256": "d95bc86fdfdeff9847ded94eba7fc89e27237f2405842c579b3f920a5463be92"
+        "bytes": 35853,
+        "sha256": "c28e65b3d6790d76a77f1c1e999d2c694e3732b49d2fea23f5b37b7983817f9f"
       },
       {
         "path": "src/apps/tree-of-life-origins/styles.css",
@@ -1089,14 +1099,24 @@
         "sha256": "e1bb83bbfd476fff213dac636d9399ddad7574f5f4580acdbf17bb1af7ffed4a"
       },
       {
+        "path": "src/core/animal-classification.js",
+        "bytes": 5593,
+        "sha256": "7ffccc57bf0b508188fc14d8e0498dbb3e62bbac415cac80ee75147b7319f07c"
+      },
+      {
         "path": "src/core/animal-filter.js",
-        "bytes": 1027,
-        "sha256": "a4c9016fe6899b74bd7c2cb1a382f179fecf242fedc0cf28e60da3dbfa2c2023"
+        "bytes": 2398,
+        "sha256": "1ac9d580dbcb91c27adb2d20f15942a74141ab48b65ab0040e97f0f001157e97"
+      },
+      {
+        "path": "src/core/animal-index.js",
+        "bytes": 1926,
+        "sha256": "3c44c9f541d999f2e96ecff24e2b7ba47206ab1a4a8b120afa8ec606d150bd44"
       },
       {
         "path": "src/core/app-contract.js",
-        "bytes": 3245,
-        "sha256": "aad743f840ee86018659ab3a6c3e7be1df8d860bb97bbb74c4ee8ec6071acf27"
+        "bytes": 4956,
+        "sha256": "25f8a600b93bf9f340eec08feba6d284d65ed7154b8fcf6b0c0fbe2af31b2b57"
       },
       {
         "path": "src/core/app-view.js",
@@ -1125,13 +1145,18 @@
       },
       {
         "path": "src/core/hub.css",
-        "bytes": 3625,
-        "sha256": "6d410009237346240e9357114fdf22d92d59684f425685e3fc2e9b847a5807da"
+        "bytes": 4647,
+        "sha256": "835d990cb69c98d3bad15ad221bc5539db52472d7dc7cace6fc2203101bbcea4"
       },
       {
         "path": "src/core/hub.js",
-        "bytes": 10313,
-        "sha256": "8e02664d53b7f3122db847f9ba1178e17b2636cab88f34c134b70e045cca590e"
+        "bytes": 12558,
+        "sha256": "706f63acf7a431c3583fafb41a436822b3cdabb9c636b04c34214e29e507d7a5"
+      },
+      {
+        "path": "src/core/integrated-help.js",
+        "bytes": 1090,
+        "sha256": "790baca10db68957b56377e5a5d0df140316a62c30bd58a5c45c87c2fa707ec1"
       },
       {
         "path": "src/core/naturalist-change-request.js",
@@ -1210,8 +1235,8 @@
       },
       {
         "path": "src/core/navigation.js",
-        "bytes": 4545,
-        "sha256": "a57b52cae26f338b44c698622777ac6d26e4779528109042abe1f15578eb03de"
+        "bytes": 4605,
+        "sha256": "f412a95d97d30882b165e90d5f2b2b81b7160274ec80b9f3ff07e8bcd58d8c87"
       },
       {
         "path": "src/core/offline-controls.js",
@@ -1240,13 +1265,18 @@
       },
       {
         "path": "src/core/search.js",
-        "bytes": 1132,
-        "sha256": "e0729c7307985df02752207a8018523e2291fa5d2f4411d3c51c6f40dfeb26d8"
+        "bytes": 1298,
+        "sha256": "e34214dbaf1e715fd9506f634e36ad174069c8fe30c932da5715378f111c36ac"
       },
       {
         "path": "src/core/section-navigation.js",
         "bytes": 3435,
         "sha256": "4543850ab43b9864e76b1cca189e9f96e5d49e6e04f88e4a75cfa2b0b9f514c6"
+      },
+      {
+        "path": "src/core/whale-reference.js",
+        "bytes": 2935,
+        "sha256": "5dafd618abe738d2d03427f3daaa0ad9d56e3168757729df429572aefbadc7f6"
       },
       {
         "path": "src/core/worker-channel.js",
@@ -1270,13 +1300,18 @@
       },
       {
         "path": "src/install.html",
-        "bytes": 6418,
-        "sha256": "137c807219e943e5e4cf3628a3b048e0c9544e113bc4c466af2cc0353903d6d8"
+        "bytes": 6381,
+        "sha256": "ea5eda85c8ae3a5998515d306c81440d53a7c75e0561db1ab183bfcab7427f78"
       },
       {
         "path": "src/refresh.html",
         "bytes": 5557,
         "sha256": "97bf61146958e4aa664c7b16bae5787d3232ff00ba8116a66ce08c1dab15a111"
+      },
+      {
+        "path": "src/shared/animal-records.js",
+        "bytes": 24822,
+        "sha256": "d5480d37be62e3bf772d53a50453b90a1d749f965b8cb08f9fc1b0d9fad52364"
       },
       {
         "path": "src/shared/interfaces.json",
@@ -2259,6 +2294,11 @@
         "sha256": "edd9d5ec2d0bbd07852ad0d906341a589bee5a974352f245b945dc660ef24118"
       },
       {
+        "path": "src/shared/media/asset-ee96e0719845ef73--sperm-whale-pod.jpeg",
+        "bytes": 130655,
+        "sha256": "ee96e0719845ef73a7b4827bccd4686c816b231995cb2dfb4fb77e9e6ebfa928"
+      },
+      {
         "path": "src/shared/media/asset-f194f7d134beec45--IMG_3510.jpeg",
         "bytes": 216789,
         "sha256": "f194f7d134beec45f48a7451308c4583265e5db18db9b12b36745b59917a5d2d"
@@ -2315,8 +2355,8 @@
       },
       {
         "path": "src/shared/media/catalog.json",
-        "bytes": 189583,
-        "sha256": "aefae3c8dbf666e4bf936af8e3b91bccb974f02f81085c1c52aa6d6de6201d07"
+        "bytes": 190556,
+        "sha256": "77603270657849ef79e8397c6b8df8cfa18e6ca60f4201136f09e3e6b6847cb1"
       },
       {
         "path": "src/shared/media/five-senses-header.svg",
@@ -2371,5 +2411,109 @@
     "No new physical-device, pilot, rollback or production-release acceptance.",
     "Future source/config/build-script changes invalidate the recorded snapshot and require privacy re-review; CI regression checks enforce the binding."
   ],
-  "release_authorized": false
+  "release_authorized": false,
+  "ci_reconciliation": {
+    "recorded_on": "2026-10-30",
+    "failed_run": 41085130760,
+    "cause": "CI Python checks generate scripts/**/__pycache__/*.pyc before npm test; these were wrongly counted as source inputs.",
+    "change": "Exclude only generated Python .pyc files under scripts/**/__pycache__; actual source/config/build files remain hashed and symlinks remain rejected.",
+    "runtime_changed": false
+  },
+  "presentation_delta_review": {
+    "recorded_on": "2026-10-31",
+    "scope": "Local inline SVG text/leader-line overlays only; same local images, no scripts, automatic external requests or new data collection",
+    "reference": "docs/verification/seahorse-label-restoration-20261031.json"
+  },
+  "animal_index_delta_review": {
+    "scope": "Owner-approved index labels and selective Seal/Whale cross-references only; local code, no new network calls or collection",
+    "recorded_on": "2026-10-31"
+  },
+  "compact_alphabet_delta_review": {
+    "recorded_on": "2026-10-31",
+    "scope": "Local index and filter presentation only: omit empty letters, All control and same-record B/S seahorse routes; no new data collection or external calls"
+  },
+  "whale_topic_delta_review": {
+    "recorded_on": "2026-10-31",
+    "scope": "Owner-approved single whale topic, local presentation grouping and search routing; original scientific text/media/data and historical app files unchanged; no external calls or collection added"
+  },
+  "animal_groups_delta_review": {
+    "recorded_on": "2026-10-31",
+    "scope": "Owner-approved four broad collapsed browse groups, exact reviewed index names/routes and group/search state; local metadata/UI only; canonical species records/scientific content unchanged; no new network endpoints or collection"
+  },
+  "classification_delta_review": {
+    "recorded_on": "2026-10-31",
+    "scope": "Owner-authorized permanent animal records, optional source-attributed taxonomy and searchable names; visible collapsed classification browser and in-app names/source card. No new remote API calls, automatic external resources or collection. Existing source app files/scientific prose preserved."
+  },
+  "delta_reviews": [
+    {
+      "reviewed_on": "2026-10-31",
+      "reference": "docs/OPEN_SEA_COUNTERSHADING_20261031.md",
+      "scope": "Owner-requested local text/native disclosure and click-only source references; original cards/media preserved; new wording remains pending content approval",
+      "previous_snapshot_sha256": "e311d704c227d6f8b5b568ae5b47f36e40101e18cc1192ab366c389ead150564",
+      "snapshot_sha256": "cf2e5dd4b68ccff27b3b9d98676e722a20561c2ec03acfadc41166962eae5670"
+    },
+    {
+      "reviewed_on": "2026-10-31",
+      "reference": "docs/OPEN_SEA_COUNTERSHADING_CONTROL_20261031.md",
+      "scope": "Presentation only: native summary reuses existing card layout, title/subtitle fonts, icon and right chevron; disclosure remains native; explanation and source links unchanged",
+      "previous_snapshot_sha256": "cf2e5dd4b68ccff27b3b9d98676e722a20561c2ec03acfadc41166962eae5670",
+      "snapshot_sha256": "406263fee1e221b30f2f4af2edceb202453c4c99b3de0e0ffd984a6d4c9cf348"
+    },
+    {
+      "reviewed_on": "2026-11-01",
+      "reference": "docs/INTEGRATED_GUIDE_HELP_20261101.md",
+      "scope": "Owner-requested shared maintenance panel concealment, search filtering and old-help fragment routing; scientific app bytes and approvals unchanged",
+      "previous_snapshot_sha256": "406263fee1e221b30f2f4af2edceb202453c4c99b3de0e0ffd984a6d4c9cf348",
+      "snapshot_sha256": "ede5fe579f3f4d1104980dd3289ff6b17bd5d86da0dac420f4c42f9acbdf8ef3"
+    },
+    {
+      "reviewed_on": "2026-11-01",
+      "reference": "docs/TREE_AND_SPERM_WHALE_20261101.md",
+      "scope": "Local sourced Sperm Whale text and source links; list two existing apps; canonical animal browse metadata; no new automatic resource, storage or network behavior",
+      "previous_snapshot_sha256": "ede5fe579f3f4d1104980dd3289ff6b17bd5d86da0dac420f4c42f9acbdf8ef3",
+      "snapshot_sha256": "7c32bedd266509030a75bd45a7563229e5353fe64be3883cb547f46b5c121453"
+    },
+    {
+      "reviewed_on": "2026-11-01",
+      "reference": "docs/TREE_OF_LIFE_BACK_20261101.md",
+      "scope": "Recognize exact short Hub label for existing shared contextual Back; no new storage or network behavior",
+      "previous_snapshot_sha256": "7c32bedd266509030a75bd45a7563229e5353fe64be3883cb547f46b5c121453",
+      "snapshot_sha256": "6eecc7c5ec3edd85005f75e749a2bd1789bd6a18fd52c33b129a6090b15a0123"
+    },
+    {
+      "reviewed_on": "2026-11-01",
+      "reference": "docs/TREE_NAVIGATION_PRESENTATION_20261101.md",
+      "scope": "Tree-only shared navigation layout and button styles; existing Back and Hub destinations unchanged; no new network or storage behavior",
+      "previous_snapshot_sha256": "6eecc7c5ec3edd85005f75e749a2bd1789bd6a18fd52c33b129a6090b15a0123",
+      "snapshot_sha256": "3d140eae3ed6bb060e3abdaec74f4cd2b953a7c110ff663d25ab3bbba2f6eec9"
+    },
+    {
+      "reviewed_on": "2026-11-01",
+      "reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+      "scope": "One local title photo, offline registration and click-only credit; public reuse permission pending; unrelated app catalog-only rebindings",
+      "previous_snapshot_sha256": "3d140eae3ed6bb060e3abdaec74f4cd2b953a7c110ff663d25ab3bbba2f6eec9",
+      "snapshot_sha256": "b89fca0eb4029759fb3b40fc916011ee5bf9d3aea4f619f56d99e2fdaa981120"
+    },
+    {
+      "reviewed_on": "2026-11-01",
+      "reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+      "scope": "Replace local Sperm Whale title JPEG with licensed supplied copy; visible source/license credit; remove retired photo; catalog-only unrelated-app rebindings",
+      "previous_snapshot_sha256": "b89fca0eb4029759fb3b40fc916011ee5bf9d3aea4f619f56d99e2fdaa981120",
+      "snapshot_sha256": "6f5f69cc1698ff0c0e4b5b33e2f9f78da44895959cf49996eef4d5c51d5c1598"
+    },
+    {
+      "reviewed_on": "2026-11-01",
+      "reference": "docs/SPERM_WHALE_PHOTO_FOOTNOTES_20261101.md",
+      "scope": "Move existing Sperm Whale photo credit and license text to local footnotes; numbered forward and return anchors; media bytes/rights unchanged",
+      "previous_snapshot_sha256": "6f5f69cc1698ff0c0e4b5b33e2f9f78da44895959cf49996eef4d5c51d5c1598",
+      "snapshot_sha256": "3a52e56dd6149ba63b3422a2667291bd8e2b148ed608e39135390c09f75e2bb1"
+    },
+    {
+      "reviewed_on": "2026-11-01",
+      "reference": "docs/OPEN_SEA_TEXT_APPROVAL_20261101.md",
+      "scope": "Record explicit owner Countershading text approval; manifest/approval metadata only; scientific/runtime source and media unchanged",
+      "previous_snapshot_sha256": "3a52e56dd6149ba63b3422a2667291bd8e2b148ed608e39135390c09f75e2bb1",
+      "snapshot_sha256": "7b0f8d51005c9b19cf2d50a601ae0dc0d4830a2f89d864011e43266fea755ec0"
+    }
+  ]
 }
