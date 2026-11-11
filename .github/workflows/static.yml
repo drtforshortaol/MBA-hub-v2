@@ -98,6 +98,9 @@ jobs:
                   assert b'Universal installation link and QR code' in get('install.html')
                   assert len(get('install-qr.png'))>100
                   assert b'core/hub.js' in get('index.html')
+                  hub=get('core/hub.js')
+                  assert b"category:'volunteer-tools',title:'Nearby Dining'" in hub
+                  assert b'https://drtforshortaol.github.io/MBA-nearby-dining/' in hub
                   print('Guide public delivery checks passed:',len(registry['apps']),'apps')
                   break
               except Exception as e:
