@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "source_commit": "2423afef344911d5ac7b4bf7fad5f06b202584f1",
+  "release": "6dd86313604cf51b",
+  "host_source_commit": "4424c177cb6ed2c0942d6e7a06e030416e66f8e4",
+  "deployment": {
+    "id": "appgdep_6ae7972bf0548191a260ae2de74f78a4",
+    "project_id": "appgprj_6ae55daba7b08191a19ce7036c6a4152",
+    "title": "MBA Hub V2 — iPhone Review",
+    "version_id": "appgprj_6ae55daba7b08191a19ce7036c6a4152~appgver_7a2d960eceb48191a868459a145203cf",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://mba-v2-iphone-review-4ec51dd.drtforshort.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ae55daba7b08191a19ce7036c6a4152",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-11-01T19:47:01.628290+00:00"
+  },
+  "photo": {
+    "asset_id": "asset-ee96e0719845ef73",
+    "source": "https://commons.wikimedia.org/wiki/File:Sperm_whale_pod.jpg",
+    "photographer": "Gabriel Barathieu",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "modification_notice": "Cropped/resized copy; this version shared under same license",
+    "retired_asset": "asset-3f1a17a6c8208427"
+  },
+  "validation": {
+    "full_suite_passed": 1066,
+    "full_suite_failed": 0,
+    "artifacts": "both passed",
+    "security": "passed",
+    "privacy": "snapshot matches",
+    "local_host_resources": 381,
+    "host_update_verifier_scenarios": 8,
+    "browser": "Supplied 1078x534 JPEG loads fully above At a glance with visible title/photographer/source/license/change notice",
+    "physical_device": "not assessed"
+  },
+  "remaining": {
+    "operational_flags": 4,
+    "authored_text": [
+      "open-sea",
+      "sperm-whale"
+    ],
+    "pending_media": 0
+  },
+  "production_release_authorized": false
+}

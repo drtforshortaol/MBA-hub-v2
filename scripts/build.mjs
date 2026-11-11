@@ -1,3 +1,6 @@
+import {isIntegratedLegacyHelp} from '../src/core/integrated-help.js';
+import {animalCatalog} from '../src/shared/animal-records.js';
+import {validateAnimalRecords} from './validate-animal-records.mjs';
 import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';import {preparePublicReview,inheritedApprovalSupported,ownerTextApprovalSupported} from './public-review.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');process.chdir(root);
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
@@ -44,6 +47,7 @@ export function build(){
  const platform=read('config/platform.json'),categories=read('config/categories.json'),media=read('src/shared/media/catalog.json'),knowledge=read('src/shared/knowledge.json'),inventory=read('config/v1-inventory.json');
  const inheritanceContext={provenance:read('config/migration-provenance.json'),evidence:fs.existsSync('config/inherited-v1-fidelity.json')?read('config/inherited-v1-fidelity.json'):null,sourceRoot:path.join(root,'src')};
  const apps=fs.readdirSync('src/apps',{withFileTypes:true}).filter(entry=>entry.isDirectory()).map(entry=>read(`src/apps/${entry.name}/manifest.json`)).sort((a,b)=>a.app_id.localeCompare(b.app_id));const interfaces=fs.existsSync('src/shared/interfaces.json')?read('src/shared/interfaces.json'):undefined;const errors=validate({apps,categories,media,knowledge,interfaces,exists:p=>fs.existsSync(`src/${p}`)});if(errors.length)throw Error(errors.join('\n'));
+ const animalErrors=validateAnimalRecords(animalCatalog,apps);if(animalErrors.length)throw Error(animalErrors.join('\n'));
  const environments=process.argv.includes('--published')?['published']:['developer','tester'];if(environments[0]==='published'){const failures=releaseErrors(platform,apps,media,inventory,inheritanceContext);if(failures.length)throw Error(failures.join('\n'));}
  if(process.argv.includes('--check')){console.log(`Validated ${apps.length} apps and ${categories.length} categories.`);return;}
  for(const environment of environments){
@@ -64,10 +68,54 @@ export function build(){
   const registry={schema_version:1,version:platform.version,environment,categories,apps:bundleApps};
   const put=(p,data)=>fs.writeFileSync(`${out}/${p}`,JSON.stringify(data,null,2));put('registry.json',registry);
   put('environment.json',{environment,version:platform.version,stage:platform.releaseStage,namespace:`mba-v2-${environment}`,developer:environment==='developer'});
-  const facts=new Map(knowledge.records.map(r=>[r.id,r]));put('search-index.json',bundleApps.flatMap(a=>{const owned=new Map(a.sections.map(s=>[s.id,s]));for(const id of a.knowledge)for(const section of facts.get(id)?.sections||[])owned.set(section.id,section);return [{app_id:a.app_id,title:a.title,text:a.title,url:a.entry_point},...[...owned.values()].map(s=>({app_id:a.app_id,title:`${a.title} · ${s.title}`,text:[s.title,s.text,...s.aliases||[]].join(' '),url:a.entry_point+(s.query?'?'+new URLSearchParams(s.query).toString():`#${s.id}`)}))];}));
-  put('manifest.webmanifest',{id:'./',name:`MBA Hub V2 ${environment}`,short_name:'MBA V2',start_url:'./index.html',scope:'./',display:'standalone',theme_color:'#123e50',background_color:'#f4f7f7',icons:[{src:'icon.svg',sizes:'any',type:'image/svg+xml',purpose:'any'}]});
+  const facts=new Map(knowledge.records.map(r=>[r.id,r]));put('search-index.json',bundleApps.flatMap(a=>{const owned=new Map(a.sections.map(s=>[s.id,s]));for(const id of a.knowledge)for(const section of facts.get(id)?.sections||[])owned.set(section.id,section);return [{app_id:a.app_id,title:a.title,text:a.title,url:a.entry_point},...[...owned.values()].filter(s=>!isIntegratedLegacyHelp(a.app_id,s.id)).map(s=>({app_id:a.app_id,title:`${a.title} · ${s.title}`,text:[s.title,s.text,...s.aliases||[]].join(' '),url:a.entry_point+(s.query?'?'+new URLSearchParams(s.query).toString():`#${s.id}`)}))];}));
+  const isDev=environment==='developer';
+  if(isDev){
+   fs.writeFileSync(`${out}/icon.svg`, '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192"><rect width="192" height="192" rx="44" fill="#d66b12"/><path d="M24 112 Q60 72 96 112 T168 112" fill="none" stroke="#fff1cf" stroke-width="15"/><text x="96" y="70" text-anchor="middle" fill="white" font-family="sans-serif" font-size="34">MBA</text><text x="96" y="162" text-anchor="middle" fill="white" font-weight="bold" font-family="sans-serif" font-size="37">DEV</text></svg>');
+   const indexPath=`${out}/index.html`;
+   fs.writeFileSync(indexPath,fs.readFileSync(indexPath,'utf8').replaceAll('MBA Hub Version 2','MBA Hub DEV').replace('<small>V2</small>','<small>DEV</small>'));
+  }
+  // Guide installation help must not expose the retired tester QR.
+  // Until a permanent access-controlled Guide address is approved, show only
+  // the current first-party relative link. Keep the Developer bundle untouched.
+  if(!isDev){
+   const installPath=`${out}/install.html`;
+   let install=fs.readFileSync(installPath,'utf8');
+   const legacyQr='<img class="qr" src="./install-qr.png" alt="Universal MBA Hub V2 Guide QR code">';
+   const count=install.split(legacyQr).length-1;
+   if(count!==1)throw Error('Universal Guide QR markup changed: verify before release');
+   const guideUrl=process.env.MBA_GUIDE_PUBLIC_URL;
+   if(guideUrl && guideUrl!=='https://drtforshortaol.github.io/MBA-hub-v2/')throw Error('Unrecognized Guide publication URL');
+   if(!guideUrl)install=install.replaceAll(legacyQr,'<p class="muted"><strong>Guide QR pending.</strong> Use the approved installation address.</p>');
+   install=install.replace('QR images are included with the Hub for offline use.','Only the QR for the current approved Guide address is suitable for distribution.');
+   if(!guideUrl)install=install.replace('Scan the code with your iPhone Camera and tap the link.','Open the approved Guide address directly in Safari.');
+   if(!guideUrl)install=install.replace('Scan with your Camera or Google Lens.','Open the approved Guide address directly in Chrome.');
+   fs.writeFileSync(installPath,install);
+  }
+  put('manifest.webmanifest',{id:'./',name:isDev?'MBA Hub DEV':'MBA Hub V2',short_name:isDev?'MBA DEV':'MBA V2',start_url:'./index.html',scope:'./',display:'standalone',theme_color:isDev?'#d66b12':'#123e50',background_color:'#f4f7f7',icons:[{src:'icon.svg',sizes:'any',type:'image/svg+xml',purpose:'any'}]});
   // Diagnostics code and maintenance handlers are physically absent from tester artifacts.
-  if(environment==='developer')fs.appendFileSync(`${out}/core/hub.js`,"\nimport('./developer.js');\n");
+  if(environment==='developer')fs.appendFileSync(`${out}/core/hub.js`,`
+\n// Bind the shortcut before loading optional diagnostics dependencies.
+const developerTitle=document.querySelector('#title');
+let developerTaps=0,developerLastTap=0,developerOpening=false;
+developerTitle?.addEventListener('click',async()=>{
+ const now=Date.now();
+ if(now-developerLastTap>2200)developerTaps=0;
+ developerLastTap=now;
+ if(++developerTaps!==5)return;
+ developerTaps=0;
+ if(developerOpening)return;
+ developerOpening=true;
+ try{
+  const {toggleDeveloper}=await import('./developer.js');
+  toggleDeveloper();
+ }catch(error){
+  console.error('Developer tools unavailable',error);
+  const status=document.querySelector('#environment');
+  if(status)status.textContent='Developer tools failed to load. Refresh and retry.';
+ }finally{developerOpening=false;}
+});
+`);
   const files=[];function walk(dir){for(const ent of fs.readdirSync(dir,{withFileTypes:true})){const p=path.join(dir,ent.name);if(ent.isDirectory())walk(p);else files.push(p.slice(out.length+1));}}walk(out);
   const resources=files.filter(p=>p!=='sw.js').sort().map(url=>({url,sha256:hash(fs.readFileSync(`${out}/${url}`)),bytes:fs.statSync(`${out}/${url}`).size}));
   const release=hash(JSON.stringify(resources)).slice(0,16);put('release.json',{schema_version:1,version:platform.version,environment,release,resources});

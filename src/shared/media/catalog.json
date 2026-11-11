@@ -4298,6 +4298,27 @@
           "source_path": "src/apps/seahorse-takenaga.jpeg"
         }
       ]
+    },
+    {
+      "asset_id": "asset-ee96e0719845ef73",
+      "path": "shared/media/asset-ee96e0719845ef73--sperm-whale-pod.jpeg",
+      "owner": "sperm-whale",
+      "alt": "Two sperm whales swimming together beneath the ocean surface",
+      "credit": "“Sperm whale pod” — Gabriel Barathieu / Wikimedia Commons, CC BY-SA 2.0; cropped/resized copy, shared under the same license.",
+      "permission": "licensed",
+      "permission_evidence": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sperm_whale_pod.jpg",
+      "source_path": "File:Sperm_whale_pod.jpg",
+      "sha256": "ee96e0719845ef73a7b4827bccd4686c816b231995cb2dfb4fb77e9e6ebfa928",
+      "offline": true,
+      "uses": [
+        {
+          "app_id": "sperm-whale",
+          "source_path": "File:Sperm_whale_pod.jpg"
+        }
+      ]
     }
   ]
 }

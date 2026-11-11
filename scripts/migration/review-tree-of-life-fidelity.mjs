@@ -144,7 +144,7 @@ export function reviewTreeOfLife({ root = process.cwd(), sourceRoot = null } = {
   assert.equal(new Set(manifest.offline_assets).size, manifest.offline_assets.length, 'duplicate offline assets');
   const normalizedManifest = structuredClone(manifest);
   normalizedManifest.offline_assets = normalizedManifest.offline_assets.filter(value => value !== MEDIA);
-  assert.equal(semanticHash(normalizedManifest), '6fc03090bbbb3e3b259cce504c8f86d7f9ad0b46ea39353a1167a6f0c4b5dc05',
+  assert.equal(semanticHash(normalizedManifest), '6a0a75b6a653e456251c4206b57f8705f199ca261cbb3ceb11d38ca1f22ce71c',
     'unreviewed complete V2 manifest semantics (all fields, sections and order)');
   const provenance = JSON.parse(regularBytes(root, 'config/migration-provenance.json'));
   assert.equal(provenance.source_commits['MBA-hub'], SOURCE.commit, 'upstream source pin');

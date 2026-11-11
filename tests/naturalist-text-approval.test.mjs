@@ -33,7 +33,7 @@ test('Naturalist uses the exact approved candidate bytes and explicit owner deci
  assert.equal(record.candidate_packet_sha256,hash(fs.readFileSync(packetPath)));
  assert.equal(record.authorization_quote,'Approved');assert.equal(record.scope,'authored-text-only');
  assert.equal(packet.planned_app_version,'2.0.0-alpha.10');assert.equal(app.version,'2.0.0-alpha.11');
- assert.deepEqual(record.resource_rebindings.map(r=>r.review_reference),['docs/EPHYRA_FIGURE_LICENSE_20261029.md','docs/FOVEA_FIGURE_LICENSE_20261029.md','docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md','docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md','docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md','docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md']);
+ assert.deepEqual(record.resource_rebindings.map(r=>r.review_reference),['docs/EPHYRA_FIGURE_LICENSE_20261029.md','docs/FOVEA_FIGURE_LICENSE_20261029.md','docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md','docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md','docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md','docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md','docs/SPERM_WHALE_TITLE_PHOTO_20261101.md','docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md']);
  assert.equal(record.resource_rebindings.find(r=>r.review_reference==='docs/FOVEA_FIGURE_LICENSE_20261029.md').scope,'Catalog metadata for one licensed Seahorse figure only; approved Naturalist files unchanged');assert.equal(app.status,'testing');
  assert.equal(app.publication_review,'owner-approved-text');assert.equal(ownerTextApprovalSupported(app),true);
  const changed=structuredClone(app);changed.sections.at(-1).text+=' Unapproved claim.';
