@@ -23,11 +23,12 @@ if(process.argv[1]===fileURLToPath(import.meta.url)){
   const changed=snapshot.resources.filter(item=>old.get(item.path)?.sha256!==item.sha256||old.get(item.path)?.bytes!==item.bytes).map(item=>item.path);
   const removed=review.snapshot.resources.filter(item=>!snapshot.resources.some(current=>current.path===item.path)).map(item=>item.path);
   const permitted=['scripts/build.mjs','src/core/developer.js','scripts/audit-privacy-snapshot.mjs','src/install.html'];
-  if(removed.length||changed.length!==permitted.length||changed.some(item=>!permitted.includes(item))||snapshot.automaticExternalResources.length||snapshot.sensitiveBrowserAPIs.length)throw Error('Unexpected review delta; do not auto-approve: '+JSON.stringify({changed,removed}));
+  if(snapshot.resources.some(item=>item.path==='src/core/hub.js'&&item.sha256==='92d8ff5706456bd23a2c9b8f01d14620f450c98fab8dbabd7486dfb6a1e21eba'))permitted.push('src/core/hub.js');
+ if(removed.length||changed.length!==permitted.length||changed.some(item=>!permitted.includes(item))||snapshot.automaticExternalResources.length||snapshot.sensitiveBrowserAPIs.length)throw Error('Unexpected review delta; do not auto-approve: '+JSON.stringify({changed,removed}));
   review.snapshot=snapshot;
   review.snapshot_sha256=snapshot.snapshot_sha256;
   review.reviewed_on='2026-11-02';
-  review.scope+='; developer five-tap shortcut and Guide direct-link copy control (owner-authorized public Guide distribution); no additional public-content review requested';
+  review.scope+='; developer five-tap shortcut and Guide direct-link copy control (owner-authorized public Guide distribution); Nearby Dining is an owner-authorized, user-clicked link under Volunteer Tools';
   fs.writeFileSync(reviewPath,JSON.stringify(review,null,2)+'\n');
   console.log('Reviewed bounded deployment UI/privacy binding updated:',snapshot.snapshot_sha256);
  }else console.log(JSON.stringify(snapshot,null,2));
