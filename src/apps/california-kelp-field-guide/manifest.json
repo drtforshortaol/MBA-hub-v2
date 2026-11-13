@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "app_id": "california-kelp-field-guide",
+  "title": "California Kelp Field Guide",
+  "category": "exhibits",
+  "type": "reference",
+  "version": "0.1.0",
+  "entry_point": "apps/california-kelp-field-guide/index.html",
+  "status": "published",
+  "owner": "california-kelp-field-guide",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/california-kelp-field-guide/index.html"
+  ],
+  "media": [],
+  "knowledge": [],
+  "cross_links": [
+    {
+      "app_id": "kelp-forest"
+    }
+  ],
+  "sections": [
+    {
+      "id": "anatomy",
+      "title": "Kelp anatomy",
+      "text": "Holdfast haptera stipe blade pneumatocyst sorus sporophyll midrib",
+      "aliases": [
+        "kelp parts"
+      ]
+    },
+    {
+      "id": "species",
+      "title": "California kelp species",
+      "text": "Giant kelp bull kelp elk kelp sea palm southern sea palm stalked kelp feather boa kelp broad-rib kelp strap kelp stiff-stiped kelp dense-clumped kelp ephemeral kelp oarweed sugar kelp seersucker kelp sea cabbage net-of-cords kelp fringed sieve kelp winged kelp wakame",
+      "aliases": [
+        "kelp identification",
+        "kelp field guide"
+      ]
+    }
+  ]
+}

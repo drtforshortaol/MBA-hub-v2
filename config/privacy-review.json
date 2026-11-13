@@ -3,15 +3,15 @@
   "status": "reviewed",
   "reviewed_on": "2026-11-01",
   "reviewer": "assistant engineering review authorized by owner request: Next blocker",
-  "scope": "Candidate-specific privacy/distribution delta review for owner-authorized public early-access guide tester; not visitor-standalone sharing or production release",
+  "scope": "Candidate-specific privacy/distribution delta review for owner-authorized public early-access guide tester; not visitor-standalone sharing or production release; reviewed the existing deployment UI updates and the self-contained kelp guide with embedded illustrations, no external requests, and no browser storage or sensitive APIs.",
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates. Exact seven-section Sperm Whale owner-approved wording is now content-digest-bound; source HTML and bundled media remain unchanged by the approval metadata.",
-  "snapshot_sha256": "c746204c9736ffb435d482c4fe413f1412c8b4a45beef91486c9b3c9d6eb1d4a",
+  "snapshot_sha256": "014c016f6e16d1c41a09c6363a6d4aec9a80e9d50b1f29ef0181466668d10380",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "c746204c9736ffb435d482c4fe413f1412c8b4a45beef91486c9b3c9d6eb1d4a",
+    "snapshot_sha256": "014c016f6e16d1c41a09c6363a6d4aec9a80e9d50b1f29ef0181466668d10380",
     "resources": [
       {
         "path": "config/categories.json",
@@ -95,13 +95,13 @@
       },
       {
         "path": "scripts/audit-privacy-snapshot.mjs",
-        "bytes": 2015,
-        "sha256": "19e122980644324bb90453c08a6a3a51bdf571f9b33641372722db5dcb3416d6"
+        "bytes": 3812,
+        "sha256": "5938e704b4a8eaffe0506f147d4ea442609d9a80197c21b3ae50cb7a056b46ad"
       },
       {
         "path": "scripts/build.mjs",
-        "bytes": 12991,
-        "sha256": "52abf0b5e94d060b95c6883bfe3f11c8307f91dd1e5c21eb7ca9f0dfb96061a9"
+        "bytes": 15146,
+        "sha256": "a51d415cf3a50b6f5138bdc1c341e697213524e339dd9e4a0ec613d78596e090"
       },
       {
         "path": "scripts/change-request-validation.mjs",
@@ -577,6 +577,16 @@
         "path": "src/apps/california-flying-fish/manifest.json",
         "bytes": 6263,
         "sha256": "8d0d95b83a315cfc0120150c6a0c103548e6b3d68fc57dd3f7052072302bbe70"
+      },
+      {
+        "path": "src/apps/california-kelp-field-guide/index.html",
+        "bytes": 2786349,
+        "sha256": "71cb7402f672feaa37a5ad9f35e7c6c4c504b328dcd74c0af4e3f6a9acbde375"
+      },
+      {
+        "path": "src/apps/california-kelp-field-guide/manifest.json",
+        "bytes": 1262,
+        "sha256": "a736b78c0388589a53357b1acf1f725ec76627c71d3a784b3f81d945575cfd63"
       },
       {
         "path": "src/apps/california-sheephead/index.html",
@@ -1140,8 +1150,8 @@
       },
       {
         "path": "src/core/developer.js",
-        "bytes": 65151,
-        "sha256": "550d939fdff289bd8d7098bd049888b009919aeb378914372c1b0ba93244c72b"
+        "bytes": 65932,
+        "sha256": "37a2dda58a5e741ad8f77db6904279e027907eaabef8bc36cb7a52a8242478ec"
       },
       {
         "path": "src/core/hub.css",
@@ -1150,8 +1160,8 @@
       },
       {
         "path": "src/core/hub.js",
-        "bytes": 12558,
-        "sha256": "706f63acf7a431c3583fafb41a436822b3cdabb9c636b04c34214e29e507d7a5"
+        "bytes": 13216,
+        "sha256": "90408055a60dca80731bc5d5a627eba7f5d34605f7272a7d582a94d98c126fae"
       },
       {
         "path": "src/core/integrated-help.js",
@@ -1300,8 +1310,8 @@
       },
       {
         "path": "src/install.html",
-        "bytes": 6381,
-        "sha256": "ea5eda85c8ae3a5998515d306c81440d53a7c75e0561db1ab183bfcab7427f78"
+        "bytes": 8695,
+        "sha256": "603266d8ba9cd06e4ab0cd47c8eaed0e3433499b57a42a998f106926cdd162e5"
       },
       {
         "path": "src/refresh.html",
