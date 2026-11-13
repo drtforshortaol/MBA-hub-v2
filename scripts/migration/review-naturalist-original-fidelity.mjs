@@ -80,6 +80,14 @@ export async function reviewNaturalistOriginal({root=packageRoot,verifyBytes=tru
  if(november>=0)assert.equal(sha(current[n]),'8591122738a124cc4e95096c677a5b33ccec6050c853b454f1a513c33b2a3810','reviewed November append bytes');
  }else assert.equal(sha(current[n]),originalHashes[n]||additions[n],'current bytes '+n);}}
  assert.equal(current['styles.css'],source['styles.css'],'complete original CSS');
+ // November has its own runtime checkpoint. Run the historical comparison on the archived inputs.
+ const novemberStart=current['data.js'].lastIndexOf('\nFIELD_NOTES.push(');
+ if(novemberStart>=0&&current['data.js'].slice(novemberStart).includes('"id": "2026-11-11-ocean-in-motion"')){
+  current['data.js']=current['data.js'].slice(0,novemberStart);
+  const manifest=JSON.parse(current['manifest.json']);
+  manifest.sections=manifest.sections.filter(section=>section.query?.note!=='2026-11-11-ocean-in-motion');
+  current['manifest.json']=JSON.stringify(manifest);
+ }
  const originalData=dataObject(source['data.js']),newData=dataObject(current['data.js']);assert.equal(originalData.FIELD_NOTES.length,24);assert.equal(originalData.RESOURCES.length,8);
  const inventory=[...fixture.inventory,...fixture.external_inventory];const media=metadataPairs(originalData,newData,inventory,root);
  // Restore complete original script bytes, not just the evaluated records.
