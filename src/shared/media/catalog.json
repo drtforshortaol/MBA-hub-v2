@@ -4061,15 +4061,15 @@
       "path": "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg",
       "owner": "naturalist-briefing-20261111",
       "alt": "Two flamboyant cuttlefish over blue-lit gravel.",
-      "credit": "Photo supplied with the naturalist update.",
-      "permission": "review-required",
+      "credit": "Photo by MJ.",
+      "permission": "rights-holder-approved",
       "offline": true,
       "uses": [
         {
           "app_id": "naturalist-briefing-20261111"
         }
       ],
-      "permission_evidence": "Image supplied for development review. Publication permission unverified."
+      "permission_evidence": "On 2026-11-13 Glenn confirmed MJ authorized use in the public MBA Hub, including offline copies."
     },
     {
       "asset_id": "briefing-20261111-juvenile-white-seabass",
