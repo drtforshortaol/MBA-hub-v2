@@ -1,6 +1,6 @@
 # California Kelp Field Guide — scientific evidence matrix
 
-**Status:** provisional research queue, **not scientific approval**. Prepared from the 21 draft app entries. The photographed 2026 field guide and 2024 Aquarium notes are *candidate references*, not independently verified citations. No page numbers, reviewer, or evidence links have yet been established. Do not represent any row as approved.
+**Status:** provisional research queue, **not scientific approval**. Prepared from the 21 draft app entries. The photographed 2026 field guide and 2024 Aquarium notes are *candidate references*, not independently verified citations. Some source URLs are now documented below, but source page numbers and scientific reviewer sign-off are still missing. Source-backed notes are not equivalent to full species verification. Do not represent any row as approved.
 
 | # | Common name | Draft scientific name | Priority verification | Evidence/source + page | Review status |
 |---|---|---|---|---|---|
@@ -25,6 +25,12 @@
 | 19 | Fringed sieve kelp | *Neoagarum fimbriatum* | accepted name and annual claim | Not recorded | Provisional |
 | 20 | Winged kelp | *Alaria marginata* | habitat | CDFW kelp reference and NOAA Olympic Coast sanctuary: low rocky intertidal to shallow subtidal (sources below) | Evidence found; reviewer pending |
 | 21 | Wakame | *Undaria pinnatifida* | introduced/invasive status and scope | California Invasive Plant Council profile: introduced in California, locally invasive, limited statewide ecological impacts; UC ANR lists it for invasive-species reporting (links below) | Evidence found; review needed |
+
+## Research status accounting
+- **10 of 21** entries have at least one initial source note; **11 of 21** remain without an entry-specific source note.
+- **0 of 21** entries have complete scientific approval. Initial source notes may cover only a subset of the identification, taxonomy, habitat, range, and life-history claims.
+- Counts describe **research coverage**, not a percentage of scientific accuracy or readiness to publish.
+- The app cannot be described as scientifically verified until all required criteria below are satisfied.
 
 ## Required completion criteria
 1. Attach an authoritative current taxonomy record and dated citation for each accepted name; record synonyms separately.
