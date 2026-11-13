@@ -53,3 +53,8 @@ test('empty searches provide a readable reset hint',()=>{
  assert.match(page,/No matching kelp entries/);
  assert.match(page,/querySelector\('#no-results'\)\.hidden=n!==0/);
 });
+
+test('unresolved giant kelp taxonomy is disclosed in the species entry',()=>{
+ assert.match(page,/Macrocystis tenuifolia/);
+ assert.match(page,/remain under review/);
+});
