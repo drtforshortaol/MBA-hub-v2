@@ -3077,7 +3077,959 @@
           "local_path": "src/apps/naturalist-field-notes/data.js",
           "pinned_sha256": "aa1ef55bc67bed4ba3d0c635f5c385243665cf890260dd16934ade5ebb37e393",
           "current_sha256": "8591122738a124cc4e95096c677a5b33ccec6050c853b454f1a513c33b2a3810",
-          "status": "changed"
+          "status": "changed",
+          "historical_content_data_comparison": {
+            "current_sha256": "683693a6417256d65056a48145ded9714159adb2bef56ec5e8e434334b83a089",
+            "equal_after_only_image_url_normalization": true,
+            "pinned_normalized_sha256": "f92448d52cd7fbd6577787d65bc9ae2f6f81b3b0648569c8890ee1e58501e0c4",
+            "current_normalized_sha256": "f92448d52cd7fbd6577787d65bc9ae2f6f81b3b0648569c8890ee1e58501e0c4",
+            "image_url_mappings": [
+              {
+                "source_url": "../california-flying-fish/IMG_3380.jpeg",
+                "source_path": "apps/california-flying-fish/IMG_3380.jpeg",
+                "sha256": "768c33463b4de0e3a035d5014efe022815ccb8069b63fb9ee3784ebb64ce4d8c",
+                "current_paths": [
+                  "shared/media/asset-768c33463b4de0e3--IMG_3380.jpeg"
+                ]
+              },
+              {
+                "source_url": "../california-flying-fish/IMG_3381.jpeg",
+                "source_path": "apps/california-flying-fish/IMG_3381.jpeg",
+                "sha256": "afa736f83a460b13bfe2590dbcb3021308401e7ad78c4cb646a1931257bc841d",
+                "current_paths": [
+                  "shared/media/asset-afa736f83a460b13--IMG_3381.jpeg"
+                ]
+              },
+              {
+                "source_url": "../california-flying-fish/IMG_3382.jpeg",
+                "source_path": "apps/california-flying-fish/IMG_3382.jpeg",
+                "sha256": "e679c304e357c5d18dc532e479aa3861b2cda8479da8394ce73e88c4c15a79e7",
+                "current_paths": [
+                  "shared/media/asset-e679c304e357c5d1--IMG_3382.jpeg"
+                ]
+              },
+              {
+                "source_url": "../california-flying-fish/IMG_3383.jpeg",
+                "source_path": "apps/california-flying-fish/IMG_3383.jpeg",
+                "sha256": "c11690bd147b5db561ccd1dd437ee53bea05cb11240347154d472aeffd6b108a",
+                "current_paths": [
+                  "shared/media/asset-c11690bd147b5db5--IMG_3383.jpeg"
+                ]
+              },
+              {
+                "source_url": "../northern-elephant-seal-pwa-v1.2-final-hub%20(2)/images/buoyancy_chart.jpg",
+                "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/buoyancy_chart.jpg",
+                "sha256": "3895d93118cf68349b7bdbea5fd5cec0b43faaf9b57948b3494d49d9489a585f",
+                "current_paths": [
+                  "shared/media/asset-3895d93118cf6834--buoyancy_chart.jpg"
+                ]
+              },
+              {
+                "source_url": "../northern-elephant-seal-pwa-v1.2-final-hub%20(2)/images/calendar.jpg",
+                "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/calendar.jpg",
+                "sha256": "c6185696aabf48e563f46f41ba06d40e6a2bc1c81b3545ddaafdb51e3d2cf1a2",
+                "current_paths": [
+                  "shared/media/asset-c6185696aabf48e5--calendar.jpg"
+                ]
+              },
+              {
+                "source_url": "../northern-elephant-seal-pwa-v1.2-final-hub%20(2)/images/cons_basics.jpg",
+                "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/cons_basics.jpg",
+                "sha256": "d8d7415dc63ff8f8178baf0937480417bb33d8a0aadf26244e7caf668ac52b07",
+                "current_paths": [
+                  "shared/media/asset-d8d7415dc63ff8f8--cons_basics.jpg"
+                ]
+              },
+              {
+                "source_url": "../northern-elephant-seal-pwa-v1.2-final-hub%20(2)/images/cons_comeback.jpg",
+                "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/cons_comeback.jpg",
+                "sha256": "a632a1f72984e42f627987cf2df15793cd2e5aa4c20e4a0164d36e522df8ace4",
+                "current_paths": [
+                  "shared/media/asset-a632a1f72984e42f--cons_comeback.jpg"
+                ]
+              },
+              {
+                "source_url": "../northern-elephant-seal-pwa-v1.2-final-hub%20(2)/images/cons_success.jpg",
+                "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/cons_success.jpg",
+                "sha256": "e13b365854bf974bd4aaa498f14ce7a18cde72f3713b8859006d088ef6dee6b9",
+                "current_paths": [
+                  "shared/media/asset-e13b365854bf974b--cons_success.jpg"
+                ]
+              },
+              {
+                "source_url": "../northern-elephant-seal-pwa-v1.2-final-hub%20(2)/images/diet_diagram.jpg",
+                "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/diet_diagram.jpg",
+                "sha256": "9fa770d5f87c286aecbee5fb7a809a486c934ddad35b8cdfe23496579c375ba3",
+                "current_paths": [
+                  "shared/media/asset-9fa770d5f87c286a--diet_diagram.jpg"
+                ]
+              },
+              {
+                "source_url": "../northern-elephant-seal-pwa-v1.2-final-hub%20(2)/images/migration_map.jpg",
+                "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/migration_map.jpg",
+                "sha256": "1a0051b4ea4be7eaa1b8c253ca75c0f347dd0a3aaf10e0a549fc05de541bfc74",
+                "current_paths": [
+                  "shared/media/asset-1a0051b4ea4be7ea--migration_map.jpg"
+                ]
+              },
+              {
+                "source_url": "../northern-elephant-seal-pwa-v1.2-final-hub%20(2)/images/rookery_scene.jpg",
+                "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/rookery_scene.jpg",
+                "sha256": "125a4bbb92b0953befd39bc0fe78620af299393026ff02df968481c62c9d00a6",
+                "current_paths": [
+                  "shared/media/asset-125a4bbb92b0953b--rookery_scene.jpg"
+                ]
+              },
+              {
+                "source_url": "../northern-elephant-seal-pwa-v1.2-final-hub%20(2)/images/size_compare.jpg",
+                "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/size_compare.jpg",
+                "sha256": "bc4d2d7822e216901811e3fcfb30f082acf54e7d39f761f0289e3cb102b3a304",
+                "current_paths": [
+                  "shared/media/asset-bc4d2d7822e21690--size_compare.jpg"
+                ]
+              },
+              {
+                "source_url": "../northern-elephant-seal-pwa-v1.2-final-hub%20(2)/images/size_sketch.jpg",
+                "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/size_sketch.jpg",
+                "sha256": "43951da610ad3fd364dc6613b3f78c242c4e3517d679eaae7ab0efadaae6ac70",
+                "current_paths": [
+                  "shared/media/asset-43951da610ad3fd3--size_sketch.jpg"
+                ]
+              },
+              {
+                "source_url": "../northern-elephant-seal-pwa-v1.2-final-hub%20(2)/images/sleep_diagram.jpg",
+                "source_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/sleep_diagram.jpg",
+                "sha256": "dded438de507736147d29b7b7efaf04b4c7229c4db1d56f1167e1e40410c579b",
+                "current_paths": [
+                  "shared/media/asset-dded438de5077361--sleep_diagram.jpg"
+                ]
+              },
+              {
+                "source_url": "../whale-associated-organisms/IMG_3392.jpeg",
+                "source_path": "apps/whale-associated-organisms/IMG_3392.jpeg",
+                "sha256": "edd9d5ec2d0bbd07852ad0d906341a589bee5a974352f245b945dc660ef24118",
+                "current_paths": [
+                  "shared/media/asset-edd9d5ec2d0bbd07--IMG_3392.jpeg"
+                ]
+              },
+              {
+                "source_url": "../whale-associated-organisms/IMG_3393.jpeg",
+                "source_path": "apps/whale-associated-organisms/IMG_3393.jpeg",
+                "sha256": "c9581b267211cbcb33e4079571f2cb136ad2f6753087d951dcaa1a608abdf60a",
+                "current_paths": [
+                  "shared/media/asset-c9581b267211cbcb--IMG_3393.jpeg"
+                ]
+              },
+              {
+                "source_url": "../whale-associated-organisms/IMG_3394.jpeg",
+                "source_path": "apps/whale-associated-organisms/IMG_3394.jpeg",
+                "sha256": "54b172586520e9bdae0f022cff9fedb5b8abb99af7653c0613e5dd78ea5ea861",
+                "current_paths": [
+                  "shared/media/asset-54b172586520e9bd--IMG_3394.jpeg"
+                ]
+              },
+              {
+                "source_url": "../whale-associated-organisms/IMG_3395.jpeg",
+                "source_path": "apps/whale-associated-organisms/IMG_3395.jpeg",
+                "sha256": "8940026ea5ec69fa762b679f1299c30699291ec34a4747da3be061fd48989c18",
+                "current_paths": [
+                  "shared/media/asset-8940026ea5ec69fa--IMG_3395.jpeg"
+                ]
+              },
+              {
+                "source_url": "../whale-associated-organisms/IMG_3396.jpeg",
+                "source_path": "apps/whale-associated-organisms/IMG_3396.jpeg",
+                "sha256": "eae8123213eff35a91417664e3c820700953670a7beb8b92213e75ea5643169d",
+                "current_paths": [
+                  "shared/media/asset-eae8123213eff35a--IMG_3396.jpeg"
+                ]
+              },
+              {
+                "source_url": "../whale-associated-organisms/IMG_3397.jpeg",
+                "source_path": "apps/whale-associated-organisms/IMG_3397.jpeg",
+                "sha256": "f78cedfed1d74f6b211987c11b53263f9fdd634d8abf34ce3a7e9d62c2984409",
+                "current_paths": [
+                  "shared/media/asset-f78cedfed1d74f6b--IMG_3397.jpeg"
+                ]
+              },
+              {
+                "source_url": "../whale-associated-organisms/IMG_3398.jpeg",
+                "source_path": "apps/whale-associated-organisms/IMG_3398.jpeg",
+                "sha256": "80f9762446c0fc02dce976faa1a627d7cbb3de49cf9e78132ff90801bbd3c26f",
+                "current_paths": [
+                  "shared/media/asset-80f9762446c0fc02--IMG_3398.jpeg"
+                ]
+              },
+              {
+                "source_url": "../whale-associated-organisms/IMG_3399.jpeg",
+                "source_path": "apps/whale-associated-organisms/IMG_3399.jpeg",
+                "sha256": "18794e74477d7c0e693afcdd23c5d35c6ac9cbf0d44098568653fe32eb22ea6b",
+                "current_paths": [
+                  "shared/media/asset-18794e74477d7c0e--IMG_3399.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2345.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2345.jpeg",
+                "sha256": "eae131e12565427ccb4854f63d9d879831871b82dca99398c3edc5c98f199e82",
+                "current_paths": [
+                  "shared/media/asset-eae131e12565427c--IMG_2345.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2346.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2346.jpeg",
+                "sha256": "f754918d4841d773869d3c5b1b131c266b93662b430a8506e16bb87dd0205503",
+                "current_paths": [
+                  "shared/media/asset-f754918d4841d773--IMG_2346.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2347.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2347.jpeg",
+                "sha256": "a4d85e828d55cdeddd62955f066b777e80087de2ba1abee321d011d55176c962",
+                "current_paths": [
+                  "shared/media/asset-a4d85e828d55cded--IMG_2347.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2348.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2348.jpeg",
+                "sha256": "e8dcc0bd89672b8435aa15bd162f3b8d27d8ecec7714c46b556f4f878ea7c87d",
+                "current_paths": [
+                  "shared/media/asset-e8dcc0bd89672b84--IMG_2348.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2349.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2349.jpeg",
+                "sha256": "b74a2689500db075777c24db27c21b2dbf60c71a32aa47bcd27dfa8fa2d8dd92",
+                "current_paths": [
+                  "shared/media/asset-b74a2689500db075--IMG_2349.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2352.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2352.jpeg",
+                "sha256": "0cc3efb40d46bc0d3141af1e446fb9d80cb404789330f1687d973822f969a1cb",
+                "current_paths": [
+                  "shared/media/asset-0cc3efb40d46bc0d--IMG_2352.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2353.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2353.jpeg",
+                "sha256": "c6c418300e5375d9ae582e9ad870eaf0312552aacec14b2108efa0421cb453d8",
+                "current_paths": [
+                  "shared/media/asset-c6c418300e5375d9--IMG_2353.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2354.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2354.jpeg",
+                "sha256": "caa579c4403475c08e09bf3364809f9033e02fa23316665e8056702948691b01",
+                "current_paths": [
+                  "shared/media/asset-caa579c4403475c0--IMG_2354.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2355.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2355.jpeg",
+                "sha256": "9b0525aa1c37954a2e64ce0ece965e3b354e4dbde50da5d8ea2a6ea7c29540ca",
+                "current_paths": [
+                  "shared/media/asset-9b0525aa1c37954a--IMG_2355.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2359.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2359.jpeg",
+                "sha256": "a7a46c98b37498cac685408dd4ba9ab48938fae2abf96bc9fc6f9d459126b525",
+                "current_paths": [
+                  "shared/media/asset-a7a46c98b37498ca--IMG_2359.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2360.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2360.jpeg",
+                "sha256": "57ba856b9eed6807915fdacab7556f044fe54e7735875b4703af4859df35b052",
+                "current_paths": [
+                  "shared/media/asset-57ba856b9eed6807--IMG_2360.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2773.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2773.jpeg",
+                "sha256": "b27788d55542f1cc1aa79481563231b29da24ec6bb84317b1e9578fe71653b3e",
+                "current_paths": [
+                  "shared/media/asset-b27788d55542f1cc--IMG_2773.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2774.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2774.jpeg",
+                "sha256": "7d047bea07617472ce343b1226633f83bcf2fbb2ba4a87c54a2c234f822a6bf7",
+                "current_paths": [
+                  "shared/media/asset-7d047bea07617472--IMG_2774.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2775.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2775.jpeg",
+                "sha256": "f962da252f20ff0b3a148c3096cdd041566d37b183f5138472b3e34517003985",
+                "current_paths": [
+                  "shared/media/asset-f962da252f20ff0b--IMG_2775.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2776.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2776.jpeg",
+                "sha256": "91d6ffad34058a9af7606984a98acba19e4e5fdff3739a8176e7139a64ab1174",
+                "current_paths": [
+                  "shared/media/asset-91d6ffad34058a9a--IMG_2776.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2867.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2867.jpeg",
+                "sha256": "7be108d4e4678453b1624af4396414b619018fef49a31417bca832ad533485b4",
+                "current_paths": [
+                  "shared/media/asset-7be108d4e4678453--IMG_2867.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2868.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2868.jpeg",
+                "sha256": "f63a876a5501a7df42b6e674a5eadadf0f59ba6490583984152f421f8d61b670",
+                "current_paths": [
+                  "shared/media/asset-f63a876a5501a7df--IMG_2868.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2869.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2869.jpeg",
+                "sha256": "2c5a4f34f857290c1b742d8e101c66c50cc68270f3f1e708d0c065df5017408c",
+                "current_paths": [
+                  "shared/media/asset-2c5a4f34f857290c--IMG_2869.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2870.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2870.jpeg",
+                "sha256": "9b844bb19245cc284fba91e94085466bc3f1a3d9da93ed255fdc1973cba09008",
+                "current_paths": [
+                  "shared/media/asset-9b844bb19245cc28--IMG_2870.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2871.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2871.jpeg",
+                "sha256": "717aac5f1a01e9a49504763fd5da8a8396cef5d110e6ef70fa78bfbfbb863a98",
+                "current_paths": [
+                  "shared/media/asset-717aac5f1a01e9a4--IMG_2871.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2873.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2873.jpeg",
+                "sha256": "05332b7e8a82d46dafad51286c9ef3e38dc92f188fcce206c8d4894447502714",
+                "current_paths": [
+                  "shared/media/asset-05332b7e8a82d46d--IMG_2873.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2874.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2874.jpeg",
+                "sha256": "4d7635af67d3f236f42a0835a9516e99b441fe507b8e37d1c197bd5287296db2",
+                "current_paths": [
+                  "shared/media/asset-4d7635af67d3f236--IMG_2874.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2876.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2876.jpeg",
+                "sha256": "b741e9d8704a02e75cdd8fe952ac65a3a6bf7724ed4049435a2a401e6e407701",
+                "current_paths": [
+                  "shared/media/asset-b741e9d8704a02e7--IMG_2876.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2877.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2877.jpeg",
+                "sha256": "80b0c96b94623a3715b7f037f878c8cb539df05a313c67bd5b48726dff29964d",
+                "current_paths": [
+                  "shared/media/asset-80b0c96b94623a37--IMG_2877.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2878.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2878.jpeg",
+                "sha256": "b1db1b549a2c88c223440ca3dc05bbbf4f6dbb7dacb01adfec696304ca5ee3f4",
+                "current_paths": [
+                  "shared/media/asset-b1db1b549a2c88c2--IMG_2878.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2882.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2882.jpeg",
+                "sha256": "e9e0af345fc4b30e74846e34e10147f5082be3d330bae7ad91bbd272ea02eed4",
+                "current_paths": [
+                  "shared/media/asset-e9e0af345fc4b30e--IMG_2882.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2883.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2883.jpeg",
+                "sha256": "0ddc6e6b4b55ea55f45bd4c1f5349c07f60b76fe59fada3475fef87a0fc6ba30",
+                "current_paths": [
+                  "shared/media/asset-0ddc6e6b4b55ea55--IMG_2883.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2884.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2884.jpeg",
+                "sha256": "bbd4d6a226d73e44ce79f41ae95d4867ae727c61e6377821a8fce0a0542d997d",
+                "current_paths": [
+                  "shared/media/asset-bbd4d6a226d73e44--IMG_2884.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2885.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2885.jpeg",
+                "sha256": "5afe045acf5fb1f9d0d32761136b8c01046e2c066bfe1c36a11d3a0f36dd01ce",
+                "current_paths": [
+                  "shared/media/asset-5afe045acf5fb1f9--IMG_2885.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_2886.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_2886.jpeg",
+                "sha256": "dfd821c14f7227eb7729f542e67c9865ed2eb363521222a6a848d6822f01a266",
+                "current_paths": [
+                  "shared/media/asset-dfd821c14f7227eb--IMG_2886.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3321.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3321.jpeg",
+                "sha256": "a4398df911d06d3fe332d7859f9812734311fe434f45edff5ca25bb3397928fb",
+                "current_paths": [
+                  "shared/media/asset-a4398df911d06d3f--IMG_3321.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3323.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3323.jpeg",
+                "sha256": "9229c64cb178282684da3df07c68945b769dd59390c822095921edcc2f6ffa79",
+                "current_paths": [
+                  "shared/media/asset-9229c64cb1782826--IMG_3323.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3325.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3325.jpeg",
+                "sha256": "9f572f692467181de1f47e676f67b545907c2fdac2ba67a0f6b286e8138da5f2",
+                "current_paths": [
+                  "shared/media/asset-9f572f692467181d--IMG_3325.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3326.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3326.jpeg",
+                "sha256": "818de3a0d026f0a9b9930feebe26e6a39732c70e01d0835d969d8750cd5f03a3",
+                "current_paths": [
+                  "shared/media/asset-818de3a0d026f0a9--IMG_3326.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3327.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3327.jpeg",
+                "sha256": "b91a9436ec4665fa3363442d74c0bbefac6fef14802b07e0437963e3bedc2eaa",
+                "current_paths": [
+                  "shared/media/asset-b91a9436ec4665fa--IMG_3327.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3328.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3328.jpeg",
+                "sha256": "b44f5c60088e266e10e3bfd526e1b41496cc753da4e5f82c82270afd0668d996",
+                "current_paths": [
+                  "shared/media/asset-b44f5c60088e266e--IMG_3328.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3329.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3329.jpeg",
+                "sha256": "bb0bd8d9c4cf87c97ea075ff5619422c20a206195fd27f06d75f8aace0a0976a",
+                "current_paths": [
+                  "shared/media/asset-bb0bd8d9c4cf87c9--IMG_3329.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3330.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3330.jpeg",
+                "sha256": "cce4063a62b3e1086075401dfcac3e9cc08fdf70d1056351126e329a63f0b814",
+                "current_paths": [
+                  "shared/media/asset-cce4063a62b3e108--IMG_3330.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3331.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3331.jpeg",
+                "sha256": "276522d542fa9f2ff551fa520dab80f64e8ea368771db5c776b9fca2488eb97b",
+                "current_paths": [
+                  "shared/media/asset-276522d542fa9f2f--IMG_3331.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3332.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3332.jpeg",
+                "sha256": "c7ed2418445f414d245f16c8907121343a722bcf4270ba836cc73df3f5d7a1ff",
+                "current_paths": [
+                  "shared/media/asset-c7ed2418445f414d--IMG_3332.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3333.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3333.jpeg",
+                "sha256": "ae77a87f437ebb70aea0a837c2d2b3144739b257be95deec771dadd7ef31d64b",
+                "current_paths": [
+                  "shared/media/asset-ae77a87f437ebb70--IMG_3333.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3334.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3334.jpeg",
+                "sha256": "2244802faeca1c2e59c58c6d17f81a6af41ac63b243b42dbdc5c82201ef04c4a",
+                "current_paths": [
+                  "shared/media/asset-2244802faeca1c2e--IMG_3334.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3335.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3335.jpeg",
+                "sha256": "d9b0176a49c0bd0ebff084108817655d13540f571be0af338474de4602465756",
+                "current_paths": [
+                  "shared/media/asset-d9b0176a49c0bd0e--IMG_3335.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3336.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3336.jpeg",
+                "sha256": "9aa5f388b2c0a9ca282d04155d21a790cbb9f049d5bd81a790b0a7b2155833e1",
+                "current_paths": [
+                  "shared/media/asset-9aa5f388b2c0a9ca--IMG_3336.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3355.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3355.jpeg",
+                "sha256": "1154cf3cd463712984530fa3694c7212286ff0808487d9cad52b2c9c13c3b28f",
+                "current_paths": [
+                  "shared/media/asset-1154cf3cd4637129--IMG_3355.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3356.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3356.jpeg",
+                "sha256": "732320e8868e04e9865db21283a5a78c9e98bac2485972534670bf5595aca854",
+                "current_paths": [
+                  "shared/media/asset-732320e8868e04e9--IMG_3356.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3357.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3357.jpeg",
+                "sha256": "312b492bbd93cf7f45068ca11840663ed3121361e8ba46000f76f04353f13ae7",
+                "current_paths": [
+                  "shared/media/asset-312b492bbd93cf7f--IMG_3357.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3358.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3358.jpeg",
+                "sha256": "ada016e625c82729f2bb2c27a96986a143079a3668ca6cb5c9b118084160f63f",
+                "current_paths": [
+                  "shared/media/asset-ada016e625c82729--IMG_3358.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3359.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3359.jpeg",
+                "sha256": "ba81c2492733aa1b0e7158ba1e6750ccf96758da8c3448a3621c80e6b5e23d99",
+                "current_paths": [
+                  "shared/media/asset-ba81c2492733aa1b--IMG_3359.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3360.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3360.jpeg",
+                "sha256": "11daee627f87910c0cb83d620eeb8450dac1f0584220811bd5e341fa442788e8",
+                "current_paths": [
+                  "shared/media/asset-11daee627f87910c--IMG_3360.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3361.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3361.jpeg",
+                "sha256": "9d32c2f766326d0eaaa334286aca25dabeb62af4d4a2abebdda580aac29c674c",
+                "current_paths": [
+                  "shared/media/asset-9d32c2f766326d0e--IMG_3361.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3362.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3362.jpeg",
+                "sha256": "bc73e2ecfad3750f03f056974455f6a3678bf464d0f858cb7241ebe3cf67b299",
+                "current_paths": [
+                  "shared/media/asset-bc73e2ecfad3750f--IMG_3362.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3363.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3363.jpeg",
+                "sha256": "a5b81ee6dc73e406dd5d189a3a847a5083e2342c5faa644b6f134c846e3a0c48",
+                "current_paths": [
+                  "shared/media/asset-a5b81ee6dc73e406--IMG_3363.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3379.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3379.jpeg",
+                "sha256": "00cca4d1893f23706e3497d1e893d1be8de353903af98a9ecb8416704372059c",
+                "current_paths": [
+                  "shared/media/asset-00cca4d1893f2370--IMG_3379.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3400.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3400.jpeg",
+                "sha256": "c57d8cb4bb8dc7bda4e58e1b7f64688b9a53e03db1d973af695dab4bc08a305e",
+                "current_paths": [
+                  "shared/media/asset-c57d8cb4bb8dc7bd--IMG_3400.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3401.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3401.jpeg",
+                "sha256": "98329025e63f551d4ef1e58093db47c6a3426a968e0a5db6405ad5adfb25abf6",
+                "current_paths": [
+                  "shared/media/asset-98329025e63f551d--IMG_3401.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3402.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3402.jpeg",
+                "sha256": "e69c83a579df2ebb5c7cfa4175bb3d284f6a5cca0350ed9ba2f88f6f7e79b66b",
+                "current_paths": [
+                  "shared/media/asset-e69c83a579df2ebb--IMG_3402.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3431.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3431.jpeg",
+                "sha256": "d34f2070f7948422e4ac81c4fa3361550a3339c5064e9d8cf13c8a9b1966e321",
+                "current_paths": [
+                  "shared/media/asset-d34f2070f7948422--IMG_3431.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3432.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3432.jpeg",
+                "sha256": "b205c0a01d209faeacde3776148366c0e9a9921ed34575b37346132855fdd232",
+                "current_paths": [
+                  "shared/media/asset-b205c0a01d209fae--IMG_3432.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3433.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3433.jpeg",
+                "sha256": "51cf45f51cb910c010098a2e652516f05f73913331e59eb79b68dbd7b147c2fe",
+                "current_paths": [
+                  "shared/media/asset-51cf45f51cb910c0--IMG_3433.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3434.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3434.jpeg",
+                "sha256": "73ee72c7a88882ba517bc94d2c2755f0887165520a40495eb828607641fc5043",
+                "current_paths": [
+                  "shared/media/asset-73ee72c7a88882ba--IMG_3434.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3435.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3435.jpeg",
+                "sha256": "8b71e68d81b525dc90236c91af674019dbca57df64a86b3e4746bccce99d90bd",
+                "current_paths": [
+                  "shared/media/asset-8b71e68d81b525dc--IMG_3435.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3436.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3436.jpeg",
+                "sha256": "0cba57ea7e48e08dd17adda6fc08a8670f83b4e6c682d51a3f547ed20d764ad4",
+                "current_paths": [
+                  "shared/media/asset-0cba57ea7e48e08d--IMG_3436.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3437.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3437.jpeg",
+                "sha256": "f913f6c6c932177dbe21302675d0ee634097cb8ea4945169ada564555a5b1d3e",
+                "current_paths": [
+                  "shared/media/asset-f913f6c6c932177d--IMG_3437.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3438.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3438.jpeg",
+                "sha256": "e424da94f452ee094802a0bb78a737370fb3a6ef8ca734f0953b908b7cee83f5",
+                "current_paths": [
+                  "shared/media/asset-e424da94f452ee09--IMG_3438.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3439.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3439.jpeg",
+                "sha256": "a6a0f1e28ae2bd1a563731a61edc0fdcd050773f8c2da66fbbae4145c5e807e0",
+                "current_paths": [
+                  "shared/media/asset-a6a0f1e28ae2bd1a--IMG_3439.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3440.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3440.jpeg",
+                "sha256": "e27e2ab941b776a9b37a83b7b3742c3f59e0ebe594aae935b06c52009c040131",
+                "current_paths": [
+                  "shared/media/asset-e27e2ab941b776a9--IMG_3440.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3441.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3441.jpeg",
+                "sha256": "b5206667bf07f05b107f241d2c88f3fc999fd166a25174811905e1c2f3fd95af",
+                "current_paths": [
+                  "shared/media/asset-b5206667bf07f05b--IMG_3441.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3442.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3442.jpeg",
+                "sha256": "b2920aa1dbefcb97eed25af4c168a4719f5cc2d216aae44ab9a5589a0f902d22",
+                "current_paths": [
+                  "shared/media/asset-b2920aa1dbefcb97--IMG_3442.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3443.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3443.jpeg",
+                "sha256": "1daf222da53809869b2aeb6b0441555483372fa613f744d336e04e3812882d36",
+                "current_paths": [
+                  "shared/media/asset-1daf222da5380986--IMG_3443.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3444.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3444.jpeg",
+                "sha256": "af9d1b481c381dc7cb2682037ea223fedd2929cf23978d48f1d199ea587a992b",
+                "current_paths": [
+                  "shared/media/asset-af9d1b481c381dc7--IMG_3444.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3445.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3445.jpeg",
+                "sha256": "4e686c83c7a2de1e4b9c473144bb1f35594a69c13a19617b3965d9ebf31fe40f",
+                "current_paths": [
+                  "shared/media/asset-4e686c83c7a2de1e--IMG_3445.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3446.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3446.jpeg",
+                "sha256": "04c2c8b8e6e36a70187fb746c959087efed49075b7401d4389cb4b77d2ac1600",
+                "current_paths": [
+                  "shared/media/asset-04c2c8b8e6e36a70--IMG_3446.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3465.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3465.jpeg",
+                "sha256": "538d5993b59b22063bff336dbff95f1f9d4006d729cd710aa9ec82beb3caae01",
+                "current_paths": [
+                  "shared/media/asset-538d5993b59b2206--IMG_3465.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3466.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3466.jpeg",
+                "sha256": "717b2911c7edcb8084d5e419cc406c85c8ef32d315a367c543557be2981dc00d",
+                "current_paths": [
+                  "shared/media/asset-717b2911c7edcb80--IMG_3466.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3467.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3467.jpeg",
+                "sha256": "2a1a981e1a8e0bc516baee5b13858177ccb26d6a2524458a380e4ea5df3fb1ca",
+                "current_paths": [
+                  "shared/media/asset-2a1a981e1a8e0bc5--IMG_3467.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3468.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3468.jpeg",
+                "sha256": "cd38f502a51bf6bdad09467c4a4e1e2ca5be1363c1cf7595334fdbab4abfa5fa",
+                "current_paths": [
+                  "shared/media/asset-cd38f502a51bf6bd--IMG_3468.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3469.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3469.jpeg",
+                "sha256": "2716d888f851c96fecb01fbf174a2bffb7ba210b178ae9227ec6d9e8132c3ae6",
+                "current_paths": [
+                  "shared/media/asset-2716d888f851c96f--IMG_3469.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3470.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3470.jpeg",
+                "sha256": "3fd33c52e769a69443c98659d1acd4b506a6278142251bacac823caf4dae730f",
+                "current_paths": [
+                  "shared/media/asset-3fd33c52e769a694--IMG_3470.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3471.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3471.jpeg",
+                "sha256": "7ddf650d12a6e65194e76a465e2e1cc88d92be9fdf8cfb5b9263ae58b713a058",
+                "current_paths": [
+                  "shared/media/asset-7ddf650d12a6e651--IMG_3471.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3505.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3505.jpeg",
+                "sha256": "922d38f86c89f73d911e043b800eb5123ab837346e09b400695f411ddf12ef3f",
+                "current_paths": [
+                  "shared/media/asset-922d38f86c89f73d--IMG_3505.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3506.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3506.jpeg",
+                "sha256": "a547e5af9334e5b1370d2ed18377cf46e74731787a983ada6c4b2f32f26e38c6",
+                "current_paths": [
+                  "shared/media/asset-a547e5af9334e5b1--IMG_3506.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3507.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3507.jpeg",
+                "sha256": "07e9859dce7506c68ec7cd0232b7e8953841d41cd7529dbae45706043b4d0856",
+                "current_paths": [
+                  "shared/media/asset-07e9859dce7506c6--IMG_3507.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3508.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3508.jpeg",
+                "sha256": "81892438cc2e6a553fffdd7f8f32e23d3bf07be309b1b23330d8a7881b717a9c",
+                "current_paths": [
+                  "shared/media/asset-81892438cc2e6a55--IMG_3508.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3509.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3509.jpeg",
+                "sha256": "dbfeba5da571feb669e91464c4453452f163a7296edc0f0dd1b6bad660b70fe4",
+                "current_paths": [
+                  "shared/media/asset-dbfeba5da571feb6--IMG_3509.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3510.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3510.jpeg",
+                "sha256": "f194f7d134beec45f48a7451308c4583265e5db18db9b12b36745b59917a5d2d",
+                "current_paths": [
+                  "shared/media/asset-f194f7d134beec45--IMG_3510.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3511.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3511.jpeg",
+                "sha256": "9667261b6fee573052a464a8dda2bf8f51d68761d136f635e32c47ea111cb6d0",
+                "current_paths": [
+                  "shared/media/asset-9667261b6fee5730--IMG_3511.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3512.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3512.jpeg",
+                "sha256": "fbed2a5036b96a43f1e3c211509e0a1b74f42205365b88c9c4f209ae78477e2a",
+                "current_paths": [
+                  "shared/media/asset-fbed2a5036b96a43--IMG_3512.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3513.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3513.jpeg",
+                "sha256": "bffd82626effa542ece021e58e951bbf65412cfe6d8ea6dea7521ab2a36ac938",
+                "current_paths": [
+                  "shared/media/asset-bffd82626effa542--IMG_3513.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3515.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3515.jpeg",
+                "sha256": "0c3ad11dc596bfa35e2c8da2f7a6551fa1d77cc7a7fe3d96a4c71dbc43894f40",
+                "current_paths": [
+                  "shared/media/asset-0c3ad11dc596bfa3--IMG_3515.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3516.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3516.jpeg",
+                "sha256": "48b0779c4998c64fc77cfea5dc7ca7224f98c6997f66a9fbeadc75fcae4c43c2",
+                "current_paths": [
+                  "shared/media/asset-48b0779c4998c64f--IMG_3516.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3517.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3517.jpeg",
+                "sha256": "345be463837369de208528d47de18d76642e317c45749e3f2799a291e2b3a927",
+                "current_paths": [
+                  "shared/media/asset-345be463837369de--IMG_3517.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3518.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3518.jpeg",
+                "sha256": "a682abf588d51b0dc8092115c807b13505b7257af80fbd1a7bfa970853a7663e",
+                "current_paths": [
+                  "shared/media/asset-a682abf588d51b0d--IMG_3518.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3519.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3519.jpeg",
+                "sha256": "9110c28e0898a79eb8866c1404b7055429d79728c0c05720741035a4dd1ff4df",
+                "current_paths": [
+                  "shared/media/asset-9110c28e0898a79e--IMG_3519.jpeg"
+                ]
+              },
+              {
+                "source_url": "IMG_3520.jpeg",
+                "source_path": "apps/naturalist-field-notes/IMG_3520.jpeg",
+                "sha256": "47d33e98d003d66e3385364cbbc07c895021368a87dd045351ebb6fbe6473201",
+                "current_paths": [
+                  "shared/media/asset-47d33e98d003d66e--IMG_3520.jpeg"
+                ]
+              }
+            ]
+          }
         },
         {
           "source_path": "apps/naturalist-field-notes/inaturalist-reference.html",
