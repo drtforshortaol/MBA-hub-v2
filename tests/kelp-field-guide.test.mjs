@@ -58,3 +58,8 @@ test('unresolved giant kelp taxonomy is disclosed in the species entry',()=>{
  assert.match(page,/Macrocystis tenuifolia/);
  assert.match(page,/remain under review/);
 });
+
+test('sea cabbage accepted name and alternate combination are searchable',()=>{
+ assert.match(page,/data-search="sea cabbage hedophyllum sessile saccharina sessilis/);
+ assert.match(page,/Also listed as <i>Saccharina sessilis<\/i>/);
+});
