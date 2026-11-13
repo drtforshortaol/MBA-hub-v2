@@ -861,7 +861,46 @@ export const animalCatalog = {
         "note": "Multi-organism topic; do not classify its organisms as one whale species."
       },
       "identity_source": "Existing app names and owner-approved index review; common/scientific identity is preserved, not independently reassigned."
+    },
+    {
+      "record_id": "ocellaris-clownfish",
+      "animal_id": "ocellaris-clownfish",
+      "app_id": "ocellaris-clownfish",
+      "app_aliases": [],
+      "record_type": "species",
+      "common_names": {
+        "primary": "Ocellaris Clownfish",
+        "aliases": [
+          "Common clownfish"
+        ]
+      },
+      "scientific_names": {
+        "primary": "Amphiprion ocellaris",
+        "aliases": []
+      },
+      "index": {
+        "primary": "Ocellaris Clownfish",
+        "alternate": [
+          "Clownfish"
+        ]
+      },
+      "search_aliases": [
+        "Nemo",
+        "anemonefish"
+      ],
+      "review": {
+        "status": "partial",
+        "source_ids": []
+      },
+      "taxonomy": {
+        "phylum": null,
+        "class": null,
+        "order": null,
+        "family": null,
+        "genus": null,
+        "species": null
+      },
+      "taxonomy_sources": {}
     }
   ]
 };
-export const animalRecordForApp = id => animalCatalog.records.find(r=>r.app_id===id||r.app_aliases.includes(id))||null;
