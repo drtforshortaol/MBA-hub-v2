@@ -29,3 +29,17 @@ test('21 species entries and key science topics',()=>{
  assert.equal((page.match(/<article class="card"/g)||[]).length,21);
  for(const word of ['Giant kelp','Bull kelp','Wakame','Holdfast','pneumatocyst','gametophytes','sporophytes'])assert.ok(page.includes(word),word);
 });
+
+test('species directory has unique common and scientific names',()=>{
+ const entries=[...page.matchAll(/<article class="card"[^>]*>[\\s\\S]*?<strong>([^<]+)<\\/strong><em>([^<]+)<\\/em>/g)];
+ assert.equal(entries.length,21);
+ const common=entries.map(m=>m[1].trim().toLowerCase());
+ const scientific=entries.map(m=>m[2].trim().toLowerCase());
+ assert.equal(new Set(scientific).size,21,'duplicate scientific name');
+ assert.equal(new Set(common).size,20,'expected exactly one shared common name for two net-of-cords species');
+ assert.match(page,/\.sort\(\(a,b\)=>a\.querySelector\('strong'\)\.textContent\.localeCompare/);
+});
+test('shared navigation and offline contract files are included in build source',()=>{
+ for(const file of ['src/core/app-contract.js','src/core/navigation.js','src/core/offline.js'])
+  assert.ok(existsSync(new URL(file,root)),file);
+});
