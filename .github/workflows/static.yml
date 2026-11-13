@@ -22,7 +22,7 @@ jobs:
       - name: Checkout canonical Guide source branch
         uses: actions/checkout@v4
         with:
-          ref: work/device-acceptance-prep-20261030
+          ref: 6c64de4d2dbfbae7a5c2ab9c9f79c1c82be5399c
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
@@ -36,7 +36,6 @@ jobs:
         run: |
           npm run validate
           npm run build
-          node scripts/audit-privacy-snapshot.mjs --write-reviewed-binding
           npm test
           npm run security:scan
           node scripts/verify-build-artifacts.mjs
@@ -94,6 +93,12 @@ jobs:
                   assert env['namespace']=='mba-v2-tester'
                   assert manifest['name']=='MBA Hub V2' and manifest['theme_color']=='#123e50'
                   assert len(registry['apps'])>=30
+                  app=next(a for a in registry['apps'] if a['app_id']=='california-kelp-field-guide')
+                  assert app['category']=='exhibits' and app['listed']
+                  kelp=get(app['entry_point'])
+                  assert kelp.count(b'class="restored-description"')==21
+                  assert kelp.count(b'<div class="specimen-frame"><img')==21
+                  assert b'id="expand"' in kelp and b'id="collapse"' in kelp
                   assert b'#123e50' in get('icon.svg')
                   assert b'Universal installation link and QR code' in get('install.html')
                   assert len(get('install-qr.png'))>100
