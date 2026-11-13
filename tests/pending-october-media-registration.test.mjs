@@ -56,7 +56,12 @@ const read=p=>JSON.parse(fs.readFileSync(new URL('../'+p,import.meta.url),'utf8'
 
 test('new October media registration preserves bytes, original paths and pending permissions',()=>{
  const catalog=read('src/shared/media/catalog.json'),apps=new Map();
- assert.equal(catalog.assets.length,213);
+ assert.equal(catalog.assets.length,216);
+ for (const id of ['briefing-20261111-flamboyant-cuttlefish','juvenile-white-seabass-illustration','ocellaris-clownfish-title']) {
+  const matches=catalog.assets.filter(asset=>asset.asset_id===id);
+  assert.equal(matches.length,1);
+  assert.ok(fs.statSync('src/'+matches[0].path).isFile());
+ }
  for(const [id,path,asset_id,expected] of rows){
   const app=apps.get(id)||read('src/apps/'+id+'/manifest.json');apps.set(id,app);
   const matches=catalog.assets.filter(a=>a.path===path);assert.equal(matches.length,1);
