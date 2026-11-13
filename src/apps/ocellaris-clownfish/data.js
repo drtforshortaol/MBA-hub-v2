@@ -29,7 +29,7 @@ export const sections = [
     "id": "life-cycle",
     "title": "Life cycle and sex change",
     "paragraphs": [
-      "In an anemonefish group, the largest fish is typically the breeding female and the next largest is the breeding male. If the female disappears, the breeding male can become female. The male tends the eggs near the host anemone, fanning them and removing compromised eggs. The November naturalist update reports about 100–1,000 eggs and hatching in roughly 6–8 days, depending on water temperature. After hatching, larvae drift before settling on a reef."
+      "Clownfish are often described as all being born male. More precisely, they hatch sexually immature, and those that mature as breeders develop first as males. A typical group has one dominant breeding female, a smaller breeding male, and several smaller, immature fish. If the female dies or disappears, the breeding male can become the dominant female. The male tends the eggs near the host anemone, fanning them and removing compromised eggs. The November naturalist update reports about 100–1,000 eggs and hatching in roughly 6–8 days, depending on water temperature. After hatching, larvae drift before settling on a reef."
     ]
   },
   {
