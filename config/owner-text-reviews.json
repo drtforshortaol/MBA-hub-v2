@@ -255,9 +255,9 @@
       "reviewer": "owner",
       "reviewed_on": "2026-11-13",
       "review_reference": "PR #23",
-      "authorization_reference": "Owner request to publish both MBA Hub V2 apps",
-      "authorization_quote": "Publish it",
-      "content_sha256": "a54cfda0a51c49696cc5817fe4781f94e762add9c63cdb63ec960bcc05e9ff33"
+      "authorization_reference": "Owner requested inclusion of supplied November clownfish text in the published guide",
+      "authorization_quote": "Can the above information be included in the clownfish app",
+      "content_sha256": "608a2fff9125bbcd73858455b40bfba05ec61894fedf6cccd02f7ffb558106f3"
     }
   ]
 }

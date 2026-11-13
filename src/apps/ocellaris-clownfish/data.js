@@ -3,7 +3,7 @@ export const sections = [
     "id": "quick-facts",
     "title": "Quick facts",
     "paragraphs": [
-      "The ocellaris clownfish (Amphiprion ocellaris) is a damselfish found on shallow Indo-West Pacific reefs. Its diet includes small drifting animals such as copepods and other zooplankton, as well as algae. The Aquarium’s clownfish profile describes the group Amphiprion rather than a single species."
+      "The ocellaris clownfish (Amphiprion ocellaris), or common clownfish, is a damselfish found on shallow Indo-West Pacific reefs. The November naturalist update reports a maximum length of about 4.3 inches and a depth range of roughly 3–60 feet. It feeds on small planktonic animals, including copepods, and algae."
     ]
   },
   {
@@ -11,7 +11,8 @@ export const sections = [
     "title": "Life among stinging tentacles",
     "paragraphs": [
       "Watch a clownfish dart out and return to the anemone. The host’s stinging tentacles deter predators. The clownfish’s skin mucus helps it live among those tentacles, and the fish can defend its host by chasing away anemone-eating butterflyfishes. Dropped food and nutrients from fish waste can also benefit the host.",
-      "Anemones have partnerships of their own. Algae living inside their tissues supply nutrients, and large anemones can shelter shrimp, crabs and several kinds of anemonefish."
+      "Anemones have partnerships of their own. Algae living inside their tissues supply nutrients, and large anemones can shelter shrimp, crabs and several kinds of anemonefish.",
+      "Research on clownfish mucus, including low levels of particular sialic acids, offers clues to how the fish may avoid triggering the anemone’s stinging cells. The roles of microbes and acclimation are still being investigated."
     ],
     "links": [
       [
@@ -28,7 +29,7 @@ export const sections = [
     "id": "life-cycle",
     "title": "Life cycle and sex change",
     "paragraphs": [
-      "Eggs are laid near the anemone. The breeding male guards and fans them. After hatching, larvae drift before settling on a reef. Juveniles are sexually immature. In a typical group, the largest fish is the breeding female and the next largest is the breeding male. When the female is lost, that male can become female."
+      "In an anemonefish group, the largest fish is typically the breeding female and the next largest is the breeding male. If the female disappears, the breeding male can become female. The male tends the eggs near the host anemone, fanning them and removing compromised eggs. The November naturalist update reports about 100–1,000 eggs and hatching in roughly 6–8 days, depending on water temperature. After hatching, larvae drift before settling on a reef."
     ]
   },
   {

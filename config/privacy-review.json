@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates. Exact seven-section Sperm Whale owner-approved wording is now content-digest-bound; source HTML and bundled media remain unchanged by the approval metadata.",
-  "snapshot_sha256": "cead2d88660bdd6f03fd6693574f80007cc8e24ff52ead79da63a92fb5542561",
+  "snapshot_sha256": "22c3bf5e72cbd3a450740b7d47da94ac843bf6c1e1356f885c0a369bff547fd5",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "cead2d88660bdd6f03fd6693574f80007cc8e24ff52ead79da63a92fb5542561",
+    "snapshot_sha256": "22c3bf5e72cbd3a450740b7d47da94ac843bf6c1e1356f885c0a369bff547fd5",
     "resources": [
       {
         "path": "config/categories.json",
@@ -35,8 +35,8 @@
       },
       {
         "path": "config/owner-text-reviews.json",
-        "bytes": 13635,
-        "sha256": "45ec3be5d99746f000e8ead40dbf100d92722c25ec7821a74a50203671231ee0"
+        "bytes": 13722,
+        "sha256": "e8a64062a3bda1899801a4fc8fb50bddf32ed31a90c2cc21392833d248e9c95c"
       },
       {
         "path": "config/platform.json",
@@ -975,8 +975,8 @@
       },
       {
         "path": "src/apps/ocellaris-clownfish/data.js",
-        "bytes": 2719,
-        "sha256": "d2471ed1ae61fa196ecc527ba1593c4524f872cbfae1a8d63c66f8f10460a075"
+        "bytes": 3110,
+        "sha256": "d015b3e5d737eeebe464e51b540de8ba23089bb7af7a9361f8e7797c0b1ac15c"
       },
       {
         "path": "src/apps/ocellaris-clownfish/index.html",
@@ -985,8 +985,8 @@
       },
       {
         "path": "src/apps/ocellaris-clownfish/manifest.json",
-        "bytes": 2978,
-        "sha256": "2dc22b11ff8acaef2335b11e243953f8577b872a4709265ace58d8363911711f"
+        "bytes": 3360,
+        "sha256": "b65afb9876ba9299424d0c0841ac1b5fe44c045bdb5d782529a06f89b3800d13"
       },
       {
         "path": "src/apps/ocellaris-clownfish/styles.css",
