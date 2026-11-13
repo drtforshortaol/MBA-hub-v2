@@ -22,7 +22,7 @@ jobs:
       - name: Checkout canonical Guide source branch
         uses: actions/checkout@v4
         with:
-          ref: 179efa25ac5d7b312d65d1adb626477fbf59f212
+          ref: 23d3246f0df9127ab618884f5f993f0cf899fe33
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
@@ -95,6 +95,12 @@ jobs:
                   assert len(registry['apps'])>=30
                   app=next(a for a in registry['apps'] if a['app_id']=='california-kelp-field-guide')
                   assert app['category']=='exhibits' and app['listed']
+                  for app_id, category in [('naturalist-briefing-20261111','aquarium-updates'),('ocellaris-clownfish','animals')]:
+                      guide=next(a for a in registry['apps'] if a['app_id']==app_id)
+                      assert guide['category']==category and guide['listed']
+                      assert b'class="title-image"' in get(guide['entry_point'])
+                      for asset in guide['offline_assets']:
+                          assert get(asset)
                   kelp=get(app['entry_point'])
                   assert kelp.count(b'class="restored-description"')==21
                   assert kelp.count(b'<div class="specimen-frame"><img')==21
