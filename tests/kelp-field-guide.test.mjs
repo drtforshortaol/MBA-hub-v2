@@ -22,6 +22,7 @@ test('self contained, accessible guide',()=>{
  assert.match(page,/aria-expanded="false"/);
  assert.match(page,/aria-live="polite"/);
  assert.match(page,/href="\.\.\/\.\.\/index\.html"/);
+ assert.match(page,/src="\.\.\/\.\.\/core\/app-contract\.js"/);
  assert.doesNotMatch(page,/<(?:script|link)\b[^>]*(?:src|href)="https?:/i);
 });
 test('21 species entries and key science topics',()=>{
