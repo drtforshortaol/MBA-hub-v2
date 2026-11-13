@@ -10,6 +10,7 @@ test('current October script participates in startup, Home, article, search and 
  const recorded=JSON.parse(fs.readFileSync(new URL('../docs/verification/naturalist-november-runtime-20261113.json',import.meta.url),'utf8'));
  assert.deepEqual(r,recorded,'current full-runtime report must match the reviewed byte-bound checkpoint');
  assert.equal(r.current_notes,26);assert.equal(r.current_QA,42);
+ assert.equal(r.owner_text_approval_verified,true);
  assert.equal(r.authored_october_fields,true);assert.equal(r.direct_query_startup,true);
  assert.equal(r.bound_issue_and_back,true);assert.equal(r.search_cases,3);
  assert.equal(r.october_photos,5);assert.equal(r.october_source_buttons,6);
