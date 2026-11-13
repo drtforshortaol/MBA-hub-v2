@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates. Exact seven-section Sperm Whale owner-approved wording is now content-digest-bound; source HTML and bundled media remain unchanged by the approval metadata.",
-  "snapshot_sha256": "7dce38b07363d200458cac79c740276805a10fe2c5ab0320b8cb6c55f1374607",
+  "snapshot_sha256": "142a9a7cf4ef77458a106c94321f28271318034f2019c94070386c33a5909909",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "7dce38b07363d200458cac79c740276805a10fe2c5ab0320b8cb6c55f1374607",
+    "snapshot_sha256": "142a9a7cf4ef77458a106c94321f28271318034f2019c94070386c33a5909909",
     "resources": [
       {
         "path": "config/categories.json",
@@ -210,8 +210,8 @@
       },
       {
         "path": "scripts/migration/review-naturalist-original-fidelity.mjs",
-        "bytes": 18628,
-        "sha256": "a53a3aee89b98007225715bacf1ad8654296f07e27d94db5d38670127742e996"
+        "bytes": 18695,
+        "sha256": "f6dbd772008b3dee685dc2a8ea1f347b10441649c68448820fe57a2183f71dcb"
       },
       {
         "path": "scripts/migration/review-naturalist-owner-source.mjs",
