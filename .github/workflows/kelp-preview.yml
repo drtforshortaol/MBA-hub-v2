@@ -1,0 +1,28 @@
+name: Kelp Field Guide — downloadable device preview
+on:
+  push:
+    branches:
+      - feature/kelp-field-guide-20261112
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+      - name: Package development Hub for offline-capable local hosting
+        run: |
+          cd dist/developer
+          zip -qr ../../kelp-field-guide-developer-preview.zip .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kelp-field-guide-developer-preview
+          path: kelp-field-guide-developer-preview.zip
+          retention-days: 14
