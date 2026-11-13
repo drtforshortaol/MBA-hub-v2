@@ -6,7 +6,7 @@
   "type": "field-notes",
   "version": "1.0.1",
   "entry_point": "apps/naturalist-briefing-20261111/index.html",
-  "status": "development",
+  "status": "testing",
   "owner": "naturalist-briefing-20261111",
   "listed": true,
   "dependencies": [
@@ -64,5 +64,6 @@
       "text": "The update reports migrating humpbacks, common dolphins, and juvenile makos breaking the surface. It also reports nighttime hydrophone detections of blue, sperm, and beaked whales. The list below records reported sightings for the week. Humpback whales Blue whale Risso’s dolphins Long-beaked common dolphins Short-beaked common dolphins Southern sea otters California sea lions Harbor seals Black-vented shearwaters Northern fulmars Black-footed albatross California brown pelicans Common murres Pigeon guillemot Rhinoceros auklets Cassin’s auklets Brandt’s cormorants Pelagic cormorants Western gulls Heermann’s gulls California gulls Bonaparte’s gulls Elegant terns Red-necked phalaropes Red phalaropes Surf scoters Eared grebes Western grebes Common loons Red-throated loons Pacific loons Brant geese Cocos booby Shortfin mako sharks Olive ridley sea turtle",
       "aliases": []
     }
-  ]
+  ],
+  "publication_review": "owner-approved-text"
 }

@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates. Exact seven-section Sperm Whale owner-approved wording is now content-digest-bound; source HTML and bundled media remain unchanged by the approval metadata.",
-  "snapshot_sha256": "f844e3ee3d369ef1b656e57755d403ba73bda21869fc59f8da2c8879b631e7b6",
+  "snapshot_sha256": "cead2d88660bdd6f03fd6693574f80007cc8e24ff52ead79da63a92fb5542561",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "f844e3ee3d369ef1b656e57755d403ba73bda21869fc59f8da2c8879b631e7b6",
+    "snapshot_sha256": "cead2d88660bdd6f03fd6693574f80007cc8e24ff52ead79da63a92fb5542561",
     "resources": [
       {
         "path": "config/categories.json",
@@ -35,8 +35,8 @@
       },
       {
         "path": "config/owner-text-reviews.json",
-        "bytes": 12742,
-        "sha256": "35b5b6e8a95ca8833f72d549408de97568668ca32d32028e371da319102ba0e5"
+        "bytes": 13635,
+        "sha256": "45ec3be5d99746f000e8ead40dbf100d92722c25ec7821a74a50203671231ee0"
       },
       {
         "path": "config/platform.json",
@@ -890,8 +890,8 @@
       },
       {
         "path": "src/apps/naturalist-briefing-20261111/manifest.json",
-        "bytes": 4308,
-        "sha256": "1e3f5dfb46c600ab21b5cccce52b5b317a6ee79b05aa938844ec686e52764de1"
+        "bytes": 4351,
+        "sha256": "11baf1b0b1adf61b7bf4068500fee253245cd2e4f68af80ad7622c3bf3acbd37"
       },
       {
         "path": "src/apps/naturalist-briefing-20261111/styles.css",
@@ -985,8 +985,8 @@
       },
       {
         "path": "src/apps/ocellaris-clownfish/manifest.json",
-        "bytes": 2935,
-        "sha256": "5ff0a5f68d2b761c39420b60e41cc4178a3dbe02ab6d20e829e4a277a769bd61"
+        "bytes": 2978,
+        "sha256": "2dc22b11ff8acaef2335b11e243953f8577b872a4709265ace58d8363911711f"
       },
       {
         "path": "src/apps/ocellaris-clownfish/styles.css",

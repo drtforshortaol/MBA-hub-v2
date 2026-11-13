@@ -6,7 +6,7 @@
   "type": "species",
   "version": "1.0.0",
   "entry_point": "apps/ocellaris-clownfish/index.html",
-  "status": "development",
+  "status": "testing",
   "owner": "ocellaris-clownfish",
   "listed": true,
   "dependencies": [
@@ -63,5 +63,6 @@
       "text": "The Aquarium highlights the harm that chemical collection can cause to reef fishes and corals. For home aquariums, it recommends choosing captive-raised fish.",
       "aliases": []
     }
-  ]
+  ],
+  "publication_review": "owner-approved-text"
 }

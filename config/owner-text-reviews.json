@@ -236,6 +236,28 @@
           "content_sha256": "b0b07641e37512a72110770f385779ccbbb4c5c30afaf1f26b8db720661c7c01"
         }
       ]
+    },
+    {
+      "app_id": "naturalist-briefing-20261111",
+      "status": "owner-approved-text",
+      "scope": "authored-text-only",
+      "reviewer": "owner",
+      "reviewed_on": "2026-11-13",
+      "review_reference": "PR #23",
+      "authorization_reference": "Owner request to publish both MBA Hub V2 apps",
+      "authorization_quote": "Publish it",
+      "content_sha256": "ae51f674862c5b8f4e60aa0d6af65a77ca419fa2b2fd9911b3131a193ccec898"
+    },
+    {
+      "app_id": "ocellaris-clownfish",
+      "status": "owner-approved-text",
+      "scope": "authored-text-only",
+      "reviewer": "owner",
+      "reviewed_on": "2026-11-13",
+      "review_reference": "PR #23",
+      "authorization_reference": "Owner request to publish both MBA Hub V2 apps",
+      "authorization_quote": "Publish it",
+      "content_sha256": "a54cfda0a51c49696cc5817fe4781f94e762add9c63cdb63ec960bcc05e9ff33"
     }
   ]
 }
