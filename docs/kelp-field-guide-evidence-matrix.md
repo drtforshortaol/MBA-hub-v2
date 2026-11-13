@@ -19,7 +19,7 @@
 | 13 | Oarweed | *Laminaria farlowii* | range | Not recorded | Provisional |
 | 14 | Sugar kelp | *Saccharina latissima* | California occurrence | Not recorded | Provisional |
 | 15 | Seersucker kelp | *Costaria costata* | annual claim | Not recorded | Provisional |
-| 16 | Sea cabbage | *Hedophyllum sessile* | accepted name | CDFW lists *Saccharina sessilis* as sea cabbage; taxonomic reconciliation required (source below) | Conflicting name; review needed |
+| 16 | Sea cabbage | *Hedophyllum sessile* | accepted name | WoRMS accepts *Hedophyllum sessile*; *Saccharina sessilis* is a synonym; NCBI uses the reverse combination (sources below) | WoRMS supports draft name; reviewer pending |
 | 17 | Net-of-cords kelp | *Dictyoneurum californicum* | name and diagnostic distinction | Not recorded | Provisional |
 | 18 | Net-of-cords kelp | *Dictyoneurum reticulatum* | name and diagnostic distinction | Not recorded | Provisional |
 | 19 | Fringed sieve kelp | *Neoagarum fimbriatum* | accepted name and annual claim | Not recorded | Provisional |
@@ -47,3 +47,9 @@ These are source-backed research notes, **not Monterey Bay Aquarium scientific a
 - **Sea palm (*Postelsia palmaeformis*):** California Department of Fish and Wildlife describes an annual species on strongly wave-exposed mid/high intertidal rocks, with a California range south to Point Buchon. NOAA Olympic Coast also describes extreme wave exposure. Sources: https://wildlife.ca.gov/Conservation/Marine/Kelp and https://olympiccoast.noaa.gov/living/marinelife/seaweed/ . Current draft habitat and appearance are consistent with these references; review remains pending.
 - **Winged kelp (*Alaria marginata*):** CDFW documents low-intertidal to shallow-subtidal rocky habitat, and NOAA Olympic Coast identifies the species as winged kelp. Note: CDFW also calls *A. marginata* “wakame,” a common-name collision with the introduced *Undaria pinnatifida*. Keep scientific names visible to avoid confusion. Sources: https://wildlife.ca.gov/Conservation/Marine/Kelp and https://olympiccoast.noaa.gov/living/marinelife/seaweed/ .
 - **Sea cabbage name requires reconciliation:** CDFW uses *Saccharina sessilis* for sea cabbage, while this draft uses *Hedophyllum sessile*. Determine the current accepted combination and synonym relationship before publishing. Source: https://wildlife.ca.gov/Conservation/Marine/Kelp .
+
+## Sea cabbage taxonomy reconciliation — 2026-11-12
+- **World Register of Marine Species (WoRMS)** lists *Saccharina sessilis* as accepted under *Hedophyllum sessile*, supporting the app's existing name: https://www.marinespecies.org/aphia.php?p=taxlist&tName=Saccharina .
+- **NCBI Taxonomy** uses *Saccharina sessilis* as its current name and records *Hedophyllum sessile* as a homotypic synonym: https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=416828 . This is a database-treatment difference, not evidence of two separate sea-cabbage species.
+- **NOAA technical report** uses *Hedophyllum sessile*, formerly *Saccharina sessilis*, and describes a stipe-less sea cabbage extending south to Monterey County: https://swfsc-publications.fisheries.noaa.gov/publications/CR/2025/2025Purcell3.pdf .
+- **Disposition:** retain *Hedophyllum sessile* in the app (WoRMS/NOAA convention); add *Saccharina sessilis* as a search synonym. Final scientific sign-off still required.
