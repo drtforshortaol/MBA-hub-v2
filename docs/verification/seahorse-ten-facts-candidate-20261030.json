@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-30",
+  "status": "awaiting-owner-text-and-replacement-review",
+  "pending_asset": "asset-2913dc8df835400c",
+  "pending_path": "apps/IMG_4213.jpeg",
+  "source_match": {
+    "publication": "Asian Diver",
+    "issue": "Issue 2, 2016",
+    "section": "About Seahorses",
+    "url": "https://www.zinio.com/sg/publications/asian-diver/1181/issues/318907/articles",
+    "basis": "Exact matching numbered opening text and topic order in issue listing; source encoding identity not asserted. Full original page/photographer identity not established.",
+    "redistribution_grant_found": false
+  },
+  "title": "Seahorse Close-Up — 10 Things to Notice",
+  "facts": [
+    {
+      "number": 1,
+      "title": "Upright swimmer",
+      "text": "A seahorse usually swims with its body upright, rather than in the horizontal posture typical of many fishes.",
+      "sources": [
+        "adw"
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Bony armor",
+      "text": "Bony plates support and protect its body beneath the skin; rings continue along its flexible tail.",
+      "sources": [
+        "waikiki",
+        "adw"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Frequent meals",
+      "text": "Big-bellied seahorses lack a true stomach for storing food, so they need to feed frequently.",
+      "sources": [
+        "adw"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Small fins",
+      "text": "The dorsal fin and paired pectoral fins help with movement and control. A much smaller anal fin is also present.",
+      "sources": [
+        "adw"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "A grasping tail",
+      "text": "The prehensile tail can wrap around vegetation and other supports to help the animal hold position.",
+      "sources": [
+        "adw"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "An ambush hunter",
+      "text": "Big-bellied seahorses often wait among vegetation for small crustaceans to come within reach.",
+      "sources": [
+        "adw"
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Suction feeding",
+      "text": "A tubular snout directs suction that draws small prey into the mouth.",
+      "sources": [
+        "waikiki",
+        "adw"
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Independent eyes",
+      "text": "The eyes can move independently, helping a seahorse watch its surroundings.",
+      "sources": [
+        "adw"
+      ]
+    },
+    {
+      "number": 9,
+      "title": "No chewing",
+      "text": "Seahorses have no teeth; prey small enough to enter the mouth is swallowed whole.",
+      "sources": [
+        "adw"
+      ]
+    },
+    {
+      "number": 10,
+      "title": "A male brood pouch",
+      "text": "The female transfers eggs into the male’s pouch. He broods the developing young and later gives birth.",
+      "sources": [
+        "noaa"
+      ]
+    }
+  ],
+  "references": {
+    "adw": "https://animaldiversity.org/accounts/Hippocampus_abdominalis/",
+    "waikiki": "https://www.waikikiaquarium.org/experience/animal-guide/fishes/seahorses-seadragons-and-pipefishes/seahorse/",
+    "noaa": "https://oceanservice.noaa.gov/facts/seahorse.html"
+  },
+  "photo": {
+    "path": "apps/seahorse-takenaga.jpeg",
+    "sha256": "83f2a50a706d2488424eaf94ad8ebc96b517b1d622438536c0b35d55d4c3acd4",
+    "credit": "Photo: Glenn A. Takenaga.",
+    "permission": "Existing owner-authorized crop, unchanged"
+  },
+  "boundaries": [
+    "No image replacement or gate change yet.",
+    "No copied magazine prose, layout or photograph.",
+    "The original poster’s absolute fastest/slowest claims and mantis-shrimp comparison are not carried forward.",
+    "General facts are not pointer labels on obscured structures; the photograph does not show the whole tail tip.",
+    "No species/sex identification of the photographed animal is inferred."
+  ],
+  "approval_needed": "Approve exact ten-point text and replacement of IMG_4213 with this original photo-and-text presentation."
+}

@@ -1,0 +1,395 @@
+{
+  "schemaVersion": "0.1-draft",
+  "status": "provisional-unapproved",
+  "sources": [
+    "docs/evo-v2-transition-endpoint-manifest-draft1-20261014.json",
+    "docs/evo-v2-high-priority-relationship-review-draft1-20261014.md"
+  ],
+  "allowedClasses": [
+    "ancestry-context",
+    "cellular-endosymbiosis",
+    "cellular-integration",
+    "complex-evolutionary-process",
+    "environmental-causation",
+    "evolutionary-branching",
+    "evolutionary-diversification",
+    "evolutionary-innovation",
+    "habitat-transition",
+    "lineage-continuation",
+    "summary-aggregation",
+    "ui-view-selection"
+  ],
+  "warning": "Provisional analytic labels are not approved scientific interpretation. Original runtime classes and endpoint arrays are unchanged.",
+  "transitions": [
+    {
+      "transitionId": "TR-0100",
+      "sourceKey": "great-split",
+      "legacyRuntimeType": "branching",
+      "provisionalClass": "evolutionary-branching",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0101",
+      "sourceKey": "bacterial-diversification",
+      "legacyRuntimeType": "branching",
+      "provisionalClass": "summary-aggregation",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Compressed conceptual overview; not a resolved direct parent-child edge."
+    },
+    {
+      "transitionId": "TR-0102",
+      "sourceKey": "archaeal-diversification",
+      "legacyRuntimeType": "branching",
+      "provisionalClass": "summary-aggregation",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Compressed conceptual overview; not a resolved direct parent-child edge."
+    },
+    {
+      "transitionId": "TR-0103",
+      "sourceKey": "toward-host",
+      "legacyRuntimeType": "continuation",
+      "provisionalClass": "ancestry-context",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0104",
+      "sourceKey": "endosymbiosis",
+      "legacyRuntimeType": "merger",
+      "provisionalClass": "cellular-endosymbiosis",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0105",
+      "sourceKey": "eukaryogenesis",
+      "legacyRuntimeType": "continuation",
+      "provisionalClass": "complex-evolutionary-process",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0106",
+      "sourceKey": "toward-leca",
+      "legacyRuntimeType": "continuation",
+      "provisionalClass": "ancestry-context",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0107",
+      "sourceKey": "major-euk-div",
+      "legacyRuntimeType": "branching",
+      "provisionalClass": "summary-aggregation",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Compressed conceptual overview; not a resolved direct parent-child edge."
+    },
+    {
+      "transitionId": "TR-0108",
+      "sourceKey": "opisthokont-select-transition",
+      "legacyRuntimeType": "branching",
+      "provisionalClass": "ui-view-selection",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Navigation choice; do not infer biological descent."
+    },
+    {
+      "transitionId": "TR-0109",
+      "sourceKey": "opisthokont-branch",
+      "legacyRuntimeType": "branching",
+      "provisionalClass": "evolutionary-branching",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0110",
+      "sourceKey": "archaeplastida-select-transition",
+      "legacyRuntimeType": "branching",
+      "provisionalClass": "ui-view-selection",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Navigation choice; do not infer biological descent."
+    },
+    {
+      "transitionId": "TR-0111",
+      "sourceKey": "archaeplastida-summary-branch",
+      "legacyRuntimeType": "branching",
+      "provisionalClass": "summary-aggregation",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Compressed conceptual overview; not a resolved direct parent-child edge."
+    },
+    {
+      "transitionId": "TR-0112",
+      "sourceKey": "green-to-land-summary",
+      "legacyRuntimeType": "continuation",
+      "provisionalClass": "ui-view-selection",
+      "originOfRuntimeType": "runtime-default",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Navigation choice; do not infer biological descent."
+    },
+    {
+      "transitionId": "TR-0113",
+      "sourceKey": "sar-select-transition",
+      "legacyRuntimeType": "branching",
+      "provisionalClass": "ui-view-selection",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Navigation choice; do not infer biological descent."
+    },
+    {
+      "transitionId": "TR-0114",
+      "sourceKey": "sar-branch",
+      "legacyRuntimeType": "continuation",
+      "provisionalClass": "ancestry-context",
+      "originOfRuntimeType": "runtime-default",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0115",
+      "sourceKey": "brown-summary-transition",
+      "legacyRuntimeType": "continuation",
+      "provisionalClass": "ancestry-context",
+      "originOfRuntimeType": "runtime-default",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0116",
+      "sourceKey": "cyano-branch",
+      "legacyRuntimeType": "branching",
+      "provisionalClass": "summary-aggregation",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Compressed conceptual overview; not a resolved direct parent-child edge."
+    },
+    {
+      "transitionId": "TR-0117",
+      "sourceKey": "oxygenic-photosynthesis",
+      "legacyRuntimeType": "innovation",
+      "provisionalClass": "evolutionary-innovation",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0118",
+      "sourceKey": "cyano-continuation",
+      "legacyRuntimeType": "continuation",
+      "provisionalClass": "lineage-continuation",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0119",
+      "sourceKey": "planetary-effect",
+      "legacyRuntimeType": "planetary-effect",
+      "provisionalClass": "environmental-causation",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0120",
+      "sourceKey": "primary-plastid-endo",
+      "legacyRuntimeType": "merger",
+      "provisionalClass": "cellular-endosymbiosis",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0121",
+      "sourceKey": "plastid-integration",
+      "legacyRuntimeType": "integration",
+      "provisionalClass": "cellular-integration",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0122",
+      "sourceKey": "archaeplastida-diversification",
+      "legacyRuntimeType": "branching",
+      "provisionalClass": "evolutionary-branching",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0123",
+      "sourceKey": "red-lineage-transition",
+      "legacyRuntimeType": "continuation",
+      "provisionalClass": "ancestry-context",
+      "originOfRuntimeType": "runtime-default",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0124",
+      "sourceKey": "red-seaweed-diversification",
+      "legacyRuntimeType": "continuation",
+      "provisionalClass": "evolutionary-diversification",
+      "originOfRuntimeType": "runtime-default",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0125",
+      "sourceKey": "green-diversification",
+      "legacyRuntimeType": "branching",
+      "provisionalClass": "evolutionary-branching",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0126",
+      "sourceKey": "land-transition",
+      "legacyRuntimeType": "continuation",
+      "provisionalClass": "evolutionary-innovation",
+      "originOfRuntimeType": "runtime-default",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0127",
+      "sourceKey": "vascular-transition",
+      "legacyRuntimeType": "continuation",
+      "provisionalClass": "evolutionary-innovation",
+      "originOfRuntimeType": "runtime-default",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0128",
+      "sourceKey": "seed-transition",
+      "legacyRuntimeType": "continuation",
+      "provisionalClass": "evolutionary-innovation",
+      "originOfRuntimeType": "runtime-default",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0129",
+      "sourceKey": "flower-transition",
+      "legacyRuntimeType": "continuation",
+      "provisionalClass": "evolutionary-innovation",
+      "originOfRuntimeType": "runtime-default",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0130",
+      "sourceKey": "seagrass-transition",
+      "legacyRuntimeType": "continuation",
+      "provisionalClass": "habitat-transition",
+      "originOfRuntimeType": "runtime-default",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0131",
+      "sourceKey": "eelgrass-transition",
+      "legacyRuntimeType": "continuation",
+      "provisionalClass": "ancestry-context",
+      "originOfRuntimeType": "runtime-default",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0132",
+      "sourceKey": "stramenopile-branch",
+      "legacyRuntimeType": "branching",
+      "provisionalClass": "summary-aggregation",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Compressed conceptual overview; not a resolved direct parent-child edge."
+    },
+    {
+      "transitionId": "TR-0133",
+      "sourceKey": "red-derived-plastid",
+      "legacyRuntimeType": "secondary-endosymbiosis",
+      "provisionalClass": "cellular-endosymbiosis",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0134",
+      "sourceKey": "brown-branch",
+      "legacyRuntimeType": "branching",
+      "provisionalClass": "evolutionary-branching",
+      "originOfRuntimeType": "explicit-runtime-annotation",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0135",
+      "sourceKey": "kelp-transition",
+      "legacyRuntimeType": "continuation",
+      "provisionalClass": "evolutionary-diversification",
+      "originOfRuntimeType": "runtime-default",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    },
+    {
+      "transitionId": "TR-0136",
+      "sourceKey": "giant-kelp-transition",
+      "legacyRuntimeType": "continuation",
+      "provisionalClass": "ancestry-context",
+      "originOfRuntimeType": "runtime-default",
+      "confidence": "unverified",
+      "canonicalEndpointApproval": false,
+      "notes": "Interpretation candidate only; endpoint and scientific review required."
+    }
+  ]
+}

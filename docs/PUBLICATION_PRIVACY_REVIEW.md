@@ -1,3 +1,5 @@
+> Historical record. For current completion status see [completion audit](COMPLETION_AUDIT_20261021.md). Earlier alpha.6 privacy/filtering findings are superseded by [inherited V1 approval](GUIDE_CONTENT_RESTORED.md); this document does not establish current-build acceptance.
+
 # Alpha.6 publication review
 
 GitHub validation for source commit 009dc89964bb7f959702e3a67bbd257c9132965a completed successfully on October 12, 2026. The full collection remains private; the public tester is still alpha.4.

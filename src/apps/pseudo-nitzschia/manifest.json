@@ -16,7 +16,11 @@
     }
   ],
   "offline_assets": [
-    "apps/pseudo-nitzschia/index.html"
+    "apps/pseudo-nitzschia/index.html",
+    "shared/media/asset-312b492bbd93cf7f--IMG_3357.jpeg",
+    "shared/media/asset-ada016e625c82729--IMG_3358.jpeg",
+    "shared/media/asset-ba81c2492733aa1b--IMG_3359.jpeg",
+    "shared/media/asset-3406e524b14b7757--ScreenHunter-10643.jpg"
   ],
   "media": [
     "asset-312b492bbd93cf7f",

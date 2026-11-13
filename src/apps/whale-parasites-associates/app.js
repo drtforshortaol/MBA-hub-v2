@@ -33,6 +33,29 @@ function normalizeText(value) {
   return String(value || "").toLowerCase().trim();
 }
 
+// Shared navigation resolves the fragment; this app owns its filter visibility.
+document.addEventListener("mba:reveal-section", (event) => {
+  const id = event.detail?.id;
+  if (typeof id !== "string" || !PARASITES.some((item) => item.id === id)) return;
+  const card = document.getElementById(id);
+  if (!card || event.target !== card || !card.classList.contains("card")) return;
+  revealParasiteCard(card);
+});
+
+function revealParasiteCard(card) {
+  card.dataset.hidden = "false";
+  card.open = true;
+
+  // A jump can reveal a card outside the active search/filter. Report the
+  // actual visible inventory without mislabelling that exception as a match.
+  const resultCount = document.getElementById("resultCount");
+  if (resultCount) {
+    const count = Array.from(document.querySelectorAll(".card"))
+      .filter((entry) => entry.dataset.hidden === "false").length;
+    resultCount.textContent = `${count} entr${count === 1 ? "y" : "ies"} shown.`;
+  }
+}
+
 function buildJumpMenu() {
   const select = document.getElementById("jumpSelect");
   if (!select) return;
@@ -51,8 +74,7 @@ function buildJumpMenu() {
     const card = document.getElementById(id);
     if (!card) return;
 
-    card.dataset.hidden = "false";
-    card.open = true;
+    revealParasiteCard(card);
 
     setTimeout(() => {
       card.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -66,7 +88,7 @@ function buildFilters() {
   const filterTabs = document.getElementById("filterTabs");
   if (!filterTabs) return;
 
-  filterTabs.innerHTML = FILTERS.map(([id, label], index) => `
+  const filterMarkup = FILTERS.map(([id, label], index) => `
     <button
       class="filter-tab ${index === 0 ? "active" : ""}"
       type="button"
@@ -76,6 +98,7 @@ function buildFilters() {
       ${escapeHTML(label)}
     </button>
   `).join("");
+  filterTabs.replaceChildren(...Array.from(new DOMParser().parseFromString(filterMarkup, "text/html").body.children));
 
   document.querySelectorAll(".filter-tab").forEach((button) => {
     button.addEventListener("click", () => {
@@ -97,7 +120,7 @@ function buildCards() {
   const cardList = document.getElementById("cardList");
   if (!cardList) return;
 
-  cardList.innerHTML = PARASITES.map((item) => {
+  const cardMarkup = PARASITES.map((item) => {
     const paragraphs = item.paragraphs
       .map((paragraph) => `<p>${escapeHTML(paragraph)}</p>`)
       .join("");
@@ -171,6 +194,7 @@ function buildCards() {
       </details>
     `;
   }).join("");
+  cardList.replaceChildren(...Array.from(new DOMParser().parseFromString(cardMarkup, "text/html").body.children));
 }
 
 function setupSearch() {

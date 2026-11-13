@@ -1,0 +1,465 @@
+{
+  "schema_version": 1,
+  "record_type": "acceptance-template-not-evidence",
+  "status": "NOT TESTED",
+  "candidate": {
+    "source_commit": "96a9303ef54f0d0fc6cccb8ef0da2fed9f8609de",
+    "artifact_id": 12399387211,
+    "zip_sha256": "ec47c591c187752fcea183703e7005fe910e7c2756913b6cd935575085884dd4",
+    "developer_release": "d0a9e2c124319d67",
+    "tester_release": "396e7065d45407d5"
+  },
+  "sessions": [],
+  "reviewers": [
+    {
+      "role": "owner",
+      "reviewer_reference": null,
+      "session_ids": [],
+      "status": "NOT TESTED",
+      "feedback": [],
+      "blocking_findings": []
+    },
+    {
+      "role": "trusted-reviewer-1",
+      "reviewer_reference": null,
+      "session_ids": [],
+      "status": "NOT TESTED",
+      "feedback": [],
+      "blocking_findings": []
+    },
+    {
+      "role": "trusted-reviewer-2",
+      "reviewer_reference": null,
+      "session_ids": [],
+      "status": "NOT TESTED",
+      "feedback": [],
+      "blocking_findings": []
+    },
+    {
+      "role": "trusted-reviewer-3",
+      "reviewer_reference": null,
+      "session_ids": [],
+      "status": "NOT TESTED",
+      "feedback": [],
+      "blocking_findings": []
+    }
+  ],
+  "checklist": [
+    {
+      "id": "I1",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "id": "I2",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "id": "I3",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "id": "I4",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "id": "I5",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "id": "I6",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "id": "I7",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "id": "I8",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "id": "I9",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "id": "I10",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "id": "I11",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "id": "I12",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "id": "I13",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "id": "I14",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "id": "I15",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "id": "I16",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "id": "I17",
+      "status": "NOT TESTED",
+      "session_ids": [],
+      "evidence_refs": [],
+      "findings": []
+    }
+  ],
+  "apps": [
+    {
+      "app_id": "applied-water-science-life-support",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "aquarium-library-explorer",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "big-bellied-seahorse",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "bluespotted-ribbontail-ray",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "california-flying-fish",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "california-sheephead",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "evolution-timeline",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "five-senses-pwa",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "flamboyant-cuttlefish",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "gooseneck-barnacle",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "gray-whale",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "gray-whale-skeleton-exhibit",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "green-falsejingle",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "hopkins-rose-nudibranch",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "inaturalist-citizen-science",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "information-center",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "interpretation-principles",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "kelp-forest",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "mba-leadership",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "mmc-narrations",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "naturalist-field-notes",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "open-sea",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "pacific-white-sided-dolphin",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "pseudo-nitzschia",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "sea-slugs-nudibranchs",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "sperm-whale",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "stargazer-species-guide",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "tree-of-life-origins",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "whale-associated-organisms",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "whale-parasites-associates",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "wildfires-ocean-health",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    },
+    {
+      "app_id": "wildlife-rescue",
+      "online_content_media": "NOT TESTED",
+      "offline_reopen_media": "NOT TESTED",
+      "search_deep_links_back": "NOT TESTED",
+      "evidence_refs": [],
+      "findings": []
+    }
+  ],
+  "additional_coverage": {
+    "android_install": "NOT TESTED",
+    "windows_install": "NOT TESTED",
+    "assistive_technology": "NOT TESTED",
+    "scale_100_to_200_apps": "NOT TESTED",
+    "taxonomy_owner_decision": "NOT TESTED"
+  },
+  "operational_gates": {
+    "owner_release_authorization": {
+      "status": "PENDING",
+      "evidence_refs": []
+    },
+    "pilot": {
+      "status": "PENDING",
+      "evidence_refs": []
+    },
+    "current_build_device_offline": {
+      "status": "PENDING",
+      "evidence_refs": []
+    },
+    "device_rollback": {
+      "status": "PENDING",
+      "evidence_refs": []
+    },
+    "final_privacy_review": {
+      "status": "PENDING",
+      "evidence_refs": []
+    }
+  },
+  "second_lifecycle_candidate": null,
+  "release_approved": false
+}

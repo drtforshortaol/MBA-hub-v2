@@ -1,0 +1,21 @@
+**Later permission confirmation:** Glenn has confirmed MJ authorized the four newsletter photographs for the Aquarium guide hub. See `MJ_PHOTO_PERMISSION_20261029.md`. Pending-photo-permission statements below describe the earlier checkpoint; the six third-party illustration reviews remain separate.
+
+# Historical Big Sur photo supplied — October 29, 2026
+
+The owner uploaded a JPEG in response to the request for the newsletter's `MZD_5048.JPG`. The upload is named `4CA34687-27E0-4BF5-8693-38CBD17AFDA3.jpeg`; its 425,361 bytes, 1206 × 789 dimensions and SHA-256 are recorded in `verification/naturalist-gray-whale-upload-20261029.json`. The uploaded file is preserved without cropping, resizing, recompression or metadata changes. The mapping comes from the conversation context, not a recovered email attachment or filename match. Neither photographer identity nor reuse rights is established.
+
+The structured October note and standalone offline summary now show that image with the historical Big Sur paragraph. Both retain March/two-years-earlier context and explicitly distinguish the observation from October 8–14 sightings. The permanent issue ID is unchanged. A descriptive alt text is supplied; the photograph is never used as evidence for a current sighting or for a scientific identification made independently of the newsletter.
+
+The centralized media record uses `asset-df392914e6cf5502`, is declared by Naturalist for offline use, and remains `review-required`. The catalog points to the intake commit that actually contains these bytes. The immutable original source receipt remains unchanged; the separate upload receipt supplements it. Source reconciliation now reports five displayed photos and no missing source-photo placement, while keeping original attachment byte identity, scientific/editorial disposition and publication approval unverified.
+
+## Existing evidence and counts
+
+The digest contract binds the complete media catalog, even for applications that do not use this image. Before refreshing the 31 inherited-content digests, each prior digest was reproduced against the previous catalog. All 212 existing catalog entries were compared structurally and remained identical; only the new pending image entry was appended. The 31 apps, their resources, reviewer records and authorization references were unchanged. Their digests were refreshed solely for this additive catalog change, preserving existing scope rather than granting new approval.
+
+This Naturalist branch now has 213 catalog assets and ten pending image permissions. Its uncombined base still has both content reviews, so its build reports 17 blockers (five operational, two content, ten media). The four-branch receipt at the earlier pinned heads remains historical evidence: it does not cover this newly supplied photo. When integrating the Seahorse approval branch, its owner-text digest must also be re-bound to the additive catalog after verifying that its approved manifest and resources are unchanged; do not reuse its old whole-catalog digest or infer fresh approval. The expected combined count is 16, subject to fresh integration verification, not a new result claimed here.
+
+## Verification
+
+Forty focused checks passed. The source auditor verifies the exact uploaded hash, historical placement in both copies, media registration and pending rights. A same-sized byte mutation fails. Existing original-source and October runtime guards are updated only for these reviewed new bytes; original V1 data, renderer, stylesheet and media are unchanged. Full build/test, security, content preflight, artifact integrity and offline results are recorded after completion below.
+
+Completed validation: **1,024/1,024 full-suite tests passed**, with zero failures, cancellations or skips. Build, security scan, all-app content preflight, artifact verification and patch whitespace checks passed. All fourteen offline navigation/recovery scenarios passed, including exact-byte delivery of the added image: 384 developer resources and 375 tester resources, with no offline network attempts. Results are retained in `verification/naturalist-gray-whale-verification-20261029.json`. Developer release `9e078ed00a203df9` and tester release `c13248dea6fd7ac2` identify local verification builds only.

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "source_commit": "9fe1d3f1ced50f5fcf9de23dda1e68462d5d4590",
+  "release": "fbad210882e7e7e4",
+  "host_source_commit": "eb69044b34eec9c5cf7b89db38f56d0dbdd67ded",
+  "deployment": {
+    "id": "appgdep_6ae7993de1b48191bde0fdca3e73afbf",
+    "project_id": "appgprj_6ae55daba7b08191a19ce7036c6a4152",
+    "title": "MBA Hub V2 — iPhone Review",
+    "version_id": "appgprj_6ae55daba7b08191a19ce7036c6a4152~appgver_5d08844903ec8191a32951a7a0ff24bf",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://mba-v2-iphone-review-4ec51dd.drtforshort.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ae55daba7b08191a19ce7036c6a4152",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-11-01T19:55:51.939106+00:00"
+  },
+  "scope": "Sperm Whale photo attribution moved to bottom footnotes; numbered forward/back links; complete credit/source/license/change notice retained; no media bytes or rights changes",
+  "validation": {
+    "full_suite_passed": 1066,
+    "full_suite_failed": 0,
+    "artifacts": "both passed",
+    "security": "passed",
+    "privacy": "snapshot matches",
+    "local_host_resources": 381,
+    "host_update_verifier_scenarios": 8,
+    "browser": "Local built page: compact source references; complete bottom Photo sources; forward link and return link work",
+    "physical_device": "not assessed"
+  },
+  "production_release_authorized": false
+}

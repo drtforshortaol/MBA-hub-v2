@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "app_id": "open-sea",
+  "section_ids": [
+    "Countershading"
+  ],
+  "reviewed_on": "2026-11-01",
+  "reviewer": "owner",
+  "authorization_quote": "Approved",
+  "scope": "Exact Countershading explanatory text and visitor prompt presented immediately before approval; authored text only",
+  "candidate_commit": "6c4f44040cb9dad147e7b7aa2557ba91ec7d93de",
+  "section_html_sha256": "df49319abc0c8ff07dd1e57fc1fa655fca62a379771664d9eea46ac214753341",
+  "section_html": "<details class=\"card\" id=\"Countershading\"><summary class=\"card-header\"><span class=\"card-icon\" aria-hidden=\"true\">🐟</span><span class=\"card-title-wrap\"><span class=\"card-title\">Countershading</span><span class=\"card-subtitle\">Dark above, light below</span><span class=\"card-tags\"><span class=\"mini-tag\">Adaptation</span><span class=\"mini-tag\">Deception</span></span></span><svg class=\"chevron\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" aria-hidden=\"true\"><path d=\"M6 9l6 6 6-6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></summary><div class=\"card-body-inner\">\n    <p>Countershading is camouflage through body coloration. Many open-ocean animals, including tuna and sharks, have darker backs and paler undersides.</p>\n    <ul>\n      <li><strong>Viewed from above:</strong> the dark back blends with the darker water below.</li>\n      <li><strong>Viewed from below:</strong> the pale belly blends with brighter surface waters.</li>\n    </ul>\n    <p>This can make an animal harder for predators or prey to spot. It reduces contrast; it does not make the animal invisible.</p>\n    <h4>Try it with visitors</h4>\n    <p>Look for a fish with a dark back and a light belly. Ask: “If you were looking up at this fish, what background would you see behind it?” Then ask how the background changes when looking down.</p>\n    <h4>Compare with counter-illumination</h4>\n    <p>Countershading uses body coloration. Counter-illumination uses light-producing structures on an animal’s underside to match light from above. The Bioluminescence section explains that related camouflage strategy.</p>\n    <p>Sources: <a href=\"https://www.montereybayaquarium.org/animals-the-ocean/ecosystems/open-ocean\" target=\"_blank\" rel=\"noopener noreferrer\">Monterey Bay Aquarium — Open ocean</a>; <a href=\"https://ocean.si.edu/ocean-life/fish/fish-using-counterillumination\" target=\"_blank\" rel=\"noopener noreferrer\">Smithsonian Ocean — Fish Using Counterillumination</a>. External references require a connection; this explanation is available offline.</p>\n  </div></details>",
+  "production_release_authorized": false
+}

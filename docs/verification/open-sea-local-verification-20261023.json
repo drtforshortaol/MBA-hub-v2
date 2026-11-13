@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "baseline_commit": "e77cdd635df2112e183cc3442b26b4df5d58e206",
+  "scope": "Combined local source/model verification; no physical acceptance",
+  "node": {
+    "passed": 849,
+    "failed": 0,
+    "skipped": 0
+  },
+  "evo": {
+    "passed": 35
+  },
+  "application_preflight": {
+    "passed": 33
+  },
+  "build_schema_security_artifact_whitespace": "PASS",
+  "media_planner": {
+    "additions": 0,
+    "errors": 0
+  },
+  "literal_media_coverage": {
+    "missing_registrations": 0,
+    "path_errors": 0,
+    "pending_permission_only": 9
+  },
+  "open_sea_fidelity": {
+    "current_files": 6,
+    "pinned_files": 13,
+    "complete_rendered_cards": 12,
+    "complete_search_targets": 16,
+    "baseline_and_adversarial_passed": 16
+  },
+  "retained_dynamic_fidelity_checks_passed": 9,
+  "static_fidelity_checks_passed": 12,
+  "fidelity_audit_regressions_passed": 3,
+  "acceptance_record_regressions_passed": 3,
+  "http": [
+    {
+      "environment": "developer",
+      "release": "e02837b6f3bb023c",
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "bytes": 67291592
+      },
+      "passed": true
+    },
+    {
+      "environment": "tester",
+      "release": "22ee02aaef871c34",
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "bytes": 67211661
+      },
+      "passed": true
+    }
+  ],
+  "offline": [
+    {
+      "environment": "developer",
+      "scenario": "corrupt-json-inventory-recovery",
+      "release": "e02837b6f3bb023c",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigation_targets": 550,
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "developer",
+      "scenario": "forged-inventory-recovery",
+      "release": "e02837b6f3bb023c",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigation_targets": 550,
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "developer",
+      "scenario": "interrupted-inventory-recovery",
+      "release": "e02837b6f3bb023c",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigation_targets": 550,
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "developer",
+      "scenario": "inventory-loss-recovery",
+      "release": "e02837b6f3bb023c",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigation_targets": 550,
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "developer",
+      "scenario": "prepared-navigation",
+      "release": "e02837b6f3bb023c",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigation_targets": 550,
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "developer",
+      "scenario": "corrupted-entry-recovery",
+      "release": "e02837b6f3bb023c",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigation_targets": 550,
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "developer",
+      "scenario": "refresh-page-inventory-recovery",
+      "release": "e02837b6f3bb023c",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigation_targets": 550,
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "tester",
+      "scenario": "corrupt-json-inventory-recovery",
+      "release": "22ee02aaef871c34",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigation_targets": 550,
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "tester",
+      "scenario": "forged-inventory-recovery",
+      "release": "22ee02aaef871c34",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigation_targets": 550,
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "tester",
+      "scenario": "interrupted-inventory-recovery",
+      "release": "22ee02aaef871c34",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigation_targets": 550,
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "tester",
+      "scenario": "inventory-loss-recovery",
+      "release": "22ee02aaef871c34",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigation_targets": 550,
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "tester",
+      "scenario": "prepared-navigation",
+      "release": "22ee02aaef871c34",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigation_targets": 550,
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "tester",
+      "scenario": "corrupted-entry-recovery",
+      "release": "22ee02aaef871c34",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigation_targets": 550,
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "tester",
+      "scenario": "refresh-page-inventory-recovery",
+      "release": "22ee02aaef871c34",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigation_targets": 550,
+      "offlineNetworkAttempts": 0
+    }
+  ],
+  "supported_inherited_records": 28,
+  "remaining_blockers": 19,
+  "physical_acceptance": "NOT TESTED",
+  "exact_ci_artifact": "Pending independent verification for new integration source"
+}

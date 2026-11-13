@@ -1,0 +1,11 @@
+# Verified final search acceptance candidate — October 22, 2026
+
+Runtime source333d922572d4fca64cbc2a63ef0566cd1aed371a. Combined CI https://github.com/drtforshortaol/MBA-hub-v2/actions/runs/39904309778 completed successfully. Artifact12480051894, mba-v2-combined-iphone-review,128167148 bytes, ZIP SHA-25646ed22ba9f9cf60fb12cbbebef4e5650d3f27558efdf99d89989e959e2035b6d. Developer release e02837b6f3bb023c; tester0eac928392f9ddc4.
+
+Downloaded ZIP independently passed prepare-acceptance-record.py: size/digest, successful workflow/artifact/source binding, source marker, safe extraction, complete developer/tester resource integrity and all retained HTTP/offline evidence. New record docs/verification/candidate-acceptance-final-search-20261022.json contains33 apps,17 checks and owner plus3 reviewers, all NOT TESTED. All5 operational gates remain PENDING.
+
+Fresh combined local Node839/839 PASS; successful CI repeats build/test/security, EVO35/35, application preflight33/33, HTTP383 developer/374 tester and offline14/14 with550/550 targets each and zero network attempts. The original15-app recovery task is complete:142 sections and68 image uses verified and reconciled. Follow-up source-derived search defects in Open Sea, Water Science, Five Senses and Elephant Seal are saved and verified.
+
+Remaining blockers29:14 inherited dynamic-app reconciliation records,1 Seahorse review,9 October image permissions,5 operational gates. Additional dynamic evidence is retained for next scoped reconciliation; no new review flags are granted by this acceptance record. Exact next task is remaining dynamic reconciliation using the retained evidence, separately preserving new October content and scientific/image reviews. Trusted-HTTPS acceptance hosting proposal is prepared only. No hosted preview, deployment, publication, PR merge, protected/upstream edit or release occurred. Physical iPhone/Android/Windows, accessibility, performance/storage, full current-build offline/update/rollback and reviewer pilot remain unverified.
+
+This later acceptance-document commit does not alter these runtime releases or relabel the artifact source. The exact artifact remains333d922. The independently verified prior1161cd1 bundle is retained as a distinct candidate; real same-origin lifecycle testing still needs authorization and evidence.

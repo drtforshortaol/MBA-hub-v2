@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-29",
+  "asset_id": "asset-50646c3fe1d0c359",
+  "path": "apps/IMG_4210.jpeg",
+  "sha256": "50646c3fe1d0c359860229e041767429fc21a382cd16d75bd165fd5f7a3cef52",
+  "status": "licensed",
+  "source_article": {
+    "url": "https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2021.714503/full",
+    "doi": "10.3389/fmars.2021.714503",
+    "year": 2021,
+    "figure": 1,
+    "illustrator": "Lau López",
+    "study_species": "Pelagia noctiluca",
+    "figure_context": "General scyphozoan ephyra anatomical terminology; not proof of a moon-jelly specimen identity"
+  },
+  "publisher_figure": {
+    "url": "https://www.frontiersin.org/files/Articles/714503/xml-images/fmars-08-714503-g001.webp",
+    "sha256": "002633ff26ba57641ff2c1876bf271ca20413a1d853eb7b4a82ee79f7fccb5f3",
+    "bytes": 727262,
+    "dimensions": [
+      1955,
+      941
+    ]
+  },
+  "license": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "article_license_href": "http://creativecommons.org/licenses/by/4.0/",
+    "copyright_holders": "Ballesteros and coauthors (2021)",
+    "publisher_copyright_section_inspected": true,
+    "figure_specific_restrictive_notice_found": false,
+    "conditions_implemented": [
+      "Illustrator and article credit",
+      "Author copyright notice",
+      "Source DOI URI",
+      "License URI",
+      "Existing crop disclosed",
+      "No endorsement implied",
+      "No new restrictions on the licensed image"
+    ]
+  },
+  "comparison": {
+    "method": "Manual visual comparison of exact existing JPEG with publisher Figure 1",
+    "finding": "Existing screenshot reproduces the annotated panel A and a clipped part of panel B",
+    "distinctive_features": [
+      "Same drawing, colored leader arrows and paired lappet detail",
+      "Matching anatomical labels in the same order",
+      "Partial B marker and dotted TBD line at the right edge"
+    ],
+    "byte_identity_with_publisher_file_claimed": false,
+    "existing_JPEG_unchanged": true,
+    "new_image_edit_performed": false
+  },
+  "publisher_article_html_sha256": "fbb40ad4f2adf535fd38ab8624586b84b3f84f5b9230e3ca529ac2dc99b04aa8",
+  "visible_caption": "Ephyra reference diagram, cropped from Figure 1; not a moon-jelly species identification. Illustration: Lau López. Ballesteros et al. (2021), Front. Mar. Sci. 8:714503. © 2021 Ballesteros, Östman, Santín, Marambio, Narda and Gili. CC BY 4.0: https://creativecommons.org/licenses/by/4.0/. Source: https://doi.org/10.3389/fmars.2021.714503.",
+  "visible_alt": "Scyphozoan ephyra anatomy reference diagram, cropped from Figure 1",
+  "reference_documents": [
+    "https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2021.714503/full",
+    "https://creativecommons.org/licenses/by/4.0/",
+    "https://www.frontiersin.org/journals/marine-science/about#copyright-statement"
+  ],
+  "scope": "This exact existing derivative illustration only; no permission inferred for the five Seahorse images",
+  "publication_authorized": false,
+  "caption_delta": {
+    "before": {
+      "src": "../IMG_4210.jpeg",
+      "alt": "Moon jelly ephyra anatomy",
+      "caption": "Moon jelly ephyra anatomy — source-provided image; permission review pending."
+    },
+    "after": {
+      "src": "../IMG_4210.jpeg",
+      "alt": "Scyphozoan ephyra anatomy reference diagram, cropped from Figure 1",
+      "caption": "Ephyra reference diagram, cropped from Figure 1; not a moon-jelly species identification. Illustration: Lau López. Ballesteros et al. (2021), Front. Mar. Sci. 8:714503. © 2021 Ballesteros, Östman, Santín, Marambio, Narda and Gili. CC BY 4.0: https://creativecommons.org/licenses/by/4.0/. Source: https://doi.org/10.3389/fmars.2021.714503."
+    }
+  },
+  "previous_script_sha256": "c00624ff6edf131d3b971c85a5c42cc5866412ed50816a3461d1b4b1fe0bb82a",
+  "current_script_sha256": "dcdc5a7983b529e9da02bd8dcbcdabde967b298f36b7ae178a57003bc35bb267",
+  "observation_links_delta": {
+    "before": null,
+    "after": [
+      {
+        "label": "Illustration source — Figure 1 (Ballesteros et al., 2021)",
+        "url": "https://doi.org/10.3389/fmars.2021.714503"
+      },
+      {
+        "label": "Illustration license — CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ]
+  }
+}

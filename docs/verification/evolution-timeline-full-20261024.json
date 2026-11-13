@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "app_id": "evolution-timeline",
+  "source_repository": "drtforshortaol/evolution-timeline",
+  "source_commit": "c6d782d3a8a03e407861a0fbc3aab76e5fbf8d0c",
+  "source_inventory": {
+    ".gitattributes": "dfe0770424b2a19faf507a501ebfc23be8f54e7b",
+    "README.txt": "763f053721c240e663cf18a49cda230adda5d954",
+    "app.js": "82f6edd91c7db816346f4905171b31ce773e27bb",
+    "evolution_timeline_pwa_v10.zip": "d8be3716aba8ddfea27b2322249e3ef55336650f",
+    "evolution_timeline_pwa_v11.zip": "5f40c1d0f8ad0967cd63a31a71d30e0b98cad0e2",
+    "icons/icon-192.png": "4431360225c297e5494b7a4bbf4ed28a7e73a954",
+    "icons/icon-512.png": "d4b93c344c2e05d0b5e4c44deba81edd21a9b73a",
+    "index.html": "bb3a79baaa81bbe9dcce4881e157f4d7b2657134",
+    "manifest.webmanifest": "fbe35899561bce9b29929ada8fa8ee977f92bca9",
+    "styles.css": "2d4f9921c0e1ad72ed642ffda0f3b99c58a4c197",
+    "sw.js": "64fa1962d3319a8b517a39e9f15a8db9070695f1"
+  },
+  "current_inventory": {
+    "app.js": "c8cd6dd369e53df308f66b318bb82a4e8b71d5097fa95b57414917e414a23e21",
+    "index.html": "62ee9deddfcbb90e1ed2b61619a508c6ff42df6809fec52096b581cd62891f01",
+    "manifest.json": "a0997e5c5e4c99a9f0823191602df55e40bebb59de12f076f8441bcffd495540",
+    "styles.css": "8c6993c1eb476536a307a972db56dd065497dbb0e270c975cf04a4edcea6345e"
+  },
+  "shared_interface_sha256": "d746ecaae45ad9379d6c5e472fd7adc3a0c20c62313d980a0051af10b843362a",
+  "app_contract_sha256": "aad743f840ee86018659ab3a6c3e7be1df8d860bb97bbb74c4ee8ec6071acf27",
+  "actual_assign_section_ids": true,
+  "rendered_view_sha256": {
+    "storyView": {
+      "pinned": "464b5d58541ddaea494cb3c7be2294e6699bc149c824fe01b6af115807a721b8",
+      "current": "464b5d58541ddaea494cb3c7be2294e6699bc149c824fe01b6af115807a721b8"
+    },
+    "timeView": {
+      "pinned": "36ba3734a4aabefd6c1c0913bafa7f2862f11454f70b16aa5542b1c85815c408",
+      "current": "36ba3734a4aabefd6c1c0913bafa7f2862f11454f70b16aa5542b1c85815c408"
+    },
+    "toolsView": {
+      "pinned": "a16d2794b0f744d0803a56eaf5b616134c5a6b11dd1685347ef2719b9efe3fc8",
+      "current": "a16d2794b0f744d0803a56eaf5b616134c5a6b11dd1685347ef2719b9efe3fc8"
+    }
+  },
+  "shared_knowledge_sha256": "bb40ca6e1962eca12869bc79f3665ddb9b12fdd261ac8d624a857d45b56ed35f",
+  "source_files": 11,
+  "current_files": 4,
+  "full_static_document": true,
+  "full_original_css": true,
+  "full_executable_scope": true,
+  "inert_adapter_security_probe": true,
+  "full_scientific_data_collections": 5,
+  "complete_rendered_views": 3,
+  "source_events": 35,
+  "event_search_rows": 35,
+  "manifest_destinations": 36,
+  "native_modes": 3,
+  "independent_lineages": 3,
+  "mutually_exclusive_tools": 4,
+  "event_and_learn_more_disclosures": 35,
+  "exact_pinned_icon": true,
+  "offline_app_assets": 4,
+  "navigation": {
+    "complete": true,
+    "targets": 39,
+    "section_navigator_sha256": "4543850ab43b9864e76b1cca189e9f96e5d49e6e04f88e4a75cfa2b0b9f514c6",
+    "focus_scroll_verified": true,
+    "one_shot_verified": true
+  },
+  "current_byte_guard": true,
+  "approval_granted": false,
+  "migration_scope": [
+    "Five exact source data initializers moved to the single shared read-only interface.",
+    "Three approved template innerHTML assignments replaced with the byte-bound inert parsing helper; complete outputs match independently parsed source trees.",
+    "Standalone worker/manifest replaced by Hub ownership; icon relocated byte-for-byte, Hub return isolated, one heading receives stable ID, shared scripts and maintenance-hiding style added.",
+    "Fourteen-line app-owned reveal adapter selects the existing mode before core opens/focuses the target."
+  ],
+  "exclusions": [
+    "The35 canonical source-derived search records retain the existing schema summary/why/uncertainty/details/date; flow fields remain in complete rendered source trees, not newly indexed.",
+    "Archived v10/v11 ZIPs, README, gitattributes, source512icon and standalone worker/manifest are inventoried byte-for-byte but are not current runtime dependencies.",
+    "No full native-browser parsing, layout, storage/performance or physical-device lifecycle is claimed.",
+    "Original static aria-label Two timeline views is preserved although three buttons exist; no editorial correction is introduced."
+  ],
+  "limitations": [
+    "lxml plus bounded DOM/event execution, not native-browser acceptance.",
+    "Independent scientific/editorial approval, image permission adjudication, physical acceptance and deployment authorization remain separate."
+  ]
+}

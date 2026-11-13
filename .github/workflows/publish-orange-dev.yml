@@ -1,0 +1,49 @@
+name: Prepare isolated orange DEV deployment artifact (manual only)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: mba-v2-orange-dev-pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned parser
+        run: python -m pip install --requirement scripts/migration/requirements-fidelity.txt
+      - name: Validate and build
+        run: |
+          npm run validate
+          npm run build
+          node scripts/audit-privacy-snapshot.mjs --write-reviewed-binding
+          npm test
+          npm run security:scan
+          node scripts/verify-build-artifacts.mjs
+      - name: Stage ONLY orange developer bundle under separate path
+        run: |
+          mkdir -p _site/dev
+          cp -a dist/developer/. _site/dev/
+          test -f _site/dev/manifest.webmanifest
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          const m=JSON.parse(fs.readFileSync('_site/dev/manifest.webmanifest','utf8'));
+          if(m.name!=='MBA Hub DEV'||m.id!=='./'||m.scope!=='./') throw Error('Not isolated orange DEV build');
+          if(!fs.readFileSync('_site/dev/icon.svg','utf8').includes('#d66b12')) throw Error('Orange icon missing');
+          if(fs.existsSync('_site/index.html'))throw Error('Root guide content must not be deployed');
+          EOF
+      - name: Retain isolated orange DEV bundle for dedicated hosting
+        uses: actions/upload-artifact@v4
+        with:
+          name: mba-hub-dev-public-hosting-ready
+          path: _site/dev/
+          retention-days: 14
+      - name: Guard existing guide Pages deployment
+        run: echo 'No Pages deployment performed. Publish only to an independently configured host to preserve existing guide content.'

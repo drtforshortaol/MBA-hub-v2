@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "approval": "Ok",
+  "candidate_commit": "dcf540b8a6f6925e7e0c934f8d5995766e4124d2",
+  "candidate_sha256": "11e34131fc54ede1486caf827f1d5ef4a8b346fc59dd89883b7d2ace13bb63cc",
+  "scope": "Exact eight-row anatomy key and replacement of the pending Seaweek image, as proposed immediately before owner acceptance",
+  "retired_asset": {
+    "asset_id": "asset-486b6cdb96375dfb",
+    "path": "apps/IMG_4212.jpeg",
+    "owner": "media-library",
+    "alt": "Source-provided seahorse educational illustration 4212",
+    "credit": "Creator and reuse attribution unresolved; image retained from the pending October 2026 V2 source.",
+    "permission": "review-required",
+    "offline": true,
+    "sha256": "486b6cdb96375dfb0c5fa97a8d9538ff81384cc4360d8884875cb71eb16b6e53",
+    "source_repository": "drtforshortaol/MBA-hub-v2",
+    "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+    "source_path": "src/apps/IMG_4212.jpeg",
+    "uses": [
+      {
+        "app_id": "big-bellied-seahorse",
+        "source_path": "src/apps/IMG_4212.jpeg"
+      }
+    ],
+    "review_note": "V2 source identity is engineering provenance, not creator, license or reuse permission evidence."
+  },
+  "html_before": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Big-Bellied Seahorse — MBA Species Guide</title><style>body{font:16px/1.55 system-ui,sans-serif;background:#eaf4f6;color:#173746;margin:0}header{background:#073b4c;color:white;padding:18px}header a{color:#d5f5ff;margin-right:18px}main{max-width:780px;margin:auto;padding:16px}h1{font-size:1.7rem}article{background:white;border-radius:12px;padding:18px;margin:14px 0;box-shadow:0 2px 8px #0001}details{border-top:1px solid #cde;padding:12px 0}summary{font-weight:700;cursor:pointer}footer{padding:24px;text-align:center}figure{margin:0 0 16px}figure img{display:block;width:100%;height:auto;border-radius:12px}figcaption{font-size:.85rem;color:#47616a;padding-top:5px}</style></head><body><header><a href=\"../../index.html\">← Return to Hub</a><a href=\"../naturalist-field-notes/index.html?note=2026-10-15-seahorse\">October Field Note</a><h1>Big-Bellied Seahorse</h1><i>Hippocampus abdominalis</i></header><main><figure><img src=\"../IMG_4216.jpeg\" alt=\"Seahorse Dads: courtship, egg transfer to the male brood pouch, development and birth; simplified general life cycle, not to scale\"><figcaption>Seahorse Dads: From Courtship to Birth. AI-generated illustration supplied and approved for replacement by the hub owner. Simplified general seahorse life cycle; not a species-specific anatomical diagram. Egg-transfer arrow is conceptual. Timing and brood size vary by species.</figcaption></figure><article>Authored text approved by owner on October 29, 2026. Image permissions and release acceptance pending.</article><article><details id=\"Overview\"><summary>Overview</summary><p>The big-bellied seahorse (Hippocampus abdominalis) is among the largest seahorses, reaching approximately 35 cm (14 inches) in total length. Total length is not the same as body height.</p></details></article><article><details id=\"Habitat-and-range\"><summary>Habitat and range</summary><p>Species accounts place big-bellied seahorses in New Zealand and parts of southern Australia, among seagrass, algae, rocky reefs and sheltered coastal habitats. Some references classify Australian populations differently, so regional range descriptions may vary.</p></details></article><article><details id=\"Feeding\"><summary>Feeding</summary><p>An ambush predator of small crustaceans including mysids and amphipods. Seahorses use rapid pivot feeding and suction to capture prey.</p></details></article><article><details id=\"Male-pregnancy\"><summary>Male pregnancy</summary><p>The female transfers eggs to the male brood pouch after courtship. The male broods developing young. Published species accounts describe a gestation period of approximately 28–34 days, varying with conditions, and broods often numbering in the hundreds.</p><figure><img loading=\"lazy\" src=\"../IMG_4216.jpeg\" alt=\"Seahorse Dads: courtship, egg transfer to the male brood pouch, development and birth; simplified general life cycle, not to scale\"><figcaption>Seahorse Dads: From Courtship to Birth. AI-generated illustration supplied and approved for replacement by the hub owner. Simplified general seahorse life cycle; not a species-specific anatomical diagram. Egg-transfer arrow is conceptual. Timing and brood size vary by species.</figcaption></figure></details></article><article><details id=\"Young-and-life-cycle\"><summary>Young and life cycle</summary><p>Newly born big-bellied seahorses enter a drifting (pelagic) stage. Young seahorses can grip floating debris with their tails before settling into coastal habitats.</p></details></article><article><details id=\"Armor-and-camouflage\"><summary>Armor and camouflage</summary><p>Seahorses have bony plates and a grasping (prehensile) tail. Big-bellied seahorses vary in color and pattern, and can hold onto vegetation and other structures with their tails.</p><figure><img loading=\"lazy\" src=\"../IMG_4212.jpeg\" alt=\"Source-provided seahorse educational illustration 4212\"></figure><details id=\"Seahorse-close-up\"><summary>Seahorse Close-Up — 10 Things to Notice</summary><p>Ten general seahorse talking points. The photograph shows only some features; the tail tip is not fully shown.</p><figure><img loading=\"lazy\" src=\"../seahorse-takenaga.jpeg\" alt=\"Owner close-up photograph of a yellow seahorse; tail tip not fully shown\"><figcaption>Photo: Glenn A. Takenaga.</figcaption></figure><ol><li><strong>Upright swimmer.</strong> A seahorse usually swims with its body upright, rather than in the horizontal posture typical of many fishes.</li><li><strong>Bony armor.</strong> Bony plates support and protect its body beneath the skin; rings continue along its flexible tail.</li><li><strong>Frequent meals.</strong> Big-bellied seahorses lack a true stomach for storing food, so they need to feed frequently.</li><li><strong>Small fins.</strong> The dorsal fin and paired pectoral fins help with movement and control. A much smaller anal fin is also present.</li><li><strong>A grasping tail.</strong> The prehensile tail can wrap around vegetation and other supports to help the animal hold position.</li><li><strong>An ambush hunter.</strong> Big-bellied seahorses often wait among vegetation for small crustaceans to come within reach.</li><li><strong>Suction feeding.</strong> A tubular snout directs suction that draws small prey into the mouth.</li><li><strong>Independent eyes.</strong> The eyes can move independently, helping a seahorse watch its surroundings.</li><li><strong>No chewing.</strong> Seahorses have no teeth; prey small enough to enter the mouth is swallowed whole.</li><li><strong>A male brood pouch.</strong> The female transfers eggs into the male’s pouch. He broods the developing young and later gives birth.</li></ol><p>Fact sources: <a href=\"https://animaldiversity.org/accounts/Hippocampus_abdominalis/\" target=\"_blank\" rel=\"noopener noreferrer\">adw</a>, <a href=\"https://www.waikikiaquarium.org/experience/animal-guide/fishes/seahorses-seadragons-and-pipefishes/seahorse/\" target=\"_blank\" rel=\"noopener noreferrer\">waikiki</a>, <a href=\"https://oceanservice.noaa.gov/facts/seahorse.html\" target=\"_blank\" rel=\"noopener noreferrer\">noaa</a>.</p></details><div class=\"anatomy-comparison\" style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px\"><figure><img style=\"height:440px;object-fit:contain;background:#f2f7f6\" loading=\"lazy\" src=\"../seahorse-takenaga.jpeg\" alt=\"Yellow seahorse among aquarium vegetation, showing its snout, body plates and dorsal fin; tail tip not fully shown\"><figcaption><strong>Seahorse — upright body and grasping tail.</strong> Visible features: elongated snout, body plates and dorsal fin. The tail tip is not fully shown in this owner-supplied crop. Smaller structures obscured by the animal’s position or vegetation are not labeled. Photo: Glenn A. Takenaga, Monterey Bay Aquarium. Owner photograph of a living animal; not exhibit artwork.</figcaption></figure><figure><img style=\"height:440px;object-fit:contain;background:#f2f7f6\" loading=\"lazy\" src=\"../IMG_4215.jpeg\" alt=\"Realistic rainbow trout illustration in side view with dorsal, adipose and tail fins visible\"><figcaption><strong>Rainbow trout (Oncorhynchus mykiss) — streamlined body and tail fin.</strong> Compare its gill cover, scales, pectoral, pelvic, dorsal, anal, adipose and caudal (tail) fins. Illustration: Duane Raver / U.S. Fish &amp; Wildlife Service. Public domain. <a href=\"https://www.fws.gov/media/rainbow-trout-11\" target=\"_blank\" rel=\"noopener noreferrer\">Source and public-domain record</a>. General comparison; images are not to the same scale.</figcaption></figure></div></details></article><article><details id=\"Conservation\"><summary>Conservation</summary><p>FishBase's 2025-2 global IUCN listing reports Least Concern for this species, with an assessment date of August 19, 2016. The IUCN Seahorse, Pipefish &amp; Seadragon Specialist Group's species table, updated September 2026, also displays Least Concern. All seahorses (Hippocampus spp.) are listed under CITES Appendix II, which regulates international trade rather than prohibiting it. Habitat loss, bycatch and wildlife trade remain useful conservation topics. Check authoritative listings again before publication.</p></details></article><article><details id=\"Aquarium-history\"><summary>Aquarium history</summary><p>Big-bellied seahorses are featured in Monterey Bay Aquarium's Ocean in Motion exhibit. The Aquarium's historical timeline records Splash Zone opening in April 2000 and The Secret Lives of Seahorses opening in April 2009. The precise earlier exhibit history of big-bellied seahorses awaits Aquarium confirmation.</p></details></article><article><details id=\"Guide-talking-points\"><summary>Guide talking points</summary><p>Why do males have a pouch? To brood developing young. Do male pipefish also brood eggs? Yes, male pipefish brood eggs too. Why the curled tail? To grip vegetation and other structures.</p></details></article><article><details id=\"References\"><summary>References</summary><p>Source: October 8–14, 2026 Naturalist update. Species information: <a href=\"https://animaldiversity.org/accounts/Hippocampus_abdominalis/\" target=\"_blank\" rel=\"noopener noreferrer\">Animal Diversity Web (Hippocampus abdominalis species account)</a> and <a href=\"https://fishesofaustralia.net.au/home/species/3332\" target=\"_blank\" rel=\"noopener noreferrer\">Fishes of Australia</a>. Confirm image rights and Aquarium-specific exhibit history before publication.</p><figure><img loading=\"lazy\" src=\"../IMG_4214.jpeg\" alt=\"Comparative diagrams of convexiclivate and concaviclivate foveae, cropped Figure 1a\"><figcaption>Comparative fovea reference diagram, cropped from Figure 1a. Potier et al. (2020), Scientific Reports 10:6133. © The Author(s) 2020. CC BY 4.0. General diagram, not a seahorse-specific retinal image. <a href=\"https://doi.org/10.1038/s41598-020-63039-y\" target=\"_blank\" rel=\"noopener noreferrer\">Source</a> · <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY 4.0 license</a></figcaption></figure></details></article></main><footer>MBA Species Guide • Draft</footer><script type=\"module\" src=\"../../core/app-contract.js\"></script></body></html>",
+  "html_delta": {
+    "before": "<figure><img loading=\"lazy\" src=\"../IMG_4212.jpeg\" alt=\"Source-provided seahorse educational illustration 4212\"></figure>",
+    "after": "<details id=\"Seahorse-anatomy-key\"><summary>Seahorse Anatomy — A Guide’s Field Key</summary><p>General anatomy key. Photo notes distinguish visible features from facts that this still photograph cannot demonstrate.</p><figure><img loading=\"lazy\" src=\"../seahorse-takenaga.jpeg\" alt=\"Owner close-up seahorse photograph; tail tip not fully shown\"><figcaption>Photo: Glenn A. Takenaga.</figcaption></figure><div style=\"overflow-x:auto\"><table><caption>Seahorse anatomy and what this photo shows</caption><thead><tr><th scope=\"col\">Feature</th><th scope=\"col\">What to know</th><th scope=\"col\">Photo limitation</th></tr></thead><tbody><tr><th scope=\"row\">Eyes</th><td>The eyes can move independently.</td><td>Eye position is visible; independent movement cannot be demonstrated by a still photograph.</td></tr><tr><th scope=\"row\">Elongated snout</th><td>The long snout ends in a small mouth used for suction feeding.</td><td>The snout is visible.</td></tr><tr><th scope=\"row\">Trunk rings</th><td>Bony plates form rings around the body beneath the skin.</td><td>The ringed body covering is visible.</td></tr><tr><th scope=\"row\">Chromatophores</th><td>Specialized pigment cells help the skin change color for camouflage.</td><td>Color change and individual pigment cells are not demonstrated in this photograph.</td></tr><tr><th scope=\"row\">Pectoral fins</th><td>The paired pectoral fins help with steering and control.</td><td>Do not use a pointer to a fin that is obscured or cannot be identified confidently.</td></tr><tr><th scope=\"row\">Dorsal fin</th><td>The dorsal fin helps propel the seahorse through the water.</td><td>The dorsal fin is visible along the back.</td></tr><tr><th scope=\"row\">Male brood pouch</th><td>Male seahorses brood developing young in a pouch.</td><td>This general fact does not identify the photographed animal’s sex or reproductive state.</td></tr><tr><th scope=\"row\">Prehensile tail</th><td>A grasping tail helps a seahorse hold onto vegetation and other supports.</td><td>Part of the tail is visible; its tip is not fully shown.</td></tr></tbody></table></div><p>Fact sources: <a href=\"https://animaldiversity.org/accounts/Hippocampus_abdominalis/\" target=\"_blank\" rel=\"noopener noreferrer\">adw</a>, <a href=\"https://oceanservice.noaa.gov/facts/seahorse.html\" target=\"_blank\" rel=\"noopener noreferrer\">noaa</a>, <a href=\"https://seaweek.org.nz/large-bellied-seahorse/\" target=\"_blank\" rel=\"noopener noreferrer\">seaweek</a>. Original field key; no Seaweek artwork reproduced.</p></details>"
+  },
+  "html_after_sha256": "00c271180891abb5a6d4a56a68051df1779b6e546f79f88330e5a1488d87d658",
+  "rows": [
+    {
+      "feature": "Eyes",
+      "text": "The eyes can move independently.",
+      "photo_note": "Eye position is visible; independent movement cannot be demonstrated by a still photograph.",
+      "sources": [
+        "adw"
+      ]
+    },
+    {
+      "feature": "Elongated snout",
+      "text": "The long snout ends in a small mouth used for suction feeding.",
+      "photo_note": "The snout is visible.",
+      "sources": [
+        "adw"
+      ]
+    },
+    {
+      "feature": "Trunk rings",
+      "text": "Bony plates form rings around the body beneath the skin.",
+      "photo_note": "The ringed body covering is visible.",
+      "sources": [
+        "adw"
+      ]
+    },
+    {
+      "feature": "Chromatophores",
+      "text": "Specialized pigment cells help the skin change color for camouflage.",
+      "photo_note": "Color change and individual pigment cells are not demonstrated in this photograph.",
+      "sources": [
+        "noaa"
+      ]
+    },
+    {
+      "feature": "Pectoral fins",
+      "text": "The paired pectoral fins help with steering and control.",
+      "photo_note": "Do not use a pointer to a fin that is obscured or cannot be identified confidently.",
+      "sources": [
+        "adw",
+        "seaweek"
+      ]
+    },
+    {
+      "feature": "Dorsal fin",
+      "text": "The dorsal fin helps propel the seahorse through the water.",
+      "photo_note": "The dorsal fin is visible along the back.",
+      "sources": [
+        "adw",
+        "seaweek"
+      ]
+    },
+    {
+      "feature": "Male brood pouch",
+      "text": "Male seahorses brood developing young in a pouch.",
+      "photo_note": "This general fact does not identify the photographed animal’s sex or reproductive state.",
+      "sources": [
+        "adw",
+        "noaa"
+      ]
+    },
+    {
+      "feature": "Prehensile tail",
+      "text": "A grasping tail helps a seahorse hold onto vegetation and other supports.",
+      "photo_note": "Part of the tail is visible; its tip is not fully shown.",
+      "sources": [
+        "adw"
+      ]
+    }
+  ],
+  "intro": "General anatomy key. Photo notes distinguish visible features from facts that this still photograph cannot demonstrate.",
+  "release_authorized": false
+}

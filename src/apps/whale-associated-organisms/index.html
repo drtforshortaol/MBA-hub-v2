@@ -46,7 +46,17 @@ footer{text-align:center;padding:1rem 1rem 2rem}footer a{color:#075975;font-weig
  const container=document.getElementById("detailedSpecies");
  if(typeof PARASITES==="undefined"){container.textContent="Detailed entries unavailable; reconnect and run Prepare Offline.";return;}
  const escapeHTML=value=>String(value??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
- container.innerHTML=PARASITES.map(item=>'<details class="entry"><summary><span class="entry-title">'+escapeHTML(item.name)+' <span class="scientific">'+escapeHTML(item.sci)+'</span></span><span class="entry-hint">'+escapeHTML(item.tag||"Details")+'</span></summary><div class="entry-content">'+(item.paragraphs||[]).map(p=>'<p>'+escapeHTML(p)+'</p>').join('')+'<div class="meta"><strong>'+escapeHTML(item.hostsTitle||"Hosts")+'</strong>: '+(item.hosts||[]).map(escapeHTML).join(", ")+'<p><strong>Impact:</strong> '+escapeHTML(item.harm||"")+'</p>'+(item.facts||[]).map(pair=>'<p><strong>'+escapeHTML(pair[0])+':</strong> '+escapeHTML(pair[1])+'</p>').join('')+'</div></div></details>').join('');
+ const make=(tag,className,text)=>{const node=document.createElement(tag);if(className)node.className=className;if(text!==undefined)node.textContent=String(text??"");return node;};
+ const entries=PARASITES.map(item=>{
+  const details=make("details","entry"),summary=make("summary"),title=make("span","entry-title",item.name+" "),scientific=make("span","scientific",item.sci);
+  title.appendChild(scientific);summary.append(title,make("span","entry-hint",item.tag||"Details"));details.appendChild(summary);
+  const body=make("div","entry-content");(item.paragraphs||[]).forEach(p=>body.appendChild(make("p","",p)));
+  const meta=make("div","meta"),hosts=make("strong","",item.hostsTitle||"Hosts");meta.append(hosts,document.createTextNode(": "+(item.hosts||[]).join(", ")));
+  const impact=make("p"),impactLabel=make("strong","","Impact:");impact.append(impactLabel,document.createTextNode(" "+(item.harm||"")));meta.appendChild(impact);
+  (item.facts||[]).forEach(pair=>{const p=make("p"),label=make("strong","",pair[0]+":");p.append(label,document.createTextNode(" "+pair[1]));meta.appendChild(p)});
+  body.appendChild(meta);details.appendChild(body);return details;
+ });
+ container.replaceChildren(...entries);
 })();
 if(false)Promise.resolve({update:async()=>{},installing:null,waiting:null,active:null}).catch(()=>{});
 </script><script type="module" src="../../core/app-contract.js"></script></body></html>

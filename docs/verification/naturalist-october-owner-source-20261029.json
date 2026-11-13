@@ -1,0 +1,319 @@
+{
+  "schema_version": 1,
+  "source_kind": "Owner-pasted Naturalist email text",
+  "received_on": "2026-10-29",
+  "scope": "Source transcription reconciliation only; not scientific certification, image permission or release approval",
+  "retention": "Selected exact excerpts, full Bay Watch rows and supplied filenames; this record is not a complete copy of the email or original attachments",
+  "observation_period_literal": "Bay Watch: DATE 10/8-10/14",
+  "year_context": 2026,
+  "year_context_basis": "Existing October 2026 project and corresponding archived issue; pasted date line contains no year",
+  "source_email_date": null,
+  "source_author_identity": null,
+  "stable_note_id": "2026-10-15-seahorse",
+  "bay_watch_source_rows": [
+    {
+      "source_text": "Humpback whales",
+      "normalized_species": [
+        "Humpback whales"
+      ]
+    },
+    {
+      "source_text": "Orcas (CA51As w/ CA50B, Aurora’s pod & CA39As, Hopper’s pod)",
+      "normalized_species": [
+        "Orcas (CA51As with CA50B; Aurora's pod; CA39As, Hopper's pod)"
+      ]
+    },
+    {
+      "source_text": "Risso’s dolphins",
+      "normalized_species": [
+        "Risso's dolphins"
+      ]
+    },
+    {
+      "source_text": "Long-beaked & short-beaked common dolphins (still having pods of over 1,000 periodically stampeding through)",
+      "normalized_species": [
+        "Long-beaked common dolphins",
+        "Short-beaked common dolphins"
+      ]
+    },
+    {
+      "source_text": "Bottlenose dolphins",
+      "normalized_species": [
+        "Bottlenose dolphins"
+      ]
+    },
+    {
+      "source_text": "Southern sea otters",
+      "normalized_species": [
+        "Southern sea otters"
+      ]
+    },
+    {
+      "source_text": "California sea lions",
+      "normalized_species": [
+        "California sea lions"
+      ]
+    },
+    {
+      "source_text": "Harbor seals",
+      "normalized_species": [
+        "Harbor seals"
+      ]
+    },
+    {
+      "source_text": "Pink-footed shearwaters",
+      "normalized_species": [
+        "Pink-footed shearwaters"
+      ]
+    },
+    {
+      "source_text": "Black-vented shearwaters",
+      "normalized_species": [
+        "Black-vented shearwaters"
+      ]
+    },
+    {
+      "source_text": "Sooty shearwaters",
+      "normalized_species": [
+        "Sooty shearwaters"
+      ]
+    },
+    {
+      "source_text": "Buller’s shearwaters",
+      "normalized_species": [
+        "Buller's shearwaters"
+      ]
+    },
+    {
+      "source_text": "Northern fulmars",
+      "normalized_species": [
+        "Northern fulmars"
+      ]
+    },
+    {
+      "source_text": "Black-footed albatrosses",
+      "normalized_species": [
+        "Black-footed albatrosses"
+      ]
+    },
+    {
+      "source_text": "Black storm-petrels",
+      "normalized_species": [
+        "Black storm-petrels"
+      ]
+    },
+    {
+      "source_text": "Ashy storm-petrels",
+      "normalized_species": [
+        "Ashy storm-petrels"
+      ]
+    },
+    {
+      "source_text": "Fork-tailed storm-petrels",
+      "normalized_species": [
+        "Fork-tailed storm-petrels"
+      ]
+    },
+    {
+      "source_text": "California brown pelicans",
+      "normalized_species": [
+        "California brown pelicans"
+      ]
+    },
+    {
+      "source_text": "Common murres",
+      "normalized_species": [
+        "Common murres"
+      ]
+    },
+    {
+      "source_text": "Rhinoceros auklets",
+      "normalized_species": [
+        "Rhinoceros auklets"
+      ]
+    },
+    {
+      "source_text": "Cassin’s auklets",
+      "normalized_species": [
+        "Cassin's auklets"
+      ]
+    },
+    {
+      "source_text": "Ancient murrelets",
+      "normalized_species": [
+        "Ancient murrelets"
+      ]
+    },
+    {
+      "source_text": "Craveri’s murrelets",
+      "normalized_species": [
+        "Craveri's murrelets"
+      ]
+    },
+    {
+      "source_text": "Brandt's cormorants",
+      "normalized_species": [
+        "Brandt's cormorants"
+      ]
+    },
+    {
+      "source_text": "Pelagic cormorants",
+      "normalized_species": [
+        "Pelagic cormorants"
+      ]
+    },
+    {
+      "source_text": "Western gulls",
+      "normalized_species": [
+        "Western gulls"
+      ]
+    },
+    {
+      "source_text": "Heermann's gulls",
+      "normalized_species": [
+        "Heermann's gulls"
+      ]
+    },
+    {
+      "source_text": "California gulls",
+      "normalized_species": [
+        "California gulls"
+      ]
+    },
+    {
+      "source_text": "Sabine’s gulls",
+      "normalized_species": [
+        "Sabine's gulls"
+      ]
+    },
+    {
+      "source_text": "Common terns",
+      "normalized_species": [
+        "Common terns"
+      ]
+    },
+    {
+      "source_text": "Elegant terns",
+      "normalized_species": [
+        "Elegant terns"
+      ]
+    },
+    {
+      "source_text": "Parasitic jaegers",
+      "normalized_species": [
+        "Parasitic jaegers"
+      ]
+    },
+    {
+      "source_text": "Pomarine jaegers",
+      "normalized_species": [
+        "Pomarine jaegers"
+      ]
+    },
+    {
+      "source_text": "Red-necked phalaropes",
+      "normalized_species": [
+        "Red-necked phalaropes"
+      ]
+    },
+    {
+      "source_text": "Red-breasted mergansers",
+      "normalized_species": [
+        "Red-breasted mergansers"
+      ]
+    },
+    {
+      "source_text": "Moon jellies",
+      "normalized_species": [
+        "Moon jellies"
+      ]
+    },
+    {
+      "source_text": "Common ocean sunfish",
+      "normalized_species": [
+        "Common ocean sunfish"
+      ]
+    },
+    {
+      "source_text": "Hoodwinker sunfish!",
+      "normalized_species": [
+        "Hoodwinker sunfish"
+      ]
+    }
+  ],
+  "source_media": [
+    {
+      "filename": "5.JPG",
+      "subject": "Ancient murrelets",
+      "candidate_app_asset": "apps/IMG_4207.jpeg",
+      "identity_evidence": "Subject/caption correspondence only; no new attachment bytes supplied"
+    },
+    {
+      "filename": "15.JPG",
+      "subject": "Rhinoceros auklets",
+      "candidate_app_asset": "apps/IMG_4208.jpeg",
+      "identity_evidence": "Subject/caption correspondence only; no new attachment bytes supplied"
+    },
+    {
+      "filename": "22.JPG",
+      "subject": "A lost fork-tailed storm-petrel near Wharf 2",
+      "candidate_app_asset": "apps/IMG_4209.jpeg",
+      "identity_evidence": "Subject/caption correspondence only; no new attachment bytes supplied"
+    },
+    {
+      "filename": "MZD_5048.JPG",
+      "subject": "Historical gray-whale photograph from Big Sur on Highway 1",
+      "temporal_context": "Source says two years ago in March; not an October 8–14 sighting",
+      "candidate_app_asset": null,
+      "identity_evidence": "No exact filename or explicit mapping found in repository, history or pinned inventories"
+    },
+    {
+      "filename": "image.png",
+      "subject": "Moon jelly ephyra gastrovascular illustration",
+      "candidate_app_asset": "apps/IMG_4210.jpeg",
+      "identity_evidence": "Subject/context correspondence only; no new attachment bytes supplied"
+    }
+  ],
+  "checked_excerpts": {
+    "activity": "There are still humpback whales around, but it does look like our peak has passed.",
+    "hydrophone": "I’ve been catching either a blue or a fin whale blasting pretty loudly on the hydrophone lately, drowning out a lot of the humpback songs and dolphin squeaks.",
+    "ephyra": "The larval ephyra aren’t any different than their adult counterparts, they also have canals that move digested nutrients to their lappets.",
+    "exhibit_history": "The original SZ exhibit opened in 2000 and was renovated in 2008, which included the addition of the Enchanted Kelp Forest.",
+    "source_seahorse_gestation": "On average, it takes about 24-30 days for big-bellied seahorses to hatch."
+  },
+  "source_references": [
+    "https://fishbase.se/summary/46324",
+    "https://www.iucnredlist.org/species/10057/54903879",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2714888/",
+    "https://www.tandfonline.com/doi/full/10.1080/00288330.2011.632014",
+    "https://fishesofaustralia.net.au/home/species/3332#moreinfo",
+    "https://australian.museum/learn/animals/fishes/bigbelly-seahorse-hippocampus-abdominalis/",
+    "https://animaldiversity.org/accounts/Hippocampus_abdominalis/",
+    "https://www.torontozoo.com/animals/Pot-bellied%20seahorse",
+    "https://aquarium.org/animals/pot-belly-seahorse/",
+    "https://dwazoo.com/animal/pot-bellied-seahorse/",
+    "https://projectseahorse.org/saving-seahorses/about-seahorses/",
+    "https://conbio.onlinelibrary.wiley.com/doi/epdf/10.1111/cobi.13325",
+    "https://onlinelibrary.wiley.com/doi/10.1111/jfb.15699",
+    "https://link.springer.com/article/10.1186/s40851-017-0080-9",
+    "https://onlinelibrary.wiley.com/doi/10.1111/j.1365-294X.2007.03243.x",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10253279/"
+  ],
+  "source_reference_status": "Source-supplied URLs retained for traceability, not newly fetched or certified by this reconciliation",
+  "conflicts": [
+    {
+      "subject": "Secret Lives of Seahorses opening",
+      "source_claim": "2008",
+      "previously_verified_aquarium_timeline": "April 2009",
+      "disposition": "Record disagreement; do not insert 2008 as a verified fact or silently change the approved species guide"
+    },
+    {
+      "subject": "Seahorse gestation",
+      "source_claim": "24–30 days",
+      "approved_guide": "28–34 days attributed to published species accounts",
+      "disposition": "Different attributed accounts; current Naturalist highlight has no numeric gestation claim. Do not silently overwrite approved guide text."
+    }
+  ],
+  "approval_granted": false,
+  "media_bytes_received": false
+}

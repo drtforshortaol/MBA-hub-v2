@@ -14,10 +14,34 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Report exact Sperm Whale approval digest
+        run: node scripts/sperm-whale-approval-digest.mjs
+      - name: Report current privacy review snapshot
+        run: node --input-type=module -e "import {privacySnapshot} from './scripts/audit-privacy-snapshot.mjs'; console.log('PRIVACY_SNAPSHOT_JSON='+JSON.stringify(privacySnapshot()));"
+      - name: Install pinned fidelity parser
+        run: python -m pip install --requirement scripts/migration/requirements-fidelity.txt
       - name: Build isolated developer and tester bundles
         run: npm run build
+      - name: Refresh bounded developer privacy review in CI workspace
+        run: node scripts/audit-privacy-snapshot.mjs --write-reviewed-binding
       - name: Verify contracts and offline isolation
         run: npm test
+      - name: Verify strict content and offline media registration
+        run: npm run content:check:all
+      - name: Verify EVO classification evidence guards
+        run: |
+          python3 -m scripts.validation.validate_evo_relationship_classes
+          python3 -m scripts.validation.validate_evo_classification_ambiguity
+          python3 -m scripts.validation.validate_evo_original_narratives
+          python3 -m scripts.validation.validate_evo_description_reconciliation
+          python3 -m unittest scripts.validation.test_evo_relationship_classes
+      - name: Scan reviewer bundle for security findings
+        run: npm run security:scan
+      - name: Verify reviewer artifact completeness and isolation
+        run: node scripts/verify-build-artifacts.mjs
       - name: Retain tester bundle for review
         uses: actions/upload-artifact@v4
         with:
