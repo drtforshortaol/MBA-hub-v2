@@ -22,7 +22,7 @@ jobs:
       - name: Checkout canonical Guide source branch
         uses: actions/checkout@v4
         with:
-          ref: 3a0d856a50385bbd86f3bfb3742bbc3a8e7d6843
+          ref: 40e1826166f0ea61f406e1193390272029428734
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
@@ -101,6 +101,7 @@ jobs:
                       assert b'class="title-image"' in get(guide['entry_point'])
                       for asset in guide['offline_assets']:
                           assert get(asset)
+                  assert b'hatch sexually undifferentiated' in get('apps/ocellaris-clownfish/data.js')
                   notes=get('apps/naturalist-field-notes/data.js')
                   assert b'2026-11-11-ocean-in-motion' in notes
                   kelp=get(app['entry_point'])
