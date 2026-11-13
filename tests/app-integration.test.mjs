@@ -60,5 +60,5 @@ test('complete collection includes 25 inherited directory apps and 11 supporting
  const registered=new Set(registry.apps.map(a=>a.app_id));
  for(const app of inventory.apps)assert(registered.has(app.id),'missing inherited app '+app.id);
  const additional=registry.apps.filter(a=>!inventory.apps.some(old=>old.id===a.app_id));
- assert.equal(additional.length,9,'supporting app count changed; reconcile inventory before release');
+ assert.equal(additional.length,11,'supporting app count changed; reconcile inventory before release');
 });
