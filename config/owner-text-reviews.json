@@ -12,7 +12,7 @@
       "authorization_quote": "Approved",
       "candidate_commit": "74b91bb5af8f0215d4863bcdf9a2c39e76aa3c58",
       "candidate_packet_sha256": "f4324b0ca675b24d4a45b71a48fd3cbefd33a786c9357539357c6c148e1ecf41",
-      "content_sha256": "750be0f04c9e132d9545147b9395c5822783faf60115b191ed982da2e6b773fb",
+      "content_sha256": "f541fa23860dff4dd5ad9f0b9cd15da09ae50ce8443ef3b45874cdeec43128f3",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-29",
@@ -68,7 +68,14 @@
           "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
           "previous_content_sha256": "e080f7a2ad91d280ab5e812c48fcef2e048a5c57f4c8ace4dc8ce7041bf2ea36"
         }
-      ]
+      ],
+      "november_release_approval": {
+        "recorded_on": "2026-11-13",
+        "authorization_quote": "Publish it",
+        "review_reference": "PR #23",
+        "previous_content_sha256": "750be0f04c9e132d9545147b9395c5822783faf60115b191ed982da2e6b773fb",
+        "content_sha256": "f541fa23860dff4dd5ad9f0b9cd15da09ae50ce8443ef3b45874cdeec43128f3"
+      }
     },
     {
       "app_id": "big-bellied-seahorse",
