@@ -43,3 +43,9 @@ test('shared navigation and offline contract files are included in build source'
  for(const file of ['src/core/app-contract.js','src/core/navigation.js','src/core/offline.js'])
   assert.ok(existsSync(new URL(file,root)),file);
 });
+
+test('empty searches provide a readable reset hint',()=>{
+ assert.match(page,/id="no-results" role="status" hidden/);
+ assert.match(page,/No matching kelp entries/);
+ assert.match(page,/querySelector\('#no-results'\)\.hidden=n!==0/);
+});
