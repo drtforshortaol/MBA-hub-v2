@@ -9,7 +9,11 @@ test('field guide contains all 21 species cards', () => {
 });
 
 test('field guide includes 21 embedded individual illustrations before release', () => {
-  assert.equal((html.match(/<img\b/g) || []).length, 21, 'The accepted illustrated candidate has not been integrated');
+  assert.equal((html.match(/<div class="specimen-frame"><img\b/g) || []).length, 21, 'The accepted illustrated candidate has not been integrated');
+});
+
+test('field guide preserves descriptions for all species', () => {
+  assert.equal((html.match(/class="restored-description"/g) || []).length, 21);
 });
 
 test('field guide retains exactly two bulk action controls', () => {
