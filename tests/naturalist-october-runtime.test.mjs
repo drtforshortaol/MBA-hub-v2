@@ -7,12 +7,12 @@ const html=fs.readFileSync(new URL('../src/apps/naturalist-field-notes/index.htm
 
 test('current October script participates in startup, Home, article, search and Back',()=>{
  const r=reviewNaturalistOctober();
- const recorded=JSON.parse(fs.readFileSync(new URL('../docs/verification/naturalist-october-runtime-20261029.json',import.meta.url),'utf8'));
+ const recorded=JSON.parse(fs.readFileSync(new URL('../docs/verification/naturalist-november-runtime-20261113.json',import.meta.url),'utf8'));
  assert.deepEqual(r,recorded,'current full-runtime report must match the reviewed byte-bound checkpoint');
- assert.equal(r.current_notes,25);assert.equal(r.current_QA,41);
+ assert.equal(r.current_notes,26);assert.equal(r.current_QA,42);
  assert.equal(r.authored_october_fields,true);assert.equal(r.direct_query_startup,true);
  assert.equal(r.bound_issue_and_back,true);assert.equal(r.search_cases,3);
- assert.equal(r.october_photos,5);assert.equal(r.october_source_buttons,7);
+ assert.equal(r.october_photos,5);assert.equal(r.october_source_buttons,6);
  assert.equal(r.approval_granted,false);assert.equal(r.whole_app_inheritance,false);
  assert.deepEqual(r.current_classic_script_order,['data.js','october-2026-note.js','app.js']);
  assert.equal(Object.keys(r.current_inventory).length,5);
