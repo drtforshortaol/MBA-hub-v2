@@ -4331,6 +4331,10 @@
       "uses": [
         {
           "app_id": "naturalist-briefing-20261111"
+        },
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg"
         }
       ],
       "permission_evidence": "On 2026-11-13 Glenn confirmed MJ authorized use in the public MBA Hub, including offline copies."
@@ -4346,6 +4350,10 @@
       "uses": [
         {
           "app_id": "naturalist-briefing-20261111"
+        },
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "shared/media/juvenile-white-seabass-illustration.jpg"
         }
       ]
     },
