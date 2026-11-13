@@ -71,8 +71,11 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist/tester
+          name: github-pages-${{ github.run_attempt }}
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
       - name: Verify published Guide channel
         env:
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
