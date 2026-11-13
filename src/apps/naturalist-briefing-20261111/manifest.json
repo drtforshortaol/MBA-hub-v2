@@ -4,7 +4,7 @@
   "title": "Naturalist Briefing · Nov 5–11, 2026",
   "category": "aquarium-updates",
   "type": "field-notes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "entry_point": "apps/naturalist-briefing-20261111/index.html",
   "status": "development",
   "owner": "naturalist-briefing-20261111",
@@ -19,9 +19,24 @@
     "apps/naturalist-briefing-20261111/index.html",
     "apps/naturalist-briefing-20261111/briefing.js",
     "apps/naturalist-briefing-20261111/data.js",
-    "apps/naturalist-briefing-20261111/styles.css"
+    "apps/naturalist-briefing-20261111/styles.css",
+    "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg",
+    "shared/media/briefing-20261111-juvenile-white-seabass.jpg",
+    "shared/media/briefing-20261111-clownfish-sex-change.jpg",
+    "shared/media/briefing-20261111-clownfish-life-cycle.jpg",
+    "shared/media/briefing-20261111-sialic-acid-diagram.jpg",
+    "shared/media/briefing-20261111-sialic-acid-chart.jpg",
+    "shared/media/briefing-20261111-anemonefish-microbiome.jpg"
   ],
-  "media": [],
+  "media": [
+    "briefing-20261111-flamboyant-cuttlefish",
+    "briefing-20261111-juvenile-white-seabass",
+    "briefing-20261111-clownfish-sex-change",
+    "briefing-20261111-clownfish-life-cycle",
+    "briefing-20261111-sialic-acid-diagram",
+    "briefing-20261111-sialic-acid-chart",
+    "briefing-20261111-anemonefish-microbiome"
+  ],
   "knowledge": [],
   "cross_links": [
     {

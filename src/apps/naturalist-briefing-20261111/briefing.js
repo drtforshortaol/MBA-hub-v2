@@ -1,4 +1,4 @@
-import {sections} from './data.js';
+import {sections, mediaBySection} from './data.js';
 
 const briefing = document.getElementById('briefing');
 
@@ -20,6 +20,21 @@ for (const section of sections) {
     append(content, 'h2', group.title);
     const list = append(content, 'ul', '');
     for (const item of group.items) append(list, 'li', item);
+  }
+  for (const asset of mediaBySection[section.id] ?? []) {
+    const figure = append(content, 'figure', '');
+    const link = append(figure, 'a', '');
+    link.href = new URL('../../' + asset.path, import.meta.url);
+    link.target = '_blank';
+    link.rel = 'noopener';
+    const image = append(link, 'img', '');
+    image.src = link.href;
+    image.alt = asset.alt;
+    image.loading = 'lazy';
+    append(figure, 'figcaption', asset.alt + ' ' + asset.credit);
+    if (asset.id === 'briefing-20261111-clownfish-sex-change') {
+      append(figure, 'p', 'In this illustration, “born male” is shorthand. Juveniles are sexually immature, and the breeding male can become female.');
+    }
   }
   if (section.links?.length) {
     append(content, 'h2', 'Further reading');
