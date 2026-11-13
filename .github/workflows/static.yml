@@ -22,7 +22,7 @@ jobs:
       - name: Checkout canonical Guide source branch
         uses: actions/checkout@v4
         with:
-          ref: 7b54e5e60c991dcd300238f6ed4507e9ef99fd11
+          ref: 84f8469edf054727b3f4408d71bf29dfad206674
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
