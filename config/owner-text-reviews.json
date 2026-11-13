@@ -256,8 +256,8 @@
       "reviewed_on": "2026-11-13",
       "review_reference": "PR #23",
       "authorization_reference": "Owner requested inclusion of supplied November clownfish text in the published guide",
-      "authorization_quote": "Can the above information be included in the clownfish app",
-      "content_sha256": "608a2fff9125bbcd73858455b40bfba05ec61894fedf6cccd02f7ffb558106f3"
+      "authorization_quote": "Update app",
+      "content_sha256": "1ed54642bbc5d99bfbabd198ec9d66b3ca6a2a4dc5d86494820743e76f5af71a"
     }
   ]
 }
