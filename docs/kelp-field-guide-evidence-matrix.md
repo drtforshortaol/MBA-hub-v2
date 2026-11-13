@@ -7,10 +7,10 @@
 | 1 | Giant kelp | *Macrocystis pyrifera* | taxonomy split | WoRMS genus list (accessed 2026-11-12): *M. tenuifolia* synonym of *M. pyrifera*; 2026 peer-reviewed study discusses alternate northern *M. tenuifolia* treatment (links below) | Conflicting treatments; review needed |
 | 2 | Bull kelp | *Nereocystis luetkeana* | life cycle and range | WoRMS accepted name; CDFW annual canopy and California range; NOAA 2025 study confirms biphasic life history (sources below) | Evidence found; reviewer pending |
 | 3 | Elk kelp | *Pelagophycus porra* | range | Not recorded | Provisional |
-| 4 | Southern sea palm | *Eisenia arborea* | range | Not recorded | Provisional |
-| 5 | Stalked kelp | *Pterygophora californica* | perennial claim | Not recorded | Provisional |
+| 4 | Southern sea palm | *Eisenia arborea* | range | Stanford SeaNet records Y-shaped branching, toothed blades, and disjunct Monterey occurrence (source below) | Evidence found; reviewer pending |
+| 5 | Stalked kelp | *Pterygophora californica* | perennial claim | Stanford SeaNet describes tall single stipe and lateral blades; Greater Farallones Association confirms long-lived perennial (sources below) | Evidence found; reviewer pending |
 | 6 | Sea palm | *Postelsia palmaeformis* | habitat | CDFW kelp reference and NOAA Olympic Coast sanctuary: mid/high wave-exposed rocky intertidal, annual (sources below) | Evidence found; reviewer pending |
-| 7 | Feather boa kelp | *Egregia menziesii* | diagnostic traits | Not recorded | Provisional |
+| 7 | Feather boa kelp | *Egregia menziesii* | diagnostic traits | UCSC MARINe confirms straplike rachis, small lateral blades and floats, low rocky intertidal habitat (source below) | Evidence found; reviewer pending |
 | 8 | Broad-rib kelp | *Pleurophycus gardneri* | perennial claim | Not recorded | Provisional |
 | 9 | Strap kelp | *Lessoniopsis littoralis* | habitat | Not recorded | Provisional |
 | 10 | Stiff-stiped kelp | *Laminaria setchellii* | stipe character | CDFW confirms perennial, rocky low-intertidal/subtidal habitat, range Alaska to Baja California; stipe diagnostic still unverified | Partial evidence; reviewer pending |
@@ -64,3 +64,9 @@ These are source-backed research notes, **not Monterey Bay Aquarium scientific a
 - **Stiff-stiped kelp (*Laminaria setchellii*):** CDFW calls this species kombu and documents perennial growth on rocky low-intertidal to subtidal substrates from Alaska to Baja California. This independently supports habitat/longevity, **not** the app's detailed stipe identification trait. Source: https://wildlife.ca.gov/Conservation/Marine/Kelp/Commonly-Harvested-Marine-Algae .
 - **Sea cabbage (*Hedophyllum sessile* / *Saccharina sessilis*):** CDFW documents perennial growth, rocky mid-intertidal to shallow subtidal habitat, and range south to Point Sur. It uses *Saccharina sessilis*; the naming-authority difference remains disclosed. Same source.
 - **Common-name warning:** CDFW explicitly notes that native *Alaria marginata* and introduced *Undaria pinnatifida* may both be called 'wakame.' Scientific names should remain prominent in the app. Same source.
+
+## Additional research — 2026-11-12 (UCSC / Stanford / Greater Farallones)
+- **Feather boa kelp:** UCSC MARINe identifies *Egregia menziesii* by straplike rachis with many lateral blades and marginal floats, and documents rocky low intertidal habitat and variation among northern/southern populations. https://marine.ucsc.edu/target/egregia/ .
+- **Stalked kelp:** Stanford SeaNet describes *Pterygophora californica* as having a single tall stipe with lateral blades, distinct from *Eisenia arborea*'s Y-shaped split. Greater Farallones Association describes *Pterygophora* as long-lived perennial. https://seanet.stanford.edu/Ochrophyta and https://farallones.org/sanctuary-wildlife/algae/ .
+- **Southern sea palm:** Stanford SeaNet describes *Eisenia arborea* with a Y-shaped stipe bifurcation and toothed blades, including a disjunct Monterey-area distribution. https://seanet.stanford.edu/Ochrophyta .
+- **Common-name collision:** Greater Farallones Association calls *Pterygophora californica* 'winged kelp' while the app calls *Alaria marginata* winged kelp. Keep scientific names prominently displayed; verify guide-specific common-name conventions before final publication.
