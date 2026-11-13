@@ -13,13 +13,13 @@
 | 7 | Feather boa kelp | *Egregia menziesii* | diagnostic traits | Not recorded | Provisional |
 | 8 | Broad-rib kelp | *Pleurophycus gardneri* | perennial claim | Not recorded | Provisional |
 | 9 | Strap kelp | *Lessoniopsis littoralis* | habitat | Not recorded | Provisional |
-| 10 | Stiff-stiped kelp | *Laminaria setchellii* | stipe character | Not recorded | Provisional |
+| 10 | Stiff-stiped kelp | *Laminaria setchellii* | stipe character | CDFW confirms perennial, rocky low-intertidal/subtidal habitat, range Alaska to Baja California; stipe diagnostic still unverified | Partial evidence; reviewer pending |
 | 11 | Dense-clumped kelp | *Laminaria sinclairii* | habitat | Not recorded | Provisional |
 | 12 | Ephemeral kelp | *Laminaria ephemera* | accepted name and annual claim | Not recorded | Provisional |
 | 13 | Oarweed | *Laminaria farlowii* | range | Not recorded | Provisional |
 | 14 | Sugar kelp | *Saccharina latissima* | California occurrence | Not recorded | Provisional |
 | 15 | Seersucker kelp | *Costaria costata* | annual claim | Not recorded | Provisional |
-| 16 | Sea cabbage | *Hedophyllum sessile* | accepted name | WoRMS accepts *Hedophyllum sessile*; *Saccharina sessilis* is a synonym; NCBI uses the reverse combination (sources below) | WoRMS supports draft name; reviewer pending |
+| 16 | Sea cabbage | *Hedophyllum sessile* | accepted name | CDFW describes sea cabbage as perennial, rocky mid-intertidal to shallow subtidal, south to Point Sur; WoRMS/NCBI differ on accepted combination | Habitat evidence found; naming reviewer pending |
 | 17 | Net-of-cords kelp | *Dictyoneurum californicum* | name and diagnostic distinction | Not recorded | Provisional |
 | 18 | Net-of-cords kelp | *Dictyoneurum reticulatum* | name and diagnostic distinction | Not recorded | Provisional |
 | 19 | Fringed sieve kelp | *Neoagarum fimbriatum* | accepted name and annual claim | Not recorded | Provisional |
@@ -59,3 +59,8 @@ These are source-backed research notes, **not Monterey Bay Aquarium scientific a
 - **Habitat and range:** California Department of Fish and Wildlife describes an annual canopy-forming alga attached to rocky substrate, most dominant north of Davenport, with a North American range south to Point Conception: https://wildlife.ca.gov/Conservation/Marine/Kelp/Commonly-Harvested-Marine-Algae .
 - **Life cycle:** Korabik et al. (2025), *Algae* 40(2):117–125, found no evidence for a proposed bypass of the microscopic gametophyte stage; established biphasic life history remains supported: https://repository.library.noaa.gov/view/noaa/71811 .
 - **Disposition:** app's name, single terminal float, canopy grouping, and typical annual habit are consistent with these references; Aquarium scientific reviewer approval remains pending.
+
+## Additional CDFW verification — 2026-11-12
+- **Stiff-stiped kelp (*Laminaria setchellii*):** CDFW calls this species kombu and documents perennial growth on rocky low-intertidal to subtidal substrates from Alaska to Baja California. This independently supports habitat/longevity, **not** the app's detailed stipe identification trait. Source: https://wildlife.ca.gov/Conservation/Marine/Kelp/Commonly-Harvested-Marine-Algae .
+- **Sea cabbage (*Hedophyllum sessile* / *Saccharina sessilis*):** CDFW documents perennial growth, rocky mid-intertidal to shallow subtidal habitat, and range south to Point Sur. It uses *Saccharina sessilis*; the naming-authority difference remains disclosed. Same source.
+- **Common-name warning:** CDFW explicitly notes that native *Alaria marginata* and introduced *Undaria pinnatifida* may both be called 'wakame.' Scientific names should remain prominent in the app. Same source.
