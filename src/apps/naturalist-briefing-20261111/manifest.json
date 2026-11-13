@@ -20,22 +20,10 @@
     "apps/naturalist-briefing-20261111/briefing.js",
     "apps/naturalist-briefing-20261111/data.js",
     "apps/naturalist-briefing-20261111/styles.css",
-    "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg",
-    "shared/media/briefing-20261111-juvenile-white-seabass.jpg",
-    "shared/media/briefing-20261111-clownfish-sex-change.jpg",
-    "shared/media/briefing-20261111-clownfish-life-cycle.jpg",
-    "shared/media/briefing-20261111-sialic-acid-diagram.jpg",
-    "shared/media/briefing-20261111-sialic-acid-chart.jpg",
-    "shared/media/briefing-20261111-anemonefish-microbiome.jpg"
+    "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg"
   ],
   "media": [
-    "briefing-20261111-flamboyant-cuttlefish",
-    "briefing-20261111-juvenile-white-seabass",
-    "briefing-20261111-clownfish-sex-change",
-    "briefing-20261111-clownfish-life-cycle",
-    "briefing-20261111-sialic-acid-diagram",
-    "briefing-20261111-sialic-acid-chart",
-    "briefing-20261111-anemonefish-microbiome"
+    "briefing-20261111-flamboyant-cuttlefish"
   ],
   "knowledge": [],
   "cross_links": [
