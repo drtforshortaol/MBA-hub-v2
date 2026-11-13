@@ -12,7 +12,7 @@
       "authorization_quote": "Approved",
       "candidate_commit": "74b91bb5af8f0215d4863bcdf9a2c39e76aa3c58",
       "candidate_packet_sha256": "f4324b0ca675b24d4a45b71a48fd3cbefd33a786c9357539357c6c148e1ecf41",
-      "content_sha256": "f541fa23860dff4dd5ad9f0b9cd15da09ae50ce8443ef3b45874cdeec43128f3",
+      "content_sha256": "a6e6ba96e7850f88eea5b6c354e6970731e00023cfcf377e41e27a4f68fc96ee",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-29",
@@ -67,6 +67,13 @@
           "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
           "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
           "previous_content_sha256": "e080f7a2ad91d280ab5e812c48fcef2e048a5c57f4c8ace4dc8ce7041bf2ea36"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "f541fa23860dff4dd5ad9f0b9cd15da09ae50ce8443ef3b45874cdeec43128f3",
+          "content_sha256": "a6e6ba96e7850f88eea5b6c354e6970731e00023cfcf377e41e27a4f68fc96ee"
         }
       ],
       "november_release_approval": {
@@ -87,7 +94,7 @@
       "authorization_reference": "Owner conversation: approval request for exact ten-section Seahorse draft at 74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9, followed by explanation of clearing the content blocker",
       "authorization_quote": "Proceed",
       "candidate_commit": "74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9",
-      "content_sha256": "3955e6f1789e6c3ce6b5a24a30c00856b762d5240818884e325870b275b95140",
+      "content_sha256": "1117dec68aac3dc357247aa197438c4a9991ecca803cd7a5558531b973d98b74",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -135,6 +142,13 @@
           "scope": "Append-only November catalog; existing app resources unchanged",
           "previous_content_sha256": "99bf7edd716756c043dddce93160401b39097b9e39d0a7bdbbe696dc79b1fa8a",
           "content_sha256": "3955e6f1789e6c3ce6b5a24a30c00856b762d5240818884e325870b275b95140"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "3955e6f1789e6c3ce6b5a24a30c00856b762d5240818884e325870b275b95140",
+          "content_sha256": "1117dec68aac3dc357247aa197438c4a9991ecca803cd7a5558531b973d98b74"
         }
       ],
       "additional_owner_decisions": [
@@ -165,7 +179,7 @@
       "section_ids": [
         "Countershading"
       ],
-      "content_sha256": "88f9d1946dd9245cc1eec01e4a2b247a593c03ebde9edecac3607fe7f78f2f98",
+      "content_sha256": "1b3d0b120c5e418aabc6e9856b6b30b2ecfcbf8035b87b8bc0022128a8195d8d",
       "release_authorized": false,
       "resource_rebindings": [
         {
@@ -174,6 +188,13 @@
           "scope": "Append-only November catalog; existing app resources unchanged",
           "previous_content_sha256": "2dd2611e240968503c391359b60686bebfe20e445941b15cddb5ebd98913a7e5",
           "content_sha256": "88f9d1946dd9245cc1eec01e4a2b247a593c03ebde9edecac3607fe7f78f2f98"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "88f9d1946dd9245cc1eec01e4a2b247a593c03ebde9edecac3607fe7f78f2f98",
+          "content_sha256": "1b3d0b120c5e418aabc6e9856b6b30b2ecfcbf8035b87b8bc0022128a8195d8d"
         }
       ]
     },
@@ -198,7 +219,7 @@
       ],
       "release_authorized": false,
       "authorization_reference": "docs/verification/sperm-whale-text-approval-20261101.json",
-      "content_sha256": "82fa484c8a7fe3b8ff2ef77dc5465fec9fa2e09408272bcb1e65f731eab3fc71",
+      "content_sha256": "b0b07641e37512a72110770f385779ccbbb4c5c30afaf1f26b8db720661c7c01",
       "resource_rebindings": [
         {
           "recorded_on": "2026-11-13",
@@ -206,6 +227,13 @@
           "scope": "Append-only November catalog; existing app resources unchanged",
           "previous_content_sha256": "6f8339b5a3ddc1b479e041683347258ff11ecb302ca4d6995bb0bc93d8a5ed61",
           "content_sha256": "82fa484c8a7fe3b8ff2ef77dc5465fec9fa2e09408272bcb1e65f731eab3fc71"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "82fa484c8a7fe3b8ff2ef77dc5465fec9fa2e09408272bcb1e65f731eab3fc71",
+          "content_sha256": "b0b07641e37512a72110770f385779ccbbb4c5c30afaf1f26b8db720661c7c01"
         }
       ]
     }

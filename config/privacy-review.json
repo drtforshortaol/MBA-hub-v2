@@ -7,11 +7,11 @@
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates. Exact seven-section Sperm Whale owner-approved wording is now content-digest-bound; source HTML and bundled media remain unchanged by the approval metadata.",
-  "snapshot_sha256": "0ea3f7ff3df22040dec5409c4905134846b0db34b874b66321f4c51ef0e2cbf0",
+  "snapshot_sha256": "f844e3ee3d369ef1b656e57755d403ba73bda21869fc59f8da2c8879b631e7b6",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "0ea3f7ff3df22040dec5409c4905134846b0db34b874b66321f4c51ef0e2cbf0",
+    "snapshot_sha256": "f844e3ee3d369ef1b656e57755d403ba73bda21869fc59f8da2c8879b631e7b6",
     "resources": [
       {
         "path": "config/categories.json",
@@ -20,8 +20,8 @@
       },
       {
         "path": "config/inherited-v1-fidelity.json",
-        "bytes": 113215,
-        "sha256": "06f5f0ffd0e9f9f5962a93f2e39211b03b907d0bf286abecfdd070206eecd39f"
+        "bytes": 123713,
+        "sha256": "569fb6d970ccefd7d6b046f0d8ce374cca12262b6e3afba92b27b742843764d5"
       },
       {
         "path": "config/migration-blob-ledger.json",
@@ -35,8 +35,8 @@
       },
       {
         "path": "config/owner-text-reviews.json",
-        "bytes": 11294,
-        "sha256": "2ce1311a543d4df5fbc7be78912067686498b543ff71ea3a49a3d632cfe60b06"
+        "bytes": 12742,
+        "sha256": "35b5b6e8a95ca8833f72d549408de97568668ca32d32028e371da319102ba0e5"
       },
       {
         "path": "config/platform.json",
@@ -2420,8 +2420,8 @@
       },
       {
         "path": "src/shared/media/catalog.json",
-        "bytes": 192371,
-        "sha256": "3f6e6582900080936549b2de36a11d4729680142f5a6708c8415d760dff81a14"
+        "bytes": 193642,
+        "sha256": "954dc73074713d879840e914ddd75e3d514ee38eb76b14fcaa6a1a613dc79cf0"
       },
       {
         "path": "src/shared/media/five-senses-header.svg",
