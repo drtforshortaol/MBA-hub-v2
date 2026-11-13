@@ -15,6 +15,17 @@ The repository-wide `npm test` workflow includes this targeted test. CI success 
 - The user-provided 2026 Andrea Dingeldein guide and 2024 Monterey Bay Aquarium giant kelp sheet are research inputs, not a blanket scientific approval.
 - No copyrighted source illustrations are redistributed. Any future photography needs provenance and permission.
 
+## Scientific sign-off record (pending)
+Do not infer approval from a successful build. For each entry, record the accepted scientific name, source title/date, page or URL, range evidence, identification evidence, and reviewer/date. Mark unresolved claims as **provisional** rather than verified.
+
+**Priority review queue**
+1. **Giant kelp:** confirm whether `Macrocystis pyrifera` and `M. tenuifolia` are treated as distinct California taxa in the intended reference system; update species labels and search aliases only after evidence review.
+2. **Wakame:** verify introduced/invasive status and geographical scope; avoid implying it is present at every California site.
+3. **Net-of-cords kelps:** independently verify `Dictyoneurum californicum` and `D. reticulatum` names and distinguishable traits.
+4. **Other 17 entries:** verify current accepted names, California occurrence, distinctive characters, and any annual/perennial claims.
+
+**Approval record:** scientific reviewer: _not assigned_; review date: _pending_; evidence matrix: _pending_; disposition: **not approved for formal publication**.
+
 ## Device acceptance checklist (owner)
 1. Open development Hub on iPhone; navigate Exhibits → Kelp Field Guide.
 2. Search for giant kelp, bull kelp, and scientific name `Undaria pinnatifida`.
