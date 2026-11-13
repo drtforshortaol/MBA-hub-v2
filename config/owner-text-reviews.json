@@ -87,7 +87,7 @@
       "authorization_reference": "Owner conversation: approval request for exact ten-section Seahorse draft at 74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9, followed by explanation of clearing the content blocker",
       "authorization_quote": "Proceed",
       "candidate_commit": "74d718a185d34c3bd8b0e7d5a2251b2cd3f9ead9",
-      "content_sha256": "99bf7edd716756c043dddce93160401b39097b9e39d0a7bdbbe696dc79b1fa8a",
+      "content_sha256": "3955e6f1789e6c3ce6b5a24a30c00856b762d5240818884e325870b275b95140",
       "resource_rebindings": [
         {
           "recorded_on": "2026-10-30",
@@ -128,6 +128,13 @@
           "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
           "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
           "previous_content_sha256": "0a06520da51055f2203a1cc97d14914039c04eba9a9951ebe5090d90a90f20c5"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "Append-only November catalog; existing app resources unchanged",
+          "previous_content_sha256": "99bf7edd716756c043dddce93160401b39097b9e39d0a7bdbbe696dc79b1fa8a",
+          "content_sha256": "3955e6f1789e6c3ce6b5a24a30c00856b762d5240818884e325870b275b95140"
         }
       ],
       "additional_owner_decisions": [
@@ -158,8 +165,17 @@
       "section_ids": [
         "Countershading"
       ],
-      "content_sha256": "2dd2611e240968503c391359b60686bebfe20e445941b15cddb5ebd98913a7e5",
-      "release_authorized": false
+      "content_sha256": "88f9d1946dd9245cc1eec01e4a2b247a593c03ebde9edecac3607fe7f78f2f98",
+      "release_authorized": false,
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "Append-only November catalog; existing app resources unchanged",
+          "previous_content_sha256": "2dd2611e240968503c391359b60686bebfe20e445941b15cddb5ebd98913a7e5",
+          "content_sha256": "88f9d1946dd9245cc1eec01e4a2b247a593c03ebde9edecac3607fe7f78f2f98"
+        }
+      ]
     },
     {
       "app_id": "sperm-whale",
@@ -182,7 +198,16 @@
       ],
       "release_authorized": false,
       "authorization_reference": "docs/verification/sperm-whale-text-approval-20261101.json",
-      "content_sha256": "6f8339b5a3ddc1b479e041683347258ff11ecb302ca4d6995bb0bc93d8a5ed61"
+      "content_sha256": "82fa484c8a7fe3b8ff2ef77dc5465fec9fa2e09408272bcb1e65f731eab3fc71",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "Append-only November catalog; existing app resources unchanged",
+          "previous_content_sha256": "6f8339b5a3ddc1b479e041683347258ff11ecb302ca4d6995bb0bc93d8a5ed61",
+          "content_sha256": "82fa484c8a7fe3b8ff2ef77dc5465fec9fa2e09408272bcb1e65f731eab3fc71"
+        }
+      ]
     }
   ]
 }
