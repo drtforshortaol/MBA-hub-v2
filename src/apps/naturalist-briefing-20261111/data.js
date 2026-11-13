@@ -115,7 +115,7 @@ export const mediaBySection = {
       "id": "briefing-20261111-flamboyant-cuttlefish",
       "path": "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg",
       "alt": "Two flamboyant cuttlefish over blue-lit gravel.",
-      "credit": "Photo supplied with the naturalist update."
+      "credit": "Photo by MJ."
     }
   ],
   "white-seabass": [
