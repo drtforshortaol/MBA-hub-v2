@@ -44,7 +44,7 @@ test('shared navigation and offline contract files are included in build source'
   assert.ok(existsSync(new URL(file,root)),file);
 });
 
-test('empty searches provide a readable reset hint',()=>{
+test('filter distinguishes introduced origin from habitat groups',()=>{\n assert.match(page,/All groups/);\n assert.match(page,/“Introduced” describes origin rather than habitat/);\n});\ntest('empty searches provide a readable reset hint',()=>{
  assert.match(page,/id="no-results" role="status" hidden/);
  assert.match(page,/No matching kelp entries/);
  assert.match(page,/querySelector\('#no-results'\)\.hidden=n!==0/);
