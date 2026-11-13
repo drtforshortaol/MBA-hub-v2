@@ -31,14 +31,14 @@ export function reviewNaturalistOctober({root=packageRoot,overrides={}}={}){
   return {...dom,location,call,notes:JSON.parse(call('JSON.stringify(FIELD_NOTES)')),content:()=>dom.document.getElementById('content')};
  };
  const initial=fixture('');
- assert.equal(initial.notes.length,25,'original archive plus one October note');
- assert.equal(new Set(initial.notes.map(n=>n.id)).size,25,'unique issue identities');
+ assert.equal(initial.notes.length,26,'original archive plus October and November notes');
+ assert.equal(new Set(initial.notes.map(n=>n.id)).size,26,'unique issue identities');
  const added=initial.notes.find(n=>n.id===id);assert(added,'current October note');
- assert.equal(initial.document.querySelectorAll('.qna-direct').length,41,'38 original plus 3 October Q&A');
+ assert.equal(initial.document.querySelectorAll('.qna-direct').length,42,'38 original, 3 October and 1 November Q&A');
  const latest=initial.document.querySelector('.latest');
- assert.equal(latest.querySelector('.issue-open').dataset.id,id,'latest issue routes to October addition');
+ assert.equal(latest.querySelector('.issue-open').dataset.id,'2026-11-11-ocean-in-motion','latest issue routes to November addition');
  const issueButtons=initial.document.querySelectorAll('.issue-open').filter(e=>e.dataset.id===id);
- assert.equal(issueButtons.length,7,'October latest/archive/Q&A/Bay Watch/species source buttons');
+ assert.equal(issueButtons.length,6,'October archive/Q&A/Bay Watch/species source buttons');
  const openingButton=issueButtons[0];openingButton.click();
  assert.equal(new URL(initial.location.href).searchParams.get('note'),id,'bound October button updates route');
  verifyArticle(initial,added);
@@ -76,7 +76,7 @@ export function reviewNaturalistOctober({root=packageRoot,overrides={}}={}){
  const section=manifest.sections.find(s=>s.id==='note-'+id);assert(section,'stable October destination');
  assert.deepEqual(section.query,{note:id},'October destination query');
  return {schema_version:1,app_id:manifest.app_id,current_inventory:Object.fromEntries(Object.entries(files).map(([n,s])=>[n,sha(s)])),
-  current_classic_script_order:scripts,current_notes:25,current_QA:41,october_source_buttons:issueButtons.length,authored_october_fields:true,
+  current_classic_script_order:scripts,current_notes:26,current_QA:42,october_source_buttons:issueButtons.length,authored_october_fields:true,
   direct_query_startup:true,bound_issue_and_back:true,search_cases:searches,october_photos:5,
   approval_granted:false,owner_text_approval_verified:true,whole_app_inheritance:false,limitations:['Independent lxml trees and bounded synchronous events, not native browser layout or service-worker acceptance.','Current added data is exercised as authored, without scientific/editorial or image-rights approval.','Shared app-contract module and separate October HTML page are outside this runtime check.']};
 }
