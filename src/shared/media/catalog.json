@@ -4326,18 +4326,23 @@
       "owner": "naturalist-briefing-20261111",
       "alt": "Two flamboyant cuttlefish over blue-lit gravel.",
       "credit": "Photo by MJ.",
-      "permission": "rights-holder-approved",
+      "permission": "approved",
       "offline": true,
       "uses": [
         {
-          "app_id": "naturalist-briefing-20261111"
+          "app_id": "naturalist-briefing-20261111",
+          "source_path": "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg"
         },
         {
           "app_id": "naturalist-field-notes",
           "source_path": "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg"
         }
       ],
-      "permission_evidence": "On 2026-11-13 Glenn confirmed MJ authorized use in the public MBA Hub, including offline copies."
+      "permission_evidence": "On 2026-11-13 Glenn confirmed MJ authorized use in the public MBA Hub, including offline copies.",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "23d3246f0df9127ab618884f5f993f0cf899fe33",
+      "source_path": "src/shared/media/briefing-20261111-flamboyant-cuttlefish.jpg",
+      "sha256": "025e95ce90f0db47ec830658acbb7c669685eeaf75e1a6148c0ec1c99ac34de6"
     },
     {
       "asset_id": "juvenile-white-seabass-illustration",
@@ -4345,17 +4350,23 @@
       "owner": "naturalist-briefing-20261111",
       "alt": "Illustration of a silver juvenile white seabass with dark vertical bars",
       "credit": "AI-generated illustration",
-      "permission": "original-generated",
+      "permission": "approved",
       "offline": true,
       "uses": [
         {
-          "app_id": "naturalist-briefing-20261111"
+          "app_id": "naturalist-briefing-20261111",
+          "source_path": "shared/media/juvenile-white-seabass-illustration.jpg"
         },
         {
           "app_id": "naturalist-field-notes",
           "source_path": "shared/media/juvenile-white-seabass-illustration.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Original AI-generated illustration created for this app in this project.",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "23d3246f0df9127ab618884f5f993f0cf899fe33",
+      "source_path": "src/shared/media/juvenile-white-seabass-illustration.jpg",
+      "sha256": "37c8267dc8c186ab3d6e88d6eda526fcae204f3a4b6b01ea719b5a52ef3a768a"
     },
     {
       "asset_id": "ocellaris-clownfish-title",
@@ -4363,13 +4374,19 @@
       "owner": "ocellaris-clownfish",
       "alt": "Illustration of an orange ocellaris clownfish nestled among pink anemone tentacles",
       "credit": "AI-generated illustration",
-      "permission": "original-generated",
+      "permission": "approved",
       "offline": true,
       "uses": [
         {
-          "app_id": "ocellaris-clownfish"
+          "app_id": "ocellaris-clownfish",
+          "source_path": "shared/media/ocellaris-clownfish-title.jpg"
         }
-      ]
+      ],
+      "permission_evidence": "Original AI-generated illustration created for this app in this project.",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "23d3246f0df9127ab618884f5f993f0cf899fe33",
+      "source_path": "src/shared/media/ocellaris-clownfish-title.jpg",
+      "sha256": "e5826c3d0aa229598ffabbab05352c07341fc7f28a3fbac997fabd143c408035"
     }
   ]
 }
