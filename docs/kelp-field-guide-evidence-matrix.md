@@ -5,7 +5,7 @@
 | # | Common name | Draft scientific name | Priority verification | Evidence/source + page | Review status |
 |---|---|---|---|---|---|
 | 1 | Giant kelp | *Macrocystis pyrifera* | taxonomy split | WoRMS genus list (accessed 2026-11-12): *M. tenuifolia* synonym of *M. pyrifera*; 2026 peer-reviewed study discusses alternate northern *M. tenuifolia* treatment (links below) | Conflicting treatments; review needed |
-| 2 | Bull kelp | *Nereocystis luetkeana* | life cycle and range | Not recorded | Provisional |
+| 2 | Bull kelp | *Nereocystis luetkeana* | life cycle and range | WoRMS accepted name; CDFW annual canopy and California range; NOAA 2025 study confirms biphasic life history (sources below) | Evidence found; reviewer pending |
 | 3 | Elk kelp | *Pelagophycus porra* | range | Not recorded | Provisional |
 | 4 | Southern sea palm | *Eisenia arborea* | range | Not recorded | Provisional |
 | 5 | Stalked kelp | *Pterygophora californica* | perennial claim | Not recorded | Provisional |
@@ -53,3 +53,9 @@ These are source-backed research notes, **not Monterey Bay Aquarium scientific a
 - **NCBI Taxonomy** uses *Saccharina sessilis* as its current name and records *Hedophyllum sessile* as a homotypic synonym: https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=416828 . This is a database-treatment difference, not evidence of two separate sea-cabbage species.
 - **NOAA technical report** uses *Hedophyllum sessile*, formerly *Saccharina sessilis*, and describes a stipe-less sea cabbage extending south to Monterey County: https://swfsc-publications.fisheries.noaa.gov/publications/CR/2025/2025Purcell3.pdf .
 - **Disposition:** retain *Hedophyllum sessile* in the app (WoRMS/NOAA convention); add *Saccharina sessilis* as a search synonym. Final scientific sign-off still required.
+
+## Bull kelp verification — 2026-11-12
+- **Accepted name:** WoRMS lists *Nereocystis luetkeana* as accepted: https://www.marinespecies.org/aphia.php?id=240752&p=taxdetails .
+- **Habitat and range:** California Department of Fish and Wildlife describes an annual canopy-forming alga attached to rocky substrate, most dominant north of Davenport, with a North American range south to Point Conception: https://wildlife.ca.gov/Conservation/Marine/Kelp/Commonly-Harvested-Marine-Algae .
+- **Life cycle:** Korabik et al. (2025), *Algae* 40(2):117–125, found no evidence for a proposed bypass of the microscopic gametophyte stage; established biphasic life history remains supported: https://repository.library.noaa.gov/view/noaa/71811 .
+- **Disposition:** app's name, single terminal float, canopy grouping, and typical annual habit are consistent with these references; Aquarium scientific reviewer approval remains pending.
