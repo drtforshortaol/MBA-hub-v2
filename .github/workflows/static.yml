@@ -22,7 +22,7 @@ jobs:
       - name: Checkout canonical Guide source branch
         uses: actions/checkout@v4
         with:
-          ref: 23d3246f0df9127ab618884f5f993f0cf899fe33
+          ref: 56de60dadfb56be20eabc7ce7f0f0de6433a78ad
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
@@ -101,6 +101,8 @@ jobs:
                       assert b'class="title-image"' in get(guide['entry_point'])
                       for asset in guide['offline_assets']:
                           assert get(asset)
+                  notes=get('apps/naturalist-field-notes/data.js')
+                  assert b'2026-11-11-ocean-in-motion' in notes
                   kelp=get(app['entry_point'])
                   assert kelp.count(b'class="restored-description"')==21
                   assert kelp.count(b'<div class="specimen-frame"><img')==21
