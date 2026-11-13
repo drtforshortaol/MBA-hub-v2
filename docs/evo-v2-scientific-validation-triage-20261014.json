@@ -1,0 +1,264 @@
+{
+  "status": "scientific-cross-reference-triage-only",
+  "source": "docs/evo-v2-scientific-cross-reference-draft1-20261014.md",
+  "events": [
+    {
+      "event": 1,
+      "title": "Universe begins",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 2,
+      "title": "First stars and galaxies",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 3,
+      "title": "Sun and Solar System form",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 4,
+      "title": "Earth forms",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 5,
+      "title": "Moon forms — giant impact",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 6,
+      "title": "Early crust and liquid water",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 7,
+      "title": "Origin of life",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 8,
+      "title": "FUCA-type stage (?)",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 9,
+      "title": "LUCA — Last Universal Common Ancestor",
+      "sourceKey": "luca",
+      "candidateId": "EV-0100",
+      "status": "candidate-unverified"
+    },
+    {
+      "event": 10,
+      "title": "The Great Split — Bacteria and Archaea",
+      "sourceKey": "great-split",
+      "candidateId": "TR-0100",
+      "status": "candidate-unverified"
+    },
+    {
+      "event": 11,
+      "title": "Cyanobacteria harness sunlight",
+      "sourceKey": "cyanobacteria",
+      "candidateId": "EV-0122",
+      "status": "candidate-unverified"
+    },
+    {
+      "event": 12,
+      "title": "Great Oxidation Event — oxygen changes the planet",
+      "sourceKey": "goe",
+      "candidateId": "EV-0125",
+      "status": "candidate-unverified"
+    },
+    {
+      "event": 13,
+      "title": "Aerobic Alphaproteobacteria — extract stored energy",
+      "sourceKey": "alphaproteobacteria",
+      "candidateId": "EV-0103",
+      "status": "candidate-unverified"
+    },
+    {
+      "event": 14,
+      "title": "Alphaproteobacteria continue to the present",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 15,
+      "title": "Mitochondrial endosymbiosis — the energy partnership",
+      "sourceKey": "endosymbiosis",
+      "candidateId": "TR-0104",
+      "status": "candidate-unverified"
+    },
+    {
+      "event": 16,
+      "title": "LECA — Last Eukaryotic Common Ancestor",
+      "sourceKey": "leca",
+      "candidateId": "EV-0110",
+      "status": "candidate-unverified"
+    },
+    {
+      "event": 17,
+      "title": "Animals and fungi are established lineages",
+      "sourceKey": "opisthokonta",
+      "candidateId": "EV-0112",
+      "status": "candidate-unverified"
+    },
+    {
+      "event": 18,
+      "title": "Marine animals become conspicuous",
+      "sourceKey": "animals",
+      "candidateId": "EV-0114",
+      "status": "candidate-unverified"
+    },
+    {
+      "event": 19,
+      "title": "Cambrian marine diversification",
+      "sourceKey": "animals",
+      "candidateId": "EV-0114",
+      "status": "candidate-unverified"
+    },
+    {
+      "event": 20,
+      "title": "Some arthropods colonize land",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 21,
+      "title": "Vertebrates begin the transition onto land",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 22,
+      "title": "Early primates",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 23,
+      "title": "Hominin lineage diverges from the chimpanzee/bonobo lineage",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 24,
+      "title": "Earliest Homo",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 25,
+      "title": "Homo sapiens",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 26,
+      "title": "Primary endosymbiosis",
+      "sourceKey": "primary-plastid-endo",
+      "candidateId": "TR-0120",
+      "status": "candidate-unverified"
+    },
+    {
+      "event": 27,
+      "title": "Red and green algal lineages",
+      "sourceKey": "red-summary",
+      "candidateId": "EV-0116",
+      "status": "candidate-unverified"
+    },
+    {
+      "event": 28,
+      "title": "Land plants",
+      "sourceKey": "land-summary",
+      "candidateId": "EV-0118",
+      "status": "candidate-unverified"
+    },
+    {
+      "event": 29,
+      "title": "Vascular plants",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 30,
+      "title": "Seed plants",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 31,
+      "title": "Gymnosperm lineages expand",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 32,
+      "title": "Flowering plants",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    },
+    {
+      "event": 33,
+      "title": "Secondary endosymbiosis involving a red alga",
+      "sourceKey": "red-derived-plastid",
+      "candidateId": "TR-0133",
+      "status": "candidate-unverified"
+    },
+    {
+      "event": 34,
+      "title": "Brown-algal lineage develops and diversifies",
+      "sourceKey": "brown-summary",
+      "candidateId": "EV-0121",
+      "status": "candidate-unverified"
+    },
+    {
+      "event": 35,
+      "title": "Kelp emerges",
+      "sourceKey": null,
+      "candidateId": null,
+      "status": "unmatched"
+    }
+  ],
+  "checks": {
+    "eventCount": 35,
+    "candidates": 15,
+    "unmatched": 20,
+    "missingCandidateKeys": []
+  },
+  "scientificGates": [
+    "Distinguish formation, origin, divergence, and later diversification events",
+    "Do not equate Cambrian diversification with origin of animals",
+    "Confirm chronology against source evidence and uncertainty annotations",
+    "Distinguish plastid primary and secondary endosymbiosis",
+    "Do not infer exact scientific identity from lexical similarity"
+  ]
+}

@@ -16,7 +16,12 @@
     }
   ],
   "offline_assets": [
-    "apps/pacific-white-sided-dolphin/index.html"
+    "apps/pacific-white-sided-dolphin/index.html",
+    "shared/media/asset-922d38f86c89f73d--IMG_3505.jpeg",
+    "shared/media/asset-a547e5af9334e5b1--IMG_3506.jpeg",
+    "shared/media/asset-07e9859dce7506c6--IMG_3507.jpeg",
+    "shared/media/asset-81892438cc2e6a55--IMG_3508.jpeg",
+    "shared/media/asset-dbfeba5da571feb6--IMG_3509.jpeg"
   ],
   "media": [
     "asset-922d38f86c89f73d",

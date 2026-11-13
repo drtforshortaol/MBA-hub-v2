@@ -330,6 +330,9 @@ main {
   cursor: pointer;
 }
 
+summary.card-header { list-style: none; }
+summary.card-header::-webkit-details-marker { display: none; }
+
 .card-header:hover {
   background: var(--surface);
 }
@@ -390,6 +393,7 @@ main {
   transition: transform 0.2s ease;
 }
 
+.card[open] > .card-header .chevron,
 .card.open .chevron {
   transform: rotate(180deg);
 }
@@ -710,6 +714,21 @@ footer {
   
 
   <div id="cardList"></div>
+
+  <details class="card" id="Countershading"><summary class="card-header"><span class="card-icon" aria-hidden="true">🐟</span><span class="card-title-wrap"><span class="card-title">Countershading</span><span class="card-subtitle">Dark above, light below</span><span class="card-tags"><span class="mini-tag">Adaptation</span><span class="mini-tag">Deception</span></span></span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary><div class="card-body-inner">
+    <p>Countershading is camouflage through body coloration. Many open-ocean animals, including tuna and sharks, have darker backs and paler undersides.</p>
+    <ul>
+      <li><strong>Viewed from above:</strong> the dark back blends with the darker water below.</li>
+      <li><strong>Viewed from below:</strong> the pale belly blends with brighter surface waters.</li>
+    </ul>
+    <p>This can make an animal harder for predators or prey to spot. It reduces contrast; it does not make the animal invisible.</p>
+    <h4>Try it with visitors</h4>
+    <p>Look for a fish with a dark back and a light belly. Ask: “If you were looking up at this fish, what background would you see behind it?” Then ask how the background changes when looking down.</p>
+    <h4>Compare with counter-illumination</h4>
+    <p>Countershading uses body coloration. Counter-illumination uses light-producing structures on an animal’s underside to match light from above. The Bioluminescence section explains that related camouflage strategy.</p>
+    <p>Sources: <a href="https://www.montereybayaquarium.org/animals-the-ocean/ecosystems/open-ocean" target="_blank" rel="noopener noreferrer">Monterey Bay Aquarium — Open ocean</a>; <a href="https://ocean.si.edu/ocean-life/fish/fish-using-counterillumination" target="_blank" rel="noopener noreferrer">Smithsonian Ocean — Fish Using Counterillumination</a>. External references require a connection; this explanation is available offline.</p>
+  </div></details>
+
 
   
 
@@ -1366,46 +1385,72 @@ function buildCard(item) {
   header.setAttribute("aria-expanded", "false");
   header.setAttribute("aria-controls", bodyId);
 
-  header.innerHTML = `
-    <span class="card-icon" aria-hidden="true">${item.icon}</span>
+  // Construct variable card metadata as text, never parsed HTML.
+  const icon = document.createElement("span");
+  icon.className = "card-icon";
+  icon.setAttribute("aria-hidden", "true");
+  icon.textContent = item.icon;
 
-    <span class="card-title-wrap">
-      <span class="card-title">${item.title}</span>
-      <span class="card-subtitle">${item.subtitle}</span>
-
-      <span class="card-tags">
-        ${item.tags
-          .map((tag) => `<span class="mini-tag">${tag}</span>`)
-          .join("")}
-      </span>
-    </span>
-
-    <svg
-      class="chevron"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2.5"
-      aria-hidden="true"
-    >
-      <path
-        d="M6 9l6 6 6-6"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-    </svg>
-  `;
+  const titleWrap = document.createElement("span");
+  titleWrap.className = "card-title-wrap";
+  for (const [className, value] of [["card-title", item.title], ["card-subtitle", item.subtitle]]) {
+    const span = document.createElement("span");
+    span.className = className;
+    span.textContent = String(value).replaceAll("&amp;", "&");
+    titleWrap.appendChild(span);
+  }
+  const tags = document.createElement("span");
+  tags.className = "card-tags";
+  for (const tag of item.tags) {
+    const span = document.createElement("span");
+    span.className = "mini-tag";
+    span.textContent = tag;
+    tags.appendChild(span);
+  }
+  titleWrap.appendChild(tags);
+  const chevron = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  chevron.setAttribute("class", "chevron");
+  chevron.setAttribute("viewBox", "0 0 24 24");
+  chevron.setAttribute("fill", "none");
+  chevron.setAttribute("stroke", "currentColor");
+  chevron.setAttribute("stroke-width", "2.5");
+  chevron.setAttribute("aria-hidden", "true");
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", "M6 9l6 6 6-6");
+  path.setAttribute("stroke-linecap", "round");
+  path.setAttribute("stroke-linejoin", "round");
+  chevron.appendChild(path);
+  header.append(icon, titleWrap, chevron);
 
   const body = document.createElement("div");
   body.className = "card-body";
   body.id = bodyId;
   body.setAttribute("aria-hidden", "true");
 
-  body.innerHTML = `
-    <div class="card-body-inner">
-      ${item.body}
-    </div>
-  `;
+  // Parse authored markup inertly, then copy only approved structural nodes.
+  const allowedTags = new Set(["P", "H4", "UL", "LI", "DIV", "SPAN", "STRONG", "EM", "BR"]);
+  const allowedClasses = new Set(["adapt-box", "fact-strip", "fact-pill"]);
+  function safeNode(source) {
+    if (source.nodeType === Node.TEXT_NODE) return document.createTextNode(source.textContent);
+    if (source.nodeType !== Node.ELEMENT_NODE) return document.createDocumentFragment();
+    if (!allowedTags.has(source.tagName)) {
+      const fragment = document.createDocumentFragment();
+      for (const child of source.childNodes) fragment.appendChild(safeNode(child));
+      return fragment;
+    }
+    const element = document.createElement(source.tagName.toLowerCase());
+    if (source.classList.length && (source.tagName === "DIV" || source.tagName === "SPAN")) {
+      const classes = [...source.classList].filter(name => (allowedClasses.has(name) || (name === "training-note" && source.tagName === "DIV")));
+      if (classes.length) element.className = classes.join(" ");
+    }
+    for (const child of source.childNodes) element.appendChild(safeNode(child));
+    return element;
+  }
+  const parsed = new DOMParser().parseFromString(item.body, "text/html");
+  const inner = document.createElement("div");
+  inner.className = "card-body-inner";
+  for (const child of parsed.body.childNodes) inner.appendChild(safeNode(child));
+  body.appendChild(inner);
 
   header.addEventListener("click", () => {
     setCardOpen(card, !card.classList.contains("open"));
@@ -1417,7 +1462,7 @@ function buildCard(item) {
   return card;
 }
 
-function renderCards(){cardListElement.innerHTML="";DATA.forEach(item=>cardListElement.appendChild(buildCard(item)));}
+function renderCards(){cardListElement.replaceChildren(...DATA.map(buildCard));}
 renderCards();
 </script>
 

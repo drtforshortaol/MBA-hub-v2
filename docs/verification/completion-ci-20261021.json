@@ -1,0 +1,97 @@
+{
+  "scope": "Exact fixed-build hosted CI evidence; not device or release approval",
+  "source_commit": "96a9303ef54f0d0fc6cccb8ef0da2fed9f8609de",
+  "source_tree": "1e5046878d64ab14dd018043147aaed26d359570",
+  "run": {
+    "id": 39717669206,
+    "event": "push",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/drtforshortaol/MBA-hub-v2/actions/runs/39717669206",
+    "attempt": 1
+  },
+  "jobs": [
+    {
+      "id": 119623571689,
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build and verify combined review",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify served developer and tester releases over HTTP",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify simulated offline navigation and corrupted-entry recovery",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Package review provenance and instructions",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Bind retained reports to generated releases and checkout",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "artifact": {
+    "id": 12399387211,
+    "name": "mba-v2-combined-iphone-review",
+    "size_in_bytes": 128029418,
+    "digest": "sha256:ec47c591c187752fcea183703e7005fe910e7c2756913b6cd935575085884dd4",
+    "expires_at": "2026-11-21T03:36:34Z"
+  },
+  "local_reverification": {
+    "zip_digest": "passed",
+    "source_marker": "passed",
+    "artifact_byte_integrity": "passed",
+    "http_offline_evidence_binding": "passed",
+    "developer_release": "d0a9e2c124319d67",
+    "tester_release": "396e7065d45407d5",
+    "runtime_release_unchanged_by_audit": true
+  }
+}

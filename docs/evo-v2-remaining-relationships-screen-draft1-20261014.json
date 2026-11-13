@@ -1,0 +1,302 @@
+{
+  "schemaVersion": "0.1-draft",
+  "status": "screened-unapproved",
+  "source": {
+    "legacyRepository": "drtforshortaol/master-evolution-map-test",
+    "legacyBlobSha": "b0b1738e8451421253f00ac4b0cdc9f290a5fc2a",
+    "reviewProtocol": "Original interface labels document presentation intent; they do not establish peer-reviewed scientific validity."
+  },
+  "count": 25,
+  "relationships": [
+    {
+      "transitionId": "TR-0101",
+      "sourceKey": "bacterial-diversification",
+      "currentClass": "summary-aggregation",
+      "originalVisibleLabel": "One branch within bacterial diversification",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Original diagram compresses multiple lineages; do not infer immediate or exhaustive daughter relationships.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0102",
+      "sourceKey": "archaeal-diversification",
+      "currentClass": "summary-aggregation",
+      "originalVisibleLabel": "One branch within archaeal diversification",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Original diagram compresses multiple lineages; do not infer immediate or exhaustive daughter relationships.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0106",
+      "sourceKey": "toward-leca",
+      "currentClass": "ancestry-context",
+      "originalVisibleLabel": "Toward LECA",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "LECA is a reconstructed common ancestor; the map's path does not establish a specific sampled ancestor.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0108",
+      "sourceKey": "opisthokont-select-transition",
+      "currentClass": "ui-view-selection",
+      "originalVisibleLabel": "One major eukaryotic branch",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Selected-view navigation only; visual fork is not biological divergence.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0109",
+      "sourceKey": "opisthokont-branch",
+      "currentClass": "evolutionary-branching",
+      "originalVisibleLabel": "Opisthokont branching",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Branch illustration may omit lineages and cannot certify exact phylogenetic topology.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0110",
+      "sourceKey": "archaeplastida-select-transition",
+      "currentClass": "ui-view-selection",
+      "originalVisibleLabel": "One major eukaryotic branch",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Selected-view navigation only; visual fork is not biological divergence.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0111",
+      "sourceKey": "archaeplastida-summary-branch",
+      "currentClass": "summary-aggregation",
+      "originalVisibleLabel": "Red and green branches",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Original diagram compresses multiple lineages; do not infer immediate or exhaustive daughter relationships.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0112",
+      "sourceKey": "green-to-land-summary",
+      "currentClass": "ui-view-selection",
+      "originalVisibleLabel": "Selected branch",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Selected-view navigation only; visual fork is not biological divergence.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0113",
+      "sourceKey": "sar-select-transition",
+      "currentClass": "ui-view-selection",
+      "originalVisibleLabel": "One major eukaryotic branch",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Selected-view navigation only; visual fork is not biological divergence.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0116",
+      "sourceKey": "cyano-branch",
+      "currentClass": "summary-aggregation",
+      "originalVisibleLabel": "One branch within bacterial diversification",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Original diagram compresses multiple lineages; do not infer immediate or exhaustive daughter relationships.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0117",
+      "sourceKey": "oxygenic-photosynthesis",
+      "currentClass": "evolutionary-innovation",
+      "originalVisibleLabel": "Oxygenic photosynthesis evolves",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Biological trait acquisition is a process, not a dated direct ancestor-descendant edge.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0118",
+      "sourceKey": "cyano-continuation",
+      "currentClass": "lineage-continuation",
+      "originalVisibleLabel": "Lineages continue",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Later cyanobacterial lineages should not be interpreted as one literal offspring of ancient oxygenic cyanobacteria.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0119",
+      "sourceKey": "planetary-effect",
+      "currentClass": "environmental-causation",
+      "originalVisibleLabel": "Planetary effect",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Planetary causal consequence must not be recast as phylogenetic descent.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0123",
+      "sourceKey": "red-lineage-transition",
+      "currentClass": "ancestry-context",
+      "originalVisibleLabel": "Red-algal lineage continues",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Pedagogical proximity and pathway order cannot certify direct ancestral identity.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0124",
+      "sourceKey": "red-seaweed-diversification",
+      "currentClass": "evolutionary-diversification",
+      "originalVisibleLabel": "Marine diversification",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Original explicitly says 'red kelp' is a common name, NOT a true kelp lineage.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0125",
+      "sourceKey": "green-diversification",
+      "currentClass": "evolutionary-branching",
+      "originalVisibleLabel": "Green-lineage diversification",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Branch illustration may omit lineages and cannot certify exact phylogenetic topology.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0126",
+      "sourceKey": "land-transition",
+      "currentClass": "evolutionary-innovation",
+      "originalVisibleLabel": "Toward land plants",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Land colonization followed complex trait and lineage evolution, not a single instant transition.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0127",
+      "sourceKey": "vascular-transition",
+      "currentClass": "evolutionary-innovation",
+      "originalVisibleLabel": "Toward vascular plants",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Vascular innovations arose through history and cannot alone define direct parentage.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0128",
+      "sourceKey": "seed-transition",
+      "currentClass": "evolutionary-innovation",
+      "originalVisibleLabel": "Toward seed plants",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Seeds emerge among vascular plant groups; avoid implying all vascular plants became seed plants.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0129",
+      "sourceKey": "flower-transition",
+      "currentClass": "evolutionary-innovation",
+      "originalVisibleLabel": "Toward flowering plants",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Flowers identify angiosperm evolution, not a transformation of all seed plants.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0130",
+      "sourceKey": "seagrass-transition",
+      "currentClass": "habitat-transition",
+      "originalVisibleLabel": "Return to the sea",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Return to the sea specifically reflects secondarily marine angiosperms, not origin of marine algae.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0131",
+      "sourceKey": "eelgrass-transition",
+      "currentClass": "ancestry-context",
+      "originalVisibleLabel": "One seagrass lineage",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Eelgrass is an illustrative seagrass lineage, not the only seagrass descendant.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0134",
+      "sourceKey": "brown-branch",
+      "currentClass": "evolutionary-branching",
+      "originalVisibleLabel": "Diversification within stramenopiles",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Diatoms and brown algae are distinct photosynthetic stramenopile branches; chart not exhaustive.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0135",
+      "sourceKey": "kelp-transition",
+      "currentClass": "evolutionary-diversification",
+      "originalVisibleLabel": "Kelp lineage diversification",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Kelps belong to brown algae; class title does not prove resolved direct node-to-node relationships.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0136",
+      "sourceKey": "giant-kelp-transition",
+      "currentClass": "ancestry-context",
+      "originalVisibleLabel": "One kelp lineage",
+      "originalSourceKeyPresent": true,
+      "interpretationCaveat": "Giant kelp is a particular kelp exemplar rather than origin of all kelp.",
+      "reviewStatus": "screened-unapproved",
+      "scientificApproval": false,
+      "canonicalEndpointApproval": false
+    }
+  ],
+  "excludedAlreadyReviewed": [
+    "TR-0100",
+    "TR-0103",
+    "TR-0104",
+    "TR-0105",
+    "TR-0107",
+    "TR-0114",
+    "TR-0115",
+    "TR-0120",
+    "TR-0121",
+    "TR-0122",
+    "TR-0132",
+    "TR-0133"
+  ],
+  "caveat": "No scientific interpretation has been approved or canonical endpoints assigned. External research validation remains required."
+}

@@ -81,9 +81,9 @@ function buildApp() {
   document.querySelector("#summary").textContent = DATA.summary;
   document.querySelector("#footerVersion").textContent = `${DATA.title} · v${DATA.version} · Last updated ${DATA.lastUpdated}`;
   const snap = DATA.snapshot;
-  document.querySelector("#snapshot-strip").innerHTML = [["Length", snap.lengthSize], ["Weight", snap.weight], ["Diet", snap.diet], ["Depth", snap.depth], ["Status", snap.conservationStatus]].map(([k, v]) => `<div class="stat"><div class="key">${escapeHTML(k)}</div><div class="val">${escapeHTML(v)}</div></div>`).join("");
+  document.querySelector("#snapshot-strip").replaceChildren(...new DOMParser().parseFromString( [["Length", snap.lengthSize], ["Weight", snap.weight], ["Diet", snap.diet], ["Depth", snap.depth], ["Status", snap.conservationStatus]].map(([k, v]) => `<div class="stat"><div class="key">${escapeHTML(k)}</div><div class="val">${escapeHTML(v)}</div></div>`).join(""), "text/html").body.childNodes);
   sectionRecords = buildSections();
-  document.querySelector("#accordion").innerHTML = sectionRecords.map(section => accordionItem(section, false)).join("");
+  document.querySelector("#accordion").replaceChildren(...new DOMParser().parseFromString(sectionRecords.map(section => accordionItem(section, false)).join(""), "text/html").body.childNodes);
   setupAccordion();
 }
 
@@ -149,7 +149,7 @@ function restoreCacheMessage() {
   localStorage.removeItem(('mba-v2:'+location.pathname.split('/apps/')[0]+':'+(CACHE_MESSAGE_KEY)));
   const notice = document.querySelector("#notice");
   notice.hidden = false;
-  notice.querySelector("div").innerHTML = `<strong>${escapeHTML(message)}</strong>`;
+  const strong = document.createElement("strong"); strong.textContent = message; notice.querySelector("div").replaceChildren(strong);
 }
 
 function restoreNotice() {

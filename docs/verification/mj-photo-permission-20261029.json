@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "decision_date": "2026-10-29",
+  "permission_status": "approved",
+  "scope": {
+    "audience": "Aquarium guide hub and its testers",
+    "uses": [
+      "guide-hub-display",
+      "guide-hub-offline-cache"
+    ],
+    "not_granted": [
+      "standalone-visitor-sharing",
+      "unrelated-public-redistribution"
+    ]
+  },
+  "photographer": "MJ",
+  "photographer_role": "Naturalist and Aquarium shift captain",
+  "reported_by": "Glenn, Hub owner",
+  "question_answered": "Has MJ authorized you to include these photos in your Aquarium guide hub?",
+  "owner_confirmation": "Yes. In fact MJ is one of my tester for the hub",
+  "basis": "Owner explicitly confirmed authorization from identified photographer in response to the exact reuse question. Tester participation is context, not the permission basis.",
+  "assets": [
+    {
+      "asset_id": "asset-1bd100105f88c83a",
+      "path": "apps/IMG_4207.jpeg",
+      "sha256": "1bd100105f88c83aadb9272fccacd1c023e417799d1b7dc79684e7f321bafb6e",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4207.jpeg"
+    },
+    {
+      "asset_id": "asset-95daa2493750e82f",
+      "path": "apps/IMG_4208.jpeg",
+      "sha256": "95daa2493750e82f0444679b1c567d66af4e5212ab9d864eca3f2ddb8e475f1d",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4208.jpeg"
+    },
+    {
+      "asset_id": "asset-47f9bbb193878eec",
+      "path": "apps/IMG_4209.jpeg",
+      "sha256": "47f9bbb193878eeced59326418949849427489f0167e33a7e063be9d091f643b",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4209.jpeg"
+    },
+    {
+      "asset_id": "asset-df392914e6cf5502",
+      "path": "shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg",
+      "sha256": "df392914e6cf55020db2cf2ae2eab1b55f23160708b1284f765232f300cbb707",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "cae20ad89424d941cfb8f2bf39595307b0bb74a8",
+      "source_path": "src/shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg"
+    }
+  ],
+  "not_covered": [
+    "Moon jelly ephyra illustration",
+    "Seahorse scientific diagrams and other third-party illustrations"
+  ],
+  "publication_authorized": false
+}

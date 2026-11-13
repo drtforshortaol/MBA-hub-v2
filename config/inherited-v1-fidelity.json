@@ -1,0 +1,2037 @@
+{
+  "schema_version": 1,
+  "scope": "Existing unchanged V1 content only; technical/device/release acceptance separate",
+  "apps": [
+    {
+      "app_id": "california-flying-fish",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#california-flying-fish",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
+      "content_sha256": "a1a6a450cac24722e159aae355c60afa73ea62d74a7e1f3126e8906aa608c617",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "3148e9c53677057f1b3a571c1c1ee017ceffaf75782be6f29d327ce62d98107e",
+          "content_sha256": "f78bbc523eb5ab9b7957e56394a15f886d7cd665e769cf0b2afecca80c5b1a9a"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "f78bbc523eb5ab9b7957e56394a15f886d7cd665e769cf0b2afecca80c5b1a9a",
+          "content_sha256": "0c3bb39914a3066666919d32eeb6a2e9207ff35bea397a2a363763dca8225751"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "0c3bb39914a3066666919d32eeb6a2e9207ff35bea397a2a363763dca8225751",
+          "content_sha256": "db675e87650ec88e40dd313e44d6c9b37a3d5e395441ac820b78789e31b3dd6f"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "db675e87650ec88e40dd313e44d6c9b37a3d5e395441ac820b78789e31b3dd6f",
+          "content_sha256": "c9c2a86a223b391860b3d75a756d2b660b38932e25409ba15675ca45f1c2f81e"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "c9c2a86a223b391860b3d75a756d2b660b38932e25409ba15675ca45f1c2f81e"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "0d25be4a63f9c668cf89947bec748a934ca21beb1fc86a5e3f4da7cb100a6c87"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "0259de2eb8217f78e64a4065a7a5ae5efc7b3c5ab5155a08648207c270c67cfb",
+          "content_sha256": "efedb9c75e7ba59b3418c9817c3d088ca57692047a84717aa958d35e704b7bfd"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "efedb9c75e7ba59b3418c9817c3d088ca57692047a84717aa958d35e704b7bfd",
+          "content_sha256": "a1a6a450cac24722e159aae355c60afa73ea62d74a7e1f3126e8906aa608c617"
+        }
+      ]
+    },
+    {
+      "app_id": "green-falsejingle",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#green-falsejingle",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
+      "content_sha256": "537d4e22d0b0637c4450dd2aacb61603df7235bedeafb856f8a5ac80ac4d6970",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "1f71381cf7e05f6a7006933a04818b6d38c748b7c495570f5a13e9167c411791",
+          "content_sha256": "4665125d357e674c1d1d9f72d7afcbfeb3745d86f6f87ece83ec40e37c500dc5"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "4665125d357e674c1d1d9f72d7afcbfeb3745d86f6f87ece83ec40e37c500dc5",
+          "content_sha256": "cf783c7e7941739fc108e609acd693e3777aae2f29bcd8c6347a4abd1b801050"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "cf783c7e7941739fc108e609acd693e3777aae2f29bcd8c6347a4abd1b801050",
+          "content_sha256": "bf7a8af43555fc90f27c7c185337f15dfde34113d30f024b997b794a6aad420a"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "bf7a8af43555fc90f27c7c185337f15dfde34113d30f024b997b794a6aad420a",
+          "content_sha256": "673800688dc17e19283d099779c8d3abe703293277c63e54aea9bb4ca4abe438"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "673800688dc17e19283d099779c8d3abe703293277c63e54aea9bb4ca4abe438"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "b5ce5c2281162fb4ea03c605ed936843cf15e75948e0866ce60781e6cb4f83a4"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "88804eef560d2c6d11a7f6f76d42622719db28c4eb925c3ac67416da733eac30",
+          "content_sha256": "648100e062ae0aa369620e49d32c90077aa32946048707a91725db364934ef6a"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "648100e062ae0aa369620e49d32c90077aa32946048707a91725db364934ef6a",
+          "content_sha256": "537d4e22d0b0637c4450dd2aacb61603df7235bedeafb856f8a5ac80ac4d6970"
+        }
+      ]
+    },
+    {
+      "app_id": "flamboyant-cuttlefish",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_STATIC_RECONCILIATION_20261022.md#flamboyant-cuttlefish",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Engineering comparison of complete source/current code, markup, section search text and pinned media; no new scientific approval",
+      "content_sha256": "e6225846476ea8bd043ad7ec5e97655ad63973eedbfaa85001c23d6903112ebd",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "f9f5bad65f2d0fef933952750363c777140ba4df3107ead560744f7f48195173",
+          "content_sha256": "fd6f413d8671cdca6bb4f2b8e1bd64086d71608395351d5ef031820ddc8601da"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "fd6f413d8671cdca6bb4f2b8e1bd64086d71608395351d5ef031820ddc8601da",
+          "content_sha256": "341814ed700e83e65cd20dbb2489d305beceef8d60083ec915b6c218118750d6"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "341814ed700e83e65cd20dbb2489d305beceef8d60083ec915b6c218118750d6",
+          "content_sha256": "ee3c2094efe4969ccdd3e2746951c2da112016db55dc9e6d7f1f3662044c7050"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "ee3c2094efe4969ccdd3e2746951c2da112016db55dc9e6d7f1f3662044c7050",
+          "content_sha256": "85323849b7fe366889704befb3f143cc740414e2b882d1a9deccd4dd649dfa33"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "85323849b7fe366889704befb3f143cc740414e2b882d1a9deccd4dd649dfa33"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "4f18809bfd381f0b4e9e380f35ef146d59f735fae9676e1f807be07388176b85"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "d8636dac2cc55b74a2a29a3b4fc3f76f81b89c179a2b8e2ded6c8732efe76ffb",
+          "content_sha256": "ba6ad50f61a9de33e1598320bf3f580d0f9f4123f8c5c57982b991248b343e72"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "ba6ad50f61a9de33e1598320bf3f580d0f9f4123f8c5c57982b991248b343e72",
+          "content_sha256": "e6225846476ea8bd043ad7ec5e97655ad63973eedbfaa85001c23d6903112ebd"
+        }
+      ]
+    },
+    {
+      "app_id": "bluespotted-ribbontail-ray",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "8bab99fca0ffa3417c1e647078e6abcc99a4d8862e9eba31ebeef4109ca4e691",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "cb31205f03f3b3cf98642946e3a87eab61d4d89c797186062ee834bcf4e1f76c",
+          "content_sha256": "bdc25cf079c0294c833db9585d69ed4f7f484c973117009dcf0833fddc471e2d"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "bdc25cf079c0294c833db9585d69ed4f7f484c973117009dcf0833fddc471e2d",
+          "content_sha256": "90eee5f2f248d593b5c782e74c6077f2da3363d40c636fe7d746961cb8e91515"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "90eee5f2f248d593b5c782e74c6077f2da3363d40c636fe7d746961cb8e91515",
+          "content_sha256": "413a46bfdde7eb3a8a062e34dbb0a446389a222e5abb15566760fe66b14989b6"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "413a46bfdde7eb3a8a062e34dbb0a446389a222e5abb15566760fe66b14989b6",
+          "content_sha256": "8acf4ac72f30c6bcecf3cc45d0a312bf838a7a9178b0dfce201fe1aeea53d017"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "8acf4ac72f30c6bcecf3cc45d0a312bf838a7a9178b0dfce201fe1aeea53d017"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "5a2320a5f7bd4b2b82a6c2a74d58352b48dab2bc36699ceb918468851444b726"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "379de45635389f48cedf0973e27a56bfec61ae31df571ac05965aae892f57729",
+          "content_sha256": "58af02831aec5d310eee32b3db41c445fb2cfab7583d798e665f1479a9b9b73d"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "58af02831aec5d310eee32b3db41c445fb2cfab7583d798e665f1479a9b9b73d",
+          "content_sha256": "8bab99fca0ffa3417c1e647078e6abcc99a4d8862e9eba31ebeef4109ca4e691"
+        }
+      ]
+    },
+    {
+      "app_id": "california-sheephead",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "6948590d4707310acece2295c7fb73d438cfb1aba24ada2eb29c2be8c4e167da",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "74b3e0c5542827b0a59f3fc3a007c40195b1f9a9d6f604ea03acb7985bb44e53",
+          "content_sha256": "baf860602063cdd0fc3ad99d32fa1de09d5279b8ff55142130c4afe70dc342e6"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "baf860602063cdd0fc3ad99d32fa1de09d5279b8ff55142130c4afe70dc342e6",
+          "content_sha256": "d5ced2f24aa1be0ae8cb5c0778ba78cccb69cf15c1a2da614b42e6e3ad740e79"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "d5ced2f24aa1be0ae8cb5c0778ba78cccb69cf15c1a2da614b42e6e3ad740e79",
+          "content_sha256": "a32427db2778507e9b58084628f80c7f200b528674c87e3482e5f0faa4fa0d4d"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "a32427db2778507e9b58084628f80c7f200b528674c87e3482e5f0faa4fa0d4d",
+          "content_sha256": "74171ea2f6d76daa5c754956aa870f975ad35d4a6b520df25e0e8c1c2391cab7"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "74171ea2f6d76daa5c754956aa870f975ad35d4a6b520df25e0e8c1c2391cab7"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "c71367ae6faf1763e88b3353380438bd7aaf8b1cbf348a54bb57449e345305f7"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "bd8d1d5c5b8752c0680fa7f2fec293f0556e7e82ba97b77cd874129276254e3c",
+          "content_sha256": "d20393bb872ca3d2b776d57e64c7ba2301a4a723ea3156b04e75643f8f9d4764"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "d20393bb872ca3d2b776d57e64c7ba2301a4a723ea3156b04e75643f8f9d4764",
+          "content_sha256": "6948590d4707310acece2295c7fb73d438cfb1aba24ada2eb29c2be8c4e167da"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "332e97f4c6b32398895ed8de53f63b0285427259ea95823dcb81f04b9671b079",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "7dd8531a958e3b7fc4383e32bd4bfd9ffac489cd5969c6bde05e494dc66c43e6",
+          "content_sha256": "32397f7ffa3dcc4f173cd288cc20ccb2c433bffaf297f13e37c64789fe7019e5"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "32397f7ffa3dcc4f173cd288cc20ccb2c433bffaf297f13e37c64789fe7019e5",
+          "content_sha256": "e89c56d42c6d514513a6da2d6d2640c6c886579eebda1104c4334d94c787b47a"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "e89c56d42c6d514513a6da2d6d2640c6c886579eebda1104c4334d94c787b47a",
+          "content_sha256": "b215967e7d51591df27a72f45bc2ce2996fb8dee8d9c8e2eda0b72cf51d6a364"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "b215967e7d51591df27a72f45bc2ce2996fb8dee8d9c8e2eda0b72cf51d6a364",
+          "content_sha256": "13157e3e02c272cfb4ced7547200ef0975253451dfc58f460397e6621cfdde27"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "13157e3e02c272cfb4ced7547200ef0975253451dfc58f460397e6621cfdde27"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "8517c8ddfa56514d53b3f8e0944b0963b4b0bf099782438f60ed57abec0fbae9"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "68ed7f8b38aed71d5fc8d89ed0c35f9f3b1b1b951d57c2f3b41b0dcc3739337b",
+          "content_sha256": "57d422e66effeb1760bc62877491ce7c48b6351e6ab025dd30d046f203731771"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "57d422e66effeb1760bc62877491ce7c48b6351e6ab025dd30d046f203731771",
+          "content_sha256": "332e97f4c6b32398895ed8de53f63b0285427259ea95823dcb81f04b9671b079"
+        }
+      ]
+    },
+    {
+      "app_id": "gray-whale-skeleton-exhibit",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "0f7ede89534e7bb49e8a5292d214d36ff62a9151f3ce604b577607ba572380f2",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "2e3ca94a524f95c50b5191a7d62b782c63c1e03b8741a6902e3c0f3baab79de4",
+          "content_sha256": "7db551a1caf381ae01ba551bb8727bf881bfefe7aaefcf7c396e5b648c0e7554"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "7db551a1caf381ae01ba551bb8727bf881bfefe7aaefcf7c396e5b648c0e7554",
+          "content_sha256": "485d2ea3805bdc0c4ca97ed7fbec1dc925f94b56a3e057e391be04ed29e7b450"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "485d2ea3805bdc0c4ca97ed7fbec1dc925f94b56a3e057e391be04ed29e7b450",
+          "content_sha256": "8f241b024fb43320773d4317a986aaf558d9f638772f813fc53fe75b5403b821"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "8f241b024fb43320773d4317a986aaf558d9f638772f813fc53fe75b5403b821",
+          "content_sha256": "a62e895ebafbb573c7b44ac0546f5a357b16c30a5613d746440bd609e6c991ef"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "a62e895ebafbb573c7b44ac0546f5a357b16c30a5613d746440bd609e6c991ef"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "b635460bb503c2a7348d0ac06a6ba991ee9e5549d3c60edb3e6a799981269489"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "61a23ab1db08dda109b77a58e0ce60e9f71d4d23b16d2df3e4a5c68d6a51de62",
+          "content_sha256": "1edfc60278586495a7ee1a13b89e14333a31119683ceaebf2d06d7b403d10f78"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "1edfc60278586495a7ee1a13b89e14333a31119683ceaebf2d06d7b403d10f78",
+          "content_sha256": "0f7ede89534e7bb49e8a5292d214d36ff62a9151f3ce604b577607ba572380f2"
+        }
+      ]
+    },
+    {
+      "app_id": "hopkins-rose-nudibranch",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "8a4dc5391381bc7608330abb164e9e604957d44269b7c65235de4afeedddba53",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "e432f54fe2ca5a286325e0ee0140a0c9775570f08a616b6531c94b2511e23074",
+          "content_sha256": "153515e7a63c0efda14cd84ce714b183bf18d47c579506cfe1b43f54d2812dfc"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "153515e7a63c0efda14cd84ce714b183bf18d47c579506cfe1b43f54d2812dfc",
+          "content_sha256": "7bce08715763ad5c2f05e824bc07d41b95e63acda670cf514451c8aa076a1858"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "7bce08715763ad5c2f05e824bc07d41b95e63acda670cf514451c8aa076a1858",
+          "content_sha256": "240ebc88341f0020ad0ac82c4aeb9762037ea92060f038fa3913c9f1ad4100c4"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "240ebc88341f0020ad0ac82c4aeb9762037ea92060f038fa3913c9f1ad4100c4",
+          "content_sha256": "7835b5fa311dd8d87dffe5b2d7e56937a489a4d80abb39a67ff98b47cf7a20ac"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "7835b5fa311dd8d87dffe5b2d7e56937a489a4d80abb39a67ff98b47cf7a20ac"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "bff890704bc7ef971ce5756db7810bfe385b5d0ef192a5922fbae4137e0a12c4"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "7cea170633fa8fedc467ea792ed832c164f17ded6c0299afb8deec9ff47e2662",
+          "content_sha256": "75635b19e50511d564a18287a71bedc17f4db2eaecf4ac9bca0bda6602f8bf4b"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "75635b19e50511d564a18287a71bedc17f4db2eaecf4ac9bca0bda6602f8bf4b",
+          "content_sha256": "8a4dc5391381bc7608330abb164e9e604957d44269b7c65235de4afeedddba53"
+        }
+      ]
+    },
+    {
+      "app_id": "inaturalist-citizen-science",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "6df1921d687aef9fb9e334bf3082d6bc854790cff50cc76f00bdfc8652d11b6d",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "59196018fb8ed84b02336511c9fcdb7fbd78cb0bf7f4f741c27c87a8d545350f",
+          "content_sha256": "890c04ead887e6e0803dba3edc6d241164e8d3fa7ff3b60e3b257c6ea5f8bf7e"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "890c04ead887e6e0803dba3edc6d241164e8d3fa7ff3b60e3b257c6ea5f8bf7e",
+          "content_sha256": "60af72ba1e0560d647c38cb7a2f3b28ab0091a0345acd0627cb10108280dc9d6"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "60af72ba1e0560d647c38cb7a2f3b28ab0091a0345acd0627cb10108280dc9d6",
+          "content_sha256": "f9b683f2010b2aa1803656dd7bcd9cec3138396e43872fbd3c651d0c46b570aa"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "f9b683f2010b2aa1803656dd7bcd9cec3138396e43872fbd3c651d0c46b570aa",
+          "content_sha256": "5d2d6cc8249f4e73b64885ca9c4b0cb01c9b7e00a01657dd2f604285919e960a"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "5d2d6cc8249f4e73b64885ca9c4b0cb01c9b7e00a01657dd2f604285919e960a"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "3602035252ab45856cb2e69d05c20896935b81cf1f7a3b49a45242dc5ea3c6c8"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "6001820a2477404a3b0d24e28da5361631d8743a671100bad462b41ee12abad8",
+          "content_sha256": "4fe7d65b7911f1e547b5517c9a35471dcdbf9b689d91a189ef43a6e0c70c6da7"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "4fe7d65b7911f1e547b5517c9a35471dcdbf9b689d91a189ef43a6e0c70c6da7",
+          "content_sha256": "6df1921d687aef9fb9e334bf3082d6bc854790cff50cc76f00bdfc8652d11b6d"
+        }
+      ]
+    },
+    {
+      "app_id": "pacific-white-sided-dolphin",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "41a6a96949a60c43f11fe64410ffc68a51808b818a7fde2bbddde74dc29b7798",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "707c5e77b91bb485bbba307eea7e2e8a4466f9bbad51e10603b36e8ea3b4a723",
+          "content_sha256": "88a7a745bbc7000aec6bd43034555007521cacb3e48b1a39524a5b188b6884c7"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "88a7a745bbc7000aec6bd43034555007521cacb3e48b1a39524a5b188b6884c7",
+          "content_sha256": "0dac9c29e6bbc03d45b066f8a42a68733a9295c23eac9c84d769c16eb0c3b2b1"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "0dac9c29e6bbc03d45b066f8a42a68733a9295c23eac9c84d769c16eb0c3b2b1",
+          "content_sha256": "bb91ee4c5d870f2429284c049c29ad6fa1402f4eb4ef0ccf9fbe9fea4127c07d"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "bb91ee4c5d870f2429284c049c29ad6fa1402f4eb4ef0ccf9fbe9fea4127c07d",
+          "content_sha256": "6ed5ef7d57d4079d1962c9b06c0c0c2bc1bcfa804c8a044259c51d5da9f3d3f1"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "6ed5ef7d57d4079d1962c9b06c0c0c2bc1bcfa804c8a044259c51d5da9f3d3f1"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "13dfc6b66410254fa5e51736b1ad240d60dcdf4889c694a98749d8f7500c8707"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "d8b3ad4867c501a27fff499e7221a3ae9b6f7789bf43fa56bf92437d6ac40ad2",
+          "content_sha256": "00b88a6d8200dd7844de424ba01c5f76ef2ebe60ddb7dc1e107df8036cd67e3d"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "00b88a6d8200dd7844de424ba01c5f76ef2ebe60ddb7dc1e107df8036cd67e3d",
+          "content_sha256": "41a6a96949a60c43f11fe64410ffc68a51808b818a7fde2bbddde74dc29b7798"
+        }
+      ]
+    },
+    {
+      "app_id": "pseudo-nitzschia",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "b7166a5ca20aa0a34faaf93e34745245209b7b3b9a5d685a800fa91423b32256",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "ce08f82c5ef1357c59371ff88214106a9a655e63e939f80056929a206ea4a130",
+          "content_sha256": "c0a84e6c9881c98d17011d2bd8a0bec388f727eb47eb50a4ed7abe99930ab97a"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "c0a84e6c9881c98d17011d2bd8a0bec388f727eb47eb50a4ed7abe99930ab97a",
+          "content_sha256": "5835961bfecfb5071c8df0c57d52b1c377ecb02387eaa6a5d22b66cf1750e054"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "5835961bfecfb5071c8df0c57d52b1c377ecb02387eaa6a5d22b66cf1750e054",
+          "content_sha256": "bcccd4cd9b748facae7fda9515da938a16368f6443de3c7a933e158a5925a7ef"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "bcccd4cd9b748facae7fda9515da938a16368f6443de3c7a933e158a5925a7ef",
+          "content_sha256": "0b3910e72c05295beac430d4132700ee7753c11a9ebfa6f166e090e65ad8c309"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "0b3910e72c05295beac430d4132700ee7753c11a9ebfa6f166e090e65ad8c309"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "468c982d05d8b17e3f890b0babe07fe71ffd427658f3d28cde1e5b7d0a4ab605"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "8fe92588b65b56a58a9bbdb4e884dce5e22c1253eae56818b438c49c3de63a4f",
+          "content_sha256": "2e9457fc59ba02b88b356e765cb4f2d09a136b78bfd9160650640c12d01850e1"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "2e9457fc59ba02b88b356e765cb4f2d09a136b78bfd9160650640c12d01850e1",
+          "content_sha256": "b7166a5ca20aa0a34faaf93e34745245209b7b3b9a5d685a800fa91423b32256"
+        }
+      ]
+    },
+    {
+      "app_id": "sea-slugs-nudibranchs",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "478c0db2c9d3188457b0cd516f893a2367e6e4e3c553caa6c7e7b6a68f22d2e9",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "b0110903339f704766441c9e502124562b1b3a4da47516b5cd4a84ef6b0d0a27",
+          "content_sha256": "a0c3230b7a27331794d0d1ad3382884a92c53b146ed34b70b0c248f955b2465b"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "a0c3230b7a27331794d0d1ad3382884a92c53b146ed34b70b0c248f955b2465b",
+          "content_sha256": "d038f357cf71afef8f49e05d0587805301a805e1ed206ae3aed17c1093e4439d"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "d038f357cf71afef8f49e05d0587805301a805e1ed206ae3aed17c1093e4439d",
+          "content_sha256": "86b80662e51f1ffed9f08e1b53daa546ad41c4f189d809b43dcb40da5356c104"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "86b80662e51f1ffed9f08e1b53daa546ad41c4f189d809b43dcb40da5356c104",
+          "content_sha256": "d40a430da2a8dcc35e038980d7c23004b7159b6a26b7568f135657f88c097df6"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "d40a430da2a8dcc35e038980d7c23004b7159b6a26b7568f135657f88c097df6"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "1057969878ed57fa5cbc90658d20fbb8eb40012f8f4ecf2dfe79f23c952e624f"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "68e02c716ce2315c3580b007f6910800d8a95b9232204db1416c23e9031d38b3",
+          "content_sha256": "502a4ba5a8597ec80a34c8483b72996d7119ecaf7a4b9ceba5abe2e7e1f7073f"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "502a4ba5a8597ec80a34c8483b72996d7119ecaf7a4b9ceba5abe2e7e1f7073f",
+          "content_sha256": "478c0db2c9d3188457b0cd516f893a2367e6e4e3c553caa6c7e7b6a68f22d2e9"
+        }
+      ]
+    },
+    {
+      "app_id": "sperm-whale",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "0c95f6a5d61f3a2d0f9d65469f5ff3e40759dba92255291072558b147f458dae",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "6e48b90dd549d3f32da615d203cf3026b5d5c143c4f72130e41004ff139e2625",
+          "content_sha256": "0cb346d60d07e60df6c3d94c93a5310ca2240702e6b2aa8af501f8614aa5670d"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "0cb346d60d07e60df6c3d94c93a5310ca2240702e6b2aa8af501f8614aa5670d",
+          "content_sha256": "da80b97925500931f036df72c57d9496d7dd05d2075fe30c5a63db9e5da04f81"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "da80b97925500931f036df72c57d9496d7dd05d2075fe30c5a63db9e5da04f81",
+          "content_sha256": "7cc07ed714a85ebb70a11776a79924d22fba6303fe5ad7bf13fe7d3e2ff15365"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "7cc07ed714a85ebb70a11776a79924d22fba6303fe5ad7bf13fe7d3e2ff15365",
+          "content_sha256": "0c95f6a5d61f3a2d0f9d65469f5ff3e40759dba92255291072558b147f458dae"
+        }
+      ]
+    },
+    {
+      "app_id": "stargazer-species-guide",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "92bc60324a9046fc4498b15a5282d73f98067735d8e3196baced67337dc790b4",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "f55e2cc8f9bb5d12bf172d7465531c53ac7d455c6cefc0b115928495c79cc43b",
+          "content_sha256": "4148011b91b3d1a692d2285ab04b0c0c77336920bd8d1bdb2e86d1789f97a2fc"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "4148011b91b3d1a692d2285ab04b0c0c77336920bd8d1bdb2e86d1789f97a2fc",
+          "content_sha256": "87a9ff3e40f12b97ac43ad5a3997f86456e52ca21ec83c3838cd3c10a1b705ac"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "87a9ff3e40f12b97ac43ad5a3997f86456e52ca21ec83c3838cd3c10a1b705ac",
+          "content_sha256": "bf579310af7f4a3cf84d7cea25a902d2f9701992e168d9ec05fc57a7891dbc01"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "bf579310af7f4a3cf84d7cea25a902d2f9701992e168d9ec05fc57a7891dbc01",
+          "content_sha256": "446d084c03895314196c278a4af8a40c55855f4887ea6bce2cb4ed5782ce546b"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "446d084c03895314196c278a4af8a40c55855f4887ea6bce2cb4ed5782ce546b"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "0679b7261b5ec1cae6a11879ea0f9e90834d45e85d2b76ad7a89e62fb04d3f0b"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "78fa0639f7fdc0fdcd0df3e15afa2512207ee0d1d00c209b1ab2ccdd166e833e",
+          "content_sha256": "1173d766cf075492b68ddbf056b3f0c3b732b186685704fbee0deaa03e86c764"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "1173d766cf075492b68ddbf056b3f0c3b732b186685704fbee0deaa03e86c764",
+          "content_sha256": "92bc60324a9046fc4498b15a5282d73f98067735d8e3196baced67337dc790b4"
+        }
+      ]
+    },
+    {
+      "app_id": "whale-associated-organisms",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "be8ffb3b160c6cbdd3e197c64a4e1175a44acfb74399a5ff03c5cb7e8a2482e0",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "e5c8586db98224205998e4baabd632b30af2f842245cade186db4032f51d0521",
+          "content_sha256": "e3be418145eb80e6898ddd95047270684f8797d5404ba8e5d7d5a80df2145208"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "e3be418145eb80e6898ddd95047270684f8797d5404ba8e5d7d5a80df2145208",
+          "content_sha256": "8c3fa3c0f7778b3922e7a26bd7792abf79cb6c05ea79073978d8c05dbb93a267"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "8c3fa3c0f7778b3922e7a26bd7792abf79cb6c05ea79073978d8c05dbb93a267",
+          "content_sha256": "b2f9d6bf363cb1ab112680e0566b1c9cc510248b8a45143770b48e5aa7a12046"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "b2f9d6bf363cb1ab112680e0566b1c9cc510248b8a45143770b48e5aa7a12046",
+          "content_sha256": "a35a1680cfbda5417e8f6306964b437536bf0bb1253613d1a066fbdc12658a27"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "a35a1680cfbda5417e8f6306964b437536bf0bb1253613d1a066fbdc12658a27"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "8a120cc9ffb61f212f61d1a7829af879a92b1421d82c0200093d5e885bca87c2"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "2145174e669a96540580ec4539fb102b1abcf3195e7052d9b18766efc89632da",
+          "content_sha256": "42e59acb9fec6474f725affe8bdbe8dca5fabc3798866f1724209296c03e181e"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "42e59acb9fec6474f725affe8bdbe8dca5fabc3798866f1724209296c03e181e",
+          "content_sha256": "be8ffb3b160c6cbdd3e197c64a4e1175a44acfb74399a5ff03c5cb7e8a2482e0"
+        }
+      ]
+    },
+    {
+      "app_id": "wildfires-ocean-health",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "92cea12006e5409052969f8127d0bc4bde1fbb7581a68f5ca1b499345aecae93",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "7dfa4a1cbfde7d08c23376b1e5ed024dae6915bb28ce86f28f0c3c15d1b16f4d",
+          "content_sha256": "ba1e12868c6398c195456360529ec7f5ff0ec518545111c28db59833341f332d"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "ba1e12868c6398c195456360529ec7f5ff0ec518545111c28db59833341f332d",
+          "content_sha256": "1992b3d2d7dfb8c8c1948db1665296e87fe3cca07155e3dc5d2023251de03b45"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "1992b3d2d7dfb8c8c1948db1665296e87fe3cca07155e3dc5d2023251de03b45",
+          "content_sha256": "abfe18ffae556fecb8f3586d52c861431e2dd5acdd0e2061ab26ae385009a949"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "abfe18ffae556fecb8f3586d52c861431e2dd5acdd0e2061ab26ae385009a949",
+          "content_sha256": "48a730141848001f53c5d9b22c397ac6bc0822a0658c609df5f634120e200731"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "48a730141848001f53c5d9b22c397ac6bc0822a0658c609df5f634120e200731"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "837dba0cd7ac8dbf11ecfd36b2bf3327ad50d4be5ba601642ce526a18b849fa9"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "1037fc5cecbf5beafb6cdae3a1a5882409de1e027f6501ed36abbc52a38c3cac",
+          "content_sha256": "bec8a13105a3c797ce76a3518ce0824500e0655aa812200c4bbda8bdba4a8247"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "bec8a13105a3c797ce76a3518ce0824500e0655aa812200c4bbda8bdba4a8247",
+          "content_sha256": "92cea12006e5409052969f8127d0bc4bde1fbb7581a68f5ca1b499345aecae93"
+        }
+      ]
+    },
+    {
+      "app_id": "wildlife-rescue",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "d30e80821278cb7f1422249f879db2917d2b0567ae8ca4b0acaff900e0797a9f",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "07cbd3ef20174f8eaf85a03a8b350e0c82b5147cf5d720af141d01d753ecc36a",
+          "content_sha256": "820ddcfab1416c254be1ec0c83362b97fc455a87bfb54cfb55770b994b8962fd"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "820ddcfab1416c254be1ec0c83362b97fc455a87bfb54cfb55770b994b8962fd",
+          "content_sha256": "20a485c2aa63fe90ecbb9078f4a546a570f1916c69cc61a8542c13b7b43f638f"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "20a485c2aa63fe90ecbb9078f4a546a570f1916c69cc61a8542c13b7b43f638f",
+          "content_sha256": "7842506b6fd490c87f5cb73963df5615ccce27233467b02a7775ce95a38197e6"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "7842506b6fd490c87f5cb73963df5615ccce27233467b02a7775ce95a38197e6",
+          "content_sha256": "566fb5e7509448f7749f0db2bf8002435a3a5f8b18959e2f2e6cb9002159e9b3"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "566fb5e7509448f7749f0db2bf8002435a3a5f8b18959e2f2e6cb9002159e9b3"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "482563ebfa9329e212b04d53b36ca2a2ece0bcbd2762722090993ac22617e8a5"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "6e85cc3bf55f415753bac7775430533c53f9d9ac3fbcee8945c3849be2e3b92e",
+          "content_sha256": "d51c4e1a7110ae981856027a7343bca16c3e6dce713bbbe763d9a383af151a75"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "d51c4e1a7110ae981856027a7343bca16c3e6dce713bbbe763d9a383af151a75",
+          "content_sha256": "d30e80821278cb7f1422249f879db2917d2b0567ae8ca4b0acaff900e0797a9f"
+        }
+      ]
+    },
+    {
+      "app_id": "gooseneck-barnacle",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md",
+      "reviewed_on": "2026-10-22",
+      "review_method": "Complete pinned/current markup, styles, links, executable differences, rendered dynamic data, section search and media byte comparison; no new scientific approval",
+      "content_sha256": "8cfe699957d935577f566b5ba45c4f86b966d06700491be51a1d4d50a1206155",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "2770f4d9d05f23fe725f62e33d1591629f12ad413433f090c97c3b1642d29872",
+          "content_sha256": "6e910a4b4ac5ba38379c141de425895c2695efee4132cb05a7227c97320f88fe"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "6e910a4b4ac5ba38379c141de425895c2695efee4132cb05a7227c97320f88fe",
+          "content_sha256": "ef1512eedd1ed6acd58f9658f028d42e1ba2d52d048e4175958137022b922efa"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "ef1512eedd1ed6acd58f9658f028d42e1ba2d52d048e4175958137022b922efa",
+          "content_sha256": "4c2a965069818637ffc41e14e8ccac4c12a681797d52294ef500d53b1473da0c"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "4c2a965069818637ffc41e14e8ccac4c12a681797d52294ef500d53b1473da0c",
+          "content_sha256": "519529360aceafb9459478447f50f77835ec5c2dd21c336a7985a0b28505c314"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "519529360aceafb9459478447f50f77835ec5c2dd21c336a7985a0b28505c314"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "9aac386b7e25e405339b42ab455199e5b8e7d414d8a884308b24885b82cebfc7"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "b4cc6a6eb8e991c82e1b8d175861fec9c4a7440c2a02042554d20fdd64691a8f",
+          "content_sha256": "ddda3c099f28213a5529e25b54e1ca8bea0a96d9e46e79bffdec466c5072fc01"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "ddda3c099f28213a5529e25b54e1ca8bea0a96d9e46e79bffdec466c5072fc01",
+          "content_sha256": "8cfe699957d935577f566b5ba45c4f86b966d06700491be51a1d4d50a1206155"
+        }
+      ]
+    },
+    {
+      "app_id": "applied-water-science-life-support",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
+      "content_sha256": "c303822c3040bb327d76f63ac25fe81e38125c8b11789bee283530e7badbae97",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "a6d34665d42d1c763aacac2b21f536ce12ba55a22fb11c72ce52dfceb066dfb0",
+          "content_sha256": "2afbbee3749018f59c31b7c07220ee6109afbb4bbf9475b15a7b25062843f572"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "2afbbee3749018f59c31b7c07220ee6109afbb4bbf9475b15a7b25062843f572",
+          "content_sha256": "e0f45882499f710759ec014eb974be91ff07dc2ab084b3f73152a057d32ba6a3"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "e0f45882499f710759ec014eb974be91ff07dc2ab084b3f73152a057d32ba6a3",
+          "content_sha256": "6966380debcb7ab2626c769fbfbec4935bdf1b06640826c52d1a49f355784879"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "6966380debcb7ab2626c769fbfbec4935bdf1b06640826c52d1a49f355784879",
+          "content_sha256": "586cbec11472762c4b4ba34d1cc4a705c8a9c9730190ecd83506b607dc524550"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "586cbec11472762c4b4ba34d1cc4a705c8a9c9730190ecd83506b607dc524550"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "eae7ae5309b1b15809ccb1558c7c07cfdc383a55cbc15d324f80e58afabbdb2e"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "0c6f4384f9f33f388ac72ff23ffb46e08a337d997e29950f627f6e46b76d29ec",
+          "content_sha256": "a550624c09dc137d20e1155b254845fe6b07a05861596f91fe14e10aa5cbbd0f"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "a550624c09dc137d20e1155b254845fe6b07a05861596f91fe14e10aa5cbbd0f",
+          "content_sha256": "c303822c3040bb327d76f63ac25fe81e38125c8b11789bee283530e7badbae97"
+        }
+      ]
+    },
+    {
+      "app_id": "interpretation-principles",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
+      "content_sha256": "0524d61ac0e265e5852b597b8fb8c0a321b7e6a8a9409e17dc46232a5f03accf",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "fd484e2c58ae591b53d8ddf0e105088d2c450c4692d971a808bb6e0d0d987c38",
+          "content_sha256": "5b62fc5c91b810474c66fd270fd6b7826240067a39eebebb794397bcc4a76a56"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "5b62fc5c91b810474c66fd270fd6b7826240067a39eebebb794397bcc4a76a56",
+          "content_sha256": "2b9a0c61f53084f0d54d011969996b6299842fe5345029e62277c4308bfdac44"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "2b9a0c61f53084f0d54d011969996b6299842fe5345029e62277c4308bfdac44",
+          "content_sha256": "96b145d8646857cc478aa0078b80e2adf95154257ca67319bedc847ea6103763"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "96b145d8646857cc478aa0078b80e2adf95154257ca67319bedc847ea6103763",
+          "content_sha256": "85be7df2ff63044a2b134a1b07f0783ea064bc13db3566369e60a5b7d5e0e76e"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "85be7df2ff63044a2b134a1b07f0783ea064bc13db3566369e60a5b7d5e0e76e"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "aca29ae25af8160daa48a073934dfd37fb6df6aa383bb7945ca97bf5a6cdc05a"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "84905e75fe36233d06179653b5f0aa022e1f57931843cb6d27bff9f15ee03a3d",
+          "content_sha256": "06fef77851db7e01b87398e464ea85726f3b0c56ad5fe64ffe7624c3ba3a9b76"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "06fef77851db7e01b87398e464ea85726f3b0c56ad5fe64ffe7624c3ba3a9b76",
+          "content_sha256": "0524d61ac0e265e5852b597b8fb8c0a321b7e6a8a9409e17dc46232a5f03accf"
+        }
+      ]
+    },
+    {
+      "app_id": "mba-leadership",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
+      "content_sha256": "2dbd6683b397b36818db3173c4421972bc942545af454e4aa64f10d84c38f7b5",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "2bd57903e03438522c68e764b55efefec589c2af3e1fa7069dfe16a174b18399",
+          "content_sha256": "08db9d32f5f51c4cefee86fce6b71ce2057d8f9e9500069ce860822b3b161392"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "08db9d32f5f51c4cefee86fce6b71ce2057d8f9e9500069ce860822b3b161392",
+          "content_sha256": "88c5be7de0aa30435ab0092d18f15bd3af573a20c1174e112b99c71158ec2087"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "88c5be7de0aa30435ab0092d18f15bd3af573a20c1174e112b99c71158ec2087",
+          "content_sha256": "a19beb98924b3a846fb11ab5ffdf0acd5be45eb3cc1e498b532067579366f827"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "a19beb98924b3a846fb11ab5ffdf0acd5be45eb3cc1e498b532067579366f827",
+          "content_sha256": "e9baefbc1715c3df5cc1fe8335953ebe42c41d8b1080adc62324be0e2087e9af"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "e9baefbc1715c3df5cc1fe8335953ebe42c41d8b1080adc62324be0e2087e9af"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "45f8792fb8086d3944473ca886820936ef84b06a71190e7f7cc7cfebf3986be3"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "c366fc831e7e37450d157cf7d48b046eaa0136bb535f357f8bdb2fdb5b058f9b",
+          "content_sha256": "69aec7c6977c8561eac4e2c6f4b117a9d517699f4398f084b0f900f305ff783d"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "69aec7c6977c8561eac4e2c6f4b117a9d517699f4398f084b0f900f305ff783d",
+          "content_sha256": "2dbd6683b397b36818db3173c4421972bc942545af454e4aa64f10d84c38f7b5"
+        }
+      ]
+    },
+    {
+      "app_id": "information-center",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
+      "content_sha256": "7579075a88317ef6f928459005e1cf6518ca5e0b4220c6462b92eba22f9493cd",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "5033488bea2a803fd1020f83694311d611dec239c663c13d234ef36cc5b81db7",
+          "content_sha256": "4687f86ff7cc28650110e0cc06f0cae55406af43d061923d42740d962ebc4e09"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "4687f86ff7cc28650110e0cc06f0cae55406af43d061923d42740d962ebc4e09",
+          "content_sha256": "ccbd721253eb15f9ddd2b87f98630500aef4a04d7ff44426990a8eb23532d541"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "ccbd721253eb15f9ddd2b87f98630500aef4a04d7ff44426990a8eb23532d541",
+          "content_sha256": "8f89e9fd1bd973830e091b3f530cd6f6eb81f017482144df95a6d4e62908b5f0"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "8f89e9fd1bd973830e091b3f530cd6f6eb81f017482144df95a6d4e62908b5f0",
+          "content_sha256": "8d68180c4c837b508141d8746648b721172d1d7a58cd9264e2fd831d7a8821e1"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "8d68180c4c837b508141d8746648b721172d1d7a58cd9264e2fd831d7a8821e1"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "a6866db2d1d1c571030766ef4d92af1aee543b37a91b120a3070662c21128a48"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "20492d6b35583dccde857e2202d47981b7b0ac77b1cacff90a7fd0d22deb5910",
+          "content_sha256": "1764d5869c806f52cd05ee2e1397a7636c55db0bc0549107cb8822d5768329ab"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "1764d5869c806f52cd05ee2e1397a7636c55db0bc0549107cb8822d5768329ab",
+          "content_sha256": "7579075a88317ef6f928459005e1cf6518ca5e0b4220c6462b92eba22f9493cd"
+        }
+      ]
+    },
+    {
+      "app_id": "aquarium-library-explorer",
+      "source_repository": "drtforshortaol/aquarium-shift-library-",
+      "source_commit": "9438060bd836c46245e4af45c280e4bb37b0ab94",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
+      "content_sha256": "2258577be2e70942e784ec022ada61188dcb968234233af95dd947e5740adec5",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "efe6d4790683f70e4827c422b86dd66b79a19fea1cbb923ac5b1877648c27575",
+          "content_sha256": "b1dc14f444f5233f70bb5d6414ed6893b7fd2e787717ab9b8a266009d2444b50"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "b1dc14f444f5233f70bb5d6414ed6893b7fd2e787717ab9b8a266009d2444b50",
+          "content_sha256": "679f896e09362aafa21c21c39d62451c5a1d6c32f88f869bc25d5095526e1160"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "679f896e09362aafa21c21c39d62451c5a1d6c32f88f869bc25d5095526e1160",
+          "content_sha256": "dd5de4a040dcf6c81b67057041e95aa1ab72dfad732ff02ee2cfcc11b02fb115"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "dd5de4a040dcf6c81b67057041e95aa1ab72dfad732ff02ee2cfcc11b02fb115",
+          "content_sha256": "ee88cd6d83670a1da16ccef270ce23ed0bcb5842c697f85c2d2bc5ea065ed7a8"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "ee88cd6d83670a1da16ccef270ce23ed0bcb5842c697f85c2d2bc5ea065ed7a8"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "9a1be3a709f89a9ef790af7f2d4faa32ee2a7b99c4466e8a47e98b838c3819eb"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "d85e74e8b16f185b2ce405a7f59bce10fec0775fe3d7456da1d115d26f3c3cfc",
+          "content_sha256": "b6412ec9e5a0ba55ac43ad457b3d54d894f49c13427a8f313bbb99a2cf6f6d36"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "b6412ec9e5a0ba55ac43ad457b3d54d894f49c13427a8f313bbb99a2cf6f6d36",
+          "content_sha256": "2258577be2e70942e784ec022ada61188dcb968234233af95dd947e5740adec5"
+        }
+      ]
+    },
+    {
+      "app_id": "mmc-narrations",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_SIX_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current code, markup, styles, links, interactions, rendered authored data, search and media review; exact current-byte evidence; no new scientific approval",
+      "content_sha256": "1d0dd5d4b5ce8d2ba39271ca93f5c8ede99e1a6deec0a88011d41c946c6054d4",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "56e5c459df67a803dc9e16d22def543e2b048896d33c56f5d2e2ac5967af2e70",
+          "content_sha256": "b9199223ea79a3610636f2c824ae2e59a927b66997a2e212379fec4bbedef9cb"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "b9199223ea79a3610636f2c824ae2e59a927b66997a2e212379fec4bbedef9cb",
+          "content_sha256": "69fafc7c8009f3b03d0c92bb7d06649d691f356200634472ae3864d3acfc3827"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "69fafc7c8009f3b03d0c92bb7d06649d691f356200634472ae3864d3acfc3827",
+          "content_sha256": "a8811ab6983d64793de51b3dd02ff8c55024d249cff6ef17af31a5b2277ad34e"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "a8811ab6983d64793de51b3dd02ff8c55024d249cff6ef17af31a5b2277ad34e",
+          "content_sha256": "6512bb7cd362c676ba199e7a861371a49b24175047c8efccc45ee8fb090c8edd"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "6512bb7cd362c676ba199e7a861371a49b24175047c8efccc45ee8fb090c8edd"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "e9dd046bbe5320e3c456f3737fd0221c501394d55a7ea33e86935cc104f7dbe8"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "5127659891159876918f8dbfb5b29096599d30028381a8419b6dc9627596f751",
+          "content_sha256": "c43d80945b9fa13d04da5506b85d576454dc758e95a6da5643b5b939791361e4"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "c43d80945b9fa13d04da5506b85d576454dc758e95a6da5643b5b939791361e4",
+          "content_sha256": "1d0dd5d4b5ce8d2ba39271ca93f5c8ede99e1a6deec0a88011d41c946c6054d4"
+        }
+      ]
+    },
+    {
+      "app_id": "five-senses-pwa",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
+      "content_sha256": "edec7d102fc99745b148541d48d0447863cc0df34d2c145987186c828c49dea3",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "428ed9a9dbf7a8c65740ed0f28e68bcc6ba3c3a2b5d0827713c60893cde6323b",
+          "content_sha256": "470ca89abf583e83957f262dcf72cc248c211ff0cd332c28a3beacc275eb36be"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "470ca89abf583e83957f262dcf72cc248c211ff0cd332c28a3beacc275eb36be",
+          "content_sha256": "d1802032f08d19d927a2adf554f87b135dafa74ae091626b9b2491eeaa413aed"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "d1802032f08d19d927a2adf554f87b135dafa74ae091626b9b2491eeaa413aed",
+          "content_sha256": "3d0e6bd9e87ba2a59338328b96aef20ced8c5150e9c26f1a18a63d5e8fead5ba"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "3d0e6bd9e87ba2a59338328b96aef20ced8c5150e9c26f1a18a63d5e8fead5ba",
+          "content_sha256": "5ed278a12db6886c1312c74a92aafa7ca32e59922dfbc4ebb91867990b3ed314"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "5ed278a12db6886c1312c74a92aafa7ca32e59922dfbc4ebb91867990b3ed314"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "53ecb788c777b9e3a810b02a9fc1c6e2224e997a4c1272fe01c9c7efac991ee2"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "8d673a6d571a4ec26b3127bf16cab98837561d511c0452c4f9802202e99a3e6d",
+          "content_sha256": "caa4fd8fbb4f729884cd8bae732fb2537bef33db8555d9bbfc4c4720cb122fee"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "caa4fd8fbb4f729884cd8bae732fb2537bef33db8555d9bbfc4c4720cb122fee",
+          "content_sha256": "edec7d102fc99745b148541d48d0447863cc0df34d2c145987186c828c49dea3"
+        }
+      ]
+    },
+    {
+      "app_id": "kelp-forest",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
+      "content_sha256": "485a7cde62ca356856beac90d0a9b87fd334b3ff125ddcbd2c7542810c146a3a",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "1885876bf8dc4efdea86c1c89a7a8416e9aa88cb38b156978c1f7a18f4972d21",
+          "content_sha256": "985a012ec7e59897aac85e25a88e454330b868747836af91158335630d3fe607"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "985a012ec7e59897aac85e25a88e454330b868747836af91158335630d3fe607",
+          "content_sha256": "72192a74e4ff1739ca74e2a7ca570e543ad1556533107c8fc804e0bf6d9cd415"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "72192a74e4ff1739ca74e2a7ca570e543ad1556533107c8fc804e0bf6d9cd415",
+          "content_sha256": "ef97983a295fa90afdc21a34c6e81a118bb4e25df028d9663b34f6b2c8b2c773"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "ef97983a295fa90afdc21a34c6e81a118bb4e25df028d9663b34f6b2c8b2c773",
+          "content_sha256": "dc676ca42108218d3fabf876c8f2251362ca04e397d18a90c459dc89c87876ff"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "dc676ca42108218d3fabf876c8f2251362ca04e397d18a90c459dc89c87876ff"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "c4aafabe14508de0dcc07604ff412fbac89b6f06868e58e3cc7c11cd9d7583b7"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "498e6ae426ff7042eb9c4ea12197572b3922943607ef4dfc33ae18658bac63dd",
+          "content_sha256": "98008597022d3a322976a0b78132c134870c2eae5f5057daea4a3d55505f7e29"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "98008597022d3a322976a0b78132c134870c2eae5f5057daea4a3d55505f7e29",
+          "content_sha256": "485a7cde62ca356856beac90d0a9b87fd334b3ff125ddcbd2c7542810c146a3a"
+        }
+      ]
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/INHERITED_REFERENCE_THREE_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current file, code, static markup, styles, links, interactions, search and byte-verified media review; portable full dataset and 18-container renderer reproduction; no new scientific approval",
+      "content_sha256": "17f6a108f012f13e34b0c37ebc41af62e84ce5ea380c5b5e4820f800203de41f",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "77873a683df0fb0698e37ec84e88a04210479c6da3bf993152be4964ec4000c9",
+          "content_sha256": "7a53ba6a8c03d68e31b27eb4a265724a4ef1a68a6a7e417d7ad0dff533493b1d"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "7a53ba6a8c03d68e31b27eb4a265724a4ef1a68a6a7e417d7ad0dff533493b1d",
+          "content_sha256": "02c2979055163b7e82f1d3b70d7b58120bb4ec4644da0e13fd78f2cd756c329c"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "02c2979055163b7e82f1d3b70d7b58120bb4ec4644da0e13fd78f2cd756c329c",
+          "content_sha256": "c840a91d4276278a7f1b01b9a650f36c211f6bb26f006d71241528e0c35b6276"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "c840a91d4276278a7f1b01b9a650f36c211f6bb26f006d71241528e0c35b6276",
+          "content_sha256": "021bc5089a532c73e64ddc29b68bb656b5ccbe4538d45dda5fea8526792a2118"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "021bc5089a532c73e64ddc29b68bb656b5ccbe4538d45dda5fea8526792a2118"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "c5c8c36f4d40e17c3383f2f24a0ad3a116bfead95a52845f9a58868de35b4f45"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "b78b7ec46a1970cdbfca7558b6e1effeb33396d058ec017dff92bcbb4601e7ed",
+          "content_sha256": "5e7d8366b87d103871c224fa8d240d7629a42652b52a649211c33687e938f428"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "5e7d8366b87d103871c224fa8d240d7629a42652b52a649211c33687e938f428",
+          "content_sha256": "17f6a108f012f13e34b0c37ebc41af62e84ce5ea380c5b5e4820f800203de41f"
+        }
+      ]
+    },
+    {
+      "app_id": "open-sea",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/OPEN_SEA_RECONCILIATION_20261023.md",
+      "reviewed_on": "2026-10-23",
+      "review_method": "Complete pinned/current files, inline code, markup, styles, links, interactions, search and media review; portable full twelve-card body/SVG/metadata renderer and click-state reproduction with independent parsed trees; no new scientific approval",
+      "content_sha256": "5bf925e765bd296f0c4b3aeebc1073e11186ffd1c3c71b992150ce96a3c1f608",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "671c4e913f44fe973afdccdef3fb1bab30906e7e54cd2bd1c6f417cc3770ce99",
+          "content_sha256": "90bfb4bbf24f6c2cffb38977978317ad0e8fd50ec6c9de54765ed7579a9ed0f1"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "90bfb4bbf24f6c2cffb38977978317ad0e8fd50ec6c9de54765ed7579a9ed0f1",
+          "content_sha256": "1b4f9c0028c69893deb2850f6404c044d97307dafac93fde6aff4e40d54878b4"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "1b4f9c0028c69893deb2850f6404c044d97307dafac93fde6aff4e40d54878b4",
+          "content_sha256": "e6c90ccf830926f6456b92a4c610143407604687fd38d1fc92f8508be14af29d"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "e6c90ccf830926f6456b92a4c610143407604687fd38d1fc92f8508be14af29d",
+          "content_sha256": "5bf925e765bd296f0c4b3aeebc1073e11186ffd1c3c71b992150ce96a3c1f608"
+        }
+      ]
+    },
+    {
+      "app_id": "tree-of-life-origins",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/TREE_OF_LIFE_ENGINEERING_REVIEW_20261023.md",
+      "reviewed_on": "2026-10-24",
+      "review_method": "Independently reviewed complete pinned/current inventory, markup/code/style, source-derived search, media and executable/shared navigation. Existing unchanged V1 authorization only; no new scientific/editorial/image/device/release approval. Recovered evidence and exact resource digest reverified before binding.",
+      "content_sha256": "60ea15157cf03b2d3d5362c652bf466840be8a3b18db5fc8e0372764db3269dc",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "b2ec37505024140e5355948ea41a80048b44d005769085b36983b1648690dd82",
+          "content_sha256": "1c6327cc32071248a6ffa0c99070b02cee375301c9a57da0758bd48ab9b1c83a"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "1c6327cc32071248a6ffa0c99070b02cee375301c9a57da0758bd48ab9b1c83a",
+          "content_sha256": "fa48998685ab32932ff5509f79286e6993c366be974f0d0aa5cb46b405002bbc"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "fa48998685ab32932ff5509f79286e6993c366be974f0d0aa5cb46b405002bbc",
+          "content_sha256": "66fb007f41ed8eef00665b956be3610dda5d9ff63a13bb4cacdf393b5ad32620"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "66fb007f41ed8eef00665b956be3610dda5d9ff63a13bb4cacdf393b5ad32620",
+          "content_sha256": "33730d698b9d8aa9df73dd8f3e6e7cd54ad80782d093a8b7a53f00fb6972e99b"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/TREE_AND_SPERM_WHALE_20261101.md",
+          "scope": "Reviewed metadata-only listed false to true; original scientific/runtime files unchanged; complete manifest guard updated for exactly that difference"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "3991d2fe825d1a86de079e42f2f028bc2072a115056296c03206c0e124b9b28f"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "a3992864ba66c33eed7df124d75ce87e26e9b50974c4449c98c4c4d90211030e"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "c03103fa796b4fc50f01cb0c8d2038ce0bcd53ed2703c944e895d47f11a68873",
+          "content_sha256": "804a30324e7cf915f15f8d4b4eed28ad12a998db8c4fc96f555241efd1412c7e"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "804a30324e7cf915f15f8d4b4eed28ad12a998db8c4fc96f555241efd1412c7e",
+          "content_sha256": "60ea15157cf03b2d3d5362c652bf466840be8a3b18db5fc8e0372764db3269dc"
+        }
+      ]
+    },
+    {
+      "app_id": "whale-parasites-associates",
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/WHALE_PARASITES_INDEPENDENT_REVIEW_20261023.md",
+      "reviewed_on": "2026-10-24",
+      "review_method": "Independently reviewed complete pinned/current inventory, markup/code/style, source-derived search, media and executable/shared navigation. Existing unchanged V1 authorization only; no new scientific/editorial/image/device/release approval. Recovered evidence and exact resource digest reverified before binding.",
+      "content_sha256": "04d2962768eefd4a3c24ed33b36dcd5055e54b31f6cbcb100e1049d01136de91",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "6c4b9fb2429252091f364295af713510bdc9399c717df66c3a062dc6e03b830a",
+          "content_sha256": "17a39481c1021bafe6c5ab6c18df6a9a395f9f69da603ef6189cc8863dcedcf5"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "17a39481c1021bafe6c5ab6c18df6a9a395f9f69da603ef6189cc8863dcedcf5",
+          "content_sha256": "783e05b2c5050baa212ba00f795cb31a9f0a626645a14137715b9a0be9d6801c"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "783e05b2c5050baa212ba00f795cb31a9f0a626645a14137715b9a0be9d6801c",
+          "content_sha256": "203e6700c31c0b3d7d7987571140778e5f015b57db8f05132576aa3cc5e9ce19"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "203e6700c31c0b3d7d7987571140778e5f015b57db8f05132576aa3cc5e9ce19",
+          "content_sha256": "2d25482d63bb4f0676a37918ca57cd9545dc9867a6177850ad783c9e9500e280"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "2d25482d63bb4f0676a37918ca57cd9545dc9867a6177850ad783c9e9500e280"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "41f1efdf46ab688053c78c4f4c4f84378495f6939751137e03a50d5ca9c5a0f3"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "f5f3ca05c465e8e56ac15e8a3b7af1a10a4a4cc0142b7662b4fa37e127cb93f0",
+          "content_sha256": "e06e96e48a0342efca87363f989724693e7d1654b1c3b16e98e8b4b3d4f23cd2"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "e06e96e48a0342efca87363f989724693e7d1654b1c3b16e98e8b4b3d4f23cd2",
+          "content_sha256": "04d2962768eefd4a3c24ed33b36dcd5055e54b31f6cbcb100e1049d01136de91"
+        }
+      ]
+    },
+    {
+      "app_id": "evolution-timeline",
+      "source_repository": "drtforshortaol/evolution-timeline",
+      "source_commit": "c6d782d3a8a03e407861a0fbc3aab76e5fbf8d0c",
+      "status": "reviewed-unchanged-v1",
+      "authorization_reference": "docs/GUIDE_CONTENT_RESTORED.md",
+      "review_reference": "docs/EVOLUTION_TIMELINE_INDEPENDENT_REVIEW_20261023.md",
+      "reviewed_on": "2026-10-24",
+      "review_method": "Independent complete eleven-file pinned-source, full executable/static/style/data/three-view DOM/source-derived search/media/actual anchor assignment and native/shared-control reproduction; existing unchanged V1 authorization only, no new scientific/editorial/media/device/release approval",
+      "content_sha256": "95f53d8de0913417f751e1643c4af00001556b707c41f9f90f487e1250ec38b8",
+      "resource_rebindings": [
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_POSTER_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized original poster replacement catalog metadata only; this app unchanged",
+          "previous_content_sha256": "3957a281c5d26f091f7cd59235f642f260b83a4544fea6d81652a42e1946437a",
+          "content_sha256": "eaa1eb09fffcf9c58b8627e5c247362c12a136a9f38feefe3d3bc38074a973f6"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TROUT_PHOTO_REPLACEMENT_20261030.md",
+          "scope": "Owner-authorized photo/trout comparison and owner-supplied crop catalog update only; this app unchanged",
+          "previous_content_sha256": "eaa1eb09fffcf9c58b8627e5c247362c12a136a9f38feefe3d3bc38074a973f6",
+          "content_sha256": "0a22b1283bfb770aee1656f9c928ba273269b4327b723a0d9f3db563589b7531"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_TEN_FACTS_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired poster only; this app unchanged",
+          "previous_content_sha256": "0a22b1283bfb770aee1656f9c928ba273269b4327b723a0d9f3db563589b7531",
+          "content_sha256": "545877190bce1edf1a343836e8b2d9a580113b92907cfa307366478477b222ac"
+        },
+        {
+          "recorded_on": "2026-10-30",
+          "review_reference": "docs/SEAHORSE_ANATOMY_KEY_APPROVAL_20261030.md",
+          "scope": "Catalog removal of retired Seaweek image only; this app unchanged",
+          "previous_content_sha256": "545877190bce1edf1a343836e8b2d9a580113b92907cfa307366478477b222ac",
+          "content_sha256": "ed107ca217c49fcc579832b5610c9a98ef2fc0540cbb468c44c3ce7333206ff6"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_TITLE_PHOTO_20261101.md",
+          "scope": "Catalog-only Sperm Whale title photo addition; approved app files and manifest unchanged; new photo reuse remains pending",
+          "previous_content_sha256": "ed107ca217c49fcc579832b5610c9a98ef2fc0540cbb468c44c3ce7333206ff6"
+        },
+        {
+          "recorded_on": "2026-11-01",
+          "review_reference": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+          "scope": "Catalog-only replacement of pending Sperm Whale photo with credited CC BY-SA 2.0 photo; approved app files and manifests unchanged",
+          "previous_content_sha256": "ac589a860868a9e73f824a3e8b44393844ca73e92e118feebb658784415e6e25"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23 November media catalog reconciliation",
+          "scope": "New November catalog rows appended; existing app and catalog entries unchanged",
+          "previous_content_sha256": "a44be486c06a5e83172a8980fa857af711699a62ea43263088681fe1708a9bc7",
+          "content_sha256": "8fb393d0a560ca34322e7b3fa759c6257d28bbde91f60d011f6c5c389436435f"
+        },
+        {
+          "recorded_on": "2026-11-13",
+          "review_reference": "PR #23",
+          "scope": "November image provenance metadata only",
+          "previous_content_sha256": "8fb393d0a560ca34322e7b3fa759c6257d28bbde91f60d011f6c5c389436435f",
+          "content_sha256": "95f53d8de0913417f751e1643c4af00001556b707c41f9f90f487e1250ec38b8"
+        }
+      ]
+    }
+  ],
+  "catalog_rebind_reference": "docs/FOVEA_FIGURE_LICENSE_20261029.md"
+}

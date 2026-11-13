@@ -1,0 +1,121 @@
+{
+  "schemaVersion": "0.1-draft",
+  "status": "evidence-screened-unapproved",
+  "date": "2026-10-14",
+  "source": {
+    "legacy": "drtforshortaol/master-evolution-map-test/index.html",
+    "legacyBlob": "b0b1738e8451421253f00ac4b0cdc9f290a5fc2a",
+    "prior": "docs/evo-v2-high-priority-relationship-review-draft1-20261014.md"
+  },
+  "interpretationPolicy": "Original page label documents teaching intent, not phylogenetic proof. No transitions or endpoints approved.",
+  "reviewedTransitions": [
+    {
+      "transitionId": "TR-0100",
+      "sourceKey": "great-split",
+      "currentClass": "evolutionary-branching",
+      "sourceObservation": "Visual bifurcation from LUCA illustrates divergence, not a verified exhaustive rooted two-child event.",
+      "reviewFinding": "Retain branching illustration only; avoid root date or strict binary topology.",
+      "status": "provisional-unapproved",
+      "canonicalEndpointApproval": false,
+      "canonicalEndpointIds": null
+    },
+    {
+      "transitionId": "TR-0103",
+      "sourceKey": "toward-host",
+      "currentClass": "ancestry-context",
+      "sourceObservation": "Original source explicitly says archaeal-related host lineage and exact host identity remains uncertain.",
+      "reviewFinding": "Treat host as inferred participant rather than identical to an extant Asgard lineage.",
+      "status": "provisional-unapproved",
+      "canonicalEndpointApproval": false,
+      "canonicalEndpointIds": null
+    },
+    {
+      "transitionId": "TR-0104",
+      "sourceKey": "endosymbiosis",
+      "currentClass": "cellular-endosymbiosis",
+      "sourceObservation": "Merge-line represents mitochondrial endosymbiosis; organelle outcome differs from organism descendant.",
+      "reviewFinding": "Require archaeal-related host, alphaproteobacterial partner, mitochondrial result with unknown exact ancestry.",
+      "status": "provisional-unapproved",
+      "canonicalEndpointApproval": false,
+      "canonicalEndpointIds": null
+    },
+    {
+      "transitionId": "TR-0105",
+      "sourceKey": "eukaryogenesis",
+      "currentClass": "complex-evolutionary-process",
+      "sourceObservation": "Vertical map sequence from mitochondrial milestone to early eukaryotic lineage is schematic.",
+      "reviewFinding": "Never cast mitochondrion as sole biological parent; represent multi-stage process.",
+      "status": "provisional-unapproved",
+      "canonicalEndpointApproval": false,
+      "canonicalEndpointIds": null
+    },
+    {
+      "transitionId": "TR-0107",
+      "sourceKey": "major-euk-div",
+      "currentClass": "summary-aggregation",
+      "sourceObservation": "Map combines broad eukaryotic groups under one educational diversification motif.",
+      "reviewFinding": "Do not interpret as resolved simultaneous splits or fixed eukaryotic root.",
+      "status": "provisional-unapproved",
+      "canonicalEndpointApproval": false,
+      "canonicalEndpointIds": null
+    },
+    {
+      "transitionId": "TR-0120",
+      "sourceKey": "primary-plastid-endo",
+      "currentClass": "cellular-endosymbiosis",
+      "sourceObservation": "Merge-line identifies primary plastid endosymbiosis; donor and host are biologically distinct.",
+      "reviewFinding": "Model cyanobacterial partner and eukaryotic host; organelle product distinct from host lineage.",
+      "status": "provisional-unapproved",
+      "canonicalEndpointApproval": false,
+      "canonicalEndpointIds": null
+    },
+    {
+      "transitionId": "TR-0121",
+      "sourceKey": "plastid-integration",
+      "currentClass": "cellular-integration",
+      "sourceObservation": "Map describes plastid integration between organelle establishment and early Archaeplastida.",
+      "reviewFinding": "Treat as extended functional/genomic integration process, not direct organelle-as-parent.",
+      "status": "provisional-unapproved",
+      "canonicalEndpointApproval": false,
+      "canonicalEndpointIds": null
+    },
+    {
+      "transitionId": "TR-0122",
+      "sourceKey": "archaeplastida-diversification",
+      "currentClass": "evolutionary-branching",
+      "sourceObservation": "Red/green branch pedagogically omits glaucophytes.",
+      "reviewFinding": "Indicate nonexhaustive illustration; do not certify phylogeny.",
+      "status": "provisional-unapproved",
+      "canonicalEndpointApproval": false,
+      "canonicalEndpointIds": null
+    },
+    {
+      "transitionId": "TR-0132",
+      "sourceKey": "stramenopile-branch",
+      "currentClass": "summary-aggregation",
+      "sourceObservation": "Label is One branch within eukaryotic diversification; other lineages are conceptual aggregation.",
+      "reviewFinding": "Keep summary/navigation-like semantics, no literal parent edge.",
+      "status": "provisional-unapproved",
+      "canonicalEndpointApproval": false,
+      "canonicalEndpointIds": null
+    },
+    {
+      "transitionId": "TR-0133",
+      "sourceKey": "red-derived-plastid",
+      "currentClass": "cellular-endosymbiosis",
+      "sourceObservation": "Original explicitly says red-algal-derived plastid history, not direct stramenopile-to-stramenopile descent.",
+      "reviewFinding": "Flag debated acquisition history, red-algal donor roles, host roles and alternatives.",
+      "status": "provisional-unapproved",
+      "canonicalEndpointApproval": false,
+      "canonicalEndpointIds": null
+    }
+  ],
+  "researchReferences": [
+    "https://www.nature.com/articles/s41586-025-08709-5",
+    "https://www.nature.com/articles/s41586-024-07677-6",
+    "https://www.annualreviews.org/content/journals/10.1146/annurev-micro-090817-062213",
+    "https://pubmed.ncbi.nlm.nih.gov/39240751/",
+    "https://pubmed.ncbi.nlm.nih.gov/38502496/"
+  ],
+  "next": "Review primary research and endpoint participant-role schemas with an authorized scientific reviewer before approval."
+}

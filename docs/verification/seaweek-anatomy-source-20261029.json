@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-29",
+  "asset_id": "asset-486b6cdb96375dfb",
+  "status": "review-required",
+  "source_page": "https://seaweek.org.nz/large-bellied-seahorse/",
+  "matching_artwork": "https://seaweek.org.nz/wp-content/uploads/2026/01/image-2.png",
+  "matching_artwork_sha256": "512e1c14545774d65d4c267ac263f14f2b1ef6e35959eadb5d15091dc84b464f",
+  "source_page_sha256": "4dc52e1b53b7f0cf3028b7444fab990098c284ec01d104bc4bfe0f1ac5aef48d",
+  "scope_evidence": "Official page supports download/print/display of resources; teaching tools describes classroom use. An offline guide-hub redistribution grant for the cropped artwork was not established. Site footer reserves rights.",
+  "creator_identity": null,
+  "creator_limit": "Giselle Clarkson is credited for a separate poster collection; do not transfer that credit to this drawing.",
+  "contact_source": "https://seaweek.org.nz/contact-us/",
+  "contact": "seaweek@merc.org.nz",
+  "contacted": false,
+  "permission_granted": false,
+  "next_action": "Request permission for the exact cropped anatomy artwork, including guide-hub display/offline distribution, or obtain an owner decision to omit/replace it."
+}

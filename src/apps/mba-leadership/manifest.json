@@ -20,7 +20,9 @@
     "apps/mba-leadership/apps.js",
     "apps/mba-leadership/data.js",
     "apps/mba-leadership/index.html",
-    "apps/mba-leadership/styles.css"
+    "apps/mba-leadership/styles.css",
+    "shared/media/asset-439853e26e3085c7--jenny-gray.jpg",
+    "shared/media/asset-c153bd064cb66624--lauren-cole.jpg"
   ],
   "media": [
     "asset-439853e26e3085c7",

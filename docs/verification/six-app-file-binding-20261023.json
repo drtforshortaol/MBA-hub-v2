@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "scope": "Supplemental current app-local file-set and manifest binding for portable six-app review; no new approvals",
+  "files": [
+    {
+      "app_id": "applied-water-science-life-support",
+      "files": [
+        {
+          "path": "src/apps/applied-water-science-life-support/app.js",
+          "sha256": "bc3dd55ca9596858c880256af684e27597e5f2fc2eae6439c5c19daf9e53911c"
+        },
+        {
+          "path": "src/apps/applied-water-science-life-support/index.html",
+          "sha256": "5785c3a28affdfe6df9d28e546e07fe7b8789238276048102bb26bb54cdfa659"
+        },
+        {
+          "path": "src/apps/applied-water-science-life-support/manifest.json",
+          "sha256": "d593e80164e8e2affd0b6d7b428d56620fef44b78b6637a1be460e64a17d6c8a"
+        },
+        {
+          "path": "src/apps/applied-water-science-life-support/styles.css",
+          "sha256": "6a593b220d0e41c793d4cb8c4903aad9f37e1d1c8d8038bdbff5adbdf17549cd"
+        }
+      ]
+    },
+    {
+      "app_id": "interpretation-principles",
+      "files": [
+        {
+          "path": "src/apps/interpretation-principles/app.js",
+          "sha256": "2afe5b7ddf958146954db722b687a521cfdeba1e35ed764ba2c20a18a55d0328"
+        },
+        {
+          "path": "src/apps/interpretation-principles/data.js",
+          "sha256": "0d598a17421ab55921db5e93afb4afb520c900e1eeeb77fe14454c411a0386c8"
+        },
+        {
+          "path": "src/apps/interpretation-principles/index.html",
+          "sha256": "f716bae0a5816082011e6f1dab7445bfa49ffed08fbc938976116f7cd6d2c084"
+        },
+        {
+          "path": "src/apps/interpretation-principles/manifest.json",
+          "sha256": "660fa9a1ca1619bcac964214e4d49a44e8f2108998edb0c143ab728603ea181a"
+        },
+        {
+          "path": "src/apps/interpretation-principles/styles.css",
+          "sha256": "c054bd6973fc4d1afc57d86b4c613ab9c7c351be040597326b24e6ba2008a8d9"
+        }
+      ]
+    },
+    {
+      "app_id": "mba-leadership",
+      "files": [
+        {
+          "path": "src/apps/mba-leadership/app.js",
+          "sha256": "e6485a4de16fc3c2bc69c3b143d00f7cfdd7aaa532dc33959ac51413586c7ef8"
+        },
+        {
+          "path": "src/apps/mba-leadership/apps.js",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "src/apps/mba-leadership/data.js",
+          "sha256": "2643b20c17eea744696c402710c9cba3ade60bbaa8117e47d944ba472a707a4b"
+        },
+        {
+          "path": "src/apps/mba-leadership/index.html",
+          "sha256": "67b04bc75554b6563d6eaaf8d4b8e404f20e356a50822278a06881cd2650e6c8"
+        },
+        {
+          "path": "src/apps/mba-leadership/manifest.json",
+          "sha256": "e48a0ea8422bc45c7efb81c72af4ea914c2843010c4cd32d45ff7a9a2be835de"
+        },
+        {
+          "path": "src/apps/mba-leadership/styles.css",
+          "sha256": "bfa259a27ab92ecded650ac0820e675870584e1c4941bf8ab40f999b0164c031"
+        }
+      ]
+    },
+    {
+      "app_id": "information-center",
+      "files": [
+        {
+          "path": "src/apps/information-center/app.js",
+          "sha256": "a17fdc8fc37fe3cafb77e22ee675b0d5e5cd6eca58c1c2011549751a4780ccef"
+        },
+        {
+          "path": "src/apps/information-center/data.js",
+          "sha256": "3503d6ed30b7f1bf70a31bc8cab63a462bc453e4a9742ce29135850e5ce0a164"
+        },
+        {
+          "path": "src/apps/information-center/index.html",
+          "sha256": "a422da4397c337161fbbbe5742b505417d282373e44b53d8093b9cdfd08f2324"
+        },
+        {
+          "path": "src/apps/information-center/manifest.json",
+          "sha256": "da217d1fa637f786ea60b14dca3f196213a1b332bc5b4f8e686cc675b43aa123"
+        },
+        {
+          "path": "src/apps/information-center/styles.css",
+          "sha256": "0ca2a7a5fb8ba77698cb6261cba60b29a8f0a1516729d251c4dd641d46523468"
+        }
+      ]
+    },
+    {
+      "app_id": "aquarium-library-explorer",
+      "files": [
+        {
+          "path": "src/apps/aquarium-library-explorer/index.html",
+          "sha256": "763447eba9155035b3d8ad1a0d12ddf51da915ad6b5d8491e9671d76d83f4b93"
+        },
+        {
+          "path": "src/apps/aquarium-library-explorer/library-data.js",
+          "sha256": "35bd9bf0e106633c226982d20453f591a63eca20393cd81a5981b887bc4febe3"
+        },
+        {
+          "path": "src/apps/aquarium-library-explorer/manifest.json",
+          "sha256": "c32cb42c056cee5d16d3641e315bdeeacbb0137129fd34423b4c1f2646f7cc84"
+        }
+      ]
+    },
+    {
+      "app_id": "mmc-narrations",
+      "files": [
+        {
+          "path": "src/apps/mmc-narrations/app.js",
+          "sha256": "045212e49863b65ef23fad7e3fd39a5af81343680b650f962599fb49155bb4dc"
+        },
+        {
+          "path": "src/apps/mmc-narrations/apps.js",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "src/apps/mmc-narrations/data.js",
+          "sha256": "0b7f8a902968518dd623bd4be042d1e331da3507ce17b8d9b2c7c38d804a70f4"
+        },
+        {
+          "path": "src/apps/mmc-narrations/index.html",
+          "sha256": "7cb897b58a6e2939ea5de46e100969bc18cab94b0e315f2ce0d47e652a3e0db0"
+        },
+        {
+          "path": "src/apps/mmc-narrations/manifest.json",
+          "sha256": "a5312fc15eea14e12e0ccf6dc831b3dbe20469318f49eedc0fc9b364b6956262"
+        },
+        {
+          "path": "src/apps/mmc-narrations/styles.css",
+          "sha256": "481a5fd4100211ceb7bfca202b4e82f080cc52c9d7da2aeda57849982eb8effd"
+        }
+      ]
+    }
+  ],
+  "search_checks": [
+    {
+      "app_id": "interpretation-principles",
+      "records": 6,
+      "all_nonempty_displayed_authored_fields_in_search": true,
+      "checked_fields": 86,
+      "publication_review": "pending"
+    },
+    {
+      "app_id": "mba-leadership",
+      "records": 2,
+      "all_nonempty_displayed_authored_fields_in_search": true,
+      "checked_fields": 34,
+      "publication_review": "pending"
+    }
+  ]
+}

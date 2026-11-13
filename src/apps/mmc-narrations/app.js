@@ -119,7 +119,7 @@
   }
 
   function renderSections() {
-    dropdownContainer.innerHTML = "";
+    dropdownContainer.replaceChildren();
 
     if (!APP_DATA.sections || APP_DATA.sections.length === 0) {
       const empty = document.createElement("div");
@@ -136,7 +136,7 @@
   }
 
   function renderReferences() {
-    referencesList.innerHTML = "";
+    referencesList.replaceChildren();
 
     const references = APP_DATA.references || [];
 

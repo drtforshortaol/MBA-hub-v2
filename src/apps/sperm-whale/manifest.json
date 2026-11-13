@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "app_id": "sperm-whale",
-  "title": "\ud83d\udc0b Sperm Whale",
+  "title": "🐋 Sperm Whale",
   "category": "animals",
   "type": "species",
   "version": "2.0.0-alpha.6",
   "entry_point": "apps/sperm-whale/index.html",
   "status": "testing",
   "owner": "sperm-whale",
-  "listed": false,
+  "listed": true,
   "dependencies": [
     {
       "id": "navigation",
@@ -16,13 +16,19 @@
     }
   ],
   "offline_assets": [
-    "apps/sperm-whale/index.html"
+    "apps/sperm-whale/index.html",
+    "shared/media/asset-0c3ad11dc596bfa3--IMG_3515.jpeg",
+    "shared/media/asset-48b0779c4998c64f--IMG_3516.jpeg",
+    "shared/media/asset-345be463837369de--IMG_3517.jpeg",
+    "shared/media/asset-a682abf588d51b0d--IMG_3518.jpeg",
+    "shared/media/asset-ee96e0719845ef73--sperm-whale-pod.jpeg"
   ],
   "media": [
     "asset-0c3ad11dc596bfa3",
     "asset-48b0779c4998c64f",
     "asset-345be463837369de",
-    "asset-a682abf588d51b0d"
+    "asset-a682abf588d51b0d",
+    "asset-ee96e0719845ef73"
   ],
   "knowledge": [],
   "cross_links": [
@@ -34,13 +40,13 @@
     {
       "id": "At-a-glance",
       "title": "At a glance",
-      "text": "At a glance Deep-diving toothed whales whose powerful echolocation clicks can be detected across long distances. Sperm whale groups have culturally transmitted patterns of social clicks called codas. Open Naturalist Field Notes \u2192",
+      "text": "At a glance Deep-diving toothed whales whose powerful echolocation clicks can be detected across long distances. Sperm whale groups have culturally transmitted patterns of social clicks called codas. Open Naturalist Field Notes →",
       "aliases": []
     },
     {
       "id": "MBARI-hydrophone-and-Monterey-Bay",
       "title": "MBARI hydrophone and Monterey Bay",
-      "text": "MBARI hydrophone and Monterey Bay The February 11, 2026 Field Note describes seven years of passive acoustic monitoring along Central California. Different ages and sexes were detected throughout the year, with more detections in fall and winter. A detection does not mean the whale was in Monterey Bay itself: clicks can be heard up to approximately 160 km (100 miles) under favorable conditions. William Oestreich \u00a9 2024 MBARI; bathymetry NOAA NCEI.",
+      "text": "MBARI hydrophone and Monterey Bay The February 11, 2026 Field Note describes seven years of passive acoustic monitoring along Central California. Different ages and sexes were detected throughout the year, with more detections in fall and winter. A detection does not mean the whale was in Monterey Bay itself: clicks can be heard up to approximately 160 km (100 miles) under favorable conditions. William Oestreich © 2024 MBARI; bathymetry NOAA NCEI.",
       "aliases": []
     },
     {
@@ -64,12 +70,63 @@
     {
       "id": "Visitor-friendly-takeaway",
       "title": "Visitor-friendly takeaway",
-      "text": "Visitor-friendly takeaway \u201cWe can sometimes hear sperm whales long before we could ever see them.\u201d  Their clicks reveal both their presence and clues to how their social groups communicate. Source: Naturalist Shift Update, February 11, 2026. Observations and hypotheses are distinguished throughout.",
+      "text": "Visitor-friendly takeaway “We can sometimes hear sperm whales long before we could ever see them.”  Their clicks reveal both their presence and clues to how their social groups communicate. Source: Naturalist Shift Update, February 11, 2026. Observations and hypotheses are distinguished throughout.",
       "aliases": []
+    },
+    {
+      "id": "Identification",
+      "title": "Recognizing a sperm whale",
+      "text": "A huge, blunt head, narrow lower jaw and wrinkled skin distinguish this largest toothed whale. The single blowhole sits toward the left front of the head; its blow angles forward and left. A low dorsal hump replaces the tall fin seen on many dolphins. Males grow much larger than females.",
+      "aliases": []
+    },
+    {
+      "id": "Deep-diving-and-feeding",
+      "title": "Deep diving & feeding",
+      "text": "Squid are major prey; fish, including some sharks and rays, are also eaten. Foraging dives commonly last about 45 minutes and reach around 600 metres (2,000 feet), with deeper dives possible. The whale returns to the surface to breathe between dives.",
+      "aliases": []
+    },
+    {
+      "id": "Sound-and-spermaceti",
+      "title": "Sound & the enormous head",
+      "text": "The head contains spermaceti, a waxy material associated with sound focusing. Echolocation clicks help locate prey in darkness; social codas are patterned click sequences. Hearing clicks does not, by itself, reveal exactly where a whale is.",
+      "aliases": []
+    },
+    {
+      "id": "Family-life-and-calves",
+      "title": "Family life & calves",
+      "text": "Related females and their young form enduring social units. Females help care for calves. Young males eventually leave these groups; older males range widely and return to warmer breeding areas. Pregnancy lasts about 14–16 months, and calves may nurse for several years.",
+      "aliases": []
+    },
+    {
+      "id": "Built-for-depth",
+      "title": "Built for depth",
+      "text": "Oxygen-storing myoglobin in the muscles and a rib cage that can compress during descent help make prolonged deep dives possible. A dive is a breath-hold: sperm whales are mammals and must return to the air to breathe.",
+      "aliases": []
+    },
+    {
+      "id": "Conservation-and-observation",
+      "title": "Conservation & observation",
+      "text": "Commercial whaling heavily reduced populations. In U.S. waters the species is listed as endangered under the Endangered Species Act. Current pressures include entanglement, vessel collisions, marine debris and ocean noise. Observe without approaching or disrupting whales.",
+      "aliases": []
+    },
+    {
+      "id": "Research-and-individuals",
+      "title": "How researchers recognize individuals",
+      "text": "Marks and scars on flukes and dorsal fins help researchers follow individual whales over time. Photo-identification, acoustic recordings, genetics and tags reveal different parts of their lives. A sound detection, a photograph and a tracked dive each answer different questions.",
+      "aliases": []
+    },
+    {
+      "id": "Photo-sources",
+      "title": "Photo sources",
+      "text": "Gabriel Barathieu, Sperm whale pod, Wikimedia Commons, CC BY-SA 2.0. Cropped/resized copy, shared under the same license. William Oestreich © 2024 MBARI; bathymetry NOAA NCEI. Infographic by Taylor Hersh, based on Hersh et al. (2022), PNAS.",
+      "aliases": [
+        "Photo credits",
+        "Image sources"
+      ]
     }
   ],
   "source_version": "preserved-v1",
   "source_repository": "drtforshortaol/MBA-hub",
   "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
-  "publication_review": "pending"
+  "publication_review": "owner-approved-text"
 }

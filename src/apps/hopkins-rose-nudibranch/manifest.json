@@ -16,7 +16,15 @@
     }
   ],
   "offline_assets": [
-    "apps/hopkins-rose-nudibranch/index.html"
+    "apps/hopkins-rose-nudibranch/index.html",
+    "shared/media/asset-8cb346af7e0cfb48--ScreenHunter-10648.jpg",
+    "shared/media/asset-538d5993b59b2206--IMG_3465.jpeg",
+    "shared/media/asset-717b2911c7edcb80--IMG_3466.jpeg",
+    "shared/media/asset-2a1a981e1a8e0bc5--IMG_3467.jpeg",
+    "shared/media/asset-cd38f502a51bf6bd--IMG_3468.jpeg",
+    "shared/media/asset-2716d888f851c96f--IMG_3469.jpeg",
+    "shared/media/asset-3fd33c52e769a694--IMG_3470.jpeg",
+    "shared/media/asset-7ddf650d12a6e651--IMG_3471.jpeg"
   ],
   "media": [
     "asset-8cb346af7e0cfb48",

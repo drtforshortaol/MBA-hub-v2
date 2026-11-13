@@ -1,0 +1,475 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-29",
+  "scope": "Isolated four-branch source overlay; no branch merge, deployment, physical-device approval, content approval or media permission.",
+  "inputs": {
+    "base": "c0ddccf0b10dc50b01aba17e917d646946af352c",
+    "heads": [
+      "be5fbcadb29fb77881402a9daa2e60ad1b5c6a5c",
+      "a8dddb8535a5313149edc8616aefae7cafaebe88",
+      "d6492661eb14294b13809551007a743091830394",
+      "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+    ],
+    "changed_paths": {
+      "docs/MEDIA_EVIDENCE_HARDENING_20261029.md": [
+        "be5fbcadb29fb77881402a9daa2e60ad1b5c6a5c"
+      ],
+      "docs/verification/pending-media-embedded-metadata-20261029.json": [
+        "be5fbcadb29fb77881402a9daa2e60ad1b5c6a5c"
+      ],
+      "scripts/review-output-path.mjs": [
+        "be5fbcadb29fb77881402a9daa2e60ad1b5c6a5c"
+      ],
+      "tests/media-review-responses.test.mjs": [
+        "be5fbcadb29fb77881402a9daa2e60ad1b5c6a5c"
+      ],
+      "tests/pending-media-review.test.mjs": [
+        "be5fbcadb29fb77881402a9daa2e60ad1b5c6a5c"
+      ],
+      "tests/review-output-path.test.mjs": [
+        "be5fbcadb29fb77881402a9daa2e60ad1b5c6a5c"
+      ],
+      "config/owner-text-reviews.json": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "docs/BUILD_REPORT.json": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "docs/GENERATED_CATALOG.md": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88",
+        "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+      ],
+      "docs/SEAHORSE_FINAL_TEXT_REVIEW_20261029.md": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "docs/SEAHORSE_PRIMARY_EVIDENCE_20261029.md": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "docs/SEAHORSE_REVIEW_DISPOSITION_20261029.md": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "docs/SEAHORSE_SOURCE_VERIFICATION_20261028.md": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "docs/SEAHORSE_TEXT_APPROVAL_20261029.md": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "docs/verification/seahorse-status-source-receipt-20261029.json": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "docs/verification/seahorse-text-clearance-20261029.json": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "scripts/build.mjs": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "scripts/public-review.mjs": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "src/apps/big-bellied-seahorse/index.html": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "src/apps/big-bellied-seahorse/manifest.json": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "tests/inherited-static-reconciliation.test.mjs": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "tests/october-seahorse.test.mjs": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "tests/owner-text-approval.test.mjs": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "tests/pending-october-media-registration.test.mjs": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "tests/release-readiness-assessment.test.mjs": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "tests/seahorse-exhibit-release-wording.test.mjs": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "tests/seahorse-review-boundary.test.mjs": [
+        "a8dddb8535a5313149edc8616aefae7cafaebe88"
+      ],
+      "docs/ROLLBACK_RETENTION_HARDENING_20261029.md": [
+        "d6492661eb14294b13809551007a743091830394"
+      ],
+      "src/sw.js": [
+        "d6492661eb14294b13809551007a743091830394"
+      ],
+      "tests/offline.test.mjs": [
+        "d6492661eb14294b13809551007a743091830394"
+      ],
+      "tests/rollback-retention.test.mjs": [
+        "d6492661eb14294b13809551007a743091830394"
+      ],
+      "docs/NATURALIST_INDEPENDENT_SCOPE_REVIEW_20261023.md": [
+        "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+      ],
+      "docs/NATURALIST_OCTOBER_RUNTIME_20261029.md": [
+        "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+      ],
+      "docs/NATURALIST_OWNER_SOURCE_RECONCILIATION_20261029.md": [
+        "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+      ],
+      "docs/NATURALIST_PRIMARY_EVIDENCE_FOLLOWUP_20261029.md": [
+        "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+      ],
+      "docs/NATURALIST_SCOPED_OWNER_REVIEW_20261029.md": [
+        "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+      ],
+      "docs/verification/naturalist-october-owner-source-20261029.json": [
+        "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+      ],
+      "docs/verification/naturalist-october-runtime-20261029.json": [
+        "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+      ],
+      "docs/verification/naturalist-october-source-reconciliation-20261029.json": [
+        "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+      ],
+      "scripts/migration/review-naturalist-october-runtime.mjs": [
+        "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+      ],
+      "scripts/migration/review-naturalist-original-fidelity.mjs": [
+        "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+      ],
+      "scripts/migration/review-naturalist-owner-source.mjs": [
+        "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+      ],
+      "src/apps/naturalist-field-notes/manifest.json": [
+        "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+      ],
+      "src/apps/naturalist-field-notes/october-2026-08-14.html": [
+        "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+      ],
+      "src/apps/naturalist-field-notes/october-2026-note.js": [
+        "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+      ],
+      "tests/naturalist-october-runtime.test.mjs": [
+        "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+      ],
+      "tests/naturalist-owner-source.test.mjs": [
+        "2f6886ed9a074441b8b1f16e50fc5ff1cbf788d8"
+      ]
+    },
+    "text_merged_paths": [
+      "docs/GENERATED_CATALOG.md"
+    ],
+    "combined_changed_file_sha256": {
+      "docs/MEDIA_EVIDENCE_HARDENING_20261029.md": "509930db1d660fa7b0577c639868e7f1c81a5ae8d67c2be64cd57a8b67fcc200",
+      "docs/verification/pending-media-embedded-metadata-20261029.json": "2053be9efca5506b72b4bcf86690b886eae756a9030b03a063c272dab5a322e3",
+      "scripts/review-output-path.mjs": "c6c5e12848e4266f8c16ac239f9a33a66e2c0c6dd170b9b6a95ca96a925d68fe",
+      "tests/media-review-responses.test.mjs": "0966b30329b1b8e7f49489342842755531b595a5b2901c7073cfbf43beb9992a",
+      "tests/pending-media-review.test.mjs": "6b95167c6b52749af15e482751c2deb25a9d427cf229ea82bc2eb783374695f7",
+      "tests/review-output-path.test.mjs": "024326ea411d2de09403032e136895afe3bf86c282f8f90c42b1887cf23cfea1",
+      "config/owner-text-reviews.json": "4bf54676ca63b892016b05f1cd297e9e0978b34ae491290fd0a8fff85ecc9cb7",
+      "docs/BUILD_REPORT.json": "7f5e628edd1250468f1ec2899e6a456b4d907e40fc01def218b5e1aa2f541210",
+      "docs/GENERATED_CATALOG.md": "863cd55cd1984bfb77f41135836a51d9e72f6fb927a280b29d1ec36ef709c846",
+      "docs/SEAHORSE_FINAL_TEXT_REVIEW_20261029.md": "3fc194da276fd0acc074effb8009ffb7a43e03e7b550b47185b6efcf92b6f2f8",
+      "docs/SEAHORSE_PRIMARY_EVIDENCE_20261029.md": "f1cd1ec946a4037ed0582e8f6f48f7bbb6aac56c3c75788ebdaada5cbef7c7d0",
+      "docs/SEAHORSE_REVIEW_DISPOSITION_20261029.md": "2b77438d3c49b09c8cdd7fa0159da0fee01fa218a3a2165459ae369e21da32fa",
+      "docs/SEAHORSE_SOURCE_VERIFICATION_20261028.md": "eab8d828cdb9593cabdbba2bb7799225a6aebf71152c60890e0ac7c07d0b8cc1",
+      "docs/SEAHORSE_TEXT_APPROVAL_20261029.md": "2d53dfeaec40154aa0570bb7b1456493abc5c36bda1a74fadc50cd6081a06b6d",
+      "docs/verification/seahorse-status-source-receipt-20261029.json": "65d7fd6e151ed734e14fd724dd4575187dfe3785814d231eaedc5ac62a323239",
+      "docs/verification/seahorse-text-clearance-20261029.json": "13f67df091c72536d2680ccbf60afe0b7f849e14ac765edb447055fc627697d9",
+      "scripts/build.mjs": "d195305bbbb9b1759bb9122e580bcb0661720b91bac87aaa2158da79f2ef7fcf",
+      "scripts/public-review.mjs": "a5fa86bd29605de13a80dcd793ac18ccfeba912e7800396b20a4f8f42367adc0",
+      "src/apps/big-bellied-seahorse/index.html": "c3452ba132c7e32e24632b0ec52bc92cec77b5b54f917797889674969faf9eb1",
+      "src/apps/big-bellied-seahorse/manifest.json": "5f1d670a8283895d0131b2c315a1eeabfc9eaefdeb44ea1c12eacc284a4c1307",
+      "tests/inherited-static-reconciliation.test.mjs": "1ef645a4e29e4d9c2999e552112b906b1220c6a2a31406c401ee7e0b2cb0558f",
+      "tests/october-seahorse.test.mjs": "088b3c60700529c5243ff92df8962e0941e06da86e180058bf3d427617dfc13a",
+      "tests/owner-text-approval.test.mjs": "67bfe806ad123daf8b00a5675d70a118f57cafda958ca4abe1b2dc2ccb9e4e40",
+      "tests/pending-october-media-registration.test.mjs": "aeda549f9954e0c412cebe30933ab1b4805df74123366fc3d17638d71f7ed650",
+      "tests/release-readiness-assessment.test.mjs": "45ac64552a8c83d03c04e224b70946ddc23ade30dd54e0c72ac164fb6194e406",
+      "tests/seahorse-exhibit-release-wording.test.mjs": "be446c076f97c47943a0817648f06cc9c83fa0cf50108ce00df3d347c26779ca",
+      "tests/seahorse-review-boundary.test.mjs": "347ec8dd7f3cac6d9cfa64c6b838b58400aab2941368c2438c90bdcf56625b21",
+      "docs/ROLLBACK_RETENTION_HARDENING_20261029.md": "bbc255d9f9783eb33d62be13025a4320a09729648d715d1af07be198c48752ff",
+      "src/sw.js": "2d59be80036d3e9f03f2c2f392fc821c5af23901977bfd801173a984467ee54b",
+      "tests/offline.test.mjs": "2a04924b5164a1a95d95fbdbe97ba8e7d62160bf131bb34437a237f9ef86ea1b",
+      "tests/rollback-retention.test.mjs": "43b563ea190300143599690b18ea6e1cabdf2facf6aebfce07c42d41336b195e",
+      "docs/NATURALIST_INDEPENDENT_SCOPE_REVIEW_20261023.md": "5f2cac78e6e01f548465b2be07c7468103e02853fcd80fd85dfde782c37cbc00",
+      "docs/NATURALIST_OCTOBER_RUNTIME_20261029.md": "e95ec1bc6a06b5a6d9269ded14b37175c06f4599eb38e50d492f56c99ca47f5d",
+      "docs/NATURALIST_OWNER_SOURCE_RECONCILIATION_20261029.md": "6b59ecadd342be1b12e20bab1cf6527156032b9f198285e97126614d2a137908",
+      "docs/NATURALIST_PRIMARY_EVIDENCE_FOLLOWUP_20261029.md": "1ea70d8dce68b6697490789473df9116dbd5db6a19b7eb240f2c424542457061",
+      "docs/NATURALIST_SCOPED_OWNER_REVIEW_20261029.md": "4df92036b5b34f5417912c182926bd19ea19e13d560c14865b30bce0cf5dc1f4",
+      "docs/verification/naturalist-october-owner-source-20261029.json": "b2cbba54e814482fab3a34de01305a6a6e4a97a53dddefbd58bc060dc3ad6673",
+      "docs/verification/naturalist-october-runtime-20261029.json": "990b7e709f3c00893c8f780307c5024e17580c0bef69eca8c7aa3b1c38aa6ec5",
+      "docs/verification/naturalist-october-source-reconciliation-20261029.json": "1debfa539d636e136aaf886bb9d688225fcd32b590f4076c56ed1cba80ae3fbc",
+      "scripts/migration/review-naturalist-october-runtime.mjs": "b5b7514c3eda60c54152ef89b6fa95d5093681e1469ebf18a4aa2c2e80dc590f",
+      "scripts/migration/review-naturalist-original-fidelity.mjs": "593cf86665a4f768e2076a58c3e8173a7fd8f9b29d00158a83d8ccabbe68b371",
+      "scripts/migration/review-naturalist-owner-source.mjs": "7e6dbf1106ab33020d0c4064770243e521dfc683e1d67f381d8514f18d58deaa",
+      "src/apps/naturalist-field-notes/manifest.json": "f6d5eb979f63212966c7e2fab36e09f3eedae8a1752b325983956e01362be208",
+      "src/apps/naturalist-field-notes/october-2026-08-14.html": "daf14bd5145cf7a4394c8d8b476d9a3135793d07bd823d84b10e8b2c448d1c1e",
+      "src/apps/naturalist-field-notes/october-2026-note.js": "409140fc080fac1ddcc3390db326ea4a5df56ebdf10b4756b73de4d8a68d9787",
+      "tests/naturalist-october-runtime.test.mjs": "daafc6b598585109ba193a9c4dac2b7cbe8d10b4a70dfce7f40299d80d2db920",
+      "tests/naturalist-owner-source.test.mjs": "f6fd33e98c04f7b9573820d6edc40ab45e4c7e597bcfd94204f66c14c3a172e5"
+    }
+  },
+  "checks": {
+    "build": "passed",
+    "security_scan": "passed",
+    "artifact_integrity": "passed",
+    "content_preflight_all": "passed",
+    "owner_seahorse_text_approval_supported": true,
+    "tests": {
+      "passed": 1035,
+      "failed": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "stdout_sha256": "99efb2cc9733f53a176709236f8ebe0897b38cfa7f7572dc389825fb559ba89a"
+    },
+    "offline_simulations": [
+      {
+        "environment": "developer",
+        "scenario": "corrupt-json-inventory-recovery",
+        "release": "805cb29117c0d6c5",
+        "passed": true,
+        "resources": {
+          "expected": 383,
+          "verified": 383,
+          "errors": []
+        },
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "developer",
+        "scenario": "forged-inventory-recovery",
+        "release": "805cb29117c0d6c5",
+        "passed": true,
+        "resources": {
+          "expected": 383,
+          "verified": 383,
+          "errors": []
+        },
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "developer",
+        "scenario": "interrupted-inventory-recovery",
+        "release": "805cb29117c0d6c5",
+        "passed": true,
+        "resources": {
+          "expected": 383,
+          "verified": 383,
+          "errors": []
+        },
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "developer",
+        "scenario": "inventory-loss-recovery",
+        "release": "805cb29117c0d6c5",
+        "passed": true,
+        "resources": {
+          "expected": 383,
+          "verified": 383,
+          "errors": []
+        },
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "developer",
+        "scenario": "prepared-navigation",
+        "release": "805cb29117c0d6c5",
+        "passed": true,
+        "resources": {
+          "expected": 383,
+          "verified": 383,
+          "errors": []
+        },
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "developer",
+        "scenario": "corrupted-entry-recovery",
+        "release": "805cb29117c0d6c5",
+        "passed": true,
+        "resources": {
+          "expected": 383,
+          "verified": 383,
+          "errors": []
+        },
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "developer",
+        "scenario": "refresh-page-inventory-recovery",
+        "release": "805cb29117c0d6c5",
+        "passed": true,
+        "resources": {
+          "expected": 383,
+          "verified": 383,
+          "errors": []
+        },
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "scenario": "corrupt-json-inventory-recovery",
+        "release": "a1e74af78a0abc7a",
+        "passed": true,
+        "resources": {
+          "expected": 374,
+          "verified": 374,
+          "errors": []
+        },
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "scenario": "forged-inventory-recovery",
+        "release": "a1e74af78a0abc7a",
+        "passed": true,
+        "resources": {
+          "expected": 374,
+          "verified": 374,
+          "errors": []
+        },
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "scenario": "interrupted-inventory-recovery",
+        "release": "a1e74af78a0abc7a",
+        "passed": true,
+        "resources": {
+          "expected": 374,
+          "verified": 374,
+          "errors": []
+        },
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "scenario": "inventory-loss-recovery",
+        "release": "a1e74af78a0abc7a",
+        "passed": true,
+        "resources": {
+          "expected": 374,
+          "verified": 374,
+          "errors": []
+        },
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "scenario": "prepared-navigation",
+        "release": "a1e74af78a0abc7a",
+        "passed": true,
+        "resources": {
+          "expected": 374,
+          "verified": 374,
+          "errors": []
+        },
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "scenario": "corrupted-entry-recovery",
+        "release": "a1e74af78a0abc7a",
+        "passed": true,
+        "resources": {
+          "expected": 374,
+          "verified": 374,
+          "errors": []
+        },
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "scenario": "refresh-page-inventory-recovery",
+        "release": "a1e74af78a0abc7a",
+        "passed": true,
+        "resources": {
+          "expected": 374,
+          "verified": 374,
+          "errors": []
+        },
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      }
+    ]
+  },
+  "release_eligible": false,
+  "remaining_blockers": [
+    "release gate: ownerApproved",
+    "release gate: pilotPassed",
+    "release gate: deviceOfflinePassed",
+    "release gate: rollbackDevicePassed",
+    "release gate: privacyReviewed",
+    "content review pending: naturalist-field-notes",
+    "media permission review: asset-1bd100105f88c83a",
+    "media permission review: asset-95daa2493750e82f",
+    "media permission review: asset-47f9bbb193878eec",
+    "media permission review: asset-50646c3fe1d0c359",
+    "media permission review: asset-486b6cdb96375dfb",
+    "media permission review: asset-2913dc8df835400c",
+    "media permission review: asset-e62b39cc07a542c4",
+    "media permission review: asset-54f52bac7bc827bc",
+    "media permission review: asset-93c15fb934aba9e6"
+  ],
+  "naturalist_source_check": {
+    "schema_version": 1,
+    "app_id": "naturalist-field-notes",
+    "source_receipt_sha256": "b2cbba54e814482fab3a34de01305a6a6e4a97a53dddefbd58bc060dc3ad6673",
+    "current_script_sha256": "409140fc080fac1ddcc3390db326ea4a5df56ebdf10b4756b73de4d8a68d9787",
+    "current_summary_sha256": "daf14bd5145cf7a4394c8d8b476d9a3135793d07bd823d84b10e8b2c448d1c1e",
+    "standalone_historical_context_matches": true,
+    "standalone_missing_photo_preserved": true,
+    "source_rows": 38,
+    "normalized_species": 39,
+    "complete_bay_watch": true,
+    "stable_note_id": "2026-10-15-seahorse",
+    "source_email_date_verified": false,
+    "display_uses_observation_period": true,
+    "historical_context_restored": true,
+    "source_photo_items": 5,
+    "current_photo_items": 4,
+    "unresolved_photo_files": [
+      "MZD_5048.JPG"
+    ],
+    "attachment_identity_verified": false,
+    "approval_granted": false,
+    "publication_review": "pending",
+    "limitations": [
+      "Selected excerpts and Bay Watch rows, not a complete email or original attachment archive.",
+      "Subject/caption correspondence does not establish exact image identity or reuse rights.",
+      "Source-derived biology and exhibit recollections are not independently certified by this comparison."
+    ]
+  },
+  "limitations": [
+    "Simulated worker/cache behavior does not certify physical iPhone rendering or native service-worker lifecycle.",
+    "Existing device-QA records concern earlier tested bytes; no fresh device approval is granted.",
+    "Naturalist source photo MZD_5048.JPG is still unavailable; exact attachment identity and reuse rights remain unverified.",
+    "Independent draft branches retain their own release counts until integrated; 15 describes only these combined inputs."
+  ]
+}

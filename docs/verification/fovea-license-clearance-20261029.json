@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "baseline_commit": "28078caf06f1e70e4328bf22d9b7995cbb089950",
+  "scope": "One publisher-licensed comparative figure; approved scientific text and all image bytes retained",
+  "asset_id": "asset-e62b39cc07a542c4",
+  "license": "CC-BY-4.0",
+  "source_receipt_sha256": "a2b8c9b7ce74d06a1f744e29eb7511c2f5f17c136dc112216750eee80171a798",
+  "before_branch_blockers": 11,
+  "after_branch_blockers": 10,
+  "cleared_blocker": "media permission review: asset-e62b39cc07a542c4",
+  "remaining_blockers": [
+    "release gate: ownerApproved",
+    "release gate: pilotPassed",
+    "release gate: deviceOfflinePassed",
+    "release gate: rollbackDevicePassed",
+    "release gate: privacyReviewed",
+    "content review pending: big-bellied-seahorse",
+    "media permission review: asset-486b6cdb96375dfb",
+    "media permission review: asset-2913dc8df835400c",
+    "media permission review: asset-54f52bac7bc827bc",
+    "media permission review: asset-93c15fb934aba9e6"
+  ],
+  "checks": {
+    "focused_tests_passed": 42,
+    "full_tests": {
+      "passed": 1037,
+      "failed": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "stdout_sha256": "cf629e94cd9312c3798e4c4a2472de8bfeea536585cf18df733e9f6b1f30617a"
+    },
+    "build": "passed",
+    "security_scan": "passed",
+    "all_app_content_preflight": "passed",
+    "artifact_integrity": "passed",
+    "diff_check": "passed",
+    "offline_navigation": [
+      {
+        "environment": "developer",
+        "passed": true,
+        "resources": {
+          "expected": 384,
+          "verified": 384,
+          "errors": []
+        },
+        "release": "3a5c6fba2a30e7d6",
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "passed": true,
+        "resources": {
+          "expected": 375,
+          "verified": 375,
+          "errors": []
+        },
+        "release": "4b3a52ff7fff3201",
+        "offline_network_attempts": 0
+      }
+    ]
+  },
+  "test_followup": "An older test expected all five Seahorse images to be pending. It now requires specific license evidence for the one cleared figure and keeps the other four pending. Final full suite passed.",
+  "Seaweek_anatomy_permission_pending": true,
+  "external_messages_sent": false,
+  "Naturalist_files_unchanged": true,
+  "retained_image_unchanged": true,
+  "other_catalog_asset_entries_unchanged": 212,
+  "scientific_paragraphs_unchanged": true,
+  "publication_authorized": false,
+  "physical_device_reverified": false,
+  "combined_branches_reverified": false
+}

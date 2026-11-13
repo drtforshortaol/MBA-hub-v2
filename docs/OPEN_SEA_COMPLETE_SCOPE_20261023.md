@@ -1,0 +1,32 @@
+# Open Sea complete inherited-content scope review — October 23, 2026
+
+Reviewed integration `e77cdd635df2112e183cc3442b26b4df5d58e206` against read-only MBA-hub pin `5c219508d23255080f6b050cefa8092905447d81`, directory `apps/open-sea/`. This completes the code/content scope review identified in OPEN_SEA_SCOPE_GAPS_20261023.md. Portable fresh pinned/current renderer reproduction and current-content digest binding remain independently required before reconciliation; this document alone does not grant an approval.
+
+## Complete app-local file scope
+
+The current directory contains exactly six files. Four executable/data/style placeholders (`app.js`, `apps.js`, `data.js`, `styles.css`) are empty and exactly match pinned bytes, SHA-256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`. All authored styles, data and executable renderer reside in `index.html`; placeholder equality alone proves nothing about those authored records.
+
+| File | Pinned SHA-256 | Current SHA-256 |
+| --- | --- | --- |
+| index.html | `62b247861eaf4cf4ecdff38d339f442389bc6a18a5b90044682e36104d2c2669` | `217e9b3187dba518f58bfbe45adad87ee58fc119c1c3ae5cb4214500a8979872` |
+| manifest.json | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` | `c2d6b95f4693370192c4df480c25effe7386967271a6ccc72baed6b157cf3667` |
+
+The entire HTML diff was inspected, including the complete inline executable difference. VM extraction of the full authored DATA array established exact twelve-card equality. Every original inline stylesheet is byte-identical; the only new stylesheet is the common maintenance-hiding rule. The exact exhibit photograph matches pinned `apps/open-sea/images/ScreenHunter 10670.jpg`, SHA-256 `214710e10f5121d5a3d5e8a627f5f7637915b24f928daefcabf758665820dee0`. No new photograph, scientific text, subtitle, tag or body paragraph was introduced.
+
+## Complete reviewed presentation and behavior
+
+Static HTML changes are doctype/serialization, central photo URL relocation, four stable section anchors, the shared app-contract module and common maintenance CSS. Original headings, overview/key-influence prose, habitat chips, source/reference notes, labels, skip link, Hub-return link, hero alt/eager-loading attributes and page landmarks remain. The inherited reference note about photographs is unchanged upstream prose; no new editorial correction or factual claim is silently introduced. The original static references qualify numerical/physiology statements as volunteer training notes. Existing unchanged-V1 authority and new scientific review are distinct.
+
+The active renderer preserves all twelve records, exact card/body identifiers, icon/title/subtitle/tags, disclosure button and initial closed ARIA state. Metadata is now built with literal nodes instead of parsed interpolation; the reviewed ampersand decode preserves inherited displayed titles/subtitles. The complete SVG chevron and path retain their original attributes. Body markup now passes through an explicit structural allowlist; source bodies contain 28 h4, 34 p, 12 div, 16 ul, 66 li, ten span and nine strong nodes. Their only classes are six adapt-box, five fact-strip, ten fact-pill and one training-note. Every authored structural node/class survives. Authored bodies contain no external links or other attributes needing exception handling.
+
+The original click handler and setCardOpen behavior remain identical: toggle card open class and matching aria-expanded/aria-hidden state; initial cards are closed. renderCards now replaces the complete list using replaceChildren instead of clearing innerHTML. The shared app-contract owns Hub navigation and deep-link reveal. The full manifest was reviewed: permanent app/category/entry identity, navigation dependency1.0.0, six offline resources including the photograph, the existing central media reference, no knowledge/cross-link declarations, four static and twelve authored card search destinations. Source/version ownership and testing/publication-pending flags remain unchanged. Existing search regressions verify every authored card's displayed text and stable destination in both generated environments.
+
+## New independent structural/security regression
+
+`tests/open-sea-structural-render.test.mjs` parses every complete authored body using Python's independent standard-library HTMLParser into actual element/text trees, then executes the real current buildCard/safeNode functions against those nodes. This replaces no production parser and does not flatten bodies to text. It checks every body's complete normalized tree, the exact element/class inventory, SVG metadata and all twelve disclosure controls. Its adversarial fixture covers nested allowed elements, disallowed wrappers, comments, image/script/iframe elements, event/style/data/URL attributes, class filtering, DIV-only training-note and literal metadata containing markup. Disallowed wrappers retain inert descendant text; tests do not falsely claim that their text is discarded. Executable element/attribute objects do not survive.
+
+Executed `node --test tests/open-sea-structural-render.test.mjs tests/open-sea-search.test.mjs tests/open-sea-navigation.test.mjs`: 7/7 PASS, zero failed/skipped. The new structural suite contributes three tests. Complete DATA equality, all original inline styles and exact photograph bytes were independently rechecked: PASS. No app source, identifier, content/science/publication flag or media permission was changed by this review.
+
+The valid authored-fragment parser and literal DOM model establish bounded source/model behavior, not browser error recovery, real layout, assistive technology, physical offline/update/rollback, privacy, reviewer pilot or release authorization. Portable pinned/current comparison from Track D remains a separate required dependency; registration metadata from Track B may reconcile unchanged content only after that evidence succeeds. Nine October image reviews and all operational gates stay pending.
+
+The new suite was also copied into an isolated temporary source tree: baseline3/3 PASS. Each of three independent renderer mutations correctly failed the suite: removing training-note preservation, omitting the first body child, and copying an executable onclick attribute onto safe nodes. Live app bytes were never mutated. These probes establish that the structural assertions reject representative content loss and unsafe attribute propagation rather than merely mirroring a successful renderer call.

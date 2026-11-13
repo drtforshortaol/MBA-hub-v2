@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "scope": "Local automated completion verification; not scientific, physical-device, pilot, hosting or release approval",
+  "baseline_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+  "node": {
+    "passed": 815,
+    "failed": 0,
+    "test_concurrency": 4
+  },
+  "initial_unbounded_run": {
+    "passed": 814,
+    "failed": 1,
+    "finding": "Local HTTP request timeout under high suite concurrency; independent complete HTTP delivery passed. Bounded rerun retained all deadlines and assertions."
+  },
+  "evo": {
+    "passed": 35,
+    "failed": 0
+  },
+  "fidelity_regressions": {
+    "passed": 3,
+    "failed": 0
+  },
+  "acceptance_record_regressions": {
+    "passed": 3,
+    "failed": 0
+  },
+  "app_preflight": {
+    "passed": 33,
+    "failed": 0
+  },
+  "checks": {
+    "build": "PASS",
+    "validation": "PASS",
+    "security_pattern_scan": "PASS",
+    "artifact_integrity": "PASS",
+    "whitespace": "PASS",
+    "workflow_yaml": "PASS"
+  },
+  "media_registration": {
+    "catalog_assets": 212,
+    "uncataloged_referenced_resources": 0,
+    "missing_offline_declarations": 0,
+    "pending_permission_records": 9,
+    "new_permissions_granted": 0
+  },
+  "readiness": {
+    "releaseEligible": false,
+    "canonical_blockers": 47,
+    "inherited_reconciliation": 32,
+    "new_app_review": 1,
+    "media_permission_reviews": 9,
+    "operational_gates": 5
+  },
+  "http": [
+    {
+      "environment": "developer",
+      "release": "3b917629d4b507f1",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "bytes": 67167936
+      },
+      "errors": []
+    },
+    {
+      "environment": "tester",
+      "release": "198581a6286e434b",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "bytes": 67087609
+      },
+      "errors": []
+    }
+  ],
+  "offline_simulation": [
+    {
+      "environment": "developer",
+      "scenario": "corrupt-json-inventory-recovery",
+      "release": "3b917629d4b507f1",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "developer",
+      "scenario": "forged-inventory-recovery",
+      "release": "3b917629d4b507f1",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "developer",
+      "scenario": "interrupted-inventory-recovery",
+      "release": "3b917629d4b507f1",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "developer",
+      "scenario": "inventory-loss-recovery",
+      "release": "3b917629d4b507f1",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "developer",
+      "scenario": "prepared-navigation",
+      "release": "3b917629d4b507f1",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "developer",
+      "scenario": "corrupted-entry-recovery",
+      "release": "3b917629d4b507f1",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "developer",
+      "scenario": "refresh-page-inventory-recovery",
+      "release": "3b917629d4b507f1",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "tester",
+      "scenario": "corrupt-json-inventory-recovery",
+      "release": "198581a6286e434b",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "tester",
+      "scenario": "forged-inventory-recovery",
+      "release": "198581a6286e434b",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "tester",
+      "scenario": "interrupted-inventory-recovery",
+      "release": "198581a6286e434b",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "tester",
+      "scenario": "inventory-loss-recovery",
+      "release": "198581a6286e434b",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "tester",
+      "scenario": "prepared-navigation",
+      "release": "198581a6286e434b",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "tester",
+      "scenario": "corrupted-entry-recovery",
+      "release": "198581a6286e434b",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "tester",
+      "scenario": "refresh-page-inventory-recovery",
+      "release": "198581a6286e434b",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    }
+  ],
+  "physical_acceptance": "NOT TESTED",
+  "deployed": false
+}

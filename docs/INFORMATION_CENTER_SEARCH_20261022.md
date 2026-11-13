@@ -1,0 +1,9 @@
+# Information Center search restoration — October 22, 2026
+
+The handbook manifest contained no sections, so Hub search could only find its app-level entry. It now indexes all 18 existing handbook sections, covering all 47 authored blocks, using the existing card-0 through card-17 targets. Text is copied from source titles, paragraphs, headings, list items and quick-reference labels/values/notes; no new guidance is introduced. The dataset, renderer, scientific/editorial status, permissions and stable identifiers are unchanged on integration.
+
+Four regressions verify complete exact-field indexing, all actual rendered card targets and text, initial section reveal/focus without mutation replay, Back restoration without reopening, and both generated offline search indexes. Existing phone tests also pass. Combined Node 825/825 PASS; application preflight 33/33, validation, security, build and artifact integrity PASS. Both bundles pass HTTP byte verification (383 developer / 374 tester resources). All 14 simulated offline scenarios pass 525/525 navigation targets each, with zero offline network attempts.
+
+Runtime releases: developer e5490615c3183d99; tester e0d831c24f88d12d. This runtime change supersedes the earlier recovered candidate for affected acceptance. A successful CI artifact bound to this source must be identified before physical acceptance. No deployed URL is asserted current; physical installation, rendering, offline restart, update/rollback and reviewer pilot remain pending. All 44 release blockers remain explicit. No approval flags are changed and no deployment, merge or release occurs.
+
+Draft PR #2 additionally needs the already-integrated phone-rendering correction and regenerated current-byte fidelity evidence. Its branch tests cover owning source/render/search behavior; integration separately exercises the shared section navigator and Back behavior.

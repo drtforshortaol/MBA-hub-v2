@@ -1,16 +1,66 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Load latest MBA V2 test</title><style>body{font:17px system-ui;background:#f4f7f7;color:#123e50;max-width:600px;margin:60px auto;padding:24px}p{line-height:1.6}a{color:#125d70}</style></head><body><h1>Loading the latest V2 test</h1><p id="status" role="status">Checking the complete offline update…</p><p>This replaces only the V2 test version. It does not clear V1 or your website data.</p><a href="index.html?home=1">Return to Hub</a><script>
 (async()=>{
- const status=document.querySelector('#status'),root=new URL('./',location.href);let returned=false;
- const reopen=()=>{if(returned)return;returned=true;location.replace(new URL('index.html?home=1',root));};
- function command(worker,type){return new Promise((resolve,reject)=>{const channel=new MessageChannel(),timer=setTimeout(()=>reject(Error('The update check timed out. Please reopen this refresh link while online.')),45000);channel.port1.onmessage=e=>{clearTimeout(timer);e.data.error?reject(Error(e.data.error)):resolve(e.data);};worker.postMessage({type},[channel.port2]);});}
- function installed(worker){if(!worker||worker.state==='installed'||worker.state==='activated')return Promise.resolve();return new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('Offline preparation is taking longer than expected. Please try this refresh link again.')),60000);worker.addEventListener('statechange',()=>{if(worker.state==='installed'||worker.state==='activated'){clearTimeout(timer);resolve();}else if(worker.state==='redundant'){clearTimeout(timer);reject(Error('The update could not be verified. Your previous version remains available.'));}});});}
+ const status=document.querySelector('#status'),root=new URL('./',location.href);let returned=false,finished=false;
+ const cleanups=new Set(),timeoutMessage='Recovery is taking longer than expected. Reopen this refresh link while online; your existing offline version has not been cleared.';
+ let deadlineTimer;
+ const deadline=new Promise((_,reject)=>{deadlineTimer=setTimeout(()=>reject(Error(timeoutMessage)),90000);});
+ const wait=operation=>Promise.race([operation,deadline]);
+ const reopen=()=>{if(returned||finished)return;returned=true;location.replace(new URL('index.html?home=1',root));};
+ function command(worker,type){return new Promise((resolve,reject)=>{
+  let channel;
+  const cleanup=()=>{if(channel){channel.port1.onmessage=null;channel.port1.onmessageerror=null;channel.port1.close();channel.port2.close();}cleanups.delete(cleanup);};
+  cleanups.add(cleanup);
+  try{
+   channel=new MessageChannel();
+   channel.port1.onmessage=e=>{const data=e.data;cleanup();if(!data||typeof data!=='object')reject(Error('The offline update response could not be read. Please retry while online.'));else if(data.error){const error=Error(String(data.error));if(data.code==='OFFLINE_INVENTORY_INVALID')error.code=data.code;reject(error);}else resolve(data);};
+   channel.port1.onmessageerror=()=>{cleanup();reject(Error('The offline update response could not be read. Please retry while online.'));};
+   worker.postMessage({type},[channel.port2]);
+  }catch(error){cleanup();reject(error);}
+ });}
+ function installed(worker){
+  if(!worker||worker.state==='installed'||worker.state==='activated')return Promise.resolve();
+  return new Promise((resolve,reject)=>{
+   const cleanup=()=>{worker.removeEventListener('statechange',changed);cleanups.delete(cleanup);};
+   const changed=()=>{if(worker.state==='installed'||worker.state==='activated'){cleanup();resolve();}else if(worker.state==='redundant'){cleanup();reject(Error('The update could not be verified. Your previous version remains available.'));}};
+   cleanups.add(cleanup);worker.addEventListener('statechange',changed);changed();
+  });
+ }
  try{
   if(!('serviceWorker' in navigator))throw Error('Open this link in Safari while connected to the internet.');
-  const registration=await navigator.serviceWorker.register(new URL('sw.js',root),{scope:root.pathname,updateViaCache:'none'});await registration.update();
-  await installed(registration.installing);
+  const registration=await wait(navigator.serviceWorker.register(new URL('sw.js',root),{scope:root.pathname,updateViaCache:'none'}));
+  await wait(registration.update());await wait(installed(registration.installing));
   const waiting=registration.waiting;
-  if(waiting){status.textContent='Verifying the new offline bundle…';navigator.serviceWorker.addEventListener('controllerchange',reopen,{once:true});await command(waiting,'ACTIVATE_UPDATE');setTimeout(reopen,2000);}
-  else{const active=registration.active;if(!active)throw Error('Offline installation is not ready yet. Please try again while online.');const result=await command(active,'STATUS');const liveResponse=await fetch(new URL('release.json',root),{cache:'no-store'});if(!liveResponse.ok)throw Error('The current release could not be checked. Please try again online.');const live=await liveResponse.json();if(result.release!==live.release)throw Error('The latest update is still preparing. Please reopen this refresh link in a moment.');if(!result.complete)throw Error('Offline files are not complete yet. Please revisit while online.');reopen();}
- }catch(e){status.textContent=e.message;}
+  if(waiting){
+   status.textContent='Verifying the new offline bundle…';
+   navigator.serviceWorker.addEventListener('controllerchange',reopen,{once:true});
+   cleanups.add(()=>navigator.serviceWorker.removeEventListener('controllerchange',reopen));
+   await wait(command(waiting,'ACTIVATE_UPDATE'));
+   await wait(new Promise(resolve=>{const timer=setTimeout(resolve,2000);cleanups.add(()=>clearTimeout(timer));}));reopen();
+  }else{
+   const active=registration.active;if(!active)throw Error('Offline installation is not ready yet. Please try again while online.');
+   let result,recovered=false;
+   try{result=await wait(command(active,'STATUS'));}
+   catch(error){
+    // Only a typed cached-inventory failure can request explicit reconstruction.
+    // The worker independently authenticates the live same-release inventory.
+    if(error.code!=='OFFLINE_INVENTORY_INVALID')throw error;
+    status.textContent='Restoring and verifying this release’s offline files…';
+    result=await wait(command(active,'RECOVER_OFFLINE'));recovered=true;
+   }
+   function validate(result){const {complete,count,total,release}=result;
+   if(typeof complete!=='boolean'||!Number.isSafeInteger(count)||!Number.isSafeInteger(total)||count<0||total<0||count>total||complete!==(total>0&&count===total)||typeof release!=='string'||!release.trim())throw Error('Offline readiness could not be verified. Please retry while online; your existing website data has not been cleared.');}
+   validate(result);
+   if(!result.complete&&!recovered){
+    status.textContent='Restoring and verifying this release’s offline files…';
+    result=await wait(command(active,'RECOVER_OFFLINE'));validate(result);
+   }
+   const liveResponse=await wait(fetch(new URL('release.json',root),{cache:'no-store'}));
+   if(!liveResponse.ok)throw Error('The current release could not be checked. Please try again online.');
+   const live=await wait(liveResponse.json());
+   if(result.release!==live.release)throw Error('The latest update is still preparing. Please reopen this refresh link in a moment.');
+   if(!result.complete)throw Error('Offline files are not complete yet. Please revisit while online.');reopen();
+  }
+ }catch(e){if(!returned)status.textContent=e.message+' Keep your existing website data; do not clear data or reinstall. If this continues, report the message through Install & Help.';}
+ finally{finished=true;clearTimeout(deadlineTimer);for(const cleanup of cleanups)cleanup();}
 })();
 </script></body></html>
