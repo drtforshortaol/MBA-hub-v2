@@ -9,7 +9,7 @@
 | 3 | Elk kelp | *Pelagophycus porra* | range | Not recorded | Provisional |
 | 4 | Southern sea palm | *Eisenia arborea* | range | Not recorded | Provisional |
 | 5 | Stalked kelp | *Pterygophora californica* | perennial claim | Not recorded | Provisional |
-| 6 | Sea palm | *Postelsia palmaeformis* | habitat | Not recorded | Provisional |
+| 6 | Sea palm | *Postelsia palmaeformis* | habitat | CDFW kelp reference and NOAA Olympic Coast sanctuary: mid/high wave-exposed rocky intertidal, annual (sources below) | Evidence found; reviewer pending |
 | 7 | Feather boa kelp | *Egregia menziesii* | diagnostic traits | Not recorded | Provisional |
 | 8 | Broad-rib kelp | *Pleurophycus gardneri* | perennial claim | Not recorded | Provisional |
 | 9 | Strap kelp | *Lessoniopsis littoralis* | habitat | Not recorded | Provisional |
@@ -19,11 +19,11 @@
 | 13 | Oarweed | *Laminaria farlowii* | range | Not recorded | Provisional |
 | 14 | Sugar kelp | *Saccharina latissima* | California occurrence | Not recorded | Provisional |
 | 15 | Seersucker kelp | *Costaria costata* | annual claim | Not recorded | Provisional |
-| 16 | Sea cabbage | *Hedophyllum sessile* | accepted name | Not recorded | Provisional |
+| 16 | Sea cabbage | *Hedophyllum sessile* | accepted name | CDFW lists *Saccharina sessilis* as sea cabbage; taxonomic reconciliation required (source below) | Conflicting name; review needed |
 | 17 | Net-of-cords kelp | *Dictyoneurum californicum* | name and diagnostic distinction | Not recorded | Provisional |
 | 18 | Net-of-cords kelp | *Dictyoneurum reticulatum* | name and diagnostic distinction | Not recorded | Provisional |
 | 19 | Fringed sieve kelp | *Neoagarum fimbriatum* | accepted name and annual claim | Not recorded | Provisional |
-| 20 | Winged kelp | *Alaria marginata* | habitat | Not recorded | Provisional |
+| 20 | Winged kelp | *Alaria marginata* | habitat | CDFW kelp reference and NOAA Olympic Coast sanctuary: low rocky intertidal to shallow subtidal (sources below) | Evidence found; reviewer pending |
 | 21 | Wakame | *Undaria pinnatifida* | introduced/invasive status and scope | California Invasive Plant Council profile: introduced in California, locally invasive, limited statewide ecological impacts; UC ANR lists it for invasive-species reporting (links below) | Evidence found; review needed |
 
 ## Required completion criteria
@@ -42,3 +42,8 @@
 - **Wakame origin/invasiveness:** California Invasive Plant Council identifies *Undaria pinnatifida* as introduced, locally invasive in disturbed California estuaries, with limited statewide ecological impacts: https://www.cal-ipc.org/plants/profile/undaria-pinnatifida-profile/ . UC Agriculture and Natural Resources includes it among reportable invasive seaweeds: https://ucanr.edu/site/california-aquatic-invasive-species-ais . **Disposition:** evidence supports the introduced label and a geographically qualified invasive note, not a claim of statewide severe impact or presence everywhere. Final sign-off pending.
 
 These are source-backed research notes, **not Monterey Bay Aquarium scientific approval**.
+
+## Additional evidence — 2026-11-12
+- **Sea palm (*Postelsia palmaeformis*):** California Department of Fish and Wildlife describes an annual species on strongly wave-exposed mid/high intertidal rocks, with a California range south to Point Buchon. NOAA Olympic Coast also describes extreme wave exposure. Sources: https://wildlife.ca.gov/Conservation/Marine/Kelp and https://olympiccoast.noaa.gov/living/marinelife/seaweed/ . Current draft habitat and appearance are consistent with these references; review remains pending.
+- **Winged kelp (*Alaria marginata*):** CDFW documents low-intertidal to shallow-subtidal rocky habitat, and NOAA Olympic Coast identifies the species as winged kelp. Note: CDFW also calls *A. marginata* “wakame,” a common-name collision with the introduced *Undaria pinnatifida*. Keep scientific names visible to avoid confusion. Sources: https://wildlife.ca.gov/Conservation/Marine/Kelp and https://olympiccoast.noaa.gov/living/marinelife/seaweed/ .
+- **Sea cabbage name requires reconciliation:** CDFW uses *Saccharina sessilis* for sea cabbage, while this draft uses *Hedophyllum sessile*. Determine the current accepted combination and synonym relationship before publishing. Source: https://wildlife.ca.gov/Conservation/Marine/Kelp .
