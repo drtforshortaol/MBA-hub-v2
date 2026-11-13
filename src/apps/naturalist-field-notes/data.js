@@ -40,7 +40,7 @@ FIELD_NOTES.push({
       "text": "The update reports migrating humpbacks, common dolphins, and juvenile makos breaking the surface. It also reports nighttime hydrophone detections of blue, sperm, and beaked whales. The list below records reported sightings for the week."
     }
   ],
-  "qna": [
+  "qa": [
     {
       "q": "What are the striped fish in Monterey Bay Habitat?",
       "short": "Aquarium staff identified the striped fish in the main Monterey Bay Habitat exhibit as white seabass (Atractoscion nobilis). White seabass belong to the drum family (Sciaenidae). Young fish can show dark bars that fade in adults. White seabass eat small fish and squid. The update suggests that more squid might help explain recent local sightings. This is a proposed explanation.",
