@@ -4055,6 +4055,49 @@
       "source_path": "IMG_3475.jpeg",
       "uses": [],
       "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
+    },
+    {
+      "asset_id": "briefing-20261111-flamboyant-cuttlefish",
+      "path": "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg",
+      "owner": "naturalist-briefing-20261111",
+      "alt": "Two flamboyant cuttlefish over blue-lit gravel.",
+      "credit": "Photo by MJ.",
+      "permission": "rights-holder-approved",
+      "offline": true,
+      "uses": [
+        {
+          "app_id": "naturalist-briefing-20261111"
+        }
+      ],
+      "permission_evidence": "On 2026-11-13 Glenn confirmed MJ authorized use in the public MBA Hub, including offline copies."
+    },
+    {
+      "asset_id": "ocellaris-clownfish-title",
+      "path": "shared/media/ocellaris-clownfish-title.jpg",
+      "owner": "ocellaris-clownfish",
+      "alt": "Illustration of an orange ocellaris clownfish nestled among pink anemone tentacles",
+      "credit": "AI-generated illustration",
+      "permission": "original-generated",
+      "offline": true,
+      "uses": [
+        {
+          "app_id": "ocellaris-clownfish"
+        }
+      ]
+    },
+    {
+      "asset_id": "juvenile-white-seabass-illustration",
+      "path": "shared/media/juvenile-white-seabass-illustration.jpg",
+      "owner": "naturalist-briefing-20261111",
+      "alt": "Illustration of a silver juvenile white seabass with dark vertical bars",
+      "credit": "AI-generated illustration",
+      "permission": "original-generated",
+      "offline": true,
+      "uses": [
+        {
+          "app_id": "naturalist-briefing-20261111"
+        }
+      ]
     }
   ]
 }

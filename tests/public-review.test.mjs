@@ -15,6 +15,18 @@ test('public guide content matches the owner-authorized complete source',()=>{
 test('full public guide content keeps tester developer restrictions',()=>{
  const report=JSON.parse(fs.readFileSync('dist/tester/public-review.json'));
  assert.equal(report.publication,'owner-authorized-guide-collection');
- assert.deepEqual(report.withheldApps,[]);assert.equal(report.libraryPersonalFieldsRemoved,0);
+ const id='naturalist-briefing-20261111';
+ assert.deepEqual(report.withheldApps,[id]);
+ assert.equal(report.libraryPersonalFieldsRemoved,0);
+ const manifest=JSON.parse(fs.readFileSync(`src/apps/${id}/manifest.json`));
+ const catalog=JSON.parse(fs.readFileSync('src/shared/media/catalog.json'));
+ const registry=JSON.parse(fs.readFileSync('dist/tester/registry.json'));
+ assert(!registry.apps.some(app=>app.app_id===id));
+ assert(!fs.existsSync(`dist/tester/apps/${id}`));
+ for(const mediaId of manifest.media){
+  const asset=catalog.assets.find(item=>item.asset_id===mediaId);
+  assert(fs.existsSync(`dist/developer/${asset.path}`));
+  assert(!fs.existsSync(`dist/tester/${asset.path}`));
+ }
  assert(!fs.existsSync('dist/tester/core/developer.js'));
 });
