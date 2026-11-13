@@ -904,3 +904,4 @@ export const animalCatalog = {
     }
   ]
 };
+export const animalRecordForApp = id => animalCatalog.records.find(r=>r.app_id===id||r.app_aliases.includes(id))||null;
