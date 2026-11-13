@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "app_id": "ocellaris-clownfish",
+  "title": "Ocellaris Clownfish",
+  "category": "animals",
+  "type": "species",
+  "version": "1.0.0",
+  "entry_point": "apps/ocellaris-clownfish/index.html",
+  "status": "development",
+  "owner": "ocellaris-clownfish",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/ocellaris-clownfish/index.html",
+    "apps/ocellaris-clownfish/briefing.js",
+    "apps/ocellaris-clownfish/data.js",
+    "apps/ocellaris-clownfish/styles.css"
+  ],
+  "media": [],
+  "knowledge": [],
+  "cross_links": [
+    {
+      "app_id": "naturalist-briefing-20261111",
+      "section_id": "ocellaris-clownfish"
+    }
+  ],
+  "sections": [
+    {
+      "id": "quick-facts",
+      "title": "Quick facts",
+      "text": "The ocellaris clownfish (Amphiprion ocellaris) is a damselfish found on shallow Indo-West Pacific reefs. Its diet includes small drifting animals such as copepods and other zooplankton, as well as algae. The Aquarium’s clownfish profile describes the group Amphiprion rather than a single species.",
+      "aliases": [
+        "Nemo",
+        "common clownfish",
+        "Amphiprion ocellaris",
+        "anemonefish"
+      ]
+    },
+    {
+      "id": "anemone-partnership",
+      "title": "Life among stinging tentacles",
+      "text": "Watch a clownfish dart out and return to the anemone. The host’s stinging tentacles deter predators. The clownfish’s skin mucus helps it live among those tentacles, and the fish can defend its host by chasing away anemone-eating butterflyfishes. Dropped food and nutrients from fish waste can also benefit the host. Anemones have partnerships of their own. Algae living inside their tissues supply nutrients, and large anemones can shelter shrimp, crabs and several kinds of anemonefish.",
+      "aliases": []
+    },
+    {
+      "id": "life-cycle",
+      "title": "Life cycle and sex change",
+      "text": "Eggs are laid near the anemone. The breeding male guards and fans them. After hatching, larvae drift before settling on a reef. Juveniles are sexually immature. In a typical group, the largest fish is the breeding female and the next largest is the breeding male. When the female is lost, that male can become female.",
+      "aliases": []
+    },
+    {
+      "id": "ocean-in-motion",
+      "title": "Ocean in Motion · What to watch for",
+      "text": "Invite guests to watch for a fish peeking out between the tentacles. Ask where it goes when a larger fish swims past. For young visitors, try a game of peekaboo and then watch for the same movement in the exhibit.",
+      "aliases": []
+    },
+    {
+      "id": "conservation",
+      "title": "Conservation",
+      "text": "The Aquarium highlights the harm that chemical collection can cause to reef fishes and corals. For home aquariums, it recommends choosing captive-raised fish.",
+      "aliases": []
+    }
+  ]
+}
