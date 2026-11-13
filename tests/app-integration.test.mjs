@@ -56,7 +56,7 @@ test('offline release manifest has unique resources with SHA-256 digests',()=>{
 test('complete collection includes 25 inherited directory apps and 9 supporting apps',()=>{
  const inventory=read('config/v1-inventory.json');
  assert.equal(inventory.apps.length,25,'unexpected inherited V1 inventory size');
- assert.equal(registry.apps.length,34,'expected 33 registered apps including supporting collection');
+ assert.equal(registry.apps.length,34,'expected 34 registered apps including supporting collection');
  const registered=new Set(registry.apps.map(a=>a.app_id));
  for(const app of inventory.apps)assert(registered.has(app.id),'missing inherited app '+app.id);
  const additional=registry.apps.filter(a=>!inventory.apps.some(old=>old.id===a.app_id));

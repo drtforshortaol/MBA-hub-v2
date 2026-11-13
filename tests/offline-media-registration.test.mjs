@@ -45,7 +45,7 @@ test('media registration plan rejects unknown media and unsafe or missing offlin
 
 test('all repository media declarations pass strict preflight with nothing left to reconcile',()=>{
  const result=inspectRepository('--all');
- assert.equal(result.checked,33);
+ assert.equal(result.checked,34);
  assert.equal(result.ready,true,JSON.stringify(result.results.filter(item=>!item.ready)));
 });
 
