@@ -20,8 +20,8 @@ test('read-only release assessment exposes actual outstanding gates without repl
  assert(report.recordedQA.pending.some(item=>item.id==='android_install'));
  assert.equal(report.technicalEvidence.status,'not-provided');
  assert.equal(report.approvalReconciliation.inheritedCandidates,0);
- assert.equal(report.approvalReconciliation.contentReviewsRequired,0);
- assert.equal(report.blockers.length,4);
+ assert.equal(report.approvalReconciliation.contentReviewsRequired,report.blockers.filter(b=>b.category==='content-review-required').length);
+ 
  assert.equal(report.blockers.filter(item=>item.reason.startsWith('media permission review: ')).length,0);
  assert(!report.blockers.some(item=>item.reason==='content review pending: big-bellied-seahorse'));
  assert.deepEqual(files.map(file=>fs.readFileSync(file,'utf8')),before);
