@@ -273,7 +273,9 @@
     "asset-95daa2493750e82f",
     "asset-47f9bbb193878eec",
     "asset-50646c3fe1d0c359",
-    "asset-df392914e6cf5502"
+    "asset-df392914e6cf5502",
+    "briefing-20261111-flamboyant-cuttlefish",
+    "juvenile-white-seabass-illustration"
   ],
   "knowledge": [],
   "cross_links": [
@@ -614,6 +616,18 @@
       "query": {
         "note": "2026-10-15-seahorse"
       }
+    },
+    {
+      "id": "2026-11-11-ocean-in-motion",
+      "title": "Ocean in Motion, White Seabass & Ocellaris Clownfish",
+      "text": "Ocean in Motion is open. White seabass in Monterey Bay Habitat. Species highlight: ocellaris clownfish. Humpback whales Blue whale Risso’s dolphins Long-beaked common dolphins Short-beaked common dolphins Southern sea otters California sea lions Harbor seals Black-vented shearwaters Northern fulmars Black-footed albatross California brown pelicans Common murres Pigeon guillemot Rhinoceros auklets Cassin’s auklets Brandt’s cormorants Pelagic cormorants Western gulls Heermann’s gulls California gulls Bonaparte’s gulls Elegant terns Red-necked phalaropes Red phalaropes Surf scoters Eared grebes Western grebes Common loons Red-throated loons Pacific loons Brant geese Cocos booby Shortfin mako sharks Olive ridley sea turtle",
+      "query": {
+        "note": "2026-11-11-ocean-in-motion"
+      },
+      "aliases": [
+        "November 2026",
+        "Latest Field Note"
+      ]
     }
   ],
   "source_version": "1.0",
