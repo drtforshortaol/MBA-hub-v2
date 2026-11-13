@@ -19,9 +19,12 @@
     "apps/ocellaris-clownfish/index.html",
     "apps/ocellaris-clownfish/briefing.js",
     "apps/ocellaris-clownfish/data.js",
-    "apps/ocellaris-clownfish/styles.css"
+    "apps/ocellaris-clownfish/styles.css",
+    "shared/media/ocellaris-clownfish-title.jpg"
   ],
-  "media": [],
+  "media": [
+    "ocellaris-clownfish-title"
+  ],
   "knowledge": [],
   "cross_links": [],
   "sections": [

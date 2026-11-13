@@ -4070,6 +4070,20 @@
         }
       ],
       "permission_evidence": "On 2026-11-13 Glenn confirmed MJ authorized use in the public MBA Hub, including offline copies."
+    },
+    {
+      "asset_id": "ocellaris-clownfish-title",
+      "path": "shared/media/ocellaris-clownfish-title.jpg",
+      "owner": "ocellaris-clownfish",
+      "alt": "Illustration of an orange ocellaris clownfish nestled among pink anemone tentacles",
+      "credit": "AI-generated illustration",
+      "permission": "original-generated",
+      "offline": true,
+      "uses": [
+        {
+          "app_id": "ocellaris-clownfish"
+        }
+      ]
     }
   ]
 }
