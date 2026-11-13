@@ -9,6 +9,18 @@ function append(parent, tag, text) {
   return element;
 }
 
+const diagrams = {
+  'life-cycle': {
+    title: 'From reef eggs to a breeding group',
+    steps: ['Eggs near the host anemone', 'Larvae drift in open water', 'Immature juveniles settle on a reef', 'Breeding male can become female if the breeding female is lost']
+  },
+  'anemone-partnership': {
+    title: 'How mucus may reduce stinging',
+    steps: ['Clownfish brushes an anemone tentacle', 'Skin mucus has low levels of some sialic acids', 'Fewer chemical cues may reduce stinging-cell discharge'],
+    source: 'https://www.pnas.org/doi/10.1073/pnas.2419716122'
+  }
+};
+
 for (const section of sections) {
   const card = append(briefing, 'details', '');
   card.id = section.id;
@@ -20,6 +32,18 @@ for (const section of sections) {
     append(content, 'h2', group.title);
     const list = append(content, 'ul', '');
     for (const item of group.items) append(list, 'li', item);
+  }
+  const diagram = diagrams[section.id];
+  if (diagram) {
+    const figure = append(content, 'figure', '');
+    figure.className = 'process-diagram';
+    append(figure, 'figcaption', diagram.title);
+    const steps = append(figure, 'ol', '');
+    for (const step of diagram.steps) append(steps, 'li', step);
+    if (diagram.source) {
+      const source = append(figure, 'a', 'Read the sialic acid study');
+      source.href = diagram.source;
+    }
   }
   if (section.links?.length) {
     append(content, 'h2', 'Further reading');

@@ -20,10 +20,12 @@
     "apps/naturalist-briefing-20261111/briefing.js",
     "apps/naturalist-briefing-20261111/data.js",
     "apps/naturalist-briefing-20261111/styles.css",
-    "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg"
+    "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg",
+    "shared/media/juvenile-white-seabass-illustration.jpg"
   ],
   "media": [
-    "briefing-20261111-flamboyant-cuttlefish"
+    "briefing-20261111-flamboyant-cuttlefish",
+    "juvenile-white-seabass-illustration"
   ],
   "knowledge": [],
   "cross_links": [

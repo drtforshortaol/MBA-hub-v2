@@ -109,4 +109,13 @@ export const sections = [
   }
 ];
 
-export const mediaBySection = {};
+export const mediaBySection = {
+  "white-seabass": [
+    {
+      "id": "juvenile-white-seabass-illustration",
+      "path": "shared/media/juvenile-white-seabass-illustration.jpg",
+      "alt": "Illustration of a silver juvenile white seabass with dark vertical bars",
+      "credit": "AI-generated illustration"
+    }
+  ]
+};

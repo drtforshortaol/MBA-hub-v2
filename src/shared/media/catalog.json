@@ -4084,6 +4084,20 @@
           "app_id": "ocellaris-clownfish"
         }
       ]
+    },
+    {
+      "asset_id": "juvenile-white-seabass-illustration",
+      "path": "shared/media/juvenile-white-seabass-illustration.jpg",
+      "owner": "naturalist-briefing-20261111",
+      "alt": "Illustration of a silver juvenile white seabass with dark vertical bars",
+      "credit": "AI-generated illustration",
+      "permission": "original-generated",
+      "offline": true,
+      "uses": [
+        {
+          "app_id": "naturalist-briefing-20261111"
+        }
+      ]
     }
   ]
 }
