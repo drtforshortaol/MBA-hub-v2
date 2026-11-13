@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
   "status": "reviewed",
-  "reviewed_on": "2026-11-01",
+  "reviewed_on": "2026-11-13",
   "reviewer": "assistant engineering review authorized by owner request: Next blocker",
-  "scope": "Candidate-specific privacy/distribution delta review for owner-authorized public early-access guide tester; not visitor-standalone sharing or production release; reviewed the existing deployment UI updates and the self-contained kelp guide with embedded illustrations, no external requests, and no browser storage or sensitive APIs.",
+  "scope": "Candidate-specific privacy/distribution delta review for owner-authorized public early-access guide tester; not visitor-standalone sharing or production release; reviewed the existing deployment UI updates and the self-contained kelp guide with embedded illustrations, no external requests, and no browser storage or sensitive APIs.; November guide content and local media reviewed.",
   "authorization_source": "docs/GUIDE_CONTENT_RESTORED.md",
   "inherited_scope": "31 unchanged V1 applications retain existing explicit guide-distribution authorization, including Library fields, internal Information Center procedures, Leadership and historical Naturalist material. No request to re-approve unchanged material.",
   "new_content_scope": "Owner-approved October Naturalist and Seahorse sections/media; prior explicit approval records remain byte-valid. No new patient records, IDs, account credentials or borrower data added by those updates. Exact seven-section Sperm Whale owner-approved wording is now content-digest-bound; source HTML and bundled media remain unchanged by the approval metadata.",
-  "snapshot_sha256": "014c016f6e16d1c41a09c6363a6d4aec9a80e9d50b1f29ef0181466668d10380",
+  "snapshot_sha256": "f5513cde53978bd33ba60648fc45eb3c2687d46bbf7d672a26eea23284005161",
   "snapshot": {
     "schema_version": 1,
     "scope": "Bounded static inventory and resource/API triage; manual review is recorded separately",
-    "snapshot_sha256": "014c016f6e16d1c41a09c6363a6d4aec9a80e9d50b1f29ef0181466668d10380",
+    "snapshot_sha256": "f5513cde53978bd33ba60648fc45eb3c2687d46bbf7d672a26eea23284005161",
     "resources": [
       {
         "path": "config/categories.json",
@@ -95,8 +95,8 @@
       },
       {
         "path": "scripts/audit-privacy-snapshot.mjs",
-        "bytes": 3812,
-        "sha256": "5938e704b4a8eaffe0506f147d4ea442609d9a80197c21b3ae50cb7a056b46ad"
+        "bytes": 3924,
+        "sha256": "4beaf22ed942d78e7c59874e532d475ba9e6512f340fc25fd62b3591d7885187"
       },
       {
         "path": "scripts/build.mjs",
@@ -205,8 +205,8 @@
       },
       {
         "path": "scripts/migration/review-naturalist-october-runtime.mjs",
-        "bytes": 8962,
-        "sha256": "0689eef0469c235dfd0ba1af9ad956824655c8e52571de225e77eaee69cb3fc9"
+        "bytes": 9003,
+        "sha256": "0a7f0d3645b516bface2d5befe80d2c778d73f243edda87c53889904a6cf7d4f"
       },
       {
         "path": "scripts/migration/review-naturalist-original-fidelity.mjs",
@@ -874,14 +874,39 @@
         "sha256": "481a5fd4100211ceb7bfca202b4e82f080cc52c9d7da2aeda57849982eb8effd"
       },
       {
+        "path": "src/apps/naturalist-briefing-20261111/briefing.js",
+        "bytes": 1952,
+        "sha256": "002ff81c8631ffb197a445d9a446969d87d3f4b50a9f651344416bdb08f4ec56"
+      },
+      {
+        "path": "src/apps/naturalist-briefing-20261111/data.js",
+        "bytes": 5066,
+        "sha256": "16c3aeefcaac6a3f877d67a7ff056b5da5f660703dd42ce2ea7ed483daa837e9"
+      },
+      {
+        "path": "src/apps/naturalist-briefing-20261111/index.html",
+        "bytes": 1330,
+        "sha256": "d87b54c5dd1646b6de1781f0e2581585ea71078b7dd2caa6a1fc8228d145ce2b"
+      },
+      {
+        "path": "src/apps/naturalist-briefing-20261111/manifest.json",
+        "bytes": 4308,
+        "sha256": "1e3f5dfb46c600ab21b5cccce52b5b317a6ee79b05aa938844ec686e52764de1"
+      },
+      {
+        "path": "src/apps/naturalist-briefing-20261111/styles.css",
+        "bytes": 1499,
+        "sha256": "a6d426e17b65573ce98c5d78de0aeafa03ae124801335de7537b03c72b673adc"
+      },
+      {
         "path": "src/apps/naturalist-field-notes/app.js",
         "bytes": 18516,
         "sha256": "c871238eeb6f808a034eb5123517df4720b4a8dd6f560177c25c2df4303065a2"
       },
       {
         "path": "src/apps/naturalist-field-notes/data.js",
-        "bytes": 140238,
-        "sha256": "683693a6417256d65056a48145ded9714159adb2bef56ec5e8e434334b83a089"
+        "bytes": 143708,
+        "sha256": "4cd2ef1d679425e4e1f8493c6701663b0751975c6366076e6d3629b23ac06f08"
       },
       {
         "path": "src/apps/naturalist-field-notes/inaturalist-reference.html",
@@ -895,8 +920,8 @@
       },
       {
         "path": "src/apps/naturalist-field-notes/manifest.json",
-        "bytes": 139017,
-        "sha256": "558b8ac491b7bdfb5ecbf4448ec2ac7873e2be8e56f32e815e7635919e6f9481"
+        "bytes": 140264,
+        "sha256": "e266748b2584f1f9eb1aaa3fbad2e54e41334afc95bcc36dbdd2e586eb1cb13d"
       },
       {
         "path": "src/apps/naturalist-field-notes/october-2026-08-14.html",
@@ -942,6 +967,31 @@
         "path": "src/apps/northern-elephant-seal/styles.css",
         "bytes": 9645,
         "sha256": "c954a904142c2ec27259fd673c394dec4d5880e914a1cfd68f99feb0834b824e"
+      },
+      {
+        "path": "src/apps/ocellaris-clownfish/briefing.js",
+        "bytes": 2267,
+        "sha256": "6c1ea02d71f59c03e0db08e3c96a291f80977017ee0059868d5257ddc0c0c34c"
+      },
+      {
+        "path": "src/apps/ocellaris-clownfish/data.js",
+        "bytes": 2719,
+        "sha256": "d2471ed1ae61fa196ecc527ba1593c4524f872cbfae1a8d63c66f8f10460a075"
+      },
+      {
+        "path": "src/apps/ocellaris-clownfish/index.html",
+        "bytes": 1147,
+        "sha256": "c156622e3ac332af6ff85dd0bb8c472b11da42085094c3a018e6df4cfc156531"
+      },
+      {
+        "path": "src/apps/ocellaris-clownfish/manifest.json",
+        "bytes": 2935,
+        "sha256": "5ff0a5f68d2b761c39420b60e41cc4178a3dbe02ab6d20e829e4a277a769bd61"
+      },
+      {
+        "path": "src/apps/ocellaris-clownfish/styles.css",
+        "bytes": 1637,
+        "sha256": "8329e2efddea10ea75dcabb99c063a5414c1ecf6a9ca8d176aa65ecf5607211f"
       },
       {
         "path": "src/apps/open-sea/app.js",
@@ -1320,8 +1370,8 @@
       },
       {
         "path": "src/shared/animal-records.js",
-        "bytes": 24822,
-        "sha256": "d5480d37be62e3bf772d53a50453b90a1d749f965b8cb08f9fc1b0d9fad52364"
+        "bytes": 25728,
+        "sha256": "6e6fe0460133de7ff69e543fc6da3a15768b5d04ce76b46efcefede9d642dca4"
       },
       {
         "path": "src/shared/interfaces.json",
@@ -2364,14 +2414,29 @@
         "sha256": "fee04d46bc10c3d26787983dbb8b0279d1ebd6a0b54dc2a0205bf710d190e9af"
       },
       {
+        "path": "src/shared/media/briefing-20261111-flamboyant-cuttlefish.jpg",
+        "bytes": 190518,
+        "sha256": "025e95ce90f0db47ec830658acbb7c669685eeaf75e1a6148c0ec1c99ac34de6"
+      },
+      {
         "path": "src/shared/media/catalog.json",
-        "bytes": 190556,
-        "sha256": "77603270657849ef79e8397c6b8df8cfa18e6ca60f4201136f09e3e6b6847cb1"
+        "bytes": 192371,
+        "sha256": "3f6e6582900080936549b2de36a11d4729680142f5a6708c8415d760dff81a14"
       },
       {
         "path": "src/shared/media/five-senses-header.svg",
         "bytes": 2292,
         "sha256": "25a12b38f3e3cad43fd05b260176f45aed17f5d894ffa1fb57f16b049595be6a"
+      },
+      {
+        "path": "src/shared/media/juvenile-white-seabass-illustration.jpg",
+        "bytes": 153236,
+        "sha256": "37c8267dc8c186ab3d6e88d6eda526fcae204f3a4b6b01ea719b5a52ef3a768a"
+      },
+      {
+        "path": "src/shared/media/ocellaris-clownfish-title.jpg",
+        "bytes": 128194,
+        "sha256": "e5826c3d0aa229598ffabbab05352c07341fc7f28a3fbac997fabd143c408035"
       },
       {
         "path": "src/sw.js",

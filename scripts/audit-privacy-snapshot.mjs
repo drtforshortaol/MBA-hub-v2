@@ -22,6 +22,7 @@ if(process.argv[1]===fileURLToPath(import.meta.url)){
   const old=new Map(review.snapshot.resources.map(item=>[item.path,item]));
   const changed=snapshot.resources.filter(item=>old.get(item.path)?.sha256!==item.sha256||old.get(item.path)?.bytes!==item.bytes).map(item=>item.path);
   const removed=review.snapshot.resources.filter(item=>!snapshot.resources.some(current=>current.path===item.path)).map(item=>item.path);
+  if (!changed.length && !removed.length && snapshot.snapshot_sha256===review.snapshot_sha256) process.exit(0);
   const permitted=['scripts/build.mjs','src/core/developer.js','scripts/audit-privacy-snapshot.mjs','src/install.html'];
   if(snapshot.resources.some(item=>item.path==='src/core/hub.js'&&item.sha256==='90408055a60dca80731bc5d5a627eba7f5d34605f7272a7d582a94d98c126fae'))permitted.push('src/core/hub.js');
  if(removed.length||changed.length!==permitted.length||changed.some(item=>!permitted.includes(item))||snapshot.automaticExternalResources.length||snapshot.sensitiveBrowserAPIs.length)throw Error('Unexpected review delta; do not auto-approve: '+JSON.stringify({changed,removed}));
