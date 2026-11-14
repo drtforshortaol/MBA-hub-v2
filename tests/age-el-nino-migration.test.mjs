@@ -25,4 +25,6 @@ test('El Niño is a canonical Concepts application with 18 original offline illu
  const html=fs.readFileSync(root+'index.html','utf8');
  for(let i=1;i<=18;i++)assert.ok(html.includes(`slide-${String(i).padStart(2,'0')}.jpg`));
  assert.ok(html.includes("new URL('../../index.html',location.href).href"));
+ assert.ok(html.includes('href="../../index.html?home=1"'),'Return to Hub must work within each local channel');
+ assert.ok(!html.includes('https://drtforshortaol.github.io/MBA-hub-v2-dev/'),'No hardcoded orange links in canonical El Niño');
 });
