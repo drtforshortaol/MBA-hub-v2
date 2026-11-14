@@ -20,3 +20,14 @@ test('cards render without JavaScript, search remains optional enhancement',()=>
 });
 
 test('public-review pipeline explicitly excludes dummy lab',()=>{const source=fs.readFileSync('scripts/public-review.mjs','utf8');assert.match(source,/excluded=new Set\(\['rcl-component-lab'\]\)/);assert.match(source,/fs\.rmSync/);assert.match(source,/input\.filter\(app=>!excluded\.has\(app\.app_id\)\)/);});
+
+test('built developer registry contains lab while tester registry excludes it',()=>{
+ const dev='dist/developer/registry.json',tester='dist/tester/registry.json';
+ if(!fs.existsSync(dev)||!fs.existsSync(tester))return; // build verification is run separately in CI
+ const a=JSON.parse(fs.readFileSync(dev,'utf8')).apps;
+ const b=JSON.parse(fs.readFileSync(tester,'utf8')).apps;
+ assert.ok(a.some(x=>x.app_id==='rcl-component-lab'));
+ assert.ok(!b.some(x=>x.app_id==='rcl-component-lab'));
+ assert.ok(fs.existsSync('dist/developer/apps/rcl-component-lab/index.html'));
+ assert.ok(!fs.existsSync('dist/tester/apps/rcl-component-lab/index.html'));
+});
