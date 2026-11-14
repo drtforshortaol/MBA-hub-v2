@@ -39,8 +39,8 @@ test('El Niño module contains no external calls, browser storage, or sensitive 
 
 test('visible cards, searchable sections and generated diagram titles stay aligned',()=>{
  const scripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].map(m=>m[1]).filter(Boolean);
- const context=vm.createContext({});
- const titles=new vm.Script(scripts[0]+'\ntitles').runInContext({ ...context,document:{querySelector:()=>({}),addEventListener:()=>{}},window:{addEventListener:()=>{}}});
+ const context=vm.createContext({document:{querySelector:()=>({}),addEventListener:()=>{}},window:{addEventListener:()=>{}}});
+ const titles=new vm.Script(scripts[0]+'\ntitles').runInContext(context);
  const topics=new vm.Script(scripts[1]+'\ntopics').runInContext(context);
  assert.equal(titles.length,18);
  assert.equal(topics.length,18);
