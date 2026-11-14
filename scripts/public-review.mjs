@@ -9,6 +9,9 @@ export function preparePublicReview(out,input){
  },null,2));
  const excluded=new Set(['rcl-component-lab']);
  for(const id of excluded)fs.rmSync(`${out}/apps/${id}`,{recursive:true,force:true});
+ // The shared search module is currently owned solely by the excluded lab.
+ // Do not ship unused experimental code in public tester/offline bundles.
+ fs.rmSync(`${out}/shared/rcl`,{recursive:true,force:true});
  const apps=structuredClone(input.filter(app=>!excluded.has(app.app_id)));
  // Existing V1 publication approval carries forward for unchanged migrated content.
  // This is separate from app functional testing and release readiness.
