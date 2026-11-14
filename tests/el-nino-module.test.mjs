@@ -31,7 +31,7 @@ test('18 vector illustrations render locally with 16:9 aspect ratio',()=>{
 test('El Niño module contains no external calls, browser storage, or sensitive APIs',()=>{
  assert.doesNotMatch(html,/\bfetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon|localStorage|sessionStorage|indexedDB|geolocation|getUserMedia|navigator\.credentials|document\.cookie/);
  assert.doesNotMatch(html,/(?:src|href|action)\s*=\s*["']https?:\/\//i);
- assert.doesNotMatch(html,/https?:\/\//i,'No remote network references expected');
+ assert.doesNotMatch(html.replaceAll('http://www.w3.org/2000/svg',''),/https?:\/\//i,'No remote network references expected');
  assert.deepEqual(manifest.media,[]);
  assert.deepEqual(manifest.offline_assets,['apps/el-nino/index.html']);
  assert.equal(manifest.publication_review,'pending','Publication approval is separate from privacy assessment');
