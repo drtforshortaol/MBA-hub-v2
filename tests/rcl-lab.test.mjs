@@ -33,4 +33,11 @@ test('built developer registry contains lab while tester registry excludes it',(
  assert.ok(!b.some(x=>x.app_id==='rcl-component-lab'));
  assert.ok(fs.existsSync('dist/developer/apps/rcl-component-lab/index.html'));
  assert.ok(!fs.existsSync('dist/tester/apps/rcl-component-lab/index.html'));
+ const testerSearch=JSON.parse(fs.readFileSync('dist/tester/search-index.json','utf8'));
+ assert.ok(!testerSearch.some(x=>x.app_id==='rcl-component-lab'));
+ const testerRelease=JSON.parse(fs.readFileSync('dist/tester/release.json','utf8'));
+ assert.ok(!testerRelease.resources.some(x=>x.url.includes('rcl-component-lab')));
+ const devRelease=JSON.parse(fs.readFileSync('dist/developer/release.json','utf8'));
+ assert.ok(devRelease.resources.some(x=>x.url==='apps/rcl-component-lab/index.html'));
+
 });
