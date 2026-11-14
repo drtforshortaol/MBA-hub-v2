@@ -7,7 +7,9 @@ export function preparePublicReview(out,input){
   libraryPersonalFieldsRemoved:0,operationalItemsRemoved:0,withheldApps:[],
   restored:['information-center','mba-leadership','naturalist-field-notes','aquarium-library-explorer']
  },null,2));
- const apps=structuredClone(input);
+ const excluded=new Set(['rcl-component-lab']);
+ for(const id of excluded)fs.rmSync(`${out}/apps/${id}`,{recursive:true,force:true});
+ const apps=structuredClone(input.filter(app=>!excluded.has(app.app_id)));
  // Existing V1 publication approval carries forward for unchanged migrated content.
  // This is separate from app functional testing and release readiness.
  for(const app of apps){if(app.source_repository && app.publication_review==='pending')app.publication_review='inherited-v1-approved';}
