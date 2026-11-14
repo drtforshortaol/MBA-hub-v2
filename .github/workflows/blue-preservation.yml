@@ -1,0 +1,59 @@
+name: Blue preservation and privacy review (NO DEPLOY)
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/blue-preservation.yml'
+      - 'src/apps/**'
+      - 'scripts/age/channel-registry.mjs'
+      - 'config/age-channel-policy.json'
+      - 'tests/age-channel-registry.test.mjs'
+      - 'tests/blue-baseline-preservation.test.mjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preserve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate preserved blue source and build read-only package
+        run: |
+          npm run validate
+          npm run build
+          node --test tests/blue-baseline-preservation.test.mjs tests/age-channel-registry.test.mjs
+          node scripts/age/channel-registry.mjs
+      - name: Report privacy review delta without granting approval
+        run: |
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          import {privacySnapshot} from './scripts/audit-privacy-snapshot.mjs';
+          const current=privacySnapshot();
+          const review=JSON.parse(fs.readFileSync('config/privacy-review.json','utf8'));
+          const prior=new Map(review.snapshot.resources.map(x=>[x.path,x.sha256]));
+          const changed=current.resources.filter(x=>prior.get(x.path)!==x.sha256).map(x=>x.path);
+          const removed=review.snapshot.resources.filter(x=>!current.resources.some(y=>y.path===x.path)).map(x=>x.path);
+          const report={baseline_review_status:review.status,release_authorized:review.release_authorized,changed,removed,
+            automaticExternalResources:current.automaticExternalResources,sensitiveBrowserAPIs:current.sensitiveBrowserAPIs,
+            privacy_approval_required:changed.length>0||removed.length>0};
+          fs.mkdirSync('verification',{recursive:true});
+          fs.writeFileSync('verification/blue-privacy-delta.json',JSON.stringify(report,null,2));
+          if(review.release_authorized!==false)throw Error('Unexpected blue release authorization');
+          if(removed.length)throw Error('Baseline files removed: '+removed.join(','));
+          console.log('Privacy delta recorded for human review: '+changed.length+' changed or new files; release remains unauthorized');
+          EOF
+      - name: Preserve privacy delta for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: blue-privacy-delta-review
+          path: verification/blue-privacy-delta.json
+          retention-days: 14
+      - name: Retain blue staging bundle only
+        uses: actions/upload-artifact@v4
+        with:
+          name: mba-hub-blue-preservation-preview
+          path: dist/tester
+          retention-days: 7
