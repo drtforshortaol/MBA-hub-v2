@@ -7,7 +7,7 @@ test('RCL lab is an isolated development-only Hub app',()=>{
  assert.equal(manifest.status,'development');
  assert.equal(manifest.category,'volunteer-tools');
  assert.equal(manifest.entry_point,'apps/rcl-component-lab/index.html');
- assert.deepEqual(manifest.offline_assets,['apps/rcl-component-lab/index.html']);
+ assert.deepEqual(manifest.offline_assets,['apps/rcl-component-lab/index.html','shared/rcl/card-search.js']);
 });
 test('RCL lab uses Hub platform navigation rather than external production URL',()=>{
  assert.match(html,/href="\.\.\/\.\.\/index\.html"/);
@@ -16,9 +16,11 @@ test('RCL lab uses Hub platform navigation rather than external production URL',
 });
 test('cards render without JavaScript, search remains optional enhancement',()=>{
  for(const title of ['Ocean science','Marine habitats','Visitor guidance'])assert.ok(html.includes('<summary>'+title+'</summary>'));
- assert.match(html,/addEventListener\('input',render\)/);
- assert.match(html,/card.hidden=!matches/);
- assert.doesNotMatch(html,/replaceChildren/);
+ assert.match(html,/shared\/rcl\/card-search\.js/);
+ const module=fs.readFileSync('src/shared/rcl/card-search.js','utf8');
+ assert.match(module,/addEventListener\('input',filter\)/);
+ assert.match(module,/card.hidden=!match/);
+ assert.doesNotMatch(module,/replaceChildren/);
 });
 
 test('public-review pipeline explicitly excludes dummy lab',()=>{const source=fs.readFileSync('scripts/public-review.mjs','utf8');assert.match(source,/excluded=new Set\(\['rcl-component-lab'\]\)/);assert.match(source,/fs\.rmSync/);assert.match(source,/input\.filter\(app=>!excluded\.has\(app\.app_id\)\)/);});
