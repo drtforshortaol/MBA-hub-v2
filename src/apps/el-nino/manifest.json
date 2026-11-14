@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "app_id": "el-nino",
+  "title": "El Niño",
+  "category": "concepts",
+  "type": "interactive",
+  "version": "0.1.0",
+  "entry_point": "apps/el-nino/index.html",
+  "status": "development",
+  "owner": "el-nino",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/el-nino/index.html"
+  ],
+  "media": [],
+  "knowledge": [],
+  "cross_links": [],
+  "sections": [
+    {
+      "id": "slide-1",
+      "title": "Learning Objectives",
+      "text": "Understand ENSO phases, ocean-atmosphere interaction, and Monterey Bay effects.",
+      "aliases": []
+    },
+    {
+      "id": "slide-2",
+      "title": "El Niño Basics",
+      "text": "El Niño is the warm phase of ENSO, with warmer central and eastern equatorial Pacific surface waters.",
+      "aliases": []
+    },
+    {
+      "id": "slide-3",
+      "title": "ENSO: Three Phases",
+      "text": "El Niño, neutral, and La Niña are the three ENSO phases.",
+      "aliases": []
+    },
+    {
+      "id": "slide-4",
+      "title": "ENSO Explained",
+      "text": "Tropical Pacific winds, sea temperatures, and circulation interact and reinforce changes.",
+      "aliases": []
+    },
+    {
+      "id": "slide-5",
+      "title": "Trade Winds & Walker Circulation",
+      "text": "Easterly trade winds normally push warm water west; they often weaken during El Niño.",
+      "aliases": []
+    },
+    {
+      "id": "slide-6",
+      "title": "Ocean & Atmosphere",
+      "text": "Weaker trade winds allow warm water to move east and reduce equatorial eastern Pacific upwelling.",
+      "aliases": []
+    },
+    {
+      "id": "slide-7",
+      "title": "Equatorial Kelvin Waves",
+      "text": "Downwelling equatorial Kelvin waves travel east and deepen the eastern Pacific thermocline.",
+      "aliases": []
+    },
+    {
+      "id": "slide-8",
+      "title": "Super El Niño",
+      "text": "Super El Niño is an informal description of unusually strong events, not a formal classification.",
+      "aliases": []
+    },
+    {
+      "id": "slide-9",
+      "title": "Monterey Bay Impacts",
+      "text": "Monterey Bay may experience changes in temperature, nutrients, species, and storm conditions.",
+      "aliases": []
+    },
+    {
+      "id": "slide-10",
+      "title": "Marine Impacts",
+      "text": "Changing ocean temperatures and food webs can shift fish, seabirds, and marine mammals.",
+      "aliases": []
+    },
+    {
+      "id": "slide-11",
+      "title": "Coastal Impacts",
+      "text": "Strong waves, tides, and storms can combine to increase erosion or coastal flooding.",
+      "aliases": []
+    },
+    {
+      "id": "slide-12",
+      "title": "Economic Impacts",
+      "text": "Fisheries, tourism, infrastructure, and communities can experience varying impacts.",
+      "aliases": []
+    },
+    {
+      "id": "slide-13",
+      "title": "Impacts at MBA",
+      "text": "Aquarium guides can connect ENSO to upwelling, temperature, marine food webs, and observations.",
+      "aliases": []
+    },
+    {
+      "id": "slide-14",
+      "title": "Central California",
+      "text": "Local winds and upwelling influence Central California alongside broader ENSO conditions.",
+      "aliases": []
+    },
+    {
+      "id": "slide-15",
+      "title": "Guest FAQs",
+      "text": "El Niño changes climate probabilities but does not guarantee rain or individual storms.",
+      "aliases": []
+    },
+    {
+      "id": "slide-16",
+      "title": "Combating Doom-ism",
+      "text": "Discuss risks with evidence, uncertainty, preparation, and practical agency.",
+      "aliases": []
+    },
+    {
+      "id": "slide-17",
+      "title": "El Niño Quick Facts",
+      "text": "ENSO monitoring combines ocean temperature measurements and atmospheric indicators.",
+      "aliases": []
+    },
+    {
+      "id": "slide-18",
+      "title": "Current Conditions",
+      "text": "Current conditions are not displayed until a dated, verified official update is available.",
+      "aliases": []
+    }
+  ],
+  "publication_review": "pending"
+}
