@@ -54,5 +54,5 @@ test('expandable cover, close, and previous/next controls exist',()=>{
  for(const id of ['cover','viewer','slide','close','prev','next','count'])assert.match(html,new RegExp('id="'+id+'"'));
  assert.match(html,/document\.querySelector\('#cover'\)\.onclick/);
  assert.match(html,/viewer\.classList\.remove\('open'\)/);
- assert.match(html,/grid\.children\[current\]/);
+ assert.match(html,/lastTrigger\|\|document\.querySelector\('#cover'\)/);
 });
