@@ -3,7 +3,10 @@ on:
   pull_request:
     paths:
       - '.github/workflows/blue-preservation.yml'
-      - 'src/apps/el-nino/**'
+      - 'src/apps/**'
+      - 'scripts/age/channel-registry.mjs'
+      - 'config/age-channel-policy.json'
+      - 'tests/age-channel-registry.test.mjs'
       - 'tests/blue-baseline-preservation.test.mjs'
   workflow_dispatch:
 permissions:
@@ -20,7 +23,8 @@ jobs:
         run: |
           npm run validate
           npm run build
-          node --test tests/blue-baseline-preservation.test.mjs
+          node --test tests/blue-baseline-preservation.test.mjs tests/age-channel-registry.test.mjs
+          node scripts/age/channel-registry.mjs
       - name: Report privacy review delta without granting approval
         run: |
           node --input-type=module <<'EOF'
