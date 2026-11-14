@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "app_id": "el-nino",
+  "title": "El Niño",
+  "category": "concepts",
+  "type": "interactive",
+  "version": "0.1.0",
+  "entry_point": "apps/el-nino/index.html",
+  "status": "development",
+  "owner": "el-nino",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/el-nino/index.html"
+  ],
+  "media": [],
+  "knowledge": [],
+  "cross_links": [],
+  "sections": [
+    {
+      "id": "slide-1",
+      "title": "Learning Objectives",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    },
+    {
+      "id": "slide-2",
+      "title": "El Niño Basics",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    },
+    {
+      "id": "slide-3",
+      "title": "ENSO Explained",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    },
+    {
+      "id": "slide-4",
+      "title": "Trade Winds & Global Circulation",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    },
+    {
+      "id": "slide-5",
+      "title": "Ocean & Atmosphere",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    },
+    {
+      "id": "slide-6",
+      "title": "Equatorial Kelvin Waves",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    },
+    {
+      "id": "slide-7",
+      "title": "Super El Niño",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    },
+    {
+      "id": "slide-8",
+      "title": "El Niño Quick Facts",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    },
+    {
+      "id": "slide-9",
+      "title": "What's Happening",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    },
+    {
+      "id": "slide-10",
+      "title": "What's Leading to Super El Niño?",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    },
+    {
+      "id": "slide-11",
+      "title": "Monterey Bay Impacts",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    },
+    {
+      "id": "slide-12",
+      "title": "Marine Impacts",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    },
+    {
+      "id": "slide-13",
+      "title": "Coastal Impacts",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    },
+    {
+      "id": "slide-14",
+      "title": "Economic Impacts",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    },
+    {
+      "id": "slide-15",
+      "title": "Impacts at MBA",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    },
+    {
+      "id": "slide-16",
+      "title": "Guest FAQs",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    },
+    {
+      "id": "slide-17",
+      "title": "Combating Doom-ism",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    },
+    {
+      "id": "slide-18",
+      "title": "Global Climate Impacts",
+      "text": "Educational illustration topic; content and scientific review pending.",
+      "aliases": []
+    }
+  ],
+  "publication_review": "pending"
+}
