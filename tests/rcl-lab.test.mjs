@@ -18,3 +18,5 @@ test('cards render without JavaScript, search remains optional enhancement',()=>
  for(const title of ['Ocean science','Marine habitats','Visitor guidance'])assert.ok(html.includes('<summary>'+title+'</summary>'));
  assert.match(html,/addEventListener\('input',render\)/);
 });
+
+test('public-review pipeline explicitly excludes dummy lab',()=>{const source=fs.readFileSync('scripts/public-review.mjs','utf8');assert.match(source,/excluded=new Set\(\['rcl-component-lab'\]\)/);assert.match(source,/fs\.rmSync/);assert.match(source,/input\.filter\(app=>!excluded\.has\(app\.app_id\)\)/);});
