@@ -16,7 +16,8 @@
     }
   ],
   "offline_assets": [
-    "apps/rcl-component-lab/index.html"
+    "apps/rcl-component-lab/index.html",
+    "shared/rcl/card-search.js"
   ],
   "media": [],
   "knowledge": [],
