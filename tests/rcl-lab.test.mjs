@@ -23,7 +23,8 @@ test('public-review pipeline explicitly excludes dummy lab',()=>{const source=fs
 
 test('built developer registry contains lab while tester registry excludes it',()=>{
  const dev='dist/developer/registry.json',tester='dist/tester/registry.json';
- if(!fs.existsSync(dev)||!fs.existsSync(tester))return; // build verification is run separately in CI
+ assert.ok(fs.existsSync(dev),'developer bundle must be built before tests');
+ assert.ok(fs.existsSync(tester),'tester bundle must be built before tests');
  const a=JSON.parse(fs.readFileSync(dev,'utf8')).apps;
  const b=JSON.parse(fs.readFileSync(tester,'utf8')).apps;
  assert.ok(a.some(x=>x.app_id==='rcl-component-lab'));
