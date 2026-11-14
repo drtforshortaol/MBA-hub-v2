@@ -36,3 +36,23 @@ test('El Niño module contains no external calls, browser storage, or sensitive 
  assert.deepEqual(manifest.offline_assets,['apps/el-nino/index.html']);
  assert.equal(manifest.publication_review,'pending','Publication approval is separate from privacy assessment');
 });
+
+test('visible cards, searchable sections and generated diagram titles stay aligned',()=>{
+ const scripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].map(m=>m[1]).filter(Boolean);
+ const context=vm.createContext({});
+ const titles=new vm.Script(scripts[0]+'\ntitles').runInContext({ ...context,document:{querySelector:()=>({}),addEventListener:()=>{}},window:{addEventListener:()=>{}}});
+ const topics=new vm.Script(scripts[1]+'\ntopics').runInContext(context);
+ assert.equal(titles.length,18);
+ assert.equal(topics.length,18);
+ for(let i=0;i<18;i++){
+  assert.equal(titles[i],topics[i][0], 'visual title mismatch at slide '+(i+1));
+  assert.equal(manifest.sections[i].title,titles[i], 'manifest title mismatch at slide '+(i+1));
+  assert(topics[i][1].length>35,'missing explanation at slide '+(i+1));
+ }
+});
+test('expandable cover, close, and previous/next controls exist',()=>{
+ for(const id of ['cover','viewer','slide','close','prev','next','count'])assert.match(html,new RegExp('id="'+id+'"'));
+ assert.match(html,/document\.querySelector\('#cover'\)\.onclick/);
+ assert.match(html,/viewer\.classList\.remove\('open'\)/);
+ assert.match(html,/grid\.children\[current\]/);
+});
