@@ -52,3 +52,27 @@ test('built developer registry contains lab while tester registry excludes it',(
  assert.ok(devRelease.resources.some(x=>x.url==='shared/rcl/card-search.js'));
 
 });
+
+test('developer RCL bundle resolves its imported modules and offline dependencies',()=>{
+ const root='dist/developer';
+ const page=fs.readFileSync(root+'/apps/rcl-component-lab/index.html','utf8');
+ const searchPath=root+'/shared/rcl/card-search.js';
+ const contractPath=root+'/core/app-contract.js';
+ const navigationPath=root+'/core/navigation.js';
+ const offlinePath=root+'/core/offline.js';
+ for(const path of [searchPath,contractPath,navigationPath,offlinePath]){
+  assert.ok(fs.existsSync(path),'missing imported module: '+path);
+ }
+ assert.match(page,/import\s*\{attachCardSearch\}\s*from\s*['"]\.\.\/\.\.\/shared\/rcl\/card-search\.js['"]/);
+ const contract=fs.readFileSync(contractPath,'utf8');
+ assert.match(contract,/from ['"]\.\/navigation\.js['"]/);
+ assert.match(contract,/from ['"]\.\/offline\.js['"]/);
+ const release=JSON.parse(fs.readFileSync(root+'/release.json','utf8'));
+ for(const asset of manifest.offline_assets){
+  assert.ok(release.resources.some(resource=>resource.url===asset),'offline release omits '+asset);
+ }
+ const registry=JSON.parse(fs.readFileSync(root+'/registry.json','utf8'));
+ assert.ok(registry.categories.some(category=>category.id==='volunteer-tools'));
+ const lab=registry.apps.find(app=>app.app_id==='rcl-component-lab');
+ assert.equal(lab?.listed,true);
+});
