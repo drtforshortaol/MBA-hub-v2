@@ -49,7 +49,7 @@ test('blue reconciliation preserves every existing application',()=>{
   assert.equal(m.app_id,id);
  }
  const registered=fs.readdirSync('src/apps',{withFileTypes:true}).filter(x=>x.isDirectory());
- assert.ok(registered.length>=original.length+1,'El Niño must augment, not replace, baseline');
+ assert.ok(registered.length>=original.length+2,'El Niño and Nearby Dining must augment, not replace, baseline');
 });
 test('El Niño owns its 18 original offline illustrations and local navigation',()=>{
  const m=JSON.parse(fs.readFileSync('src/apps/el-nino/manifest.json','utf8'));
@@ -71,4 +71,9 @@ test('blue build retains all baseline registrations and adds exactly one El Niñ
  const ids=new Set(registry.apps.map(x=>x.app_id));
  for(const id of original)assert.ok(ids.has(id),'Blue registry lost '+id);
  assert.equal(registry.apps.filter(x=>x.app_id==='el-nino').length,1);
+ assert.equal(registry.apps.filter(x=>x.app_id==='nearby-dining').length,1);
+ assert.equal(registry.apps.find(x=>x.app_id==='nearby-dining').category,'volunteer-tools');
+ const hub=fs.readFileSync('dist/tester/core/hub.js','utf8');
+ assert.ok(!hub.includes('const nearbyDining='),'Dining must not be injected into Hub core');
+ assert.ok(hub.includes('listedHubApps(registry.apps)'),'Entries must derive from canonical registry');
 });
