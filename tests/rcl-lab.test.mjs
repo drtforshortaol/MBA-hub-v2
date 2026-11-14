@@ -5,6 +5,7 @@ const manifest=JSON.parse(fs.readFileSync('src/apps/rcl-component-lab/manifest.j
 const html=fs.readFileSync('src/apps/rcl-component-lab/index.html','utf8');
 test('RCL lab is an isolated development-only Hub app',()=>{
  assert.equal(manifest.status,'development');
+ assert.equal(manifest.version,'0.4.0');
  assert.equal(manifest.category,'volunteer-tools');
  assert.equal(manifest.entry_point,'apps/rcl-component-lab/index.html');
  assert.deepEqual(manifest.offline_assets,['apps/rcl-component-lab/index.html','shared/rcl/card-search.js']);
@@ -13,6 +14,10 @@ test('RCL lab uses Hub platform navigation rather than external production URL',
  assert.match(html,/href="\.\.\/\.\.\/index\.html"/);
  assert.match(html,/src="\.\.\/\.\.\/core\/app-contract\.js"/);
  assert.doesNotMatch(html,/id="back"/);
+ const contract=fs.readFileSync('src/core/app-contract.js','utf8');
+ assert.match(contract,/data-v2-back/);
+ assert.match(contract,/returnToVisit/);
+ assert.match(contract,/mainHubURL/);
 });
 test('cards render without JavaScript, search remains optional enhancement',()=>{
  for(const title of ['Ocean science','Marine habitats','Visitor guidance'])assert.ok(html.includes('<summary>'+title+'</summary>'));
