@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "app_id": "el-nino",
+  "title": "El Niño",
+  "category": "concepts",
+  "type": "reference",
+  "version": "1.0.0",
+  "entry_point": "apps/el-nino/index.html",
+  "status": "testing",
+  "owner": "el-nino",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/el-nino/index.html",
+    "apps/el-nino/images/slide-01.jpg",
+    "apps/el-nino/images/slide-02.jpg",
+    "apps/el-nino/images/slide-03.jpg",
+    "apps/el-nino/images/slide-04.jpg",
+    "apps/el-nino/images/slide-05.jpg",
+    "apps/el-nino/images/slide-06.jpg",
+    "apps/el-nino/images/slide-07.jpg",
+    "apps/el-nino/images/slide-08.jpg",
+    "apps/el-nino/images/slide-09.jpg",
+    "apps/el-nino/images/slide-10.jpg",
+    "apps/el-nino/images/slide-11.jpg",
+    "apps/el-nino/images/slide-12.jpg",
+    "apps/el-nino/images/slide-13.jpg",
+    "apps/el-nino/images/slide-14.jpg",
+    "apps/el-nino/images/slide-15.jpg",
+    "apps/el-nino/images/slide-16.jpg",
+    "apps/el-nino/images/slide-17.jpg",
+    "apps/el-nino/images/slide-18.jpg"
+  ],
+  "media": [],
+  "knowledge": [],
+  "cross_links": [],
+  "sections": [
+    {
+      "id": "el-nino",
+      "title": "El Niño",
+      "text": "El Niño science, ocean warming, upwelling and effects on marine ecosystems",
+      "aliases": [
+        "ENSO",
+        "El Nino"
+      ]
+    }
+  ],
+  "publication_review": "pending"
+}
