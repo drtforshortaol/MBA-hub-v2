@@ -53,12 +53,12 @@ test('offline release manifest has unique resources with SHA-256 digests',()=>{
  }
 });
 
-test('complete collection includes 25 inherited directory apps and 11 supporting apps',()=>{
+test('complete collection preserves deployed Blue and includes both canonical additions',()=>{
  const inventory=read('config/v1-inventory.json');
+ const policy=read('config/age-channel-policy.json');
  assert.equal(inventory.apps.length,25,'unexpected inherited V1 inventory size');
- assert.equal(registry.apps.length,36,'expected 36 registered apps including supporting collection');
- const registered=new Set(registry.apps.map(a=>a.app_id));
- for(const app of inventory.apps)assert(registered.has(app.id),'missing inherited app '+app.id);
- const additional=registry.apps.filter(a=>!inventory.apps.some(old=>old.id===a.app_id));
- assert.equal(additional.length,11,'supporting app count changed; reconcile inventory before release');
+ const registered=registry.apps.map(app=>app.app_id);
+ const expected=[...policy.blue_required_apps,'el-nino','nearby-dining'];
+ assert.deepEqual(registered.sort(),expected.sort());
+ for(const app of inventory.apps)assert(registered.includes(app.id),'missing inherited app '+app.id);
 });
