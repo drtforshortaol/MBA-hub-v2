@@ -17,10 +17,10 @@
   ],
   "offline_assets": [
     "apps/big-bellied-seahorse/index.html",
-    "apps/IMG_4214.jpeg",
-    "apps/IMG_4215.jpeg",
-    "apps/IMG_4216.jpeg",
-    "apps/seahorse-takenaga.jpeg"
+    "apps/big-bellied-seahorse/images/IMG_4214.jpeg",
+    "apps/big-bellied-seahorse/images/IMG_4215.jpeg",
+    "apps/big-bellied-seahorse/images/IMG_4216.jpeg",
+    "apps/big-bellied-seahorse/images/seahorse-takenaga.jpeg"
   ],
   "media": [
     "asset-e62b39cc07a542c4",
