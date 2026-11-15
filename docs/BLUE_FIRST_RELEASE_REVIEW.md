@@ -74,3 +74,7 @@ Existing approvals hash the entire catalog. A read-only comparison produced thes
 | Temporary copy of the experiment with the exact original catalog bytes | 29 | 6 |
 
 The temporary copy isolated the catalog's effect. It was used for diagnosis only. The candidate retains the current approval checks and evidence. Before integrating the media records, review a migration that proves each existing approval still covers the same app and dependencies. Independently verify rights for the 18 pending records.
+
+### Owner decision on El Niño
+
+Glenn approved retaining the 18 cleaned-up images from a Monterey Bay Aquarium enrichment presentation and asked to publish the revised El Niño app. The presentation supplied no individual illustration credits. This records the owner’s editorial and publication decision. The conversation supplies no separate Aquarium reuse statement. Keep that distinction in release status reporting.
