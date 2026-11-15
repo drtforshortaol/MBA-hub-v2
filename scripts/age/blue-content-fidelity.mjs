@@ -80,8 +80,10 @@ export function assessProductionContent(baselineRoot,candidateRoot){
   const sectionMissing=priorSections.filter(s=>!nextBySection.has(key(s))).map(s=>({id:key(s),title:s.title||''}));
   const sectionAltered=priorSections.filter(s=>nextBySection.has(key(s))&&JSON.stringify(s)!==JSON.stringify(nextBySection.get(key(s)))).map(s=>({id:key(s),title:s.title||''}));
   const missingMedia=(prior.media||[]).filter(x=>!(next.media||[]).includes(x));
-  const missingAssets=(prior.offline_assets||[]).filter(x=>!((next.offline_assets||[]).includes(x)||
-   (relocated.has('src/'+x)&&(next.offline_assets||[]).includes(relocated.get('src/'+x).slice(4))));
+  const missingAssets=(prior.offline_assets||[]).filter(asset=>{
+   const mapped=relocated.get('src/'+asset);
+   return !(next.offline_assets||[]).includes(asset)&&!(mapped&&(next.offline_assets||[]).includes(mapped.slice(4)));
+  });
   const omittedFiles=missingAssets.filter(asset=>!after.has('src/'+asset));
   const removedListing=prior.listed!==false&&next.listed===false;
   const app={app_id:id,baseline_version:prior.version,candidate_version:next.version,
