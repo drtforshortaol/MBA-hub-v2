@@ -4,8 +4,8 @@ on:
     paths:
       - 'scripts/age/blue-content-fidelity.mjs'
       - '.github/workflows/age-blue-content.yml'
-      - 'src/apps/**'
-      - 'src/shared/media/**'
+      - 'config/age-source-relocations.json'
+      - 'src/**'
   workflow_dispatch:
 permissions:
   contents: read
@@ -49,5 +49,5 @@ jobs:
           if-no-files-found: error
           retention-days: 30
       - name: Fail production release gate for unreviewed source/content loss
-        if: github.event_name == 'workflow_dispatch' || github.base_ref == 'main'
+        if: github.event_name == 'workflow_dispatch' || github.base_ref == 'main' || github.base_ref == 'architecture/quarterback-20261114'
         run: node candidate/scripts/age/blue-content-fidelity.mjs deployed-blue candidate verification/age-008-blue-content-delta.json --strict
