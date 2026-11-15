@@ -99,3 +99,19 @@ test('Nearby Dining uses a cached local launch page in both channels',()=>{
   assert.match(launcher,/offline access must be prepared separately/);
  }
 });
+
+test('both bundles preserve the reviewed El Niño layout and the Monterey-to-Kelvin link',()=>{
+ for(const channel of ['developer','tester']){
+  const html=fs.readFileSync('dist/'+channel+'/apps/el-nino/index.html','utf8');
+  const card14=html.split('<span class="num">14</span>')[1]?.split('</details>')[0];
+  assert.ok(card14,channel);
+  const illustration=card14.indexOf('src="./images/slide-14.jpg"');
+  const introduction=card14.indexOf('What Monterey Bay normally experiences');
+  assert.ok(illustration>=0 && introduction>illustration,channel);
+  for(const current of ['California Current','California Undercurrent','Davidson Current'])
+   assert.ok(card14.includes('<h4>'+current+'</h4>'),current);
+  assert.match(card14,/href="#equatorial-kelvin-waves"/);
+  assert.match(html,/<details[^>]+id="equatorial-kelvin-waves"/);
+  assert.match(html,/querySelectorAll\('#kelvin-link,\.kelvin-cross-reference'\)/);
+ }
+});
