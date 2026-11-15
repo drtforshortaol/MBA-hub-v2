@@ -1,4 +1,4 @@
-import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';import {preparePublicReview} from './public-review.mjs';import {validateAppOwnership} from './age/ownership.mjs';import {brandDeveloperDistribution} from './developer-branding.mjs';import {brandGuideDistribution} from './guide-branding.mjs';
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';import {preparePublicReview} from './public-review.mjs';import {validateAppOwnership} from './age/ownership.mjs';import {brandDeveloperDistribution} from './developer-branding.mjs';import {brandGuideDistribution} from './guide-branding.mjs';import {inspectCurrentBuild} from './age/channel-registry.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');process.chdir(root);
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 export function validate({apps,categories,media,knowledge,exists,interfaces={interfaces:[{id:'navigation',version:'1.0.0',owner:'platform'}]}}){
@@ -49,6 +49,10 @@ export function build(){
   const resources=files.filter(p=>p!=='sw.js').map(url=>({url,sha256:hash(fs.readFileSync(`${out}/${url}`)),bytes:fs.statSync(`${out}/${url}`).size}));
   const release=hash(JSON.stringify(resources)).slice(0,16);put('release.json',{schema_version:1,version:platform.version,environment,release,resources});
   fs.writeFileSync(`${out}/sw.js`,fs.readFileSync('src/sw.js','utf8').replaceAll('__NAMESPACE__',`mba-v2-${environment}`).replaceAll('__RELEASE__',release));
+ }
+ if(environments.includes('developer')&&environments.includes('tester')){
+  const parityFailures=inspectCurrentBuild();
+  if(parityFailures.length)throw Error('AGE-005/006/007 channel gate: '+parityFailures.join('; '));
  }
  const catalog=apps.map(a=>`| ${a.title} | ${a.app_id} | ${a.version} | ${a.status} | ${a.owner} |`).join('\n');
  fs.writeFileSync('docs/GENERATED_CATALOG.md',`# Application registry\n\n| App | ID | Version | Status | Owner |\n|---|---|---|---|---|\n${catalog}\n\nDependencies and sections: see generated registry.json.\n`);
