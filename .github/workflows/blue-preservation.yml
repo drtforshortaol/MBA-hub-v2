@@ -22,6 +22,7 @@ jobs:
         run: |
           node --input-type=module <<'EOF'
           import fs from 'node:fs';
+          import {execFileSync} from 'node:child_process';
           import {privacySnapshot} from './scripts/audit-privacy-snapshot.mjs';
           const current=privacySnapshot();
           const review=JSON.parse(fs.readFileSync('config/privacy-review.json','utf8'));
@@ -42,6 +43,7 @@ jobs:
             };
           };
           const report={
+            candidate_checkout_sha:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),
             baseline_review_status:review.status,release_authorized:review.release_authorized,
             reviewed_snapshot_sha256:review.snapshot_sha256,candidate_snapshot_sha256:current.snapshot_sha256,
             changed,removed,
@@ -76,8 +78,30 @@ jobs:
           path: verification/offline/
           retention-days: 14
       - name: Retain blue staging bundle only
+        id: blue-preview
         uses: actions/upload-artifact@v4
         with:
           name: mba-hub-blue-preservation-preview
           path: dist/tester
           retention-days: 7
+      - name: Summarize the verified staging candidate
+        env:
+          BLUE_PREVIEW_URL: ${{ steps.blue-preview.outputs.artifact-url }}
+        run: |
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          const privacy=JSON.parse(fs.readFileSync('verification/blue-privacy-delta.json','utf8'));
+          const readRelease=channel=>JSON.parse(fs.readFileSync('dist/'+channel+'/release.json','utf8')).release;
+          const summary=[
+            '## Verified staging candidate',
+            '',
+            '- Audited checkout: `'+privacy.candidate_checkout_sha+'`',
+            '- Orange offline release: `'+readRelease('developer')+'`',
+            '- Blue offline release: `'+readRelease('tester')+'`',
+            '- Privacy approval required: '+(privacy.privacy_approval_required?'yes':'no'),
+            '- Production release authorized: '+(privacy.release_authorized?'yes':'no'),
+            '- [Download the verified Blue staging bundle]('+process.env.BLUE_PREVIEW_URL+')',
+            ''
+          ];
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,summary.join('\n'));
+          EOF
