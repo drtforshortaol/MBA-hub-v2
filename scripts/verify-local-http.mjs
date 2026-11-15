@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import http from 'node:http';
+import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {verifyPreviewHttp} from './verify-preview-http.mjs';
 
@@ -11,6 +12,7 @@ export async function verifyLocalHttp({directory='dist',reportDirectory=null}={}
  for(const environment of ['developer','tester']){
   const root=path.resolve(directory,environment);
   const release=JSON.parse(fs.readFileSync(path.join(root,'release.json'),'utf8'));
+  const expectedWorkerSha256=createHash('sha256').update(fs.readFileSync(path.join(root,'sw.js'))).digest('hex');
   const server=http.createServer((request,response)=>{
    try{
     const name=decodeURIComponent(request.url.split('?',1)[0]).slice(1);
@@ -30,7 +32,7 @@ export async function verifyLocalHttp({directory='dist',reportDirectory=null}={}
   });
   try{
    await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});
-   const report=await verifyPreviewHttp(`http://127.0.0.1:${server.address().port}/`,environment,{expectedRelease:release.release});
+   const report=await verifyPreviewHttp(`http://127.0.0.1:${server.address().port}/`,environment,{expectedRelease:release.release,expectedWorkerSha256});
    reports.push(report);
    if(reportDirectory){
     fs.mkdirSync(reportDirectory,{recursive:true});
