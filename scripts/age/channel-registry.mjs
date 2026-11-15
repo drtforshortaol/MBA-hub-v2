@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import {isDeepStrictEqual} from 'node:util';
 import {fileURLToPath} from 'node:url';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
@@ -15,8 +16,11 @@ export function validateChannelRegistry({manifests,orange,blue,policy}){
   for(const entry of entries){
    const canonical=source.get(entry.app_id);
    if(!canonical){errors.push('AGE-005: rogue '+channel+' app '+entry.app_id);continue;}
-   for(const key of ['app_id','title','category','entry_point','owner','version'])
-    if(entry[key]!==canonical[key])errors.push('AGE-005: divergent '+channel+' contract '+entry.app_id+'.'+key);
+   const fields=new Set([...Object.keys(canonical),...Object.keys(entry)]);
+   // The Guide build derives this field from publication evidence.
+   if(channel==='blue')fields.delete('publication_review');
+   for(const key of fields)
+    if(!isDeepStrictEqual(entry[key],canonical[key]))errors.push('AGE-005: divergent '+channel+' contract '+entry.app_id+'.'+key);
   }
  }
  for(const canonical of manifests){

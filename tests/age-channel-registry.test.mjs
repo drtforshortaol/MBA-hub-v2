@@ -28,3 +28,15 @@ test('AGE-007: missing production apps and unapproved retirements fail closed',(
 test('AGE-005: duplicate application IDs fail',()=>{
  assert.match(validateChannelRegistry({manifests:[a('original'),a('original')],orange:[a('original')],blue:[a('original')],policy}).join(' '),/duplicate canonical app original/);
 });
+
+test('AGE-006: Guide review metadata may differ, while listing and content must match',()=>{
+ const original={...a('original'),listed:true,sections:[{id:'intro',text:'Approved text'}],
+  media:['photo'],offline_assets:['apps/original/index.html'],publication_review:'pending'};
+ const guide={...original,publication_review:'inherited-v1-approved'};
+ const args={manifests:[original],orange:[original],blue:[guide],policy};
+ assert.deepEqual(validateChannelRegistry(args),[]);
+ const altered={...guide,listed:false,sections:[{id:'intro',text:'Changed text'}],media:[],offline_assets:[]};
+ const errors=validateChannelRegistry({...args,blue:[altered]});
+ for(const field of ['listed','sections','media','offline_assets'])
+  assert.ok(errors.includes('AGE-005: divergent blue contract original.'+field));
+});
