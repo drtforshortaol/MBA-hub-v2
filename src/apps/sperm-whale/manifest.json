@@ -16,7 +16,11 @@
     }
   ],
   "offline_assets": [
-    "apps/sperm-whale/index.html"
+    "apps/sperm-whale/index.html",
+    "shared/media/asset-0c3ad11dc596bfa3--IMG_3515.jpeg",
+    "shared/media/asset-48b0779c4998c64f--IMG_3516.jpeg",
+    "shared/media/asset-345be463837369de--IMG_3517.jpeg",
+    "shared/media/asset-a682abf588d51b0d--IMG_3518.jpeg"
   ],
   "media": [
     "asset-0c3ad11dc596bfa3",

@@ -20,7 +20,8 @@
     "apps/open-sea/apps.js",
     "apps/open-sea/data.js",
     "apps/open-sea/index.html",
-    "apps/open-sea/styles.css"
+    "apps/open-sea/styles.css",
+    "shared/media/asset-214710e10f5121d5--ScreenHunter-10670.jpg"
   ],
   "media": [
     "asset-214710e10f5121d5"
