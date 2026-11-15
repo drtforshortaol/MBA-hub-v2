@@ -4211,6 +4211,38 @@
       "source_commit": "23d3246f0df9127ab618884f5f993f0cf899fe33",
       "source_path": "src/shared/media/ocellaris-clownfish-title.jpg",
       "sha256": "e5826c3d0aa229598ffabbab05352c07341fc7f28a3fbac997fabd143c408035"
+    },
+    {
+      "asset_id": "asset-df392914e6cf5502",
+      "path": "shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg",
+      "owner": "media-library",
+      "alt": "Historical gray-whale observation offshore from Big Sur, viewed from Highway 1",
+      "credit": "Photo: MJ — Naturalist and Aquarium shift captain.",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "df392914e6cf55020db2cf2ae2eab1b55f23160708b1284f765232f300cbb707",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "cae20ad89424d941cfb8f2bf39595307b0bb74a8",
+      "source_path": "src/shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg",
+      "uses": [
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "src/shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg"
+        }
+      ],
+      "review_note": "Photographer and reuse authorization reported by Glenn for the exact cataloged bytes. Existing source identity records remain unchanged; this approval does not cover third-party illustrations or separate visitor distribution.",
+      "permission_evidence": "Glenn confirmed MJ authorized these photographs for the Aquarium guide hub and its testers on 2026-10-29. See docs/verification/mj-photo-permission-20261029.json and docs/MJ_PHOTO_PERMISSION_20261029.md.",
+      "permission_scope": {
+        "audience": "Aquarium guide hub and its testers",
+        "uses": [
+          "guide-hub-display",
+          "guide-hub-offline-cache"
+        ],
+        "not_granted": [
+          "standalone-visitor-sharing",
+          "unrelated-public-redistribution"
+        ]
+      }
     }
   ]
 }
