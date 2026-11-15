@@ -1,13 +1,6 @@
 name: Blue preservation and privacy review (NO DEPLOY)
 on:
   pull_request:
-    paths:
-      - '.github/workflows/blue-preservation.yml'
-      - 'src/apps/**'
-      - 'scripts/age/channel-registry.mjs'
-      - 'config/age-channel-policy.json'
-      - 'tests/age-channel-registry.test.mjs'
-      - 'tests/blue-baseline-preservation.test.mjs'
   workflow_dispatch:
 permissions:
   contents: read
