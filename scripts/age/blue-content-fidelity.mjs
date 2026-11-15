@@ -32,6 +32,45 @@ function files(root){
 export function assessProductionContent(baselineRoot,candidateRoot){
  const baseline=inventory(baselineRoot),candidate=inventory(candidateRoot);
  const before=files(baselineRoot),after=files(candidateRoot),apps=[],unexplained=[];
+ const policyPath=path.join(candidateRoot,'config/age-source-relocations.json');
+ const policy=fs.existsSync(policyPath)?JSON.parse(fs.readFileSync(policyPath,'utf8')):null;
+ const baselineCatalogPath=path.join(baselineRoot,'src/shared/media/catalog.json');
+ const candidateCatalogPath=path.join(candidateRoot,'src/shared/media/catalog.json');
+ const oldCatalog=JSON.parse(fs.readFileSync(baselineCatalogPath,'utf8'));
+ const newCatalog=JSON.parse(fs.readFileSync(candidateCatalogPath,'utf8'));
+ const relocated=new Map(),verifiedRelocations=[],rejectedRelocations=[],claimedDestinations=new Set();
+ if(policy){
+  if(policy.schema_version!==1||policy.blue_baseline_sha!=='40e1826166f0ea61f406e1193390272029428734')
+   unexplained.push({kind:'relocation-policy-invalid'});
+  for(const spec of policy.relocations||[]){
+   const source=String(spec.from||''),destination=String(spec.to||''),id=String(spec.app_id||'');
+   const expectedPrefix='src/apps/'+id+'/images/';
+   const prior=baseline.get(id),next=candidate.get(id);
+   const oldMedia=(oldCatalog.assets||[]).find(a=>a.asset_id===spec.asset_id);
+   const newMedia=(newCatalog.assets||[]).find(a=>a.asset_id===spec.asset_id);
+   const validPath=/^src\/apps\/[A-Za-z0-9_.-]+$/.test(source)&&
+    destination.startsWith(expectedPrefix)&&!destination.includes('..')&&!claimedDestinations.has(destination);
+   const exactBytes=before.has(source)&&after.has(destination)&&before.get(source)===after.get(destination);
+   const oldRegistered=Boolean(prior?.offline_assets?.includes(source.slice(4))&&
+    prior?.media?.includes(spec.asset_id)&&oldMedia?.path===source.slice(4));
+   const newRegistered=Boolean(next?.offline_assets?.includes(destination.slice(4))&&
+    next?.media?.includes(spec.asset_id)&&newMedia?.path===destination.slice(4));
+   const permissions=Boolean(oldMedia&&newMedia&&oldMedia.permission===newMedia.permission&&
+    oldMedia.credit===newMedia.credit&&JSON.stringify(oldMedia.permission_scope||null)===
+    JSON.stringify(newMedia.permission_scope||null)&&JSON.stringify(oldMedia.license||null)===
+    JSON.stringify(newMedia.license||null));
+   if(validPath&&exactBytes&&oldRegistered&&newRegistered&&permissions){
+    claimedDestinations.add(destination);
+    relocated.set(source,destination);
+    verifiedRelocations.push({from:source,to:destination,sha256:before.get(source),app_id:id,asset_id:spec.asset_id});
+   }else{
+    const issue={kind:'unverified-asset-relocation',from:source,to:destination,app_id:id,
+      checks:{validPath,exactBytes,oldRegistered,newRegistered,permissions}};
+    rejectedRelocations.push(issue);
+    unexplained.push(issue);
+   }
+  }
+ }
  for(const [id,prior] of baseline){
   const next=candidate.get(id);
   if(!next){unexplained.push({app_id:id,kind:'missing-production-application'});continue;}
@@ -41,7 +80,8 @@ export function assessProductionContent(baselineRoot,candidateRoot){
   const sectionMissing=priorSections.filter(s=>!nextBySection.has(key(s))).map(s=>({id:key(s),title:s.title||''}));
   const sectionAltered=priorSections.filter(s=>nextBySection.has(key(s))&&JSON.stringify(s)!==JSON.stringify(nextBySection.get(key(s)))).map(s=>({id:key(s),title:s.title||''}));
   const missingMedia=(prior.media||[]).filter(x=>!(next.media||[]).includes(x));
-  const missingAssets=(prior.offline_assets||[]).filter(x=>!(next.offline_assets||[]).includes(x));
+  const missingAssets=(prior.offline_assets||[]).filter(x=>!((next.offline_assets||[]).includes(x)||
+   (relocated.has('src/'+x)&&(next.offline_assets||[]).includes(relocated.get('src/'+x).slice(4))));
   const omittedFiles=missingAssets.filter(asset=>!after.has('src/'+asset));
   const removedListing=prior.listed!==false&&next.listed===false;
   const app={app_id:id,baseline_version:prior.version,candidate_version:next.version,
@@ -56,12 +96,13 @@ export function assessProductionContent(baselineRoot,candidateRoot){
   if(missingAssets.length)unexplained.push({app_id:id,kind:'missing-offline-assets',count:missingAssets.length});
   if(removedListing)unexplained.push({app_id:id,kind:'hidden-production-app'});
  }
- const missingSourcePaths=[...before].filter(([name])=>!after.has(name)).map(([name,hash])=>({path:name,sha256:hash}));
+ const missingSourcePaths=[...before].filter(([name])=>!after.has(name)&&!relocated.has(name)).map(([name,hash])=>({path:name,sha256:hash}));
  const changedSourcePaths=[...before].filter(([name,hash])=>after.has(name)&&after.get(name)!==hash).map(([name])=>name);
  return {schema_version:1,baseline_source:'40e1826166f0ea61f406e1193390272029428734',
   source_of_truth:'src/apps/*/manifest.json',baseline_app_count:baseline.size,candidate_app_count:candidate.size,
   baseline_source_file_count:before.size,candidate_source_file_count:after.size,
-  app_differences:apps,missing_source_files:missingSourcePaths,
+  app_differences:apps,verified_relocations:verifiedRelocations,rejected_relocations:rejectedRelocations,
+  missing_source_files:missingSourcePaths,
   changed_source_files:changedSourcePaths,blockers:unexplained,
   release_eligible:unexplained.length===0&&missingSourcePaths.length===0};
 }
