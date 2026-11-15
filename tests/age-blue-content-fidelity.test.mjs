@@ -119,3 +119,40 @@ test('adding new sections to an unchanged existing guide is allowed', t => {
   assert.equal(result.app_differences.length, 0);
   assert.ok(result.unreviewed_source_changes.includes('src/apps/existing-guide/manifest.json'));
 });
+
+test('a new app cannot claim offline readiness if its image is absent', t => {
+  const f = fixture(t);
+  f.put(f.candidate, 'apps/new-guide/manifest.json', {
+    app_id: 'new-guide', sections: [{id:'intro', title:'Intro'}],
+    offline_assets: ['apps/new-guide/illustration.jpg']
+  });
+  const result = assessProductionContent(f.baseline, f.candidate);
+  assert.equal(result.content_inventory_preserved, false);
+  assert.equal(result.release_eligible, false);
+  assert.deepEqual(result.new_app_missing_offline_files, [
+    {app_id:'new-guide', path:'apps/new-guide/illustration.jpg'}
+  ]);
+  assert.ok(result.blockers.some(b => b.kind === 'new-app-missing-offline-file'));
+});
+
+test('new app offline file inventory passes when declared files exist', t => {
+  const f = fixture(t);
+  f.put(f.candidate, 'apps/new-guide/manifest.json', {
+    app_id:'new-guide', sections: [{id:'intro', title:'Intro'}],
+    offline_assets:['apps/new-guide/illustration.jpg']
+  });
+  f.put(f.candidate, 'apps/new-guide/illustration.jpg', 'illustration bytes');
+  const result = assessProductionContent(f.baseline, f.candidate);
+  assert.equal(result.release_eligible, true);
+  assert.deepEqual(result.new_app_missing_offline_files, []);
+});
+
+test('new app offline paths cannot escape src', t => {
+  const f = fixture(t);
+  f.put(f.candidate, 'apps/new-guide/manifest.json', {
+    app_id:'new-guide', sections: [], offline_assets:['../private.txt']
+  });
+  const result = assessProductionContent(f.baseline, f.candidate);
+  assert.equal(result.release_eligible, false);
+  assert.ok(result.blockers.some(b => b.kind === 'new-app-missing-offline-file'));
+});
