@@ -1,0 +1,53 @@
+name: AGE-008 Blue content regression audit (NO DEPLOY)
+on:
+  pull_request:
+    paths:
+      - 'scripts/age/blue-content-fidelity.mjs'
+      - '.github/workflows/age-blue-content.yml'
+      - 'config/age-source-relocations.json'
+      - 'src/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  blue-content-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact blue deployed source
+        uses: actions/checkout@v4
+        with:
+          ref: 40e1826166f0ea61f406e1193390272029428734
+          path: deployed-blue
+          persist-credentials: false
+      - name: Checkout candidate canonical source
+        uses: actions/checkout@v4
+        with:
+          path: candidate
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Produce source-accurate app/content regression inventory
+        run: |
+          node candidate/scripts/age/blue-content-fidelity.mjs deployed-blue candidate verification/age-008-blue-content-delta.json
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          const report=JSON.parse(fs.readFileSync('verification/age-008-blue-content-delta.json','utf8'));
+          for(const app of report.app_differences){
+            console.log('APP DELTA:',app.app_id,'missing sections:',app.missing_sections.length,
+              'changed sections:',app.altered_sections.length,'missing media:',app.missing_media_ids.length,
+              'missing offline paths:',app.missing_offline_asset_paths.length);
+          }
+          console.log('BLUE BASELINE CONTENT AUDIT:',report.release_eligible?'PASS':'BLOCKED');
+          EOF
+      - name: Save full review evidence even if release blocked
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: age-008-blue-content-review
+          path: verification/age-008-blue-content-delta.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Fail production release gate for unreviewed source/content loss
+        if: github.event_name == 'workflow_dispatch' || github.base_ref == 'main' || github.base_ref == 'architecture/quarterback-20261114'
+        run: node candidate/scripts/age/blue-content-fidelity.mjs deployed-blue candidate verification/age-008-blue-content-delta.json --strict

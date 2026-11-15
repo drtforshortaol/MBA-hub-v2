@@ -1,4 +1,4 @@
-import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';import {preparePublicReview} from './public-review.mjs';
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';import {preparePublicReview} from './public-review.mjs';import {validateAppOwnership} from './age/ownership.mjs';import {brandDeveloperDistribution} from './developer-branding.mjs';import {brandGuideDistribution} from './guide-branding.mjs';import {inspectCurrentBuild} from './age/channel-registry.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');process.chdir(root);
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 export function validate({apps,categories,media,knowledge,exists,interfaces={interfaces:[{id:'navigation',version:'1.0.0',owner:'platform'}]}}){
@@ -29,7 +29,7 @@ export function validate({apps,categories,media,knowledge,exists,interfaces={int
 export function releaseErrors(platform,apps,media,inventory){return [...['migrationComplete','ownerApproved','pilotPassed','deviceOfflinePassed','rollbackDevicePassed','privacyReviewed'].filter(k=>!platform[k]).map(k=>`release gate: ${k}`),...inventory.apps.filter(a=>!apps.some(b=>b.app_id===a.id)).map(a=>`unmigrated: ${a.id}`),...apps.filter(a=>!['approved','published'].includes(a.status)).map(a=>`unapproved: ${a.app_id}`),...media.assets.filter(a=>a.permission==='review-required').map(a=>`media permission review: ${a.asset_id}`)];}
 export function build(){
  const platform=read('config/platform.json'),categories=read('config/categories.json'),media=read('src/shared/media/catalog.json'),knowledge=read('src/shared/knowledge.json'),inventory=read('config/v1-inventory.json');
- const apps=fs.readdirSync('src/apps').map(id=>read(`src/apps/${id}/manifest.json`));const interfaces=fs.existsSync('src/shared/interfaces.json')?read('src/shared/interfaces.json'):undefined;const errors=validate({apps,categories,media,knowledge,interfaces,exists:p=>fs.existsSync(`src/${p}`)});if(errors.length)throw Error(errors.join('\n'));
+ const apps=fs.readdirSync('src/apps').map(id=>read(`src/apps/${id}/manifest.json`));const interfaces=fs.existsSync('src/shared/interfaces.json')?read('src/shared/interfaces.json'):undefined;const errors=[...validate({apps,categories,media,knowledge,interfaces,exists:p=>fs.existsSync(`src/${p}`)}),...validateAppOwnership(apps)];if(errors.length)throw Error(errors.join('\n'));
  const environments=process.argv.includes('--published')?['published']:['developer','tester'];if(environments[0]==='published'){const failures=releaseErrors(platform,apps,media,inventory);if(failures.length)throw Error(failures.join('\n'));}
  if(process.argv.includes('--check')){console.log(`Validated ${apps.length} apps and ${categories.length} categories.`);return;}
  for(const environment of environments){
@@ -40,13 +40,19 @@ export function build(){
   const put=(p,data)=>fs.writeFileSync(`${out}/${p}`,JSON.stringify(data,null,2));put('registry.json',registry);
   put('environment.json',{environment,version:platform.version,stage:platform.releaseStage,namespace:`mba-v2-${environment}`,developer:environment==='developer'});
   const facts=new Map(knowledge.records.map(r=>[r.id,r]));put('search-index.json',bundleApps.flatMap(a=>{const owned=new Map(a.sections.map(s=>[s.id,s]));for(const id of a.knowledge)for(const section of facts.get(id)?.sections||[])owned.set(section.id,section);return [{app_id:a.app_id,title:a.title,text:a.title,url:a.entry_point},...[...owned.values()].map(s=>({app_id:a.app_id,title:`${a.title} · ${s.title}`,text:[s.title,s.text,...s.aliases||[]].join(' '),url:a.entry_point+(s.query?'?'+new URLSearchParams(s.query).toString():`#${s.id}`)}))];}));
-  put('manifest.webmanifest',{id:'./',name:`MBA Hub V2 ${environment}`,short_name:'MBA V2',start_url:'./index.html',scope:'./',display:'standalone',theme_color:'#123e50',background_color:'#f4f7f7',icons:[{src:'icon.svg',sizes:'any',type:'image/svg+xml',purpose:'any'}]});
+  if(environment==='developer')brandDeveloperDistribution(out);
+  else if(environment==='tester')brandGuideDistribution(out);
+  put('manifest.webmanifest',{id:'./',name:environment==='developer'?'MBA Hub DEV':'MBA Hub V2',short_name:environment==='developer'?'MBA DEV':'MBA V2',start_url:'./index.html',scope:'./',display:'standalone',theme_color:environment==='developer'?'#a64b0b':'#123e50',background_color:'#f4f7f7',icons:[{src:'icon.svg',sizes:'any',type:'image/svg+xml',purpose:'any'}]});
   // Diagnostics code and maintenance handlers are physically absent from tester artifacts.
   if(environment==='developer')fs.appendFileSync(`${out}/core/hub.js`,"\nimport('./developer.js');\n");
   const files=[];function walk(dir){for(const ent of fs.readdirSync(dir,{withFileTypes:true})){const p=path.join(dir,ent.name);if(ent.isDirectory())walk(p);else files.push(p.slice(out.length+1));}}walk(out);
   const resources=files.filter(p=>p!=='sw.js').map(url=>({url,sha256:hash(fs.readFileSync(`${out}/${url}`)),bytes:fs.statSync(`${out}/${url}`).size}));
   const release=hash(JSON.stringify(resources)).slice(0,16);put('release.json',{schema_version:1,version:platform.version,environment,release,resources});
   fs.writeFileSync(`${out}/sw.js`,fs.readFileSync('src/sw.js','utf8').replaceAll('__NAMESPACE__',`mba-v2-${environment}`).replaceAll('__RELEASE__',release));
+ }
+ if(environments.includes('developer')&&environments.includes('tester')){
+  const parityFailures=inspectCurrentBuild();
+  if(parityFailures.length)throw Error('AGE-005/006/007 channel gate: '+parityFailures.join('; '));
  }
  const catalog=apps.map(a=>`| ${a.title} | ${a.app_id} | ${a.version} | ${a.status} | ${a.owner} |`).join('\n');
  fs.writeFileSync('docs/GENERATED_CATALOG.md',`# Application registry\n\n| App | ID | Version | Status | Owner |\n|---|---|---|---|---|\n${catalog}\n\nDependencies and sections: see generated registry.json.\n`);

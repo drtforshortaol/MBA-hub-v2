@@ -16,7 +16,13 @@
     }
   ],
   "offline_assets": [
-    "apps/green-falsejingle/index.html"
+    "apps/green-falsejingle/index.html",
+    "shared/media/asset-3f24669c2980c4f8--IMG_2777.jpeg",
+    "shared/media/asset-a8b81b143d1657a3--IMG_2778.jpeg",
+    "shared/media/asset-ddd34d36cd9e0c88--IMG_2779.jpeg",
+    "shared/media/asset-d8ac0e89299a0aa6--IMG_2780.jpeg",
+    "shared/media/asset-cf9a0bdb53d3f4fe--IMG_2781.jpeg",
+    "shared/media/asset-1412182fcc3f4d9a--IMG_2785.jpeg"
   ],
   "media": [
     "asset-3f24669c2980c4f8",
@@ -32,7 +38,7 @@
     {
       "id": "Quick-Guide",
       "title": "Quick Guide",
-      "text": "Quick Guide Length Usually 2\u20134 in; up to ~5 in Diet Plankton Habitat Rocky/shale reefs; docks and other structures Depth Commonly 0\u2013100 ft; reported to ~300 ft Range Southern California (arguably Baja) to Alaska; Alaska to Japan Lifespan Estimated 3\u201310 years Status Not Evaluated",
+      "text": "Quick Guide Length Usually 2–4 in; up to ~5 in Diet Plankton Habitat Rocky/shale reefs; docks and other structures Depth Commonly 0–100 ft; reported to ~300 ft Range Southern California (arguably Baja) to Alaska; Alaska to Japan Lifespan Estimated 3–10 years Status Not Evaluated",
       "aliases": []
     },
     {
@@ -74,7 +80,7 @@
     {
       "id": "7-Guide-Talking-Points",
       "title": "7. Guide Talking Points",
-      "text": "7. Guide Talking Points \u201cMermaid\u2019s toenails\u201d is a memorable common name for an easily overlooked bivalve. Unlike a burrowing clam, the adult permanently cements itself to hard substrate. Its shell becomes habitat for other organisms. Filter feeding connects a small animal to water clarity, nutrient cycling and the larger food web.",
+      "text": "7. Guide Talking Points “Mermaid’s toenails” is a memorable common name for an easily overlooked bivalve. Unlike a burrowing clam, the adult permanently cements itself to hard substrate. Its shell becomes habitat for other organisms. Filter feeding connects a small animal to water clarity, nutrient cycling and the larger food web.",
       "aliases": []
     },
     {

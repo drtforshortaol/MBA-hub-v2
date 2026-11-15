@@ -1,0 +1,28 @@
+name: AGE architecture validation
+on:
+  push:
+    branches:
+      - 'architecture/**'
+  pull_request:
+    paths:
+      - 'scripts/age/**'
+      - 'tests/age-*.test.mjs'
+      - 'src/apps/**'
+      - 'config/age-channel-policy.json'
+      - '.github/workflows/age-architecture.yml'
+permissions:
+  contents: read
+jobs:
+  age:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build both channel registries before parity checks
+        run: npm run build
+      - name: AGE ownership, channel parity, and production preservation tests
+        run: |
+          node --test tests/age-*.test.mjs
+          node scripts/age/channel-registry.mjs
