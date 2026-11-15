@@ -8,7 +8,7 @@
   "entry_point": "apps/tree-of-life-origins/index.html",
   "status": "testing",
   "owner": "tree-of-life-origins",
-  "listed": false,
+  "listed": true,
   "dependencies": [
     {
       "id": "navigation",
