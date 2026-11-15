@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "blue_baseline_sha": "40e1826166f0ea61f406e1193390272029428734",
+  "purpose": "AGE-008: explicit original-image relocations only; preserve exact bytes, offline registration and media permissions",
+  "relocations": [
+    {
+      "from": "src/apps/IMG_4207.jpeg",
+      "to": "src/apps/naturalist-field-notes/images/IMG_4207.jpeg",
+      "app_id": "naturalist-field-notes",
+      "asset_id": "asset-1bd100105f88c83a"
+    },
+    {
+      "from": "src/apps/IMG_4208.jpeg",
+      "to": "src/apps/naturalist-field-notes/images/IMG_4208.jpeg",
+      "app_id": "naturalist-field-notes",
+      "asset_id": "asset-95daa2493750e82f"
+    },
+    {
+      "from": "src/apps/IMG_4209.jpeg",
+      "to": "src/apps/naturalist-field-notes/images/IMG_4209.jpeg",
+      "app_id": "naturalist-field-notes",
+      "asset_id": "asset-47f9bbb193878eec"
+    },
+    {
+      "from": "src/apps/IMG_4210.jpeg",
+      "to": "src/apps/naturalist-field-notes/images/IMG_4210.jpeg",
+      "app_id": "naturalist-field-notes",
+      "asset_id": "asset-50646c3fe1d0c359"
+    },
+    {
+      "from": "src/apps/IMG_4214.jpeg",
+      "to": "src/apps/big-bellied-seahorse/images/IMG_4214.jpeg",
+      "app_id": "big-bellied-seahorse",
+      "asset_id": "asset-e62b39cc07a542c4"
+    },
+    {
+      "from": "src/apps/IMG_4215.jpeg",
+      "to": "src/apps/big-bellied-seahorse/images/IMG_4215.jpeg",
+      "app_id": "big-bellied-seahorse",
+      "asset_id": "asset-b2bea165550eabcc"
+    },
+    {
+      "from": "src/apps/IMG_4216.jpeg",
+      "to": "src/apps/big-bellied-seahorse/images/IMG_4216.jpeg",
+      "app_id": "big-bellied-seahorse",
+      "asset_id": "asset-225131703b4c0c59"
+    },
+    {
+      "from": "src/apps/seahorse-takenaga.jpeg",
+      "to": "src/apps/big-bellied-seahorse/images/seahorse-takenaga.jpeg",
+      "app_id": "big-bellied-seahorse",
+      "asset_id": "asset-83f2a50a706d2488"
+    }
+  ]
+}
