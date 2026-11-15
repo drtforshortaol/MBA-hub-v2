@@ -56,12 +56,24 @@ export function assessProductionContent(baselineRoot,candidateRoot){
   if(missingAssets.length)unexplained.push({app_id:id,kind:'missing-offline-assets',count:missingAssets.length});
   if(removedListing)unexplained.push({app_id:id,kind:'hidden-production-app'});
  }
+ // New applications have no deployed baseline: ensure their declared offline files exist.
+ // Existing apps continue to be governed by the exact deployed-file inventory.
+ const newAppMissingOfflineFiles=[];
+ for(const [id,manifest] of candidate){
+  if(baseline.has(id))continue;
+  for(const asset of manifest.offline_assets||[]){
+   if(typeof asset!=='string'||asset.startsWith('/')||asset.split('/').includes('..')||!after.has('src/'+asset)){
+    newAppMissingOfflineFiles.push({app_id:id,path:asset});
+    unexplained.push({app_id:id,kind:'new-app-missing-offline-file',path:asset});
+   }
+  }
+ }
  const missingSourcePaths=[...before].filter(([name])=>!after.has(name)).map(([name,hash])=>({path:name,sha256:hash}));
  const changedSourcePaths=[...before].filter(([name,hash])=>after.has(name)&&after.get(name)!==hash).map(([name])=>name);
  return {schema_version:1,baseline_source:'40e1826166f0ea61f406e1193390272029428734',
   source_of_truth:'src/apps/*/manifest.json',baseline_app_count:baseline.size,candidate_app_count:candidate.size,
   baseline_source_file_count:before.size,candidate_source_file_count:after.size,
-  app_differences:apps,missing_source_files:missingSourcePaths,
+  app_differences:apps,new_app_missing_offline_files:newAppMissingOfflineFiles,missing_source_files:missingSourcePaths,
   changed_source_files:changedSourcePaths,unreviewed_source_changes:changedSourcePaths,blockers:unexplained,
   content_inventory_preserved:unexplained.length===0&&missingSourcePaths.length===0,
   release_eligible:unexplained.length===0&&missingSourcePaths.length===0&&changedSourcePaths.length===0};
@@ -73,6 +85,6 @@ if(invocation){
  const result=assessProductionContent(path.resolve(baseline),path.resolve(candidate));
  fs.mkdirSync(path.dirname(output),{recursive:true});
  fs.writeFileSync(output,JSON.stringify(result,null,2)+'\n');
- console.log('AGE-008 blue content fidelity:',JSON.stringify({apps:[result.baseline_app_count,result.candidate_app_count],appDifferences:result.app_differences.length,missingSourceFiles:result.missing_source_files.length,changedSourceFiles:result.changed_source_files.length,blockers:result.blockers.length,unreviewedCodeChanges:result.unreviewed_source_changes.length,contentPreserved:result.content_inventory_preserved,releaseEligible:result.release_eligible}));
+ console.log('AGE-008 blue content fidelity:',JSON.stringify({apps:[result.baseline_app_count,result.candidate_app_count],appDifferences:result.app_differences.length,missingSourceFiles:result.missing_source_files.length,newAppMissingOfflineFiles:result.new_app_missing_offline_files.length,changedSourceFiles:result.changed_source_files.length,blockers:result.blockers.length,unreviewedCodeChanges:result.unreviewed_source_changes.length,contentPreserved:result.content_inventory_preserved,releaseEligible:result.release_eligible}));
  if(process.argv.includes('--strict')&&!result.release_eligible)process.exitCode=1;
 }
