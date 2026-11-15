@@ -145,7 +145,10 @@
     "shared/media/asset-29f85ad9d9ef593f--IMG_3475.jpeg",
     "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg",
     "shared/media/juvenile-white-seabass-illustration.jpg",
-    "shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg"
+    "shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg",
+    "apps/naturalist-field-notes/images/IMG_4207.jpeg",
+    "apps/naturalist-field-notes/images/IMG_4208.jpeg",
+    "apps/naturalist-field-notes/images/IMG_4209.jpeg"
   ],
   "media": [
     "asset-edd9d5ec2d0bbd07",
@@ -267,7 +270,13 @@
     "asset-9110c28e0898a79e",
     "asset-47d33e98d003d66e",
     "asset-29f85ad9d9ef593f",
-    "asset-df392914e6cf5502"
+    "asset-df392914e6cf5502",
+    "asset-1bd100105f88c83a",
+    "asset-95daa2493750e82f",
+    "asset-47f9bbb193878eec",
+    "asset-50646c3fe1d0c359",
+    "briefing-20261111-flamboyant-cuttlefish",
+    "juvenile-white-seabass-illustration"
   ],
   "knowledge": [],
   "cross_links": [
