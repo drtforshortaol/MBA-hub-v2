@@ -48,5 +48,6 @@ jobs:
           path: verification/age-008-blue-content-delta.json
           if-no-files-found: error
           retention-days: 30
-      - name: Fail release gate for unreviewed source/content loss
+      - name: Fail production release gate for unreviewed source/content loss
+        if: github.event_name == 'workflow_dispatch' || github.base_ref == 'main'
         run: node candidate/scripts/age/blue-content-fidelity.mjs deployed-blue candidate verification/age-008-blue-content-delta.json --strict
