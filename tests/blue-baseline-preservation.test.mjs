@@ -77,3 +77,25 @@ test('blue build retains all baseline registrations and adds exactly one El Niñ
  assert.ok(!hub.includes('const nearbyDining='),'Dining must not be injected into Hub core');
  assert.ok(hub.includes('listedHubApps(registry.apps)'),'Entries must derive from canonical registry');
 });
+
+test('Nearby Dining uses a cached local launch page in both channels',()=>{
+ const entry='apps/nearby-dining/index.html';
+ const external='https://drtforshortaol.github.io/MBA-nearby-dining/';
+ for(const channel of ['developer','tester']){
+  const dir='dist/'+channel;
+  const registry=JSON.parse(fs.readFileSync(dir+'/registry.json','utf8'));
+  const app=registry.apps.find(item=>item.app_id==='nearby-dining');
+  assert.equal(app.listed,true);
+  assert.equal(app.category,'volunteer-tools');
+  assert.equal(app.entry_point,entry);
+  assert.ok(app.offline_assets.includes(entry));
+  const search=JSON.parse(fs.readFileSync(dir+'/search-index.json','utf8'));
+  assert.ok(search.some(item=>item.app_id===app.app_id && item.url===entry));
+  const hub=fs.readFileSync(dir+'/core/hub.js','utf8');
+  assert.ok(!hub.includes(external),'The Hub should navigate to the local launch page');
+  const launcher=fs.readFileSync(dir+'/'+entry,'utf8');
+  assert.match(launcher,/<a [^>]*href="https:\/\/drtforshortaol\.github\.io\/MBA-nearby-dining\/"/);
+  assert.ok(launcher.includes('href="../../index.html?home=1"'));
+  assert.match(launcher,/offline access must be prepared separately/);
+ }
+});
