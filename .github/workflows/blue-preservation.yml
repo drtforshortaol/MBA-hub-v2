@@ -64,6 +64,17 @@ jobs:
           name: blue-privacy-delta-review
           path: verification/blue-privacy-delta.json
           retention-days: 14
+      - name: Verify the exact Orange and Blue offline bundles
+        run: |
+          node scripts/verify-build-artifacts.mjs
+          node scripts/verify-offline-navigation.mjs --report-dir verification/offline
+      - name: Retain simulated offline navigation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: blue-preservation-offline-evidence
+          path: verification/offline/
+          retention-days: 14
       - name: Retain blue staging bundle only
         uses: actions/upload-artifact@v4
         with:
