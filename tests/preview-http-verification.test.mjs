@@ -1,6 +1,7 @@
 import test,{after} from 'node:test';
 import assert from 'node:assert/strict';
 import http from 'node:http';
+import {createHash} from 'node:crypto';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -148,4 +149,23 @@ test('HTTP acceptance rejects a byte-perfect worker delivered with restrictive s
  assert(report.errors.includes('sw.js: Service-Worker-Allowed does not permit preview directory scope'));
  assert(!report.errors.some(error=>error.includes('integrity mismatch')));
  assert.equal(report.resources.verified,report.resources.expected);
+});
+
+test('HTTP acceptance rejects changed service worker bytes for the same release',async t=>{
+ const worker=fs.readFileSync(path.join(bundle,'sw.js'));
+ const expectedWorkerSha256=createHash('sha256').update(worker).digest('hex');
+ const clean=await server(t);
+ const options={expectedWorkerSha256};
+ const matching=await verifyPreviewHttp(clean.url,'tester',options);
+ assert.equal(matching.passed,true,JSON.stringify(matching.errors));
+ const altered=await server(t,(request,response)=>{
+  if(request.url!='/review/sw.js')return false;
+  response.setHeader('Content-Type','text/javascript');
+  response.end(Buffer.concat([worker,Buffer.from('\n// changed worker')]));
+  return true;
+ });
+ const mismatch=await verifyPreviewHttp(altered.url,'tester',options);
+ assert.equal(mismatch.release,matching.release);
+ assert.equal(mismatch.passed,false);
+ assert.ok(mismatch.errors.includes('sw.js: expected worker SHA-256 mismatch'));
 });

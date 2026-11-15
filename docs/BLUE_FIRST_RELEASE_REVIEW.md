@@ -47,3 +47,16 @@ For the test record, use these fields:
 | El Niño illustrations, Back, and Return to Hub | |
 | Nearby Dining from Volunteer Tools and search | |
 | Nearby Dining external link with network restored | |
+
+### Hosted Blue bundle preflight
+
+After uploading the verified bundle to an isolated HTTPS origin, compare the served release and service worker with the downloaded artifact before sending the URL for device testing. For Blue release `b6a6436c283d1401`:
+
+```bash
+node scripts/verify-preview-http.mjs --url https://STAGING-HOST/ --environment tester \
+  --expected-release b6a6436c283d1401 \
+  --expected-worker-sha256 2dedcbbbc22886687fa3df85742dba2b8da280cbed24ef3a6cd48b9d9aec09a0 \
+  --report blue-staging-http.json
+```
+
+For a later bundle, use its release ID and compute SHA-256 from its unpacked `sw.js`. The hosted preflight checks delivery and file integrity. The Home Screen install and offline relaunch are verified on the device.
