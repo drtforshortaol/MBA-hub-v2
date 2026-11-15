@@ -9,6 +9,7 @@ on:
       - 'config/privacy-review.json'
       - 'scripts/build.mjs'
       - 'scripts/age/**'
+      - 'tests/age-blue-content-fidelity.test.mjs'
   workflow_dispatch:
 permissions:
   contents: read
@@ -30,6 +31,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Test fail-closed Blue content preservation rules
+        run: node --test candidate/tests/age-blue-content-fidelity.test.mjs
       - name: Produce source-accurate app/content regression inventory
         run: |
           node candidate/scripts/age/blue-content-fidelity.mjs deployed-blue candidate verification/age-008-blue-content-delta.json
