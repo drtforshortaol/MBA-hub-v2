@@ -4,8 +4,11 @@ on:
     paths:
       - 'scripts/age/blue-content-fidelity.mjs'
       - '.github/workflows/age-blue-content.yml'
-      - 'src/apps/**'
-      - 'src/shared/media/**'
+      - 'src/**'
+      - 'config/age-channel-policy.json'
+      - 'config/privacy-review.json'
+      - 'scripts/build.mjs'
+      - 'scripts/age/**'
   workflow_dispatch:
 permissions:
   contents: read
