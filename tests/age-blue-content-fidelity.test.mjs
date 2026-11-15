@@ -88,3 +88,34 @@ test('hiding a previously listed guide fails closed', t => {
   assert.equal(result.release_eligible, false);
   assert.ok(result.blockers.some(b => b.kind === 'hidden-production-app'));
 });
+
+test('deleting an offline image file fails even if manifest references remain', t => {
+  const f = fixture(t);
+  fs.rmSync(path.join(f.candidate, 'src/apps/existing-guide/photo.png'));
+  const result = assessProductionContent(f.baseline, f.candidate);
+  assert.equal(result.content_inventory_preserved, false);
+  assert.equal(result.release_eligible, false);
+  assert.ok(result.missing_source_files.some(x => x.path === 'src/apps/existing-guide/photo.png'));
+});
+
+test('changing an existing image file requires review', t => {
+  const f = fixture(t);
+  f.put(f.candidate, 'apps/existing-guide/photo.png', 'replacement picture bytes');
+  const result = assessProductionContent(f.baseline, f.candidate);
+  assert.equal(result.content_inventory_preserved, true);
+  assert.equal(result.release_eligible, false);
+  assert.ok(result.unreviewed_source_changes.includes('src/apps/existing-guide/photo.png'));
+});
+
+test('adding new sections to an unchanged existing guide is allowed', t => {
+  const f = fixture(t);
+  f.put(f.candidate, 'apps/existing-guide/manifest.json', {
+    ...f.manifest, sections: [...f.manifest.sections, {id:'second', title:'Second', body:'Additional content'}]
+  });
+  const result = assessProductionContent(f.baseline, f.candidate);
+  assert.equal(result.content_inventory_preserved, true);
+  // Existing source still changed: this must be separately reviewed.
+  assert.equal(result.release_eligible, false);
+  assert.equal(result.app_differences.length, 0);
+  assert.ok(result.unreviewed_source_changes.includes('src/apps/existing-guide/manifest.json'));
+});
