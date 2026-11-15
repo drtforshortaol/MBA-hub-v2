@@ -4055,6 +4055,162 @@
       "source_path": "IMG_3475.jpeg",
       "uses": [],
       "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
+    },
+    {
+      "asset_id": "asset-e62b39cc07a542c4",
+      "path": "apps/big-bellied-seahorse/images/IMG_4214.jpeg",
+      "owner": "media-library",
+      "alt": "Comparative diagrams of convexiclivate and concaviclivate foveae, cropped Figure 1a",
+      "credit": "Potier et al. (2020), Scientific Reports 10:6133, cropped Figure 1a; CC BY 4.0.",
+      "permission": "licensed",
+      "offline": true,
+      "sha256": "e62b39cc07a542c4def4dd10a7a5f17cdf7dddb235fd81af7c20b564089c1fea",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/big-bellied-seahorse/images/IMG_4214.jpeg",
+      "uses": [
+        {
+          "app_id": "big-bellied-seahorse",
+          "source_path": "src/apps/big-bellied-seahorse/images/IMG_4214.jpeg"
+        }
+      ],
+      "review_note": "Existing JPEG bytes and engineering source provenance retained. General comparative schematic from a black-kite study; no seahorse-specific retinal measurement or new scientific interpretation is asserted.",
+      "permission_evidence": "Publisher-deposited article explicitly licenses figures under CC BY 4.0 unless a separate credit excludes them; Figure 1 has no restrictive credit. Exact existing crop visually matched, source/copyright/license credit and crop disclosure displayed. See docs/verification/fovea-figure-license-20261029.json.",
+      "license": {
+        "id": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "source_url": "https://doi.org/10.1038/s41598-020-63039-y",
+        "figure": "1a"
+      }
+    },
+    {
+      "asset_id": "asset-b2bea165550eabcc",
+      "path": "apps/big-bellied-seahorse/images/IMG_4215.jpeg",
+      "owner": "media-library",
+      "alt": "Rainbow trout, realistic side-view illustration",
+      "credit": "Duane Raver / U.S. Fish & Wildlife Service. Public domain.",
+      "permission": "public-domain",
+      "offline": true,
+      "sha256": "b2bea165550eabcce52b1abd564cfadca4f5631901143322d921b3a2621600ea",
+      "uses": [
+        {
+          "app_id": "big-bellied-seahorse",
+          "source_path": "src/apps/big-bellied-seahorse/images/IMG_4215.jpeg"
+        }
+      ],
+      "review_note": "Exact downloaded FWS original, no image edits; explicit public-domain record reviewed. Supersedes third-party comparison screenshot.",
+      "permission_evidence": "docs/verification/seahorse-trout-photo-replacement-20261030.json",
+      "source_uri": "https://www.fws.gov/media/rainbow-trout-11"
+    },
+    {
+      "asset_id": "asset-225131703b4c0c59",
+      "path": "apps/big-bellied-seahorse/images/IMG_4216.jpeg",
+      "owner": "media-library",
+      "alt": "Seahorse Dads: courtship, egg transfer to the male brood pouch, development and birth; simplified general life cycle, not to scale",
+      "credit": "AI-generated illustration supplied by Glenn A. Takenaga for MBA Hub V2; general seahorse life cycle.",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "225131703b4c0c59b352d94d48dfbe738bd72d589ad1daccfe8e37687ddc5ec7",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "abb077a0549bdff2693ccd166c14251e036e72bd",
+      "source_path": "src/apps/big-bellied-seahorse/images/IMG_4216.jpeg",
+      "uses": [
+        {
+          "app_id": "big-bellied-seahorse",
+          "source_path": "src/apps/big-bellied-seahorse/images/IMG_4216.jpeg"
+        }
+      ],
+      "review_note": "Owner authorized original AI-generated replacement in prior chat and supplied the finalized image here. This does not license the superseded third-party poster or imply species-specific anatomy.",
+      "permission_evidence": "docs/verification/seahorse-poster-replacement-20261030.json"
+    },
+    {
+      "asset_id": "asset-83f2a50a706d2488",
+      "path": "apps/big-bellied-seahorse/images/seahorse-takenaga.jpeg",
+      "owner": "Glenn A. Takenaga",
+      "alt": "Owner close-up photograph of a yellow seahorse; snout, body plates and dorsal fin visible; tail tip not fully shown",
+      "credit": "Photo: Glenn A. Takenaga.",
+      "permission": "approved",
+      "permission_evidence": "docs/verification/seahorse-trout-photo-replacement-20261030.json",
+      "offline": true,
+      "sha256": "83f2a50a706d2488424eaf94ad8ebc96b517b1d622438536c0b35d55d4c3acd4",
+      "source_origin": {
+        "type": "owner-upload",
+        "filename": "36FF8EE3-82E2-4A85-B118-245451482125.jpeg"
+      },
+      "uses": [
+        {
+          "app_id": "big-bellied-seahorse",
+          "source_path": "src/apps/big-bellied-seahorse/images/seahorse-takenaga.jpeg"
+        }
+      ]
+    },
+    {
+      "asset_id": "briefing-20261111-flamboyant-cuttlefish",
+      "path": "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg",
+      "owner": "naturalist-briefing-20261111",
+      "alt": "Two flamboyant cuttlefish over blue-lit gravel.",
+      "credit": "Photo by MJ.",
+      "permission": "approved",
+      "offline": true,
+      "uses": [
+        {
+          "app_id": "naturalist-briefing-20261111",
+          "source_path": "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg"
+        },
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg"
+        }
+      ],
+      "permission_evidence": "On 2026-11-13 Glenn confirmed MJ authorized use in the public MBA Hub, including offline copies.",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "23d3246f0df9127ab618884f5f993f0cf899fe33",
+      "source_path": "src/shared/media/briefing-20261111-flamboyant-cuttlefish.jpg",
+      "sha256": "025e95ce90f0db47ec830658acbb7c669685eeaf75e1a6148c0ec1c99ac34de6"
+    },
+    {
+      "asset_id": "juvenile-white-seabass-illustration",
+      "path": "shared/media/juvenile-white-seabass-illustration.jpg",
+      "owner": "naturalist-briefing-20261111",
+      "alt": "Illustration of a silver juvenile white seabass with dark vertical bars",
+      "credit": "AI-generated illustration",
+      "permission": "approved",
+      "offline": true,
+      "uses": [
+        {
+          "app_id": "naturalist-briefing-20261111",
+          "source_path": "shared/media/juvenile-white-seabass-illustration.jpg"
+        },
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "shared/media/juvenile-white-seabass-illustration.jpg"
+        }
+      ],
+      "permission_evidence": "Original AI-generated illustration created for this app in this project.",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "23d3246f0df9127ab618884f5f993f0cf899fe33",
+      "source_path": "src/shared/media/juvenile-white-seabass-illustration.jpg",
+      "sha256": "37c8267dc8c186ab3d6e88d6eda526fcae204f3a4b6b01ea719b5a52ef3a768a"
+    },
+    {
+      "asset_id": "ocellaris-clownfish-title",
+      "path": "shared/media/ocellaris-clownfish-title.jpg",
+      "owner": "ocellaris-clownfish",
+      "alt": "Illustration of an orange ocellaris clownfish nestled among pink anemone tentacles",
+      "credit": "AI-generated illustration",
+      "permission": "approved",
+      "offline": true,
+      "uses": [
+        {
+          "app_id": "ocellaris-clownfish",
+          "source_path": "shared/media/ocellaris-clownfish-title.jpg"
+        }
+      ],
+      "permission_evidence": "Original AI-generated illustration created for this app in this project.",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "23d3246f0df9127ab618884f5f993f0cf899fe33",
+      "source_path": "src/shared/media/ocellaris-clownfish-title.jpg",
+      "sha256": "e5826c3d0aa229598ffabbab05352c07341fc7f28a3fbac997fabd143c408035"
     }
   ]
 }
