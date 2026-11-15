@@ -35,7 +35,7 @@ export function workerScopeErrors(headers,workerUrl,scopeUrl){
 }
 
 // HTTP delivery evidence does not establish browser behavior or device approval.
-export async function verifyPreviewHttp(baseUrl,environment,{concurrency=6,timeoutMs=15000,totalTimeoutMs=120000,expectedRelease=null,maxResourceBytes=64*1024*1024,maxTotalBytes=256*1024*1024}={}) {
+export async function verifyPreviewHttp(baseUrl,environment,{concurrency=6,timeoutMs=15000,totalTimeoutMs=120000,expectedRelease=null,expectedWorkerSha256=null,maxResourceBytes=64*1024*1024,maxTotalBytes=256*1024*1024}={}) {
  const base=new URL(baseUrl);
  if(!['http:','https:'].includes(base.protocol)||base.username||base.password||base.search||base.hash)throw Error('Expected an HTTP(S) directory URL without credentials, query or fragment');
  if(!base.pathname.endsWith('/'))base.pathname+='/';
@@ -43,9 +43,10 @@ export async function verifyPreviewHttp(baseUrl,environment,{concurrency=6,timeo
  if(!Number.isInteger(concurrency)||concurrency<1||concurrency>16)throw Error('Concurrency must be between 1 and 16');
  if(![timeoutMs,totalTimeoutMs].every(value=>Number.isSafeInteger(value)&&value>0&&value<=600000))throw Error('Timeouts must be positive milliseconds up to 600000');
  if(expectedRelease!==null&&(typeof expectedRelease!=='string'||!/^[a-f0-9]{16}$/.test(expectedRelease)))throw Error('Expected release must be a 16-character lowercase hexadecimal identifier');
+ if(expectedWorkerSha256!==null&&(typeof expectedWorkerSha256!=='string'||!/^[a-f0-9]{64}$/.test(expectedWorkerSha256)))throw Error('Expected worker SHA-256 must be 64 lowercase hexadecimal characters');
  if(![maxResourceBytes,maxTotalBytes].every(value=>Number.isSafeInteger(value)&&value>0))throw Error('Download budgets must be positive safe-integer byte counts');
  const deadline=AbortSignal.timeout(totalTimeoutMs);
- const report={schema_version:1,scope:'HTTP delivery headers, byte integrity and artifact semantics only; no browser, physical-device, scientific, editorial or release approval',url:base.href,environment,release:null,expectedRelease,passed:false,resources:{expected:0,verified:0,bytes:0},apps:[],errors:[]};
+ const report={schema_version:1,scope:'HTTP delivery headers, byte integrity and artifact semantics only; no browser, physical-device, scientific, editorial or release approval',url:base.href,environment,release:null,expectedRelease,expectedWorkerSha256,workerSha256:null,passed:false,resources:{expected:0,verified:0,bytes:0},apps:[],errors:[]};
  const directory=fs.mkdtempSync(path.join(os.tmpdir(),'mba-http-audit-')),results=new Map();
  async function download(name,expected) {
   try {
@@ -78,7 +79,10 @@ export async function verifyPreviewHttp(baseUrl,environment,{concurrency=6,timeo
   }
   report.resources.expected=release.resources.length;let next=0;
   await Promise.all(Array.from({length:Math.min(concurrency,release.resources.length)},async()=>{while(next<release.resources.length){const resource=release.resources[next++];await download(resource.url,resource);}}));
-  await download('sw.js');
+  const worker=await download('sw.js');
+  if(worker)report.workerSha256=sha256(worker);
+  if(expectedWorkerSha256!==null&&worker&&report.workerSha256!==expectedWorkerSha256)
+   report.errors.push('sw.js: expected worker SHA-256 mismatch');
   report.resources.verified=release.resources.filter(item=>results.get(item.url)?.passed).length;
   report.resources.bytes=release.resources.reduce((sum,item)=>sum+(results.get(item.url)?.passed?item.bytes:0),0);
   report.errors.push(...verifyBuildArtifacts(directory,environment).map(error=>`artifact: ${error}`));
@@ -97,8 +101,8 @@ export async function verifyPreviewHttp(baseUrl,environment,{concurrency=6,timeo
 }
 if(process.argv[1]===fileURLToPath(import.meta.url)){
  const args=process.argv.slice(2),options={};
- for(let index=0;index<args.length;index+=2){if(!['--url','--environment','--report','--expected-release'].includes(args[index])||!args[index+1])throw Error('Usage: node scripts/verify-preview-http.mjs --url URL --environment tester|developer [--report PATH] [--expected-release ID]');options[args[index]]=args[index+1];}
+ for(let index=0;index<args.length;index+=2){if(!['--url','--environment','--report','--expected-release','--expected-worker-sha256'].includes(args[index])||!args[index+1])throw Error('Usage: node scripts/verify-preview-http.mjs --url URL --environment tester|developer [--report PATH] [--expected-release ID] [--expected-worker-sha256 SHA]');options[args[index]]=args[index+1];}
  if(!options['--url']||!options['--environment'])throw Error('Provide --url and --environment');
- const report=await verifyPreviewHttp(options['--url'],options['--environment'],{expectedRelease:options['--expected-release']??null}),json=JSON.stringify(report,null,2)+'\n';
+ const report=await verifyPreviewHttp(options['--url'],options['--environment'],{expectedRelease:options['--expected-release']??null,expectedWorkerSha256:options['--expected-worker-sha256']??null}),json=JSON.stringify(report,null,2)+'\n';
  if(options['--report'])fs.writeFileSync(options['--report'],json);process.stdout.write(json);if(!report.passed)process.exitCode=1;
 }
