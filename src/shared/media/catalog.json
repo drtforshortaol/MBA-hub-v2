@@ -4243,6 +4243,129 @@
           "unrelated-public-redistribution"
         ]
       }
+    },
+    {
+      "asset_id": "asset-1bd100105f88c83a",
+      "path": "apps/naturalist-field-notes/images/IMG_4207.jpeg",
+      "owner": "media-library",
+      "alt": "Ancient murrelets",
+      "credit": "Photo: MJ — Naturalist and Aquarium shift captain.",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "1bd100105f88c83aadb9272fccacd1c023e417799d1b7dc79684e7f321bafb6e",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4207.jpeg",
+      "uses": [
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "src/apps/naturalist-field-notes/images/IMG_4207.jpeg"
+        }
+      ],
+      "review_note": "Photographer and reuse authorization reported by Glenn for the exact cataloged bytes. Existing source identity records remain unchanged; this approval does not cover third-party illustrations or separate visitor distribution. Storage moved under Naturalist Field Notes ownership. Historical source commit and original source_path retained for audit.",
+      "permission_evidence": "Glenn confirmed MJ authorized these photographs for the Aquarium guide hub and its testers on 2026-10-29. See docs/verification/mj-photo-permission-20261029.json and docs/MJ_PHOTO_PERMISSION_20261029.md.",
+      "permission_scope": {
+        "audience": "Aquarium guide hub and its testers",
+        "uses": [
+          "guide-hub-display",
+          "guide-hub-offline-cache"
+        ],
+        "not_granted": [
+          "standalone-visitor-sharing",
+          "unrelated-public-redistribution"
+        ]
+      }
+    },
+    {
+      "asset_id": "asset-95daa2493750e82f",
+      "path": "apps/naturalist-field-notes/images/IMG_4208.jpeg",
+      "owner": "media-library",
+      "alt": "Rhinoceros auklets",
+      "credit": "Photo: MJ — Naturalist and Aquarium shift captain.",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "95daa2493750e82f0444679b1c567d66af4e5212ab9d864eca3f2ddb8e475f1d",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4208.jpeg",
+      "uses": [
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "src/apps/naturalist-field-notes/images/IMG_4208.jpeg"
+        }
+      ],
+      "review_note": "Photographer and reuse authorization reported by Glenn for the exact cataloged bytes. Existing source identity records remain unchanged; this approval does not cover third-party illustrations or separate visitor distribution. Storage moved under Naturalist Field Notes ownership. Historical source commit and original source_path retained for audit.",
+      "permission_evidence": "Glenn confirmed MJ authorized these photographs for the Aquarium guide hub and its testers on 2026-10-29. See docs/verification/mj-photo-permission-20261029.json and docs/MJ_PHOTO_PERMISSION_20261029.md.",
+      "permission_scope": {
+        "audience": "Aquarium guide hub and its testers",
+        "uses": [
+          "guide-hub-display",
+          "guide-hub-offline-cache"
+        ],
+        "not_granted": [
+          "standalone-visitor-sharing",
+          "unrelated-public-redistribution"
+        ]
+      }
+    },
+    {
+      "asset_id": "asset-47f9bbb193878eec",
+      "path": "apps/naturalist-field-notes/images/IMG_4209.jpeg",
+      "owner": "media-library",
+      "alt": "Fork-tailed storm-petrel near Wharf 2",
+      "credit": "Photo: MJ — Naturalist and Aquarium shift captain.",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "47f9bbb193878eeced59326418949849427489f0167e33a7e063be9d091f643b",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4209.jpeg",
+      "uses": [
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "src/apps/naturalist-field-notes/images/IMG_4209.jpeg"
+        }
+      ],
+      "review_note": "Photographer and reuse authorization reported by Glenn for the exact cataloged bytes. Existing source identity records remain unchanged; this approval does not cover third-party illustrations or separate visitor distribution. Storage moved under Naturalist Field Notes ownership. Historical source commit and original source_path retained for audit.",
+      "permission_evidence": "Glenn confirmed MJ authorized these photographs for the Aquarium guide hub and its testers on 2026-10-29. See docs/verification/mj-photo-permission-20261029.json and docs/MJ_PHOTO_PERMISSION_20261029.md.",
+      "permission_scope": {
+        "audience": "Aquarium guide hub and its testers",
+        "uses": [
+          "guide-hub-display",
+          "guide-hub-offline-cache"
+        ],
+        "not_granted": [
+          "standalone-visitor-sharing",
+          "unrelated-public-redistribution"
+        ]
+      }
+    },
+    {
+      "asset_id": "asset-50646c3fe1d0c359",
+      "path": "apps/naturalist-field-notes/images/IMG_4210.jpeg",
+      "owner": "media-library",
+      "alt": "Scyphozoan ephyra anatomy reference diagram, cropped from Figure 1",
+      "credit": "Lau López; cropped Figure 1, Ballesteros et al. (2021), Frontiers in Marine Science 8:714503; CC BY 4.0.",
+      "permission": "licensed",
+      "offline": true,
+      "sha256": "50646c3fe1d0c359860229e041767429fc21a382cd16d75bd165fd5f7a3cef52",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4210.jpeg",
+      "uses": [
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "src/apps/IMG_4210.jpeg"
+        }
+      ],
+      "review_note": "Existing JPEG bytes and engineering source provenance are unchanged. Figure-specific restrictive notice not found. General reference diagram from a Pelagia study; do not identify it as a verified moon-jelly specimen. Storage moved under Naturalist Field Notes ownership. Historical source commit and original source_path retained for audit.",
+      "permission_evidence": "Publisher Figure 1 visually matches the existing cropped screenshot. Article licenses reuse under CC BY 4.0; the displayed caption retains creator/copyright credit, source and license URIs, and crop disclosure. See docs/verification/ephyra-figure-license-20261029.json.",
+      "license": {
+        "id": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "source_url": "https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2021.714503/full#F1",
+        "illustrator": "Lau López"
+      }
     }
   ]
 }
