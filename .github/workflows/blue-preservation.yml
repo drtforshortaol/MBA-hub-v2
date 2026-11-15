@@ -67,7 +67,9 @@ jobs:
           path: verification/blue-privacy-delta.json
           retention-days: 14
       - name: Verify Orange and Blue over HTTP
-        run: node scripts/verify-local-http.mjs --report-dir verification/http
+        run: |
+          node --test tests/preview-http-verification.test.mjs
+          node scripts/verify-local-http.mjs --report-dir verification/http
       - name: Retain HTTP delivery evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -101,12 +103,14 @@ jobs:
           import fs from 'node:fs';
           const privacy=JSON.parse(fs.readFileSync('verification/blue-privacy-delta.json','utf8'));
           const readRelease=channel=>JSON.parse(fs.readFileSync('dist/'+channel+'/release.json','utf8')).release;
+          const blueHttp=JSON.parse(fs.readFileSync('verification/http/tester-http.json','utf8'));
           const summary=[
             '## Verified staging candidate',
             '',
             '- Audited checkout: `'+privacy.candidate_checkout_sha+'`',
             '- Orange offline release: `'+readRelease('developer')+'`',
             '- Blue offline release: `'+readRelease('tester')+'`',
+            '- Blue service-worker SHA-256: `'+blueHttp.workerSha256+'`',
             '- Privacy approval required: '+(privacy.privacy_approval_required?'yes':'no'),
             '- Production release authorized: '+(privacy.release_authorized?'yes':'no'),
             '- [Download the verified Blue staging bundle]('+process.env.BLUE_PREVIEW_URL+')',
