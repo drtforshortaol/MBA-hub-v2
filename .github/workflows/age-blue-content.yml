@@ -30,7 +30,19 @@ jobs:
           node candidate/scripts/age/blue-content-fidelity.mjs deployed-blue candidate verification/age-008-blue-content-delta.json
           node --input-type=module <<'EOF'
           import fs from 'node:fs';
-          const report=JSON.parse(fs.readFileSync('verification/age-008-blue-content-delta.json','utf8'));
+          import {createHash} from 'node:crypto';
+          import {execFileSync} from 'node:child_process';
+          import path from 'node:path';
+          const output='verification/age-008-blue-content-delta.json';
+          const report=JSON.parse(fs.readFileSync(output,'utf8'));
+          const revision=dir=>execFileSync('git',['-C',dir,'rev-parse','HEAD'],{encoding:'utf8'}).trim();
+          const sha=(dir,file)=>createHash('sha256').update(fs.readFileSync(path.join(dir,file))).digest('hex');
+          if (revision('deployed-blue')!==report.baseline_source) throw Error('Deployed Blue checkout differs from the audit baseline');
+          report.candidate_checkout_sha=revision('candidate');
+          report.changed_source_file_hashes=report.changed_source_files.map(file=>({
+            path:file,baseline_sha256:sha('deployed-blue',file),candidate_sha256:sha('candidate',file)
+          }));
+          fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n');
           for(const app of report.app_differences){
             console.log('APP DELTA:',app.app_id,'missing sections:',app.missing_sections.length,
               'changed sections:',app.altered_sections.length,'missing media:',app.missing_media_ids.length,
