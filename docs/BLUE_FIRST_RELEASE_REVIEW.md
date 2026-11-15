@@ -21,3 +21,13 @@ Candidate snapshot SHA-256 `ed87dff148d2f729bd42ada5b28f502f4099e523d76c14b37e55
 ## Release status
 
 At `a321f9f9`, the Blue preservation workflow and the AGE-008 PR audit passed. Security CI, foundation validation, and development validation failed at the reviewed privacy binding. The independent source and privacy review, physical-device offline check, and release approval remain pending. The staging workflows produce evidence and preview artifacts.
+
+## Physical-device acceptance
+
+Use the Blue artifact linked from the preservation workflow summary and record the audited checkout and Blue offline release ID shown there. Serve the unpacked bundle on an isolated HTTPS staging origin that leaves the production install intact.
+
+1. Open the preview online, install it, and wait for **Ready offline**. Record the device, OS, and browser.
+2. Disable Wi-Fi and cellular data. Close and relaunch the installed preview.
+3. Open El Niño from Concepts and verify its illustrations. Use Back and Return to Hub.
+4. Open Nearby Dining from Volunteer Tools and from Hub search. Check that the local launch page opens and its Return to Hub link works. Verify the separate Dining site's link once online.
+5. Record the results against that Blue offline release ID before considering production promotion.
