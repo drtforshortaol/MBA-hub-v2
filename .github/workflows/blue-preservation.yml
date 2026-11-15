@@ -25,16 +25,36 @@ jobs:
           import {privacySnapshot} from './scripts/audit-privacy-snapshot.mjs';
           const current=privacySnapshot();
           const review=JSON.parse(fs.readFileSync('config/privacy-review.json','utf8'));
-          const prior=new Map(review.snapshot.resources.map(x=>[x.path,x.sha256]));
-          const changed=current.resources.filter(x=>prior.get(x.path)!==x.sha256).map(x=>x.path);
-          const removed=review.snapshot.resources.filter(x=>!current.resources.some(y=>y.path===x.path)).map(x=>x.path);
-          const report={baseline_review_status:review.status,release_authorized:review.release_authorized,changed,removed,
-            automaticExternalResources:current.automaticExternalResources,sensitiveBrowserAPIs:current.sensitiveBrowserAPIs,
-            privacy_approval_required:changed.length>0||removed.length>0};
+          const prior=new Map(review.snapshot.resources.map(item=>[item.path,item]));
+          const currentPaths=new Set(current.resources.map(item=>item.path));
+          const removed=review.snapshot.resources.filter(item=>!currentPaths.has(item.path));
+          const changed=current.resources.flatMap(candidate=>{
+            const previous=prior.get(candidate.path);
+            return previous?.sha256===candidate.sha256 && previous.bytes===candidate.bytes
+              ? [] : [{path:candidate.path,previous:previous??null,candidate}];
+          });
+          const signalDelta=field=>{
+            const before=new Set((review.snapshot[field]??[]).map(item=>JSON.stringify(item)));
+            const after=new Set(current[field].map(item=>JSON.stringify(item)));
+            return {
+              added:current[field].filter(item=>!before.has(JSON.stringify(item))),
+              removed:(review.snapshot[field]??[]).filter(item=>!after.has(JSON.stringify(item)))
+            };
+          };
+          const report={
+            baseline_review_status:review.status,release_authorized:review.release_authorized,
+            reviewed_snapshot_sha256:review.snapshot_sha256,candidate_snapshot_sha256:current.snapshot_sha256,
+            changed,removed,
+            signals:Object.fromEntries(
+              ['automaticExternalResources','sensitiveBrowserAPIs','storageFiles','networkFiles']
+                .map(field=>[field,signalDelta(field)])
+            ),
+            privacy_approval_required:current.snapshot_sha256!==review.snapshot_sha256||changed.length>0||removed.length>0
+          };
           fs.mkdirSync('verification',{recursive:true});
           fs.writeFileSync('verification/blue-privacy-delta.json',JSON.stringify(report,null,2));
           if(review.release_authorized!==false)throw Error('Unexpected blue release authorization');
-          if(removed.length)throw Error('Baseline files removed: '+removed.join(','));
+          if(removed.length)throw Error('Baseline files removed: '+removed.map(item=>item.path).join(','));
           console.log('Privacy delta recorded for human review: '+changed.length+' changed or new files; release remains unauthorized');
           EOF
       - name: Preserve privacy delta for review
