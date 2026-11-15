@@ -56,7 +56,7 @@ const read=p=>JSON.parse(fs.readFileSync(new URL('../'+p,import.meta.url),'utf8'
 
 test('new October media registration preserves bytes, original paths and pending permissions',()=>{
  const catalog=read('src/shared/media/catalog.json'),apps=new Map();
- assert.equal(catalog.assets.length,216);
+ assert.equal(catalog.assets.length,234);
  for (const id of ['briefing-20261111-flamboyant-cuttlefish','juvenile-white-seabass-illustration','ocellaris-clownfish-title']) {
   const matches=catalog.assets.filter(asset=>asset.asset_id===id);
   assert.equal(matches.length,1);
@@ -76,9 +76,9 @@ test('new October media registration preserves bytes, original paths and pending
  const blockers=releaseErrors(read('config/platform.json'),[...apps.values()],catalog,{apps:[]});
  for(const row of rows)assert.equal(blockers.includes('media permission review: '+row[2]),!mjIds.has(row[2])&&!licensedIds.has(row[2])&&row[2]!=='asset-b2bea165550eabcc');
 });
-test('literal media audit reports resolved registration gaps while retaining three remaining rights findings',()=>{
+test('literal media audit reports resolved registration gaps while retaining El Niño illustration rights findings',()=>{
  const report=auditRepositoryMedia(),findings=report.resources.filter(r=>r.issues.length);
- assert.equal(report.summary.uncataloged_resources,0);assert.equal(findings.length,0);assert.equal(report.complete,true);
- assert.deepEqual(findings.map(r=>r.path).sort(),rows.filter(r=>!mjIds.has(r[2])&&!licensedIds.has(r[2])&&r[2]!=='asset-b2bea165550eabcc').map(r=>r[1]).sort());
+ assert.equal(report.summary.uncataloged_resources,0);assert.equal(findings.length,18);assert.equal(report.complete,false);
+ assert.deepEqual(findings.map(r=>r.path).sort(),Array.from({length:18},(_,index)=>'apps/el-nino/images/slide-'+String(index+1).padStart(2,'0')+'.jpg'));
  for(const result of findings)assert.deepEqual(result.issues,['permission-evidence-missing']);
 });
