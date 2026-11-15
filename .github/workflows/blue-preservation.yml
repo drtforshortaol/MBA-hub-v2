@@ -66,6 +66,15 @@ jobs:
           name: blue-privacy-delta-review
           path: verification/blue-privacy-delta.json
           retention-days: 14
+      - name: Verify Orange and Blue over HTTP
+        run: node scripts/verify-local-http.mjs --report-dir verification/http
+      - name: Retain HTTP delivery evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: blue-preservation-http-evidence
+          path: verification/http/
+          retention-days: 14
       - name: Verify the exact Orange and Blue offline bundles
         run: |
           node scripts/verify-build-artifacts.mjs

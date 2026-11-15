@@ -31,3 +31,19 @@ Use the Blue artifact linked from the preservation workflow summary and record t
 3. Open El Niño from Concepts and verify its illustrations. Use Back and Return to Hub.
 4. Open Nearby Dining from Volunteer Tools and from Hub search. Check that the local launch page opens and its Return to Hub link works. Verify the separate Dining site's link once online.
 5. Record the results against that Blue offline release ID before considering production promotion.
+
+### Verified bundle and device results
+
+For commit `9e163288`, the downloaded [Blue staging bundle](https://github.com/drtforshortaol/MBA-hub-v2/actions/runs/43668548817/artifacts/14143522001) matched the GitHub ZIP digest and passed byte integrity and simulated offline navigation. Blue release `b6a6436c283d1401` covered 38 apps, 581 navigation targets, and 418 resources. When using a later run, take the checkout SHA and release ID from its Actions summary.
+
+For the test record, use these fields:
+
+| Field | Result |
+| --- | --- |
+| Audited checkout SHA and Blue offline release ID | |
+| Isolated staging URL | |
+| Device, OS, and browser | |
+| Home Screen install and offline relaunch | |
+| El Niño illustrations, Back, and Return to Hub | |
+| Nearby Dining from Volunteer Tools and search | |
+| Nearby Dining external link with network restored | |
