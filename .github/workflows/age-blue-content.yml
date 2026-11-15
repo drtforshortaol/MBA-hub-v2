@@ -1,15 +1,7 @@
 name: AGE-008 Blue content regression audit (NO DEPLOY)
 on:
+  # Audit all PRs: a change anywhere in the repository may impact publishing.
   pull_request:
-    paths:
-      - 'scripts/age/blue-content-fidelity.mjs'
-      - '.github/workflows/age-blue-content.yml'
-      - 'src/**'
-      - 'config/age-channel-policy.json'
-      - 'config/privacy-review.json'
-      - 'scripts/build.mjs'
-      - 'scripts/age/**'
-      - 'tests/age-blue-content-fidelity.test.mjs'
   workflow_dispatch:
 permissions:
   contents: read
