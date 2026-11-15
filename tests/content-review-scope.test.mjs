@@ -42,7 +42,7 @@ test('unsafe or duplicated evidence paths are rejected', () => {
   input.fidelity.apps[0].files.push({ local_path: 'src/apps/notes/../escape' });
   assert.throws(() => assessContentReviewScope(input), /Unsafe or duplicate fidelity path/);
 });
-test('current collection keeps October additions and three remaining media rights reviews explicit', async () => {
+test('current collection keeps October additions and El Niño media rights reviews explicit', async () => {
   const report = await auditContentReviewScope(fileURLToPath(new URL('..', import.meta.url)));
   assert.deepEqual(report.errors, []);
   const notes = report.apps.find(a => a.app_id === 'naturalist-field-notes');
@@ -51,5 +51,5 @@ test('current collection keeps October additions and three remaining media right
   }
   assert.equal(notes.offline_media.filter(m => m.permission_review_pending).length, 0);
   assert.equal(report.apps.find(a => a.app_id === 'big-bellied-seahorse').offline_media.filter(m => m.permission_review_pending).length, 0);
-  assert.equal(report.summary.media_rights_review_uses, 0);
+  assert.equal(report.summary.media_rights_review_uses, 18);
 });
