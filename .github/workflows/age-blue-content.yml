@@ -46,6 +46,16 @@ jobs:
           path: verification/age-008-blue-content-delta.json
           if-no-files-found: error
           retention-days: 30
+      - name: Block production inventory regressions on every pull request
+        run: |
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          const report=JSON.parse(fs.readFileSync('verification/age-008-blue-content-delta.json','utf8'));
+          if (!report.content_inventory_preserved) {
+            console.error('Blue inventory regression. Inspect the AGE-008 review artifact.');
+            process.exitCode=1;
+          }
+          EOF
       - name: Fail production release gate for unreviewed source/content loss
         if: github.event_name == 'workflow_dispatch' || github.base_ref == 'main'
         run: node candidate/scripts/age/blue-content-fidelity.mjs deployed-blue candidate verification/age-008-blue-content-delta.json --strict
