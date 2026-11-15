@@ -60,3 +60,17 @@ node scripts/verify-preview-http.mjs --url https://STAGING-HOST/ --environment t
 ```
 
 For a later bundle, use its release ID and compute SHA-256 from its unpacked `sw.js`. The hosted preflight checks delivery and file integrity. The Home Screen install and offline relaunch are verified on the device.
+
+### El Niño media registration review
+
+The media registration experiment at `75aaeece` appended 18 El Niño records marked `review-required`. All 216 previous catalog records were preserved. The only changed source paths were the catalog and the El Niño manifest. The rights to distribute the illustrations remain pending.
+
+Existing approvals hash the entire catalog. A read-only comparison produced these results:
+
+| Source used for digest verification | Verified inherited approvals | Verified owner text approvals |
+| --- | ---: | ---: |
+| Restored candidate `678c360a` | 29 | 6 |
+| Registration experiment `75aaeece` | 0 | 0 |
+| Temporary copy of the experiment with the exact original catalog bytes | 29 | 6 |
+
+The temporary copy isolated the catalog's effect. It was used for diagnosis only. The candidate retains the current approval checks and evidence. Before integrating the media records, review a migration that proves each existing approval still covers the same app and dependencies. Independently verify rights for the 18 pending records.
