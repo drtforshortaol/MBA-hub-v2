@@ -62,8 +62,9 @@ export function assessProductionContent(baselineRoot,candidateRoot){
   source_of_truth:'src/apps/*/manifest.json',baseline_app_count:baseline.size,candidate_app_count:candidate.size,
   baseline_source_file_count:before.size,candidate_source_file_count:after.size,
   app_differences:apps,missing_source_files:missingSourcePaths,
-  changed_source_files:changedSourcePaths,blockers:unexplained,
-  release_eligible:unexplained.length===0&&missingSourcePaths.length===0};
+  changed_source_files:changedSourcePaths,unreviewed_source_changes:changedSourcePaths,blockers:unexplained,
+  content_inventory_preserved:unexplained.length===0&&missingSourcePaths.length===0,
+  release_eligible:unexplained.length===0&&missingSourcePaths.length===0&&changedSourcePaths.length===0};
 }
 const invocation=process.argv[1]&&path.resolve(process.argv[1])===new URL(import.meta.url).pathname;
 if(invocation){
@@ -72,6 +73,6 @@ if(invocation){
  const result=assessProductionContent(path.resolve(baseline),path.resolve(candidate));
  fs.mkdirSync(path.dirname(output),{recursive:true});
  fs.writeFileSync(output,JSON.stringify(result,null,2)+'\n');
- console.log('AGE-008 blue content fidelity:',JSON.stringify({apps:[result.baseline_app_count,result.candidate_app_count],appDifferences:result.app_differences.length,missingSourceFiles:result.missing_source_files.length,changedSourceFiles:result.changed_source_files.length,blockers:result.blockers.length,releaseEligible:result.release_eligible}));
+ console.log('AGE-008 blue content fidelity:',JSON.stringify({apps:[result.baseline_app_count,result.candidate_app_count],appDifferences:result.app_differences.length,missingSourceFiles:result.missing_source_files.length,changedSourceFiles:result.changed_source_files.length,blockers:result.blockers.length,unreviewedCodeChanges:result.unreviewed_source_changes.length,contentPreserved:result.content_inventory_preserved,releaseEligible:result.release_eligible}));
  if(process.argv.includes('--strict')&&!result.release_eligible)process.exitCode=1;
 }
