@@ -84,3 +84,7 @@ Glenn approved retaining the 18 cleaned-up images from a Monterey Bay Aquarium e
 The approved content and illustration layout are available in the [private Blue preview](https://mba-hub-v2-blue-review.drtforshort.chatgpt.site/apps/el-nino/index.html). On commit 81a7d28, AGE-008 and the Blue staging workflow passed. The other three checks stopped at the privacy snapshot binding.
 
 For iPhone acceptance, check card 14’s illustration-first layout and the link that opens card 7, then repeat with the installed preview offline. Verify that the exact build used for acceptance is recorded. The public distribution status of the enrichment images is still undocumented.
+
+### iPhone offline acceptance
+
+On November 15, 2026, Glenn reported successful offline operation on his iPhone after testing the private Blue preview. This records the owner’s device result for that preview. The report did not include a separate per-card checklist or release ID.
