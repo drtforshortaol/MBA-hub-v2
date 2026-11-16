@@ -1,3 +1,4 @@
+import vm from 'node:vm';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -103,8 +104,17 @@ test('Nearby Dining uses a cached local launch page in both channels',()=>{
 test('both bundles preserve the reviewed El Niño layout and the Monterey-to-Kelvin link',()=>{
  for(const channel of ['developer','tester']){
   const html=fs.readFileSync('dist/'+channel+'/apps/el-nino/index.html','utf8');
-  const card14=html.split('<span class="num">14</span>')[1]?.split('</details>')[0];
-  assert.ok(card14,channel);
+  const content=html.split('<span class="num">14</span>')[1];
+  assert.ok(content,channel);
+  let depth=1;
+  let end;
+  for(const tag of content.matchAll(/<details\b[^>]*>|<\/details>/g)){
+   depth+=tag[0]==='</details>'?-1:1;
+   if(depth===0){end=tag.index;break;}
+  }
+  assert.ok(end,channel);
+  const card14=content.slice(0,end);
+  assert.equal([...card14.matchAll(/<details class="subtopic"[^>]*>/g)].length,5);
   const illustration=card14.indexOf('src="./images/slide-14.jpg"');
   const introduction=card14.indexOf('What Monterey Bay normally experiences');
   assert.ok(illustration>=0 && introduction>illustration,channel);
@@ -112,6 +122,27 @@ test('both bundles preserve the reviewed El Niño layout and the Monterey-to-Kel
    assert.ok(card14.includes('<h4>'+current+'</h4>'),current);
   assert.match(card14,/href="#equatorial-kelvin-waves"/);
   assert.match(html,/<details[^>]+id="equatorial-kelvin-waves"/);
-  assert.match(html,/querySelectorAll\('#kelvin-link,\.kelvin-cross-reference'\)/);
+  const targets=new Map();
+  const listeners=new Map();
+  const location={hash:''};
+  const parent={parentElement:{closest:()=>null}};
+  for(const hash of ['#equatorial-kelvin-waves','#monterey-bay-by-season']){
+   targets.set(hash,{parentElement:{closest:()=>hash==='#monterey-bay-by-season'?parent:null},scrollIntoView(){this.scrolled=true;}});
+  }
+  vm.runInNewContext(html.match(/<script>([\s\S]*?)<\/script>/)[1],{
+   location,
+   window:{addEventListener(){}},
+   document:{
+    querySelector:selector=>targets.get(selector)??{},
+    querySelectorAll:selector=>selector.startsWith('a[href=')?[{addEventListener:(event,handler)=>listeners.set(selector,handler)}]:[]
+   }
+  });
+  for(const [hash,target] of targets){
+   const click=listeners.get('a[href="'+hash+'"]');
+   assert.equal(typeof click,'function',hash);
+   click();
+   assert.ok(target.open&&target.scrolled,hash);
+  }
+  assert.ok(parent.open,'the seasonal link opens its enclosing card');
  }
 });
