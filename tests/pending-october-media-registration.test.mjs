@@ -80,5 +80,5 @@ test('literal media audit explicitly flags 18 newly added El Niño illustrations
  const report=auditRepositoryMedia(),findings=report.resources.filter(r=>r.issues.length);
  assert.equal(report.summary.uncataloged_resources,18,'El Niño illustrations remain uncataloged and must not be silently treated as reconciled');assert.equal(findings.length,18);assert.equal(report.complete,false);
  assert.ok(findings.every(r=>r.path.startsWith('apps/el-nino/images/')),'all unresolved resources should belong to the new El Niño illustration set');
- assert.ok(findings.every(r=>r.issues.includes('uncataloged')),'new media must be registered before reconciliation');
+ assert.ok(findings.every(r=>r.issues.includes('not-in-media-catalog')),'new media must be registered before reconciliation');
 });
