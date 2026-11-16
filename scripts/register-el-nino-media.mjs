@@ -14,6 +14,7 @@ const catalog=JSON.parse(fs.readFileSync(catalogFile,'utf8'));
 const manifest=JSON.parse(fs.readFileSync(manifestFile,'utf8'));
 if(manifest.app_id!=='el-nino'||!Array.isArray(catalog.assets)||!Array.isArray(manifest.media)||!Array.isArray(manifest.offline_assets))throw Error('Invalid media registration inputs');
 const additions=[];
+const registeredIds=[];
 for(let n=1;n<=18;n++){
  const name='slide-'+String(n).padStart(2,'0')+'.jpg';
  const relative='apps/el-nino/images/'+name;
@@ -28,6 +29,7 @@ for(let n=1;n<=18;n++){
  const matching=catalog.assets.filter(asset=>asset.asset_id===id||asset.path===relative);
  if(matching.length>1)throw Error('Conflicting media registration: '+relative);
  if(matching.length){
+  registeredIds.push(id);
   const existing=matching[0];
   if(existing.asset_id!==id||existing.path!==relative||existing.sha256!==sha256||!manifest.media.includes(id))throw Error('Existing media registration mismatch: '+relative);
   continue;
@@ -41,4 +43,4 @@ if(process.argv[2]==='--write'&&additions.length){
  fs.writeFileSync(catalogFile,JSON.stringify(nextCatalog,null,2)+'\n');
  fs.writeFileSync(manifestFile,JSON.stringify(nextManifest,null,2)+'\n');
 }
-console.log(JSON.stringify({writePerformed:process.argv[2]==='--write',alreadyRegistered:18-additions.length,additions:additions.length,priorCatalogEntriesPreserved:catalog.assets.length},null,2));
+console.log(JSON.stringify({writePerformed:process.argv[2]==='--write',alreadyRegistered:registeredIds.length,additions:additions.length,priorCatalogEntriesPreserved:catalog.assets.length},null,2));
