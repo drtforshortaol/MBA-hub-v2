@@ -1,3 +1,4 @@
+import {pendingElNinoReasons} from './fixtures/el-nino-media-review.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -22,7 +23,7 @@ test('read-only release assessment exposes actual outstanding gates without repl
  assert.equal(report.approvalReconciliation.inheritedCandidates,0);
  assert.equal(report.approvalReconciliation.contentReviewsRequired,report.blockers.filter(b=>b.category==='content-review-required').length);
  
- assert.equal(report.blockers.filter(item=>item.reason.startsWith('media permission review: ')).length,0);
+ assert.deepEqual(report.blockers.filter(item=>item.reason.startsWith('media permission review: ')).map(blocker=>blocker.reason).sort(),pendingElNinoReasons);
  assert(!report.blockers.some(item=>item.reason==='content review pending: big-bellied-seahorse'));
  assert.deepEqual(files.map(file=>fs.readFileSync(file,'utf8')),before);
 });

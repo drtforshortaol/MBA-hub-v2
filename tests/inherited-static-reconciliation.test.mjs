@@ -1,3 +1,4 @@
+import {pendingElNinoReasons} from './fixtures/el-nino-media-review.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -18,7 +19,7 @@ test('unchanged migrations reconcile while approved Open Sea text clears only it
  const report=assessRepositoryReadiness();
  for(const app_id of expected)assert.equal(report.blockers.some(item=>item.reason===`content review pending: ${app_id}`),false);
  assert.equal(report.blockers.filter(item=>item.category==='operational-gate').length,4);
- assert.equal(report.blockers.filter(item=>item.reason.startsWith('media permission review:')).length,0);
+ assert.deepEqual(report.blockers.filter(item=>item.reason.startsWith('media permission review:')).map(blocker=>blocker.reason).sort(),pendingElNinoReasons);
  assert(!report.blockers.some(item=>item.reason==='content review pending: big-bellied-seahorse'));
  assert(!report.blockers.some(item=>item.reason==='content review pending: naturalist-field-notes'));
  assert.equal(report.approvalReconciliation.inheritedCandidates,0);

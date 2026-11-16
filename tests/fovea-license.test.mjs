@@ -1,3 +1,4 @@
+import {pendingElNinoReasons} from './fixtures/el-nino-media-review.mjs';
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {createHash} from 'node:crypto';
 import {assessRepositoryReadiness} from '../scripts/assess-release-readiness.mjs';import {ownerTextApprovalSupported} from '../scripts/public-review.mjs';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));const sha=b=>createHash('sha256').update(b).digest('hex');
@@ -17,5 +18,5 @@ test('only the fovea permission clears; Seaweek source recovery does not grant i
  assert.equal(sea.status,'review-required');assert.equal(sea.permission_granted,false);assert.equal(sea.contacted,false);
  assert(!catalog.assets.some(a=>a.asset_id==='asset-486b6cdb96375dfb'));assert.equal(read('docs/verification/seahorse-anatomy-key-approval-20261030.json').retired_asset.permission,'review-required');
  const report=assessRepositoryReadiness();assert(!report.blockers.some(b=>b.reason==='media permission review: asset-e62b39cc07a542c4'));
- assert.equal(report.blockers.filter(b=>b.category==='media-review-required').length,0);assert.equal(report.blockers.filter(b=>b.category==='operational-gate').length,4);assert.equal(report.releaseEligible,false);
+ assert.deepEqual(report.blockers.filter(b=>b.category==='media-review-required').map(blocker=>blocker.reason).sort(),pendingElNinoReasons);assert.equal(report.blockers.filter(b=>b.category==='operational-gate').length,4);assert.equal(report.releaseEligible,false);
 });
