@@ -22,7 +22,7 @@ jobs:
       - name: Checkout canonical Guide source branch
         uses: actions/checkout@v4
         with:
-          ref: 6d13c8eba55d32a150fc69cda73d29288f4255a3
+          ref: 6ba2386ce98814c94cf4fccbb92ce3e84ec2bddd
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
@@ -127,6 +127,8 @@ jobs:
                   assert b'core/hub.js' in get('index.html')
                   assert b'https://drtforshortaol.github.io/MBA-nearby-dining/' in get('apps/nearby-dining/index.html')
                   el_nino=get('apps/el-nino/index.html')
+                  assert el_nino.count(b'<details class="subtopic"')==5
+                  assert b'id="monterey-bay-by-season"' in el_nino
                   assert b'The 18 illustrations in this guide are pending permission review.' in el_nino
                   for n in range(1,19):
                       assert len(get(f'apps/el-nino/images/slide-{n:02}.jpg'))>100
