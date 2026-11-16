@@ -23,8 +23,6 @@ for(let n=1;n<=18;n++){
  if(!stat.isFile()||stat.isSymbolicLink())throw Error('Missing regular illustration: '+relative);
  if(!manifest.offline_assets.includes(relative))throw Error('Missing offline registration: '+relative);
  const sha256=createHash('sha256').update(fs.readFileSync(filename)).digest('hex');
- const sourceCommit=execFileSync('git',['log','-1','--format=%H','--','src/'+relative],{cwd:root,encoding:'utf8'}).trim();
- if(!/^[a-f0-9]{40}$/.test(sourceCommit))throw Error('Missing source commit for '+relative);
  const id='el-nino-'+name.slice(0,-4);
  const matching=catalog.assets.filter(asset=>asset.asset_id===id||asset.path===relative);
  if(matching.length>1)throw Error('Conflicting media registration: '+relative);
@@ -34,6 +32,8 @@ for(let n=1;n<=18;n++){
   if(existing.asset_id!==id||existing.path!==relative||existing.sha256!==sha256||!manifest.media.includes(id))throw Error('Existing media registration mismatch: '+relative);
   continue;
  }
+ const sourceCommit=execFileSync('git',['log','-1','--format=%H','--','src/'+relative],{cwd:root,encoding:'utf8'}).trim();
+ if(!/^[a-f0-9]{40}$/.test(sourceCommit))throw Error('Missing source commit for '+relative);
  additions.push({asset_id:id,path:relative,owner:'el-nino',alt:'El Niño educational illustration '+n,credit:'El Niño application illustration',permission:'review-required',offline:true,sha256,source_repository:'drtforshortaol/MBA-hub-v2',source_commit:sourceCommit,source_path:'src/'+relative,uses:[{app_id:'el-nino',source_path:relative}]});
 }
 if(process.argv.length!==2&&!(process.argv.length===3&&process.argv[2]==='--write'))throw Error('Usage: node scripts/register-el-nino-media.mjs [--write]');
