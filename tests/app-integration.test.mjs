@@ -62,3 +62,22 @@ test('complete collection preserves deployed Blue and includes both canonical ad
  assert.deepEqual(registered.sort(),expected.sort());
  for(const app of inventory.apps)assert(registered.includes(app.id),'missing inherited app '+app.id);
 });
+
+test('El Niño and Nearby Dining search fragments and Hub return links resolve in both preview bundles',()=>{
+ for(const environment of ['developer','tester']){
+  const bundle = path.join('dist',environment);
+  const index = read(path.join(bundle,'search-index.json'));
+  for(const appId of ['el-nino','nearby-dining']){
+   const entries = index.filter(entry => entry.app_id === appId && entry.url.includes('#'));
+   assert(entries.length > 0, appId);
+   for(const entry of entries){
+    const [page,fragment] = entry.url.split('#');
+    const html = fs.readFileSync(path.join(bundle,page),'utf8');
+    assert(html.includes('id="' + fragment + '"'), entry.url);
+    assert(html.includes('href="../../index.html?home=1"'), page);
+    assert.equal(path.posix.normalize(path.posix.join(path.posix.dirname(page),'../../index.html')),'index.html');
+    assert(fs.existsSync(path.join(bundle,'index.html')));
+   }
+  }
+ }
+});
