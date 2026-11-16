@@ -39,10 +39,7 @@ test('pending packet is deterministic, byte-bound and actionable without inferri
 test('live repository refuses media review packet until new illustrations are registered',()=>{
  const root=path.resolve(path.dirname(script),'..');
  assert.throws(()=>preparePendingMediaReview(root),/Technical media findings must be resolved/);
- return;
- assert.equal(packet.pending_items,0);assert.equal(packet.registrationValid,true);assert.equal(packet.permissionReviewComplete,true);
- assert.equal(new Set(packet.items.map(x=>x.app_id)).size,0);
- for(const item of packet.items){assert.equal(item.recorded_permission,'review-required');assert.equal(item.recorded_permission_evidence,'');assert.equal(item.catalog_hash_matches,true);assert.equal(item.review_status,'pending');}
+
 });
 test('unsafe paths, source symlinks and modified exact media bytes fail closed',t=>{
  for(const mutation of ['unsafe','symlink-file','symlink-parent','hash']){
