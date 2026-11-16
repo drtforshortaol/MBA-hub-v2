@@ -29,7 +29,7 @@ for(let n=1;n<=18;n++){
   if(existing.asset_id!==id||existing.path!==relative||existing.sha256!==sha256||!manifest.media.includes(id))throw Error('Existing media registration mismatch: '+relative);
   continue;
  }
- additions.push({asset_id:id,path:relative,owner:'el-nino',alt:'El Niño educational illustration '+n,credit:'El Niño application illustration',permission:'review-required',offline:true,sha256,source_repository:'drtforshortaol/MBA-hub-v2',source_commit:'0000000000000000000000000000000000000000',source_path:'src/'+relative,uses:[{app_id:'el-nino',source_path:relative}]});
+ additions.push({asset_id:id,path:relative,owner:'el-nino',alt:'El Niño educational illustration '+n,credit:'El Niño application illustration',permission:'review-required',offline:true,sha256,source_repository:'drtforshortaol/MBA-hub-v2',source_commit:'e5758c0a2b85f2b148a8b4d671945cf44d36a41b',source_path:'src/'+relative,uses:[{app_id:'el-nino',source_path:relative}]});
 }
 if(process.argv.length!==2&&!(process.argv.length===3&&process.argv[2]==='--write'))throw Error('Usage: node scripts/register-el-nino-media.mjs [--write]');
 if(process.argv[2]==='--write'&&additions.length){
