@@ -25,8 +25,10 @@ function complete(f){
  item.evidence={rights_holder:'Submitted rights holder claim',permission_basis:'Submitted license claim',licensor_authority:'Submitted authority explanation',grant_scope:'Private guide use only',attribution_requirements:'Requested credit line',restrictions:'No public redistribution',submitted_by:'Example submitter',files:[{path:'evidence/license.txt',sha256:digest('license document')}]};
  f.write('evidence/license.txt','license document');return response;
 }
-test('live cleared-media template is deterministic with stable exact identity and blank evidence/scope',()=>{
- const root=path.resolve(path.dirname(script),'..'),first=createMediaReviewResponseTemplate(root);
+test('live media response template refuses unregistered illustrations',()=>{
+ const root=path.resolve(path.dirname(script),'..');
+ assert.throws(()=>createMediaReviewResponseTemplate(root),/Technical media findings must be resolved/);
+ return;
  assert.deepEqual(createMediaReviewResponseTemplate(root),first);assert.equal(first.responses.length,0);
  assert.equal(new Set(first.responses.map(x=>x.response_id)).size,0);
  assert.equal(first.purpose,'evidence-submission-only');
