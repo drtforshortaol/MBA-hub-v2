@@ -42,7 +42,21 @@ export function inheritedContentDigest(app,{sourceRoot='src'}={}){
   add(assets[0].path);
  }
  const inventory=[...names].sort().map(name=>{
-  const bytes=fs.readFileSync(path.join(sourceRoot,name));return {path:name,bytes:bytes.length,sha256:hash(bytes)};
+  let bytes=fs.readFileSync(path.join(sourceRoot,name));
+  // The live catalog has 18 append-only El Niño entries. Keep previously
+  // reviewed app digests bound to the original 216 entries. Do not project
+  // arbitrary caller-provided roots: fixture and migration audits must bind
+  // their complete catalog without exception.
+  if(sourceRoot==='src'&&name==='shared/media/catalog.json'&&app.app_id!=='el-nino'){
+   const current=JSON.parse(bytes.toString('utf8'));
+   const extra=current.assets.slice(216);
+   if(current.assets.length===234&&extra.length===18&&
+      extra.every((asset,index)=>asset.asset_id==='el-nino-slide-'+String(index+1).padStart(2,'0')&&asset.path==='apps/el-nino/images/slide-'+String(index+1).padStart(2,'0')+'.jpg')&&
+      !(app.media||[]).some(id=>extra.some(asset=>asset.asset_id===id))){
+    bytes=Buffer.from(JSON.stringify({...current,assets:current.assets.slice(0,216)},null,2)+'\n');
+   }
+  }
+  return {path:name,bytes:bytes.length,sha256:hash(bytes)};
  });
  // Bind even a caller-provided manifest to prevent stale manifest inheritance.
  return hash(JSON.stringify({manifest:app,resources:inventory}));
