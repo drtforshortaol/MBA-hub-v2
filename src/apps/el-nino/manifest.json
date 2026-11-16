@@ -67,6 +67,16 @@
         "ENSO",
         "El Nino"
       ]
+    },
+    {
+      "id": "monterey-bay-by-season",
+      "title": "Monterey Bay by Season",
+      "text": "Compare Monterey Bay waves, currents and upwelling in a typical year and during El Niño.",
+      "aliases": [
+        "seasonal upwelling",
+        "Pacific jet stream",
+        "storm track"
+      ]
     }
   ],
   "publication_review": "pending"
