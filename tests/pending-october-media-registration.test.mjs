@@ -76,9 +76,9 @@ test('new October media registration preserves bytes, original paths and pending
  const blockers=releaseErrors(read('config/platform.json'),[...apps.values()],catalog,{apps:[]});
  for(const row of rows)assert.equal(blockers.includes('media permission review: '+row[2]),!mjIds.has(row[2])&&!licensedIds.has(row[2])&&row[2]!=='asset-b2bea165550eabcc');
 });
-test('literal media audit explicitly flags 18 newly added El Niño illustrations as unresolved',()=>{
+test('literal media audit verifies 18 registered El Niño illustrations with pending review',()=>{
  const report=auditRepositoryMedia(),findings=report.resources.filter(r=>r.issues.length);
- assert.equal(report.summary.uncataloged_resources,18,'El Niño illustrations remain uncataloged and must not be silently treated as reconciled');assert.equal(findings.length,18);assert.equal(report.complete,false);
+ assert.equal(report.summary.uncataloged_resources,0,'all El Niño illustrations must be registered');assert.equal(findings.length,18);assert.equal(report.complete,false);
  assert.ok(findings.every(r=>r.path.startsWith('apps/el-nino/images/')),'all unresolved resources should belong to the new El Niño illustration set');
- assert.ok(findings.every(r=>r.issues.includes('not-in-media-catalog')),'new media must be registered before reconciliation');
+ assert.ok(findings.every(r=>r.issues.includes('permission-evidence-missing')&&!r.issues.includes('not-in-media-catalog')),'registration must be complete while review status remains explicit');
 });
