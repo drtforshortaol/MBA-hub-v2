@@ -28,14 +28,7 @@ function complete(f){
 test('live media response template refuses unregistered illustrations',()=>{
  const root=path.resolve(path.dirname(script),'..');
  assert.throws(()=>createMediaReviewResponseTemplate(root),/Technical media findings must be resolved/);
- return;
- assert.deepEqual(createMediaReviewResponseTemplate(root),first);assert.equal(first.responses.length,0);
- assert.equal(new Set(first.responses.map(x=>x.response_id)).size,0);
- assert.equal(first.purpose,'evidence-submission-only');
- for(const row of first.responses){assert.equal(row.response_id,row.identity.app_id+':'+row.identity.asset_id);assert.match(row.identity.sha256,/^[a-f0-9]{64}$/);assert.deepEqual(row.evidence.files,[]);assert.deepEqual(row.scope.distribution_channels,[]);}
- const report=validateMediaReviewResponses(root,first);
- assert.equal(report.ready_for_human_review,true);assert.equal(report.pending_items,0);assert.equal(report.permission_granted,false);assert.equal(report.publication_authorized,false);
- assert.ok(report.items.every(row=>row.missing_fields.includes('evidence.files')));
+
 });
 test('empty and partial evidence packages stay pending with actionable per-image missing fields',t=>{
  const f=fixture(t),template=f.template();
