@@ -22,7 +22,7 @@ jobs:
       - name: Checkout canonical Guide source branch
         uses: actions/checkout@v4
         with:
-          ref: 40e1826166f0ea61f406e1193390272029428734
+          ref: 6d13c8eba55d32a150fc69cda73d29288f4255a3
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
@@ -67,106 +67,10 @@ jobs:
           if(!fs.readFileSync(d+'install.html','utf8').includes('Universal installation link and QR code'))throw Error('Guide QR not enabled');
           if(!fs.readFileSync(d+'icon.svg','utf8').includes('#123e50'))throw Error('Blue icon missing');
           EOF
-      - name: Check out approved orange DEV assets
-        uses: actions/checkout@v4
-        with:
-          repository: drtforshortaol/MBA-hub-v2-dev
-          ref: main
-          path: preview-uploads
-          persist-credentials: false
-      - name: Publish Approved El Niño preview and available original images
+      - name: Verify canonical Blue registry and offline inventory
         run: |
-          if test -s preview-uploads/preview/El_Nino_iPhone_Review.html; then
-            mkdir -p dist/tester/el-nino-preview
-            cp preview-uploads/preview/El_Nino_iPhone_Review.html dist/tester/el-nino-preview/index.html
-            grep -q 'El Niño' dist/tester/el-nino-preview/index.html
-            if test -d preview-uploads/preview/images; then
-              mkdir -p dist/tester/el-nino-preview/images
-              cp preview-uploads/preview/images/* dist/tester/el-nino-preview/images/
-            fi
-            python - <<'PY'
-          from pathlib import Path
-          import shutil
-          source=Path('preview-uploads/preview')
-          target=Path('dist/tester/el-nino-preview/images')
-          target.mkdir(parents=True, exist_ok=True)
-          mapping=["5194","5172","5195","5169","5192","5171","5193","5170","5173","5185","5168","5187","5189","5174","5190","5191","5175","5178"]
-          for index, number in enumerate(mapping, 1):
-              original=source / f'IMG_{number}.jpeg'
-              if not original.is_file():
-                  raise SystemExit(f'Missing uploaded original: {original}')
-              shutil.copy2(original, target / f'slide-{index:02}.jpg')
-          print(f'Installed {len(mapping)} selected original illustrations.')
-          PY
-            echo 'El Niño V2 preview staged with available original images.'
-          else
-            echo 'Original illustration HTML not uploaded yet; omitting misleading generic preview.'
-          fi
-      - name: Register approved El Niño preview in blue Guide Hub Concepts
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import shutil
-          root=Path('dist/tester')
-          preview=Path('preview-uploads/preview')
-          target=root/'apps/el-nino'
-          source=preview/'El_Nino_iPhone_Review.html'
-          if not source.is_file():
-              raise SystemExit('El Niño approved preview missing')
-          target.mkdir(parents=True,exist_ok=True)
-          html=source.read_text()
-          html=html.replace('https://drtforshortaol.github.io/MBA-hub-v2/', '../../index.html?home=1')
-          (target/'index.html').write_text(html)
-          image_source=root/'el-nino-preview/images'
-          if not image_source.is_dir():
-              raise SystemExit('El Niño image bundle missing')
-          shutil.copytree(image_source,target/'images',dirs_exist_ok=True)
-          for n in range(1,19):
-              if not (target/'images'/f'slide-{n:02}.jpg').is_file():
-                  raise SystemExit(f'El Niño illustration {n} missing')
-          hub=root/'core/hub.js'
-          code=hub.read_text()
-          before='[...listedHubApps(registry.apps),nearbyDining]'
-          after='[...listedHubApps(registry.apps),nearbyDining,elNino]'
-          if code.count(before)!=1:
-              raise SystemExit('Unexpected Hub registration contract')
-          code=code.replace(before,after)
-          marker='const nearbyDining={'
-          if code.count(marker)!=1:
-              raise SystemExit('Unexpected Hub app definition')
-          code=code.replace(marker,"const elNino={app_id:'el-nino',category:'concepts',title:'El Niño',type:'educational-guide',entry_point:'apps/el-nino/index.html'};\n"+marker)
-          hub.write_text(code)
-          if 'elNino]' not in code:
-              raise SystemExit('El Niño not registered')
-          print('Published El Niño under blue Guide → Concepts; 18 images verified.')
-          PY
-      - name: Rebind offline integrity inventory after El Niño integration
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import json,hashlib
-          root=Path('dist/tester')
-          manifest=root/'release.json'
-          data=json.loads(manifest.read_text())
-          resources=[]
-          for file in sorted(root.rglob('*')):
-              if not file.is_file() or file.name in ('sw.js','release.json'):
-                  continue
-              rel=file.relative_to(root).as_posix()
-              payload=file.read_bytes()
-              resources.append({'url':rel,'sha256':hashlib.sha256(payload).hexdigest(),'bytes':len(payload)})
-          data['resources']=resources
-          release=hashlib.sha256(json.dumps(resources,separators=(',',':'),ensure_ascii=False).encode()).hexdigest()[:16]
-          data['release']=release
-          manifest.write_text(json.dumps(data,indent=2))
-          sw=root/'sw.js'
-          content=sw.read_text()
-          import re
-          content,count=re.subn(r"RELEASE='[0-9a-f]{16}'",f"RELEASE='{release}'",content,count=1)
-          if count!=1: raise SystemExit('Service worker release marker not found')
-          sw.write_text(content)
-          print(f'El Niño included in integrity-bound release {release}: {len(resources)} files')
-          PY
+          node scripts/age/channel-registry.mjs
+          node scripts/verify-offline-navigation.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -195,7 +99,13 @@ jobs:
                   assert env['environment']=='tester' and env['developer'] is False
                   assert env['namespace']=='mba-v2-tester'
                   assert manifest['name']=='MBA Hub V2' and manifest['theme_color']=='#123e50'
-                  assert len(registry['apps'])>=30
+                  assert len(registry['apps'])==38
+                  for app_id, category in [('el-nino','concepts'),('nearby-dining','volunteer-tools')]:
+                      app=next(a for a in registry['apps'] if a['app_id']==app_id)
+                      assert app['category']==category and app['listed']
+                  inventory=json.loads(get('release.json'))
+                  offline={resource['url'] for resource in inventory['resources']}
+                  assert {'apps/el-nino/index.html','apps/nearby-dining/index.html'} <= offline
                   app=next(a for a in registry['apps'] if a['app_id']=='california-kelp-field-guide')
                   assert app['category']=='exhibits' and app['listed']
                   for app_id, category in [('naturalist-briefing-20261111','aquarium-updates'),('ocellaris-clownfish','animals')]:
@@ -215,12 +125,9 @@ jobs:
                   assert b'Universal installation link and QR code' in get('install.html')
                   assert len(get('install-qr.png'))>100
                   assert b'core/hub.js' in get('index.html')
-                  hub=get('core/hub.js')
-                  assert b"category:'volunteer-tools',title:'Nearby Dining'" in hub
-                  assert b'https://drtforshortaol.github.io/MBA-nearby-dining/' in hub
-                  assert b"elNino={app_id:'el-nino',category:'concepts'" in hub
+                  assert b'https://drtforshortaol.github.io/MBA-nearby-dining/' in get('apps/nearby-dining/index.html')
                   el_nino=get('apps/el-nino/index.html')
-                  assert b'El Ni' in el_nino
+                  assert b'The 18 illustrations in this guide are pending permission review.' in el_nino
                   for n in range(1,19):
                       assert len(get(f'apps/el-nino/images/slide-{n:02}.jpg'))>100
                   print('Guide public delivery checks passed:',len(registry['apps']),'apps; El Niño images 18')
