@@ -36,10 +36,11 @@ test('pending packet is deterministic, byte-bound and actionable without inferri
  assert.match(item.missing_evidence.join(' '),/exact image/);
  assert.deepEqual(fs.readFileSync(path.join(f.root,'src/shared/media/catalog.json')),before);
 });
-test('live repository refuses media review packet until new illustrations are registered',()=>{
- const root=path.resolve(path.dirname(script),'..');
- assert.throws(()=>preparePendingMediaReview(root),/Technical media findings must be resolved/);
-
+test('live repository packet identifies El Niño illustrations and preserves review gates',()=>{
+ const root=path.resolve(path.dirname(script),'..'),packet=preparePendingMediaReview(root);
+ assert.equal(packet.pending_items,18);assert.equal(packet.registrationValid,true);assert.equal(packet.permissionReviewComplete,false);
+ assert.deepEqual([...new Set(packet.items.map(x=>x.app_id))],['el-nino']);
+ for(const item of packet.items){assert.equal(item.recorded_permission,'review-required');assert.equal(item.recorded_permission_evidence,'');assert.equal(item.catalog_hash_matches,true);assert.equal(item.review_status,'pending');}
 });
 test('unsafe paths, source symlinks and modified exact media bytes fail closed',t=>{
  for(const mutation of ['unsafe','symlink-file','symlink-parent','hash']){
