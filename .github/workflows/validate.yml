@@ -27,6 +27,10 @@ jobs:
         run: node scripts/register-el-nino-media.mjs
       - name: Build isolated developer and tester bundles
         run: npm run build
+      - name: Diagnose existing owner review bindings without changing evidence
+        if: always()
+        continue-on-error: true
+        run: node scripts/diagnose-owner-review-bindings.mjs
       - name: Verify contracts and offline isolation
         run: npm test
       - name: Verify strict content and offline media registration
