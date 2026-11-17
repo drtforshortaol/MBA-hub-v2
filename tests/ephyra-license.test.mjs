@@ -1,3 +1,4 @@
+import {pendingElNinoReasons,pendingElNinoMedia} from './fixtures/el-nino-media-review.mjs';
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {createHash} from 'node:crypto';import vm from 'node:vm';
 import {assessRepositoryReadiness} from '../scripts/assess-release-readiness.mjs';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
@@ -16,13 +17,13 @@ test('publisher license evidence binds the existing cropped ephyra figure and it
  for(const phrase of ['cropped','Lau López','2021','CC BY 4.0','https://creativecommons.org/licenses/by/4.0/','https://doi.org/10.3389/fmars.2021.714503'])assert(p.caption.includes(phrase),phrase);
  assert(p.caption.includes('not a moon-jelly species identification'));assert(!p.caption.includes('permission review pending'));
 });
-test('only the ephyra image leaves the remaining review list, without clearing Seahorse images or release gates',()=>{
+test('ephyra license preserves El Niño media review and operational gates',()=>{
  const report=assessRepositoryReadiness();
  assert(!report.blockers.some(b=>b.reason==='media permission review: asset-50646c3fe1d0c359'));
  assert(!report.blockers.some(b=>b.reason==='content review pending: naturalist-field-notes'));
- assert.equal(report.blockers.filter(b=>b.category==='media-review-required').length,0);
+ assert.deepEqual(report.blockers.filter(b=>b.category==='media-review-required').map(blocker=>blocker.reason).sort(),pendingElNinoReasons);
  assert.equal(report.blockers.filter(b=>b.category==='operational-gate').length,4);
  assert.equal(report.releaseEligible,false);
- const pending=read('src/shared/media/catalog.json').assets.filter(a=>a.permission==='review-required');assert.equal(pending.length,0);
- assert(pending.every(a=>a.uses.every(u=>u.app_id==='big-bellied-seahorse')));
+ const pending=read('src/shared/media/catalog.json').assets.filter(a=>a.permission==='review-required');assert.deepEqual(pending.map(asset=>asset.asset_id).sort(),pendingElNinoMedia);
+ assert(pending.every(a=>a.uses.length===1&&a.uses[0].app_id==='el-nino'));
 });

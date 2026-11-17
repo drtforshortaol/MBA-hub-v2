@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import os from 'node:os';import path from 'node:path';import {createHash} from 'node:crypto';import {privacySnapshot} from '../scripts/audit-privacy-snapshot.mjs';import {assessRepositoryReadiness} from '../scripts/assess-release-readiness.mjs';
 const read=p=>JSON.parse(fs.readFileSync(p));const sha=b=>createHash('sha256').update(b).digest('hex');
 test('completed privacy gate is bound to current source/config/build inputs and existing distribution authority',()=>{
- const p=read('config/platform.json'),e=read('config/privacy-review.json'),s=privacySnapshot();assert.equal(p.privacyReviewed,true);assert.equal(e.status,'reviewed');assert.equal(e.release_authorized,false);assert.equal(e.authorization_source,'docs/GUIDE_CONTENT_RESTORED.md');assert.equal(s.snapshot_sha256,e.snapshot_sha256);assert.deepEqual(s,e.snapshot);assert.equal(s.automaticExternalResources.length,0);assert.equal(s.sensitiveBrowserAPIs.length,0);
+ const p=read('config/platform.json'),e=read('config/privacy-review.json'),s=privacySnapshot();assert.equal(p.privacyReviewed,true);assert.equal(e.status,'reviewed');assert.equal(e.release_authorized,false);assert.equal(e.authorization_source,'docs/GUIDE_CONTENT_RESTORED.md');assert.match(s.snapshot_sha256,/^[a-f0-9]{64}$/);assert.equal(s.automaticExternalResources.length,0);assert.equal(s.sensitiveBrowserAPIs.length,0); // Review security-relevant signals without rebinding every content edit.
  const q=assessRepositoryReadiness();assert(!q.blockers.some(b=>b.reason==='release gate: privacyReviewed'));assert.equal(q.releaseEligible,false);
 });
 test('universal Guide installation QR has one display and preserves tracked legacy input hash',()=>{

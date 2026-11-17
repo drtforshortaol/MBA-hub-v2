@@ -36,7 +36,26 @@
     "apps/el-nino/images/slide-17.jpg",
     "apps/el-nino/images/slide-18.jpg"
   ],
-  "media": [],
+  "media": [
+    "el-nino-slide-01",
+    "el-nino-slide-02",
+    "el-nino-slide-03",
+    "el-nino-slide-04",
+    "el-nino-slide-05",
+    "el-nino-slide-06",
+    "el-nino-slide-07",
+    "el-nino-slide-08",
+    "el-nino-slide-09",
+    "el-nino-slide-10",
+    "el-nino-slide-11",
+    "el-nino-slide-12",
+    "el-nino-slide-13",
+    "el-nino-slide-14",
+    "el-nino-slide-15",
+    "el-nino-slide-16",
+    "el-nino-slide-17",
+    "el-nino-slide-18"
+  ],
   "knowledge": [],
   "cross_links": [],
   "sections": [
@@ -47,6 +66,16 @@
       "aliases": [
         "ENSO",
         "El Nino"
+      ]
+    },
+    {
+      "id": "monterey-bay-by-season",
+      "title": "Monterey Bay by Season",
+      "text": "Compare Monterey Bay waves, currents and upwelling in a typical year and during El Niño.",
+      "aliases": [
+        "seasonal upwelling",
+        "Pacific jet stream",
+        "storm track"
       ]
     }
   ],

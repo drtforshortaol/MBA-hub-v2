@@ -1,3 +1,4 @@
+import {pendingElNinoReasons} from './fixtures/el-nino-media-review.mjs';
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {createHash} from 'node:crypto';import {assessRepositoryReadiness} from '../scripts/assess-release-readiness.mjs';
 const read=p=>JSON.parse(fs.readFileSync(p));const sha=b=>createHash('sha256').update(b).digest('hex');
 test('approved owner photograph and public-domain trout replace only the blocked comparison',()=>{
@@ -7,5 +8,5 @@ test('approved owner photograph and public-domain trout replace only the blocked
  assert(!c.assets.some(a=>a.asset_id===e.superseded_asset.asset_id));
  const h=read('docs/verification/seahorse-approved-integration-20261030.json').html_before;assert.equal(sha(h),e.html_delta.current_html_sha256);assert.equal(sha(h.replace(e.html_delta.after,e.html_delta.before)),e.html_delta.baseline_html_sha256);
  for(const s of ['Photo: Glenn A. Takenaga','Public domain','Duane Raver','not to the same scale','Smaller structures obscured'])assert(h.includes(s));
- const r=assessRepositoryReadiness();assert.equal(r.blockers.filter(b=>b.category==='media-review-required').length,0);assert.equal(r.blockers.filter(b=>b.category==='operational-gate').length,4);assert.equal(r.releaseEligible,false);
+ const r=assessRepositoryReadiness();assert.deepEqual(r.blockers.filter(b=>b.category==='media-review-required').map(blocker=>blocker.reason).sort(),pendingElNinoReasons);assert.equal(r.blockers.filter(b=>b.category==='operational-gate').length,4);assert.equal(r.releaseEligible,false);
 });

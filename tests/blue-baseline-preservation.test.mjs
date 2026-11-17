@@ -1,3 +1,4 @@
+import vm from 'node:vm';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -76,4 +77,72 @@ test('blue build retains all baseline registrations and adds exactly one El Niñ
  const hub=fs.readFileSync('dist/tester/core/hub.js','utf8');
  assert.ok(!hub.includes('const nearbyDining='),'Dining must not be injected into Hub core');
  assert.ok(hub.includes('listedHubApps(registry.apps)'),'Entries must derive from canonical registry');
+});
+
+test('Nearby Dining uses a cached local launch page in both channels',()=>{
+ const entry='apps/nearby-dining/index.html';
+ const external='https://drtforshortaol.github.io/MBA-nearby-dining/';
+ for(const channel of ['developer','tester']){
+  const dir='dist/'+channel;
+  const registry=JSON.parse(fs.readFileSync(dir+'/registry.json','utf8'));
+  const app=registry.apps.find(item=>item.app_id==='nearby-dining');
+  assert.equal(app.listed,true);
+  assert.equal(app.category,'volunteer-tools');
+  assert.equal(app.entry_point,entry);
+  assert.ok(app.offline_assets.includes(entry));
+  const search=JSON.parse(fs.readFileSync(dir+'/search-index.json','utf8'));
+  assert.ok(search.some(item=>item.app_id===app.app_id && item.url===entry));
+  const hub=fs.readFileSync(dir+'/core/hub.js','utf8');
+  assert.ok(!hub.includes(external),'The Hub should navigate to the local launch page');
+  const launcher=fs.readFileSync(dir+'/'+entry,'utf8');
+  assert.match(launcher,/<a [^>]*href="https:\/\/drtforshortaol\.github\.io\/MBA-nearby-dining\/"/);
+  assert.ok(launcher.includes('href="../../index.html?home=1"'));
+  assert.match(launcher,/offline access must be prepared separately/);
+ }
+});
+
+test('both bundles preserve the reviewed El Niño layout and the Monterey-to-Kelvin link',()=>{
+ for(const channel of ['developer','tester']){
+  const html=fs.readFileSync('dist/'+channel+'/apps/el-nino/index.html','utf8');
+  const content=html.split('<span class="num">14</span>')[1];
+  assert.ok(content,channel);
+  let depth=1;
+  let end;
+  for(const tag of content.matchAll(/<details\b[^>]*>|<\/details>/g)){
+   depth+=tag[0]==='</details>'?-1:1;
+   if(depth===0){end=tag.index;break;}
+  }
+  assert.ok(end,channel);
+  const card14=content.slice(0,end);
+  assert.equal([...card14.matchAll(/<details class="subtopic"[^>]*>/g)].length,5);
+  const illustration=card14.indexOf('src="./images/slide-14.jpg"');
+  const introduction=card14.indexOf('What Monterey Bay normally experiences');
+  assert.ok(illustration>=0 && introduction>illustration,channel);
+  for(const current of ['California Current','California Undercurrent','Davidson Current'])
+   assert.ok(card14.includes('<h4>'+current+'</h4>'),current);
+  assert.match(card14,/href="#equatorial-kelvin-waves"/);
+  assert.match(html,/<details[^>]+id="equatorial-kelvin-waves"/);
+  const targets=new Map();
+  const listeners=new Map();
+  const location={hash:''};
+  const parent={parentElement:{closest:()=>null}};
+  for(const hash of ['#equatorial-kelvin-waves','#monterey-bay-by-season']){
+   targets.set(hash,{parentElement:{closest:()=>hash==='#monterey-bay-by-season'?parent:null},scrollIntoView(){this.scrolled=true;}});
+  }
+  vm.runInNewContext(html.match(/<script>([\s\S]*?)<\/script>/)[1],{
+   location,
+   window:{addEventListener(){}},
+   document:{
+    querySelector:selector=>targets.get(selector)??{},
+    querySelectorAll:selector=>selector.startsWith('a[href=')?[{addEventListener:(event,handler)=>listeners.set(selector,handler)}]:[]
+   }
+  });
+  for(const [hash,target] of targets){
+   const click=listeners.get('a[href="'+hash+'"]');
+   assert.equal(typeof click,'function',hash);
+   click();
+   assert.ok(target.open&&target.scrolled,hash);
+  }
+  assert.ok(parent.open,'the seasonal link opens its enclosing card');
+ }
 });

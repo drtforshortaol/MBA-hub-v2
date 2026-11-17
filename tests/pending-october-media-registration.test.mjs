@@ -56,7 +56,7 @@ const read=p=>JSON.parse(fs.readFileSync(new URL('../'+p,import.meta.url),'utf8'
 
 test('new October media registration preserves bytes, original paths and pending permissions',()=>{
  const catalog=read('src/shared/media/catalog.json'),apps=new Map();
- assert.equal(catalog.assets.length,216);
+ assert.equal(catalog.assets.length,234); // 216 preserved records plus 18 El Niño illustrations
  for (const id of ['briefing-20261111-flamboyant-cuttlefish','juvenile-white-seabass-illustration','ocellaris-clownfish-title']) {
   const matches=catalog.assets.filter(asset=>asset.asset_id===id);
   assert.equal(matches.length,1);
@@ -76,9 +76,9 @@ test('new October media registration preserves bytes, original paths and pending
  const blockers=releaseErrors(read('config/platform.json'),[...apps.values()],catalog,{apps:[]});
  for(const row of rows)assert.equal(blockers.includes('media permission review: '+row[2]),!mjIds.has(row[2])&&!licensedIds.has(row[2])&&row[2]!=='asset-b2bea165550eabcc');
 });
-test('literal media audit reports resolved registration gaps while retaining three remaining rights findings',()=>{
+test('literal media audit verifies 18 registered El Niño illustrations with pending review',()=>{
  const report=auditRepositoryMedia(),findings=report.resources.filter(r=>r.issues.length);
- assert.equal(report.summary.uncataloged_resources,0);assert.equal(findings.length,0);assert.equal(report.complete,true);
- assert.deepEqual(findings.map(r=>r.path).sort(),rows.filter(r=>!mjIds.has(r[2])&&!licensedIds.has(r[2])&&r[2]!=='asset-b2bea165550eabcc').map(r=>r[1]).sort());
- for(const result of findings)assert.deepEqual(result.issues,['permission-evidence-missing']);
+ assert.equal(report.summary.uncataloged_resources,0,'all El Niño illustrations must be registered');assert.equal(findings.length,18);assert.equal(report.complete,false);
+ assert.ok(findings.every(r=>r.path.startsWith('apps/el-nino/images/')),'all unresolved resources should belong to the new El Niño illustration set');
+ assert.ok(findings.every(r=>r.issues.includes('permission-evidence-missing')&&!r.issues.includes('not-in-media-catalog')),'registration must be complete while review status remains explicit');
 });
