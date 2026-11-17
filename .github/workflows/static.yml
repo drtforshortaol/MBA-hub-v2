@@ -71,6 +71,18 @@ jobs:
         run: |
           node scripts/age/channel-registry.mjs
           node scripts/verify-offline-navigation.mjs
+      - name: Check out QR release tooling
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: qr-release-tooling
+          persist-credentials: false
+      - name: Embed and verify all Blue app share codes
+        run: |
+          python -m pip install 'reportlab==4.4.9'
+          python qr-release-tooling/scripts/append-guide-share-codes.py dist/tester
+          node scripts/verify-build-artifacts.mjs
+          node scripts/verify-offline-navigation.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -105,6 +117,10 @@ jobs:
                       assert app['category']==category and app['listed']
                   inventory=json.loads(get('release.json'))
                   offline={resource['url'] for resource in inventory['resources']}
+                  for guide in registry['apps']:
+                      page=get(guide['entry_point'])
+                      assert b'<details data-blue-share>' in page, guide['app_id']
+                      assert b'Share app' in page, guide['app_id']
                   assert {'apps/el-nino/index.html','apps/nearby-dining/index.html'} <= offline
                   app=next(a for a in registry['apps'] if a['app_id']=='california-kelp-field-guide')
                   assert app['category']=='exhibits' and app['listed']
