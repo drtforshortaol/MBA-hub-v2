@@ -4797,23 +4797,6 @@
           "source_path": "shared/media/giant-clam-mantle.png"
         }
       ]
-    },
-    {
-      "asset_id": "giant-clam-monterey-bay-connections",
-      "path": "shared/media/giant-clam-monterey-bay-connections.jpg",
-      "owner": "giant-clam",
-      "alt": "Monterey Bay Connections training slide showing a blue-lit Aquarium display with branching corals",
-      "credit": "Monterey Bay Aquarium’s “Monterey Bay Connections” training slide, photographed during the November 2026 coral reef learning cycle.",
-      "permission": "approved",
-      "offline": true,
-      "sha256": "35e949a90906c636a8547a126d01c88d31f5a327f112749caeb1b620a1e2dd48",
-      "permission_evidence": "User supplied this photograph and asked to include it in the Giant Clam app. This records authorization for staging inclusion. Public reuse rights for the Aquarium slide are unverified.",
-      "uses": [
-        {
-          "app_id": "giant-clam",
-          "source_path": "shared/media/giant-clam-monterey-bay-connections.jpg"
-        }
-      ]
     }
   ]
 }

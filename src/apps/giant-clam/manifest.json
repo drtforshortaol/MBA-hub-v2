@@ -21,15 +21,13 @@
     "shared/media/giant-clam-reef.jpg",
     "shared/media/giant-clam-range.png",
     "shared/media/giant-clam-life-cycle.png",
-    "shared/media/giant-clam-mantle.png",
-    "shared/media/giant-clam-monterey-bay-connections.jpg"
+    "shared/media/giant-clam-mantle.png"
   ],
   "media": [
     "giant-clam-reef",
     "giant-clam-range",
     "giant-clam-life-cycle",
-    "giant-clam-mantle",
-    "giant-clam-monterey-bay-connections"
+    "giant-clam-mantle"
   ],
   "knowledge": [],
   "cross_links": [
