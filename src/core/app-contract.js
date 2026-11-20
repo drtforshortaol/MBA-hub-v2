@@ -29,6 +29,13 @@ if(id==='tree-of-life-origins'&&primaryHub){
 function redirectLegacyHelp(){const destination=integratedHelpDestination(root,id,location.hash);if(destination)location.replace(destination.href);}
 window.addEventListener('hashchange',redirectLegacyHelp);redirectLegacyHelp();
 if(id==='whale-associated-organisms'){const {enhanceWhaleReference}=await import('./whale-reference.js');enhanceWhaleReference(document,typeof PARASITES==='undefined'?[]:PARASITES);}
+if(id==='naturalist-field-notes'&&typeof FIELD_NOTES!=='undefined'){
+ try{
+  const {addBriefingsToArchive}=await import('./naturalist-briefings.js');
+  const response=await fetch(new URL('registry.json',root));
+  if(response.ok&&addBriefingsToArchive(FIELD_NOTES,(await response.json()).apps)&&typeof render==='function')render();
+ }catch{}
+}
 enhanceAnimalIdentity(document,id);
 let manifest;try{manifest=await fetch(new URL(`apps/${id}/manifest.json`,root)).then(r=>r.json());}catch{}
 function assignSectionIDs(){for(const section of [...(manifest?.sections||[])].sort((a,b)=>b.title.length-a.title.length)){if(section.query||document.getElementById(section.id))continue;const title=section.title.replace(/\s+/g,' ').trim().toLowerCase();const node=[...document.querySelectorAll('summary,h2,h3,h4')].find(e=>e.textContent.replace(/\s+/g,' ').trim().toLowerCase().includes(title));if(node){const target=node.tagName==='SUMMARY'?node.parentElement:node;target.id=section.id;}}}
