@@ -53,12 +53,12 @@ test('offline release manifest has unique resources with SHA-256 digests',()=>{
  }
 });
 
-test('complete collection preserves deployed Blue and includes both canonical additions',()=>{
+test('complete collection preserves deployed Blue and includes the canonical additions',()=>{
  const inventory=read('config/v1-inventory.json');
  const policy=read('config/age-channel-policy.json');
  assert.equal(inventory.apps.length,25,'unexpected inherited V1 inventory size');
  const registered=registry.apps.map(app=>app.app_id);
- const expected=[...policy.blue_required_apps,'el-nino','nearby-dining'];
+ const expected=[...policy.blue_required_apps,'el-nino','nearby-dining','giant-clam','naturalist-briefing-20261118'];
  assert.deepEqual(registered.sort(),expected.sort());
  for(const app of inventory.apps)assert(registered.includes(app.id),'missing inherited app '+app.id);
 });

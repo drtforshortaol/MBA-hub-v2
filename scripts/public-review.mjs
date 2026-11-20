@@ -46,6 +46,24 @@ export function inheritedContentDigest(app,{sourceRoot='src'}={}){
  }
  const inventory=[...names].sort().map(name=>{
   let bytes=fs.readFileSync(path.join(sourceRoot,name));
+  // The Giant Clam assets were appended after the existing review evidence.
+  // Existing reviews still bind their original catalog and referenced assets.
+  if(base===repositorySourceRoot&&name==='shared/media/catalog.json'&&app.app_id!=='giant-clam'){
+   const current=JSON.parse(bytes.toString('utf8'));
+   const extensions=['reef.jpg','range.png','life-cycle.png','mantle.png','monterey-bay-connections.jpg'];
+   const additions=current.assets.slice(234);
+   if(additions.length===extensions.length&&extensions.every((filename,index)=>{
+    const stem='giant-clam-'+filename;
+    const asset=additions[index];
+    return asset.asset_id===stem.split('.')[0]&&asset.path==='shared/media/'+stem&&asset.owner==='giant-clam'&&!(app.media||[]).includes(asset.asset_id);
+   })){
+    const text=bytes.toString('utf8');
+    const marker=',\n    {\n      "asset_id": "giant-clam-reef",';
+    const start=text.lastIndexOf(marker);
+    const end=text.lastIndexOf('\n  ]');
+    if(start>=0&&end>start)bytes=Buffer.from(text.slice(0,start)+text.slice(end));
+   }
+  }
   // The live catalog has 18 append-only El Niño entries. Keep previously
   // reviewed app digests bound to the original 216 entries. Do not project
   // arbitrary caller-provided roots: fixture and migration audits must bind

@@ -4729,6 +4729,91 @@
         "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
         "source_path": "src/apps/el-nino/images/slide-18.jpg",
         "sha256": "7ab2200654e38fd205a0794f071d651d58a45ee49d3923fa1b090ea134d4b051"
-      }
+      },
+    {
+      "asset_id": "giant-clam-reef",
+      "path": "shared/media/giant-clam-reef.jpg",
+      "owner": "giant-clam",
+      "alt": "True giant clam with an olive mantle, iridescent blue rings and a deeply fluted shell on a shallow reef",
+      "credit": "Original AI-generated illustration for MBA Hub",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "248c359ef8666b97774cc1f3fc8fed3886d520afc681b3abb898835f7f65bf1d",
+      "permission_evidence": "Created for MBA Hub at the owner’s request for original illustrations, November 19, 2026. No source image was supplied to reproduce.",
+      "uses": [
+        {
+          "app_id": "giant-clam",
+          "source_path": "shared/media/giant-clam-reef.jpg"
+        }
+      ]
+    },
+    {
+      "asset_id": "giant-clam-range",
+      "path": "shared/media/giant-clam-range.png",
+      "owner": "giant-clam",
+      "alt": "Map of Indo-Pacific coastlines with four range landmarks and approximate Coral Triangle shading",
+      "credit": "Original map using Natural Earth coastline data",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "beec7abe18c21b7c811f886cb2d3e6ef72cbc427b2a7945384fdce48dd544316",
+      "permission_evidence": "Created for MBA Hub at the owner’s request for original illustrations, November 19, 2026. No source image was supplied to reproduce.",
+      "uses": [
+        {
+          "app_id": "giant-clam",
+          "source_path": "shared/media/giant-clam-range.png"
+        }
+      ]
+    },
+    {
+      "asset_id": "giant-clam-life-cycle",
+      "path": "shared/media/giant-clam-life-cycle.png",
+      "owner": "giant-clam",
+      "alt": "Natural-history renderings of a fertilized egg, trochophore, veliger, pediveliger and settled juvenile",
+      "credit": "AI-assisted natural-history illustration for MBA Hub",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "262e0e038a8501b15c11f620b647e59ada4d15b21b1d7c72b8125eb8d710fffe",
+      "permission_evidence": "Created for MBA Hub at the owner’s request for original illustrations, November 19, 2026. No source image was supplied to reproduce.",
+      "uses": [
+        {
+          "app_id": "giant-clam",
+          "source_path": "shared/media/giant-clam-life-cycle.png"
+        }
+      ]
+    },
+    {
+      "asset_id": "giant-clam-mantle",
+      "path": "shared/media/giant-clam-mantle.png",
+      "owner": "giant-clam",
+      "alt": "Realistic view of the fluted shell, patterned mantle and two openings",
+      "credit": "AI-assisted natural-history illustration for MBA Hub",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "b57e8fc7d24d9ba08e794025ccb96a3fd5aa0e3821199b3688edb65e7cda6e9c",
+      "permission_evidence": "Created for MBA Hub at the owner’s request for original illustrations, November 19, 2026. No source image was supplied to reproduce.",
+      "uses": [
+        {
+          "app_id": "giant-clam",
+          "source_path": "shared/media/giant-clam-mantle.png"
+        }
+      ]
+    },
+    {
+      "asset_id": "giant-clam-monterey-bay-connections",
+      "path": "shared/media/giant-clam-monterey-bay-connections.jpg",
+      "owner": "giant-clam",
+      "alt": "Monterey Bay Connections training slide showing a blue-lit Aquarium display with branching corals",
+      "credit": "Monterey Bay Aquarium’s “Monterey Bay Connections” training slide, photographed during the November 2026 coral reef learning cycle.",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "35e949a90906c636a8547a126d01c88d31f5a327f112749caeb1b620a1e2dd48",
+      "permission_evidence": "User supplied this photograph and asked to include it in the Giant Clam app. This records authorization for staging inclusion. Public reuse rights for the Aquarium slide are unverified.",
+      "uses": [
+        {
+          "app_id": "giant-clam",
+          "source_path": "shared/media/giant-clam-monterey-bay-connections.jpg"
+        }
+      ]
+    }
   ]
 }

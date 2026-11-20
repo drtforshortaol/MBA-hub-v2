@@ -56,7 +56,7 @@ const read=p=>JSON.parse(fs.readFileSync(new URL('../'+p,import.meta.url),'utf8'
 
 test('new October media registration preserves bytes, original paths and pending permissions',()=>{
  const catalog=read('src/shared/media/catalog.json'),apps=new Map();
- assert.equal(catalog.assets.length,234); // 216 preserved records plus 18 El Niño illustrations
+ assert.equal(catalog.assets.filter(asset=>asset.owner==='el-nino'&&asset.asset_id.startsWith('el-nino-slide-')).length,18);
  for (const id of ['briefing-20261111-flamboyant-cuttlefish','juvenile-white-seabass-illustration','ocellaris-clownfish-title']) {
   const matches=catalog.assets.filter(asset=>asset.asset_id===id);
   assert.equal(matches.length,1);

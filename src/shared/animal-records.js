@@ -65,6 +65,11 @@ export const animalCatalog = {
       "title": "NOAA Fisheries — Sperm Whale",
       "url": "https://www.fisheries.noaa.gov/species/sperm-whale",
       "checked_on": "2026-11-01"
+    },
+    "noaa-giant-clam": {
+      "title": "NOAA Fisheries — True Giant Clam",
+      "url": "https://www.fisheries.noaa.gov/species/true-giant-clam",
+      "checked_on": "2026-11-19"
     }
   },
   "records": [
@@ -901,6 +906,65 @@ export const animalCatalog = {
         "species": null
       },
       "taxonomy_sources": {}
+    },
+    {
+      "record_id": "giant-clam",
+      "animal_id": "giant-clam",
+      "app_id": "giant-clam",
+      "app_aliases": [],
+      "record_type": "species",
+      "common_names": {
+        "primary": "Giant Clam",
+        "aliases": [
+          "True giant clam"
+        ]
+      },
+      "scientific_names": {
+        "primary": "Tridacna gigas",
+        "aliases": []
+      },
+      "index": {
+        "primary": "Giant Clam",
+        "alternate": []
+      },
+      "search_aliases": [
+        "Tridacninae",
+        "cockle"
+      ],
+      "review": {
+        "status": "source-checked",
+        "source_ids": [
+          "noaa-giant-clam"
+        ]
+      },
+      "taxonomy": {
+        "phylum": "Mollusca",
+        "class": "Bivalvia",
+        "order": "Cardiida",
+        "family": "Cardiidae",
+        "genus": "Tridacna",
+        "species": "Tridacna gigas"
+      },
+      "taxonomy_sources": {
+        "phylum": [
+          "noaa-giant-clam"
+        ],
+        "class": [
+          "noaa-giant-clam"
+        ],
+        "order": [
+          "noaa-giant-clam"
+        ],
+        "family": [
+          "noaa-giant-clam"
+        ],
+        "genus": [
+          "noaa-giant-clam"
+        ],
+        "species": [
+          "noaa-giant-clam"
+        ]
+      }
     }
   ]
 };
