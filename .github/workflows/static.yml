@@ -24,6 +24,22 @@ jobs:
         with:
           ref: 6ba2386ce98814c94cf4fccbb92ce3e84ec2bddd
           persist-credentials: false
+      - name: Remove Nearby Dining intermediate tap in pinned Guide source
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('src/apps/nearby-dining/index.html')
+          if not p.exists():
+              raise SystemExit('Pinned Guide no longer contains Nearby Dining page; review deployment patch')
+          html=p.read_text()
+          url='https://drtforshortaol.github.io/MBA-nearby-dining/'
+          if 'Open Nearby Dining' not in html or url not in html:
+              raise SystemExit('Nearby Dining landing page changed; review redirect before deploying')
+          html=html.replace('<head><meta charset="utf-8">','<head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url='+url+'">')
+          html=html.replace('<body><header>','<body><script>window.location.replace("'+url+'");</script><header>')
+          p.write_text(html)
+          print('Nearby Dining intermediary now redirects immediately to restaurant search')
+          PY
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
