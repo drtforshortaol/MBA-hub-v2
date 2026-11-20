@@ -50,7 +50,7 @@ export function inheritedContentDigest(app,{sourceRoot='src'}={}){
   // Existing reviews still bind their original catalog and referenced assets.
   if(base===repositorySourceRoot&&name==='shared/media/catalog.json'&&app.app_id!=='giant-clam'){
    const current=JSON.parse(bytes.toString('utf8'));
-   const extensions=['reef.jpg','range.png','life-cycle.png','mantle.png'];
+   const extensions=['reef.jpg','range.png','life-cycle.png','mantle.png','monterey-bay-connections.jpg'];
    const additions=current.assets.slice(234);
    if(additions.length===extensions.length&&extensions.every((filename,index)=>{
     const stem='giant-clam-'+filename;
