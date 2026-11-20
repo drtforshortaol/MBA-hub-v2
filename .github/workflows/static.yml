@@ -22,7 +22,7 @@ jobs:
       - name: Checkout canonical Guide source branch
         uses: actions/checkout@v4
         with:
-          ref: 6ba2386ce98814c94cf4fccbb92ce3e84ec2bddd
+          ref: fe3b11bd5af50558617cdb926d3bd51e996755e6
           persist-credentials: false
       - name: Remove Nearby Dining intermediate tap in pinned Guide source
         run: |
@@ -129,8 +129,8 @@ jobs:
                   assert env['environment']=='tester' and env['developer'] is False
                   assert env['namespace']=='mba-v2-tester'
                   assert manifest['name']=='MBA Hub V2' and manifest['theme_color']=='#123e50'
-                  assert len(registry['apps'])==38
-                  for app_id, category in [('el-nino','concepts'),('nearby-dining','volunteer-tools')]:
+                  assert len(registry['apps'])==40
+                  for app_id, category in [('el-nino','concepts'),('nearby-dining','volunteer-tools'),('giant-clam','animals'),('naturalist-briefing-20261118','aquarium-updates')]:
                       app=next(a for a in registry['apps'] if a['app_id']==app_id)
                       assert app['category']==category and app['listed']
                   inventory=json.loads(get('release.json'))
@@ -140,6 +140,14 @@ jobs:
                       assert b'<details data-blue-share>' in page, guide['app_id']
                       assert b'Share app' in page, guide['app_id']
                   assert {'apps/el-nino/index.html','apps/nearby-dining/index.html'} <= offline
+                  assert 'shared/media/giant-clam-monterey-bay-connections.jpg' not in offline
+                  clam=get('apps/giant-clam/index.html')
+                  assert b'id="monterey-bay-connections"' in clam
+                  assert b'giant-clam-monterey-bay-connections.jpg' not in clam
+                  for extra in ['giant-clam','naturalist-briefing-20261118']:
+                      path=f'apps/{extra}/index.html'
+                      assert path in offline
+                      assert (base+path).encode() in get(path)
                   app=next(a for a in registry['apps'] if a['app_id']=='california-kelp-field-guide')
                   assert app['category']=='exhibits' and app['listed']
                   for app_id, category in [('naturalist-briefing-20261111','aquarium-updates'),('ocellaris-clownfish','animals')]:

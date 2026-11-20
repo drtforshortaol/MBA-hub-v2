@@ -106,12 +106,14 @@ def main():
     args = parser.parse_args()
     registry = json.loads((args.build / "registry.json").read_text(encoding="utf-8"))
     entries = {app["app_id"]: app["entry_point"] for app in registry["apps"]}
-    if len(entries) != 38 or len(registry["apps"]) != 38:
-        parser.error("Expected the 38 verified Blue apps")
+    if len(entries) != 40 or len(registry["apps"]) != 40:
+        parser.error("Expected the 40 verified Blue apps")
     for app_id, entry in entries.items():
         if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", app_id) or entry != f"apps/{app_id}/index.html":
             parser.error(f"Unexpected guide entry: {entry}")
         url = f"https://mba-blue-app-share.drtforshort.chatgpt.site/{entry}?standalone=1"
+        if app_id in {"giant-clam", "naturalist-briefing-20261118"}:
+            url = f"https://drtforshortaol.github.io/MBA-hub-v2/{entry}"
         if app_id == "nearby-dining":
             url = "https://drtforshortaol.github.io/MBA-nearby-dining/"
         page = args.build / entry
