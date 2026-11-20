@@ -22,7 +22,7 @@ jobs:
       - name: Checkout canonical Guide source branch
         uses: actions/checkout@v4
         with:
-          ref: fe3b11bd5af50558617cdb926d3bd51e996755e6
+          ref: c02385486421d38f6cd552def23b0a0134328d5f
           persist-credentials: false
       - name: Remove Nearby Dining intermediate tap in pinned Guide source
         run: |
@@ -133,6 +133,9 @@ jobs:
                   for app_id, category in [('el-nino','concepts'),('nearby-dining','volunteer-tools'),('giant-clam','animals'),('naturalist-briefing-20261118','aquarium-updates')]:
                       app=next(a for a in registry['apps'] if a['app_id']==app_id)
                       assert app['category']==category and app['listed']
+                  assert b'Latest Update' in get('core/hub.js')
+                  assert b'Naturalist Field Notes Archive' in get('core/hub.js')
+                  assert b'addBriefingsToArchive' in get('core/naturalist-briefings.js')
                   inventory=json.loads(get('release.json'))
                   offline={resource['url'] for resource in inventory['resources']}
                   for guide in registry['apps']:
