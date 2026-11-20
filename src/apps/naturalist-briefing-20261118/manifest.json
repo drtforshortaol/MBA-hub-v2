@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "app_id": "naturalist-briefing-20261118",
+  "title": "Naturalist Briefing · Nov 12–18, 2026",
+  "category": "aquarium-updates",
+  "type": "field-notes",
+  "version": "1.0.0",
+  "entry_point": "apps/naturalist-briefing-20261118/index.html",
+  "status": "testing",
+  "owner": "naturalist-briefing-20261118",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/naturalist-briefing-20261118/index.html",
+    "apps/naturalist-briefing-20261111/styles.css"
+  ],
+  "media": [],
+  "knowledge": [],
+  "cross_links": [
+    {
+      "app_id": "giant-clam"
+    },
+    {
+      "app_id": "naturalist-field-notes"
+    },
+    {
+      "app_id": "gray-whale"
+    }
+  ],
+  "sections": [
+    {
+      "id": "on-the-water",
+      "title": "On the water · Gray whales, comb jellies and phalaropes",
+      "text": "Rough conditions limited boat time. One gray whale was seen swimming north along Asilomar. The reason for its direction is unknown. The Tuesday trip reported a large bloom of Beroe comb jellies. Species identification stopped at the genus level. Dozens of red-necked phalaropes were seen close to shore.",
+      "aliases": [
+        "Asilomar",
+        "Beroe",
+        "phalaropes",
+        "gray whale migration"
+      ]
+    },
+    {
+      "id": "fin-whale",
+      "title": "Guest question · What happened to the Santa Cruz fin whale?",
+      "text": "A likely juvenile female fin whale stranded at Cowell Beach on November 12. A necropsy on November 13 found severe emaciation, consistent with poor nutritional condition over an extended period. UC Santa Cruz reported on November 17 that the underlying cause of death was still undetermined, with samples collected for further testing. For guests: “The whale was severely underweight. Scientists collected samples to investigate why she was in such poor condition.” Marine heatwaves can change where prey is available and how hard whales have to work to find it. The response team had established no link between this whale’s condition and either a marine heatwave or domoic acid in its initial findings.",
+      "aliases": [
+        "Cowell Beach",
+        "necropsy",
+        "emaciation",
+        "marine heatwave",
+        "domoic acid"
+      ]
+    },
+    {
+      "id": "species-highlight",
+      "title": "Ocean in Motion · Giant clam species highlight",
+      "text": "The shift’s species highlight explores how giant clams live with algae in their mantles and how their shells shelter other reef animals. Coral reef enrichment is planned separately.",
+      "aliases": [
+        "Tridacna gigas",
+        "giant clams",
+        "coral reefs"
+      ]
+    },
+    {
+      "id": "bay-watch",
+      "title": "Bay Watch · Nov 12–18",
+      "text": "These are sightings reported in the shift update for this week.",
+      "aliases": [
+        "Humpback whales",
+        "Gray whales",
+        "Risso’s dolphins",
+        "Long-beaked common dolphins",
+        "Short-beaked common dolphins",
+        "Southern sea otters",
+        "California sea lions",
+        "Harbor seals",
+        "Black-vented shearwaters",
+        "Northern fulmars",
+        "Black-footed albatross",
+        "California brown pelicans",
+        "Common murres",
+        "Rhinoceros auklets",
+        "Cassin’s auklets",
+        "Brandt’s cormorants",
+        "Pelagic cormorants",
+        "Western gulls",
+        "Heermann’s gulls",
+        "California gulls",
+        "Bonaparte’s gulls",
+        "Elegant terns",
+        "Red-necked phalaropes",
+        "Surf scoters",
+        "Eared grebes",
+        "Western grebes",
+        "Common loons",
+        "Red-throated loons",
+        "Pacific loons",
+        "Brant geese",
+        "Shortfin mako sharks",
+        "Beroe spp. (comb jellies)"
+      ]
+    },
+    {
+      "id": "shift-notes",
+      "title": "Shift notes and kelp forest game",
+      "text": "The dated shift email anticipated rain and strong winds and said deck station coverage was unlikely. The shift library received new books, and borrowing can be arranged with the shift author. The shift author revisited the Aquarium’s My Aquarium game, which invites kids to build a kelp forest habitat. The email reported successful play in one browser. The Aquarium also has an App Store listing.",
+      "aliases": [
+        "shift library",
+        "My Aquarium",
+        "kelp forest",
+        "deck stations"
+      ]
+    }
+  ],
+  "publication_review": "pending"
+}

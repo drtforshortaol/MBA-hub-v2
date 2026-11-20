@@ -4729,6 +4729,74 @@
         "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
         "source_path": "src/apps/el-nino/images/slide-18.jpg",
         "sha256": "7ab2200654e38fd205a0794f071d651d58a45ee49d3923fa1b090ea134d4b051"
-      }
+      },
+    {
+      "asset_id": "giant-clam-reef",
+      "path": "shared/media/giant-clam-reef.jpg",
+      "owner": "giant-clam",
+      "alt": "Painted true giant clam in a shallow reef",
+      "credit": "Original AI-generated illustration for MBA Hub",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "e565255c7e1716976193d694ae2106795a7d4569cf9105984520fb244386d0cc",
+      "permission_evidence": "Created for MBA Hub at the owner’s request for original illustrations, November 19, 2026. No source image was supplied to reproduce.",
+      "uses": [
+        {
+          "app_id": "giant-clam",
+          "source_path": "shared/media/giant-clam-reef.jpg"
+        }
+      ]
+    },
+    {
+      "asset_id": "giant-clam-range",
+      "path": "shared/media/giant-clam-range.png",
+      "owner": "giant-clam",
+      "alt": "Indo-Pacific range landmarks and the Coral Triangle",
+      "credit": "Original teaching diagram for MBA Hub",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "fcac7fdaedbfdfa915b71e4decc04e48ac4155f6b7e6cb14966de46419d04215",
+      "permission_evidence": "Created for MBA Hub at the owner’s request for original illustrations, November 19, 2026. No source image was supplied to reproduce.",
+      "uses": [
+        {
+          "app_id": "giant-clam",
+          "source_path": "shared/media/giant-clam-range.png"
+        }
+      ]
+    },
+    {
+      "asset_id": "giant-clam-life-cycle",
+      "path": "shared/media/giant-clam-life-cycle.png",
+      "owner": "giant-clam",
+      "alt": "Five stages from fertilized egg to settled juvenile",
+      "credit": "Original teaching diagram for MBA Hub",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "8f6c09676538609dbb37798aaa9ce5c595c931b0182c8a453524aca9970729d4",
+      "permission_evidence": "Created for MBA Hub at the owner’s request for original illustrations, November 19, 2026. No source image was supplied to reproduce.",
+      "uses": [
+        {
+          "app_id": "giant-clam",
+          "source_path": "shared/media/giant-clam-life-cycle.png"
+        }
+      ]
+    },
+    {
+      "asset_id": "giant-clam-mantle",
+      "path": "shared/media/giant-clam-mantle.png",
+      "owner": "giant-clam",
+      "alt": "Top view of the shell, mantle and water openings",
+      "credit": "Original teaching diagram for MBA Hub",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "8db09aafb3ee110ee888863b54e6af8dceab90f80a3a2abc095dae59a23c2e29",
+      "permission_evidence": "Created for MBA Hub at the owner’s request for original illustrations, November 19, 2026. No source image was supplied to reproduce.",
+      "uses": [
+        {
+          "app_id": "giant-clam",
+          "source_path": "shared/media/giant-clam-mantle.png"
+        }
+      ]
+    }
   ]
 }
