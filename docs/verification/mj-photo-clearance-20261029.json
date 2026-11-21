@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "baseline_commit": "267c2ca358fe3e9c837f8f0c7b981e3f10c159c7",
+  "scope": "Four MJ photograph permissions for the guide hub and testers; no scientific/editorial, device, pilot or publication approval",
+  "cleared_media_blockers": [
+    "asset-1bd100105f88c83a",
+    "asset-95daa2493750e82f",
+    "asset-47f9bbb193878eec",
+    "asset-df392914e6cf5502"
+  ],
+  "before_branch_blockers": 17,
+  "after_branch_blockers": 13,
+  "remaining_blockers": [
+    "release gate: ownerApproved",
+    "release gate: pilotPassed",
+    "release gate: deviceOfflinePassed",
+    "release gate: rollbackDevicePassed",
+    "release gate: privacyReviewed",
+    "content review pending: big-bellied-seahorse",
+    "content review pending: naturalist-field-notes",
+    "media permission review: asset-50646c3fe1d0c359",
+    "media permission review: asset-486b6cdb96375dfb",
+    "media permission review: asset-2913dc8df835400c",
+    "media permission review: asset-e62b39cc07a542c4",
+    "media permission review: asset-54f52bac7bc827bc",
+    "media permission review: asset-93c15fb934aba9e6"
+  ],
+  "inherited_approvals_preserved": 31,
+  "checks": {
+    "focused_tests_passed": 42,
+    "full_tests_passed": 1026,
+    "full_tests_failed": 0,
+    "full_tests_cancelled": 0,
+    "full_tests_skipped": 0,
+    "full_test_stdout_sha256": "863a39cb8f9952c2bf3e998062955de1568d5e17d3ffba22c8da7b1567e05f0b",
+    "build": "passed",
+    "security_scan": "passed",
+    "artifact_integrity": "passed",
+    "all_app_content_preflight": "passed",
+    "diff_check": "passed",
+    "offline_navigation": [
+      {
+        "environment": "developer",
+        "passed": true,
+        "release": "1a8e3585b81db286",
+        "resources": {
+          "expected": 384,
+          "verified": 384,
+          "errors": []
+        },
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "passed": true,
+        "release": "6fa65a4961bfbc7a",
+        "resources": {
+          "expected": 375,
+          "verified": 375,
+          "errors": []
+        },
+        "offline_network_attempts": 0
+      }
+    ]
+  },
+  "test_followup": "Initial full run encountered the existing 3-second VM timeout. The next run reached an older pending-only image assertion, which was updated to require exactly four approved photos and one pending illustration. The completed full run passed without changing VM timeouts or removing coverage.",
+  "publication_authorized": false,
+  "combined_branches_reverified": false,
+  "physical_device_reverified": false
+}

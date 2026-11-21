@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "source_commit": "70b9f4df4380d8d57b5467f914defd6bbe323571",
+  "release": "913f89b50929d73e",
+  "host_source_commit": "862c8313cd0a037b26b8e118fe4d5f76ff9c5e45",
+  "deployment": {
+    "id": "appgdep_6ae7815d00408191815d7ba05d8e4b5c",
+    "project_id": "appgprj_6ae55daba7b08191a19ce7036c6a4152",
+    "title": "MBA Hub V2 — iPhone Review",
+    "version_id": "appgprj_6ae55daba7b08191a19ce7036c6a4152~appgver_1bde722081708191a5006c9ebaa31dcf",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://mba-v2-iphone-review-4ec51dd.drtforshort.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ae55daba7b08191a19ce7036c6a4152",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-11-01T18:13:59.507087+00:00"
+  },
+  "changes": {
+    "tree_of_life": "Listed in Concepts; scientific/runtime files unchanged",
+    "sperm_whale": "Seven sourced collapsed sections; listed in Animals / Marine Mammals; exact authored text review pending",
+    "animal_guides": 13,
+    "species": 10,
+    "group_topic_references": 3,
+    "marine_mammal_guides": 4
+  },
+  "validation": {
+    "full_suite_passed": 1065,
+    "full_suite_failed": 0,
+    "artifacts": "both passed",
+    "security": "passed",
+    "privacy": "snapshot matches",
+    "local_host_resources": 380,
+    "host_update_verifier_scenarios": 8,
+    "live_http": {
+      "passed": true,
+      "expected": 380,
+      "verified": 380,
+      "bytes": 68104291,
+      "errors": []
+    },
+    "browser": "Not verified: private Site sign-in wall; no credential interaction requested",
+    "physical_device": "not assessed",
+    "production_release_authorized": false
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "retrieved_on": "2026-10-29",
+  "source_url": "https://www.iucn-seahorse.org/seahorse-species",
+  "source_owner": "IUCN Seahorse, Pipefish & Seadragon Specialist Group",
+  "source_page_updated": "Sept 2026",
+  "retrieval_method": "Direct unauthenticated HTTPS GET; lxml parses exact species row and fourth table cell",
+  "source_html_sha256": "75e2be5595497d181691b44fa1eceee9afe386eac2f3167b32098a460fb5c70a",
+  "species_row_sha256": "47fb014c013cc79653250bd492c619fb6f0dae5a61e13a73c903c972c03ce972",
+  "species": "Hippocampus abdominalis",
+  "status_icon_alt": "LC",
+  "status_icon_url": "https://images.squarespace-cdn.com/content/5734f2a086db43e3f6fb1bbc/d08ca53a-ae50-43de-9a37-7e49f81bd601/LC.png?content-type=image%2Fpng",
+  "assessment_link": "https://www.iucnredlist.org/details/10057/0",
+  "interpretation": "Specialist group September 2026 table displays LC (Least Concern) for this species.",
+  "limits": [
+    "This is not a retrieved IUCN Red List assessment record.",
+    "Assessment date, publication year and whether newer assessments exist were not validated by this table.",
+    "No scientific approval, media rights or publication authority granted."
+  ]
+}

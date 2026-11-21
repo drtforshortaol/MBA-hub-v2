@@ -1,0 +1,973 @@
+{
+  "schemaVersion": "1.0.0-draft",
+  "status": "frozen-candidate-pending-scientific-approval",
+  "policy": {
+    "identifierStability": "IDs are explicit persisted values, never recomputed from DOM/object order",
+    "renames": "preserve ID and record aliases",
+    "deletions": "tombstone IDs; never reuse",
+    "scientificReview": "required before canonical promotion"
+  },
+  "concepts": [
+    {
+      "id": "EV-0100",
+      "key": "luca",
+      "canonicalId": "EV-0100"
+    },
+    {
+      "id": "EV-0101",
+      "key": "bacteria",
+      "canonicalId": "EV-0101"
+    },
+    {
+      "id": "EV-0102",
+      "key": "other-bacteria",
+      "canonicalId": "EV-0102"
+    },
+    {
+      "id": "EV-0103",
+      "key": "alphaproteobacteria",
+      "canonicalId": "EV-0103"
+    },
+    {
+      "id": "EV-0104",
+      "key": "archaea",
+      "canonicalId": "EV-0104"
+    },
+    {
+      "id": "EV-0105",
+      "key": "other-archaea",
+      "canonicalId": "EV-0105"
+    },
+    {
+      "id": "EV-0106",
+      "key": "asgard",
+      "canonicalId": "EV-0106"
+    },
+    {
+      "id": "EV-0107",
+      "key": "host",
+      "canonicalId": "EV-0107"
+    },
+    {
+      "id": "EV-0108",
+      "key": "mitochondrion",
+      "canonicalId": "EV-0108"
+    },
+    {
+      "id": "EV-0109",
+      "key": "early-eukaryote",
+      "canonicalId": "EV-0109"
+    },
+    {
+      "id": "EV-0110",
+      "key": "leca",
+      "canonicalId": "EV-0110"
+    },
+    {
+      "id": "EV-0111",
+      "key": "other-major-euks",
+      "canonicalId": "EV-0111"
+    },
+    {
+      "id": "EV-0112",
+      "key": "opisthokonta",
+      "canonicalId": "EV-0112"
+    },
+    {
+      "id": "EV-0113",
+      "key": "fungi",
+      "canonicalId": "EV-0113"
+    },
+    {
+      "id": "EV-0114",
+      "key": "animals",
+      "canonicalId": "EV-0114"
+    },
+    {
+      "id": "EV-0115",
+      "key": "archaeplastida-summary",
+      "canonicalId": "EV-0115"
+    },
+    {
+      "id": "EV-0116",
+      "key": "red-summary",
+      "canonicalId": "EV-0116"
+    },
+    {
+      "id": "EV-0117",
+      "key": "green-summary",
+      "canonicalId": "EV-0117"
+    },
+    {
+      "id": "EV-0118",
+      "key": "land-summary",
+      "canonicalId": "EV-0118"
+    },
+    {
+      "id": "EV-0119",
+      "key": "sar",
+      "canonicalId": "EV-0119"
+    },
+    {
+      "id": "EV-0120",
+      "key": "stramenopiles-summary",
+      "canonicalId": "EV-0120"
+    },
+    {
+      "id": "EV-0121",
+      "key": "brown-summary",
+      "canonicalId": "EV-0121"
+    },
+    {
+      "id": "EV-0122",
+      "key": "cyanobacteria",
+      "canonicalId": "EV-0122"
+    },
+    {
+      "id": "EV-0123",
+      "key": "oxygen-producing-cyano",
+      "canonicalId": "EV-0123"
+    },
+    {
+      "id": "EV-0124",
+      "key": "modern-cyano",
+      "canonicalId": "EV-0124"
+    },
+    {
+      "id": "EV-0125",
+      "key": "goe",
+      "canonicalId": "EV-0125"
+    },
+    {
+      "id": "EV-0126",
+      "key": "plastid-cyano",
+      "canonicalId": "EV-0126"
+    },
+    {
+      "id": "EV-0127",
+      "key": "euk-host",
+      "canonicalId": "EV-0127"
+    },
+    {
+      "id": "EV-0128",
+      "key": "primary-plastid",
+      "canonicalId": "EV-0128"
+    },
+    {
+      "id": "EV-0129",
+      "key": "archaeplastida",
+      "canonicalId": "EV-0129"
+    },
+    {
+      "id": "EV-0130",
+      "key": "red-algae",
+      "canonicalId": "EV-0130"
+    },
+    {
+      "id": "EV-0131",
+      "key": "red-kelp",
+      "canonicalId": "EV-0131"
+    },
+    {
+      "id": "EV-0132",
+      "key": "green-lineage",
+      "canonicalId": "EV-0132"
+    },
+    {
+      "id": "EV-0133",
+      "key": "other-green-algae",
+      "canonicalId": "EV-0133"
+    },
+    {
+      "id": "EV-0134",
+      "key": "streptophyte-lineage",
+      "canonicalId": "EV-0134"
+    },
+    {
+      "id": "EV-0135",
+      "key": "land-plants",
+      "canonicalId": "EV-0135"
+    },
+    {
+      "id": "EV-0136",
+      "key": "vascular-plants",
+      "canonicalId": "EV-0136"
+    },
+    {
+      "id": "EV-0137",
+      "key": "seed-plants",
+      "canonicalId": "EV-0137"
+    },
+    {
+      "id": "EV-0138",
+      "key": "flowering-plants",
+      "canonicalId": "EV-0138"
+    },
+    {
+      "id": "EV-0139",
+      "key": "seagrasses",
+      "canonicalId": "EV-0139"
+    },
+    {
+      "id": "EV-0140",
+      "key": "eelgrass",
+      "canonicalId": "EV-0140"
+    },
+    {
+      "id": "EV-0141",
+      "key": "other-eukaryotes",
+      "canonicalId": "EV-0141"
+    },
+    {
+      "id": "EV-0142",
+      "key": "other-eukaryotic-lineages",
+      "canonicalId": "EV-0142"
+    },
+    {
+      "id": "EV-0143",
+      "key": "stramenopiles",
+      "canonicalId": "EV-0143"
+    },
+    {
+      "id": "EV-0144",
+      "key": "photosynthetic-stramenopiles",
+      "canonicalId": "EV-0144"
+    },
+    {
+      "id": "EV-0145",
+      "key": "diatoms",
+      "canonicalId": "EV-0145"
+    },
+    {
+      "id": "EV-0146",
+      "key": "brown-algae",
+      "canonicalId": "EV-0146"
+    },
+    {
+      "id": "EV-0147",
+      "key": "kelps",
+      "canonicalId": "EV-0147"
+    },
+    {
+      "id": "EV-0148",
+      "key": "giant-kelp",
+      "canonicalId": "EV-0148"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "TR-0100",
+      "key": "great-split",
+      "canonicalId": "TR-0100"
+    },
+    {
+      "id": "TR-0101",
+      "key": "bacterial-diversification",
+      "canonicalId": "TR-0101"
+    },
+    {
+      "id": "TR-0102",
+      "key": "archaeal-diversification",
+      "canonicalId": "TR-0102"
+    },
+    {
+      "id": "TR-0103",
+      "key": "toward-host",
+      "canonicalId": "TR-0103"
+    },
+    {
+      "id": "TR-0104",
+      "key": "endosymbiosis",
+      "canonicalId": "TR-0104"
+    },
+    {
+      "id": "TR-0105",
+      "key": "eukaryogenesis",
+      "canonicalId": "TR-0105"
+    },
+    {
+      "id": "TR-0106",
+      "key": "toward-leca",
+      "canonicalId": "TR-0106"
+    },
+    {
+      "id": "TR-0107",
+      "key": "major-euk-div",
+      "canonicalId": "TR-0107"
+    },
+    {
+      "id": "TR-0108",
+      "key": "opisthokont-select-transition",
+      "canonicalId": "TR-0108"
+    },
+    {
+      "id": "TR-0109",
+      "key": "opisthokont-branch",
+      "canonicalId": "TR-0109"
+    },
+    {
+      "id": "TR-0110",
+      "key": "archaeplastida-select-transition",
+      "canonicalId": "TR-0110"
+    },
+    {
+      "id": "TR-0111",
+      "key": "archaeplastida-summary-branch",
+      "canonicalId": "TR-0111"
+    },
+    {
+      "id": "TR-0112",
+      "key": "green-to-land-summary",
+      "canonicalId": "TR-0112"
+    },
+    {
+      "id": "TR-0113",
+      "key": "sar-select-transition",
+      "canonicalId": "TR-0113"
+    },
+    {
+      "id": "TR-0114",
+      "key": "sar-branch",
+      "canonicalId": "TR-0114"
+    },
+    {
+      "id": "TR-0115",
+      "key": "brown-summary-transition",
+      "canonicalId": "TR-0115"
+    },
+    {
+      "id": "TR-0116",
+      "key": "cyano-branch",
+      "canonicalId": "TR-0116"
+    },
+    {
+      "id": "TR-0117",
+      "key": "oxygenic-photosynthesis",
+      "canonicalId": "TR-0117"
+    },
+    {
+      "id": "TR-0118",
+      "key": "cyano-continuation",
+      "canonicalId": "TR-0118"
+    },
+    {
+      "id": "TR-0119",
+      "key": "planetary-effect",
+      "canonicalId": "TR-0119"
+    },
+    {
+      "id": "TR-0120",
+      "key": "primary-plastid-endo",
+      "canonicalId": "TR-0120"
+    },
+    {
+      "id": "TR-0121",
+      "key": "plastid-integration",
+      "canonicalId": "TR-0121"
+    },
+    {
+      "id": "TR-0122",
+      "key": "archaeplastida-diversification",
+      "canonicalId": "TR-0122"
+    },
+    {
+      "id": "TR-0123",
+      "key": "red-lineage-transition",
+      "canonicalId": "TR-0123"
+    },
+    {
+      "id": "TR-0124",
+      "key": "red-seaweed-diversification",
+      "canonicalId": "TR-0124"
+    },
+    {
+      "id": "TR-0125",
+      "key": "green-diversification",
+      "canonicalId": "TR-0125"
+    },
+    {
+      "id": "TR-0126",
+      "key": "land-transition",
+      "canonicalId": "TR-0126"
+    },
+    {
+      "id": "TR-0127",
+      "key": "vascular-transition",
+      "canonicalId": "TR-0127"
+    },
+    {
+      "id": "TR-0128",
+      "key": "seed-transition",
+      "canonicalId": "TR-0128"
+    },
+    {
+      "id": "TR-0129",
+      "key": "flower-transition",
+      "canonicalId": "TR-0129"
+    },
+    {
+      "id": "TR-0130",
+      "key": "seagrass-transition",
+      "canonicalId": "TR-0130"
+    },
+    {
+      "id": "TR-0131",
+      "key": "eelgrass-transition",
+      "canonicalId": "TR-0131"
+    },
+    {
+      "id": "TR-0132",
+      "key": "stramenopile-branch",
+      "canonicalId": "TR-0132"
+    },
+    {
+      "id": "TR-0133",
+      "key": "red-derived-plastid",
+      "canonicalId": "TR-0133"
+    },
+    {
+      "id": "TR-0134",
+      "key": "brown-branch",
+      "canonicalId": "TR-0134"
+    },
+    {
+      "id": "TR-0135",
+      "key": "kelp-transition",
+      "canonicalId": "TR-0135"
+    },
+    {
+      "id": "TR-0136",
+      "key": "giant-kelp-transition",
+      "canonicalId": "TR-0136"
+    }
+  ],
+  "visuals": [
+    {
+      "id": "VM-001",
+      "key": "luca",
+      "targetId": "EV-0100",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-002",
+      "key": "great-split",
+      "targetId": "TR-0100",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-003",
+      "key": "bacteria",
+      "targetId": "EV-0101",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-004",
+      "key": "archaea",
+      "targetId": "EV-0104",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-005",
+      "key": "bacterial-diversification",
+      "targetId": "TR-0101",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-006",
+      "key": "alphaproteobacteria",
+      "targetId": "EV-0103",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-007",
+      "key": "archaeal-diversification",
+      "targetId": "TR-0102",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-008",
+      "key": "asgard",
+      "targetId": "EV-0106",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-009",
+      "key": "toward-host",
+      "targetId": "TR-0103",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-010",
+      "key": "host",
+      "targetId": "EV-0107",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-011",
+      "key": "endosymbiosis",
+      "targetId": "TR-0104",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-012",
+      "key": "mitochondrion",
+      "targetId": "EV-0108",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-013",
+      "key": "eukaryogenesis",
+      "targetId": "TR-0105",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-014",
+      "key": "early-eukaryote",
+      "targetId": "EV-0109",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-015",
+      "key": "toward-leca",
+      "targetId": "TR-0106",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-016",
+      "key": "leca",
+      "targetId": "EV-0110",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-017",
+      "key": "cyano-branch",
+      "targetId": "TR-0116",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-018",
+      "key": "cyanobacteria",
+      "targetId": "EV-0122",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-019",
+      "key": "oxygenic-photosynthesis",
+      "targetId": "TR-0117",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-020",
+      "key": "oxygen-producing-cyano",
+      "targetId": "EV-0123",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-021",
+      "key": "cyano-continuation",
+      "targetId": "TR-0118",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-022",
+      "key": "modern-cyano",
+      "targetId": "EV-0124",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-023",
+      "key": "planetary-effect",
+      "targetId": "TR-0119",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-024",
+      "key": "goe",
+      "targetId": "EV-0125",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-025",
+      "key": "plastid-cyano",
+      "targetId": "EV-0126",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-026",
+      "key": "euk-host",
+      "targetId": "EV-0127",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-027",
+      "key": "primary-plastid-endo",
+      "targetId": "TR-0120",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-028",
+      "key": "primary-plastid",
+      "targetId": "EV-0128",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-029",
+      "key": "plastid-integration",
+      "targetId": "TR-0121",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-030",
+      "key": "archaeplastida",
+      "targetId": "EV-0129",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-031",
+      "key": "archaeplastida-diversification",
+      "targetId": "TR-0122",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-032",
+      "key": "green-lineage",
+      "targetId": "EV-0132",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-033",
+      "key": "other-green-algae",
+      "targetId": "EV-0133",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-034",
+      "key": "streptophyte-lineage",
+      "targetId": "EV-0134",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-035",
+      "key": "land-transition",
+      "targetId": "TR-0126",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-036",
+      "key": "land-plants",
+      "targetId": "EV-0135",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-037",
+      "key": "red-lineage-transition",
+      "targetId": "TR-0123",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-038",
+      "key": "red-seaweed-diversification",
+      "targetId": "TR-0124",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-039",
+      "key": "red-kelp",
+      "targetId": "EV-0131",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-040",
+      "key": "stramenopile-branch",
+      "targetId": "TR-0132",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-041",
+      "key": "stramenopiles",
+      "targetId": "EV-0143",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-042",
+      "key": "red-derived-plastid",
+      "targetId": "TR-0133",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-043",
+      "key": "photosynthetic-stramenopiles",
+      "targetId": "EV-0144",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-044",
+      "key": "brown-branch",
+      "targetId": "TR-0134",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-045",
+      "key": "diatoms",
+      "targetId": "EV-0145",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-046",
+      "key": "brown-algae",
+      "targetId": "EV-0146",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-047",
+      "key": "kelp-transition",
+      "targetId": "TR-0135",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-048",
+      "key": "kelps",
+      "targetId": "EV-0147",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-049",
+      "key": "giant-kelp-transition",
+      "targetId": "TR-0136",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-050",
+      "key": "giant-kelp",
+      "targetId": "EV-0148",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-051",
+      "key": "major-euk-div",
+      "targetId": "TR-0107",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-052",
+      "key": "opisthokonta",
+      "targetId": "EV-0112",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-053",
+      "key": "opisthokont-branch",
+      "targetId": "TR-0109",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-054",
+      "key": "fungi",
+      "targetId": "EV-0113",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-055",
+      "key": "animals",
+      "targetId": "EV-0114",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-056",
+      "key": "archaeplastida-summary",
+      "targetId": "EV-0115",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-057",
+      "key": "archaeplastida-summary-branch",
+      "targetId": "TR-0111",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-058",
+      "key": "red-summary",
+      "targetId": "EV-0116",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-059",
+      "key": "green-summary",
+      "targetId": "EV-0117",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-060",
+      "key": "sar",
+      "targetId": "EV-0119",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-061",
+      "key": "stramenopiles-summary",
+      "targetId": "EV-0120",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-062",
+      "key": "brown-summary",
+      "targetId": "EV-0121",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-063",
+      "key": "vascular-transition",
+      "targetId": "TR-0127",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-064",
+      "key": "vascular-plants",
+      "targetId": "EV-0136",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-065",
+      "key": "seed-transition",
+      "targetId": "TR-0128",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-066",
+      "key": "seed-plants",
+      "targetId": "EV-0137",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-067",
+      "key": "flower-transition",
+      "targetId": "TR-0129",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-068",
+      "key": "flowering-plants",
+      "targetId": "EV-0138",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-069",
+      "key": "seagrass-transition",
+      "targetId": "TR-0130",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-070",
+      "key": "seagrasses",
+      "targetId": "EV-0139",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-071",
+      "key": "eelgrass-transition",
+      "targetId": "TR-0131",
+      "targetKind": "transition"
+    },
+    {
+      "id": "VM-072",
+      "key": "eelgrass",
+      "targetId": "EV-0140",
+      "targetKind": "concept"
+    },
+    {
+      "id": "VM-073",
+      "key": "land-summary",
+      "targetId": "EV-0118",
+      "targetKind": "concept"
+    }
+  ],
+  "visualCoverage": {
+    "withoutVisual": [
+      {
+        "id": "EV-0102",
+        "key": "other-bacteria",
+        "review": "undetermined; may be intentional; do not invent visual"
+      },
+      {
+        "id": "EV-0105",
+        "key": "other-archaea",
+        "review": "undetermined; may be intentional; do not invent visual"
+      },
+      {
+        "id": "EV-0111",
+        "key": "other-major-euks",
+        "review": "undetermined; may be intentional; do not invent visual"
+      },
+      {
+        "id": "EV-0130",
+        "key": "red-algae",
+        "review": "undetermined; may be intentional; do not invent visual"
+      },
+      {
+        "id": "EV-0141",
+        "key": "other-eukaryotes",
+        "review": "undetermined; may be intentional; do not invent visual"
+      },
+      {
+        "id": "EV-0142",
+        "key": "other-eukaryotic-lineages",
+        "review": "undetermined; may be intentional; do not invent visual"
+      },
+      {
+        "id": "TR-0108",
+        "key": "opisthokont-select-transition",
+        "review": "undetermined; may be intentional; do not invent visual"
+      },
+      {
+        "id": "TR-0110",
+        "key": "archaeplastida-select-transition",
+        "review": "undetermined; may be intentional; do not invent visual"
+      },
+      {
+        "id": "TR-0112",
+        "key": "green-to-land-summary",
+        "review": "undetermined; may be intentional; do not invent visual"
+      },
+      {
+        "id": "TR-0113",
+        "key": "sar-select-transition",
+        "review": "undetermined; may be intentional; do not invent visual"
+      },
+      {
+        "id": "TR-0114",
+        "key": "sar-branch",
+        "review": "undetermined; may be intentional; do not invent visual"
+      },
+      {
+        "id": "TR-0115",
+        "key": "brown-summary-transition",
+        "review": "undetermined; may be intentional; do not invent visual"
+      },
+      {
+        "id": "TR-0125",
+        "key": "green-diversification",
+        "review": "undetermined; may be intentional; do not invent visual"
+      }
+    ]
+  },
+  "scientificReview": {
+    "status": "pending",
+    "notes": [
+      "Source-key linkage is not scientific verification",
+      "Timeline-to-map candidate mappings remain unapproved",
+      "Check endosymbiosis, lineage branching, chronology and uncertainty before promotion"
+    ]
+  },
+  "structuralValidation": {
+    "totalRecords": 159,
+    "concepts": 49,
+    "transitions": 37,
+    "visuals": 73,
+    "visualCoverageGaps": 13,
+    "duplicateIds": false,
+    "danglingVisuals": 0,
+    "scientificValidation": "pending",
+    "offlineTests": "not run",
+    "ci": "not run"
+  }
+}

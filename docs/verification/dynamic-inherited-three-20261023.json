@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "scope": "Engineering review of unchanged inherited content; no new scientific, image, physical-device or release approval",
+  "source": "2c10cb354d056324f9c2b1ed3d3a953bea895bec",
+  "apps": [
+    {
+      "app_id": "information-center",
+      "pinned_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "data_sha256": "3503d6ed30b7f1bf70a31bc8cab63a462bc453e4a9742ce29135850e5ce0a164",
+      "dataset_exact": true,
+      "sections": 18,
+      "media": [
+        {
+          "asset_id": "asset-1e94c29588faf6ba",
+          "pinned_path": "apps/information-center/icon.svg",
+          "sha256": "1e94c29588faf6ba03af223e8b7526511f865b76b70f738558fdb6840d0b754d",
+          "exact": true
+        }
+      ],
+      "files": [
+        {
+          "path": "src/apps/information-center/app.js",
+          "sha256": "a17fdc8fc37fe3cafb77e22ee675b0d5e5cd6eca58c1c2011549751a4780ccef",
+          "pinned_sha256": "ccb7ba3616261a47b991079673729d9ef7e4f361da2dc53cda65ea5a6902023e",
+          "review": "Complete source/current diff reviewed; see docs/INHERITED_DYNAMIC_THREE_RECONCILIATION_20261022.md"
+        },
+        {
+          "path": "src/apps/information-center/data.js",
+          "sha256": "3503d6ed30b7f1bf70a31bc8cab63a462bc453e4a9742ce29135850e5ce0a164",
+          "pinned_sha256": "3503d6ed30b7f1bf70a31bc8cab63a462bc453e4a9742ce29135850e5ce0a164",
+          "review": "Complete source/current diff reviewed; see docs/INHERITED_DYNAMIC_THREE_RECONCILIATION_20261022.md"
+        },
+        {
+          "path": "src/apps/information-center/index.html",
+          "sha256": "a422da4397c337161fbbbe5742b505417d282373e44b53d8093b9cdfd08f2324",
+          "pinned_sha256": "4ff40d3110f6e35b878917e14d87795ad0f7d571a7cb68fa1f595e0ec3ef2410",
+          "review": "Complete source/current diff reviewed; see docs/INHERITED_DYNAMIC_THREE_RECONCILIATION_20261022.md"
+        },
+        {
+          "path": "src/apps/information-center/manifest.json",
+          "sha256": "da217d1fa637f786ea60b14dca3f196213a1b332bc5b4f8e686cc675b43aa123",
+          "pinned_sha256": null,
+          "review": "Complete source/current diff reviewed; see docs/INHERITED_DYNAMIC_THREE_RECONCILIATION_20261022.md"
+        },
+        {
+          "path": "src/apps/information-center/styles.css",
+          "sha256": "0ca2a7a5fb8ba77698cb6261cba60b29a8f0a1516729d251c4dd641d46523468",
+          "pinned_sha256": "0ca2a7a5fb8ba77698cb6261cba60b29a8f0a1516729d251c4dd641d46523468",
+          "review": "Complete source/current diff reviewed; see docs/INHERITED_DYNAMIC_THREE_RECONCILIATION_20261022.md"
+        }
+      ],
+      "blocks": 47,
+      "css_exact": true,
+      "source_approval_unchanged": true,
+      "search_all_authored_fields": true
+    },
+    {
+      "app_id": "aquarium-library-explorer",
+      "pinned_commit": "9438060bd836c46245e4af45c280e4bb37b0ab94",
+      "data_sha256": "35bd9bf0e106633c226982d20453f591a63eca20393cd81a5981b887bc4febe3",
+      "dataset_exact": true,
+      "sections": 95,
+      "media": [
+        {
+          "asset_id": "asset-0bc6222372f0efdc",
+          "pinned_path": "Organize Aquarium Books.png",
+          "sha256": "0bc6222372f0efdcf006e1b3b9091f2a7d65b7ae491b35326589fea62b49359d",
+          "exact": true
+        }
+      ],
+      "files": [
+        {
+          "path": "src/apps/aquarium-library-explorer/index.html",
+          "sha256": "763447eba9155035b3d8ad1a0d12ddf51da915ad6b5d8491e9671d76d83f4b93",
+          "pinned_sha256": "cdc6f7e541cc0b73bbec1d2b224078908973d00f8fbfefe14a733fc59beb8374",
+          "review": "Complete source/current diff reviewed; see docs/INHERITED_DYNAMIC_THREE_RECONCILIATION_20261022.md"
+        },
+        {
+          "path": "src/apps/aquarium-library-explorer/library-data.js",
+          "sha256": "35bd9bf0e106633c226982d20453f591a63eca20393cd81a5981b887bc4febe3",
+          "pinned_sha256": "35bd9bf0e106633c226982d20453f591a63eca20393cd81a5981b887bc4febe3",
+          "review": "Complete source/current diff reviewed; see docs/INHERITED_DYNAMIC_THREE_RECONCILIATION_20261022.md"
+        },
+        {
+          "path": "src/apps/aquarium-library-explorer/manifest.json",
+          "sha256": "c32cb42c056cee5d16d3641e315bdeeacbb0137129fd34423b4c1f2646f7cc84",
+          "pinned_sha256": null,
+          "review": "Complete source/current diff reviewed; see docs/INHERITED_DYNAMIC_THREE_RECONCILIATION_20261022.md"
+        }
+      ],
+      "holdings": 78,
+      "wishlist": 17,
+      "css_exact": true,
+      "source_approval_unchanged": true,
+      "search_all_authored_fields": true
+    },
+    {
+      "app_id": "mmc-narrations",
+      "pinned_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "data_sha256": "0b7f8a902968518dd623bd4be042d1e331da3507ce17b8d9b2c7c38d804a70f4",
+      "dataset_exact": true,
+      "sections": 8,
+      "media": [
+        {
+          "asset_id": "asset-f40aca52c0606336",
+          "pinned_path": "apps/mmc-narrations/icon.svg",
+          "sha256": "f40aca52c0606336b3d674e72510dcfbab10dde551cc34a80df525cde871bb81",
+          "exact": true
+        }
+      ],
+      "files": [
+        {
+          "path": "src/apps/mmc-narrations/app.js",
+          "sha256": "045212e49863b65ef23fad7e3fd39a5af81343680b650f962599fb49155bb4dc",
+          "pinned_sha256": "1b31b7a754d6e1e90a36083bed7e56a26d988bf3019fb81528f571fc8302eb13",
+          "review": "Complete source/current diff reviewed; see docs/INHERITED_DYNAMIC_THREE_RECONCILIATION_20261022.md"
+        },
+        {
+          "path": "src/apps/mmc-narrations/apps.js",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "pinned_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "review": "Complete source/current diff reviewed; see docs/INHERITED_DYNAMIC_THREE_RECONCILIATION_20261022.md"
+        },
+        {
+          "path": "src/apps/mmc-narrations/data.js",
+          "sha256": "0b7f8a902968518dd623bd4be042d1e331da3507ce17b8d9b2c7c38d804a70f4",
+          "pinned_sha256": "0b7f8a902968518dd623bd4be042d1e331da3507ce17b8d9b2c7c38d804a70f4",
+          "review": "Complete source/current diff reviewed; see docs/INHERITED_DYNAMIC_THREE_RECONCILIATION_20261022.md"
+        },
+        {
+          "path": "src/apps/mmc-narrations/index.html",
+          "sha256": "7cb897b58a6e2939ea5de46e100969bc18cab94b0e315f2ce0d47e652a3e0db0",
+          "pinned_sha256": "40d76e6eb5a5fb565d50bdd65f469d3d15f1af105aaf61c079ae00484fc5fad7",
+          "review": "Complete source/current diff reviewed; see docs/INHERITED_DYNAMIC_THREE_RECONCILIATION_20261022.md"
+        },
+        {
+          "path": "src/apps/mmc-narrations/manifest.json",
+          "sha256": "a5312fc15eea14e12e0ccf6dc831b3dbe20469318f49eedc0fc9b364b6956262",
+          "pinned_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "review": "Complete source/current diff reviewed; see docs/INHERITED_DYNAMIC_THREE_RECONCILIATION_20261022.md"
+        },
+        {
+          "path": "src/apps/mmc-narrations/styles.css",
+          "sha256": "481a5fd4100211ceb7bfca202b4e82f080cc52c9d7da2aeda57849982eb8effd",
+          "pinned_sha256": "481a5fd4100211ceb7bfca202b4e82f080cc52c9d7da2aeda57849982eb8effd",
+          "review": "Complete source/current diff reviewed; see docs/INHERITED_DYNAMIC_THREE_RECONCILIATION_20261022.md"
+        }
+      ],
+      "cards": 7,
+      "references": 3,
+      "css_exact": true,
+      "pinned_current_render_trees_equal": true,
+      "source_approval_unchanged": true,
+      "search_all_authored_fields": true
+    }
+  ],
+  "rendering": {
+    "information_center_structural_text_equality_ignoring_phone_anchor_wrappers": 18,
+    "library_structural_text_equality": [
+      {
+        "view": "default",
+        "count": "78 books shown"
+      },
+      {
+        "view": "Wishlist",
+        "count": "17 books shown · Wishlist"
+      }
+    ],
+    "limitations": "Lightweight DOM/script comparison; no browser layout or physical device acceptance."
+  },
+  "reviewed_current_files": {
+    "src/apps/information-center/app.js": "a17fdc8fc37fe3cafb77e22ee675b0d5e5cd6eca58c1c2011549751a4780ccef",
+    "src/apps/information-center/data.js": "3503d6ed30b7f1bf70a31bc8cab63a462bc453e4a9742ce29135850e5ce0a164",
+    "src/apps/information-center/index.html": "a422da4397c337161fbbbe5742b505417d282373e44b53d8093b9cdfd08f2324",
+    "src/apps/information-center/manifest.json": "da217d1fa637f786ea60b14dca3f196213a1b332bc5b4f8e686cc675b43aa123",
+    "src/apps/information-center/styles.css": "0ca2a7a5fb8ba77698cb6261cba60b29a8f0a1516729d251c4dd641d46523468",
+    "src/apps/aquarium-library-explorer/index.html": "763447eba9155035b3d8ad1a0d12ddf51da915ad6b5d8491e9671d76d83f4b93",
+    "src/apps/aquarium-library-explorer/library-data.js": "35bd9bf0e106633c226982d20453f591a63eca20393cd81a5981b887bc4febe3",
+    "src/apps/aquarium-library-explorer/manifest.json": "c32cb42c056cee5d16d3641e315bdeeacbb0137129fd34423b4c1f2646f7cc84",
+    "src/apps/mmc-narrations/app.js": "045212e49863b65ef23fad7e3fd39a5af81343680b650f962599fb49155bb4dc",
+    "src/apps/mmc-narrations/apps.js": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/apps/mmc-narrations/data.js": "0b7f8a902968518dd623bd4be042d1e331da3507ce17b8d9b2c7c38d804a70f4",
+    "src/apps/mmc-narrations/index.html": "7cb897b58a6e2939ea5de46e100969bc18cab94b0e315f2ce0d47e652a3e0db0",
+    "src/apps/mmc-narrations/manifest.json": "a5312fc15eea14e12e0ccf6dc831b3dbe20469318f49eedc0fc9b364b6956262",
+    "src/apps/mmc-narrations/styles.css": "481a5fd4100211ceb7bfca202b4e82f080cc52c9d7da2aeda57849982eb8effd"
+  }
+}

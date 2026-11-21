@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "scope": "Complete pinned/current engineering fidelity; no scientific, rights, browser or physical acceptance approval",
+  "current_complete_inventory": {
+    "app.js": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "apps.js": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data.js": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "index.html": "217e9b3187dba518f58bfbe45adad87ee58fc119c1c3ae5cb4214500a8979872",
+    "manifest.json": "c2d6b95f4693370192c4df480c25effe7386967271a6ccc72baed6b157cf3667",
+    "styles.css": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "pinned_complete_inventory": [
+    {
+      "path": "apps/open-sea/CHANGELOG.txt`.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "apps/open-sea/README.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "apps/open-sea/app.js",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "apps/open-sea/apps.js",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "apps/open-sea/data.js",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "apps/open-sea/how to use this app-template.txt",
+      "sha256": "e8e6d45d70a9a5f3c1f0ae1445456adfff48b8026d1529f4f9038312d9078e06"
+    },
+    {
+      "path": "apps/open-sea/icon.svg",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "apps/open-sea/images/ScreenHunter 10670.jpg",
+      "sha256": "214710e10f5121d5a3d5e8a627f5f7637915b24f928daefcabf758665820dee0"
+    },
+    {
+      "path": "apps/open-sea/images/icon.svg",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "apps/open-sea/index.html",
+      "sha256": "62b247861eaf4cf4ecdff38d339f442389bc6a18a5b90044682e36104d2c2669"
+    },
+    {
+      "path": "apps/open-sea/manifest.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "apps/open-sea/styles.css",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "apps/open-sea/sw.js",
+      "sha256": "6723dfac2f346ddc73958b134c43428bd7502064b3d0f43e869e798e2f209349"
+    }
+  ],
+  "inline_stylesheet_exact_blocks": 1,
+  "static_normalized_document_equal": true,
+  "complete_inline_dataset_equal": true,
+  "static_search_targets": {
+    "Open-Sea-Overview-Key-Influences": true,
+    "Welcome-to-the-Open-Sea": true,
+    "Primary-Open-Sea-Influences": true,
+    "References-and-source-notes": true
+  },
+  "cards": [
+    {
+      "id": "card-temperature",
+      "full_tree_equal": true,
+      "authored_body_tree_equal": true,
+      "normalized_tree_sha256": "835c59a263a652698488733babe2681996e0fcf996dd5e619dad4588961313be",
+      "search_text_equal": true,
+      "click_and_aria_equal": true
+    },
+    {
+      "id": "card-light",
+      "full_tree_equal": true,
+      "authored_body_tree_equal": true,
+      "normalized_tree_sha256": "afee9206724b91100aa8f4e08b8ff6c8a564b22498cab51fa20a79d674a54542",
+      "search_text_equal": true,
+      "click_and_aria_equal": true
+    },
+    {
+      "id": "card-pressure",
+      "full_tree_equal": true,
+      "authored_body_tree_equal": true,
+      "normalized_tree_sha256": "6ca1cf78e4c8c7551e3215907df8bb5fdae709c24cdd8e5cdb2f2711a3dfce8a",
+      "search_text_equal": true,
+      "click_and_aria_equal": true
+    },
+    {
+      "id": "card-oxygen",
+      "full_tree_equal": true,
+      "authored_body_tree_equal": true,
+      "normalized_tree_sha256": "95f61116c8af057466dfd8f14f85271314ec3fa11fd05f0f157255b4c6b2ec4b",
+      "search_text_equal": true,
+      "click_and_aria_equal": true
+    },
+    {
+      "id": "card-salinity",
+      "full_tree_equal": true,
+      "authored_body_tree_equal": true,
+      "normalized_tree_sha256": "9f52a89392e5dffa846652ad692ac9e07f5ace0fca4de977042deac509a96392",
+      "search_text_equal": true,
+      "click_and_aria_equal": true
+    },
+    {
+      "id": "card-nutrients",
+      "full_tree_equal": true,
+      "authored_body_tree_equal": true,
+      "normalized_tree_sha256": "fef52fafab7550a2f078d8a01ff58abf5cec9c95ddd3a09bffc569104d6cae83",
+      "search_text_equal": true,
+      "click_and_aria_equal": true
+    },
+    {
+      "id": "card-thermohaline",
+      "full_tree_equal": true,
+      "authored_body_tree_equal": true,
+      "normalized_tree_sha256": "f5139ab88ec8c2b3a371bbcc2188cbe46da75667cf1434b5bce950c102cc42fb",
+      "search_text_equal": true,
+      "click_and_aria_equal": true
+    },
+    {
+      "id": "card-currents",
+      "full_tree_equal": true,
+      "authored_body_tree_equal": true,
+      "normalized_tree_sha256": "95a7033773eb44f7c7fa9ae82ccc1cffcd886fdd9d0b96c1728ac371a8c55fc4",
+      "search_text_equal": true,
+      "click_and_aria_equal": true
+    },
+    {
+      "id": "card-sound",
+      "full_tree_equal": true,
+      "authored_body_tree_equal": true,
+      "normalized_tree_sha256": "f44590988bc9d284813396081ea7ca2e391bbc4109c9056251cee94e944c41f8",
+      "search_text_equal": true,
+      "click_and_aria_equal": true
+    },
+    {
+      "id": "card-schooling",
+      "full_tree_equal": true,
+      "authored_body_tree_equal": true,
+      "normalized_tree_sha256": "025e6f9f1b6e997ec9995f57f641c76a77c2f62b97df9c1a51a1011f76001b5f",
+      "search_text_equal": true,
+      "click_and_aria_equal": true
+    },
+    {
+      "id": "card-vertical-migration",
+      "full_tree_equal": true,
+      "authored_body_tree_equal": true,
+      "normalized_tree_sha256": "6f3ae16d498e9b9fb7b4301ef556a3f99a5fd4402b9f549551eab936222e8d3b",
+      "search_text_equal": true,
+      "click_and_aria_equal": true
+    },
+    {
+      "id": "card-bioluminescence",
+      "full_tree_equal": true,
+      "authored_body_tree_equal": true,
+      "normalized_tree_sha256": "9fddfa0115e3de400df7291182c3cb6c7ea19b75cc12bb8ac5f15ade4a90b59e",
+      "search_text_equal": true,
+      "click_and_aria_equal": true
+    }
+  ],
+  "authored_body_tag_counts": {
+    "div": 12,
+    "span": 10,
+    "h4": 28,
+    "p": 34,
+    "ul": 16,
+    "li": 66,
+    "strong": 9
+  },
+  "authored_body_class_counts": {
+    "fact-strip": 5,
+    "fact-pill": 10,
+    "adapt-box": 6,
+    "training-note": 1
+  },
+  "media": {
+    "current_path": "shared/media/asset-214710e10f5121d5--ScreenHunter-10670.jpg",
+    "pinned_path": "apps/open-sea/images/ScreenHunter 10670.jpg",
+    "exact": true,
+    "sha256": "214710e10f5121d5a3d5e8a627f5f7637915b24f928daefcabf758665820dee0"
+  },
+  "limitations": [
+    "The DOM model executes actual renderers and safeNode structural copying with independently lxml-parsed full nodes; it is not a browser HTML parser or native event/service-worker lifecycle.",
+    "Real browser layout, assistive technology, physical offline/update/rollback, scientific accuracy, rights and operational approval remain separate."
+  ]
+}

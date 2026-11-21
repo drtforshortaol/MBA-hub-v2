@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "0.1-draft",
+  "status": "evidence-screened-unapproved",
+  "source": {
+    "legacyRepository": "drtforshortaol/master-evolution-map-test",
+    "sourcePath": "index.html",
+    "sourceBlobSha": "b0b1738e8451421253f00ac4b0cdc9f290a5fc2a",
+    "classificationRegister": "docs/evo-v2-relationship-classes-draft1-20261014.json"
+  },
+  "note": "Recommendations are a separate review overlay. Do not apply classifications or change endpoints without approval.",
+  "reviews": [
+    {
+      "transitionId": "TR-0114",
+      "sourceKey": "sar-branch",
+      "currentClass": "ancestry-context",
+      "recommendedClass": "summary-aggregation",
+      "alternativeClass": "ui-view-selection",
+      "originalLabel": "Toward Stramenopiles",
+      "sourceContext": "Within selected-branch-follow after SAR, before stramenopiles-summary",
+      "scientificInterpretation": "Stramenopiles belong within SAR; this diagram is an educational path focusing on a subset, not a verified immediate ancestor-descendant edge.",
+      "caveat": "The SAR clade also contains alveolates and rhizarians; placement/order among these clades should not be asserted by a visual vertical connector.",
+      "evidenceUrls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11412368/",
+        "https://pubmed.ncbi.nlm.nih.gov/29512175/"
+      ],
+      "reviewStatus": "proposed-unapproved",
+      "canonicalEndpointApproval": false
+    },
+    {
+      "transitionId": "TR-0115",
+      "sourceKey": "brown-summary-transition",
+      "currentClass": "ancestry-context",
+      "recommendedClass": "summary-aggregation",
+      "alternativeClass": "ui-view-selection",
+      "originalLabel": "Toward brown algae",
+      "sourceContext": "Within selected-branch-follow after stramenopiles-summary, before brown-summary",
+      "scientificInterpretation": "Brown algae (Phaeophyceae) are a subgroup within photosynthetic stramenopiles (Ochrophyta); not all stramenopiles are brown algae, and the visual step omits intervening groups.",
+      "caveat": "Do not assert direct lineage derivation from a generic stramenopile summary node, or describe all stramenopiles as photosynthetic.",
+      "evidenceUrls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11412368/",
+        "https://agris.fao.org/search/en/records/65dfa5184c5aef494fe3f28e"
+      ],
+      "reviewStatus": "proposed-unapproved",
+      "canonicalEndpointApproval": false
+    }
+  ]
+}

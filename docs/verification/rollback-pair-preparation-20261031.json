@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "record_type": "rollback-preparation-not-device-evidence",
+  "prepared_on": "2026-10-31",
+  "scope": "Two exact tester candidates, local restore and tamper rejection; not hosted/device rollback",
+  "candidates": [
+    {
+      "label": "prior",
+      "source_commit": "8749772f5eaacac048396d82114ca0780fb82b71",
+      "release": "a227bc8b37742288",
+      "resources": 379,
+      "verified": true,
+      "local_snapshot": {
+        "filename": "tester-a227bc8b37742288.zip",
+        "bytes": 64842613,
+        "sha256": "082cdfc6e37b66625f4a50b452cb05a5239ed8105c42c1f7d2954d0bbd825460",
+        "retention": "scratch verification checkpoint; rebuild from pinned source if absent"
+      }
+    },
+    {
+      "label": "current",
+      "source_commit": "b741d437195978649d39d8a7c122ba4b0a67265e",
+      "release": "76a8581e2e1b4eed",
+      "resources": 379,
+      "verified": true,
+      "local_snapshot": {
+        "filename": "tester-76a8581e2e1b4eed.zip",
+        "bytes": 64844743,
+        "sha256": "24ee36d33c3c0a602e2d868a2ff987d10565aca4fc286256e4a323ad5ac6c28e",
+        "retention": "scratch verification checkpoint; rebuild from pinned source if absent"
+      }
+    }
+  ],
+  "resource_difference": {
+    "changed": [
+      "apps/open-sea/index.html",
+      "apps/open-sea/manifest.json",
+      "public-review.json",
+      "registry.json",
+      "search-index.json"
+    ],
+    "added": [],
+    "removed": []
+  },
+  "local_checks": [
+    {
+      "operation": "rollback",
+      "release": "a227bc8b37742288",
+      "artifact_integrity": "passed",
+      "scope": "isolated local snapshot restore only"
+    },
+    {
+      "operation": "restore-current",
+      "release": "76a8581e2e1b4eed",
+      "artifact_integrity": "passed",
+      "scope": "isolated local snapshot restore only"
+    },
+    {
+      "operation": "reject-tampered-snapshot",
+      "passed": true,
+      "current_bundle_preserved": true
+    }
+  ],
+  "host_deployment_performed": false,
+  "device_rollback_status": "NOT TESTED",
+  "rollbackDevicePassed": false,
+  "release_authorized": false,
+  "hosting": {
+    "project_id": "appgprj_6ae55daba7b08191a19ce7036c6a4152",
+    "scope_url": "https://mba-v2-iphone-review-4ec51dd.drtforshort.chatgpt.site/labeled-20261031/tester/",
+    "refresh_url": "https://mba-v2-iphone-review-4ec51dd.drtforshort.chatgpt.site/labeled-20261031/tester/refresh.html",
+    "saved_versions_confirmed_by_native_history": true,
+    "prior": {
+      "version_id": "appgprj_6ae55daba7b08191a19ce7036c6a4152~appgver_24a564ad9b8c8191aed9a992cb277cd6",
+      "host_source_commit": "de29da44359a4602e39eb2682aa84b004caa7cc6",
+      "archive_sha256": "10deceb8b42982b1a7dc3a1a4e3c4bd399a7eb8096f6559ba0363f18eafae40a"
+    },
+    "current": {
+      "version_id": "appgprj_6ae55daba7b08191a19ce7036c6a4152~appgver_0c935af2918081919a4209e213dda161",
+      "host_source_commit": "90e4239475500c446dbd017a4305c4e350e9e128",
+      "archive_sha256": "262d014247932c57d94639a91e9f5b1732ab2a820b83c0ef122fd385455ca491"
+    },
+    "limitation": "History confirms retained version metadata; this preparation did not download/reverify hosted archive bytes or redeploy either version. Local regenerated tester bytes match known release identities."
+  }
+}

@@ -1,0 +1,105 @@
+name: Combined iPhone Review Build
+on:
+  push:
+    branches: [integration-iphone-review-20261018]
+permissions:
+  contents: read
+jobs:
+  review-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned fidelity parser
+        run: python -m pip install --requirement scripts/migration/requirements-fidelity.txt
+      - name: Build and verify combined review
+        run: |
+          npm run validate
+          npm run build
+          npm run content:check:all
+          node scripts/plan-offline-media-registration.mjs
+          node scripts/verify-media-registration.mjs --report dist/media-registration-report.json
+          node scripts/migration/review-tree-of-life-fidelity.mjs > dist/tree-of-life-current-fidelity.json
+          node scripts/migration/review-whale-parasites-fidelity.mjs --root . > dist/whale-parasites-fidelity.json
+          node scripts/migration/review-evolution-timeline-fidelity.mjs --root . > dist/evolution-timeline-fidelity.json
+          node scripts/migration/review-naturalist-original-fidelity.mjs --root . > dist/naturalist-original-scope.json
+          node scripts/prepare-pending-media-review.mjs --report dist/pending-media-review.json --html dist/pending-media-review.html --asset-base developer/
+          node scripts/review-pending-media-responses.mjs --template dist/pending-media-responses.json
+          node scripts/review-pending-media-responses.mjs --responses dist/pending-media-responses.json --report dist/pending-media-response-validation.json
+          npm run security:scan
+          npm test
+          node --test tests/security-review.test.mjs
+          node scripts/verify-build-artifacts.mjs
+          python3 -m unittest discover -s scripts/validation -p 'test_evo_*.py'
+          python3 scripts/migration/test-fidelity-audit.py
+          python3 -m unittest discover -s scripts/validation -p test_acceptance_record.py
+      - name: Verify served developer and tester releases over HTTP
+        run: |
+          python3 -m http.server 8127 --bind 127.0.0.1 --directory dist > /tmp/mba-review-http.log 2>&1 &
+          preview_server_pid=$!
+          trap 'kill "$preview_server_pid"' EXIT
+          for attempt in {1..20}; do
+            curl --fail --silent --output /dev/null http://127.0.0.1:8127/developer/release.json && break
+            sleep 0.25
+          done
+          developer_release=$(node -p "require('./dist/developer/release.json').release")
+          tester_release=$(node -p "require('./dist/tester/release.json').release")
+          npm run verify:preview:http -- --url http://127.0.0.1:8127/developer/ --environment developer --expected-release "$developer_release" --report dist/developer-http-report.json
+          npm run verify:preview:http -- --url http://127.0.0.1:8127/tester/ --environment tester --expected-release "$tester_release" --report dist/tester-http-report.json
+      - name: Verify simulated offline navigation and corrupted-entry recovery
+        run: node scripts/verify-offline-navigation.mjs --report-dir dist/offline-reports
+      - name: Package review provenance and instructions
+        run: |
+          cp docs/iphone-review-20261018.md dist/REVIEW.md
+          cp docs/COMPLETION_AUDIT_20261021.md dist/COMPLETION_AUDIT_20261021.md
+          cp docs/COMPLETION_PROGRESS_20261021.md dist/COMPLETION_PROGRESS_20261021.md
+          cp docs/FIXED_BUILD_PILOT_RECORD_20261021.md dist/FIXED_BUILD_PILOT_RECORD_20261021.md
+          cp docs/COMPLETION_INSTRUCTIONS_20261021.md dist/COMPLETION_INSTRUCTIONS_20261021.md
+          cp docs/COMPLETION_BATCH_20261022.md dist/COMPLETION_BATCH_20261022.md
+          cp docs/FOUR_TRACK_IMPLEMENTATION_20261023.md dist/FOUR_TRACK_IMPLEMENTATION_20261023.md
+          cp docs/SHARED_NAVIGATION_RECONCILIATION_20261023.md dist/SHARED_NAVIGATION_RECONCILIATION_20261023.md
+          cp docs/COMPLETION_CHECKPOINT_20261024.md dist/COMPLETION_CHECKPOINT_20261024.md
+          cp docs/TREE_OF_LIFE_ENGINEERING_REVIEW_20261023.md dist/
+          cp docs/WHALE_PARASITES_INDEPENDENT_REVIEW_20261023.md dist/
+          cp docs/EVOLUTION_TIMELINE_INDEPENDENT_REVIEW_20261023.md dist/
+          cp docs/EVOLUTION_TIMELINE_FULL_FIDELITY_20261024.md dist/
+          cp docs/NATURALIST_ORIGINAL_SCOPE_20261023.md dist/
+          cp docs/NATURALIST_INDEPENDENT_SCOPE_REVIEW_20261023.md dist/
+          cp docs/TIMELINE_NATURALIST_REVIEW_CHECKPOINT_20261024.md dist/
+          cp docs/PENDING_OCTOBER_MEDIA_REGISTRATION_20261021.md dist/PENDING_OCTOBER_MEDIA_REGISTRATION_20261021.md
+          cp docs/ACCEPTANCE_RECORD_PREPARATION_20261021.md dist/ACCEPTANCE_RECORD_PREPARATION_20261021.md
+          cp docs/INHERITED_STATIC_RECONCILIATION_20261022.md dist/INHERITED_STATIC_RECONCILIATION_20261022.md
+          cp docs/FIXED_BUILD_ACCEPTANCE_20261021.md dist/FIXED_BUILD_ACCEPTANCE_20261021.md
+          mkdir -p dist/verification
+          cp docs/verification/completion-ci-20261021.json dist/verification/
+          cp config/inherited-v1-fidelity.json dist/verification/inherited-v1-fidelity.json
+          cp docs/verification/tree-of-life-full-source-20261023.json dist/verification/
+          cp docs/verification/tree-of-life-independent-review-20261023.json dist/verification/
+          cp docs/verification/whale-parasites-full-20261023.json dist/verification/
+          cp docs/verification/evolution-timeline-full-20261024.json dist/verification/
+          cp docs/verification/naturalist-original-scope-20261023.json dist/verification/
+          cp docs/INHERITED_FIFTEEN_RECONCILIATION_20261022.md dist/
+          cp docs/OPEN_SEA_SEARCH_20261022.md dist/
+          cp docs/HTTPS_ACCEPTANCE_PROPOSAL_20261022.md dist/
+          cp docs/CONTINUATION_VERIFIED_20261022.md dist/
+          cp docs/FINAL_SEARCH_BATCH_20261022.md dist/
+          cp docs/WATER_SCIENCE_SEARCH_20261022.md dist/
+          cp docs/DYNAMIC_REFERENCE_SEARCH_20261022.md dist/
+          cp docs/verification/inherited-fifteen-content-20261022.json dist/verification/
+          cp docs/verification/inherited-static-content-20261022.json dist/verification/
+          git rev-parse HEAD > dist/SOURCE-COMMIT.txt
+          sha256sum dist/developer/release.json dist/tester/release.json > dist/RELEASE-CHECKSUMS.txt
+      - name: Bind retained reports to generated releases and checkout
+        run: node scripts/verify-review-evidence.mjs dist "$GITHUB_SHA"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mba-v2-combined-iphone-review
+          path: dist/
+          if-no-files-found: error
+          retention-days: 30

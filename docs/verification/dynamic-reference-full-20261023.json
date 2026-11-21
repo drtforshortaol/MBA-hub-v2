@@ -1,0 +1,570 @@
+{
+  "schema_version": 1,
+  "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+  "scope": "Engineering fidelity only; no science, image, browser or physical acceptance approval",
+  "apps": [
+    {
+      "app_id": "five-senses-pwa",
+      "current_complete_inventory": {
+        "app.js": "ff2477d75b25c6ca4a22457b1166702dbbec91359690a241c72dfcf3a24f44dd",
+        "apps.js": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "data.js": "31e10022be5d88c3273306aebacf6c81375352ddb1911daa6827ea5c609f800b",
+        "index.html": "b4789f227aba2b9046c0b23ec9e50031cac2a4944c391be3b869c137cc29ddc0",
+        "manifest.json": "4618a8baf6dda4f7fe87ac39e176db3ef65966f8bff59e7d7c13ef33a7bfc4d5",
+        "styles.css": "5584ed35f4d34ff97e45d5a01dae9e8a3141977f1bb607fc6f495fa0d378aac2"
+      },
+      "pinned_complete_inventory": [
+        {
+          "path": "apps/five-senses-pwa/README.md",
+          "sha256": "25a12b38f3e3cad43fd05b260176f45aed17f5d894ffa1fb57f16b049595be6a"
+        },
+        {
+          "path": "apps/five-senses-pwa/app.js",
+          "sha256": "93354781794d775885590e119eb42eb34babdc28f22b1373d942b20b49e9b6c7"
+        },
+        {
+          "path": "apps/five-senses-pwa/apps.js",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "apps/five-senses-pwa/changelog.txt",
+          "sha256": "27043c8766eb3c7ed9ae8d43ce2a3b6067b87fa7af9dff784f9475822ed2c2d9"
+        },
+        {
+          "path": "apps/five-senses-pwa/data.js",
+          "sha256": "31e10022be5d88c3273306aebacf6c81375352ddb1911daa6827ea5c609f800b"
+        },
+        {
+          "path": "apps/five-senses-pwa/how to use this app-template.txt",
+          "sha256": "e8e6d45d70a9a5f3c1f0ae1445456adfff48b8026d1529f4f9038312d9078e06"
+        },
+        {
+          "path": "apps/five-senses-pwa/images/header-five-senses-mba.svg",
+          "sha256": "25a12b38f3e3cad43fd05b260176f45aed17f5d894ffa1fb57f16b049595be6a"
+        },
+        {
+          "path": "apps/five-senses-pwa/images/icon.svg",
+          "sha256": "4228a25dcfc0461d01ebd83c1d13a4e3d8ebc755610d44d08dbca968ec9540db"
+        },
+        {
+          "path": "apps/five-senses-pwa/index.html",
+          "sha256": "47685c354871589b67a66aaf385385434374ee0de8adf13e164f88e35cdb31f1"
+        },
+        {
+          "path": "apps/five-senses-pwa/manifest.json",
+          "sha256": "d508da2908a426aa64d9c7608286a8e577fcb046e14b3b00f2395a9ed2d2434e"
+        },
+        {
+          "path": "apps/five-senses-pwa/styles.css",
+          "sha256": "5584ed35f4d34ff97e45d5a01dae9e8a3141977f1bb607fc6f495fa0d378aac2"
+        },
+        {
+          "path": "apps/five-senses-pwa/sw.js",
+          "sha256": "d569e8878e7772dd506bdb8d050edeb69808fee060f2292c8ca5c81bac80f1cd"
+        }
+      ],
+      "static_normalized_dom_equal": true,
+      "css_exact": true,
+      "dynamic_render_checks": [
+        {
+          "container": "senseList",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "85b5362d01b76a6f10a1f82e99aff94a20bff3814aab28f69745cf1e9cb6bf8d",
+          "structural_counts": {
+            "details": 4,
+            "img": 0,
+            "li": 22,
+            "option": 0,
+            "article": 0
+          }
+        },
+        {
+          "container": "guideList",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "9899c201c36c80da446dfb2bda405a0ad41ecc305600be427fb30efb0d100420",
+          "structural_counts": {
+            "details": 3,
+            "img": 0,
+            "li": 9,
+            "option": 0,
+            "article": 0
+          }
+        },
+        {
+          "container": "referenceList",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "6f084deeb2b5c4822cebee08040e86792d858476cffaeec22c72599a633961c7",
+          "structural_counts": {
+            "details": 0,
+            "img": 0,
+            "li": 7,
+            "option": 0,
+            "article": 0
+          }
+        }
+      ],
+      "dataset_equal_except_byte_verified_media_paths": true
+    },
+    {
+      "app_id": "kelp-forest",
+      "current_complete_inventory": {
+        "app.js": "fc02c6117b3002bdd4f407c2d88f965e31929af92de987829214d89d11f70fbe",
+        "data.js": "f0b6a0b50027b0fa127d9305ca00ddf2b04ef6027528db926c3d64dee1846d88",
+        "index.html": "a5ed0ecc5de1d4bdb9b44b780ce74ac1a54d4ab187b7eb12f6a59b9326ef1d04",
+        "manifest.json": "e24f4cf23a100a0197a9e6f33eb876c8eb98ac6acb3b232960dd853f0bf25174",
+        "styles.css": "ac3e31559ac34891a5862e084e69d56be705db0aad9a603398ca6bf2c5c98064"
+      },
+      "pinned_complete_inventory": [
+        {
+          "path": "apps/kelp-forest/CHANGELOG.txt",
+          "sha256": "c9ca17798fcd5b569ae9b06571aa2dd45d77bfcd09be025e53258dcbe878a2af"
+        },
+        {
+          "path": "apps/kelp-forest/README.md",
+          "sha256": "c1f5794e8094ef2ed4569a9159cb9c3eaae435a00796240d82fde468dfd882e6"
+        },
+        {
+          "path": "apps/kelp-forest/app.js",
+          "sha256": "a5c3f72711bd3fedb1135d199a3d997f41193257d236c1747287059325a33cb8"
+        },
+        {
+          "path": "apps/kelp-forest/data.js",
+          "sha256": "fa85b531d17c7f4d046a7a812e2460a14bd010ef774e227f4b8ac4098f48872e"
+        },
+        {
+          "path": "apps/kelp-forest/hub-card-snippet.js",
+          "sha256": "5fead83c1f1373e9260c84514cc99e85cf07e5f22d6af13278de4667968b00e8"
+        },
+        {
+          "path": "apps/kelp-forest/icon.svg",
+          "sha256": "5a78a8d75c9a61743456a2a01340aed1099b0a357a0a38cd976116b20e8793d4"
+        },
+        {
+          "path": "apps/kelp-forest/images/kelp-forest-exhibit-01.png",
+          "sha256": "aa675dccab11d92ab4f0a34404da6e921970d3f967de7aa0bea63163322c403b"
+        },
+        {
+          "path": "apps/kelp-forest/images/kelp-forest-hero.jpg",
+          "sha256": "3805cae5eba70cef0fb30a048f013b96849608d48c95cf7968b1bb31c80a3d90"
+        },
+        {
+          "path": "apps/kelp-forest/index.html",
+          "sha256": "66bc710da1e33de2afe32564abcb90acd7c51ca791d3d3a0b929b508ba473afc"
+        },
+        {
+          "path": "apps/kelp-forest/manifest.json",
+          "sha256": "25c82dfe9fb9a2ea2bc279e6fe4e7b9a0a0fcb644f037025f8e958b3b0f66ecd"
+        },
+        {
+          "path": "apps/kelp-forest/registry-entry.txt",
+          "sha256": "178e3c281947cda6ff8b9c2da27c6b3e625943e548a8d14d78a5f2b0e5c87b42"
+        },
+        {
+          "path": "apps/kelp-forest/styles.css",
+          "sha256": "ac3e31559ac34891a5862e084e69d56be705db0aad9a603398ca6bf2c5c98064"
+        },
+        {
+          "path": "apps/kelp-forest/sw.js",
+          "sha256": "e7e1dab7eef243f49459f55655264f7798f8e2bf9940772a3932a494ec1da73d"
+        },
+        {
+          "path": "apps/kelp-forest/tag-registry-entry.txt",
+          "sha256": "9e64d51f5eb9f939373a6b0d0409e166623317ddf5fcb4e1e304f2fa2b113320"
+        }
+      ],
+      "static_normalized_dom_equal": true,
+      "css_exact": true,
+      "dynamic_render_checks": [
+        {
+          "container": "appTitle",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "da8815390acb5e7da6cf2818d1ca73d455160c0d78f7f56897e0ce04bd294ef2",
+          "structural_counts": {
+            "details": 0,
+            "img": 0,
+            "li": 0,
+            "option": 0,
+            "article": 0
+          }
+        },
+        {
+          "container": "appSummary",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "7865bf921e1133e9681a92b959167e87ac34f18c8ea25e1937c649caf9efb5aa",
+          "structural_counts": {
+            "details": 0,
+            "img": 0,
+            "li": 0,
+            "option": 0,
+            "article": 0
+          }
+        },
+        {
+          "container": "appMeta",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "4293a97afcf98f3f5a668f51b443d2334d577a76e37a7b5f1d8d639c729acb4b",
+          "structural_counts": {
+            "details": 0,
+            "img": 0,
+            "li": 0,
+            "option": 0,
+            "article": 0
+          }
+        },
+        {
+          "container": "versionLine",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "464f1f183fc0f29cfd2e4670b24fd8ea9849a21ca0042362eb8cda04cae08964",
+          "structural_counts": {
+            "details": 0,
+            "img": 0,
+            "li": 0,
+            "option": 0,
+            "article": 0
+          }
+        },
+        {
+          "container": "heroImage",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "c28c436ba0a60d254665c0a2d2d7a1153714877f4a8822b72f9875e5537de68f",
+          "structural_counts": {
+            "details": 0,
+            "img": 1,
+            "li": 0,
+            "option": 0,
+            "article": 0
+          }
+        },
+        {
+          "container": "notificationArea",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "f96f6ea8cab261cc640f1f3aa3736ffbbcb4dc86e38b1e7f1f097315c49c1f52",
+          "structural_counts": {
+            "details": 0,
+            "img": 0,
+            "li": 0,
+            "option": 0,
+            "article": 0
+          }
+        },
+        {
+          "container": "faqList",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "8412a74567689a56d4fe8fc43e12807128d7abdf3eba3c4bef72da1ff9244cd2",
+          "structural_counts": {
+            "details": 0,
+            "img": 0,
+            "li": 0,
+            "option": 0,
+            "article": 6
+          }
+        },
+        {
+          "container": "sections",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "a94579c3260f2b8fcf2c0f91d61a7ffadee496f95f4c0b10aa0d61bf27f095a2",
+          "structural_counts": {
+            "details": 10,
+            "img": 0,
+            "li": 9,
+            "option": 0,
+            "article": 24
+          }
+        },
+        {
+          "container": "sectionJump",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "cdec7249ba85ae16fd9c25c85fc8c5a55d5bbfc5704544ee57dcd2b1334388da",
+          "structural_counts": {
+            "details": 0,
+            "img": 0,
+            "li": 0,
+            "option": 10,
+            "article": 0
+          }
+        }
+      ],
+      "dataset_equal_except_byte_verified_media_paths": true
+    },
+    {
+      "app_id": "northern-elephant-seal",
+      "current_complete_inventory": {
+        "app.js": "2b235c5affce03f1576b6db87ed95386bac31f9f412371ed4ee48cb177085eef",
+        "data.js": "c43de528f657c6bce5b9aafa19248a3213379065a527bda126d5b3df4c570f2b",
+        "index.html": "dae17d2e7b2bb0d483ea07c162f7e52129d9c53b5d4626cd7ac707b51f71e78a",
+        "manifest.json": "251f1eee63136e6ebd2be93fa06b6848e3ecba38cc53e2294f166f88087f9634",
+        "styles.css": "c954a904142c2ec27259fd673c394dec4d5880e914a1cfd68f99feb0834b824e"
+      },
+      "pinned_complete_inventory": [
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/CHANGELOG.txt",
+          "sha256": "0f49dc6d7006d875ba8cdbb6a405a71a2ab7890d0e65b04f30f68686755753bf"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/README.txt",
+          "sha256": "0160e7a6c8d48daa34fd9285b24ab13e41f704f72ef7d931bd7e03bc1d7e29df"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/REGISTRY_UPDATE.txt",
+          "sha256": "aa78a4c57a14f7c0c3ca445a02b0657acb994065aa4930983ae02e411b1cbc81"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/app.js",
+          "sha256": "befe6e4589f3cc125f89dd9639ace2e80a7204204385b676d63217d8def1f129"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/data.js",
+          "sha256": "6406c6e2944a7dad401ad928fa6a655d995196f9cfc69f8f4f83c92587fd645d"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/icon.svg",
+          "sha256": "0522db2debef2d1e8b15b2f355fdc44db2d8d850415b5fc7e45a2fc9fb94e3dc"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/README.txt",
+          "sha256": "c8e518b0a5969456a0274a9bcc39c2dfcc5c3e811c6bd8c5c052dc2ad7cfe6a3"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/buoyancy_chart.jpg",
+          "sha256": "3895d93118cf68349b7bdbea5fd5cec0b43faaf9b57948b3494d49d9489a585f"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/calendar.jpg",
+          "sha256": "c6185696aabf48e563f46f41ba06d40e6a2bc1c81b3545ddaafdb51e3d2cf1a2"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/cons_basics.jpg",
+          "sha256": "d8d7415dc63ff8f8178baf0937480417bb33d8a0aadf26244e7caf668ac52b07"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/cons_comeback.jpg",
+          "sha256": "a632a1f72984e42f627987cf2df15793cd2e5aa4c20e4a0164d36e522df8ace4"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/cons_success.jpg",
+          "sha256": "e13b365854bf974bd4aaa498f14ce7a18cde72f3713b8859006d088ef6dee6b9"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/diet_diagram.jpg",
+          "sha256": "9fa770d5f87c286aecbee5fb7a809a486c934ddad35b8cdfe23496579c375ba3"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/migration_map.jpg",
+          "sha256": "1a0051b4ea4be7eaa1b8c253ca75c0f347dd0a3aaf10e0a549fc05de541bfc74"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/rookery_scene.jpg",
+          "sha256": "125a4bbb92b0953befd39bc0fe78620af299393026ff02df968481c62c9d00a6"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/size_compare.jpg",
+          "sha256": "bc4d2d7822e216901811e3fcfb30f082acf54e7d39f761f0289e3cb102b3a304"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/size_sketch.jpg",
+          "sha256": "43951da610ad3fd364dc6613b3f78c242c4e3517d679eaae7ab0efadaae6ac70"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/sleep_diagram.jpg",
+          "sha256": "dded438de507736147d29b7b7efaf04b4c7229c4db1d56f1167e1e40410c579b"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/index.html",
+          "sha256": "0bb11875b6965d2206751c8e0ea1de814b41fa664466ebb5e4ab3fe356178f6c"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/manifest.json",
+          "sha256": "0b7c2c7e54bd016cc9eadac23bfc6490a23c704b3d3c7be3bacb43a279b70e98"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/styles.css",
+          "sha256": "c954a904142c2ec27259fd673c394dec4d5880e914a1cfd68f99feb0834b824e"
+        },
+        {
+          "path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/sw.js",
+          "sha256": "af539f73bafbec276988edeb885706dd564c181a803f5029934c4225aaa709e4"
+        }
+      ],
+      "static_normalized_dom_equal": true,
+      "css_exact": true,
+      "dynamic_render_checks": [
+        {
+          "container": "app-title",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "e505369fa99e9f8ba29a063e96a7a9add632e420e2a36dbd8dfed0cd4464e278",
+          "structural_counts": {
+            "details": 0,
+            "img": 0,
+            "li": 0,
+            "option": 0,
+            "article": 0
+          }
+        },
+        {
+          "container": "scientific-name",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "c9adcf889bd8a5982a4e0f0403f467851629d08e6d2d847cf1b24592a1f8e187",
+          "structural_counts": {
+            "details": 0,
+            "img": 0,
+            "li": 0,
+            "option": 0,
+            "article": 0
+          }
+        },
+        {
+          "container": "summary",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "2f7a2c2b23d0708c3af79a2cc2e4e4eac09f43a33f02d18bbe64e923f70de1f3",
+          "structural_counts": {
+            "details": 0,
+            "img": 0,
+            "li": 0,
+            "option": 0,
+            "article": 0
+          }
+        },
+        {
+          "container": "footerVersion",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "337025510360f4c8b20dece513c297adca97b1480d742c7d9d9ea97f6a6fe616",
+          "structural_counts": {
+            "details": 0,
+            "img": 0,
+            "li": 0,
+            "option": 0,
+            "article": 0
+          }
+        },
+        {
+          "container": "snapshot-strip",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "fa497946cf8cf547a2c5493b4509871a0dcf143dc097faf869a9ae89ca98ae24",
+          "structural_counts": {
+            "details": 0,
+            "img": 0,
+            "li": 0,
+            "option": 0,
+            "article": 0
+          }
+        },
+        {
+          "container": "accordion",
+          "normalized_dom_equal": true,
+          "normalized_sha256": "ad45e02fdfd39d2be969d89ea4df2d6821de6c72376abf4130a44766e01fbffb",
+          "structural_counts": {
+            "details": 0,
+            "img": 11,
+            "li": 9,
+            "option": 0,
+            "article": 17
+          }
+        }
+      ],
+      "dataset_equal_except_byte_verified_media_paths": true
+    }
+  ],
+  "media": [
+    {
+      "current_path": "src/shared/media/asset-0522db2debef2d1e--icon.svg",
+      "pinned_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/icon.svg",
+      "sha256": "0522db2debef2d1e8b15b2f355fdc44db2d8d850415b5fc7e45a2fc9fb94e3dc",
+      "exact": true
+    },
+    {
+      "current_path": "src/shared/media/asset-125a4bbb92b0953b--rookery_scene.jpg",
+      "pinned_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/rookery_scene.jpg",
+      "sha256": "125a4bbb92b0953befd39bc0fe78620af299393026ff02df968481c62c9d00a6",
+      "exact": true
+    },
+    {
+      "current_path": "src/shared/media/asset-1a0051b4ea4be7ea--migration_map.jpg",
+      "pinned_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/migration_map.jpg",
+      "sha256": "1a0051b4ea4be7eaa1b8c253ca75c0f347dd0a3aaf10e0a549fc05de541bfc74",
+      "exact": true
+    },
+    {
+      "current_path": "src/shared/media/asset-3805cae5eba70cef--kelp-forest-hero.jpg",
+      "pinned_path": "apps/kelp-forest/images/kelp-forest-hero.jpg",
+      "sha256": "3805cae5eba70cef0fb30a048f013b96849608d48c95cf7968b1bb31c80a3d90",
+      "exact": true
+    },
+    {
+      "current_path": "src/shared/media/asset-3895d93118cf6834--buoyancy_chart.jpg",
+      "pinned_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/buoyancy_chart.jpg",
+      "sha256": "3895d93118cf68349b7bdbea5fd5cec0b43faaf9b57948b3494d49d9489a585f",
+      "exact": true
+    },
+    {
+      "current_path": "src/shared/media/asset-3b65e654f48dae5f--icon.svg",
+      "pinned_path": "icon.svg",
+      "sha256": "3b65e654f48dae5f4ba94d1f9e426ffe1449a6657d27ad57a50402bea8cd5bc4",
+      "exact": true
+    },
+    {
+      "current_path": "src/shared/media/asset-43951da610ad3fd3--size_sketch.jpg",
+      "pinned_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/size_sketch.jpg",
+      "sha256": "43951da610ad3fd364dc6613b3f78c242c4e3517d679eaae7ab0efadaae6ac70",
+      "exact": true
+    },
+    {
+      "current_path": "src/shared/media/asset-5a78a8d75c9a6174--icon.svg",
+      "pinned_path": "apps/kelp-forest/icon.svg",
+      "sha256": "5a78a8d75c9a61743456a2a01340aed1099b0a357a0a38cd976116b20e8793d4",
+      "exact": true
+    },
+    {
+      "current_path": "src/shared/media/asset-9fa770d5f87c286a--diet_diagram.jpg",
+      "pinned_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/diet_diagram.jpg",
+      "sha256": "9fa770d5f87c286aecbee5fb7a809a486c934ddad35b8cdfe23496579c375ba3",
+      "exact": true
+    },
+    {
+      "current_path": "src/shared/media/asset-a632a1f72984e42f--cons_comeback.jpg",
+      "pinned_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/cons_comeback.jpg",
+      "sha256": "a632a1f72984e42f627987cf2df15793cd2e5aa4c20e4a0164d36e522df8ace4",
+      "exact": true
+    },
+    {
+      "current_path": "src/shared/media/asset-bc4d2d7822e21690--size_compare.jpg",
+      "pinned_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/size_compare.jpg",
+      "sha256": "bc4d2d7822e216901811e3fcfb30f082acf54e7d39f761f0289e3cb102b3a304",
+      "exact": true
+    },
+    {
+      "current_path": "src/shared/media/asset-c6185696aabf48e5--calendar.jpg",
+      "pinned_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/calendar.jpg",
+      "sha256": "c6185696aabf48e563f46f41ba06d40e6a2bc1c81b3545ddaafdb51e3d2cf1a2",
+      "exact": true
+    },
+    {
+      "current_path": "src/shared/media/asset-d8d7415dc63ff8f8--cons_basics.jpg",
+      "pinned_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/cons_basics.jpg",
+      "sha256": "d8d7415dc63ff8f8178baf0937480417bb33d8a0aadf26244e7caf668ac52b07",
+      "exact": true
+    },
+    {
+      "current_path": "src/shared/media/asset-dded438de5077361--sleep_diagram.jpg",
+      "pinned_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/sleep_diagram.jpg",
+      "sha256": "dded438de507736147d29b7b7efaf04b4c7229c4db1d56f1167e1e40410c579b",
+      "exact": true
+    },
+    {
+      "current_path": "src/shared/media/asset-e13b365854bf974b--cons_success.jpg",
+      "pinned_path": "apps/northern-elephant-seal-pwa-v1.2-final-hub (2)/images/cons_success.jpg",
+      "sha256": "e13b365854bf974bd4aaa498f14ce7a18cde72f3713b8859006d088ef6dee6b9",
+      "exact": true
+    },
+    {
+      "current_path": "src/shared/media/five-senses-header.svg",
+      "pinned_path": "apps/five-senses-pwa/images/header-five-senses-mba.svg",
+      "sha256": "25a12b38f3e3cad43fd05b260176f45aed17f5d894ffa1fb57f16b049595be6a",
+      "exact": true
+    }
+  ],
+  "limitations": [
+    "Literal VM DOM execution compares generated markup, not browser DOMParser/sanitizer behavior, layout, accessibility or physical acceptance.",
+    "Source worker/cache and install-manifest replacement are separately reviewed engineering differences; source flags remain unchanged.",
+    "Five Senses absent app-local icon repaired with exact pinned root icon."
+  ]
+}

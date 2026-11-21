@@ -1,0 +1,153 @@
+[
+  {
+    "app_id": "five-senses-pwa",
+    "checks": [
+      {
+        "container": "senseList",
+        "normalized_render_tree_equal": true,
+        "pinned_html_sha256": "29bd76fa194803d42e7f186c5e91cc9edc80a9b8b38899dfb7766e8df598674a",
+        "current_html_sha256": "29bd76fa194803d42e7f186c5e91cc9edc80a9b8b38899dfb7766e8df598674a",
+        "dynamic_details": 4,
+        "dynamic_images": 0
+      },
+      {
+        "container": "guideList",
+        "normalized_render_tree_equal": true,
+        "pinned_html_sha256": "611c1735d8afc4d9d3e62f1db3ca207a7a71a73f784c61b55b86f2941f133cee",
+        "current_html_sha256": "611c1735d8afc4d9d3e62f1db3ca207a7a71a73f784c61b55b86f2941f133cee",
+        "dynamic_details": 3,
+        "dynamic_images": 0
+      },
+      {
+        "container": "referenceList",
+        "normalized_render_tree_equal": true,
+        "pinned_html_sha256": "c07e9428fd54797f8f1c397e40bf7ba70dd5f64b0f9559779e1cc91fc5cf2281",
+        "current_html_sha256": "c07e9428fd54797f8f1c397e40bf7ba70dd5f64b0f9559779e1cc91fc5cf2281",
+        "dynamic_details": 0,
+        "dynamic_images": 0
+      }
+    ]
+  },
+  {
+    "app_id": "kelp-forest",
+    "checks": [
+      {
+        "container": "appTitle",
+        "normalized_render_tree_equal": true,
+        "pinned_html_sha256": "da8815390acb5e7da6cf2818d1ca73d455160c0d78f7f56897e0ce04bd294ef2",
+        "current_html_sha256": "da8815390acb5e7da6cf2818d1ca73d455160c0d78f7f56897e0ce04bd294ef2",
+        "dynamic_details": 0,
+        "dynamic_images": 0
+      },
+      {
+        "container": "appSummary",
+        "normalized_render_tree_equal": true,
+        "pinned_html_sha256": "7865bf921e1133e9681a92b959167e87ac34f18c8ea25e1937c649caf9efb5aa",
+        "current_html_sha256": "7865bf921e1133e9681a92b959167e87ac34f18c8ea25e1937c649caf9efb5aa",
+        "dynamic_details": 0,
+        "dynamic_images": 0
+      },
+      {
+        "container": "appMeta",
+        "normalized_render_tree_equal": true,
+        "pinned_html_sha256": "a45b8882c426ca522f2d7190f2c091f111e3b061230a3c0875b3fca6a9e543c7",
+        "current_html_sha256": "a45b8882c426ca522f2d7190f2c091f111e3b061230a3c0875b3fca6a9e543c7",
+        "dynamic_details": 0,
+        "dynamic_images": 0
+      },
+      {
+        "container": "versionLine",
+        "normalized_render_tree_equal": true,
+        "pinned_html_sha256": "29353418eb2dac55bfb6e70c070b2718f36c7fc82dbe391465a909dc2dcc70c1",
+        "current_html_sha256": "29353418eb2dac55bfb6e70c070b2718f36c7fc82dbe391465a909dc2dcc70c1",
+        "dynamic_details": 0,
+        "dynamic_images": 0
+      },
+      {
+        "container": "heroImage",
+        "normalized_render_tree_equal": true,
+        "pinned_html_sha256": "027a94fe8482a1b3337eaecbe9499b0a4306873b8bf143c9c58af79085dce417",
+        "current_html_sha256": "4a056e0ea30d756619da650fc496ea151d59db08d227922489eb8363278b856a",
+        "dynamic_details": 0,
+        "dynamic_images": 1
+      },
+      {
+        "container": "notificationArea",
+        "normalized_render_tree_equal": true,
+        "pinned_html_sha256": "25a3c31c2221de74dee7502622e213399784ac5413570ac1f027bf3e8456217d",
+        "current_html_sha256": "25a3c31c2221de74dee7502622e213399784ac5413570ac1f027bf3e8456217d",
+        "dynamic_details": 0,
+        "dynamic_images": 0
+      },
+      {
+        "container": "faqList",
+        "normalized_render_tree_equal": true,
+        "pinned_html_sha256": "8412a74567689a56d4fe8fc43e12807128d7abdf3eba3c4bef72da1ff9244cd2",
+        "current_html_sha256": "8412a74567689a56d4fe8fc43e12807128d7abdf3eba3c4bef72da1ff9244cd2",
+        "dynamic_details": 0,
+        "dynamic_images": 0
+      },
+      {
+        "container": "sections",
+        "normalized_render_tree_equal": true,
+        "pinned_html_sha256": "90722ab370a11908c7371905a09411d4a492b51ad92c574cbdf8039bd0d6f001",
+        "current_html_sha256": "1ffb32a3595c766fa8612b1664422b79d8c964a1b021f3662ebf7687af171074",
+        "dynamic_details": 10,
+        "dynamic_images": 0
+      }
+    ]
+  },
+  {
+    "app_id": "northern-elephant-seal",
+    "checks": [
+      {
+        "container": "app-title",
+        "normalized_render_tree_equal": true,
+        "pinned_html_sha256": "e505369fa99e9f8ba29a063e96a7a9add632e420e2a36dbd8dfed0cd4464e278",
+        "current_html_sha256": "e505369fa99e9f8ba29a063e96a7a9add632e420e2a36dbd8dfed0cd4464e278",
+        "dynamic_details": 0,
+        "dynamic_images": 0
+      },
+      {
+        "container": "scientific-name",
+        "normalized_render_tree_equal": true,
+        "pinned_html_sha256": "c9adcf889bd8a5982a4e0f0403f467851629d08e6d2d847cf1b24592a1f8e187",
+        "current_html_sha256": "c9adcf889bd8a5982a4e0f0403f467851629d08e6d2d847cf1b24592a1f8e187",
+        "dynamic_details": 0,
+        "dynamic_images": 0
+      },
+      {
+        "container": "summary",
+        "normalized_render_tree_equal": true,
+        "pinned_html_sha256": "2f7a2c2b23d0708c3af79a2cc2e4e4eac09f43a33f02d18bbe64e923f70de1f3",
+        "current_html_sha256": "2f7a2c2b23d0708c3af79a2cc2e4e4eac09f43a33f02d18bbe64e923f70de1f3",
+        "dynamic_details": 0,
+        "dynamic_images": 0
+      },
+      {
+        "container": "footerVersion",
+        "normalized_render_tree_equal": true,
+        "pinned_html_sha256": "537effd563498ebeda09fb9f099d2d27a48a4111ffc552859bb6547a90e763da",
+        "current_html_sha256": "537effd563498ebeda09fb9f099d2d27a48a4111ffc552859bb6547a90e763da",
+        "dynamic_details": 0,
+        "dynamic_images": 0
+      },
+      {
+        "container": "snapshot-strip",
+        "normalized_render_tree_equal": true,
+        "pinned_html_sha256": "1488e2795e76ff81e582c76f07ac5703e632d951665415efa4487297a7a56f48",
+        "current_html_sha256": "1488e2795e76ff81e582c76f07ac5703e632d951665415efa4487297a7a56f48",
+        "dynamic_details": 0,
+        "dynamic_images": 0
+      },
+      {
+        "container": "accordion",
+        "normalized_render_tree_equal": true,
+        "pinned_html_sha256": "37d5f6d73279ed9ad88181bd288ee7ca73ac3a24dadd0780c6850dbc4830760c",
+        "current_html_sha256": "4db1239ffe461511f25ab6d84a94f9f2c2d5e17e16cf2150cc6b09bb01dd53be",
+        "dynamic_details": 0,
+        "dynamic_images": 11
+      }
+    ]
+  }
+]

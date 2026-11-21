@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "app_id": "naturalist-field-notes",
+  "current_inventory": {
+    "index.html": "ecbcd7616aab2f75c59660d62efd6872bbfd090ac27a9837468647cfaa696252",
+    "data.js": "8591122738a124cc4e95096c677a5b33ccec6050c853b454f1a513c33b2a3810",
+    "october-2026-note.js": "dcdc5a7983b529e9da02bd8dcbcdabde967b298f36b7ae178a57003bc35bb267",
+    "app.js": "c871238eeb6f808a034eb5123517df4720b4a8dd6f560177c25c2df4303065a2",
+    "manifest.json": "e266748b2584f1f9eb1aaa3fbad2e54e41334afc95bcc36dbdd2e586eb1cb13d"
+  },
+  "current_classic_script_order": [
+    "data.js",
+    "october-2026-note.js",
+    "app.js"
+  ],
+  "current_notes": 26,
+  "current_QA": 42,
+  "october_source_buttons": 6,
+  "authored_october_fields": true,
+  "direct_query_startup": true,
+  "bound_issue_and_back": true,
+  "search_cases": 3,
+  "october_photos": 5,
+  "approval_granted": false,
+  "owner_text_approval_verified": true,
+  "whole_app_inheritance": false,
+  "limitations": [
+    "Independent lxml trees and bounded synchronous events, not native browser layout or service-worker acceptance.",
+    "Current added data is exercised as authored, without scientific/editorial or image-rights approval.",
+    "Shared app-contract module and separate October HTML page are outside this runtime check."
+  ]
+}

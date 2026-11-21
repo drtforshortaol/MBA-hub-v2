@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "scope": "Prepared candidate only; active source files unchanged",
+  "baseline_commit": "8c7ae3a11b653226b77fce4ce1ac8df3a6d77a1d",
+  "candidate_packet_sha256": "f4324b0ca675b24d4a45b71a48fd3cbefd33a786c9357539357c6c148e1ecf41",
+  "edits": 7,
+  "scientific_historical_locations": 4,
+  "routine_caption_locations": 3,
+  "candidate_structured_delta_reversible_to_baseline": true,
+  "bay_watch_entries_preserved": 39,
+  "current_runtime_with_candidate": "passed",
+  "runtime_inventory": {
+    "notes": 25,
+    "QA": 41,
+    "photos": 5,
+    "october_source_buttons": 7
+  },
+  "approval_granted": false,
+  "blocker_cleared": false,
+  "publication_authorized": false
+}

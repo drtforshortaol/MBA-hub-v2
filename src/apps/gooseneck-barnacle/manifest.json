@@ -18,7 +18,13 @@
   "offline_assets": [
     "apps/gooseneck-barnacle/app.js",
     "apps/gooseneck-barnacle/index.html",
-    "apps/gooseneck-barnacle/styles.css"
+    "apps/gooseneck-barnacle/styles.css",
+    "shared/media/asset-240372707379e853--IMG_2489.jpeg",
+    "shared/media/asset-6940746379bdd044--IMG_2490.jpeg",
+    "shared/media/asset-328e69410ff6d027--IMG_2491.jpeg",
+    "shared/media/asset-9e3c4419134f3e95--IMG_2492.jpeg",
+    "shared/media/asset-2abba7e42847f4a7--IMG_2493.jpeg",
+    "shared/media/asset-4ba4d87b5678a0c8--IMG_2496.jpeg"
   ],
   "media": [
     "asset-240372707379e853",

@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-30",
+  "status": "awaiting-owner-review",
+  "title": "Seahorse Anatomy — A Guide’s Field Key",
+  "pending_asset": "asset-486b6cdb96375dfb",
+  "pending_path": "apps/IMG_4212.jpeg",
+  "replacement_scope": "Original eight-feature anatomy key with unchanged owner photo; no copied Seaweek artwork/layout or anatomical pointers to obscured features.",
+  "rows": [
+    {
+      "feature": "Eyes",
+      "text": "The eyes can move independently.",
+      "photo_note": "Eye position is visible; independent movement cannot be demonstrated by a still photograph.",
+      "sources": [
+        "adw"
+      ]
+    },
+    {
+      "feature": "Elongated snout",
+      "text": "The long snout ends in a small mouth used for suction feeding.",
+      "photo_note": "The snout is visible.",
+      "sources": [
+        "adw"
+      ]
+    },
+    {
+      "feature": "Trunk rings",
+      "text": "Bony plates form rings around the body beneath the skin.",
+      "photo_note": "The ringed body covering is visible.",
+      "sources": [
+        "adw"
+      ]
+    },
+    {
+      "feature": "Chromatophores",
+      "text": "Specialized pigment cells help the skin change color for camouflage.",
+      "photo_note": "Color change and individual pigment cells are not demonstrated in this photograph.",
+      "sources": [
+        "noaa"
+      ]
+    },
+    {
+      "feature": "Pectoral fins",
+      "text": "The paired pectoral fins help with steering and control.",
+      "photo_note": "Do not use a pointer to a fin that is obscured or cannot be identified confidently.",
+      "sources": [
+        "adw",
+        "seaweek"
+      ]
+    },
+    {
+      "feature": "Dorsal fin",
+      "text": "The dorsal fin helps propel the seahorse through the water.",
+      "photo_note": "The dorsal fin is visible along the back.",
+      "sources": [
+        "adw",
+        "seaweek"
+      ]
+    },
+    {
+      "feature": "Male brood pouch",
+      "text": "Male seahorses brood developing young in a pouch.",
+      "photo_note": "This general fact does not identify the photographed animal’s sex or reproductive state.",
+      "sources": [
+        "adw",
+        "noaa"
+      ]
+    },
+    {
+      "feature": "Prehensile tail",
+      "text": "A grasping tail helps a seahorse hold onto vegetation and other supports.",
+      "photo_note": "Part of the tail is visible; its tip is not fully shown.",
+      "sources": [
+        "adw"
+      ]
+    }
+  ],
+  "references": {
+    "adw": "https://animaldiversity.org/accounts/Hippocampus_abdominalis/",
+    "noaa": "https://oceanservice.noaa.gov/facts/seahorse.html",
+    "seaweek": "https://seaweek.org.nz/large-bellied-seahorse/"
+  },
+  "photo": {
+    "path": "apps/seahorse-takenaga.jpeg",
+    "sha256": "83f2a50a706d2488424eaf94ad8ebc96b517b1d622438536c0b35d55d4c3acd4",
+    "credit": "Photo: Glenn A. Takenaga.",
+    "permission": "Previously owner-approved, unchanged"
+  },
+  "source_rights_review": "docs/verification/seaweek-anatomy-source-20261029.json",
+  "permission_granted_for_seaweek": false,
+  "active_image_replaced": false,
+  "blocker_cleared": false,
+  "approval_needed": "Approve exact anatomy-key wording and replacement of the Seaweek image."
+}

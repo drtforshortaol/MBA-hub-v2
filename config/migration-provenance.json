@@ -234,10 +234,10 @@
     {
       "asset_id": "five-senses-header",
       "path": "shared/media/five-senses-header.svg",
-      "source_repository": null,
-      "source_commit": null,
-      "source_path": null,
-      "sha256": null
+      "source_repository": "drtforshortaol/MBA-hub",
+      "source_commit": "5c219508d23255080f6b050cefa8092905447d81",
+      "source_path": "apps/five-senses-pwa/images/header-five-senses-mba.svg",
+      "sha256": "25a12b38f3e3cad43fd05b260176f45aed17f5d894ffa1fb57f16b049595be6a"
     },
     {
       "asset_id": "asset-3c14753fc4275150",

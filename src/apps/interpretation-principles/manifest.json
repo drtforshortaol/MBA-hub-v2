@@ -19,7 +19,8 @@
     "apps/interpretation-principles/app.js",
     "apps/interpretation-principles/data.js",
     "apps/interpretation-principles/index.html",
-    "apps/interpretation-principles/styles.css"
+    "apps/interpretation-principles/styles.css",
+    "shared/media/asset-fee04d46bc10c3d2--icon.svg"
   ],
   "media": [
     "asset-fee04d46bc10c3d2"

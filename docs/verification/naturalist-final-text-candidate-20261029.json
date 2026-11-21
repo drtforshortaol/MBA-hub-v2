@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "status": "pending-owner-text-review",
+  "app_id": "naturalist-field-notes",
+  "base_commit": "8c7ae3a11b653226b77fce4ce1ac8df3a6d77a1d",
+  "scope": "Exact October additive note and standalone summary text only; preserve inherited content and accepted presentation. No image or publication approval.",
+  "approval_granted": false,
+  "publication_authorized": false,
+  "planned_app_version": "2.0.0-alpha.10",
+  "baseline_files": {
+    "src/apps/naturalist-field-notes/october-2026-note.js": "74ce84bf148a13b4fd80bd77cb6b9b310a190d63eaedd5e6fcea5c80ce19df4a",
+    "src/apps/naturalist-field-notes/october-2026-08-14.html": "221f4ff2aff8244bc21973a1dd2b2936c580d3420a2ad7ce4fd2469161dcc67e"
+  },
+  "candidate_files": {
+    "src/apps/naturalist-field-notes/october-2026-note.js": {
+      "sha256": "c00624ff6edf131d3b971c85a5c42cc5866412ed50816a3461d1b4b1fe0bb82a",
+      "content": "FIELD_NOTES.push({\"id\":\"2026-10-15-seahorse\",\"date\":\"October 8–14, 2026 (Bay Watch period)\",\"title\":\"Seahorses, Ocean in Motion & Bay Watch\",\"summary\":[\"Humpbacks remain but the seasonal peak appears past.\",\"Large common dolphin pods continue; visiting orcas are less frequent.\",\"Hydrophone reports include humpback song and low-frequency calls attributed tentatively to blue or fin whales.\",\"Species highlight: big-bellied seahorse.\"],\"observations\":[{\"title\":\"Marine mammals and hydrophone\",\"text\":\"October 8–14 report: humpbacks farther offshore; common dolphin pods sometimes over 1,000; orca sightings less frequent. Deep, loud hydrophone calls may be blue or fin whales; identification not confirmed.\"},{\"title\":\"Birds\",\"text\":\"Ancient murrelets, rhinoceros auklets and a fork-tailed storm-petrel near Wharf 2 were featured. Photographs supplied with the October update are included below.\",\"photos\":[{\"src\":\"../IMG_4207.jpeg\",\"alt\":\"Ancient murrelets\",\"caption\":\"Ancient murrelets — source-provided image. Photo: MJ.\"},{\"src\":\"../IMG_4208.jpeg\",\"alt\":\"Rhinoceros auklets\",\"caption\":\"Rhinoceros auklets — source-provided image. Photo: MJ.\"},{\"src\":\"../IMG_4209.jpeg\",\"alt\":\"Fork-tailed storm-petrel near Wharf 2\",\"caption\":\"Fork-tailed storm-petrel near Wharf 2 — source-provided image. Photo: MJ.\"}]},{\"title\":\"Historical gray-whale observation — Big Sur\",\"text\":\"Alongside this week's observations, the source author recalls watching gray whales migrating past Big Sur from Highway 1 in March, two years earlier. This is historical context, not an October 8–14 sighting.\",\"photos\":[{\"src\":\"../../shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg\",\"caption\":\"Historical gray-whale observation from Highway 1, Big Sur — March, two years before the source update. Photo: MJ.\",\"alt\":\"Whale offshore beside a coastal bluff at Big Sur\"}]},{\"title\":\"Moon jelly ephyrae\",\"text\":\"Moon jelly ephyrae have nutrient-transport canals extending into their swimming arms.\",\"photos\":[{\"src\":\"../IMG_4210.jpeg\",\"alt\":\"Moon jelly ephyra anatomy\",\"caption\":\"Moon jelly ephyra anatomy — source-provided image; permission review pending.\"}]},{\"title\":\"Splash Zone and Ocean in Motion\",\"text\":\"The October Naturalist update describes Ocean in Motion as a new exhibit with a different layout and interactives. Aquarium staff should confirm exhibit-history dates and preview arrangements.\"}],\"highlights\":[{\"name\":\"Big-bellied seahorse\",\"scientific\":\"Hippocampus abdominalis\",\"intro\":\"Seahorse found in New Zealand and parts of southern Australia; males brood developing young in a pouch. Regional classifications differ.\",\"url\":\"../big-bellied-seahorse/index.html\",\"facts\":[\"Male seahorses brood embryos in a pouch.\",\"Pivot feeding captures small crustaceans.\",\"Bony plates, varied coloration and a grasping tail are characteristic seahorse features.\"]}],\"qa\":[{\"q\":\"How do moon jelly ephyrae distribute nutrients?\",\"short\":\"Canals extending into their swimming arms transport nutrients.\",\"tags\":[\"moon jelly\",\"ephyra\"]},{\"q\":\"Is Ocean in Motion Splash Zone 3.0?\",\"short\":\"The October update describes a distinct exhibit with a new layout and interactives. Confirm details with Aquarium staff.\",\"tags\":[\"exhibits\"]},{\"q\":\"Are seahorses the only males to brood eggs?\",\"short\":\"No. Other fishes, including pipefish, also exhibit male brooding.\",\"tags\":[\"seahorse\"]}],\"bay\":[\"Humpback whales\",\"Orcas (CA51As with CA50B; Aurora's pod; CA39As, Hopper's pod)\",\"Risso's dolphins\",\"Long-beaked common dolphins\",\"Short-beaked common dolphins\",\"Bottlenose dolphins\",\"Southern sea otters\",\"California sea lions\",\"Harbor seals\",\"Pink-footed shearwaters\",\"Black-vented shearwaters\",\"Sooty shearwaters\",\"Buller's shearwaters\",\"Northern fulmars\",\"Black-footed albatrosses\",\"Black storm-petrels\",\"Ashy storm-petrels\",\"Fork-tailed storm-petrels\",\"California brown pelicans\",\"Common murres\",\"Rhinoceros auklets\",\"Cassin's auklets\",\"Ancient murrelets\",\"Craveri's murrelets\",\"Brandt's cormorants\",\"Pelagic cormorants\",\"Western gulls\",\"Heermann's gulls\",\"California gulls\",\"Sabine's gulls\",\"Common terns\",\"Elegant terns\",\"Parasitic jaegers\",\"Pomarine jaegers\",\"Red-necked phalaropes\",\"Red-breasted mergansers\",\"Moon jellies\",\"Common ocean sunfish\",\"Hoodwinker sunfish\"]});\n"
+    },
+    "src/apps/naturalist-field-notes/october-2026-08-14.html": {
+      "sha256": "61e66bf9406a3b06e98fbec810fc64dd172828a94159bf119a72528927482b25",
+      "content": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Naturalist Update October 8–14 2026</title><style>body{font:16px/1.55 system-ui,sans-serif;max-width:760px;margin:auto;padding:18px;color:#183947}h1{font-size:1.6rem}section{padding:12px 0;border-bottom:1px solid #ddd}a{color:#006e86}</style></head><body><a href=\"index.html\">← Field Notes</a><h1>Naturalist Update • October 8–14, 2026</h1><p><strong>Historical weekly observations, not current conditions.</strong></p><section><h2>Bay highlights</h2><p>Humpback whale sightings appeared to be past their seasonal peak; some were moving farther offshore. Large pods of long- and short-beaked common dolphins continued to stampede through the bay. Visiting orca pods had become less frequent. Deep low-frequency whale calls were reported on the hydrophone, along with humpback songs at night.</p></section><section><h2>Birds</h2><p>Ancient murrelets, rhinoceros auklets and a fork-tailed storm-petrel near Wharf 2 were featured. The original update referred to photographs not included with this text copy.</p></section><section><h2>Historical gray-whale observation — Big Sur</h2><p>Alongside this week's observations, the source author recalls watching gray whales migrating past Big Sur from Highway 1 in March, two years earlier. This is historical context, not an October 8–14 sighting.</p><figure><img src=\"../../shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg\" alt=\"Historical photograph of a whale offshore beside a coastal bluff at Big Sur\" width=\"1206\" height=\"789\" style=\"max-width:100%;height:auto\" loading=\"lazy\"><figcaption>Historical gray-whale observation from Highway 1, Big Sur — March, two years before the source update. Photo: MJ.</figcaption></figure></section><section><h2>Jelly Q&amp;A</h2><p>Moon jelly ephyrae have nutrient-transport canals extending into their swimming arms.</p></section><section><h2>Splash Zone and Ocean in Motion</h2><p>Splash Zone opened in April 2000. The Aquarium's September 8, 2026 announcement describes Ocean in Motion as a new exhibition with interactive play areas and an expanded African penguin habitat. Member and donor preview events were scheduled in late October and early November 2026; consult the Aquarium's event pages for eligibility and current visitor advice.</p></section><section><h2>Species highlight</h2><p><a href=\"../big-bellied-seahorse/index.html\">Big-Bellied Seahorse — Hippocampus abdominalis</a>. Male pregnancy, suction feeding, bony armor, camouflage, coastal habitat and conservation are covered in the separate development guide.</p></section><section><h2>Bay Watch species list</h2><p>Humpbacks; orcas (CA51As with CA50B, Aurora’s pod and CA39As, Hopper’s pod); Risso’s, common and bottlenose dolphins; sea otters; sea lions; harbor seals; pink-footed, black-vented, sooty and Buller’s shearwaters; northern fulmars; black-footed albatrosses; black, ashy and fork-tailed storm-petrels; pelicans; murres; rhinoceros and Cassin’s auklets; ancient and Craveri’s murrelets; cormorants; gulls; terns; jaegers; phalaropes; red-breasted mergansers; moon jellies; common and hoodwinker sunfish.</p></section><p>Source: supplied Naturalist weekly update, Bay Watch October 8–14, 2026. Summary only; preserve original source separately.</p></body></html>"
+    }
+  },
+  "changes": [
+    {
+      "file": "src/apps/naturalist-field-notes/october-2026-note.js",
+      "locator": "Birds photo ../IMG_4207.jpeg caption",
+      "before": "Ancient murrelets — source-provided image; permission review pending. Photo: MJ.",
+      "after": "Ancient murrelets — source-provided image. Photo: MJ.",
+      "kind": "routine-display-correction",
+      "sources": [
+        "MJ-approval"
+      ]
+    },
+    {
+      "file": "src/apps/naturalist-field-notes/october-2026-note.js",
+      "locator": "Birds photo ../IMG_4208.jpeg caption",
+      "before": "Rhinoceros auklets — source-provided image; permission review pending. Photo: MJ.",
+      "after": "Rhinoceros auklets — source-provided image. Photo: MJ.",
+      "kind": "routine-display-correction",
+      "sources": [
+        "MJ-approval"
+      ]
+    },
+    {
+      "file": "src/apps/naturalist-field-notes/october-2026-note.js",
+      "locator": "Birds photo ../IMG_4209.jpeg caption",
+      "before": "Fork-tailed storm-petrel near Wharf 2 — source-provided image; permission review pending. Photo: MJ.",
+      "after": "Fork-tailed storm-petrel near Wharf 2 — source-provided image. Photo: MJ.",
+      "kind": "routine-display-correction",
+      "sources": [
+        "MJ-approval"
+      ]
+    },
+    {
+      "file": "src/apps/naturalist-field-notes/october-2026-note.js",
+      "locator": "observations[title=Moon jelly ephyrae].text",
+      "before": "Gastrovascular canals distribute nutrients through the body and into the ephyra lappets. Canals may become visible after feeding.",
+      "after": "Moon jelly ephyrae have nutrient-transport canals extending into their swimming arms.",
+      "kind": "scientific-editorial",
+      "sources": [
+        "J2"
+      ]
+    },
+    {
+      "file": "src/apps/naturalist-field-notes/october-2026-note.js",
+      "locator": "qa[0].short",
+      "before": "Their gastrovascular canals move nutrients through the body and developing lappets.",
+      "after": "Canals extending into their swimming arms transport nutrients.",
+      "kind": "scientific-editorial",
+      "sources": [
+        "J2"
+      ]
+    },
+    {
+      "file": "src/apps/naturalist-field-notes/october-2026-08-14.html",
+      "locator": "Jelly Q&A paragraph",
+      "before": "Moon jelly ephyrae have gastrovascular canals that distribute nutrients throughout their developing bodies, including their lappets. Digested food can lend visible color to the canals.",
+      "after": "Moon jelly ephyrae have nutrient-transport canals extending into their swimming arms.",
+      "kind": "scientific-editorial",
+      "sources": [
+        "J2"
+      ]
+    },
+    {
+      "file": "src/apps/naturalist-field-notes/october-2026-08-14.html",
+      "locator": "Splash Zone and Ocean in Motion paragraph",
+      "before": "The original Splash Zone opened in 2000 and was renovated in 2008. The weekly report describes Ocean in Motion as a new exhibit with a different layout and new interactives, not merely a third renovation. Early access for members and donors was discussed for late October and early November 2026; verify event details before advising visitors.",
+      "after": "Splash Zone opened in April 2000. The Aquarium's September 8, 2026 announcement describes Ocean in Motion as a new exhibition with interactive play areas and an expanded African penguin habitat. Member and donor preview events were scheduled in late October and early November 2026; consult the Aquarium's event pages for eligibility and current visitor advice.",
+      "kind": "historical-editorial",
+      "sources": [
+        "A1",
+        "A2",
+        "A3",
+        "A4"
+      ]
+    }
+  ],
+  "unchanged_scope": {
+    "stable_note_id": "2026-10-15-seahorse",
+    "date": "October 8–14, 2026 (Bay Watch period)",
+    "bay_watch_entries": 39,
+    "qa_entries": 3,
+    "all_observations_except_jelly_text_and_bird_caption_labels": true,
+    "historical_photo_and_context": true,
+    "photo_paths_alt_text_and_MJ_credits": true,
+    "all_seahorse_highlight_text": true,
+    "all_24_original_notes_and_38_original_QA": true,
+    "source_receipts": true,
+    "four_MJ_photo_permissions": true,
+    "six_illustration_permissions_remain_pending": true
+  },
+  "sources": [
+    {
+      "id": "J2",
+      "url": "https://elifesciences.org/articles/65092",
+      "locator": "Figure 1b legend; Results identifies Aurelia coerulea ephyrae",
+      "supports": "Nutrient canal extends into swimming arms; no claim about distal lappet transport or early-ephyra postfeeding color experiment"
+    },
+    {
+      "id": "J2-correction",
+      "url": "https://elifesciences.org/articles/90007",
+      "locator": "Main text correction",
+      "supports": "Corrects Drosophila reagent concentrations; does not change the cited jelly anatomy"
+    },
+    {
+      "id": "A1",
+      "url": "https://www.montereybayaquarium.org/about-us/about-the-aquarium/our-history",
+      "locator": "April 2000; April 2009",
+      "supports": "Splash Zone opening; source discrepancy for Secret Lives year is not imported into Naturalist"
+    },
+    {
+      "id": "A2",
+      "url": "https://www.montereybayaquarium.org/about-us/about-the-aquarium/newsroom/press-releases/monterey-bay-aquariums-ocean-in-motion-la-danza-del-mar-opens-november-7-2026",
+      "locator": "September 8, 2026 announcement; introductory exhibit features",
+      "supports": "New exhibit, play areas and expanded penguin habitat; not actual opening certification"
+    },
+    {
+      "id": "A3",
+      "url": "https://www.montereybayaquarium.org/visit/schedule/ocean-in-motion-member-previews",
+      "locator": "When and event introduction",
+      "supports": "Scheduled late-October / early-November member previews"
+    },
+    {
+      "id": "A4",
+      "url": "https://www.montereybayaquarium.org/visit/schedule/ocean-in-motion-ocean-advocate-donor-previews",
+      "locator": "When and additional preview events",
+      "supports": "Scheduled late-October donor previews and member events"
+    },
+    {
+      "id": "P1",
+      "url": "https://www.montereybayaquarium.org/animals-the-ocean/animals-a-to-z/bay-pipefish",
+      "locator": "Cool facts",
+      "supports": "Male pipefish brood eggs; unchanged seahorse Q&A"
+    },
+    {
+      "id": "MJ-approval",
+      "repository_reference": "docs/verification/mj-photo-permission-20261029.json",
+      "supports": "Four exact photo permissions already granted; stale pending labels are display errors"
+    },
+    {
+      "id": "S1",
+      "repository_reference": "drtforshortaol/MBA-hub-v2@a8dddb8535a5313149edc8616aefae7cafaebe88:docs/SEAHORSE_FINAL_TEXT_REVIEW_20261029.md",
+      "supports": "Already approved corresponding seahorse range, feeding, brooding and anatomy wording"
+    }
+  ],
+  "source_recheck_date": "2026-10-29",
+  "limitations": [
+    "Newsletter observations remain attributed dated reports, not independent acoustic or sighting confirmation.",
+    "Omitting the 2008 renovation date avoids an unverified institutional archival claim; it does not assert that the date is false.",
+    "Original email headers and exact original attachment-byte identity remain unavailable; do not invent them.",
+    "No new claim is added about the species pictured in the jelly illustration."
+  ]
+}

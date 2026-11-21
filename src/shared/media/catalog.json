@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "assets": [
     {
       "asset_id": "five-senses-header",
@@ -4055,6 +4055,748 @@
       "source_path": "IMG_3475.jpeg",
       "uses": [],
       "permission_evidence": "Owner confirmed all V1 image permissions on 2026-10-12."
+    },
+    {
+      "asset_id": "asset-1bd100105f88c83a",
+      "path": "apps/IMG_4207.jpeg",
+      "owner": "media-library",
+      "alt": "Ancient murrelets",
+      "credit": "Photo: MJ — Naturalist and Aquarium shift captain.",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "1bd100105f88c83aadb9272fccacd1c023e417799d1b7dc79684e7f321bafb6e",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4207.jpeg",
+      "uses": [
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "src/apps/IMG_4207.jpeg"
+        }
+      ],
+      "review_note": "Photographer and reuse authorization reported by Glenn for the exact cataloged bytes. Existing source identity records remain unchanged; this approval does not cover third-party illustrations or separate visitor distribution.",
+      "permission_evidence": "Glenn confirmed MJ authorized these photographs for the Aquarium guide hub and its testers on 2026-10-29. See docs/verification/mj-photo-permission-20261029.json and docs/MJ_PHOTO_PERMISSION_20261029.md.",
+      "permission_scope": {
+        "audience": "Aquarium guide hub and its testers",
+        "uses": [
+          "guide-hub-display",
+          "guide-hub-offline-cache"
+        ],
+        "not_granted": [
+          "standalone-visitor-sharing",
+          "unrelated-public-redistribution"
+        ]
+      }
+    },
+    {
+      "asset_id": "asset-95daa2493750e82f",
+      "path": "apps/IMG_4208.jpeg",
+      "owner": "media-library",
+      "alt": "Rhinoceros auklets",
+      "credit": "Photo: MJ — Naturalist and Aquarium shift captain.",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "95daa2493750e82f0444679b1c567d66af4e5212ab9d864eca3f2ddb8e475f1d",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4208.jpeg",
+      "uses": [
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "src/apps/IMG_4208.jpeg"
+        }
+      ],
+      "review_note": "Photographer and reuse authorization reported by Glenn for the exact cataloged bytes. Existing source identity records remain unchanged; this approval does not cover third-party illustrations or separate visitor distribution.",
+      "permission_evidence": "Glenn confirmed MJ authorized these photographs for the Aquarium guide hub and its testers on 2026-10-29. See docs/verification/mj-photo-permission-20261029.json and docs/MJ_PHOTO_PERMISSION_20261029.md.",
+      "permission_scope": {
+        "audience": "Aquarium guide hub and its testers",
+        "uses": [
+          "guide-hub-display",
+          "guide-hub-offline-cache"
+        ],
+        "not_granted": [
+          "standalone-visitor-sharing",
+          "unrelated-public-redistribution"
+        ]
+      }
+    },
+    {
+      "asset_id": "asset-47f9bbb193878eec",
+      "path": "apps/IMG_4209.jpeg",
+      "owner": "media-library",
+      "alt": "Fork-tailed storm-petrel near Wharf 2",
+      "credit": "Photo: MJ — Naturalist and Aquarium shift captain.",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "47f9bbb193878eeced59326418949849427489f0167e33a7e063be9d091f643b",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4209.jpeg",
+      "uses": [
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "src/apps/IMG_4209.jpeg"
+        }
+      ],
+      "review_note": "Photographer and reuse authorization reported by Glenn for the exact cataloged bytes. Existing source identity records remain unchanged; this approval does not cover third-party illustrations or separate visitor distribution.",
+      "permission_evidence": "Glenn confirmed MJ authorized these photographs for the Aquarium guide hub and its testers on 2026-10-29. See docs/verification/mj-photo-permission-20261029.json and docs/MJ_PHOTO_PERMISSION_20261029.md.",
+      "permission_scope": {
+        "audience": "Aquarium guide hub and its testers",
+        "uses": [
+          "guide-hub-display",
+          "guide-hub-offline-cache"
+        ],
+        "not_granted": [
+          "standalone-visitor-sharing",
+          "unrelated-public-redistribution"
+        ]
+      }
+    },
+    {
+      "asset_id": "asset-50646c3fe1d0c359",
+      "path": "apps/IMG_4210.jpeg",
+      "owner": "media-library",
+      "alt": "Scyphozoan ephyra anatomy reference diagram, cropped from Figure 1",
+      "credit": "Lau López; cropped Figure 1, Ballesteros et al. (2021), Frontiers in Marine Science 8:714503; CC BY 4.0.",
+      "permission": "licensed",
+      "offline": true,
+      "sha256": "50646c3fe1d0c359860229e041767429fc21a382cd16d75bd165fd5f7a3cef52",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4210.jpeg",
+      "uses": [
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "src/apps/IMG_4210.jpeg"
+        }
+      ],
+      "review_note": "Existing JPEG bytes and engineering source provenance are unchanged. Figure-specific restrictive notice not found. General reference diagram from a Pelagia study; do not identify it as a verified moon-jelly specimen.",
+      "permission_evidence": "Publisher Figure 1 visually matches the existing cropped screenshot. Article licenses reuse under CC BY 4.0; the displayed caption retains creator/copyright credit, source and license URIs, and crop disclosure. See docs/verification/ephyra-figure-license-20261029.json.",
+      "license": {
+        "id": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "source_url": "https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2021.714503/full#F1",
+        "illustrator": "Lau López"
+      }
+    },
+    {
+      "asset_id": "asset-e62b39cc07a542c4",
+      "path": "apps/IMG_4214.jpeg",
+      "owner": "media-library",
+      "alt": "Comparative diagrams of convexiclivate and concaviclivate foveae, cropped Figure 1a",
+      "credit": "Potier et al. (2020), Scientific Reports 10:6133, cropped Figure 1a; CC BY 4.0.",
+      "permission": "licensed",
+      "offline": true,
+      "sha256": "e62b39cc07a542c4def4dd10a7a5f17cdf7dddb235fd81af7c20b564089c1fea",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "12afc2052c6117cc33616a9687199e353c3d8c48",
+      "source_path": "src/apps/IMG_4214.jpeg",
+      "uses": [
+        {
+          "app_id": "big-bellied-seahorse",
+          "source_path": "src/apps/IMG_4214.jpeg"
+        }
+      ],
+      "review_note": "Existing JPEG bytes and engineering source provenance retained. General comparative schematic from a black-kite study; no seahorse-specific retinal measurement or new scientific interpretation is asserted.",
+      "permission_evidence": "Publisher-deposited article explicitly licenses figures under CC BY 4.0 unless a separate credit excludes them; Figure 1 has no restrictive credit. Exact existing crop visually matched, source/copyright/license credit and crop disclosure displayed. See docs/verification/fovea-figure-license-20261029.json.",
+      "license": {
+        "id": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "source_url": "https://doi.org/10.1038/s41598-020-63039-y",
+        "figure": "1a"
+      }
+    },
+    {
+      "asset_id": "asset-b2bea165550eabcc",
+      "path": "apps/IMG_4215.jpeg",
+      "owner": "media-library",
+      "alt": "Rainbow trout, realistic side-view illustration",
+      "credit": "Duane Raver / U.S. Fish & Wildlife Service. Public domain.",
+      "permission": "public-domain",
+      "offline": true,
+      "sha256": "b2bea165550eabcce52b1abd564cfadca4f5631901143322d921b3a2621600ea",
+      "uses": [
+        {
+          "app_id": "big-bellied-seahorse",
+          "source_path": "src/apps/IMG_4215.jpeg"
+        }
+      ],
+      "review_note": "Exact downloaded FWS original, no image edits; explicit public-domain record reviewed. Supersedes third-party comparison screenshot.",
+      "permission_evidence": "docs/verification/seahorse-trout-photo-replacement-20261030.json",
+      "source_uri": "https://www.fws.gov/media/rainbow-trout-11"
+    },
+    {
+      "asset_id": "asset-225131703b4c0c59",
+      "path": "apps/IMG_4216.jpeg",
+      "owner": "media-library",
+      "alt": "Seahorse Dads: courtship, egg transfer to the male brood pouch, development and birth; simplified general life cycle, not to scale",
+      "credit": "AI-generated illustration supplied by Glenn A. Takenaga for MBA Hub V2; general seahorse life cycle.",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "225131703b4c0c59b352d94d48dfbe738bd72d589ad1daccfe8e37687ddc5ec7",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "abb077a0549bdff2693ccd166c14251e036e72bd",
+      "source_path": "src/apps/IMG_4216.jpeg",
+      "uses": [
+        {
+          "app_id": "big-bellied-seahorse",
+          "source_path": "src/apps/IMG_4216.jpeg"
+        }
+      ],
+      "review_note": "Owner authorized original AI-generated replacement in prior chat and supplied the finalized image here. This does not license the superseded third-party poster or imply species-specific anatomy.",
+      "permission_evidence": "docs/verification/seahorse-poster-replacement-20261030.json"
+    },
+    {
+      "asset_id": "asset-df392914e6cf5502",
+      "path": "shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg",
+      "owner": "media-library",
+      "alt": "Historical gray-whale observation offshore from Big Sur, viewed from Highway 1",
+      "credit": "Photo: MJ — Naturalist and Aquarium shift captain.",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "df392914e6cf55020db2cf2ae2eab1b55f23160708b1284f765232f300cbb707",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "cae20ad89424d941cfb8f2bf39595307b0bb74a8",
+      "source_path": "src/shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg",
+      "uses": [
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "src/shared/media/asset-df392914e6cf5502--big-sur-gray-whale.jpeg"
+        }
+      ],
+      "review_note": "Photographer and reuse authorization reported by Glenn for the exact cataloged bytes. Existing source identity records remain unchanged; this approval does not cover third-party illustrations or separate visitor distribution.",
+      "permission_evidence": "Glenn confirmed MJ authorized these photographs for the Aquarium guide hub and its testers on 2026-10-29. See docs/verification/mj-photo-permission-20261029.json and docs/MJ_PHOTO_PERMISSION_20261029.md.",
+      "permission_scope": {
+        "audience": "Aquarium guide hub and its testers",
+        "uses": [
+          "guide-hub-display",
+          "guide-hub-offline-cache"
+        ],
+        "not_granted": [
+          "standalone-visitor-sharing",
+          "unrelated-public-redistribution"
+        ]
+      }
+    },
+    {
+      "asset_id": "asset-83f2a50a706d2488",
+      "path": "apps/seahorse-takenaga.jpeg",
+      "owner": "Glenn A. Takenaga",
+      "alt": "Owner close-up photograph of a yellow seahorse; snout, body plates and dorsal fin visible; tail tip not fully shown",
+      "credit": "Photo: Glenn A. Takenaga.",
+      "permission": "approved",
+      "permission_evidence": "docs/verification/seahorse-trout-photo-replacement-20261030.json",
+      "offline": true,
+      "sha256": "83f2a50a706d2488424eaf94ad8ebc96b517b1d622438536c0b35d55d4c3acd4",
+      "source_origin": {
+        "type": "owner-upload",
+        "filename": "36FF8EE3-82E2-4A85-B118-245451482125.jpeg"
+      },
+      "uses": [
+        {
+          "app_id": "big-bellied-seahorse",
+          "source_path": "src/apps/seahorse-takenaga.jpeg"
+        }
+      ]
+    },
+    {
+      "asset_id": "asset-ee96e0719845ef73",
+      "path": "shared/media/asset-ee96e0719845ef73--sperm-whale-pod.jpeg",
+      "owner": "sperm-whale",
+      "alt": "Two sperm whales swimming together beneath the ocean surface",
+      "credit": "“Sperm whale pod” — Gabriel Barathieu / Wikimedia Commons, CC BY-SA 2.0; cropped/resized copy, shared under the same license.",
+      "permission": "licensed",
+      "permission_evidence": "docs/SPERM_WHALE_LICENSED_PHOTO_20261101.md",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sperm_whale_pod.jpg",
+      "source_path": "File:Sperm_whale_pod.jpg",
+      "sha256": "ee96e0719845ef73a7b4827bccd4686c816b231995cb2dfb4fb77e9e6ebfa928",
+      "offline": true,
+      "uses": [
+        {
+          "app_id": "sperm-whale",
+          "source_path": "File:Sperm_whale_pod.jpg"
+        }
+      ]
+    },
+    {
+      "asset_id": "briefing-20261111-flamboyant-cuttlefish",
+      "path": "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg",
+      "owner": "naturalist-briefing-20261111",
+      "alt": "Two flamboyant cuttlefish over blue-lit gravel.",
+      "credit": "Photo by MJ.",
+      "permission": "approved",
+      "offline": true,
+      "uses": [
+        {
+          "app_id": "naturalist-briefing-20261111",
+          "source_path": "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg"
+        },
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "shared/media/briefing-20261111-flamboyant-cuttlefish.jpg"
+        }
+      ],
+      "permission_evidence": "On 2026-11-13 Glenn confirmed MJ authorized use in the public MBA Hub, including offline copies.",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "23d3246f0df9127ab618884f5f993f0cf899fe33",
+      "source_path": "src/shared/media/briefing-20261111-flamboyant-cuttlefish.jpg",
+      "sha256": "025e95ce90f0db47ec830658acbb7c669685eeaf75e1a6148c0ec1c99ac34de6"
+    },
+    {
+      "asset_id": "juvenile-white-seabass-illustration",
+      "path": "shared/media/juvenile-white-seabass-illustration.jpg",
+      "owner": "naturalist-briefing-20261111",
+      "alt": "Illustration of a silver juvenile white seabass with dark vertical bars",
+      "credit": "AI-generated illustration",
+      "permission": "approved",
+      "offline": true,
+      "uses": [
+        {
+          "app_id": "naturalist-briefing-20261111",
+          "source_path": "shared/media/juvenile-white-seabass-illustration.jpg"
+        },
+        {
+          "app_id": "naturalist-field-notes",
+          "source_path": "shared/media/juvenile-white-seabass-illustration.jpg"
+        }
+      ],
+      "permission_evidence": "Original AI-generated illustration created for this app in this project.",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "23d3246f0df9127ab618884f5f993f0cf899fe33",
+      "source_path": "src/shared/media/juvenile-white-seabass-illustration.jpg",
+      "sha256": "37c8267dc8c186ab3d6e88d6eda526fcae204f3a4b6b01ea719b5a52ef3a768a"
+    },
+    {
+      "asset_id": "ocellaris-clownfish-title",
+      "path": "shared/media/ocellaris-clownfish-title.jpg",
+      "owner": "ocellaris-clownfish",
+      "alt": "Illustration of an orange ocellaris clownfish nestled among pink anemone tentacles",
+      "credit": "AI-generated illustration",
+      "permission": "approved",
+      "offline": true,
+      "uses": [
+        {
+          "app_id": "ocellaris-clownfish",
+          "source_path": "shared/media/ocellaris-clownfish-title.jpg"
+        }
+      ],
+      "permission_evidence": "Original AI-generated illustration created for this app in this project.",
+      "source_repository": "drtforshortaol/MBA-hub-v2",
+      "source_commit": "23d3246f0df9127ab618884f5f993f0cf899fe33",
+      "source_path": "src/shared/media/ocellaris-clownfish-title.jpg",
+      "sha256": "e5826c3d0aa229598ffabbab05352c07341fc7f28a3fbac997fabd143c408035"
+    },
+      {
+        "asset_id": "el-nino-slide-01",
+        "path": "apps/el-nino/images/slide-01.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for Learning Objectives",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-01.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-01.jpg",
+        "sha256": "fd6b82981ffb145ca77b93a3ae7afd0d1fdd981ccb8470cc2ecbcd570861bc81"
+      },
+      {
+        "asset_id": "el-nino-slide-02",
+        "path": "apps/el-nino/images/slide-02.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for El Niño Basics",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-02.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-02.jpg",
+        "sha256": "bdaaf581ac161d7d1c6dd7929e90a856b57e882ccbc1188e14332d9797b9de58"
+      },
+      {
+        "asset_id": "el-nino-slide-03",
+        "path": "apps/el-nino/images/slide-03.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for ENSO: Three Phases",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-03.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-03.jpg",
+        "sha256": "c733558e75ad90eb9281e98cf0a63a82a3080f4717f3eb063e25bb4268ba53ad"
+      },
+      {
+        "asset_id": "el-nino-slide-04",
+        "path": "apps/el-nino/images/slide-04.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for ENSO Explained",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-04.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-04.jpg",
+        "sha256": "3bdecc3c9e3f8d23b4d824f847af3b135f1e5b0c8d552bbc6bf3e3a9c1ac2eee"
+      },
+      {
+        "asset_id": "el-nino-slide-05",
+        "path": "apps/el-nino/images/slide-05.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for Trade Winds & Global Circulation",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-05.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-05.jpg",
+        "sha256": "8ae0e35893494cf818160ebd0bc5e48b5ef302e52d2f9042ba0074a7b30f03e4"
+      },
+      {
+        "asset_id": "el-nino-slide-06",
+        "path": "apps/el-nino/images/slide-06.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for Ocean & Atmosphere",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-06.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-06.jpg",
+        "sha256": "99e986de9c91c4d3323ba848a86c7516686164f732316742fd02a2f7a9dc6907"
+      },
+      {
+        "asset_id": "el-nino-slide-07",
+        "path": "apps/el-nino/images/slide-07.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for Equatorial Kelvin Waves",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-07.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-07.jpg",
+        "sha256": "9e16243b6b5812d54420a9f74e8e7d6dd5eed47c54281bb5e4c27e5ca471e3f2"
+      },
+      {
+        "asset_id": "el-nino-slide-08",
+        "path": "apps/el-nino/images/slide-08.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for Super El Niño",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-08.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-08.jpg",
+        "sha256": "90de192538506cdb669117203be8276eda9b2ce826c30113fc4508d4a40d24a1"
+      },
+      {
+        "asset_id": "el-nino-slide-09",
+        "path": "apps/el-nino/images/slide-09.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for Monterey Bay Impacts",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-09.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-09.jpg",
+        "sha256": "55b7b0ae753163b100abbeac66136d6fc40bdb651dbc9ed704793e4d4f820a19"
+      },
+      {
+        "asset_id": "el-nino-slide-10",
+        "path": "apps/el-nino/images/slide-10.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for Marine Impacts",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-10.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-10.jpg",
+        "sha256": "a88b7c759a478a3a9b55ff95dcfe971a8f26530d1458564659f580e8364dfc6b"
+      },
+      {
+        "asset_id": "el-nino-slide-11",
+        "path": "apps/el-nino/images/slide-11.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for Coastal Impacts",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-11.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-11.jpg",
+        "sha256": "0cbdbc19cd52bb1bc9f6fef8573728ef3de98a03b12ebbed0c12bfadbdb7b561"
+      },
+      {
+        "asset_id": "el-nino-slide-12",
+        "path": "apps/el-nino/images/slide-12.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for Economic Impacts",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-12.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-12.jpg",
+        "sha256": "ba22e500f972be59a29bb60e79fd3d5e7b9443abfa4f5651e584b8527bbb31cb"
+      },
+      {
+        "asset_id": "el-nino-slide-13",
+        "path": "apps/el-nino/images/slide-13.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for Impacts at MBA",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-13.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-13.jpg",
+        "sha256": "d5ce36ab88772fcb86beab2be06b87d313cd2598709a94df2ddef1a7cb2d053a"
+      },
+      {
+        "asset_id": "el-nino-slide-14",
+        "path": "apps/el-nino/images/slide-14.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for How Will El Niño Impact Central California?",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-14.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-14.jpg",
+        "sha256": "12667a68f6592c13a4442120141e031c8e22d775dcb7cfdd237b3e2c79934080"
+      },
+      {
+        "asset_id": "el-nino-slide-15",
+        "path": "apps/el-nino/images/slide-15.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for El Niño Guest FAQs",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-15.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-15.jpg",
+        "sha256": "2fe4490081a7ef336ac9b18952c336d108e5ac93ccfb99b48df81b15653a63df"
+      },
+      {
+        "asset_id": "el-nino-slide-16",
+        "path": "apps/el-nino/images/slide-16.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for Combating Doom-ism",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-16.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-16.jpg",
+        "sha256": "ac37d2b835c379c062126f6908f081eb4a1e9682e8685d80535537b0f03ccac3"
+      },
+      {
+        "asset_id": "el-nino-slide-17",
+        "path": "apps/el-nino/images/slide-17.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for El Niño Quick Facts",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-17.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-17.jpg",
+        "sha256": "1f6a3637f459074d04c066322b46cc44c062395090f68cc6cac3678ee7cb01e3"
+      },
+      {
+        "asset_id": "el-nino-slide-18",
+        "path": "apps/el-nino/images/slide-18.jpg",
+        "owner": "el-nino",
+        "alt": "Original illustration for What Is Leading to 'Super El Niño'?",
+        "credit": "Carried over with the El Niño guide; original creator pending verification",
+        "permission": "review-required",
+        "offline": true,
+        "uses": [
+          {
+            "app_id": "el-nino",
+            "source_path": "apps/el-nino/images/slide-18.jpg"
+          }
+        ],
+        "source_repository": "drtforshortaol/MBA-hub-v2",
+        "source_commit": "b745d1802cfa515171f73ee81cddbc1fce14bee5",
+        "source_path": "src/apps/el-nino/images/slide-18.jpg",
+        "sha256": "7ab2200654e38fd205a0794f071d651d58a45ee49d3923fa1b090ea134d4b051"
+      },
+    {
+      "asset_id": "giant-clam-reef",
+      "path": "shared/media/giant-clam-reef.jpg",
+      "owner": "giant-clam",
+      "alt": "True giant clam with an olive mantle, iridescent blue rings and a deeply fluted shell on a shallow reef",
+      "credit": "Original AI-generated illustration for MBA Hub",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "248c359ef8666b97774cc1f3fc8fed3886d520afc681b3abb898835f7f65bf1d",
+      "permission_evidence": "Created for MBA Hub at the owner’s request for original illustrations, November 19, 2026. No source image was supplied to reproduce.",
+      "uses": [
+        {
+          "app_id": "giant-clam",
+          "source_path": "shared/media/giant-clam-reef.jpg"
+        }
+      ]
+    },
+    {
+      "asset_id": "giant-clam-range",
+      "path": "shared/media/giant-clam-range.png",
+      "owner": "giant-clam",
+      "alt": "Map of Indo-Pacific coastlines with four range landmarks and approximate Coral Triangle shading",
+      "credit": "Original map using Natural Earth coastline data",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "beec7abe18c21b7c811f886cb2d3e6ef72cbc427b2a7945384fdce48dd544316",
+      "permission_evidence": "Created for MBA Hub at the owner’s request for original illustrations, November 19, 2026. No source image was supplied to reproduce.",
+      "uses": [
+        {
+          "app_id": "giant-clam",
+          "source_path": "shared/media/giant-clam-range.png"
+        }
+      ]
+    },
+    {
+      "asset_id": "giant-clam-life-cycle",
+      "path": "shared/media/giant-clam-life-cycle.png",
+      "owner": "giant-clam",
+      "alt": "Natural-history renderings of a fertilized egg, trochophore, veliger, pediveliger and settled juvenile",
+      "credit": "AI-assisted natural-history illustration for MBA Hub",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "262e0e038a8501b15c11f620b647e59ada4d15b21b1d7c72b8125eb8d710fffe",
+      "permission_evidence": "Created for MBA Hub at the owner’s request for original illustrations, November 19, 2026. No source image was supplied to reproduce.",
+      "uses": [
+        {
+          "app_id": "giant-clam",
+          "source_path": "shared/media/giant-clam-life-cycle.png"
+        }
+      ]
+    },
+    {
+      "asset_id": "giant-clam-mantle",
+      "path": "shared/media/giant-clam-mantle.png",
+      "owner": "giant-clam",
+      "alt": "Realistic view of the fluted shell, patterned mantle and two openings",
+      "credit": "AI-assisted natural-history illustration for MBA Hub",
+      "permission": "approved",
+      "offline": true,
+      "sha256": "b57e8fc7d24d9ba08e794025ccb96a3fd5aa0e3821199b3688edb65e7cda6e9c",
+      "permission_evidence": "Created for MBA Hub at the owner’s request for original illustrations, November 19, 2026. No source image was supplied to reproduce.",
+      "uses": [
+        {
+          "app_id": "giant-clam",
+          "source_path": "shared/media/giant-clam-mantle.png"
+        }
+      ]
     }
   ]
 }

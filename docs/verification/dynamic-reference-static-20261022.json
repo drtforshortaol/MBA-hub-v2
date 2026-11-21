@@ -1,0 +1,108 @@
+[
+  {
+    "app_id": "five-senses-pwa",
+    "static_dom_equal_after_enumerated_migration_differences": true,
+    "source_html_sha256": "47685c354871589b67a66aaf385385434374ee0de8adf13e164f88e35cdb31f1",
+    "current_html_sha256": "b4789f227aba2b9046c0b23ec9e50031cac2a4944c391be3b869c137cc29ddc0",
+    "stylesheet_exact_pinned_bytes": "5584ed35f4d34ff97e45d5a01dae9e8a3141977f1bb607fc6f495fa0d378aac2",
+    "unchanged_interactions": [
+      {
+        "function": "getSearchableItems",
+        "sha256": "a0f997410dd1a8e989f05033939e46eae110d277deb5f35de0a33499f4ec8b8c"
+      },
+      {
+        "function": "setAllDropdowns",
+        "sha256": "91500ccbe658e9115074bad40fd584a5c206fc522a017d7e3367d5109eaef0ed"
+      },
+      {
+        "function": "filterContent",
+        "sha256": "f638e2b646481a254cf40fa1df8f84e2c6152acda6248ae70f7570061d055d55"
+      },
+      {
+        "function": "resetSearch",
+        "sha256": "634ff7926b51355af248bfabe3957a062acb4eb9c84d0bd753c4436b446b4f65"
+      },
+      {
+        "function": "openTroubleshooting",
+        "sha256": "ef43975c4982f5667e7d0159f3cd9d8fad6bf635c611756ec10219ea06f0c92f"
+      },
+      {
+        "function": "closeTroubleshooting",
+        "sha256": "6146a4029fb7c3af13260ab1fdf1ca0f10b4ddbaef60cef1d5fa75b1ae252d61"
+      },
+      {
+        "function": "bindEvents",
+        "sha256": "e3cc6c682806d45944a0224e0374872a7257836e55fec64cdcf05b8df5ac1c99"
+      }
+    ],
+    "static_media": [
+      {
+        "url": "../../shared/media/asset-3b65e654f48dae5f--icon.svg",
+        "sha256": "3b65e654f48dae5f4ba94d1f9e426ffe1449a6657d27ad57a50402bea8cd5bc4",
+        "element": "link"
+      },
+      {
+        "url": "../../shared/media/five-senses-header.svg",
+        "sha256": "25a12b38f3e3cad43fd05b260176f45aed17f5d894ffa1fb57f16b049595be6a",
+        "element": "img"
+      }
+    ]
+  },
+  {
+    "app_id": "kelp-forest",
+    "static_dom_equal_after_enumerated_migration_differences": true,
+    "source_html_sha256": "66bc710da1e33de2afe32564abcb90acd7c51ca791d3d3a0b929b508ba473afc",
+    "current_html_sha256": "a5ed0ecc5de1d4bdb9b44b780ce74ac1a54d4ab187b7eb12f6a59b9326ef1d04",
+    "stylesheet_exact_pinned_bytes": "ac3e31559ac34891a5862e084e69d56be705db0aad9a603398ca6bf2c5c98064",
+    "unchanged_interactions": [
+      {
+        "function": "setupJump",
+        "sha256": "e28e547e0693f42c74fb2ed21983685a32171c92bf1c450b2d60728d66ad2fc0"
+      },
+      {
+        "function": "setupSearch",
+        "sha256": "2c986e9e467bb0fe6833f6748a44d9c76c615ebf2b0a3310226dc8d268006fd8"
+      }
+    ],
+    "static_media": [
+      {
+        "url": "../../shared/media/asset-5a78a8d75c9a6174--icon.svg",
+        "sha256": "5a78a8d75c9a61743456a2a01340aed1099b0a357a0a38cd976116b20e8793d4",
+        "element": "link"
+      }
+    ]
+  },
+  {
+    "app_id": "northern-elephant-seal",
+    "static_dom_equal_after_enumerated_migration_differences": true,
+    "source_html_sha256": "0bb11875b6965d2206751c8e0ea1de814b41fa664466ebb5e4ab3fe356178f6c",
+    "current_html_sha256": "dae17d2e7b2bb0d483ea07c162f7e52129d9c53b5d4626cd7ac707b51f71e78a",
+    "stylesheet_exact_pinned_bytes": "c954a904142c2ec27259fd673c394dec4d5880e914a1cfd68f99feb0834b824e",
+    "unchanged_interactions": [
+      {
+        "function": "setupAccordion",
+        "sha256": "41b502842ada7665f387e7c704ab075b4d3ebc587f04176f7055e09e9e99796c"
+      },
+      {
+        "function": "setupSearch",
+        "sha256": "b60ff3e8a94aa1bb4a9096c115fa647b37b33ae415b31b233f47e488947dd48c"
+      },
+      {
+        "function": "setupTopControls",
+        "sha256": "7bc5af2a0a878bc30ba4d3fcc552b5854623d87218b41209a26af20a51c9ea97"
+      }
+    ],
+    "static_media": [
+      {
+        "url": "../../shared/media/asset-0522db2debef2d1e--icon.svg",
+        "sha256": "0522db2debef2d1e8b15b2f355fdc44db2d8d850415b5fc7e45a2fc9fb94e3dc",
+        "element": "link"
+      },
+      {
+        "url": "../../shared/media/asset-125a4bbb92b0953b--rookery_scene.jpg",
+        "sha256": "125a4bbb92b0953befd39bc0fe78620af299393026ff02df968481c62c9d00a6",
+        "element": "img"
+      }
+    ]
+  }
+]

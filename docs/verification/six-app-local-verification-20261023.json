@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "source_commit": "1480417616caecef571e66f753196074338aaf51",
+  "tree": "12bba5d5646fee6ee1cc137fb6d2ec71ac4e84fc",
+  "node": {
+    "tests": 839,
+    "pass": 839,
+    "fail": 0,
+    "skipped": 0
+  },
+  "evo": {
+    "tests": 35,
+    "pass": 35
+  },
+  "preflight": {
+    "apps": 33,
+    "pass": 33
+  },
+  "http": [
+    {
+      "environment": "tester",
+      "release": "ddec5240589469ad",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "bytes": 67211605
+      }
+    },
+    {
+      "environment": "developer",
+      "release": "e02837b6f3bb023c",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "bytes": 67291592
+      }
+    }
+  ],
+  "offline": [
+    {
+      "environment": "developer",
+      "scenario": "corrupt-json-inventory-recovery",
+      "release": "e02837b6f3bb023c",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "developer",
+      "scenario": "forged-inventory-recovery",
+      "release": "e02837b6f3bb023c",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "developer",
+      "scenario": "interrupted-inventory-recovery",
+      "release": "e02837b6f3bb023c",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "developer",
+      "scenario": "inventory-loss-recovery",
+      "release": "e02837b6f3bb023c",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "developer",
+      "scenario": "prepared-navigation",
+      "release": "e02837b6f3bb023c",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "developer",
+      "scenario": "corrupted-entry-recovery",
+      "release": "e02837b6f3bb023c",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "developer",
+      "scenario": "refresh-page-inventory-recovery",
+      "release": "e02837b6f3bb023c",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "tester",
+      "scenario": "corrupt-json-inventory-recovery",
+      "release": "ddec5240589469ad",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "tester",
+      "scenario": "forged-inventory-recovery",
+      "release": "ddec5240589469ad",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "tester",
+      "scenario": "interrupted-inventory-recovery",
+      "release": "ddec5240589469ad",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "tester",
+      "scenario": "inventory-loss-recovery",
+      "release": "ddec5240589469ad",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "tester",
+      "scenario": "prepared-navigation",
+      "release": "ddec5240589469ad",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "tester",
+      "scenario": "corrupted-entry-recovery",
+      "release": "ddec5240589469ad",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "offlineNetworkAttempts": 0
+    },
+    {
+      "environment": "tester",
+      "scenario": "refresh-page-inventory-recovery",
+      "release": "ddec5240589469ad",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "offlineNetworkAttempts": 0
+    }
+  ],
+  "scope": "Local automated checks only; physical acceptance NOT TESTED"
+}

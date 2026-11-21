@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "app_id": "naturalist-field-notes",
+  "source_receipt_sha256": "b2cbba54e814482fab3a34de01305a6a6e4a97a53dddefbd58bc060dc3ad6673",
+  "current_script_sha256": "dcdc5a7983b529e9da02bd8dcbcdabde967b298f36b7ae178a57003bc35bb267",
+  "current_summary_sha256": "61e66bf9406a3b06e98fbec810fc64dd172828a94159bf119a72528927482b25",
+  "standalone_historical_context_matches": true,
+  "standalone_uploaded_photo_matches": true,
+  "uploaded_photo_bytes_verified": true,
+  "upload_receipt_sha256": "b49fa8e796487c68869f567bbe5468d0a4f6773449300b2e2fc45f34c70173e7",
+  "owner_supplied_filename_mapping": true,
+  "historical_photo_permission_recorded": true,
+  "newsletter_original_byte_identity_verified": false,
+  "source_rows": 38,
+  "normalized_species": 39,
+  "complete_bay_watch": true,
+  "stable_note_id": "2026-10-15-seahorse",
+  "source_email_date_verified": false,
+  "display_uses_observation_period": true,
+  "historical_context_restored": true,
+  "source_photo_items": 5,
+  "current_photo_items": 5,
+  "unresolved_photo_files": [],
+  "attachment_identity_verified": false,
+  "approval_granted": false,
+  "owner_text_approval_verified": true,
+  "publication_review": "owner-approved-text",
+  "limitations": [
+    "Selected excerpts and Bay Watch rows, not a complete email or original attachment archive.",
+    "Other subject/caption mappings do not establish exact image identity. The owner-supplied historical photo is bound to uploaded bytes, not a recovered original email attachment; Glenn later confirmed MJ permission confirmation is separately recorded.",
+    "Source-derived biology and exhibit recollections are not independently certified by this comparison."
+  ]
+}

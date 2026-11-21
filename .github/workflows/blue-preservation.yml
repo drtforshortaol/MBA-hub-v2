@@ -1,0 +1,120 @@
+name: Blue preservation and privacy review (NO DEPLOY)
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preserve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate preserved blue source and build read-only package
+        run: |
+          npm run validate
+          npm run build
+          node --test tests/blue-baseline-preservation.test.mjs tests/age-channel-registry.test.mjs
+          node scripts/age/channel-registry.mjs
+      - name: Report privacy review delta without granting approval
+        run: |
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          import {execFileSync} from 'node:child_process';
+          import {privacySnapshot} from './scripts/audit-privacy-snapshot.mjs';
+          const current=privacySnapshot();
+          const review=JSON.parse(fs.readFileSync('config/privacy-review.json','utf8'));
+          const prior=new Map(review.snapshot.resources.map(item=>[item.path,item]));
+          const currentPaths=new Set(current.resources.map(item=>item.path));
+          const removed=review.snapshot.resources.filter(item=>!currentPaths.has(item.path));
+          const changed=current.resources.flatMap(candidate=>{
+            const previous=prior.get(candidate.path);
+            return previous?.sha256===candidate.sha256 && previous.bytes===candidate.bytes
+              ? [] : [{path:candidate.path,previous:previous??null,candidate}];
+          });
+          const signalDelta=field=>{
+            const before=new Set((review.snapshot[field]??[]).map(item=>JSON.stringify(item)));
+            const after=new Set(current[field].map(item=>JSON.stringify(item)));
+            return {
+              added:current[field].filter(item=>!before.has(JSON.stringify(item))),
+              removed:(review.snapshot[field]??[]).filter(item=>!after.has(JSON.stringify(item)))
+            };
+          };
+          const report={
+            candidate_checkout_sha:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),
+            baseline_review_status:review.status,release_authorized:review.release_authorized,
+            reviewed_snapshot_sha256:review.snapshot_sha256,candidate_snapshot_sha256:current.snapshot_sha256,
+            changed,removed,
+            signals:Object.fromEntries(
+              ['automaticExternalResources','sensitiveBrowserAPIs','storageFiles','networkFiles']
+                .map(field=>[field,signalDelta(field)])
+            ),
+            privacy_approval_required:current.snapshot_sha256!==review.snapshot_sha256||changed.length>0||removed.length>0
+          };
+          fs.mkdirSync('verification',{recursive:true});
+          fs.writeFileSync('verification/blue-privacy-delta.json',JSON.stringify(report,null,2));
+          if(review.release_authorized!==false)throw Error('Unexpected blue release authorization');
+          if(removed.length)throw Error('Baseline files removed: '+removed.map(item=>item.path).join(','));
+          console.log('Privacy delta recorded for human review: '+changed.length+' changed or new files; release remains unauthorized');
+          EOF
+      - name: Preserve privacy delta for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: blue-privacy-delta-review
+          path: verification/blue-privacy-delta.json
+          retention-days: 14
+      - name: Verify Orange and Blue over HTTP
+        run: |
+          node --test tests/preview-http-verification.test.mjs
+          node scripts/verify-local-http.mjs --report-dir verification/http
+      - name: Retain HTTP delivery evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: blue-preservation-http-evidence
+          path: verification/http/
+          retention-days: 14
+      - name: Verify the exact Orange and Blue offline bundles
+        run: |
+          node scripts/verify-build-artifacts.mjs
+          node scripts/verify-offline-navigation.mjs --report-dir verification/offline
+      - name: Retain simulated offline navigation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: blue-preservation-offline-evidence
+          path: verification/offline/
+          retention-days: 14
+      - name: Retain blue staging bundle only
+        id: blue-preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: mba-hub-blue-preservation-preview
+          path: dist/tester
+          retention-days: 7
+      - name: Summarize the verified staging candidate
+        env:
+          BLUE_PREVIEW_URL: ${{ steps.blue-preview.outputs.artifact-url }}
+        run: |
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          const privacy=JSON.parse(fs.readFileSync('verification/blue-privacy-delta.json','utf8'));
+          const readRelease=channel=>JSON.parse(fs.readFileSync('dist/'+channel+'/release.json','utf8')).release;
+          const blueHttp=JSON.parse(fs.readFileSync('verification/http/tester-http.json','utf8'));
+          const summary=[
+            '## Verified staging candidate',
+            '',
+            '- Audited checkout: `'+privacy.candidate_checkout_sha+'`',
+            '- Orange offline release: `'+readRelease('developer')+'`',
+            '- Blue offline release: `'+readRelease('tester')+'`',
+            '- Blue service-worker SHA-256: `'+blueHttp.workerSha256+'`',
+            '- Privacy approval required: '+(privacy.privacy_approval_required?'yes':'no'),
+            '- Production release authorized: '+(privacy.release_authorized?'yes':'no'),
+            '- [Download the verified Blue staging bundle]('+process.env.BLUE_PREVIEW_URL+')',
+            ''
+          ];
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,summary.join('\n'));
+          EOF

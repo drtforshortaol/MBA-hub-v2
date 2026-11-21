@@ -22,7 +22,8 @@
   "offline_assets": [
     "apps/evolution-timeline/app.js",
     "apps/evolution-timeline/index.html",
-    "apps/evolution-timeline/styles.css"
+    "apps/evolution-timeline/styles.css",
+    "shared/media/asset-7020f164e3928edc--icon-192.png"
   ],
   "media": [
     "asset-7020f164e3928edc"

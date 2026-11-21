@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "base_commit": "12f95a485d87cc33e6690e8314491dbec3d12002",
+  "upload_intake_commit": "cae20ad89424d941cfb8f2bf39595307b0bb74a8",
+  "scope": "Naturalist development branch only; no release approval or physical-device verification",
+  "checks": {
+    "focused_tests": 40,
+    "full_tests": {
+      "passed": 1024,
+      "failed": 0,
+      "cancelled": 0,
+      "skipped": 0
+    },
+    "build": "passed",
+    "security_scan": "passed",
+    "artifact_integrity": "passed",
+    "all_app_content_preflight": "passed",
+    "source_reconciliation": "passed",
+    "offline_scenarios": [
+      {
+        "environment": "developer",
+        "scenario": "corrupt-json-inventory-recovery",
+        "passed": true,
+        "release": "9e078ed00a203df9",
+        "resources_verified": 384,
+        "resources_expected": 384,
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "developer",
+        "scenario": "forged-inventory-recovery",
+        "passed": true,
+        "release": "9e078ed00a203df9",
+        "resources_verified": 384,
+        "resources_expected": 384,
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "developer",
+        "scenario": "interrupted-inventory-recovery",
+        "passed": true,
+        "release": "9e078ed00a203df9",
+        "resources_verified": 384,
+        "resources_expected": 384,
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "developer",
+        "scenario": "inventory-loss-recovery",
+        "passed": true,
+        "release": "9e078ed00a203df9",
+        "resources_verified": 384,
+        "resources_expected": 384,
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "developer",
+        "scenario": "prepared-navigation",
+        "passed": true,
+        "release": "9e078ed00a203df9",
+        "resources_verified": 384,
+        "resources_expected": 384,
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "developer",
+        "scenario": "corrupted-entry-recovery",
+        "passed": true,
+        "release": "9e078ed00a203df9",
+        "resources_verified": 384,
+        "resources_expected": 384,
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "developer",
+        "scenario": "refresh-page-inventory-recovery",
+        "passed": true,
+        "release": "9e078ed00a203df9",
+        "resources_verified": 384,
+        "resources_expected": 384,
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "scenario": "corrupt-json-inventory-recovery",
+        "passed": true,
+        "release": "c13248dea6fd7ac2",
+        "resources_verified": 375,
+        "resources_expected": 375,
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "scenario": "forged-inventory-recovery",
+        "passed": true,
+        "release": "c13248dea6fd7ac2",
+        "resources_verified": 375,
+        "resources_expected": 375,
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "scenario": "interrupted-inventory-recovery",
+        "passed": true,
+        "release": "c13248dea6fd7ac2",
+        "resources_verified": 375,
+        "resources_expected": 375,
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "scenario": "inventory-loss-recovery",
+        "passed": true,
+        "release": "c13248dea6fd7ac2",
+        "resources_verified": 375,
+        "resources_expected": 375,
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "scenario": "prepared-navigation",
+        "passed": true,
+        "release": "c13248dea6fd7ac2",
+        "resources_verified": 375,
+        "resources_expected": 375,
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "scenario": "corrupted-entry-recovery",
+        "passed": true,
+        "release": "c13248dea6fd7ac2",
+        "resources_verified": 375,
+        "resources_expected": 375,
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "scenario": "refresh-page-inventory-recovery",
+        "passed": true,
+        "release": "c13248dea6fd7ac2",
+        "resources_verified": 375,
+        "resources_expected": 375,
+        "app_entry_urls": 33,
+        "search_targets": 517,
+        "offline_network_attempts": 0
+      }
+    ]
+  },
+  "photo_placement_resolved": true,
+  "uploaded_bytes_preserved": true,
+  "permission_granted": false,
+  "publication_authorized": false,
+  "inherited_approvals_preserved": 31,
+  "branch_blockers": 17,
+  "combined_branches_reverified": false
+}

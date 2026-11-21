@@ -1,0 +1,11 @@
+# Library Wishlist search restoration — October 22, 2026
+
+All 17 existing Wishlist book sections now use a validated query route that reveals Wishlist, assigns the existing stable ID to the exact book's summary, and establishes its fragment before shared section navigation. Only known source title/ID pairs are accepted. Text stays in textContent, malformed or unknown query values retain the normal view, and replaceState avoids adding a navigation entry. The default 78 holdings and all 95 source records remain unchanged.
+
+A hidden native select records the existing letter/Wishlist filter through the shared app-view contract. Button changes keep that select synchronized; restored input events replay the saved view rather than forcing the initial Wishlist query. Shared Back restoration retains text/category filters, deliberately open/closed details and scroll. No shared core module, dataset, scientific wording, personal field, permission or approval flag changed.
+
+Four regression tests execute all 17 actual inline-renderer entry routes, malformed/default entry, real shared section reveal and real app-view capture/restore, plus both generated offline indexes. Final combined Node 829/829 PASS. Build, schema validation, 33-app preflight, security, artifact integrity and whitespace PASS. Both local HTTP environments verify every byte (383 developer / 374 tester resources). All 14 simulated offline/recovery scenarios pass 525/525 targets with zero offline network attempts. Pinned-source current-byte fidelity evidence was regenerated after the owning HTML change.
+
+Runtime releases: developer e00ff574fbb7b864; tester b98cfb7e3e6a6ed6. A newly identified matching CI artifact is required for physical acceptance. Earlier candidates are historical after this runtime change. Physical iPhone rendering/navigation/Back, install, offline restart, update, whole-bundle rollback and reviewer pilot remain pending; all 44 release blockers are preserved. No deployment, preview update, merge, new content approval or release occurs.
+
+Draft PR #2 verifies its owning app source/queries/rendering; combined integration additionally verifies the newer shared section-navigation and app-view modules. The PR remains draft and unmerged.

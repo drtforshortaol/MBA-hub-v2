@@ -16,7 +16,22 @@
     }
   ],
   "offline_assets": [
-    "apps/gray-whale/index.html"
+    "apps/gray-whale/index.html",
+    "shared/media/asset-0723eb2fca2615b0--IMG_3527.jpeg",
+    "shared/media/asset-39bdbafd26672e9d--IMG_3529.jpeg",
+    "shared/media/asset-ea111dd21c705418--IMG_3530.jpeg",
+    "shared/media/asset-c19e56bb82b1ed88--IMG_3531.jpeg",
+    "shared/media/asset-d9f462d362090d02--IMG_3532.jpeg",
+    "shared/media/asset-2daaa1e0d8612506--IMG_3533.jpeg",
+    "shared/media/asset-c49e1ad2ede6d927--IMG_3534.jpeg",
+    "shared/media/asset-6d2f0c12e888b454--IMG_3535.jpeg",
+    "shared/media/asset-8d35b32acc8ef4e4--IMG_3536.jpeg",
+    "shared/media/asset-fdf70c3654d8b77c--IMG_3537.jpeg",
+    "shared/media/asset-b11c558cc1916c03--IMG_3538.jpeg",
+    "shared/media/asset-9af5aa3882b2f4fe--IMG_3539.jpeg",
+    "shared/media/asset-007bf887266bfa71--IMG_3540.jpeg",
+    "shared/media/asset-47d33e98d003d66e--IMG_3520.jpeg",
+    "shared/media/asset-29f85ad9d9ef593f--IMG_3475.jpeg"
   ],
   "media": [
     "asset-0723eb2fca2615b0",

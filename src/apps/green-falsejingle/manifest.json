@@ -16,7 +16,13 @@
     }
   ],
   "offline_assets": [
-    "apps/green-falsejingle/index.html"
+    "apps/green-falsejingle/index.html",
+    "shared/media/asset-3f24669c2980c4f8--IMG_2777.jpeg",
+    "shared/media/asset-a8b81b143d1657a3--IMG_2778.jpeg",
+    "shared/media/asset-ddd34d36cd9e0c88--IMG_2779.jpeg",
+    "shared/media/asset-d8ac0e89299a0aa6--IMG_2780.jpeg",
+    "shared/media/asset-cf9a0bdb53d3f4fe--IMG_2781.jpeg",
+    "shared/media/asset-1412182fcc3f4d9a--IMG_2785.jpeg"
   ],
   "media": [
     "asset-3f24669c2980c4f8",

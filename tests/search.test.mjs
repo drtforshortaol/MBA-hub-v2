@@ -1,0 +1,79 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {searchHub} from '../src/core/search.js';
+const apps=[{app_id:'seahorse',category:'animals'},{app_id:'guide',category:'guides'}];
+const records=[
+ {app_id:'guide',title:'Field guide',text:'Seahorse habitat and range',url:'apps/guide/index.html'},
+ {app_id:'seahorse',title:'Seahorse · Habitat',text:'Temperate kelp forests',url:'apps/seahorse/index.html#habitat'},
+ {app_id:'seahorse',title:'Seahorse',text:'Seahorse',url:'apps/seahorse/index.html'}
+];
+test('exact app titles rank ahead of title phrases and body mentions',()=>{
+ assert.deepEqual(searchHub(records,'seahorse').map(item=>item.url),[records[2].url,records[1].url,records[0].url]);
+});
+test('species title and section body jointly satisfy multiword guide queries',()=>{
+ assert.deepEqual(searchHub(records,'seahorse kelp'),[records[1]]);
+});
+test('title matches rank ahead of body phrases and preserve deep-link records',()=>{
+ assert.deepEqual(searchHub(records,'seahorse habitat'),[records[1],records[0]]);
+});
+test('category selection restricts results by canonical app ownership',()=>{
+ assert.deepEqual(searchHub(records,'seahorse',{category:'animals',apps}),[records[2],records[1]]);
+ assert.deepEqual(searchHub(records,'seahorse',{category:'guides',apps}),[records[0]]);
+ assert.deepEqual(searchHub(records,'seahorse',{category:'missing',apps}),[]);
+});
+test('empty queries, case and whitespace retain predictable matching',()=>{
+ assert.deepEqual(searchHub(records,'  '),[]);assert.deepEqual(searchHub(records,' SEAHORSE  KELP '),[records[1]]);
+ assert.deepEqual(searchHub(records,'seahorse missing'),[]);
+});
+test('ranking leaves source records unchanged and uses original order for ties',()=>{
+ const before=JSON.stringify(records),input=[records[1],{...records[1],url:'apps/seahorse/index.html#other'}];
+ assert.deepEqual(searchHub(input,'seahorse'),input);assert.equal(JSON.stringify(records),before);
+});
+
+test('compatibility Unicode forms match normalized titles and section text',()=>{
+ const entries=[{app_id:'guide',title:'Ｋｅｌｐ Guide',text:'The ﬁsh inhabit kelp forests.',url:'apps/guide/index.html'}];
+ assert.deepEqual(searchHub(entries,'kelp'),entries);
+ assert.deepEqual(searchHub(entries,'fish'),entries);
+ assert.deepEqual(searchHub(entries,'ＫＥＬＰ'),entries);
+});
+
+test('Unicode compatibility normalization also applies to category-restricted searches',()=>{
+ const entries=[{app_id:'guide',title:'Ｓｅａｈｏｒｓｅ',text:'ﬁsh shelter',url:'apps/guide/index.html'}];
+ const categories=[{app_id:'guide',category:'guides'}];
+ assert.deepEqual(searchHub(entries,'fish',{category:'guides',apps:categories}),entries);
+ assert.deepEqual(searchHub(entries,'seahorse',{category:'animals',apps:categories}),[]);
+});
+
+test('category-restricted search retains stable record ordering among equal-ranked Unicode matches',()=>{
+ const entries=[{app_id:'guide',title:'Ｋｅｌｐ notes',text:'',url:'apps/guide/index.html#a'},{app_id:'guide',title:'Kelp notes',text:'',url:'apps/guide/index.html#b'}];
+ assert.deepEqual(searchHub(entries,'kelp',{category:'guides',apps}),entries);
+});
+
+
+test('guide searches accept ordinary keyboard spellings of punctuation and accents',()=>{
+ const entries=[
+  {app_id:'pseudo',title:'Pseudo-nitzschia',text:'Marine diatoms',url:'apps/pseudo/index.html'},
+  {app_id:'rose',title:'Hopkins’ Rose Nudibranch',text:'Rocky intertidal',url:'apps/rose/index.html'},
+  {app_id:'guide',title:'El Niño observations',text:'Café discussion',url:'apps/guide/index.html#notes'}
+ ];
+ const before=structuredClone(entries);
+ for(const query of ['pseudo nitzschia','pseudo-nitzschia','pseudo–nitzschia'])assert.deepEqual(searchHub(entries,query),[entries[0]]);
+ for(const query of ['hopkins rose',"Hopkins' Rose",'Hopkins‘ Rose'])assert.deepEqual(searchHub(entries,query),[entries[1]]);
+ for(const query of ['el nino','el niño','EL NIÑO','cafe'])assert.deepEqual(searchHub(entries,query),[entries[2]]);
+ assert.deepEqual(entries,before,'display text, identifiers and deep links remain unchanged');
+});
+
+test('normalized title matches preserve ranking, category scope, and original tie order',()=>{
+ const entries=[
+  {app_id:'notes',title:'Field notes',text:'Pseudo–nitzschia sightings',url:'apps/notes/index.html#diatoms'},
+  {app_id:'pseudo',title:'Pseudo-nitzschia · Habitat',text:'',url:'apps/pseudo/index.html#habitat'},
+  {app_id:'pseudo',title:'Pseudo-nitzschia',text:'',url:'apps/pseudo/index.html'},
+  {app_id:'guide',title:'Pseudo nitzschia',text:'',url:'apps/guide/index.html'}
+ ];
+ const apps=[{app_id:'pseudo',category:'animals'},{app_id:'guide',category:'guides'},{app_id:'notes',category:'guides'}];
+ assert.deepEqual(searchHub(entries,'pseudo nitzschia'),[entries[2],entries[3],entries[1],entries[0]]);
+ assert.deepEqual(searchHub(entries,'pseudo–nitzschia',{category:'animals',apps}),[entries[2],entries[1]]);
+ assert.deepEqual(searchHub(entries,'pseudo-nitzschia',{category:'guides',apps}),[entries[3],entries[0]]);
+ assert.deepEqual(searchHub(entries,' — ’ - '),[]);
+ assert.deepEqual(searchHub(entries,'pseudo nitzschia missing'),[]);
+});

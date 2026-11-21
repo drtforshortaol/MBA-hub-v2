@@ -1,0 +1,25 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #eef5f5; color: #153743; font: 1rem/1.6 system-ui, sans-serif; }
+.container { width: min(100% - 2rem, 45rem); margin-inline: auto; }
+header { background: #123e50; color: #fff; padding: 1rem 0 1.5rem; }
+header p { margin: .65rem 0 .25rem; }
+header h1 { margin: 0; font-size: clamp(1.85rem, 6vw, 3rem); line-height: 1.15; }
+a { color: #075e72; text-underline-offset: .18em; }
+header a { color: inherit; display: inline-flex; align-items: center; min-height: 44px; }
+main { padding-block: 1.25rem; }
+.controls { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1rem; }
+button { min-height: 44px; padding: .45rem .8rem; border: 1px solid #2e6976; border-radius: .4rem; background: #fff; color: #123e50; font: inherit; cursor: pointer; }
+details { margin-bottom: .75rem; background: #fff; border: 1px solid #c3d9dd; border-radius: .6rem; }
+summary { cursor: pointer; padding: .8rem 1rem; font-weight: 700; }
+.card-content { padding: 0 1rem .8rem; overflow-wrap: anywhere; }
+.card-content h2 { font-size: 1.12rem; }
+:focus-visible { outline: 3px solid #00859e; outline-offset: 2px; }
+
+.title-image { margin: 1rem 0 0; }
+.title-image img { display: block; width: 100%; height: auto; border-radius: .6rem; }
+.title-image figcaption { margin-top: .4rem; font-size: .875rem; }
+
+.process-diagram { margin: 1rem 0; padding: 1rem; background: #eef5f5; border-radius: .6rem; }
+.process-diagram figcaption { font-weight: 700; }
+.process-diagram ol { display: grid; gap: .55rem; padding-left: 2rem; }
+.process-diagram li { padding: .55rem; background: white; border-radius: .3rem; }

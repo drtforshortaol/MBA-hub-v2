@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "scope": "Local automated verification after Information Center phone fix; no physical-device, pilot, scientific or release approval",
+  "fixed_acceptance_source": "96a9303ef54f0d0fc6cccb8ef0da2fed9f8609de",
+  "node": {
+    "passed": 791,
+    "failed": 0
+  },
+  "evo": {
+    "passed": 35,
+    "failed": 0
+  },
+  "app_preflight": {
+    "passed": 33,
+    "failed": 0
+  },
+  "checks": {
+    "build": "PASS",
+    "validation": "PASS",
+    "security_pattern_scan": "PASS",
+    "artifact_integrity": "PASS",
+    "media_registration_no_additions": "PASS"
+  },
+  "http": [
+    {
+      "environment": "developer",
+      "release": "9b8e36c2e6d07f08",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "bytes": 67159468
+      },
+      "errors": []
+    },
+    {
+      "environment": "tester",
+      "release": "e8bc7f50c707bd7c",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "bytes": 67078347
+      },
+      "errors": []
+    }
+  ],
+  "offline_simulation": [
+    {
+      "environment": "developer",
+      "scenario": "corrupt-json-inventory-recovery",
+      "release": "9b8e36c2e6d07f08",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "developer",
+      "scenario": "forged-inventory-recovery",
+      "release": "9b8e36c2e6d07f08",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "developer",
+      "scenario": "interrupted-inventory-recovery",
+      "release": "9b8e36c2e6d07f08",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "developer",
+      "scenario": "inventory-loss-recovery",
+      "release": "9b8e36c2e6d07f08",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "developer",
+      "scenario": "prepared-navigation",
+      "release": "9b8e36c2e6d07f08",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "developer",
+      "scenario": "corrupted-entry-recovery",
+      "release": "9b8e36c2e6d07f08",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "developer",
+      "scenario": "refresh-page-inventory-recovery",
+      "release": "9b8e36c2e6d07f08",
+      "passed": true,
+      "resources": {
+        "expected": 383,
+        "verified": 383,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "tester",
+      "scenario": "corrupt-json-inventory-recovery",
+      "release": "e8bc7f50c707bd7c",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "tester",
+      "scenario": "forged-inventory-recovery",
+      "release": "e8bc7f50c707bd7c",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "tester",
+      "scenario": "interrupted-inventory-recovery",
+      "release": "e8bc7f50c707bd7c",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "tester",
+      "scenario": "inventory-loss-recovery",
+      "release": "e8bc7f50c707bd7c",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "tester",
+      "scenario": "prepared-navigation",
+      "release": "e8bc7f50c707bd7c",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "tester",
+      "scenario": "corrupted-entry-recovery",
+      "release": "e8bc7f50c707bd7c",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    },
+    {
+      "environment": "tester",
+      "scenario": "refresh-page-inventory-recovery",
+      "release": "e8bc7f50c707bd7c",
+      "passed": true,
+      "resources": {
+        "expected": 374,
+        "verified": 374,
+        "errors": []
+      },
+      "navigationTargets": 507,
+      "offlineNetworkAttempts": 0,
+      "errors": []
+    }
+  ],
+  "approval_flags_changed": false,
+  "physical_device_acceptance": "NOT TESTED",
+  "deployments_performed": false,
+  "runtime_baseline_source": "d3706bb49c1d79fb560bfed15fd1feceb8888293",
+  "runtime_baseline_source_scope": "Parent baseline; phone fix changes runtime bytes. Bind new hosted candidate using its SOURCE-COMMIT.txt and release IDs.",
+  "migration_audit_regressions": {
+    "passed": 2,
+    "failed": 0
+  },
+  "runtime_change": {
+    "path": "src/apps/information-center/app.js",
+    "sha256": "a17fdc8fc37fe3cafb77e22ee675b0d5e5cd6eca58c1c2011549751a4780ccef"
+  }
+}

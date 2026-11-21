@@ -1,0 +1,25 @@
+{
+  "scope": "Exact hosted artifact verification, not device/content/release approval",
+  "source_commit": "76ba7971338f1fd5e2b53db3208d64708a7f6f5d",
+  "source_tree": "2f041dff9636deec8d14bd01709752a326aeee80",
+  "run": {
+    "id": 39807842497,
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/drtforshortaol/MBA-hub-v2/actions/runs/39807842497"
+  },
+  "artifact": {
+    "id": 12438537146,
+    "name": "mba-v2-combined-iphone-review",
+    "digest": "sha256:e4d491682b747c02b2304610f799c5ae173f8802d8d9b5d24f8e8e0da488522e",
+    "size_in_bytes": 128053330,
+    "expires_at": "2026-11-21T15:46:53Z"
+  },
+  "local_reverification": {
+    "zip_sha256": "PASS",
+    "source_marker": "PASS",
+    "extracted_runtime_bytes_and_environment_isolation": "PASS",
+    "retained_http_offline_source_binding": "PASS",
+    "fresh_acceptance_record": "33 apps, 17 checks, four reviewer roles, all NOT TESTED; five gates PENDING"
+  }
+}

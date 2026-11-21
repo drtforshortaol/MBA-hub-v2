@@ -1,3 +1,5 @@
+> Historical record. For current completion status see [completion audit](COMPLETION_AUDIT_20261021.md). Earlier alpha.6 privacy/filtering findings are superseded by [inherited V1 approval](GUIDE_CONTENT_RESTORED.md); this document does not establish current-build acceptance.
+
 # Private migration review — alpha.6
 
 All 25 registered V1 applications and seven linked supporting applications are imported. The supporting applications remain unlisted pending owner placement decisions. The shared media catalog contains 203 canonical assets; 191 are binary images. Original content and source commits are recorded in config/migration-provenance.json and docs/MIGRATION_REPORT.json.

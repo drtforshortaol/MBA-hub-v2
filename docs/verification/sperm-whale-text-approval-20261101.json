@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "app_id": "sperm-whale",
+  "reviewed_on": "2026-11-01",
+  "owner_response": "Approved",
+  "candidate_commit": "54113769101a2561d563357acf09453e08884a47",
+  "source_html_blob_sha": "86c52f8e1f0e298abf93ca9eb260553b2ece262d",
+  "source_manifest_blob_sha": "7bc2155fd4f37eccf7fc10bdf64afc9346ef11bd",
+  "scope": "Only the seven exact new sections, not other material, device acceptance or release",
+  "sections": [
+    {
+      "id": "Identification",
+      "body": "A huge, blunt head, narrow lower jaw and wrinkled skin distinguish this largest toothed whale. The single blowhole sits toward the left front of the head; its blow angles forward and left. A low dorsal hump replaces the tall fin seen on many dolphins. Males grow much larger than females.",
+      "html": "<details id=\"Identification\"><summary>Recognizing a sperm whale</summary><p>A huge, blunt head, narrow lower jaw and wrinkled skin distinguish this largest toothed whale. The single blowhole sits toward the left front of the head; its blow angles forward and left. A low dorsal hump replaces the tall fin seen on many dolphins. Males grow much larger than females.</p><p class=\"source\">Source: <a href=\"https://www.fisheries.noaa.gov/species/sperm-whale\" target=\"_blank\" rel=\"noopener noreferrer\">NOAA Fisheries</a> · checked November 1, 2026.</p></details>"
+    },
+    {
+      "id": "Deep-diving-and-feeding",
+      "body": "Squid are major prey; fish, including some sharks and rays, are also eaten. Foraging dives commonly last about 45 minutes and reach around 600 metres (2,000 feet), with deeper dives possible. The whale returns to the surface to breathe between dives.",
+      "html": "<details id=\"Deep-diving-and-feeding\"><summary>Deep diving & feeding</summary><p>Squid are major prey; fish, including some sharks and rays, are also eaten. Foraging dives commonly last about 45 minutes and reach around 600 metres (2,000 feet), with deeper dives possible. The whale returns to the surface to breathe between dives.</p><p class=\"source\">Source: <a href=\"https://www.fisheries.noaa.gov/species/sperm-whale\" target=\"_blank\" rel=\"noopener noreferrer\">NOAA Fisheries</a> · checked November 1, 2026.</p></details>"
+    },
+    {
+      "id": "Sound-and-spermaceti",
+      "body": "The head contains spermaceti, a waxy material associated with sound focusing. Echolocation clicks help locate prey in darkness; social codas are patterned click sequences. Hearing clicks does not, by itself, reveal exactly where a whale is.",
+      "html": "<details id=\"Sound-and-spermaceti\"><summary>Sound & the enormous head</summary><p>The head contains spermaceti, a waxy material associated with sound focusing. Echolocation clicks help locate prey in darkness; social codas are patterned click sequences. Hearing clicks does not, by itself, reveal exactly where a whale is.</p><p class=\"source\">Source: <a href=\"https://www.fisheries.noaa.gov/species/sperm-whale\" target=\"_blank\" rel=\"noopener noreferrer\">NOAA Fisheries</a> · checked November 1, 2026.</p></details>"
+    },
+    {
+      "id": "Family-life-and-calves",
+      "body": "Related females and their young form enduring social units. Females help care for calves. Young males eventually leave these groups; older males range widely and return to warmer breeding areas. Pregnancy lasts about 14–16 months, and calves may nurse for several years.",
+      "html": "<details id=\"Family-life-and-calves\"><summary>Family life & calves</summary><p>Related females and their young form enduring social units. Females help care for calves. Young males eventually leave these groups; older males range widely and return to warmer breeding areas. Pregnancy lasts about 14–16 months, and calves may nurse for several years.</p><p class=\"source\">Source: <a href=\"https://iwc.int/about-whales/whale-species/sperm-whale\" target=\"_blank\" rel=\"noopener noreferrer\">International Whaling Commission</a> · checked November 1, 2026.</p></details>"
+    },
+    {
+      "id": "Built-for-depth",
+      "body": "Oxygen-storing myoglobin in the muscles and a rib cage that can compress during descent help make prolonged deep dives possible. A dive is a breath-hold: sperm whales are mammals and must return to the air to breathe.",
+      "html": "<details id=\"Built-for-depth\"><summary>Built for depth</summary><p>Oxygen-storing myoglobin in the muscles and a rib cage that can compress during descent help make prolonged deep dives possible. A dive is a breath-hold: sperm whales are mammals and must return to the air to breathe.</p><p class=\"source\">Source: <a href=\"https://iwc.int/about-whales/whale-species/sperm-whale\" target=\"_blank\" rel=\"noopener noreferrer\">International Whaling Commission</a> · checked November 1, 2026.</p></details>"
+    },
+    {
+      "id": "Conservation-and-observation",
+      "body": "Commercial whaling heavily reduced populations. In U.S. waters the species is listed as endangered under the Endangered Species Act. Current pressures include entanglement, vessel collisions, marine debris and ocean noise. Observe without approaching or disrupting whales.",
+      "html": "<details id=\"Conservation-and-observation\"><summary>Conservation & observation</summary><p>Commercial whaling heavily reduced populations. In U.S. waters the species is listed as endangered under the Endangered Species Act. Current pressures include entanglement, vessel collisions, marine debris and ocean noise. Observe without approaching or disrupting whales.</p><p class=\"source\">Source: <a href=\"https://www.fisheries.noaa.gov/species/sperm-whale\" target=\"_blank\" rel=\"noopener noreferrer\">NOAA Fisheries</a> · checked November 1, 2026.</p></details>"
+    },
+    {
+      "id": "Research-and-individuals",
+      "body": "Marks and scars on flukes and dorsal fins help researchers follow individual whales over time. Photo-identification, acoustic recordings, genetics and tags reveal different parts of their lives. A sound detection, a photograph and a tracked dive each answer different questions.",
+      "html": "<details id=\"Research-and-individuals\"><summary>How researchers recognize individuals</summary><p>Marks and scars on flukes and dorsal fins help researchers follow individual whales over time. Photo-identification, acoustic recordings, genetics and tags reveal different parts of their lives. A sound detection, a photograph and a tracked dive each answer different questions.</p><p class=\"source\">Source: <a href=\"https://iwc.int/about-whales/whale-species/sperm-whale\" target=\"_blank\" rel=\"noopener noreferrer\">International Whaling Commission</a> · checked November 1, 2026.</p></details>"
+    }
+  ],
+  "production_release_authorized": false
+}

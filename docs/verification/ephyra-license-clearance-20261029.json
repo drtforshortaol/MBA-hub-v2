@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "baseline_commit": "b204ea70cf2ca27ede47595f4d95fdb578d0c0f7",
+  "scope": "Publisher-license evidence and attribution for one retained illustration; no new scientific approval or publication",
+  "asset_id": "asset-50646c3fe1d0c359",
+  "image_sha256": "50646c3fe1d0c359860229e041767429fc21a382cd16d75bd165fd5f7a3cef52",
+  "publisher_source_verified": true,
+  "license": "CC-BY-4.0",
+  "license_receipt_sha256": "625700ced4651d016e84dc0d21773a61062b54b7babde58acce151addc461937",
+  "before_branch_blockers": 12,
+  "after_branch_blockers": 11,
+  "cleared_blocker": "media permission review: asset-50646c3fe1d0c359",
+  "remaining_blockers": [
+    "release gate: ownerApproved",
+    "release gate: pilotPassed",
+    "release gate: deviceOfflinePassed",
+    "release gate: rollbackDevicePassed",
+    "release gate: privacyReviewed",
+    "content review pending: big-bellied-seahorse",
+    "media permission review: asset-486b6cdb96375dfb",
+    "media permission review: asset-2913dc8df835400c",
+    "media permission review: asset-e62b39cc07a542c4",
+    "media permission review: asset-54f52bac7bc827bc",
+    "media permission review: asset-93c15fb934aba9e6"
+  ],
+  "checks": {
+    "initial_focused_tests_passed": 52,
+    "post_link_focused_tests_passed": 10,
+    "full_tests": {
+      "passed": 1035,
+      "failed": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "stdout_sha256": "4fd7ded6cc09d9e77685058893260b88f081c09de5a14b71df88c4a2d8ac68ec"
+    },
+    "build": "passed",
+    "security_scan": "passed",
+    "all_app_content_preflight": "passed",
+    "artifact_integrity": "passed",
+    "diff_check": "passed",
+    "offline_navigation": [
+      {
+        "environment": "developer",
+        "passed": true,
+        "resources": {
+          "expected": 384,
+          "verified": 384,
+          "errors": []
+        },
+        "release": "2cdcfa58a9269802",
+        "offline_network_attempts": 0
+      },
+      {
+        "environment": "tester",
+        "passed": true,
+        "resources": {
+          "expected": 375,
+          "verified": 375,
+          "errors": []
+        },
+        "release": "86db29bde6edeabd",
+        "offline_network_attempts": 0
+      }
+    ]
+  },
+  "prior_31_inherited_bindings_reproduced_before_update": true,
+  "prior_Naturalist_text_binding_reproduced_before_update": true,
+  "authored_text_except_exact_caption_alt_license_links_unchanged": true,
+  "retained_JPEG_bytes_unchanged": true,
+  "other_catalog_assets_unchanged": 212,
+  "physical_device_reverified": false,
+  "combined_branches_reverified": false,
+  "publication_authorized": false
+}

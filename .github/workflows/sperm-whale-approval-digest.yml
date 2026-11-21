@@ -1,0 +1,30 @@
+name: Sperm Whale Approval Digest Check
+on:
+  push:
+    branches: [work/device-acceptance-prep-20261030]
+permissions:
+  contents: read
+jobs:
+  approval-digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compute current digest and validate approved sections
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import { inheritedContentDigest,ownerTextApprovalSupported } from './scripts/public-review.mjs';
+          const app=JSON.parse(fs.readFileSync('src/apps/sperm-whale/manifest.json','utf8'));
+          const approval=JSON.parse(fs.readFileSync('docs/verification/sperm-whale-text-approval-20261101.json','utf8'));
+          const html=fs.readFileSync('src/apps/sperm-whale/index.html','utf8');
+          for(const section of approval.sections){
+            if(!html.includes(section.html)||!app.sections.some(s=>s.id===section.id&&s.text===section.body))throw Error('Approved section changed: '+section.id);
+          }
+          if(approval.sections.length!==7)throw Error('Expected seven approved sections');
+          const hash=inheritedContentDigest(app,{sourceRoot:'src'});
+          console.log('SPERM_WHALE_CONTENT_SHA256='+hash);
+          console.log('SPERM_WHALE_APPROVAL_GUARD='+ownerTextApprovalSupported(app,{sourceRoot:'src'}));
+          NODE

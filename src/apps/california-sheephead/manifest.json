@@ -16,7 +16,9 @@
     }
   ],
   "offline_assets": [
-    "apps/california-sheephead/index.html"
+    "apps/california-sheephead/index.html",
+    "shared/media/asset-05fc671c0b53bef7--IMG_3594.jpeg",
+    "shared/media/asset-0ddc6e6b4b55ea55--IMG_2883.jpeg"
   ],
   "media": [
     "asset-05fc671c0b53bef7",

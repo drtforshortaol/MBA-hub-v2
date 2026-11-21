@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "application": "tree-of-life-origins",
+  "source": {
+    "repository": "drtforshortaol/MBA-hub",
+    "commit": "5c219508d23255080f6b050cefa8092905447d81",
+    "directory": "apps/tree-of-life-origins"
+  },
+  "scope": "Engineering byte/inventory/manifest identity evidence; no scientific, image-rights, native-browser, device or release approval",
+  "current_source_checks_passed": true,
+  "complete_source_inventory_verified": true,
+  "source_inventory": [
+    {
+      "path": "README.md",
+      "git_blob": "bddfa2c80af948dad192ede72c501b8eb10551f9",
+      "bytes": 1094,
+      "disposition": "legacy installation documentation; not runtime"
+    },
+    {
+      "path": "app.js",
+      "git_blob": "8593db513cf65a44ec00cc8af2375cfa40810abe",
+      "bytes": 2507,
+      "disposition": "retained executable with exact documented technical adaptations"
+    },
+    {
+      "path": "hub-registry-entry.js",
+      "git_blob": "33da409e18d943f7fb77497e66b2e2df64fdb80e",
+      "bytes": 1626,
+      "disposition": "legacy Hub registration replaced by V2 manifest"
+    },
+    {
+      "path": "icons/icon-192.svg",
+      "git_blob": "02fccc74094d216c1d353cffc533a30e7170d236",
+      "bytes": 536,
+      "disposition": "byte-identical centralized media"
+    },
+    {
+      "path": "icons/icon-512.svg",
+      "git_blob": "02fccc74094d216c1d353cffc533a30e7170d236",
+      "bytes": 536,
+      "disposition": "same bytes deduplicated into centralized media"
+    },
+    {
+      "path": "index.html",
+      "git_blob": "74380569842a3aa3c64c3d27b30566b831008bcf",
+      "bytes": 26667,
+      "disposition": "retained complete authored document with exact migration adaptations"
+    },
+    {
+      "path": "manifest.webmanifest",
+      "git_blob": "6793564b646ed286cf9f9025a3dd5f19748e8910",
+      "bytes": 628,
+      "disposition": "standalone PWA manifest replaced by isolated Hub packaging"
+    },
+    {
+      "path": "service-worker.js",
+      "git_blob": "407ab9b9d8aa615cb50b2e9a6198295a276f162c",
+      "bytes": 730,
+      "disposition": "standalone worker superseded by shared isolated Hub worker"
+    },
+    {
+      "path": "styles.css",
+      "git_blob": "af0f8ea2fbfa3987f365f202a32bea231f59798f",
+      "bytes": 8279,
+      "disposition": "complete original stylesheet unchanged"
+    },
+    {
+      "path": "tree-of-life-origins-index.html",
+      "git_blob": "f85a278d4e6f077bbfabae3479ed98bfd07bf40f",
+      "bytes": 62565,
+      "disposition": "alternate legacy monolithic document; not the pinned index.html entry"
+    }
+  ],
+  "retrieved_source_inventory": [
+    {
+      "path": "app.js",
+      "bytes": 2507,
+      "git_blob": "8593db513cf65a44ec00cc8af2375cfa40810abe",
+      "sha256": "a9d09dbcd64f11034701c67028198f6dc5eeae0f542e70a25b4580da7a3f844a"
+    },
+    {
+      "path": "hub-registry-entry.js",
+      "bytes": 1626,
+      "git_blob": "33da409e18d943f7fb77497e66b2e2df64fdb80e",
+      "sha256": "7d21f691b6e7ef9ce264ebeb9d44d0e62664858b584a493c6ad70f705c8babee"
+    },
+    {
+      "path": "icons/icon-192.svg",
+      "bytes": 536,
+      "git_blob": "02fccc74094d216c1d353cffc533a30e7170d236",
+      "sha256": "aa9c4cbb67f1dbc2c2dd80d38fd20085dda4a47177ca8664353617d2ec52896e"
+    },
+    {
+      "path": "icons/icon-512.svg",
+      "bytes": 536,
+      "git_blob": "02fccc74094d216c1d353cffc533a30e7170d236",
+      "sha256": "aa9c4cbb67f1dbc2c2dd80d38fd20085dda4a47177ca8664353617d2ec52896e"
+    },
+    {
+      "path": "index.html",
+      "bytes": 26667,
+      "git_blob": "74380569842a3aa3c64c3d27b30566b831008bcf",
+      "sha256": "53be06754404f736003902b2a781ed83f8757740959bca97007aee6d5d9861e4"
+    },
+    {
+      "path": "manifest.webmanifest",
+      "bytes": 628,
+      "git_blob": "6793564b646ed286cf9f9025a3dd5f19748e8910",
+      "sha256": "2e9d3adfc4cd0f79ff94c9ff6415d1b375aa71778828e25118eb5896c1dc85d9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1094,
+      "git_blob": "bddfa2c80af948dad192ede72c501b8eb10551f9",
+      "sha256": "db53264cc563c4187981da1c7edfa3fffea3b31c514ba98d77a60246828166be"
+    },
+    {
+      "path": "service-worker.js",
+      "bytes": 730,
+      "git_blob": "407ab9b9d8aa615cb50b2e9a6198295a276f162c",
+      "sha256": "3bb342aa607eff5ff92b2a7f5a6a547788f36a2760e874d410b7609a2df2fbb4"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 8279,
+      "git_blob": "af0f8ea2fbfa3987f365f202a32bea231f59798f",
+      "sha256": "932dc4d007b0fd29b3ca3531500a8359619b16490dda2ae31662204773aef4bf"
+    },
+    {
+      "path": "tree-of-life-origins-index.html",
+      "bytes": 62565,
+      "git_blob": "f85a278d4e6f077bbfabae3479ed98bfd07bf40f",
+      "sha256": "5e3ada7eeda60d38c3bb02411543fe0da74da950356051e4b1a373ca7cfd791e"
+    }
+  ],
+  "current_inventory": [
+    {
+      "path": "app.js",
+      "bytes": 2913,
+      "git_blob": "da4fecb93a47eedbbe12991a08b8778ba714c770",
+      "sha256": "3aa6b81238a874c6c08f6464ef4e5aa57be4734b208e4ffc9aa4f6d621dbf964"
+    },
+    {
+      "path": "index.html",
+      "bytes": 27913,
+      "git_blob": "f0c3f6457afd86308a2152124f9fd6dec0a5a698",
+      "sha256": "5408d6916785bf910fa6941b487033f1163057cffaa326f623d56047e82b756c"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 35854,
+      "git_blob": "088796f1b52374bdc5c77bebca8c906cff5977b3",
+      "sha256": "d95bc86fdfdeff9847ded94eba7fc89e27237f2405842c579b3f920a5463be92"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 8279,
+      "git_blob": "af0f8ea2fbfa3987f365f202a32bea231f59798f",
+      "sha256": "932dc4d007b0fd29b3ca3531500a8359619b16490dda2ae31662204773aef4bf"
+    }
+  ],
+  "normalized_source": [
+    {
+      "path": "app.js",
+      "git_blob": "8593db513cf65a44ec00cc8af2375cfa40810abe",
+      "sha256": "a9d09dbcd64f11034701c67028198f6dc5eeae0f542e70a25b4580da7a3f844a",
+      "bytes": 2507
+    },
+    {
+      "path": "index.html",
+      "git_blob": "74380569842a3aa3c64c3d27b30566b831008bcf",
+      "sha256": "53be06754404f736003902b2a781ed83f8757740959bca97007aee6d5d9861e4",
+      "bytes": 26667
+    },
+    {
+      "path": "styles.css",
+      "git_blob": "af0f8ea2fbfa3987f365f202a32bea231f59798f",
+      "sha256": "932dc4d007b0fd29b3ca3531500a8359619b16490dda2ae31662204773aef4bf",
+      "bytes": 8279
+    }
+  ],
+  "manifest": {
+    "semantic_sha256": "6fc03090bbbb3e3b259cce504c8f86d7f9ad0b46ea39353a1167a6f0c4b5dc05",
+    "sections": 53,
+    "declared_offline_assets": [
+      "apps/tree-of-life-origins/app.js",
+      "apps/tree-of-life-origins/index.html",
+      "apps/tree-of-life-origins/styles.css",
+      "shared/media/asset-aa9c4cbb67f1dbc2--icon-192.svg"
+    ],
+    "source_derived_sections": {
+      "count": 53,
+      "complete_equal": true,
+      "semantic_sha256": "ff04fac31fc894ebbb2d87de92bff771bb2372b84efb47b0c72ebb61e7e2033f"
+    }
+  },
+  "media": {
+    "asset_id": "asset-aa9c4cbb67f1dbc2",
+    "path": "shared/media/asset-aa9c4cbb67f1dbc2--icon-192.svg",
+    "bytes": 536,
+    "sha256": "aa9c4cbb67f1dbc2c2dd80d38fd20085dda4a47177ca8664353617d2ec52896e",
+    "catalog_semantic_sha256": "16ce974149184f05503c50c5c3290a300a946ce6036acedae2dc1468fabdc791",
+    "recorded_permission": "owner-approved-v1"
+  },
+  "approval_granted": false,
+  "remaining": [
+    "Independent technical reconciliation decision; this byte/search report does not itself decide inherited approval",
+    "Physical browser/device/layout/accessibility acceptance",
+    "Existing scientific/editorial, permission and operational approval gates"
+  ]
+}

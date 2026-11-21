@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "baseline_integration_commit": "e77cdd635df2112e183cc3442b26b4df5d58e206",
+  "scope": "Read-only media audit hardening and registration verification; no rights/content/device/release approval",
+  "changes": [
+    "Reject source, app, manifest, catalog and media-path symlinks component by component before reading.",
+    "Validate all app media/offline declaration arrays before scanning; sparse, duplicate and unsafe values fail closed even without source references."
+  ],
+  "focused_tests": {
+    "passed": 29,
+    "failed": 0,
+    "skipped": 0
+  },
+  "isolated_track_branch": {
+    "baseline_commit": "b981e82d02c3a5aa5b61ff640c3085842d9af37d",
+    "focused_tests_passed": 29,
+    "full_verification": {
+      "build": "PASS",
+      "node": {
+        "passed": 541,
+        "failed": 0,
+        "skipped": 0
+      }
+    }
+  },
+  "planner": {
+    "valid": true,
+    "additions": 0,
+    "errors": [],
+    "writePerformed": false
+  },
+  "literal_coverage": {
+    "summary": {
+      "apps": 33,
+      "source_files": 83,
+      "local_resources": 235,
+      "resources_with_findings": 9,
+      "uncataloged_resources": 0
+    },
+    "errors": [],
+    "permission_only_findings": [
+      {
+        "app_id": "big-bellied-seahorse",
+        "path": "apps/IMG_4212.jpeg",
+        "issues": [
+          "permission-evidence-missing"
+        ]
+      },
+      {
+        "app_id": "big-bellied-seahorse",
+        "path": "apps/IMG_4213.jpeg",
+        "issues": [
+          "permission-evidence-missing"
+        ]
+      },
+      {
+        "app_id": "big-bellied-seahorse",
+        "path": "apps/IMG_4214.jpeg",
+        "issues": [
+          "permission-evidence-missing"
+        ]
+      },
+      {
+        "app_id": "big-bellied-seahorse",
+        "path": "apps/IMG_4215.jpeg",
+        "issues": [
+          "permission-evidence-missing"
+        ]
+      },
+      {
+        "app_id": "big-bellied-seahorse",
+        "path": "apps/IMG_4216.jpeg",
+        "issues": [
+          "permission-evidence-missing"
+        ]
+      },
+      {
+        "app_id": "naturalist-field-notes",
+        "path": "apps/IMG_4207.jpeg",
+        "issues": [
+          "permission-evidence-missing"
+        ]
+      },
+      {
+        "app_id": "naturalist-field-notes",
+        "path": "apps/IMG_4208.jpeg",
+        "issues": [
+          "permission-evidence-missing"
+        ]
+      },
+      {
+        "app_id": "naturalist-field-notes",
+        "path": "apps/IMG_4209.jpeg",
+        "issues": [
+          "permission-evidence-missing"
+        ]
+      },
+      {
+        "app_id": "naturalist-field-notes",
+        "path": "apps/IMG_4210.jpeg",
+        "issues": [
+          "permission-evidence-missing"
+        ]
+      }
+    ],
+    "complete": false,
+    "expected_cli_exit": 1
+  },
+  "unchanged_scope": [
+    "No catalog, permission, manifest, runtime or source app bytes changed.",
+    "Nine pending image rights remain review-required; no permission inferred from supplied bytes, attribution or app intent."
+  ],
+  "limitations": [
+    "Static HTML media attributes, CSS url() and literal JS/JSON media properties only.",
+    "Computed/escaped URLs, dynamic templates, imported shared scripts, JS string markup and runtime network/media behavior are not certified.",
+    "Permission labels require recorded evidence but are not independently adjudicated; attribution is not permission."
+  ]
+}

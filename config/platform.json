@@ -8,5 +8,5 @@
   "pilotPassed": false,
   "deviceOfflinePassed": false,
   "rollbackDevicePassed": false,
-  "privacyReviewed": false
+  "privacyReviewed": true
 }

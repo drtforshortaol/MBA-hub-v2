@@ -18,7 +18,10 @@
   "offline_assets": [
     "apps/flamboyant-cuttlefish/app.js",
     "apps/flamboyant-cuttlefish/index.html",
-    "apps/flamboyant-cuttlefish/styles.css"
+    "apps/flamboyant-cuttlefish/styles.css",
+    "shared/media/asset-4ad1b63ad37d50de--IMG_2197.jpeg",
+    "shared/media/asset-ad1fe862fb75620f--IMG_2198.jpeg",
+    "shared/media/asset-77f28e714fde41ed--IMG_2291.jpeg"
   ],
   "media": [
     "asset-4ad1b63ad37d50de",

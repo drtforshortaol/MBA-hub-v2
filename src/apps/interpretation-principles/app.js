@@ -47,21 +47,42 @@ function buildLinks() {
   renderLinks("relatedLinks", window.MBA_APP.relatedApps);
 }
 
+function makeNode(tag, className, parent, value) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (value !== undefined) node.textContent = String(value ?? '');
+  if (parent) parent.appendChild(node);
+  return node;
+}
+
+function safeLink(url) {
+  const value = String(url ?? '').trim();
+  if (/^(?:javascript|data|vbscript):/i.test(value)) return null;
+  try {
+    const parsed = new URL(value, location.href);
+    return ['https:', 'http:'].includes(parsed.protocol) ? parsed.href : null;
+  } catch { return null; }
+}
+
 function renderLinks(id, links) {
   const target = document.getElementById(id);
-  target.innerHTML = links
-    .map((link) => `<a href="${escapeHTML(link.url)}">${escapeHTML(link.label)}</a>`)
-    .join("");
+  if (!target) return;
+  target.replaceChildren();
+  (links || []).forEach(link => {
+    const href = safeLink(link.url);
+    if (!href) return;
+    const anchor = makeNode('a', '', target, link.label);
+    anchor.href = href;
+  });
 }
 
 function renderPrinciples() {
   const results = window.MBA_APP.principles.filter(matchesFilters);
-  list.innerHTML = results.map(principleCard).join("") ||
-    `<section class="quick-card"><p>No matching principle. Try another tag or search term.</p></section>`;
-
-  list.querySelectorAll(".toggle").forEach((btn) => {
-    btn.addEventListener("click", () => togglePanel(btn));
-  });
+  list.replaceChildren();
+  if (!results.length) {
+    const empty = makeNode('section', 'quick-card', list);
+    makeNode('p', '', empty, 'No matching principle. Try another tag or search term.');
+  } else results.forEach(principle => list.appendChild(principleCardNode(principle)));
 }
 
 function matchesFilters(principle) {
@@ -80,35 +101,40 @@ function matchesFilters(principle) {
   return queryOK && tagOK;
 }
 
-function principleCard(principle) {
-  const examples = principle.dialogue
-    ? dialogueMarkup(principle.dialogue)
-    : `<ul class="examples">${principle.examples.map((example) => `<li>${escapeHTML(example)}</li>`).join("")}</ul>`;
-
-  return `
-    <article class="principle" id="${escapeHTML(principle.id)}" data-number="${principle.number}">
-      <button class="toggle" aria-expanded="false" aria-controls="panel-${escapeHTML(principle.id)}" type="button">
-        <span class="num">${principle.number}</span>
-        <span class="toggle-text">
-          <span class="principle-name">${escapeHTML(principle.name)}</span>
-          <span class="principle-tagline">${escapeHTML(principle.tagline)}</span>
-        </span>
-        <span class="chevron" aria-hidden="true">⌄</span>
-      </button>
-
-      <div class="panel" id="panel-${escapeHTML(principle.id)}" hidden>
-        <p>${escapeHTML(principle.body)}</p>
-        <div class="quick-prompt"><strong>Floor prompt:</strong> ${escapeHTML(principle.quickPrompt)}</div>
-        <div class="examples-label">${escapeHTML(principle.examplesLabel)}</div>
-        ${examples}
-      </div>
-    </article>`;
-}
-
-function dialogueMarkup(lines) {
-  return `<div class="dialogue">${lines
-    .map((item) => `<span class="speaker">${escapeHTML(item.speaker)}</span><span>${escapeHTML(item.line)}</span>`)
-    .join("")}</div>`;
+function principleCardNode(principle) {
+  const article = makeNode('article', 'principle');
+  article.id = String(principle.id);
+  article.dataset.number = String(principle.number);
+  const button = makeNode('button', 'toggle', article);
+  button.type = 'button';
+  button.setAttribute('aria-expanded', 'false');
+  button.setAttribute('aria-controls', 'panel-' + principle.id);
+  makeNode('span', 'num', button, principle.number);
+  const labels = makeNode('span', 'toggle-text', button);
+  makeNode('span', 'principle-name', labels, principle.name);
+  makeNode('span', 'principle-tagline', labels, principle.tagline);
+  const chevron = makeNode('span', 'chevron', button, '⌄');
+  chevron.setAttribute('aria-hidden', 'true');
+  const panel = makeNode('div', 'panel', article);
+  panel.id = 'panel-' + principle.id;
+  panel.hidden = true;
+  makeNode('p', '', panel, principle.body);
+  const prompt = makeNode('div', 'quick-prompt', panel);
+  makeNode('strong', '', prompt, 'Floor prompt:');
+  prompt.appendChild(document.createTextNode(' ' + String(principle.quickPrompt ?? '')));
+  makeNode('div', 'examples-label', panel, principle.examplesLabel);
+  if (principle.dialogue) {
+    const dialogue = makeNode('div', 'dialogue', panel);
+    principle.dialogue.forEach(item => {
+      makeNode('span', 'speaker', dialogue, item.speaker);
+      makeNode('span', '', dialogue, item.line);
+    });
+  } else {
+    const examples = makeNode('ul', 'examples', panel);
+    (principle.examples || []).forEach(example => makeNode('li', '', examples, example));
+  }
+  button.addEventListener('click', () => togglePanel(button));
+  return article;
 }
 
 function togglePanel(btn) {
