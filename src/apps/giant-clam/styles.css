@@ -1,0 +1,40 @@
+#giant-clam-guide > .clam-topic > summary,
+#giant-clam-guide .clam-subtopic > summary {
+  min-height: 44px;
+  overflow-wrap: anywhere;
+}
+
+#giant-clam-guide .clam-subtopic {
+  background: #f4f9f9;
+}
+
+#giant-clam-guide .clam-subtopic > summary {
+  padding: .55rem .75rem;
+}
+
+#giant-clam-guide .clam-subtopic > .card-content {
+  padding-inline: .75rem;
+}
+
+#giant-clam-guide .clam-subtopic img {
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+#giant-clam-guide .card-content ul {
+  padding-inline-start: 1.25rem;
+}
+
+#giant-clam-guide .card-content li + li {
+  margin-block-start: .5rem;
+}
+
+@media (max-width: 30rem) {
+  body:has(#giant-clam-guide) header .title-image img {
+    max-height: 8.5rem;
+  }
+
+  #giant-clam-guide > .clam-topic > .card-content {
+    padding-inline: .75rem;
+  }
+}

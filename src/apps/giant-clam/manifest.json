@@ -17,6 +17,7 @@
   ],
   "offline_assets": [
     "apps/giant-clam/index.html",
+    "apps/giant-clam/styles.css",
     "apps/naturalist-briefing-20261111/styles.css",
     "shared/media/giant-clam-reef.jpg",
     "shared/media/giant-clam-range.png",
