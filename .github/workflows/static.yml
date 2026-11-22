@@ -22,7 +22,7 @@ jobs:
       - name: Checkout canonical Guide source branch
         uses: actions/checkout@v4
         with:
-          ref: fb84b418e871e4670304b09d7a81ea35d52b7777
+          ref: fcc558401193f6a5b3e2d51e5f17a38595b034e4
           persist-credentials: false
       - name: Remove Nearby Dining intermediate tap in pinned Guide source
         run: |
