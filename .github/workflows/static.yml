@@ -24,6 +24,29 @@ jobs:
         with:
           ref: fcc558401193f6a5b3e2d51e5f17a38595b034e4
           persist-credentials: false
+      - name: Check out the released Algae & Kelp field guide
+        uses: actions/checkout@v4
+        with:
+          repository: drtforshortaol/MBA-hub-v2-test
+          ref: ccd604c7e246065eb1007874a4e0dd552685d376
+          path: algae-guide-release
+          sparse-checkout: apps/algae-kelp
+          persist-credentials: false
+      - name: Add Algae & Kelp to the Blue Guide
+        run: |
+          test ! -e src/apps/algae-kelp
+          cp -R algae-guide-release/apps/algae-kelp src/apps/
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('src/apps/algae-kelp/manifest.json')
+          app = json.loads(path.read_text())
+          assert app['app_id'] == 'algae-kelp' and app['category'] == 'concepts' and app['listed']
+          assert app['status'] == 'released'
+          app['status'] = 'testing'
+          path.write_text(json.dumps(app, indent=2) + '\n')
+          PY
+          rm -rf algae-guide-release
       - name: Remove Nearby Dining intermediate tap in pinned Guide source
         run: |
           python - <<'PY'
@@ -129,8 +152,8 @@ jobs:
                   assert env['environment']=='tester' and env['developer'] is False
                   assert env['namespace']=='mba-v2-tester'
                   assert manifest['name']=='MBA Hub V2' and manifest['theme_color']=='#123e50'
-                  assert len(registry['apps'])==40
-                  for app_id, category in [('el-nino','concepts'),('nearby-dining','volunteer-tools'),('giant-clam','animals'),('naturalist-briefing-20261118','aquarium-updates')]:
+                  assert len(registry['apps'])==41
+                  for app_id, category in [('algae-kelp','concepts'),('el-nino','concepts'),('nearby-dining','volunteer-tools'),('giant-clam','animals'),('naturalist-briefing-20261118','aquarium-updates')]:
                       app=next(a for a in registry['apps'] if a['app_id']==app_id)
                       assert app['category']==category and app['listed']
                   assert b'Latest Update' in get('core/hub.js')
@@ -142,6 +165,10 @@ jobs:
                       page=get(guide['entry_point'])
                       assert b'<details data-blue-share>' in page, guide['app_id']
                       assert b'Share app' in page, guide['app_id']
+                  algae=next(a for a in registry['apps'] if a['app_id']=='algae-kelp')
+                  assert set(algae['offline_assets']) <= offline
+                  for asset in algae['offline_assets']:
+                      assert get(asset)
                   assert {'apps/el-nino/index.html','apps/nearby-dining/index.html'} <= offline
                   assert 'shared/media/giant-clam-monterey-bay-connections.jpg' not in offline
                   clam=get('apps/giant-clam/index.html')
