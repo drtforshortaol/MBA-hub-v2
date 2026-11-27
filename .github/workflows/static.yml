@@ -24,7 +24,7 @@ jobs:
         with:
           ref: fcc558401193f6a5b3e2d51e5f17a38595b034e4
           persist-credentials: false
-      - name: Check out the released Algae & Kelp field guide
+      - name: Check out the released Algae & Kelp field guide with offline photos
         uses: actions/checkout@v4
         with:
           repository: drtforshortaol/MBA-hub-v2-test
