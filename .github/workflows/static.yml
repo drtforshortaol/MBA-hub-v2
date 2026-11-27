@@ -45,6 +45,12 @@ jobs:
           assert app['status'] == 'released'
           app['status'] = 'testing'
           path.write_text(json.dumps(app, indent=2) + '\n')
+          for filename in ('app-integration.test.mjs', 'manifest-hardening.test.mjs'):
+              test = Path('tests') / filename
+              source = test.read_text()
+              prior_additions = "'el-nino','nearby-dining','giant-clam','naturalist-briefing-20261118'"
+              assert source.count(prior_additions) == 1
+              test.write_text(source.replace(prior_additions, prior_additions + ",'algae-kelp'"))
           PY
           rm -rf algae-guide-release
       - name: Remove Nearby Dining intermediate tap in pinned Guide source
