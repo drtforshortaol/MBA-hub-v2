@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "app_id": "algae-kelp",
+  "title": "Algae & Kelp",
+  "category": "concepts",
+  "type": "reference",
+  "version": "1.0.0",
+  "entry_point": "apps/algae-kelp/index.html",
+  "status": "approved",
+  "owner": "algae-kelp",
+  "listed": true,
+  "dependencies": [
+    {
+      "id": "navigation",
+      "version": "1.0.0"
+    }
+  ],
+  "offline_assets": [
+    "apps/algae-kelp/identification-photos-10.js",
+    "apps/algae-kelp/identification-photos-11.js",
+    "apps/algae-kelp/identification-photos-12.js",
+    "apps/algae-kelp/identification-photos-2.js",
+    "apps/algae-kelp/identification-photos-3.js",
+    "apps/algae-kelp/identification-photos-4.js",
+    "apps/algae-kelp/identification-photos-5.js",
+    "apps/algae-kelp/identification-photos-6.js",
+    "apps/algae-kelp/identification-photos-7.js",
+    "apps/algae-kelp/identification-photos-8.js",
+    "apps/algae-kelp/identification-photos-9.js",
+    "apps/algae-kelp/identification-photos.js",
+    "apps/algae-kelp/index.html"
+  ],
+  "media": [],
+  "knowledge": [],
+  "cross_links": [],
+  "sections": [
+    {
+      "id": "field-guide",
+      "title": "Algae & Kelp field guide",
+      "text": "Seaweed identification, Aquarium favorites, touch pools, Monterey Bay, pink coralline algae, seagrass, eelgrass, and kelp forest"
+    }
+  ]
+}
